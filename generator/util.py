@@ -56,7 +56,7 @@ def repr_obj(obj):
         return f"({', '.join([repr_obj(i) for i in obj])})"
     else:
         kwargs = get_kwargs_from(obj)
-        kwargs = strigify_kwargs(kwargs)
+        kwargs = stringify_kwargs(kwargs)
         kwargs_repr = ", ".join([f"{arg}={kwargs[arg]}" for arg in kwargs])
         typ = repr_obj(type(obj))
         res = f"{typ}({kwargs_repr})"
@@ -75,7 +75,7 @@ def get_kwargs_from(obj, exceptions: Tuple[str] = ("parent",)):
     return kwargs
 
 
-def strigify_kwargs(kwargs: Dict):
+def stringify_kwargs(kwargs: Dict):
     for arg in kwargs:
         kwargs[arg] = repr_obj(kwargs[arg])
     return kwargs
