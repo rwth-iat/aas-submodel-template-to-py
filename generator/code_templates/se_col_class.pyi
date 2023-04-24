@@ -12,6 +12,6 @@ submodel_elements = [{% for se in submodel_elements_args -%} {{ se }}{% if not l
 {% endblock %}
 
 {%- block init_super_args -%}
-submodel_element=[se for se in submodel_elements if isinstance(se, SubmodelElement)],
+value=[se for se in submodel_elements if isinstance(se, SubmodelElement)],
 {{ super() }}
 {% endblock %}
