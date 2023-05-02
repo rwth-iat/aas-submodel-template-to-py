@@ -5,7 +5,7 @@ from typing import Union
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
-    SubmodelElement, SubmodelElementCollection, DictObjectStore
+    SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -75,7 +75,7 @@ class SubmodelCodegen:
 
     def generate_specific_cls_for_se(self, se: SubmodelElement,
                                      template: str = 'base_class.pyi') -> str:
-        if isinstance(se, Property):
+        if isinstance(se, (Property, MultiLanguageProperty)):
             return self.generate_specific_cls_for_property(se)
         elif isinstance(se, SubmodelElementCollection):
             return self.generate_specific_cls_for_se_collection(se)
@@ -167,7 +167,8 @@ class SubmodelCodegen:
         )
         return rendered_class
 
-    def generate_specific_cls_for_property(self, property: Property,
+    def generate_specific_cls_for_property(self,
+                                           property: Union[Property, MultiLanguageProperty],
                                            template: str = 'base_class.pyi') -> str:
         template = self.env.get_template(template)
 
@@ -175,7 +176,10 @@ class SubmodelCodegen:
         render_kwargs = self.default_referable_render_kwargs(property)
         render_kwargs["kwargs"].pop("value")
         render_kwargs["args"].insert(0, "value")
-        render_kwargs["typehints"]["value"] = util.repr_obj(property.value_type)
+        if isinstance(property, Property):
+            render_kwargs["typehints"]["value"] = util.repr_obj(property.value_type)
+        elif isinstance(property, MultiLanguageProperty):
+            render_kwargs["typehints"]["value"] = "MultiLanguageProperty"
 
         # Render the template with the given variables
         rendered_class = template.render(**render_kwargs)
