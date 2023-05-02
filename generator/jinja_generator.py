@@ -140,7 +140,7 @@ class SubmodelCodegen:
         if isinstance(property, Property):
             render_kwargs["typehints"]["value"] = StringHandler.reprify(property.value_type)
         elif isinstance(property, MultiLanguageProperty):
-            render_kwargs["typehints"]["value"] = "MultiLanguageProperty"
+            render_kwargs["typehints"]["value"] = "LangStringSet"
 
         # Render the template with the given variables
         rendered_class = template.render(**render_kwargs)
