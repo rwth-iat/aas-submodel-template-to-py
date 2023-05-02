@@ -1,5 +1,6 @@
 import keyword
-from typing import Optional
+import re
+from typing import Union
 
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
@@ -41,6 +42,14 @@ class SubmodelCodegen:
             imports = f.read()
         return imports
 
+    def get_se_typehint(self, se):
+        typehint = self.get_specific_referable_cls_name(se)
+        if self.is_iterable(se):
+            typehint = f"Iterable[{typehint}]"
+        if self.is_optional(se):
+            typehint = f"Optional[{typehint}]"
+        return typehint
+
     def generate_specific_cls_for_submodel(self, submodel: Submodel,
                                            template: str = 'submodel_class.pyi') -> str:
         # Define the variables for the template
@@ -49,11 +58,7 @@ class SubmodelCodegen:
 
         se_as_args = [self.get_referable_arg_name(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
-            if self.is_optional(se):
-                render_kwargs["typehints"][arg] \
-                    = f"Optional[{self.get_specific_referable_cls_name(se)}]"
-            else:
-                render_kwargs["typehints"][arg] = self.get_specific_referable_cls_name(se)
+            render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
         se_classes_definition = "\n\n".join(
             [self.generate_specific_cls_for_se(se) for se in submodel])
@@ -87,12 +92,23 @@ class SubmodelCodegen:
         return rendered_class
 
     @classmethod
+    def remove_iteration_ending(cls, val: str):
+        # remove iteration ending like {00}
+        val = re.sub(r'\{\d+\}$', '', val)
+        # remove one or more digits at the end
+        val = re.sub(r'_?\d+$', '', val)
+        return val
+
+    @classmethod
     def get_specific_referable_cls_name(cls, obj: Referable) -> str:
-        return util.upper_first(obj.id_short)
+        cls_name = util.upper_first(obj.id_short)
+        cls_name = cls.remove_iteration_ending(cls_name)
+        return cls_name
 
     @classmethod
     def get_referable_arg_name(cls, obj: Referable) -> str:
         res = util.lower_first(obj.id_short)
+        res = cls.remove_iteration_ending(res)
         # check if res is one of python reserved keywords
         if res in keyword.kwlist:
             return f"{res}_"
@@ -107,12 +123,23 @@ class SubmodelCodegen:
             "typehints": {}
         }
 
-    def is_optional(self, obj: Qualifiable):
+    @classmethod
+    def is_optional(cls, obj: Qualifiable):
         for q in obj.qualifier:
-            if q.type == "Cardinality":
+            if q.type in ("Cardinality", "Multiplicity"):
                 if q.value in ("ZeroToOne", "ZeroToMany"):
                     return True
                 elif q.value in ("One", "OneToMany"):
+                    return False
+        return None
+
+    @classmethod
+    def is_iterable(cls, obj: Qualifiable):
+        for q in obj.qualifier:
+            if q.type in ("Cardinality", "Multiplicity"):
+                if q.value in ("ZeroToMany", "OneToMany"):
+                    return True
+                elif q.value in ("ZeroToOne", "One"):
                     return False
         return None
 
@@ -127,11 +154,7 @@ class SubmodelCodegen:
 
         se_as_args = [self.get_referable_arg_name(i) for i in se_collection]
         for se, arg in zip(se_collection, se_as_args):
-            if self.is_optional(se):
-                render_kwargs["typehints"][
-                    arg] = f"Optional[{self.get_specific_referable_cls_name(se)}]"
-            else:
-                render_kwargs["typehints"][arg] = self.get_specific_referable_cls_name(se)
+            render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
         se_classes_definition = "\n\n".join(
             [self.generate_specific_cls_for_se(se) for se in se_collection])
