@@ -1,5 +1,4 @@
-import keyword
-import re
+import inspect
 from typing import Union
 
 import black
@@ -10,6 +9,7 @@ from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
 from jinja2 import Environment, FileSystemLoader
 
 from generator import util
+from generator.util import StringHandler, ReferableHandler, NamingGenerator
 
 
 class SubmodelCodegen:
@@ -43,10 +43,10 @@ class SubmodelCodegen:
         return imports
 
     def get_se_typehint(self, se):
-        typehint = self.get_specific_referable_cls_name(se)
-        if self.is_iterable(se):
+        typehint = NamingGenerator.create_specific_referable_cls_name(se)
+        if ReferableHandler.is_iterable(se):
             typehint = f"Iterable[{typehint}]"
-        if self.is_optional(se):
+        if ReferableHandler.is_optional(se):
             typehint = f"Optional[{typehint}]"
         return typehint
 
@@ -56,7 +56,7 @@ class SubmodelCodegen:
         render_kwargs = self.default_referable_render_kwargs(submodel)
         render_kwargs["kwargs"].pop("submodel_element")
 
-        se_as_args = [self.get_referable_arg_name(i) for i in submodel]
+        se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
@@ -91,57 +91,18 @@ class SubmodelCodegen:
         rendered_class = template.render(**self.default_referable_render_kwargs(se))
         return rendered_class
 
-    @classmethod
-    def remove_iteration_ending(cls, val: str):
-        # remove iteration ending like {00}
-        val = re.sub(r'\{\d+\}$', '', val)
-        # remove one or more digits at the end
-        val = re.sub(r'_?\d+$', '', val)
-        return val
-
-    @classmethod
-    def get_specific_referable_cls_name(cls, obj: Referable) -> str:
-        cls_name = util.upper_first(obj.id_short)
-        cls_name = cls.remove_iteration_ending(cls_name)
-        return cls_name
-
-    @classmethod
-    def get_referable_arg_name(cls, obj: Referable) -> str:
-        res = util.lower_first(obj.id_short)
-        res = cls.remove_iteration_ending(res)
-        # check if res is one of python reserved keywords
-        if res in keyword.kwlist:
-            return f"{res}_"
-        return res
 
     def default_referable_render_kwargs(self, se: SubmodelElement) -> dict:
+        typehints = {}
+        typehints.update(inspect.getfullargspec(type(se).__init__).annotations)
         return {
-            "cls_name": self.get_specific_referable_cls_name(se),
-            "parent_cls_name": util.repr_obj(type(se)),
+            "cls_name": NamingGenerator.create_specific_referable_cls_name(se),
+            "parent_cls_name": StringHandler.reprify(type(se)),
             "args": [],
-            "kwargs": util.stringify_kwargs(util.get_kwargs_from(se)),
-            "typehints": {}
+            "kwargs": StringHandler.reprify_kwarg_values(util.get_kwargs_for_init(se)),
+            "typehints": StringHandler.reprify_kwarg_values(typehints)
         }
 
-    @classmethod
-    def is_optional(cls, obj: Qualifiable):
-        for q in obj.qualifier:
-            if q.type in ("Cardinality", "Multiplicity"):
-                if q.value in ("ZeroToOne", "ZeroToMany"):
-                    return True
-                elif q.value in ("One", "OneToMany"):
-                    return False
-        return None
-
-    @classmethod
-    def is_iterable(cls, obj: Qualifiable):
-        for q in obj.qualifier:
-            if q.type in ("Cardinality", "Multiplicity"):
-                if q.value in ("ZeroToMany", "OneToMany"):
-                    return True
-                elif q.value in ("ZeroToOne", "One"):
-                    return False
-        return None
 
     def generate_specific_cls_for_se_collection(self,
                                                 se_collection: SubmodelElementCollection,
@@ -152,7 +113,7 @@ class SubmodelCodegen:
         render_kwargs = self.default_referable_render_kwargs(se_collection)
         render_kwargs["kwargs"].pop("value")
 
-        se_as_args = [self.get_referable_arg_name(i) for i in se_collection]
+        se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in se_collection]
         for se, arg in zip(se_collection, se_as_args):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
@@ -177,7 +138,7 @@ class SubmodelCodegen:
         render_kwargs["kwargs"].pop("value")
         render_kwargs["args"].insert(0, "value")
         if isinstance(property, Property):
-            render_kwargs["typehints"]["value"] = util.repr_obj(property.value_type)
+            render_kwargs["typehints"]["value"] = StringHandler.reprify(property.value_type)
         elif isinstance(property, MultiLanguageProperty):
             render_kwargs["typehints"]["value"] = "MultiLanguageProperty"
 
