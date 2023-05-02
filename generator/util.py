@@ -81,7 +81,10 @@ class StringHandler:
         elif isinstance(val, List):
             return f"[{', '.join([cls.reprify(i) for i in val])}]"
         elif isinstance(val, (tuple, NamespaceSet)):
-            return f"({', '.join([cls.reprify(i) for i in val])})"
+            res = f"({', '.join([cls.reprify(i) for i in val])})"
+            if len(val) == 1:
+                res = f"{res[:-1]},)"
+            return res
         else:
             kwargs = get_kwargs_for_init(val)
             kwargs = cls.reprify_kwarg_values(kwargs)
