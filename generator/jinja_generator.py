@@ -5,7 +5,7 @@ import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
-    ReferenceElement
+    ReferenceElement, ModelingKind
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -92,6 +92,11 @@ class SubmodelCodegen:
             exceptions.extend(exclude_args)
         se_kwargs = util.get_kwargs_for_init(se, exceptions=exceptions)
 
+        # set default value of kind to INSTANCE,
+        # as initialized objects of generated classes will be mostly instances
+        if "kind" in se_kwargs and se_kwargs["kind"] is ModelingKind.TEMPLATE:
+            se_kwargs["kind"] = ModelingKind.INSTANCE
+
         # Find and save args with mutable defaults to kwargs_with_mutable_defaults
         # Set defaults of these args to None
         # These args will be handled appropriately in the template
@@ -154,8 +159,10 @@ class SubmodelCodegen:
 
 def main():
     codegen = SubmodelCodegen(templates_dir="code_templates")
-    codegen.generate_from_aasx(
-        "example_data/DEXPI_package_v2.3.1.aasx")
+    aasx_file = "example_data/submodel-templates-main/published/Digital nameplate/2/0/IDTA 02006-2-0_Template_Digital Nameplate_fixed.aasx"
+    codegen.generate_from_aasx(aasx_file)
+    # with open(aasx_file, encoding="utf8") as aasx_file:
+    #    codegen.generate_from_aasx(aasx_file)
 
 
 main()
