@@ -1,5 +1,5 @@
 import inspect
-from typing import Union
+from typing import Union, Iterable
 
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
@@ -9,7 +9,8 @@ from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
 from jinja2 import Environment, FileSystemLoader
 
 from generator import util
-from generator.util import StringHandler, ReferableHandler, NamingGenerator
+from generator.util import StringHandler, ReferableHandler, NamingGenerator, \
+    get_typehints_for_args
 
 
 class SubmodelCodegen:
@@ -53,8 +54,8 @@ class SubmodelCodegen:
     def generate_specific_cls_for_submodel(self, submodel: Submodel,
                                            template: str = 'submodel_class.pyi') -> str:
         # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(submodel)
-        render_kwargs["kwargs"].pop("submodel_element")
+        render_kwargs = self.default_referable_render_kwargs(submodel,
+                                                             kwarg_exceptions=["submodel_element"])
 
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
@@ -92,14 +93,26 @@ class SubmodelCodegen:
         return rendered_class
 
 
-    def default_referable_render_kwargs(self, se: SubmodelElement) -> dict:
-        typehints = {}
-        typehints.update(inspect.getfullargspec(type(se).__init__).annotations)
+    def default_referable_render_kwargs(self, se: SubmodelElement, kwarg_exceptions: Iterable[str]=None) -> dict:
+        exceptions = ["parent"]
+        if kwarg_exceptions is not None:
+            exceptions.extend(kwarg_exceptions)
+        se_kwargs = util.get_kwargs_for_init(se, exceptions=exceptions)
+
+        se_kwargs_mutable_defaults = {}
+        for arg, default_val in se_kwargs.items():
+            if util.is_mutable(default_val):
+                se_kwargs_mutable_defaults[arg] = default_val
+                se_kwargs[arg] = None
+
+        typehints = get_typehints_for_args(se, se_kwargs.keys())
+
         return {
             "cls_name": NamingGenerator.create_specific_referable_cls_name(se),
             "parent_cls_name": StringHandler.reprify(type(se)),
             "args": [],
-            "kwargs": StringHandler.reprify_kwarg_values(util.get_kwargs_for_init(se)),
+            "kwargs": StringHandler.reprify_kwarg_values(se_kwargs),
+            "kwargs_mutable_defaults": StringHandler.reprify_kwarg_values(se_kwargs_mutable_defaults),
             "typehints": StringHandler.reprify_kwarg_values(typehints)
         }
 
@@ -110,8 +123,7 @@ class SubmodelCodegen:
         template = self.env.get_template(template)
 
         # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(se_collection)
-        render_kwargs["kwargs"].pop("value")
+        render_kwargs = self.default_referable_render_kwargs(se_collection, kwarg_exceptions=["value"])
 
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in se_collection]
         for se, arg in zip(se_collection, se_as_args):
@@ -134,11 +146,11 @@ class SubmodelCodegen:
         template = self.env.get_template(template)
 
         # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(property)
-        render_kwargs["kwargs"].pop("value")
+        render_kwargs = self.default_referable_render_kwargs(property, kwarg_exceptions=["value"])
         render_kwargs["args"].insert(0, "value")
         if isinstance(property, Property):
             render_kwargs["typehints"]["value"] = StringHandler.reprify(property.value_type)
+            render_kwargs["typehints"]["value_type"] = "DataTypeDef"
         elif isinstance(property, MultiLanguageProperty):
             render_kwargs["typehints"]["value"] = "LangStringSet"
 

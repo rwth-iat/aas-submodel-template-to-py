@@ -21,6 +21,10 @@ class {{ cls_name }}({{ parent_cls_name }}):
             {% endblock init_kwargs %}
             {% endfilter %}
     ):
+        {% for arg, value in kwargs_mutable_defaults.items() %}
+        if {{ arg }} is None:
+            {{ arg }} = {{ value }}
+        {% endfor %}
         {% filter indent(width=8) %}
         {%- block in_init -%}{% endblock %}
         {% endfilter %}

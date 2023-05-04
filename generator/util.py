@@ -67,13 +67,36 @@ class StringHandler:
         return val
 
     @classmethod
+    def remove_parent_modules_in_typehint(cls, typehint: str):
+        pattern = r"(\w+(\.\w+)+)"
+        matches = re.findall(pattern, typehint)
+        for match in matches:
+            last_word = match[0].split(".")[-1]
+            typehint = typehint.replace(match[0], last_word)
+        return typehint
+
+    @classmethod
     def reprify(cls, val):
         if val is None:
             return "None"
+        elif isinstance(val, typing._GenericAlias):
+            return cls.remove_parent_modules_in_typehint(repr(val))
         elif type(val) is str:
             return f"'{val}'"
         elif type(val) in (bool, int, float):
             return str(val)
+        elif type(val) is dict:
+            if val:
+                items_repr = [f"{cls.reprify(key)}: {cls.reprify(value)}" for key, value in val.items()]
+                res = ",".join(items_repr)
+                return f"{{{res}}}"
+            return "set()"
+            return repr(val)
+        elif type(val) is set:
+            if val:
+                res = ",".join([cls.reprify(i) for i in val])
+                return f"{{{res}}}"
+            return "set()"
         elif isinstance(val, type):
             return val.__name__  # .split('.')[-1],
         elif isinstance(val, enum.Enum):
@@ -145,3 +168,19 @@ def get_kwargs_for_init(obj, exceptions: Tuple[str] = ("parent",)):
             continue
         kwargs[arg] = get_mapped_attr_of_arg(obj, arg)
     return kwargs
+
+def get_typehints_for_args(obj, args):
+    args_typehints = {}
+    typehints = inspect.getfullargspec(type(obj).__init__).annotations
+    for arg in args:
+        if arg in typehints:
+            args_typehints[arg] = typehints[arg]
+    return args_typehints
+
+
+def is_mutable(obj):
+    mutable_types = (list, dict, set, bytearray, memoryview, Referable)
+
+    if isinstance(obj, mutable_types):
+        return True
+    return False
