@@ -92,11 +92,13 @@ class SubmodelCodegen:
             exceptions.extend(exclude_args)
         se_kwargs = util.get_kwargs_for_init(se, exceptions=exceptions)
 
-        se_kwargs_mutable_defaults = {}
-        for arg, default_val in se_kwargs.items():
-            if util.is_mutable(default_val):
-                se_kwargs_mutable_defaults[arg] = default_val
-                se_kwargs[arg] = None
+        # Find and save args with mutable defaults to kwargs_with_mutable_defaults
+        # Set defaults of these args to None
+        # These args will be handled appropriately in the template
+        kwargs_with_mutable_defaults = {arg: default for arg, default in
+                                        se_kwargs.items() if util.is_mutable(default)}
+        for arg in kwargs_with_mutable_defaults:
+            se_kwargs[arg] = None
 
         typehints = get_typehints_for_args(se, se_kwargs.keys())
 
@@ -106,7 +108,7 @@ class SubmodelCodegen:
             "args": [],
             "kwargs": StringHandler.reprify_kwarg_values(se_kwargs),
             "kwargs_mutable_defaults": StringHandler.reprify_kwarg_values(
-                se_kwargs_mutable_defaults),
+                kwargs_with_mutable_defaults),
             "typehints": StringHandler.reprify_kwarg_values(typehints)
         }
 
