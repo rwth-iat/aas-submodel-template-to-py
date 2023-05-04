@@ -4,7 +4,8 @@ from typing import Union, Iterable, Any
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
-    SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty
+    SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
+    ReferenceElement
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -55,7 +56,7 @@ class SubmodelCodegen:
                                            template: str = 'submodel_class.pyi') -> str:
         # Define the variables for the template
         render_kwargs = self.default_referable_render_kwargs(
-            submodel,exclude_args=["submodel_element"])
+            submodel, exclude_args=["submodel_element"])
 
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
@@ -71,8 +72,8 @@ class SubmodelCodegen:
 
     def generate_specific_cls_for_se(self, se: SubmodelElement,
                                      template: str = 'base_class.pyi') -> str:
-        if isinstance(se, (Property, MultiLanguageProperty)):
-            return self.generate_specific_cls_for_property(se)
+        if isinstance(se, (Property, MultiLanguageProperty, ReferenceElement)):
+            return self.generate_specific_cls_for_property_or_reference_element(se)
         elif isinstance(se, SubmodelElementCollection):
             return self.generate_specific_cls_for_se_collection(se)
         else:
@@ -117,7 +118,7 @@ class SubmodelCodegen:
                                                              exclude_args=["value"])
         # generate arg names for included items of collection
         collection_items = [NamingGenerator.create_arg_name_for_referable(i) for i in
-                      se_collection]
+                            se_collection]
         # provide args of included items with typehints
         for se, arg in zip(se_collection, collection_items):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
@@ -129,10 +130,9 @@ class SubmodelCodegen:
                              submodel_elements_args=collection_items)
         return self.render_cls_with_template(template, **render_kwargs)
 
-    def generate_specific_cls_for_property(self,
-                                           property: Union[
-                                               Property, MultiLanguageProperty],
-                                           template: str = 'base_class.pyi') -> str:
+    def generate_specific_cls_for_property_or_reference_element(
+            self, property: Union[Property, MultiLanguageProperty],
+            template: str = 'base_class.pyi') -> str:
         # Define the variables for the template
         render_kwargs = self.default_referable_render_kwargs(property,
                                                              exclude_args=["value"])
@@ -143,6 +143,8 @@ class SubmodelCodegen:
             render_kwargs["typehints"]["value_type"] = "DataTypeDef"
         elif isinstance(property, MultiLanguageProperty):
             render_kwargs["typehints"]["value"] = "LangStringSet"
+        elif isinstance(property, ReferenceElement):
+            render_kwargs["typehints"]["value"] = "Reference"
 
         # Render the template with the given variables
         return self.render_cls_with_template(template, **render_kwargs)
