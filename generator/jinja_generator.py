@@ -1,5 +1,5 @@
 import inspect
-from typing import Union, Iterable
+from typing import Union, Iterable, Any
 
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
@@ -54,8 +54,8 @@ class SubmodelCodegen:
     def generate_specific_cls_for_submodel(self, submodel: Submodel,
                                            template: str = 'submodel_class.pyi') -> str:
         # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(submodel,
-                                                             kwarg_exceptions=["submodel_element"])
+        render_kwargs = self.default_referable_render_kwargs(
+            submodel,exclude_args=["submodel_element"])
 
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
@@ -65,14 +65,9 @@ class SubmodelCodegen:
             [self.generate_specific_cls_for_se(se) for se in submodel])
 
         # Render the template with the given variables
-        template = self.env.get_template(template)
-        rendered_class = template.render(
-            before_init_content=se_classes_definition,
-            submodel_elements_args=se_as_args,
-            **render_kwargs
-        )
-        # Print the rendered class
-        return rendered_class
+        render_kwargs.update(before_init_content=se_classes_definition,
+                             submodel_elements_args=se_as_args)
+        return self.render_cls_with_template(template, **render_kwargs)
 
     def generate_specific_cls_for_se(self, se: SubmodelElement,
                                      template: str = 'base_class.pyi') -> str:
@@ -81,22 +76,19 @@ class SubmodelCodegen:
         elif isinstance(se, SubmodelElementCollection):
             return self.generate_specific_cls_for_se_collection(se)
         else:
-            return self._generate_specific_cls_for_se(se, template)
+            return self.render_cls_with_template(
+                template, **self.default_referable_render_kwargs(se))
 
-    def _generate_specific_cls_for_se(self, se: SubmodelElement,
-                                      template: str = 'base_class.pyi') -> str:
+    def render_cls_with_template(self, template: str, *args: Any, **kwargs: Any):
         template = self.env.get_template(template)
-
-        # Define the variables for the template
-        # Render the template with the given variables
-        rendered_class = template.render(**self.default_referable_render_kwargs(se))
+        rendered_class = template.render(*args, **kwargs)
         return rendered_class
 
-
-    def default_referable_render_kwargs(self, se: SubmodelElement, kwarg_exceptions: Iterable[str]=None) -> dict:
+    def default_referable_render_kwargs(self, se: SubmodelElement,
+                                        exclude_args: Iterable[str] = None) -> dict:
         exceptions = ["parent"]
-        if kwarg_exceptions is not None:
-            exceptions.extend(kwarg_exceptions)
+        if exclude_args is not None:
+            exceptions.extend(exclude_args)
         se_kwargs = util.get_kwargs_for_init(se, exceptions=exceptions)
 
         se_kwargs_mutable_defaults = {}
@@ -112,51 +104,48 @@ class SubmodelCodegen:
             "parent_cls_name": StringHandler.reprify(type(se)),
             "args": [],
             "kwargs": StringHandler.reprify_kwarg_values(se_kwargs),
-            "kwargs_mutable_defaults": StringHandler.reprify_kwarg_values(se_kwargs_mutable_defaults),
+            "kwargs_mutable_defaults": StringHandler.reprify_kwarg_values(
+                se_kwargs_mutable_defaults),
             "typehints": StringHandler.reprify_kwarg_values(typehints)
         }
-
 
     def generate_specific_cls_for_se_collection(self,
                                                 se_collection: SubmodelElementCollection,
                                                 template: str = 'se_col_class.pyi') -> str:
-        template = self.env.get_template(template)
-
         # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(se_collection, kwarg_exceptions=["value"])
-
-        se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in se_collection]
-        for se, arg in zip(se_collection, se_as_args):
+        render_kwargs = self.default_referable_render_kwargs(se_collection,
+                                                             exclude_args=["value"])
+        # generate arg names for included items of collection
+        collection_items = [NamingGenerator.create_arg_name_for_referable(i) for i in
+                      se_collection]
+        # provide args of included items with typehints
+        for se, arg in zip(se_collection, collection_items):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
         se_classes_definition = "\n\n".join(
             [self.generate_specific_cls_for_se(se) for se in se_collection])
 
-        # Render the template with the given variables
-        rendered_class = template.render(
-            before_init_content=se_classes_definition,
-            submodel_elements_args=se_as_args,
-            **render_kwargs
-        )
-        return rendered_class
+        render_kwargs.update(before_init_content=se_classes_definition,
+                             submodel_elements_args=collection_items)
+        return self.render_cls_with_template(template, **render_kwargs)
 
     def generate_specific_cls_for_property(self,
-                                           property: Union[Property, MultiLanguageProperty],
+                                           property: Union[
+                                               Property, MultiLanguageProperty],
                                            template: str = 'base_class.pyi') -> str:
-        template = self.env.get_template(template)
-
         # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(property, kwarg_exceptions=["value"])
+        render_kwargs = self.default_referable_render_kwargs(property,
+                                                             exclude_args=["value"])
         render_kwargs["args"].insert(0, "value")
         if isinstance(property, Property):
-            render_kwargs["typehints"]["value"] = StringHandler.reprify(property.value_type)
+            render_kwargs["typehints"]["value"] = StringHandler.reprify(
+                property.value_type)
             render_kwargs["typehints"]["value_type"] = "DataTypeDef"
         elif isinstance(property, MultiLanguageProperty):
             render_kwargs["typehints"]["value"] = "LangStringSet"
 
         # Render the template with the given variables
-        rendered_class = template.render(**render_kwargs)
-        return rendered_class
+        return self.render_cls_with_template(template, **render_kwargs)
 
 
 def main():
