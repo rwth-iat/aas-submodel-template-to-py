@@ -62,11 +62,11 @@ class SubmodelCodegen:
         for se, arg in zip(submodel, se_as_args):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
-        se_classes_definition = "\n\n".join(
+        embedded_se_classes = "\n\n".join(
             [self.generate_specific_cls_for_se(se) for se in submodel])
 
         # Render the template with the given variables
-        render_kwargs.update(before_init_content=se_classes_definition,
+        render_kwargs.update(before_init_content=embedded_se_classes,
                              submodel_elements_args=se_as_args)
         return self.render_cls_with_template(template, **render_kwargs)
 
@@ -130,10 +130,10 @@ class SubmodelCodegen:
         for se, arg in zip(se_collection, collection_items):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
-        se_classes_definition = "\n\n".join(
+        embedded_se_classes = "\n\n".join(
             [self.generate_specific_cls_for_se(se) for se in se_collection])
 
-        render_kwargs.update(before_init_content=se_classes_definition,
+        render_kwargs.update(before_init_content=embedded_se_classes,
                              submodel_elements_args=collection_items)
         return self.render_cls_with_template(template, **render_kwargs)
 
