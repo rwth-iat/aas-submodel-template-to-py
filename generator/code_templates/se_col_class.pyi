@@ -21,6 +21,20 @@
 {% endblock %}
 
 {%- block in_init -%}
+
+{# Check if raw values were passed as se args and build these from raw values if it is the case #}
+{# Submodel elements will be built if the corresponding se arg has the following typehint structure: #}
+{# Union[raw_type, SpecificSubmodelElementType] or Optional[Union[raw_type, SpecificSubmodelElementType]] #}
+{% for se in submodel_elements_args %}
+{% set se_typehint = typehints.get(se, '').lstrip("Optional").strip("[]") %}
+{% if se_typehint.startswith("Union") %}
+{% set types = se_typehint.lstrip("Union").strip("[]").split(",") %}
+# Build a submodel element if a raw value was passed in the argument
+if isinstance({{ se }}, {{ types[0] }}):
+    {{ se }}=self.{{ types[1] }}({{ se }})
+{% endif %}
+{% endfor %}
+
 embedded_submodel_elements = []
 for se_arg in [{% for se in submodel_elements_args -%} {{ se }}{% if not loop.last %},{% endif %}{%- endfor %}]:
     if se_arg is None:
@@ -34,6 +48,6 @@ for se_arg in [{% for se in submodel_elements_args -%} {{ se }}{% if not loop.la
 {% endblock %}
 
 {%- block init_super_args -%}
-value= embedded_submodel_elements,
+value=embedded_submodel_elements,
 {{ super() }}
 {% endblock %}
