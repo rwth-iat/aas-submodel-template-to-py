@@ -1,6 +1,6 @@
 {% extends "base_class.pyi" %}
 
-{# List se-arguments #}
+{# List se_collection-arguments #}
 {%- block init_args -%}
 {% for se in submodel_elements_args %}
 {% if not typehints.get(se, '').startswith("Optional") %}
@@ -10,7 +10,7 @@
 {{ super() }}
 {% endblock %}
 
-{# Set optional se-arguments to None #}
+{# Set optional se_collection-arguments to None #}
 {%- block init_kwargs -%}
 {% for se in submodel_elements_args %}
 {% if typehints.get(se, '').startswith("Optional") %}
@@ -22,9 +22,12 @@
 
 {%- block in_init -%}
 
-{# Check if raw values were passed as se args and build these from raw values if it is the case #}
-{# Submodel elements will be built if the corresponding se arg has the following typehint structure: #}
-{# Union[raw_type, SpecificSubmodelElementType] or Optional[Union[raw_type, SpecificSubmodelElementType]] #}
+{# Check if raw values were passed as se_collection args and build these from raw values if it is the case #}
+{# Submodel elements will be built if the corresponding se_collection arg has the following typehint structure: #}
+{# Union[raw_type, SpecificSubmodelElementType] or
+    Optional[Union[raw_type, SpecificSubmodelElementType]] or
+     Optional[Iterable[Union[raw_type, SpecificSubmodelElementType]]]
+    #}
 {% for se in submodel_elements_args %}
 {% set se_typehint = typehints.get(se, '').lstrip("Optional").strip("[]") %}
 {% if se_typehint.startswith("Union") %}
