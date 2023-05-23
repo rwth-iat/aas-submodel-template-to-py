@@ -55,6 +55,8 @@ class SubmodelCodegen:
                 typehint = f"Union[{StringHandler.reprify(se.value_type)}, {typehint}]"
             elif isinstance(se, MultiLanguageProperty):
                 typehint = f"Union[LangStringSet, {typehint}]"
+            elif isinstance(se, ReferenceElement):
+                typehint = f"Union[Reference, {typehint}]"
 
         if ReferableHandler.is_iterable(se):
             typehint = f"Iterable[{typehint}]"
