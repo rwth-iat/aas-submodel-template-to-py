@@ -5,7 +5,7 @@ import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
-    ReferenceElement, ModelingKind
+    ReferenceElement, ModelingKind, AbstractObjectStore
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -26,7 +26,10 @@ class SubmodelCodegen:
 
         reader = AASXReader(aasx_file)
         reader.read_into(obj_store, file_store)
+        self.generate_from_obj_store(obj_store, output_file)
 
+    def generate_from_obj_store(self, obj_store: AbstractObjectStore,
+                                output_file: str = "output.py"):
         result = f"\n{self.generate_imports()}"
 
         for obj in obj_store:
@@ -36,7 +39,7 @@ class SubmodelCodegen:
         # Format the rendered class using Black
         result = black.format_str(result, mode=black.Mode())
 
-        with open(output_file, "w") as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             f.write(result)
 
     def generate_imports(self) -> str:
