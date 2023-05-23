@@ -2,12 +2,12 @@
 
 {# List se_collection-arguments #}
 {%- block init_args -%}
+{{ super() }}
 {% for se in submodel_elements_args %}
 {% if not typehints.get(se, '').startswith("Optional") %}
 {{ se }}: {{ typehints.get(se, 'Any') }},
 {% endif %}
 {% endfor %}
-{{ super() }}
 {% endblock %}
 
 {# Set optional se_collection-arguments to None #}
