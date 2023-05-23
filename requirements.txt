@@ -1,2 +1,2 @@
-git+https://github.com/acplt/basyx-python-sdk@improve/V30RC02
+git+https://github.com/zrgt/basyx-python-sdk@improve/V30RC02
 jinja2
