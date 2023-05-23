@@ -47,8 +47,15 @@ class SubmodelCodegen:
             imports = f.read()
         return imports
 
-    def get_se_typehint(self, se):
+    def get_se_typehint(self, se, add_raw_val_type=True):
         typehint = NamingGenerator.create_specific_referable_cls_name(se)
+
+        if add_raw_val_type:
+            if isinstance(se, Property):
+                typehint = f"Union[{StringHandler.reprify(se.value_type)}, {typehint}]"
+            elif isinstance(se, MultiLanguageProperty):
+                typehint = f"Union[LangStringSet, {typehint}]"
+
         if ReferableHandler.is_iterable(se):
             typehint = f"Iterable[{typehint}]"
         if ReferableHandler.is_optional(se):

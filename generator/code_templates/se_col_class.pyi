@@ -30,8 +30,13 @@
 {% if se_typehint.startswith("Union") %}
 {% set types = se_typehint.lstrip("Union").strip("[]").split(",") %}
 # Build a submodel element if a raw value was passed in the argument
-if isinstance({{ se }}, {{ types[0] }}):
+if {{ se }} and not isinstance({{ se }}, SubmodelElement):
     {{ se }}=self.{{ types[1] }}({{ se }})
+{% elif se_typehint.lstrip("Iterable[").startswith("Union") %}
+{% set types = se_typehint.lstrip("Iterable").strip("[]").lstrip("Union").strip("[]").split(",") %}
+# Build a submodel element if a raw value was passed in the argument
+if {{ se }} and all([isinstance(i, {{ types[0] }}) for i in {{ se }}]):
+    {{ se }}=[self.{{ types[1] }}(i) for i in {{ se }}]
 {% endif %}
 {% endfor %}
 
