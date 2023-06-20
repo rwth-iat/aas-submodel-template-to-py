@@ -97,33 +97,39 @@ class SubmodelCodegen:
         rendered_class = template.render(*args, **kwargs)
         return rendered_class
 
-    def default_referable_render_kwargs(self, se: SubmodelElement,
-                                        exclude_args: Iterable[str] = None) -> dict:
+    def default_referable_render_kwargs(self, referable: Referable,
+                                        exclude_args: Iterable[str] = None,
+                                        remove_numeric_ending_from_id_short = True) -> dict:
         exceptions = ["parent"]
         if exclude_args is not None:
             exceptions.extend(exclude_args)
-        se_kwargs = util.get_kwargs_for_init(se, exceptions=exceptions)
+        referable_kwargs = util.get_kwargs_for_init(referable, exceptions=exceptions)
 
         # set default value of kind to INSTANCE,
         # as initialized objects of generated classes will be mostly instances
-        if "kind" in se_kwargs and se_kwargs["kind"] is ModelingKind.TEMPLATE:
-            se_kwargs["kind"] = ModelingKind.INSTANCE
+        if "kind" in referable_kwargs and referable_kwargs["kind"] is ModelingKind.TEMPLATE:
+            referable_kwargs["kind"] = ModelingKind.INSTANCE
+
+        if remove_numeric_ending_from_id_short and hasattr(referable, "id_short"):
+            referable_kwargs["id_short"] = util.StringHandler.remove_iteration_ending(referable_kwargs["id_short"])
 
         # Find and save args with mutable defaults to kwargs_with_mutable_defaults
         # Set defaults of these args to None
         # These args will be handled appropriately in the template
-        kwargs_with_mutable_defaults = {arg: default for arg, default in
-                                        se_kwargs.items() if util.is_mutable(default)}
-        for arg in kwargs_with_mutable_defaults:
-            se_kwargs[arg] = None
+        handle_as_arg_with_mutable_default = ["qualifier"]
+        kwargs_with_mutable_defaults = {}
+        for arg, default in referable_kwargs.items():
+            if util.is_mutable(default) or arg in handle_as_arg_with_mutable_default:
+                kwargs_with_mutable_defaults[arg] = default
+                referable_kwargs[arg] = None
 
-        typehints = get_typehints_for_args(se, se_kwargs.keys())
+        typehints = get_typehints_for_args(referable, referable_kwargs.keys())
 
         return {
-            "cls_name": NamingGenerator.create_specific_referable_cls_name(se),
-            "parent_cls_name": StringHandler.reprify(type(se)),
+            "cls_name": NamingGenerator.create_specific_referable_cls_name(referable),
+            "parent_cls_name": StringHandler.reprify(type(referable)),
             "args": [],
-            "kwargs": StringHandler.reprify_kwarg_values(se_kwargs),
+            "kwargs": StringHandler.reprify_kwarg_values(referable_kwargs),
             "kwargs_mutable_defaults": StringHandler.reprify_kwarg_values(
                 kwargs_with_mutable_defaults),
             "typehints": StringHandler.reprify_kwarg_values(typehints)
