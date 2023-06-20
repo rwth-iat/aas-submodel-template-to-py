@@ -78,10 +78,10 @@ class StringHandler:
     @classmethod
     def reprify(cls, val):
         typehint_reprs = {
-            DataTypeDef: "DataTypeDefXsd",
+            DataTypeDef: "DataTypeDef",
             ValueDataType: "ValueDataType",
             LangStringSet: "LangStringSet",
-            Optional[DataTypeDef]: "Optional[DataTypeDefXsd]",
+            Optional[DataTypeDef]: "Optional[DataTypeDef]",
             Optional[ValueDataType]: "Optional[ValueDataType]",
             Optional[LangStringSet]: "Optional[LangStringSet]",
         }
