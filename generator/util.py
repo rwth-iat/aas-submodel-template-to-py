@@ -77,6 +77,18 @@ class StringHandler:
 
     @classmethod
     def reprify(cls, val):
+        typehint_reprs = {
+            DataTypeDef: "DataTypeDefXsd",
+            ValueDataType: "ValueDataType",
+            LangStringSet: "LangStringSet",
+            Optional[DataTypeDef]: "Optional[DataTypeDefXsd]",
+            Optional[ValueDataType]: "Optional[ValueDataType]",
+            Optional[LangStringSet]: "Optional[LangStringSet]",
+        }
+        for typehint in typehint_reprs:
+            if val in typehint_reprs:
+                return typehint_reprs[typehint]
+
         if val is None:
             return "None"
         elif isinstance(val, typing._GenericAlias):
@@ -91,7 +103,6 @@ class StringHandler:
                 res = ",".join(items_repr)
                 return f"{{{res}}}"
             return "set()"
-            return repr(val)
         elif type(val) is set:
             if val:
                 res = ",".join([cls.reprify(i) for i in val])
