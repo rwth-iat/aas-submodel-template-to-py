@@ -165,7 +165,6 @@ class SubmodelCodegen:
         if isinstance(property, Property):
             render_kwargs["typehints"]["value"] = StringHandler.reprify(
                 property.value_type)
-            render_kwargs["typehints"]["value_type"] = "DataTypeDef"
         elif isinstance(property, MultiLanguageProperty):
             render_kwargs["typehints"]["value"] = "LangStringSet"
         elif isinstance(property, ReferenceElement):
