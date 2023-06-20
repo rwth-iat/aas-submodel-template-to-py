@@ -73,6 +73,8 @@ class SubmodelCodegen:
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
+        render_kwargs["kwargs"].pop("identification")
+        render_kwargs["args"].append("identification")
 
         embedded_se_classes = "\n\n".join(
             [self.generate_specific_cls_for_se(se) for se in submodel])
