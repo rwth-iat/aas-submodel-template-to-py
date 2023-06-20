@@ -50,7 +50,9 @@ for se_arg in [{% for se in submodel_elements_args -%} {{ se }}{% if not loop.la
     elif isinstance(se_arg, SubmodelElement):
         embedded_submodel_elements.append(se_arg)
     elif isinstance(se_arg, Iterable):
-        embedded_submodel_elements.extend(se_arg)
+        for n, element in enumerate(se_arg):
+            element.id_short = f"{element.id_short}{n}"
+            embedded_submodel_elements.append(element)
     else:
         raise TypeError(f"Unknown type of value in submodel_element_args: {type(se_arg)}")
 {% endblock %}
