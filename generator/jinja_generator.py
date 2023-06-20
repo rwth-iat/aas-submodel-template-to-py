@@ -79,7 +79,7 @@ class SubmodelCodegen:
 
         # Render the template with the given variables
         render_kwargs.update(before_init_content=embedded_se_classes,
-                             submodel_elements_args=se_as_args)
+                             args_for_submodel_elements=se_as_args)
         return self.render_cls_with_template(template, **render_kwargs)
 
     def generate_specific_cls_for_se(self, se: SubmodelElement,
@@ -152,7 +152,7 @@ class SubmodelCodegen:
             [self.generate_specific_cls_for_se(se) for se in se_collection])
 
         render_kwargs.update(before_init_content=embedded_se_classes,
-                             submodel_elements_args=collection_items)
+                             args_for_submodel_elements=collection_items)
         return self.render_cls_with_template(template, **render_kwargs)
 
     def generate_specific_cls_for_property_or_reference_element(
