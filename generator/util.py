@@ -86,7 +86,7 @@ class StringHandler:
             Optional[LangStringSet]: "Optional[LangStringSet]",
         }
         for typehint in typehint_reprs:
-            if val in typehint_reprs:
+            if val == typehint:
                 return typehint_reprs[typehint]
 
         if val is None:
