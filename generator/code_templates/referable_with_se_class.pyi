@@ -7,9 +7,9 @@
 {# id_: str, #}
 {%- block init_args -%}
 {{ super() }}
-{% for se in submodel_elements_args %}
-    {% if not typehints.get(se, '').startswith("Optional") %}
-{{ se }}: {{ typehints.get(se, 'Any') }},
+{% for arg_for_se in args_for_submodel_elements %}
+    {% if not typehints.get(arg_for_se, '').startswith("Optional") %}
+{{ arg_for_se }}: {{ typehints.get(arg_for_se, 'Any') }},
     {% endif %}
 {% endfor %}
 {% endblock %}
@@ -20,9 +20,9 @@
 {# category: Optional[str] = None, #}
 {# description: Optional[LangStringSet] = None, #}
 {%- block init_kwargs -%}
-{% for se in submodel_elements_args %}
-    {% if typehints.get(se, '').startswith("Optional") %}
-{{ se }}: {{ typehints.get(se, 'Any') }} = None,
+{% for arg_for_se in args_for_submodel_elements %}
+    {% if typehints.get(arg_for_se, '').startswith("Optional") %}
+{{ arg_for_se }}: {{ typehints.get(arg_for_se, 'Any') }} = None,
     {% endif %}
 {% endfor %}
 {{ super() }}
@@ -37,25 +37,25 @@
     Optional[Union[raw_type, SpecificSubmodelElementType]] or
      Optional[Iterable[Union[raw_type, SpecificSubmodelElementType]]]
     #}
-{% for se in submodel_elements_args %}
-    {% set se_typehint = typehints.get(se, '').lstrip("Optional").strip("[]") %}
+{% for arg_for_se in args_for_submodel_elements %}
+    {% set se_arg_typehint = typehints.get(arg_for_se, '').lstrip("Optional").strip("[]") %}
 
-    {% if se_typehint.startswith("Union") %}
-        {% set types = se_typehint.lstrip("Union").strip("[]").split(",") %}
+    {% if se_arg_typehint.startswith("Union") %}
+        {% set types = se_arg_typehint.lstrip("Union").strip("[]").split(",") %}
 # Build a submodel element if a raw value was passed in the argument
-if {{ se }} and not isinstance({{ se }}, SubmodelElement):
-    {{ se }}=self.{{ types[1] }}({{ se }})
-    {% elif se_typehint.lstrip("Iterable[").startswith("Union") %}
-        {% set types = se_typehint.lstrip("Iterable").strip("[]").lstrip("Union").strip("[]").split(",") %}
+if {{ arg_for_se }} and not isinstance({{ arg_for_se }}, SubmodelElement):
+    {{ arg_for_se }}=self.{{ types[1] }}({{ arg_for_se }})
+    {% elif se_arg_typehint.lstrip("Iterable[").startswith("Union") %}
+        {% set types = se_arg_typehint.lstrip("Iterable").strip("[]").lstrip("Union").strip("[]").split(",") %}
 # Build a list of submodel elements if a raw values were passed in the argument
-if {{ se }} and all([isinstance(i, {{ types[0] }}) for i in {{ se }}]):
-    {{ se }}=[self.{{ types[1] }}(i) for i in {{ se }}]
+if {{ arg_for_se }} and all([isinstance(i, {{ types[0] }}) for i in {{ arg_for_se }}]):
+    {{ arg_for_se }}=[self.{{ types[1] }}(i) for i in {{ arg_for_se }}]
     {% endif %}
 {% endfor %}
 
 # Add all passed/initialized submodel elements to a single list
 embedded_submodel_elements = []
-for se_arg in [{% for se in submodel_elements_args -%} {{ se }}{% if not loop.last %},{% endif %}{%- endfor %}]:
+for se_arg in [{% for se in args_for_submodel_elements -%} {{ se }}{% if not loop.last %},{% endif %}{%- endfor %}]:
     if se_arg is None:
         continue
     elif isinstance(se_arg, SubmodelElement):
