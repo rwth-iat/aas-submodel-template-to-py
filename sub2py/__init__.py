@@ -1,1 +1,1 @@
-from .jinja_generator import SubmodelCodegen
+from .generator import SubmodelCodegen
