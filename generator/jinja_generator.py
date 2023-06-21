@@ -1,8 +1,11 @@
 import inspect
+import pathlib
 from typing import Union, Iterable, Any
 
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
+from basyx.aas.adapter.json import read_aas_json_file
+from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
     ReferenceElement, ModelingKind, AbstractObjectStore
@@ -20,16 +23,23 @@ class SubmodelCodegen:
         # Set the directory containing the Jinja templates
         self.env = Environment(loader=FileSystemLoader(templates_dir))
 
-    def generate_from_aasx(self, aasx_file: str, output_file: str = "output.py"):
-        obj_store = DictObjectStore()
-        file_store = DictSupplementaryFileContainer()
+    def generate_from(self, input_file: Union[str, pathlib.Path],
+                      output_file: Union[str, pathlib.Path] = "output.py"):
+        if input_file.lower().endswith(".aasx"):
+            obj_store = DictObjectStore()
+            file_store = DictSupplementaryFileContainer()
+            AASXReader(input_file).read_into(obj_store, file_store)
+        elif input_file.lower().endswith(".json"):
+            with open(input_file, "r", encoding='utf-8-sig') as f:
+                obj_store = read_aas_json_file(f)
+        elif input_file.lower().endswith(".xml"):
+            with open(input_file, 'rb') as xml_file:
+                obj_store = read_aas_xml_file(xml_file)
 
-        reader = AASXReader(aasx_file)
-        reader.read_into(obj_store, file_store)
         self.generate_from_obj_store(obj_store, output_file)
 
     def generate_from_obj_store(self, obj_store: AbstractObjectStore,
-                                output_file: str = "output.py"):
+                                output_file: Union[str, pathlib.Path] = "output.py"):
         result = f"\n{self.generate_imports()}"
 
         for obj in obj_store:
@@ -179,7 +189,7 @@ class SubmodelCodegen:
 def main():
     codegen = SubmodelCodegen(templates_dir="code_templates")
     aasx_file = "example_data/submodel-templates-main/published/Digital nameplate/2/0/IDTA 02006-2-0_Template_Digital Nameplate_fixed.aasx"
-    codegen.generate_from_aasx(aasx_file)
+    codegen.generate_from(aasx_file)
     # with open(aasx_file, encoding="utf8") as aasx_file:
     #    codegen.generate_from_aasx(aasx_file)
 
