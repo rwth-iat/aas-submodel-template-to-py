@@ -1,4 +1,4 @@
-import inspect
+import os.path
 import pathlib
 from typing import Union, Iterable, Any
 
@@ -16,10 +16,11 @@ from sub2py import util
 from sub2py.util import StringHandler, ReferableHandler, NamingGenerator, \
     get_typehints_for_args
 
+CODE_TEMPLATES = os.path.join(os.path.dirname(__file__), 'code_templates')
+
 
 class SubmodelCodegen:
-
-    def __init__(self, templates_dir="code_templates"):
+    def __init__(self, templates_dir=CODE_TEMPLATES):
         # Set the directory containing the Jinja templates
         self.env = Environment(loader=FileSystemLoader(templates_dir))
 
@@ -53,8 +54,8 @@ class SubmodelCodegen:
             f.write(result)
 
     def generate_imports(self) -> str:
-        with open("code_templates/imports.pyi") as f:
-            imports = f.read()
+        template = self.env.get_template("imports.pyi")
+        imports = template.render()
         return imports
 
     def get_se_typehint(self, se, add_raw_val_type=True):
@@ -187,7 +188,7 @@ class SubmodelCodegen:
 
 
 def main():
-    codegen = SubmodelCodegen(templates_dir="code_templates")
+    codegen = SubmodelCodegen(templates_dir=CODE_TEMPLATES)
     aasx_file = "example_data/submodel-templates-main/published/Digital nameplate/2/0/IDTA 02006-2-0_Template_Digital Nameplate_fixed.aasx"
     codegen.generate_from(aasx_file)
     # with open(aasx_file, encoding="utf8") as aasx_file:
