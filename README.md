@@ -86,7 +86,7 @@ pip install sub2py
 
 To work with the current development version, you can install the package directly from GitHub using Pip's Git feature:
 ```bash
-pip install git+https://github.com/zrgt/sub2py.git@main
+pip install git+https://github.com/zrgt/sub2py.git@master
 ```
 
 ## Usage
