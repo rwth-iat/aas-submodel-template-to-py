@@ -12,8 +12,8 @@ from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
 
 from jinja2 import Environment, FileSystemLoader
 
-from generator import util
-from generator.util import StringHandler, ReferableHandler, NamingGenerator, \
+from sub2py import util
+from sub2py.util import StringHandler, ReferableHandler, NamingGenerator, \
     get_typehints_for_args
 
 
