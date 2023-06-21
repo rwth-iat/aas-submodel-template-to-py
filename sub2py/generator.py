@@ -185,14 +185,3 @@ class SubmodelCodegen:
 
         # Render the template with the given variables
         return self.render_cls_with_template(template, **render_kwargs)
-
-
-def main():
-    codegen = SubmodelCodegen(templates_dir=CODE_TEMPLATES)
-    aasx_file = "example_data/submodel-templates-main/published/Digital nameplate/2/0/IDTA 02006-2-0_Template_Digital Nameplate_fixed.aasx"
-    codegen.generate_from(aasx_file)
-    # with open(aasx_file, encoding="utf8") as aasx_file:
-    #    codegen.generate_from_aasx(aasx_file)
-
-
-main()
