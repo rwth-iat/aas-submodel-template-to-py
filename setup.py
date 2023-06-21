@@ -32,7 +32,7 @@ setup(
     keywords='aas submodel class code generation python',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     python_requires='>=3.7',
-    install_requires=['git+https://github.com/zrgt/basyx-python-sdk@main', 'jinja2>=3.1.2,<4', 'black'],
+    install_requires=['basyx-python-sdk @ git+https://github.com/zrgt/basyx-python-sdk@main', 'jinja2>=3.1.2,<4', 'black'],
     py_modules=['sub2py'],
     package_data={'sub2py': ['code_templates/*.pyi']},
     entry_points={
