@@ -1,17 +1,25 @@
 # Sub2Py - AAS Submodel Python Code Generator
 
-**Sub2Py**, built on [BaSyx-Python-SDK](https://github.com/eclipse-basyx/basyx-python-sdk), 
-generates Submodel-Specific classes and classes for its submodel elements with filled metainformation
-derived from submodel templates. The generated
-classes serve as child classes of BaSyx-Python-SDK classes,
-representing classes of the Asset Administration Shell Metamodel. 
-The generated submodel-specific class has a hierarchical structure where all the required submodel element-specific classes are placed inside it.
+**Sub2Py** is a code generator tool built on top of the 
+[BaSyx-Python-SDK](https://github.com/eclipse-basyx/basyx-python-sdk). 
+It is designed to generate Submodel-specific classes and classes for its 
+submodel elements with filled meta-information derived from submodel templates. 
+These generated classes act as child classes of the BaSyx-Python-SDK classes and 
+represent classes of the Asset Administration Shell Metamodel. 
+The hierarchical structure of the generated submodel-specific class includes 
+all the required submodel element-specific classes.
+
+## Missing Features
+Sub2Py currently works only with AAS files that are consistent with the AAS Metamodel V2.0.1. However, we plan to introduce the following improvements:
+- Support AAS Metamodel V3.0 
+- Simultaneous support for multiple AAS-Metamodel versions 
+  - Simultaneous support for multiple basyx-python-sdk versions 
 
 ## Examples
 
 ### Example of generated classes
 
-Snippet of generated Submodel-class from [DigitalNameplate](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Digital%20nameplate/2/0) Submodel-Template 
+Here's a snippet of a generated Submodel class from the [DigitalNameplate](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Digital%20nameplate/2/0) Submodel Template: 
 ```python
 class Nameplate(Submodel):
     class ManufacturerName(MultiLanguageProperty):
@@ -54,7 +62,7 @@ class Nameplate(Submodel):
 
 ### Usage Example of the generated class
 
-Instantiation of **DigitalNameplate**-Submodel 
+Here's an example of instantiating the **DigitalNameplate** Submodel: 
 ```python
 nameplate = Nameplate(
     uRIOfTheProduct="https://www.domain-abc.com/Model-Nr-1234/Serial-Nr-5678",
@@ -71,12 +79,12 @@ nameplate = Nameplate(
 
 ## Installation
 
-**Sub2Py** can be installed from PyPI, the Python Package Index, just as nearly every other Python package:
+You can install **Sub2Py** from PyPI, the Python Package Index, like any other Python package, using the following command:
 ```bash
 pip install sub2py
 ```
 
-For working with the current development version, you can also install the package directly from GitHub, using Pip's Git feature:
+To work with the current development version, you can install the package directly from GitHub using Pip's Git feature:
 ```bash
 pip install git+https://github.com/zrgt/sub2py.git@main
 ```
@@ -86,15 +94,14 @@ pip install git+https://github.com/zrgt/sub2py.git@main
 To generate code, you need to invoke the ``submodel_to_code.py`` script. If the generated code exists, you need to
 specify ``--force`` command-line argument in order to overwrite the existing files.
 
-To generate submodel classes for submodels saved in ``/some/path/DigitalNameplate.aasx``, invoke:
-
+To generate submodel classes for submodels saved in ``/some/path/DigitalNameplate.aasx`` and output the generated code to ``/some/path/output.py``, run the following command:
 ```bash
     submodel_to_code.py \
         --aas_path /some/path/DigitalNameplate.aasx \
         --outpath /some/path/output.py
 ```
 
-You can also generate classes using **sub2py** in python scripts: 
+Alternatively, you can generate classes using **Sub2Py** in Python scripts as well:
 ```python
 from sub2py import SubmodelCodegen
 
@@ -109,7 +116,7 @@ In the code above, `SubmodelCodegen` is the main class that provides the code ge
 
 ## Code Templates
 
-- `code_templates`: This directory contains the Jinja templates for the classes that will be generated. You can add and use new templates or modify the existing ones to change the structure of the generated classes.
+The `code_templates` directory contains the Jinja templates for the classes that will be generated. You can add new templates, modify existing ones, or change the structure of the generated classes according to your requirements.
 
 ## Support and Contribution
 
