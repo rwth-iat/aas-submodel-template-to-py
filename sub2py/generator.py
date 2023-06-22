@@ -26,14 +26,15 @@ class SubmodelCodegen:
 
     def generate_from(self, input_file: Union[str, pathlib.Path],
                       output_file: Union[str, pathlib.Path] = "output.py"):
-        if input_file.lower().endswith(".aasx"):
+        input_str = str(input_file).lower()
+        if input_str.endswith(".aasx"):
             obj_store = DictObjectStore()
             file_store = DictSupplementaryFileContainer()
             AASXReader(input_file).read_into(obj_store, file_store)
-        elif input_file.lower().endswith(".json"):
+        elif input_str.endswith(".json"):
             with open(input_file, "r", encoding='utf-8-sig') as f:
                 obj_store = read_aas_json_file(f)
-        elif input_file.lower().endswith(".xml"):
+        elif input_str.endswith(".xml"):
             with open(input_file, 'rb') as xml_file:
                 obj_store = read_aas_xml_file(xml_file)
 
