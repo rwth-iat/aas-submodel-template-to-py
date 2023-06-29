@@ -37,6 +37,6 @@ setup(
     package_data={'asttp': ['code_templates/*.pyi']},
     entry_points={
         'console_scripts': [
-            'submodel_to_code.py = asttp.submodel_to_code:main',
+            'submodel_to_code = asttp.submodel_to_code:main',
         ],
     })

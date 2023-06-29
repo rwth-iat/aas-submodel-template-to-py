@@ -91,7 +91,13 @@ specify ``--force`` command-line argument in order to overwrite the existing fil
 
 To generate submodel classes for submodels saved in ``/some/path/DigitalNameplate.aasx`` and output the generated code to ``/some/path/output.py``, run the following command:
 ```bash
-    submodel_to_code.py \
+    submodel_to_code \
+        --aas_path /some/path/DigitalNameplate.aasx \
+        --outpath /some/path/output.py
+```
+If the previous method does not work try the following command:
+```bash
+    python -m asttp.submodel_to_code \
         --aas_path /some/path/DigitalNameplate.aasx \
         --outpath /some/path/output.py
 ```
