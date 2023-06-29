@@ -35,7 +35,8 @@
 {# Submodel elements will be built if the corresponding SE arg has the following typehint structure: #}
 {# Union[raw_type, SpecificSubmodelElementType] or
     Optional[Union[raw_type, SpecificSubmodelElementType]] or
-     Optional[Iterable[Union[raw_type, SpecificSubmodelElementType]]]
+     Optional[Union[Tuple[raw_type, raw_type], SpecificSubmodelElementType]]] or
+      Optional[Iterable[Union[raw_type, SpecificSubmodelElementType]]] or
     #}
 {% for arg_for_se in args_for_submodel_elements %}
     {% set se_arg_typehint = typehints.get(arg_for_se, '').lstrip("Optional").strip("[]") %}
@@ -44,7 +45,7 @@
         {% set types = se_arg_typehint.lstrip("Union").strip("[]").split(",") %}
 # Build a submodel element if a raw value was passed in the argument
 if {{ arg_for_se }} and not isinstance({{ arg_for_se }}, SubmodelElement):
-    {{ arg_for_se }}=self.{{ types[1] }}({{ arg_for_se }})
+    {{ arg_for_se }}=self.{{ types[-1] }}({{ arg_for_se }})
     {% elif se_arg_typehint.lstrip("Iterable[").startswith("Union") %}
         {% set types = se_arg_typehint.lstrip("Iterable").strip("[]").lstrip("Union").strip("[]").split(",") %}
 # Build a list of submodel elements if a raw values were passed in the argument
