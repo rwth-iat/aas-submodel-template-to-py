@@ -8,7 +8,7 @@ from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
-    ReferenceElement, ModelingKind, AbstractObjectStore, Range, File
+    ReferenceElement, ModelingKind, AbstractObjectStore, SubmodelElementList, Range, File
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -75,6 +75,10 @@ class SubmodelCodegen:
                 typehint = f"Union[LangStringSet, {typehint}]"
             elif isinstance(se, ReferenceElement):
                 typehint = f"Union[Reference, {typehint}]"
+            elif isinstance(se, SubmodelElementList) \
+                    and se.type_value_list_element is Property \
+                    and se.value_type_list_element is not None:
+                typehint = f"Union[Iterable[{StringHandler.reprify(se.value_type_list_element)}], {typehint}]"
 
         if ReferableHandler.is_iterable(se):
             typehint = f"Iterable[{typehint}]"
@@ -91,8 +95,8 @@ class SubmodelCodegen:
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
-        render_kwargs["kwargs"].pop("identification")
-        render_kwargs["args"].append("identification")
+        render_kwargs["kwargs"].pop("id_")
+        render_kwargs["args"].append("id_")
 
         embedded_se_classes = "\n\n".join(
             [self.gen_cls_for_se(se) for se in submodel])
@@ -112,8 +116,8 @@ class SubmodelCodegen:
             return self.gen_cls_for_reference_element(se)
         elif isinstance(se, Range):
             return self.gen_cls_for_range(se)
-        elif isinstance(se, SubmodelElementCollection):
-            return self.gen_cls_for_se_collection(se)
+        elif isinstance(se, (SubmodelElementCollection, SubmodelElementList)):
+            return self.gen_cls_for_se_collection_or_list(se)
         elif isinstance(se, File):
             return self.gen_cls_for_file(se)
         else:
@@ -166,7 +170,7 @@ class SubmodelCodegen:
             "typehints": StringHandler.reprify_kwarg_values(typehints)
         }
 
-    def gen_cls_for_se_collection(self,
+    def gen_cls_for_se_collection_or_list(self,
                                   se_collection: SubmodelElementCollection,
                                   template: str = 'se_col_class.pyi') -> str:
         # Define the variables for the template
@@ -179,8 +183,14 @@ class SubmodelCodegen:
         for se, arg in zip(se_collection, collection_items):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
-        embedded_se_classes = "\n\n".join(
-            [self.gen_cls_for_se(se) for se in se_collection])
+        if isinstance(se_collection, SubmodelElementList) and collection_items:
+            collection_items = [collection_items[0]]
+            for se in se_collection:
+                embedded_se_classes = self.gen_cls_for_se(se)
+                break
+        else:
+            embedded_se_classes = "\n\n".join(
+                [self.gen_cls_for_se(se) for se in se_collection])
 
         render_kwargs.update(before_init_content=embedded_se_classes,
                              args_for_submodel_elements=collection_items)
