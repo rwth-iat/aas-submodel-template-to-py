@@ -9,9 +9,9 @@ from . import generator
 def main() -> None:
     """Execute the main routine."""
     parser = argparse.ArgumentParser("Reads a correct file with submodels and produces python submodel-specific classes")
-    parser.add_argument("--aas_path", help="path to the file with submodel/-s (AASX, JSON or XML)", required=True)
-    parser.add_argument("--outpath", help="path to the output file", required=True)
-    parser.add_argument("--force", help="overwrite existing files", action="store_true")
+    parser.add_argument("-i", "--aas_path", help="path to the file with submodel/-s (AASX, JSON or XML)", required=True)
+    parser.add_argument("-o", "--outpath", help="path to the output file", required=True)
+    parser.add_argument("-f", "--force", help="overwrite existing files", action="store_true")
     args = parser.parse_args()
 
     aas_path = pathlib.Path(args.aas_path)
