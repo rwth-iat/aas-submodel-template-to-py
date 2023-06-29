@@ -48,8 +48,11 @@ class SubmodelCodegen:
             if isinstance(obj, Submodel):
                 result = f"{result}\n\n{self.gen_cls_for_submodel(obj)}"
 
-        # Format the rendered class using Black
-        result = black.format_str(result, mode=black.Mode())
+        try:
+            # Format the rendered class using Black
+            result = black.format_str(result, mode=black.Mode())
+        except Exception as e:
+            print(e)
 
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(result)
