@@ -113,7 +113,7 @@ class SubmodelCodegen:
             return self.gen_cls_for_reference_element(se)
         elif isinstance(se, Range):
             return self.gen_cls_for_range(se)
-            elif isinstance(se, (SubmodelElementCollection, SubmodelElementList)):
+        elif isinstance(se, (SubmodelElementCollection, SubmodelElementList)):
             return self.gen_cls_for_se_collection_or_list(se)
         else:
             return self.render_cls_with_template(
