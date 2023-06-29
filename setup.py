@@ -14,12 +14,12 @@ with open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='sub2py',
+    name='aas-submodel-template-to-py',
     version='0.1.1',
     description='Generate Submodel-Specific classes with filled metainformation derived from submodel templates',
     long_description_content_type='text/markdown',
     long_description=long_description,
-    url='https://github.com/zrgt/sub2py',
+    url='https://github.com/zrgt/aas-submodel-template-to-py',
     author='Igor Garmaev',
     author_email='garmaev@gmx.net',
     classifiers=[
@@ -33,10 +33,10 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     python_requires='>=3.7',
     install_requires=['basyx-python-sdk @ git+https://github.com/zrgt/basyx-python-sdk@main', 'jinja2>=3.1.2,<4', 'black'],
-    py_modules=['sub2py'],
-    package_data={'sub2py': ['code_templates/*.pyi']},
+    py_modules=['asttp'],
+    package_data={'asttp': ['code_templates/*.pyi']},
     entry_points={
         'console_scripts': [
-            'submodel_to_code.py = sub2py.submodel_to_code:main',
+            'submodel_to_code.py = asttp.submodel_to_code:main',
         ],
     })

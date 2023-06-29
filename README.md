@@ -1,6 +1,6 @@
-# Sub2Py - AAS Submodel Python Code Generator
+# aas-submodel-template-to-py - AAS Submodel Python Code Generator
 
-**Sub2Py** is a code generator tool built on top of the 
+**aas-submodel-template-to-py** is a code generator tool built on top of the 
 [BaSyx-Python-SDK](https://github.com/eclipse-basyx/basyx-python-sdk). 
 It is designed to generate Submodel-specific classes and classes for its 
 submodel elements with filled meta-information derived from submodel templates. 
@@ -10,7 +10,7 @@ The hierarchical structure of the generated submodel-specific class includes
 all the required submodel element-specific classes.
 
 ## Missing Features
-Sub2Py currently works only with AAS files that are consistent with the AAS Metamodel V2.0.1. However, we plan to introduce the following improvements:
+aas-submodel-template-to-py currently works only with AAS files that are consistent with the AAS Metamodel V2.0.1. However, we plan to introduce the following improvements:
 - Support AAS Metamodel V3.0 
 - Simultaneous support for multiple AAS-Metamodel versions 
   - Simultaneous support for multiple basyx-python-sdk versions 
@@ -79,14 +79,9 @@ nameplate = Nameplate(
 
 ## Installation
 
-You can install **Sub2Py** from PyPI, the Python Package Index, like any other Python package, using the following command:
-```bash
-pip install sub2py
-```
-
 To work with the current development version, you can install the package directly from GitHub using Pip's Git feature:
 ```bash
-pip install git+https://github.com/zrgt/sub2py.git@master
+pip install git+https://github.com/zrgt/aas-submodel-template-to-py.git@master
 ```
 
 ## Usage
@@ -101,9 +96,9 @@ To generate submodel classes for submodels saved in ``/some/path/DigitalNameplat
         --outpath /some/path/output.py
 ```
 
-Alternatively, you can generate classes using **Sub2Py** in Python scripts as well:
+Alternatively, you can generate classes using **aas-submodel-template-to-py** in Python scripts as well:
 ```python
-from sub2py import SubmodelCodegen
+from asttp import SubmodelCodegen
 
 codegen = SubmodelCodegen()
 codegen.generate_from(

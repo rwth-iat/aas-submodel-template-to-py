@@ -12,8 +12,8 @@ from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
 
 from jinja2 import Environment, FileSystemLoader
 
-from sub2py import util
-from sub2py.util import StringHandler, ReferableHandler, NamingGenerator, \
+from asttp import util
+from asttp.util import StringHandler, ReferableHandler, NamingGenerator, \
     get_typehints_for_args
 
 CODE_TEMPLATES = os.path.join(os.path.dirname(__file__), 'code_templates')
