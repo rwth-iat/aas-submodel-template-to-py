@@ -65,6 +65,7 @@ class Nameplate(Submodel):
 Here's an example of instantiating the **DigitalNameplate** Submodel: 
 ```python
 nameplate = Nameplate(
+    identification=Identifier(id_="www.example.com/ids/sm/1234", id_type=IdentifierType.IRI),
     uRIOfTheProduct="https://www.domain-abc.com/Model-Nr-1234/Serial-Nr-5678",
     manufacturerName={'de': 'Muster AG'},
     manufacturerProductDesignation={'en': 'ABC-123'},
