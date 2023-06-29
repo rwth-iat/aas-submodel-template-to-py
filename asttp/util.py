@@ -4,6 +4,7 @@ import keyword
 import typing
 from typing import List, Dict, Tuple
 from basyx.aas.model import *
+from basyx.aas.model.submodel import _SE
 
 
 class NamingGenerator:
@@ -78,12 +79,14 @@ class StringHandler:
     @classmethod
     def reprify(cls, val):
         typehint_reprs = {
-            DataTypeDef: "DataTypeDef",
+            DataTypeDefXsd: "DataTypeDefXsd",
             ValueDataType: "ValueDataType",
             LangStringSet: "LangStringSet",
-            Optional[DataTypeDef]: "Optional[DataTypeDef]",
+            Optional[DataTypeDefXsd]: "Optional[DataTypeDefXsd]",
             Optional[ValueDataType]: "Optional[ValueDataType]",
             Optional[LangStringSet]: "Optional[LangStringSet]",
+            _SE: "SubmodelElement",
+            Type[_SE]: "SubmodelElement",
         }
         for typehint in typehint_reprs:
             if val == typehint:
@@ -114,7 +117,7 @@ class StringHandler:
             return str(val)
         elif isinstance(val, List):
             return f"[{', '.join([cls.reprify(i) for i in val])}]"
-        elif isinstance(val, (tuple, NamespaceSet)):
+        elif isinstance(val, (tuple, NamespaceSet, ConstrainedList)):
             res = f"({', '.join([cls.reprify(i) for i in val])})"
             if len(val) == 1:
                 res = f"{res[:-1]},)"
