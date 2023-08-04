@@ -8,7 +8,7 @@ from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
-    ReferenceElement, ModelingKind, AbstractObjectStore, Range
+    ReferenceElement, ModelingKind, AbstractObjectStore, Range, File
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -114,6 +114,8 @@ class SubmodelCodegen:
             return self.gen_cls_for_range(se)
         elif isinstance(se, SubmodelElementCollection):
             return self.gen_cls_for_se_collection(se)
+        elif isinstance(se, File):
+            return self.gen_cls_for_file(se)
         else:
             return self.render_cls_with_template(
                 template, **self.default_referable_render_kwargs(se))
@@ -213,4 +215,17 @@ class SubmodelCodegen:
             se, exclude_from_args=["min", "max"], include_in_args=["min", "max"])
         render_kwargs["typehints"]["min"] = StringHandler.reprify(se.value_type)
         render_kwargs["typehints"]["max"] = StringHandler.reprify(se.value_type)
+        return self.render_cls_with_template(template, **render_kwargs)
+
+    def gen_cls_for_file(self, se: File,
+                         template: str = 'base_class.pyi') -> str:
+        if se.mime_type == "{arbitrary}":
+            render_kwargs = self.default_referable_render_kwargs(
+                se, exclude_from_args=["value", "mime_type"],
+                include_in_args=["value", "mime_type"])
+            render_kwargs["typehints"]["value"] = "str"
+            render_kwargs["typehints"]["mime_type"] = "str"
+        else:
+            render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
+            render_kwargs["typehints"]["value"] = "str"
         return self.render_cls_with_template(template, **render_kwargs)
