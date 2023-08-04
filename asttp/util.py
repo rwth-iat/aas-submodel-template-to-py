@@ -95,7 +95,7 @@ class StringHandler:
             return cls.remove_parent_modules_in_typehint(repr(val))
         elif type(val) is str:
             if "'" in val:
-                return f'"{val}"'
+                val = val.replace("'", r"\'")
             return f"'{val}'"
         elif type(val) in (bool, int, float):
             return str(val)
