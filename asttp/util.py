@@ -156,8 +156,8 @@ def get_mapped_attr_of_arg(obj, arg: str):
         if arg == "items" and isinstance(obj, NamespaceSet):
             items = tuple([i for i in obj])
             return items
-        elif arg == "target_type" and isinstance(obj, AASReference):
-            return obj.type
+        elif arg == "dict_" and isinstance(obj, LangStringSet):
+            return obj._dict
         else:
             raise e
 

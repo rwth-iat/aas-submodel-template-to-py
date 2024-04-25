@@ -8,7 +8,7 @@ from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
-    ReferenceElement, ModelingKind, AbstractObjectStore, SubmodelElementList, Range, File
+    ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -137,11 +137,6 @@ class SubmodelCodegen:
         if exclude_from_args is not None:
             exceptions.extend(exclude_from_args)
         referable_kwargs = util.get_kwargs_for_init(referable, exceptions=exceptions)
-
-        # set default value of kind to INSTANCE,
-        # as initialized objects of generated classes will be mostly instances
-        if "kind" in referable_kwargs and referable_kwargs["kind"] is ModelingKind.TEMPLATE:
-            referable_kwargs["kind"] = ModelingKind.INSTANCE
 
         if remove_numeric_ending_from_id_short and hasattr(referable, "id_short"):
             referable_kwargs["id_short"] = util.StringHandler.remove_iteration_ending(referable_kwargs["id_short"])
