@@ -9,12 +9,6 @@ represent classes of the Asset Administration Shell Metamodel.
 The hierarchical structure of the generated submodel-specific class includes 
 all the required submodel element-specific classes.
 
-## Missing Features
-aas-submodel-template-to-py currently works only with AAS files that are consistent with the AAS Metamodel V2.0.1. However, we plan to introduce the following improvements:
-- Support AAS Metamodel V3.0 
-- Simultaneous support for multiple AAS-Metamodel versions 
-  - Simultaneous support for multiple basyx-python-sdk versions 
-
 ## Examples
 
 ### Example of generated classes
