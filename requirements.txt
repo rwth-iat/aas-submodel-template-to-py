@@ -1,3 +1,3 @@
-basyx-python-sdk
+git+https://github.com/eclipse-basyx/basyx-python-sdk.git@develop#subdirectory=sdk
 jinja2>=3.1.2,<4
 black
