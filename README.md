@@ -76,7 +76,7 @@ nameplate = Nameplate(
 
 To work with the current development version, you can install the package directly from GitHub using Pip's Git feature:
 ```bash
-pip install git+https://github.com/zrgt/aas-submodel-template-to-py.git@master
+pip install git+https://github.com/rwth-iat/aas-submodel-template-to-py.git@master
 ```
 
 ## Usage
