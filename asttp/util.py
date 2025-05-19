@@ -16,12 +16,12 @@ class NamingGenerator:
 
     @classmethod
     def create_arg_name_for_referable(cls, obj: Referable) -> str:
-        res = StringHandler.lower_first(obj.id_short)
-        res = StringHandler.remove_iteration_ending(res)
-        # check if res is one of python reserved keywords
-        if res in keyword.kwlist:
-            return f"{res}_"
-        return res
+        arg_name = StringHandler.lower_first(obj.id_short)
+        arg_name = StringHandler.remove_iteration_ending(arg_name)
+        # check if arg_name is one of python reserved keywords or is already used in the class as an attribute
+        if arg_name in keyword.kwlist or hasattr(obj, arg_name):
+            return f"{arg_name}_"
+        return arg_name
 
 
 class ReferableHandler:
@@ -65,6 +65,8 @@ class StringHandler:
         val = re.sub(r'\{\d+\}$', '', val)
         # remove one or more digits at the end
         val = re.sub(r'_?\d+$', '', val)
+        # remove one or more digits at the end like something__00__
+        val = re.sub(r'__\d+__$', '', val)
         return val
 
     @classmethod
