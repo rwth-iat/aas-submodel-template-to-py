@@ -4,6 +4,7 @@ import keyword
 import typing
 from typing import List, Dict, Tuple
 from basyx.aas.model import *
+from basyx.aas.model.submodel import _SE
 
 
 class NamingGenerator:
@@ -15,12 +16,12 @@ class NamingGenerator:
 
     @classmethod
     def create_arg_name_for_referable(cls, obj: Referable) -> str:
-        res = StringHandler.lower_first(obj.id_short)
-        res = StringHandler.remove_iteration_ending(res)
-        # check if res is one of python reserved keywords
-        if res in keyword.kwlist:
-            return f"{res}_"
-        return res
+        arg_name = StringHandler.lower_first(obj.id_short)
+        arg_name = StringHandler.remove_iteration_ending(arg_name)
+        # check if arg_name is one of python reserved keywords or is already used in the class as an attribute
+        if arg_name in keyword.kwlist or hasattr(obj, arg_name):
+            return f"{arg_name}_"
+        return arg_name
 
 
 class ReferableHandler:
@@ -64,6 +65,8 @@ class StringHandler:
         val = re.sub(r'\{\d+\}$', '', val)
         # remove one or more digits at the end
         val = re.sub(r'_?\d+$', '', val)
+        # remove one or more digits at the end like something__00__
+        val = re.sub(r'__\d+__$', '', val)
         return val
 
     @classmethod
@@ -78,12 +81,14 @@ class StringHandler:
     @classmethod
     def reprify(cls, val):
         typehint_reprs = {
-            DataTypeDef: "DataTypeDef",
+            DataTypeDefXsd: "DataTypeDefXsd",
             ValueDataType: "ValueDataType",
             LangStringSet: "LangStringSet",
-            Optional[DataTypeDef]: "Optional[DataTypeDef]",
+            Optional[DataTypeDefXsd]: "Optional[DataTypeDefXsd]",
             Optional[ValueDataType]: "Optional[ValueDataType]",
             Optional[LangStringSet]: "Optional[LangStringSet]",
+            _SE: "SubmodelElement",
+            Type[_SE]: "SubmodelElement",
         }
         for typehint in typehint_reprs:
             if val == typehint:
@@ -116,7 +121,7 @@ class StringHandler:
             return str(val)
         elif isinstance(val, List):
             return f"[{', '.join([cls.reprify(i) for i in val])}]"
-        elif isinstance(val, (tuple, NamespaceSet)):
+        elif isinstance(val, (tuple, NamespaceSet, ConstrainedList)):
             res = f"({', '.join([cls.reprify(i) for i in val])})"
             if len(val) == 1:
                 res = f"{res[:-1]},)"
@@ -153,8 +158,8 @@ def get_mapped_attr_of_arg(obj, arg: str):
         if arg == "items" and isinstance(obj, NamespaceSet):
             items = tuple([i for i in obj])
             return items
-        elif arg == "target_type" and isinstance(obj, AASReference):
-            return obj.type
+        elif arg == "dict_" and isinstance(obj, LangStringSet):
+            return obj._dict
         else:
             raise e
 

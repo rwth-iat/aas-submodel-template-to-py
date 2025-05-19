@@ -3,7 +3,7 @@
 import argparse
 import pathlib
 
-from . import generator
+from asttp import generator
 
 
 def main() -> None:
