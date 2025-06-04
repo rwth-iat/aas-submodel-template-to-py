@@ -1,8 +1,6 @@
 import enum
-import inspect
 import keyword
 import typing
-from typing import List, Dict, Tuple
 from basyx.aas.model import *
 from basyx.aas.model.submodel import _SE
 
@@ -162,18 +160,6 @@ def get_mapped_attr_of_arg(obj, arg: str):
             return obj._dict
         else:
             raise e
-
-
-def get_kwargs_and_typehints_from(obj, exceptions: Tuple[str] = ("parent",)):
-    args: List[str] = inspect.getfullargspec(type(obj).__init__).args
-    args.remove("self")
-
-    kwargs = dict()
-    for arg in args:
-        if arg in exceptions:
-            continue
-        kwargs[arg] = get_mapped_attr_of_arg(obj, arg)
-    return kwargs
 
 
 def get_kwargs_for_init(obj, exceptions: Tuple[str] = ("parent",)):

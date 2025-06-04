@@ -6,7 +6,7 @@ import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
 from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
-from basyx.aas.model import Property, Referable, Qualifiable, Submodel, \
+from basyx.aas.model import Property, Referable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
     ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File
 
@@ -37,6 +37,9 @@ class SubmodelCodegen:
         elif input_str.endswith(".xml"):
             with open(input_file, 'rb') as xml_file:
                 obj_store = read_aas_xml_file(xml_file)
+        else:
+            raise ValueError(f"Unsupported file format: {input_file}. "
+                             "Supported formats are .aasx, .json, and .xml.")
 
         self.generate_from_obj_store(obj_store, output_file)
 
@@ -180,9 +183,9 @@ class SubmodelCodegen:
 
         if isinstance(se_collection, SubmodelElementList) and collection_items:
             collection_items = [collection_items[0]]
-            for se in se_collection:
+            first_element = next(iter(se_collection), None)
+            if first_element is not None:
                 embedded_se_classes = self.gen_cls_for_se(se)
-                break
         else:
             embedded_se_classes = "\n\n".join(
                 [self.gen_cls_for_se(se) for se in se_collection])

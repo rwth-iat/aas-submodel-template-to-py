@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""""Reads a correct file with submodels and produces python submodel-specific classes."""
+"""Reads a correct file with submodels and produces python submodel-specific classes."""
 import argparse
 import pathlib
 
