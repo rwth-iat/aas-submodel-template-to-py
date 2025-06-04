@@ -224,12 +224,12 @@ class SubmodelCodegen:
 
     def gen_cls_for_file(self, se: File,
                          template: str = 'base_class.pyi') -> str:
-        if se.mime_type == "{arbitrary}":
+        if se.content_type == "{arbitrary}":
             render_kwargs = self.default_referable_render_kwargs(
-                se, exclude_from_args=["value", "mime_type"],
-                include_in_args=["value", "mime_type"])
+                se, exclude_from_args=["value", "content_type"],
+                include_in_args=["value", "content_type"])
             render_kwargs["typehints"]["value"] = "str"
-            render_kwargs["typehints"]["mime_type"] = "str"
+            render_kwargs["typehints"]["content_type"] = "str"
         else:
             render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
             render_kwargs["typehints"]["value"] = "str"
