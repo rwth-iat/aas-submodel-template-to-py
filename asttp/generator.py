@@ -119,8 +119,10 @@ class SubmodelCodegen:
             return self.gen_cls_for_reference_element(se)
         elif isinstance(se, Range):
             return self.gen_cls_for_range(se)
-        elif isinstance(se, (SubmodelElementCollection, SubmodelElementList)):
-            return self.gen_cls_for_se_collection_or_list(se)
+        elif isinstance(se, SubmodelElementCollection):
+            return self.gen_cls_for_se_collection(se)
+        elif isinstance(se, SubmodelElementList):
+            return self.gen_cls_for_se_list(se)
         elif isinstance(se, File):
             return self.gen_cls_for_file(se)
         else:
@@ -168,30 +170,46 @@ class SubmodelCodegen:
             "typehints": StringHandler.reprify_kwarg_values(typehints)
         }
 
-    def gen_cls_for_se_collection_or_list(self,
+
+    def gen_cls_for_se_list(self, se_list: SubmodelElementList, template: str = 'se_col_class.pyi') -> str:
+        # Define the variables for the template
+        render_kwargs = self.default_referable_render_kwargs(se_list, exclude_from_args=["value"])
+
+        list_item = next(iter(se_list), None)
+        se_list_cls_name = render_kwargs["cls_name"]
+        list_item_cls_name = f"{se_list_cls_name}_item"
+        list_items_arg = f"{se_list_cls_name}_items".lower()
+
+        if list_item:
+            list_item._id_short = list_item_cls_name.lower()
+            embedded_se_classes = self.gen_cls_for_se(list_item)
+
+            # Adjust default id_short value in embedded_se_classes, so that
+            # complies with the spec, that id_short is None for list items
+            pattern = f"id_short: Optional[str]='{list_item_cls_name.lower()}',"
+            replacement = "id_short: Optional[str]=None,"
+            embedded_se_classes = embedded_se_classes.replace(pattern, replacement)
+
+            render_kwargs["typehints"][list_items_arg] = f"Iterable[{self.get_se_typehint(list_item)}]"
+            render_kwargs.update(before_init_content=embedded_se_classes,
+                                 args_for_submodel_elements=[list_items_arg])
+        return self.render_cls_with_template(template, **render_kwargs)
+
+    def gen_cls_for_se_collection(self,
                                   se_collection: SubmodelElementCollection,
                                   template: str = 'se_col_class.pyi') -> str:
         # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(se_collection,
-                                                             exclude_from_args=["value"])
+        render_kwargs = self.default_referable_render_kwargs(se_collection, exclude_from_args=["value"])
+
         # generate arg names for included items of collection
-        collection_items = [NamingGenerator.create_arg_name_for_referable(i) for i in
-                            se_collection]
+        collection_items = [NamingGenerator.create_arg_name_for_referable(i) for i in se_collection]
         # provide args of included items with typehints
         for se, arg in zip(se_collection, collection_items):
             render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
-        if isinstance(se_collection, SubmodelElementList) and collection_items:
-            collection_items = [collection_items[0]]
-            first_element = next(iter(se_collection), None)
-            if first_element is not None:
-                embedded_se_classes = self.gen_cls_for_se(se)
-        else:
-            embedded_se_classes = "\n\n".join(
-                [self.gen_cls_for_se(se) for se in se_collection])
+        embedded_se_classes = "\n\n".join([self.gen_cls_for_se(se) for se in se_collection])
 
-        render_kwargs.update(before_init_content=embedded_se_classes,
-                             args_for_submodel_elements=collection_items)
+        render_kwargs.update(before_init_content=embedded_se_classes, args_for_submodel_elements=collection_items)
         return self.render_cls_with_template(template, **render_kwargs)
 
     def _default_referable_render_kwargs_with_value_in_args(self, se: SubmodelElement):
