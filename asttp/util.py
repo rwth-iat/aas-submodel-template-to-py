@@ -26,7 +26,7 @@ class ReferableHandler:
     @classmethod
     def is_optional(cls, obj: Qualifiable):
         for q in obj.qualifier:
-            if q.type in ("Cardinality", "Multiplicity"):
+            if q.type in ("Cardinality", "Multiplicity", "SMT/Multiplicity", "SMT/Cardinality"):
                 if q.value in ("ZeroToOne", "ZeroToMany"):
                     return True
                 elif q.value in ("One", "OneToMany"):
@@ -36,7 +36,7 @@ class ReferableHandler:
     @classmethod
     def is_iterable(cls, obj: Qualifiable):
         for q in obj.qualifier:
-            if q.type in ("Cardinality", "Multiplicity"):
+            if q.type in ("Cardinality", "Multiplicity", "SMT/Multiplicity", "SMT/Cardinality"):
                 if q.value in ("ZeroToMany", "OneToMany"):
                     return True
                 elif q.value in ("ZeroToOne", "One"):
