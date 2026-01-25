@@ -171,7 +171,7 @@ class SubmodelCodegen:
         }
 
 
-    def gen_cls_for_se_list(self, se_list: SubmodelElementList, template: str = 'se_col_class.pyi') -> str:
+    def gen_cls_for_se_list(self, se_list: SubmodelElementList, template: str = 'se_list_class.pyi') -> str:
         # Define the variables for the template
         render_kwargs = self.default_referable_render_kwargs(se_list, exclude_from_args=["value"])
 
@@ -190,7 +190,7 @@ class SubmodelCodegen:
             replacement = "id_short: Optional[str]=None,"
             embedded_se_classes = embedded_se_classes.replace(pattern, replacement)
 
-            render_kwargs["typehints"][list_items_arg] = f"Iterable[{self.get_se_typehint(list_item)}]"
+            render_kwargs["typehints"][list_items_arg] = f"{self.get_se_typehint(list_item)}"
             render_kwargs.update(before_init_content=embedded_se_classes,
                                  args_for_submodel_elements=[list_items_arg])
         return self.render_cls_with_template(template, **render_kwargs)
