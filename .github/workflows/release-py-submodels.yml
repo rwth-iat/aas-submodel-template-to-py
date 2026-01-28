@@ -1,4 +1,4 @@
-﻿name: Release py-submodels
+name: Release py-submodels
 
 on:
   release:
