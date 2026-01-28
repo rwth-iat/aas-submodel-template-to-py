@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-submodels"
+version = "0.1.1"
+description = "Generated AAS submodel classes"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+authors = [
+  { name = "Igor Garmaev", email = "garmaev@gmx.net" }
+]
+keywords = ["aas", "submodel", "generated", "python"]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = [
+  "basyx-python-sdk @ git+https://github.com/zrgt/basyx-python-sdk@main"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.urls]
+Homepage = "https://github.com/zrgt/aas-submodel-template-to-py"
+
