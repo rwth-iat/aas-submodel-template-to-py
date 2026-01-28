@@ -1,4 +1,4 @@
-﻿name: Release sm-generator (TestPyPI)
+name: Release sm-generator (TestPyPI)
 
 on:
   workflow_dispatch:
