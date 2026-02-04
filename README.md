@@ -92,14 +92,14 @@ To generate submodel classes for submodels saved in ``/some/path/DigitalNameplat
 ```
 If the previous method does not work try the following command:
 ```bash
-    python -m aas_sm_to_py.submodel_to_code \
+    python -m asttp.submodel_to_code \
         --aas_path /some/path/DigitalNameplate.aasx \
         --outpath /some/path/output.py
 ```
 
 Alternatively, you can generate classes using **aas-submodel-template-to-py** in Python scripts as well:
 ```python
-from aas_sm_to_py import SubmodelCodegen
+from asttp import SubmodelCodegen
 
 codegen = SubmodelCodegen()
 codegen.generate_from(
