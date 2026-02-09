@@ -97,6 +97,8 @@ class StringHandler:
         elif isinstance(val, typing._GenericAlias):
             return cls.remove_parent_modules_in_typehint(repr(val))
         elif type(val) is str:
+            if "\d" in val:
+                return f"r'{val}'"
             if "'" in val:
                 val = val.replace("'", r"\'")
             return f"'{val}'"
