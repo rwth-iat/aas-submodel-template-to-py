@@ -34,4 +34,4 @@ submodel_to_code = "aas_sm_to_py.submodel_to_code:main"
 where = ["."]
 
 [tool.setuptools.package-data]
-asttp = ["code_templates/*.pyi"]
+aas_sm_to_py = ["code_templates/*.pyi"]
