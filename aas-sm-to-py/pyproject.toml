@@ -3,7 +3,7 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sm-generator"
+name = "aas-sm-to-py"
 version = "0.1.1"
 description = "Generate Submodel-Specific classes with filled metainformation derived from submodel templates"
 requires-python = ">=3.7"
@@ -28,7 +28,7 @@ dependencies = [
 Homepage = "https://github.com/zrgt/aas-submodel-template-to-py"
 
 [project.scripts]
-submodel_to_code = "asttp.submodel_to_code:main"
+submodel_to_code = "aas_sm_to_py.submodel_to_code:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
