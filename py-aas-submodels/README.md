@@ -1,3 +1,4 @@
-# Submodels Repository
+# py-aas-submodels - Submodels Repository
 
-In this repotitory you will find some submodel templates based python classes, which were automatically generated.
+**py-aas-submodels** is a collection of submodel templates based python classes, which were generated automatically
+using the **aas-sm-to-py** tool.
