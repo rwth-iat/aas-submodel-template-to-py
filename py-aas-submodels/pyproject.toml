@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "py-aas-submodels"
 version = "0.1.1"
 description = "Generated AAS submodel classes"
+readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.7"
 license = { text = "MIT" }
 authors = [
@@ -19,12 +20,12 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "basyx-python-sdk @ git+https://github.com/zrgt/basyx-python-sdk@main"
+  "basyx-python-sdk>=2.0.0"
 ]
 
 [tool.setuptools.packages.find]
 where = ["."]
 
 [project.urls]
-Homepage = "https://github.com/zrgt/aas-submodel-template-to-py"
+Homepage = "https://github.com/rwth-iat/aas-submodel-template-to-py"
 

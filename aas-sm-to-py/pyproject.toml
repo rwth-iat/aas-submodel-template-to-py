@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "aas-sm-to-py"
 version = "0.1.1"
 description = "Generate Submodel-Specific classes with filled metainformation derived from submodel templates"
+readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.7"
 license = { text = "MIT" }
 authors = [
@@ -19,13 +20,13 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "basyx-python-sdk @ git+https://github.com/eclipse-basyx/basyx-python-sdk.git@develop#subdirectory=sdk",
+  "basyx-python-sdk>=2.0.0",
   "jinja2>=3.1.2,<4",
   "black"
 ]
 
 [project.urls]
-Homepage = "https://github.com/zrgt/aas-submodel-template-to-py"
+Homepage = "https://github.com/rwth-iat/aas-submodel-template-to-py"
 
 [project.scripts]
 submodel_to_code = "aas_sm_to_py.submodel_to_code:main"
