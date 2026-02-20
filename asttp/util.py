@@ -99,7 +99,8 @@ class StringHandler:
         elif type(val) is str:
             if "'" in val:
                 val = val.replace("'", r"\'")
-            return f"'{val}'"
+                return f"'{val}'"
+            return f"r'{val}'"
         elif type(val) in (bool, int, float):
             return str(val)
         elif type(val) is dict:
