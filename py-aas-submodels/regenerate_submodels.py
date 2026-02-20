@@ -106,15 +106,15 @@ def regenerate_submodels(
                 failures.append((json_file, ex))
                 print(f"[FAIL] {json_file.relative_to(published_dir)}: {ex}")
 
-        if failures and fail_on_errors:
-            return 1
+        should_update_outputs = not (failures and fail_on_errors)
 
-        for py_file in output_dir.glob("*.py"):
-            if py_file.name != "__init__.py":
-                py_file.unlink()
+        if should_update_outputs:
+            for py_file in output_dir.glob("*.py"):
+                if py_file.name != "__init__.py":
+                    py_file.unlink()
 
-        for py_file in staged_output_dir.glob("*.py"):
-            shutil.copy2(py_file, output_dir / py_file.name)
+            for py_file in staged_output_dir.glob("*.py"):
+                shutil.copy2(py_file, output_dir / py_file.name)
 
     log_file.parent.mkdir(parents=True, exist_ok=True)
     if failures:
@@ -126,6 +126,9 @@ def regenerate_submodels(
         log_file.write_text("\n".join(lines), encoding="utf-8")
     elif log_file.exists():
         log_file.unlink()
+
+    if failures and fail_on_errors:
+        return 1
 
     return 0
 
