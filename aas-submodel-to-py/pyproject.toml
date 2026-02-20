@@ -3,7 +3,7 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aas-sm-to-py"
+name = "aas-submodel-to-py"
 version = "0.1.1"
 description = "Generate Submodel-Specific classes with filled metainformation derived from submodel templates"
 readme = {file = "README.md", content-type = "text/markdown"}
@@ -29,10 +29,10 @@ dependencies = [
 Homepage = "https://github.com/rwth-iat/aas-submodel-template-to-py"
 
 [project.scripts]
-submodel_to_code = "aas_sm_to_py.submodel_to_code:main"
+submodel_to_code = "aas_submodel_to_py.submodel_to_code:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
 
 [tool.setuptools.package-data]
-aas_sm_to_py = ["code_templates/*.pyi"]
+aas_submodel_to_py = ["code_templates/*.pyi"]

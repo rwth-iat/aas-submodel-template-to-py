@@ -3,7 +3,7 @@
 import argparse
 import pathlib
 
-from aas_sm_to_py import generator
+from aas_submodel_to_py import generator
 
 
 def main() -> None:

@@ -1,13 +1,14 @@
-# aas-sm-to-py - AAS Submodel Python Code Generator
+# aas-submodel-to-py - AAS Submodel Python Code Generator
 
-**aas-sm-to-py** is a code generator tool built on top of the
+**aas-submodel-to-py** is a code generator tool built on top of the
 [BaSyx-Python-SDK](https://github.com/eclipse-basyx/basyx-python-sdk).
 It is designed to generate Submodel-specific classes and classes for its
 submodel elements with filled meta-information derived from submodel templates.
 These generated classes act as child classes of the BaSyx-Python-SDK classes and
 represent classes of the Asset Administration Shell Metamodel.
 The hierarchical structure of the generated submodel-specific class includes
-all the required submodel element-specific classes.
+all the required submodel element-specific classes. Input files can be `.aasx`,
+`.json`, or `.xml` format.
 
 ## Examples
 
@@ -78,57 +79,68 @@ nameplate = Nameplate(
 )
 ```
 
+All required submodel elements are positional arguments; optional elements default to `None`.
+The output is auto-formatted with Black.
+
 ## Installation
 
 Using PyPI:
 
 ```bash
-pip install aas-sm-to-py
+pip install aas-submodel-to-py
 ```
 
 Or from the repository root:
 
 ```bash
-pip install -e ./aas-sm-to-py
+pip install -e ./aas-submodel-to-py
 ```
 
 ## Usage
 
-To generate code, you need to invoke the ``submodel_to_code.py`` script. If the generated code exists, you need to
-specify ``--force`` command-line argument in order to overwrite the existing files.
-
-To generate submodel classes for submodels saved in ``/some/path/DigitalNameplate.aasx`` and output the generated code
-to ``/some/path/output.py``, run the following command:
+### Command Line
 
 ```bash
-    submodel_to_code \
-        --aas_path /some/path/DigitalNameplate.aasx \
-        --outpath /some/path/output.py
+# First-time generation
+submodel_to_code -i /some/path/DigitalNameplate.aasx -o /some/path/output.py
+
+# Overwrite an existing output file
+submodel_to_code -i /some/path/DigitalNameplate.aasx -o /some/path/output.py --force
 ```
 
-If the previous method does not work try the following command:
+| Flag | Long form | Description | Required |
+|---|---|---|---|
+| `-i` | `--aas_path` | Input AAS file (`.aasx`, `.json`, or `.xml`) | Yes |
+| `-o` | `--outpath` | Output `.py` file path | Yes |
+| `-f` | `--force` | Overwrite the output file if it already exists | No |
+
+If the entry-point is not on PATH, use the module invocation:
 
 ```bash
-    python -m aas_sm_to_py.submodel_to_code \
-        --aas_path /some/path/DigitalNameplate.aasx \
-        --outpath /some/path/output.py
+python -m aas_submodel_to_py.submodel_to_code \
+    -i /some/path/DigitalNameplate.aasx \
+    -o /some/path/output.py
 ```
 
-Alternatively, you can generate classes using **aas-sm-to-py** in Python scripts as well:
+### Python API
 
 ```python
-from aas_sm_to_py import SubmodelCodegen
+from aas_submodel_to_py import SubmodelCodegen
 
 codegen = SubmodelCodegen()
+
+# Generate from an AAS file (.aasx, .json, or .xml)
 codegen.generate_from(
     input_file="/some/path/DigitalNameplate.aasx",
     output_file="nameplate.py"
 )
-```
 
-In the code above, `SubmodelCodegen` is the main class that provides the code generation functionality. The
-`generate_from` method generates Python classes from an AAS file (.AASX, .JSON, .XML). The generated classes are written
-to a Python file.
+# If you already have an AAS object store loaded in memory
+codegen.generate_from_obj_store(
+    obj_store=my_existing_store,
+    output_file="output.py"
+)
+```
 
 ## Support and Contribution
 
