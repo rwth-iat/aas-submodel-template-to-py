@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -16,8 +17,6 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 AAS_SUBMODEL_TO_PY_PATH = REPO_ROOT / "aas-submodel-to-py"
 if str(AAS_SUBMODEL_TO_PY_PATH) not in sys.path:
     sys.path.insert(0, str(AAS_SUBMODEL_TO_PY_PATH))
-
-from aas_submodel_to_py.generator import SubmodelCodegen  # noqa: E402
 
 
 def run_command(cmd: list[str], cwd: Path | None = None) -> None:
@@ -73,10 +72,7 @@ def regenerate_submodels(
     fail_on_errors: bool,
 ) -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
-
-    for py_file in output_dir.glob("*.py"):
-        if py_file.name != "__init__.py":
-            py_file.unlink()
+    from aas_submodel_to_py.generator import SubmodelCodegen
 
     codegen = SubmodelCodegen()
     failures: list[tuple[Path, Exception]] = []
@@ -88,6 +84,8 @@ def regenerate_submodels(
 
         published_dir = templates_dir / "published"
         json_files = sorted(published_dir.rglob("*.json"))
+        staged_output_dir = temp_path / "generated"
+        staged_output_dir.mkdir(parents=True, exist_ok=True)
 
         name_collisions: dict[str, int] = {}
         for json_file in json_files:
@@ -99,7 +97,7 @@ def regenerate_submodels(
             else:
                 name_collisions[output_name] = 0
 
-            output_file = output_dir / output_name
+            output_file = staged_output_dir / output_name
 
             try:
                 codegen.generate_from(input_file=json_file, output_file=output_file)
@@ -107,6 +105,16 @@ def regenerate_submodels(
             except Exception as ex:  # noqa: BLE001
                 failures.append((json_file, ex))
                 print(f"[FAIL] {json_file.relative_to(published_dir)}: {ex}")
+
+        if failures and fail_on_errors:
+            return 1
+
+        for py_file in output_dir.glob("*.py"):
+            if py_file.name != "__init__.py":
+                py_file.unlink()
+
+        for py_file in staged_output_dir.glob("*.py"):
+            shutil.copy2(py_file, output_dir / py_file.name)
 
     log_file.parent.mkdir(parents=True, exist_ok=True)
     if failures:
@@ -119,8 +127,6 @@ def regenerate_submodels(
     elif log_file.exists():
         log_file.unlink()
 
-    if failures and fail_on_errors:
-        return 1
     return 0
 
 

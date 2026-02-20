@@ -35,7 +35,7 @@ jobs:
           pip install -e ./aas-submodel-to-py
 
       - name: Regenerate submodels from published templates
-        run: python py-aas-submodels/regenerate_submodels.py
+        run: python py-aas-submodels/regenerate_submodels.py --fail-on-errors
 
       - name: Commit generated changes
         run: |
@@ -43,9 +43,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add py-aas-submodels/py_aas_submodels
-            if [[ -f py-aas-submodels/generation_failures.log ]]; then
-              git add py-aas-submodels/generation_failures.log
-            fi
+            git add -A py-aas-submodels/generation_failures.log
             git commit -m "chore: regenerate published submodels"
             git push
           else
