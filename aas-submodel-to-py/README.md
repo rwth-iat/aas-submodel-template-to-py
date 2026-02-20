@@ -101,8 +101,12 @@ pip install -e ./aas-submodel-to-py
 ### Command Line
 
 ```bash
-# First-time generation
+# Specify the output file explicitly
 submodel_to_code -i /some/path/DigitalNameplate.aasx -o /some/path/output.py
+
+# Let the filename be derived from the input (hyphens/spaces → underscores)
+# e.g. IDTA-02006-2-0_Submodel_Digital Nameplate.aasx → IDTA_02006_2_0_Submodel_Digital_Nameplate.py
+submodel_to_code -i /some/path/DigitalNameplate.aasx -d /some/path/
 
 # Overwrite an existing output file
 submodel_to_code -i /some/path/DigitalNameplate.aasx -o /some/path/output.py --force
@@ -111,7 +115,8 @@ submodel_to_code -i /some/path/DigitalNameplate.aasx -o /some/path/output.py --f
 | Flag | Long form | Description | Required |
 |---|---|---|---|
 | `-i` | `--aas_path` | Input AAS file (`.aasx`, `.json`, or `.xml`) | Yes |
-| `-o` | `--outpath` | Output `.py` file path | Yes |
+| `-o` | `--outpath` | Output `.py` file path (mutually exclusive with `-d`) | One of `-o`/`-d` |
+| `-d` | `--outdir` | Output directory; filename is derived from the input filename (mutually exclusive with `-o`) | One of `-o`/`-d` |
 | `-f` | `--force` | Overwrite the output file if it already exists | No |
 
 If the entry-point is not on PATH, use the module invocation:
