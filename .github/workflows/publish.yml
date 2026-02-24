@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: release
     permissions:
+      contents: read
       id-token: write
 
     steps:
@@ -31,11 +32,12 @@ jobs:
         with:
           packages-dir: py-aas-submodels/dist
 
-  publish-aas-sm-to-py:
-    name: Upload aas-sm-to-py to PyPI
+  publish-aas-submodel-to-py:
+    name: Upload aas-submodel-to-py to PyPI
     runs-on: ubuntu-latest
     environment: release
     permissions:
+      contents: read
       id-token: write
 
     steps:
@@ -49,10 +51,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel build
       - name: Create source and wheel dist
-        working-directory: aas-sm-to-py
+        working-directory: aas-submodel-to-py
         run: |
           python -m build
       - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: aas-sm-to-py/dist
+          packages-dir: aas-submodel-to-py/dist

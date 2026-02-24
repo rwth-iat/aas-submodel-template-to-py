@@ -3,16 +3,16 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "py-aas-submodels"
+name = "aas-submodel-to-py"
 version = "0.1.1"
-description = "Generated AAS submodel classes"
+description = "Generate Submodel-Specific classes with filled metainformation derived from submodel templates"
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.7"
 license = { text = "MIT" }
 authors = [
   { name = "Igor Garmaev", email = "garmaev@gmx.net" }
 ]
-keywords = ["aas", "submodel", "generated", "python"]
+keywords = ["aas", "submodel", "class", "code", "generation", "python"]
 classifiers = [
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
@@ -20,12 +20,19 @@ classifiers = [
   "Operating System :: OS Independent"
 ]
 dependencies = [
-  "basyx-python-sdk>=2.0.0"
+  "basyx-python-sdk>=2.0.0",
+  "jinja2>=3.1.2,<4",
+  "black"
 ]
-
-[tool.setuptools.packages.find]
-where = ["."]
 
 [project.urls]
 Homepage = "https://github.com/rwth-iat/aas-submodel-template-to-py"
 
+[project.scripts]
+submodel_to_code = "aas_submodel_to_py.submodel_to_code:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+aas_submodel_to_py = ["code_templates/*.pyi"]
