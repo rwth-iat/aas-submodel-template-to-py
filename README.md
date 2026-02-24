@@ -32,7 +32,16 @@ from py_aas_submodels.nameplate_02006_2_0 import Nameplate
 
 ```bash
 pip install aas-submodel-to-py
-submodel_to_code -i template.aasx -o output.py
+
+# Minimal: output .py is generated next to the input file
+# e.g. IDTA-02006-2-0_Submodel_Digital Nameplate.aasx → IDTA_02006_2_0_Submodel_Digital_Nameplate.py
+submodel_to_code -i /some/path/DigitalNameplate.aasx
+
+# OR write to a specific output directory (filename still auto-derived)
+submodel_to_code -i /some/path/DigitalNameplate.aasx -d /some/other/path/
+
+# OR write to an explicit output file path
+submodel_to_code -i /some/path/DigitalNameplate.aasx -o /some/path/output.py
 ```
 
 ## Repository Structure

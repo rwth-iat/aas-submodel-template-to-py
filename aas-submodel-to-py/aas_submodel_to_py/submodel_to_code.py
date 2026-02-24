@@ -16,7 +16,7 @@ def main() -> None:
     """Execute the main routine."""
     parser = argparse.ArgumentParser("Reads a correct file with submodels and produces python submodel-specific classes")
     parser.add_argument("-i", "--aas_path", help="path to the file with submodel/-s (AASX, JSON or XML)", required=True)
-    out_group = parser.add_mutually_exclusive_group(required=True)
+    out_group = parser.add_mutually_exclusive_group(required=False)
     out_group.add_argument("-o", "--outpath", help="path to the output file")
     out_group.add_argument("-d", "--outdir", help="output directory; filename is derived from the input filename")
     parser.add_argument("-f", "--force", help="overwrite existing files", action="store_true")
@@ -25,8 +25,10 @@ def main() -> None:
     aas_path = pathlib.Path(args.aas_path)
     if args.outpath:
         out_path = pathlib.Path(args.outpath)
-    else:
+    elif args.outdir:
         out_path = pathlib.Path(args.outdir) / _auto_filename(aas_path)
+    else:
+        out_path = aas_path.parent / _auto_filename(aas_path)
     force = bool(args.force)
 
     if not aas_path.exists():
