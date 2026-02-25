@@ -1,0 +1,11 @@
+Generation failures:
+- Creation and Classification of Materials/1/0/IDTA 02034-1-0 Template_BackendSpecificMaterialInformation.json: The language code of the language tag must consist of exactly two lower-case letters! Given language tag and language code: 'en?', 'en?'
+- Digital Battery Passport/4_Technical Data/1/0/IDTA 02035-4_DBP-Part-4_TechnicalData.json: The text for the language tag 'en' is invalid: MultiLanguageNameType has a maximum length of 64! (length: 73)
+- Digital Battery Passport/4_Technical Data/1/0/IDTA 02035-4_DBP-Part-4_TechnicalData_without_examplevalues.json: The text for the language tag 'en' is invalid: MultiLanguageNameType has a maximum length of 64! (length: 73)
+- Digital nameplate/3/0/IDTA 02006-3-0_Template_Digital Nameplate.json: PathType has a minimum length of 1! (length: 0)
+- Handover Documentation/2/0/IDTA 02004-2-0_Example_HandoverDocumentation.json: PathType has a minimum length of 1! (length: 0)
+- Plant Asset Management Specification Sheet/1/0/IDTA 02019-1-0_Template_PlantAssetManagement.json: could not convert string to float: '[0;100]'
+- Technical Data for Automated Guided Vehicles/1/0/1/IDTA 02047-1-0-1 Template_TechnicalDataForAGV.json: The text for the language tag 'en' is invalid: MultiLanguageNameType has a maximum length of 64! (length: 98)
+- Technical Data for Automated Guided Vehicles/1/0/1/IDTA 02047-1-0-1 Template_TechnicalDataForAGV_forAASMetamodelV3.1.json: The text for the language tag 'en' is invalid: MultiLanguageNameType has a maximum length of 64! (length: 98)
+- Technical Data for Automated Guided Vehicles/1/0/IDTA 02047-1-0 Template_TechnicalDataForAGV.json: The text for the language tag 'en' is invalid: MultiLanguageNameType has a maximum length of 64! (length: 98)
+- Technical_Data/2/0/IDTA 02003_Sample_TechnicalData.json: Identifier has a minimum length of 1! (length: 0)
