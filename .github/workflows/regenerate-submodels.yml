@@ -23,6 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.ref_name }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -42,6 +43,7 @@ jobs:
       - name: Commit generated changes
         if: always()
         run: |
+          TARGET_BRANCH="${GITHUB_REF_NAME:-master}"
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -49,7 +51,7 @@ jobs:
             git add -A py-aas-submodels/generation_failures.log || true
             if [[ -n "$(git diff --cached --name-only)" ]]; then
               git commit -m "chore: regenerate published submodels"
-              git push
+              git push origin "HEAD:${TARGET_BRANCH}"
             else
               echo "No staged changes to commit."
             fi
