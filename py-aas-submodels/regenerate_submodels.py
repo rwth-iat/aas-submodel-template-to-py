@@ -120,7 +120,7 @@ def regenerate_submodels(
     if failures:
         lines = [
             "Generation failures:",
-            *[f"- {file}: {err}" for file, err in failures],
+            *[f"- {file.relative_to(published_dir)}: {err}" for file, err in failures],
             "",
         ]
         log_file.write_text("\n".join(lines), encoding="utf-8")

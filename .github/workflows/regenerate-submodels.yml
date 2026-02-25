@@ -35,9 +35,12 @@ jobs:
           pip install -e ./aas-submodel-to-py
 
       - name: Regenerate submodels from published templates
+        id: regenerate
+        continue-on-error: true
         run: python py-aas-submodels/regenerate_submodels.py --fail-on-errors
 
       - name: Commit generated changes
+        if: always()
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
@@ -53,3 +56,9 @@ jobs:
           else
             echo "No changes to commit."
           fi
+
+      - name: Fail workflow if regeneration had errors
+        if: always() && steps.regenerate.outcome == 'failure'
+        run: |
+          echo "Regeneration completed with errors. See py-aas-submodels/generation_failures.log."
+          exit 1
