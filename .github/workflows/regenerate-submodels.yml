@@ -38,7 +38,14 @@ jobs:
       - name: Regenerate submodels from published templates
         id: regenerate
         continue-on-error: true
-        run: python py-aas-submodels/regenerate_submodels.py --fail-on-errors
+        run: python py-aas-submodels/regenerate_submodels.py --fail-on-errors --log-file /tmp/generation_failures.log
+
+      - name: Upload failure log as artifact
+        if: always() && steps.regenerate.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: generation-failures
+          path: /tmp/generation_failures.log
 
       - name: Commit generated changes
         if: always()
@@ -63,5 +70,5 @@ jobs:
       - name: Fail workflow if regeneration had errors
         if: always() && steps.regenerate.outcome == 'failure'
         run: |
-          echo "Regeneration completed with errors. See py-aas-submodels/generation_failures.log."
+          echo "Regeneration completed with errors. See the 'generation-failures' artifact for details."
           exit 1
