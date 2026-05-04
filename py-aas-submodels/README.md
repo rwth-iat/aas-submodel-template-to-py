@@ -60,6 +60,26 @@ pip install aas-submodel-to-py
 submodel_to_code -i path/to/template.aasx -o output.py
 ```
 
+## Regenerating All Published Submodels
+
+Use the repository script to regenerate all submodels from the
+`published` directory of
+[`admin-shell-io/submodel-templates`](https://github.com/admin-shell-io/submodel-templates):
+
+```bash
+python py-aas-submodels/regenerate_submodels.py
+```
+
+The script:
+- Collects every `.json` template below `published/**`.
+- Generates Python classes via `aas-submodel-to-py`.
+- Applies file-name normalization/replacement for generated Python modules.
+- Logs any conversion failures to `py-aas-submodels/generation_failures.log`.
+
+A GitHub Actions workflow (`.github/workflows/regenerate-submodels.yml`) runs this
+automatically whenever files under `aas-submodel-to-py/**` change on `master`, and daily
+(on schedule) to pick up newly published submodels.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.

@@ -1,0 +1,74 @@
+name: Regenerate published submodels
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "aas-submodel-to-py/**"
+      - ".github/workflows/regenerate-submodels.yml"
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  regenerate-submodels:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install generator package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ./aas-submodel-to-py
+
+      - name: Regenerate submodels from published templates
+        id: regenerate
+        continue-on-error: true
+        run: python py-aas-submodels/regenerate_submodels.py --fail-on-errors --log-file /tmp/generation_failures.log
+
+      - name: Upload failure log as artifact
+        if: always() && steps.regenerate.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: generation-failures
+          path: /tmp/generation_failures.log
+
+      - name: Commit generated changes
+        if: always()
+        run: |
+          TARGET_BRANCH="${GITHUB_REF_NAME:-master}"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A py-aas-submodels
+            if [[ -n "$(git diff --cached --name-only)" ]]; then
+              echo "Staged files:"
+              git diff --cached --name-only
+              git commit -m "chore: regenerate published submodels"
+              git push origin "HEAD:${TARGET_BRANCH}"
+            else
+              echo "No staged changes to commit."
+            fi
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Fail workflow if regeneration had errors
+        if: always() && steps.regenerate.outcome == 'failure'
+        run: |
+          echo "Regeneration completed with errors. See the 'generation-failures' artifact for details."
+          exit 1
