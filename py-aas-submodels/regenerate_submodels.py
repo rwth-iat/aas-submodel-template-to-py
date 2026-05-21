@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import shutil
 import subprocess
@@ -64,6 +65,11 @@ def clone_templates_repo(repo_url: str, ref: str, destination: Path) -> None:
     run_command(["git", "sparse-checkout", "set", "published"], cwd=destination)
 
 
+def load_skip_list() -> frozenset[str]:
+    raw = os.environ.get("SKIP_SUBMODELS", "")
+    return frozenset(line.strip() for line in raw.splitlines() if line.strip())
+
+
 def regenerate_submodels(
     templates_repo: str,
     templates_ref: str,
@@ -77,6 +83,8 @@ def regenerate_submodels(
     codegen = SubmodelCodegen()
     failures: list[tuple[Path, Exception]] = []
 
+    skip_list = load_skip_list()
+
     with tempfile.TemporaryDirectory(prefix="submodel-templates-") as temp_dir:
         temp_path = Path(temp_dir)
         templates_dir = temp_path / "submodel-templates"
@@ -89,6 +97,11 @@ def regenerate_submodels(
 
         name_collisions: dict[str, int] = {}
         for json_file in json_files:
+            rel_path = str(json_file.relative_to(published_dir))
+            if rel_path in skip_list:
+                print(f"[SKIP] {rel_path}")
+                continue
+
             output_name = output_file_name(json_file, published_dir)
             if output_name in name_collisions:
                 name_collisions[output_name] += 1
