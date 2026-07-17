@@ -137,7 +137,7 @@ class ServiceRequestNotification(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"SenderSystem",
-                    entity_type: EntityType = EntityType.CO_MANAGED_ENTITY,
+                    entity_type: Optional[EntityType] = EntityType.CO_MANAGED_ENTITY,
                     statement: Iterable[SubmodelElement] = (),
                     global_asset_id: Optional[str] = None,
                     specific_asset_id: Iterable[SpecificAssetId] = (),
@@ -634,7 +634,7 @@ class ServiceRequestNotification(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"RelatedAsset",
-                entity_type: EntityType = EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.CO_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (),
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[SpecificAssetId] = (),
@@ -1086,7 +1086,7 @@ class ServiceRequestNotification(Submodel):
                             self,
                             value: str,
                             id_short: Optional[str] = r"DigitalFile",
-                            content_type: str = r"image/jpeg",
+                            content_type: Optional[str] = r"image/jpeg",
                             display_name: Optional[
                                 MultiLanguageNameType
                             ] = MultiLanguageNameType(

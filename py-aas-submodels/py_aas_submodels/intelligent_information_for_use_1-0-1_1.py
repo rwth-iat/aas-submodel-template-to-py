@@ -641,7 +641,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasRendition",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -660,7 +660,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -739,7 +739,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasContentLifecycleStatus",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -758,7 +758,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -911,7 +911,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"IsVersionOf",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -930,7 +930,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1010,7 +1010,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToEvent",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1029,7 +1029,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1109,7 +1109,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToSupply",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1128,7 +1128,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1208,7 +1208,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToQualification",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1227,7 +1227,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1307,7 +1307,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasIdentity",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1326,7 +1326,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1405,7 +1405,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToParty",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1424,7 +1424,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1502,7 +1502,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasDocumentType",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1521,7 +1521,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -1592,7 +1592,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToComponent",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1611,7 +1611,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1691,7 +1691,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasSubject",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1710,7 +1710,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -1781,7 +1781,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToAction",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1800,7 +1800,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1880,7 +1880,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductFeature",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1899,7 +1899,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1979,7 +1979,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductLifecyclePhase",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -1998,7 +1998,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2072,7 +2072,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductVariant",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2091,7 +2091,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2171,7 +2171,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasPlanningTime",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2190,7 +2190,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2499,7 +2499,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasTopicType",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2518,7 +2518,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -2589,7 +2589,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"IsVersionOf",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2608,7 +2608,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2688,7 +2688,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToQualification",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2707,7 +2707,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2787,7 +2787,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductVariant",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -2806,7 +2806,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3266,7 +3266,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasRendition",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3285,7 +3285,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3364,7 +3364,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasContentLifecycleStatus",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3383,7 +3383,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3536,7 +3536,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToEvent",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3555,7 +3555,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3635,7 +3635,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToSupply",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3654,7 +3654,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3734,7 +3734,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasIdentity",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3753,7 +3753,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3832,7 +3832,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToParty",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3851,7 +3851,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3929,7 +3929,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToComponent",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -3948,7 +3948,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4028,7 +4028,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasSubject",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4047,7 +4047,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -4118,7 +4118,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToAction",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4137,7 +4137,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4217,7 +4217,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductFeature",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4236,7 +4236,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4316,7 +4316,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductLifecyclePhase",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4335,7 +4335,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4409,7 +4409,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"IsApplicableForDocumentType",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4428,7 +4428,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -4493,7 +4493,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasPlanningTime",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4512,7 +4512,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4823,7 +4823,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductVariant",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -4842,7 +4842,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5302,7 +5302,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasRendition",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5321,7 +5321,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5400,7 +5400,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasContentLifecycleStatus",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5419,7 +5419,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5572,7 +5572,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"IsVersionOf",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5591,7 +5591,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5671,7 +5671,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToEvent",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5690,7 +5690,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5770,7 +5770,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToQualification",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5789,7 +5789,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5869,7 +5869,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToSupply",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5888,7 +5888,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5968,7 +5968,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasIdentity",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -5987,7 +5987,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6066,7 +6066,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToParty",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6085,7 +6085,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6163,7 +6163,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToComponent",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6182,7 +6182,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6262,7 +6262,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasSubject",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6281,7 +6281,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -6352,7 +6352,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToAction",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6371,7 +6371,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6451,7 +6451,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductFeature",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6470,7 +6470,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6550,7 +6550,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToProductLifecyclePhase",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -6569,7 +6569,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -7163,7 +7163,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToInformationUnit",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -7182,7 +7182,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -7414,7 +7414,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasDirectoryStructureType",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -7433,7 +7433,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -7860,7 +7860,7 @@ class IntelligentInformationforUse(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"Source",
-                    content_type: str = r"text/plain",
+                    content_type: Optional[str] = r"text/plain",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -7922,7 +7922,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasSelector",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -7941,7 +7941,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -8086,7 +8086,7 @@ class IntelligentInformationforUse(Submodel):
                     def __init__(
                         self,
                         id_short: Optional[str] = r"HasStartSelector",
-                        first: Reference = ModelReference(
+                        first: Optional[Reference] = ModelReference(
                             key=(
                                 Key(
                                     type_=KeyTypes.SUBMODEL,
@@ -8105,7 +8105,7 @@ class IntelligentInformationforUse(Submodel):
                             type_=Property,
                             referred_semantic_id=None,
                         ),
-                        second: Reference = ModelReference(
+                        second: Optional[Reference] = ModelReference(
                             key=(
                                 Key(
                                     type_=KeyTypes.SUBMODEL,
@@ -8185,7 +8185,7 @@ class IntelligentInformationforUse(Submodel):
                     def __init__(
                         self,
                         id_short: Optional[str] = r"HasEndSelector",
-                        first: Reference = ModelReference(
+                        first: Optional[Reference] = ModelReference(
                             key=(
                                 Key(
                                     type_=KeyTypes.SUBMODEL,
@@ -8204,7 +8204,7 @@ class IntelligentInformationforUse(Submodel):
                             type_=Property,
                             referred_semantic_id=None,
                         ),
-                        second: Reference = ModelReference(
+                        second: Optional[Reference] = ModelReference(
                             key=(
                                 Key(
                                     type_=KeyTypes.SUBMODEL,
@@ -9191,7 +9191,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasContentLifecycleStatusValue",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -9210,7 +9210,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -9281,7 +9281,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToParty",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -9300,7 +9300,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -9619,7 +9619,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasIdentityDomain",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -9638,7 +9638,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -9867,7 +9867,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasPartyRole",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -9886,7 +9886,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.CONCEPT_DESCRIPTION,
@@ -9955,7 +9955,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToVcard",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -9974,7 +9974,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -10132,7 +10132,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasIdentityType",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -10150,7 +10150,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=SubmodelElementCollection,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -10226,7 +10226,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToParty",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -10245,7 +10245,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -10896,7 +10896,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasEventCode",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -10915,7 +10915,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -10992,7 +10992,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"HasEventType",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -11011,7 +11011,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -13075,7 +13075,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"Asset",
-                    entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                    entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                     statement: Iterable[SubmodelElement] = (),
                     global_asset_id: Optional[str] = r"externalAsset",
                     specific_asset_id: Iterable[SpecificAssetId] = (),
@@ -13197,7 +13197,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToParty",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -13216,7 +13216,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -13924,7 +13924,7 @@ class IntelligentInformationforUse(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"RelatesToParty",
-                    first: Reference = ModelReference(
+                    first: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,
@@ -13943,7 +13943,7 @@ class IntelligentInformationforUse(Submodel):
                         type_=Property,
                         referred_semantic_id=None,
                     ),
-                    second: Reference = ModelReference(
+                    second: Optional[Reference] = ModelReference(
                         key=(
                             Key(
                                 type_=KeyTypes.SUBMODEL,

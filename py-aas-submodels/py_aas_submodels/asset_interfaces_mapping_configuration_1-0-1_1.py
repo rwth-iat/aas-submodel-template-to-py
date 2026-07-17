@@ -72,7 +72,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     def __init__(
                         self,
                         id_short: Optional[str] = r"mappingsourcesinkrelations_item",
-                        first: Reference = ExternalReference(
+                        first: Optional[Reference] = ExternalReference(
                             key=(
                                 Key(
                                     type_=KeyTypes.GLOBAL_REFERENCE,
@@ -81,7 +81,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                             ),
                             referred_semantic_id=None,
                         ),
-                        second: Reference = ExternalReference(
+                        second: Optional[Reference] = ExternalReference(
                             key=(
                                 Key(
                                     type_=KeyTypes.GLOBAL_REFERENCE,

@@ -404,6 +404,231 @@ class AssetInterfacesDescription(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
+            class Security(SubmodelElementList):
+
+                class Security_item(ReferenceElement):
+
+                    def __init__(
+                        self,
+                        value: Reference,
+                        id_short: Optional[str] = r"security_item",
+                        display_name: Optional[
+                            MultiLanguageNameType
+                        ] = MultiLanguageNameType(
+                            dict_={r"en": r"Defines Security Scheme"}
+                        ),
+                        category: Optional[str] = None,
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = ()
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    security_items: Union[Reference, Security_item],
+                    id_short: Optional[str] = r"security",
+                    type_value_list_element: SubmodelElement = ReferenceElement,
+                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[
+                        MultiLanguageNameType
+                    ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if security_items and not isinstance(
+                        security_items, SubmodelElement
+                    ):
+                        security_items = self.Security_item(security_items)
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [security_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
+
             class SecurityDefinitions(SubmodelElementCollection):
 
                 class Nosec_sc(SubmodelElementCollection):
@@ -4163,6 +4388,7 @@ class AssetInterfacesDescription(Submodel):
                 self,
                 base: Union[AnyURI, Base],
                 contentType: Union[str, ContentType],
+                security: Security,
                 securityDefinitions: SecurityDefinitions,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -4217,7 +4443,7 @@ class AssetInterfacesDescription(Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [base, contentType, securityDefinitions]:
+                for se_arg in [base, contentType, security, securityDefinitions]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -8284,6 +8510,239 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Security(SubmodelElementList):
+
+                            class Security_item(ReferenceElement):
+
+                                def __init__(
+                                    self,
+                                    value: Reference,
+                                    id_short: Optional[str] = r"security_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Defines Security Scheme"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = ()
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    super().__init__(
+                                        value=value,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                security_items: Union[Reference, Security_item],
+                                id_short: Optional[str] = r"security",
+                                type_value_list_element: SubmodelElement = ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Build a submodel element if a raw value was passed in the argument
+                                if security_items and not isinstance(
+                                    security_items, SubmodelElement
+                                ):
+                                    security_items = self.Security_item(security_items)
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [security_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         class Htv_methodName(Property):
 
                             def __init__(
@@ -8362,12 +8821,443 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Htv_headers(SubmodelElementList):
+
+                            class Htv_headers_item(SubmodelElementCollection):
+
+                                class Htv_fieldName(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: str,
+                                        id_short: Optional[str] = r"htv_fieldName",
+                                        value_type: DataTypeDefXsd = str,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"Htv Field Name"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Defines message header name "
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://www.w3.org/2011/http#fieldName",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"One",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Htv_fieldValue(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: str,
+                                        id_short: Optional[str] = r"htv_fieldValue",
+                                        value_type: DataTypeDefXsd = str,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"Htv Field Value"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Defines message header value"
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://www.w3.org/2011/http#fieldValue",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"One",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                def __init__(
+                                    self,
+                                    htv_fieldName: Union[str, Htv_fieldName],
+                                    htv_fieldValue: Union[str, Htv_fieldValue],
+                                    id_short: Optional[str] = r"htv_headers_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Htv Header"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Defines message header content "
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://www.w3.org/2011/http#headers",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = (
+                                            Qualifier(
+                                                type_=r"Cardinality",
+                                                value_type=str,
+                                                value=r"OneToMany",
+                                                value_id=None,
+                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                semantic_id=None,
+                                                supplemental_semantic_id=(),
+                                            ),
+                                        )
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if htv_fieldName and not isinstance(
+                                        htv_fieldName, SubmodelElement
+                                    ):
+                                        htv_fieldName = self.Htv_fieldName(
+                                            htv_fieldName
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if htv_fieldValue and not isinstance(
+                                        htv_fieldValue, SubmodelElement
+                                    ):
+                                        htv_fieldValue = self.Htv_fieldValue(
+                                            htv_fieldValue
+                                        )
+
+                                    # Add all passed/initialized submodel elements to a single list
+                                    embedded_submodel_elements = []
+                                    for se_arg in [htv_fieldName, htv_fieldValue]:
+                                        if se_arg is None:
+                                            continue
+                                        elif isinstance(se_arg, SubmodelElement):
+                                            embedded_submodel_elements.append(se_arg)
+                                        elif isinstance(se_arg, Iterable):
+                                            for n, element in enumerate(se_arg):
+                                                element.id_short = (
+                                                    f"{element.id_short}{n}"
+                                                )
+                                                embedded_submodel_elements.append(
+                                                    element
+                                                )
+                                        else:
+                                            raise TypeError(
+                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            )
+
+                                    super().__init__(
+                                        value=embedded_submodel_elements,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                htv_headers_items: Iterable[Htv_headers_item],
+                                id_short: Optional[str] = r"htv_headers",
+                                type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2011/http#headers",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[DataTypeDefXsd] = str,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(
+                                    dict_={r"en": r"Htv Headers"}
+                                ),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Defines additional information to be sent within the HTTP header message."
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2011/http#headers",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"ZeroToOne",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                        Qualifier(
+                                            type_=r"Constraint",
+                                            value_type=str,
+                                            value=r"Only applicable for HTTP binding",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [htv_headers_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         def __init__(
                             self,
                             href: Union[str, Href],
+                            security: Security,
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
                             htv_methodName: Optional[Union[str, Htv_methodName]] = None,
+                            htv_headers: Optional[Htv_headers] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -8431,7 +9321,9 @@ class AssetInterfacesDescription(Submodel):
                                 href,
                                 contentType,
                                 subprotocol,
+                                security,
                                 htv_methodName,
+                                htv_headers,
                             ]:
                                 if se_arg is None:
                                     continue
@@ -8959,7 +9851,7 @@ class AssetInterfacesDescription(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"fileName",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(dict_={r"en": r"File Name"}),
@@ -9601,6 +10493,231 @@ class AssetInterfacesDescription(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
+            class Security(SubmodelElementList):
+
+                class Security_item(ReferenceElement):
+
+                    def __init__(
+                        self,
+                        value: Reference,
+                        id_short: Optional[str] = r"security_item",
+                        display_name: Optional[
+                            MultiLanguageNameType
+                        ] = MultiLanguageNameType(
+                            dict_={r"en": r"Defines Security Scheme"}
+                        ),
+                        category: Optional[str] = None,
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = ()
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    security_items: Union[Reference, Security_item],
+                    id_short: Optional[str] = r"security",
+                    type_value_list_element: SubmodelElement = ReferenceElement,
+                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[
+                        MultiLanguageNameType
+                    ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if security_items and not isinstance(
+                        security_items, SubmodelElement
+                    ):
+                        security_items = self.Security_item(security_items)
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [security_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
+
             class SecurityDefinitions(SubmodelElementCollection):
 
                 class Nosec_sc(SubmodelElementCollection):
@@ -9988,6 +11105,7 @@ class AssetInterfacesDescription(Submodel):
                 self,
                 base: Union[AnyURI, Base],
                 contentType: Union[str, ContentType],
+                security: Security,
                 securityDefinitions: SecurityDefinitions,
                 modv_mostSignificantByte: Optional[
                     Union[str, Modv_mostSignificantByte]
@@ -10067,6 +11185,7 @@ class AssetInterfacesDescription(Submodel):
                 for se_arg in [
                     base,
                     contentType,
+                    security,
                     securityDefinitions,
                     modv_mostSignificantByte,
                     modv_mostSignificantWord,
@@ -14137,6 +15256,239 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Security(SubmodelElementList):
+
+                            class Security_item(ReferenceElement):
+
+                                def __init__(
+                                    self,
+                                    value: Reference,
+                                    id_short: Optional[str] = r"security_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Defines Security Scheme"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = ()
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    super().__init__(
+                                        value=value,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                security_items: Union[Reference, Security_item],
+                                id_short: Optional[str] = r"security",
+                                type_value_list_element: SubmodelElement = ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Build a submodel element if a raw value was passed in the argument
+                                if security_items and not isinstance(
+                                    security_items, SubmodelElement
+                                ):
+                                    security_items = self.Security_item(security_items)
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [security_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         class Modv_function(Property):
 
                             def __init__(
@@ -14762,6 +16114,7 @@ class AssetInterfacesDescription(Submodel):
                         def __init__(
                             self,
                             href: Union[str, Href],
+                            security: Security,
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
                             modv_function: Optional[Union[str, Modv_function]] = None,
@@ -14897,6 +16250,7 @@ class AssetInterfacesDescription(Submodel):
                                 href,
                                 contentType,
                                 subprotocol,
+                                security,
                                 modv_function,
                                 modv_entity,
                                 modv_zeroBasedAddressing,
@@ -15423,7 +16777,7 @@ class AssetInterfacesDescription(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"fileName",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(dict_={r"en": r"File Name"}),
@@ -16064,6 +17418,231 @@ class AssetInterfacesDescription(Submodel):
                         supplemental_semantic_id=supplemental_semantic_id,
                         embedded_data_specifications=embedded_data_specifications,
                     )
+
+            class Security(SubmodelElementList):
+
+                class Security_item(ReferenceElement):
+
+                    def __init__(
+                        self,
+                        value: Reference,
+                        id_short: Optional[str] = r"security_item",
+                        display_name: Optional[
+                            MultiLanguageNameType
+                        ] = MultiLanguageNameType(
+                            dict_={r"en": r"Defines Security Scheme"}
+                        ),
+                        category: Optional[str] = None,
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = ()
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    security_items: Union[Reference, Security_item],
+                    id_short: Optional[str] = r"security",
+                    type_value_list_element: SubmodelElement = ReferenceElement,
+                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[
+                        MultiLanguageNameType
+                    ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if security_items and not isinstance(
+                        security_items, SubmodelElement
+                    ):
+                        security_items = self.Security_item(security_items)
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [security_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
 
             class SecurityDefinitions(SubmodelElementCollection):
 
@@ -19824,6 +21403,7 @@ class AssetInterfacesDescription(Submodel):
                 self,
                 base: Union[AnyURI, Base],
                 contentType: Union[str, ContentType],
+                security: Security,
                 securityDefinitions: SecurityDefinitions,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -19878,7 +21458,7 @@ class AssetInterfacesDescription(Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [base, contentType, securityDefinitions]:
+                for se_arg in [base, contentType, security, securityDefinitions]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -23945,6 +25525,239 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Security(SubmodelElementList):
+
+                            class Security_item(ReferenceElement):
+
+                                def __init__(
+                                    self,
+                                    value: Reference,
+                                    id_short: Optional[str] = r"security_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Defines Security Scheme"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = ()
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    super().__init__(
+                                        value=value,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                security_items: Union[Reference, Security_item],
+                                id_short: Optional[str] = r"security",
+                                type_value_list_element: SubmodelElement = ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Build a submodel element if a raw value was passed in the argument
+                                if security_items and not isinstance(
+                                    security_items, SubmodelElement
+                                ):
+                                    security_items = self.Security_item(security_items)
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [security_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         class Mqv_retain(Property):
 
                             def __init__(
@@ -24178,6 +25991,7 @@ class AssetInterfacesDescription(Submodel):
                         def __init__(
                             self,
                             href: Union[str, Href],
+                            security: Security,
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
                             mqv_retain: Optional[Union[str, Mqv_retain]] = None,
@@ -24260,6 +26074,7 @@ class AssetInterfacesDescription(Submodel):
                                 href,
                                 contentType,
                                 subprotocol,
+                                security,
                                 mqv_retain,
                                 mqv_controlPacket,
                                 mqv_qos,
@@ -24781,7 +26596,7 @@ class AssetInterfacesDescription(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"fileName",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(dict_={r"en": r"File Name"}),
@@ -25422,6 +27237,231 @@ class AssetInterfacesDescription(Submodel):
                         supplemental_semantic_id=supplemental_semantic_id,
                         embedded_data_specifications=embedded_data_specifications,
                     )
+
+            class Security(SubmodelElementList):
+
+                class Security_item(ReferenceElement):
+
+                    def __init__(
+                        self,
+                        value: Reference,
+                        id_short: Optional[str] = r"security_item",
+                        display_name: Optional[
+                            MultiLanguageNameType
+                        ] = MultiLanguageNameType(
+                            dict_={r"en": r"Defines Security Scheme"}
+                        ),
+                        category: Optional[str] = None,
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = ()
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    security_items: Union[Reference, Security_item],
+                    id_short: Optional[str] = r"security",
+                    type_value_list_element: SubmodelElement = ReferenceElement,
+                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[
+                        MultiLanguageNameType
+                    ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if security_items and not isinstance(
+                        security_items, SubmodelElement
+                    ):
+                        security_items = self.Security_item(security_items)
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [security_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
 
             class SecurityDefinitions(SubmodelElementCollection):
 
@@ -29948,6 +31988,7 @@ class AssetInterfacesDescription(Submodel):
                 self,
                 base: Union[AnyURI, Base],
                 contentType: Union[str, ContentType],
+                security: Security,
                 securityDefinitions: SecurityDefinitions,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -30002,7 +32043,7 @@ class AssetInterfacesDescription(Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [base, contentType, securityDefinitions]:
+                for se_arg in [base, contentType, security, securityDefinitions]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -34069,6 +36110,239 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Security(SubmodelElementList):
+
+                            class Security_item(ReferenceElement):
+
+                                def __init__(
+                                    self,
+                                    value: Reference,
+                                    id_short: Optional[str] = r"security_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Defines Security Scheme"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = ()
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    super().__init__(
+                                        value=value,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                security_items: Union[Reference, Security_item],
+                                id_short: Optional[str] = r"security",
+                                type_value_list_element: SubmodelElement = ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Build a submodel element if a raw value was passed in the argument
+                                if security_items and not isinstance(
+                                    security_items, SubmodelElement
+                                ):
+                                    security_items = self.Security_item(security_items)
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [security_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         class Uav_browsePath(Property):
 
                             def __init__(
@@ -34141,6 +36415,7 @@ class AssetInterfacesDescription(Submodel):
                         def __init__(
                             self,
                             href: Union[str, Href],
+                            security: Security,
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
                             uav_browsePath: Optional[Union[str, Uav_browsePath]] = None,
@@ -34207,6 +36482,7 @@ class AssetInterfacesDescription(Submodel):
                                 href,
                                 contentType,
                                 subprotocol,
+                                security,
                                 uav_browsePath,
                             ]:
                                 if se_arg is None:
@@ -34726,7 +37002,7 @@ class AssetInterfacesDescription(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"fileName",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(dict_={r"en": r"File Name"}),
@@ -35367,6 +37643,231 @@ class AssetInterfacesDescription(Submodel):
                         supplemental_semantic_id=supplemental_semantic_id,
                         embedded_data_specifications=embedded_data_specifications,
                     )
+
+            class Security(SubmodelElementList):
+
+                class Security_item(ReferenceElement):
+
+                    def __init__(
+                        self,
+                        value: Reference,
+                        id_short: Optional[str] = r"security_item",
+                        display_name: Optional[
+                            MultiLanguageNameType
+                        ] = MultiLanguageNameType(
+                            dict_={r"en": r"Defines Security Scheme"}
+                        ),
+                        category: Optional[str] = None,
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = ()
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    security_items: Union[Reference, Security_item],
+                    id_short: Optional[str] = r"security",
+                    type_value_list_element: SubmodelElement = ReferenceElement,
+                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[
+                        MultiLanguageNameType
+                    ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if security_items and not isinstance(
+                        security_items, SubmodelElement
+                    ):
+                        security_items = self.Security_item(security_items)
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [security_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
 
             class SecurityDefinitions(SubmodelElementCollection):
 
@@ -39127,6 +41628,7 @@ class AssetInterfacesDescription(Submodel):
                 self,
                 base: Union[AnyURI, Base],
                 contentType: Union[str, ContentType],
+                security: Security,
                 securityDefinitions: SecurityDefinitions,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -39181,7 +41683,7 @@ class AssetInterfacesDescription(Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [base, contentType, securityDefinitions]:
+                for se_arg in [base, contentType, security, securityDefinitions]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -45382,6 +47884,239 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Security(SubmodelElementList):
+
+                            class Security_item(ReferenceElement):
+
+                                def __init__(
+                                    self,
+                                    value: Reference,
+                                    id_short: Optional[str] = r"security_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Defines Security Scheme"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = ()
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    super().__init__(
+                                        value=value,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                security_items: Union[Reference, Security_item],
+                                id_short: Optional[str] = r"security",
+                                type_value_list_element: SubmodelElement = ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Build a submodel element if a raw value was passed in the argument
+                                if security_items and not isinstance(
+                                    security_items, SubmodelElement
+                                ):
+                                    security_items = self.Security_item(security_items)
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [security_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         class Bacv_useService(Property):
 
                             def __init__(
@@ -46006,8 +48741,1144 @@ class AssetInterfacesDescription(Submodel):
                                                 embedded_data_specifications=embedded_data_specifications,
                                             )
 
+                                    class Bacv_hasNamedMember(SubmodelElementList):
+
+                                        class Bacv_hasnamedmember_item(
+                                            SubmodelElementCollection
+                                        ):
+
+                                            class Bacv_hasFieldName(Property):
+
+                                                def __init__(
+                                                    self,
+                                                    value: str,
+                                                    id_short: Optional[
+                                                        str
+                                                    ] = r"bacv_hasFieldName",
+                                                    value_type: DataTypeDefXsd = str,
+                                                    value_id: Optional[
+                                                        Reference
+                                                    ] = None,
+                                                    display_name: Optional[
+                                                        MultiLanguageNameType
+                                                    ] = MultiLanguageNameType(
+                                                        dict_={
+                                                            r"en": r"Bacv Has Field Name"
+                                                        }
+                                                    ),
+                                                    category: Optional[str] = None,
+                                                    description: Optional[
+                                                        MultiLanguageTextType
+                                                    ] = MultiLanguageTextType(
+                                                        dict_={
+                                                            r"en": r"Defines name of a Named Member of a Sequence or Choice data type."
+                                                        }
+                                                    ),
+                                                    semantic_id: Optional[
+                                                        Reference
+                                                    ] = ExternalReference(
+                                                        key=(
+                                                            Key(
+                                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                                value=r"http://www.w3.org/2022/bacnet#hasfieldName",
+                                                            ),
+                                                        ),
+                                                        referred_semantic_id=None,
+                                                    ),
+                                                    qualifier: Iterable[
+                                                        Qualifier
+                                                    ] = None,
+                                                    extension: Iterable[Extension] = (),
+                                                    supplemental_semantic_id: Iterable[
+                                                        Reference
+                                                    ] = (),
+                                                    embedded_data_specifications: Iterable[
+                                                        EmbeddedDataSpecification
+                                                    ] = None,
+                                                ):
+
+                                                    if qualifier is None:
+                                                        qualifier = (
+                                                            Qualifier(
+                                                                type_=r"Cardinality",
+                                                                value_type=str,
+                                                                value=r"One",
+                                                                value_id=None,
+                                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                                semantic_id=None,
+                                                                supplemental_semantic_id=(),
+                                                            ),
+                                                        )
+
+                                                    if (
+                                                        embedded_data_specifications
+                                                        is None
+                                                    ):
+                                                        embedded_data_specifications = (
+                                                            []
+                                                        )
+
+                                                    super().__init__(
+                                                        value=value,
+                                                        id_short=id_short,
+                                                        value_type=value_type,
+                                                        value_id=value_id,
+                                                        display_name=display_name,
+                                                        category=category,
+                                                        description=description,
+                                                        semantic_id=semantic_id,
+                                                        qualifier=qualifier,
+                                                        extension=extension,
+                                                        supplemental_semantic_id=supplemental_semantic_id,
+                                                        embedded_data_specifications=embedded_data_specifications,
+                                                    )
+
+                                            class Bacv_hasContextTag(Property):
+
+                                                def __init__(
+                                                    self,
+                                                    value: bool,
+                                                    id_short: Optional[
+                                                        str
+                                                    ] = r"bacv_hasContextTag",
+                                                    value_type: DataTypeDefXsd = bool,
+                                                    value_id: Optional[
+                                                        Reference
+                                                    ] = None,
+                                                    display_name: Optional[
+                                                        MultiLanguageNameType
+                                                    ] = MultiLanguageNameType(
+                                                        dict_={
+                                                            r"en": r"Bacv Has Context Tag"
+                                                        }
+                                                    ),
+                                                    category: Optional[str] = None,
+                                                    description: Optional[
+                                                        MultiLanguageTextType
+                                                    ] = MultiLanguageTextType(
+                                                        dict_={
+                                                            r"en": r"Defines Context Tag for a Named Member of a Sequence or Choice data type."
+                                                        }
+                                                    ),
+                                                    semantic_id: Optional[
+                                                        Reference
+                                                    ] = ExternalReference(
+                                                        key=(
+                                                            Key(
+                                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                                value=r"http://www.w3.org/2022/bacnet#hasContextTag",
+                                                            ),
+                                                        ),
+                                                        referred_semantic_id=None,
+                                                    ),
+                                                    qualifier: Iterable[
+                                                        Qualifier
+                                                    ] = None,
+                                                    extension: Iterable[Extension] = (),
+                                                    supplemental_semantic_id: Iterable[
+                                                        Reference
+                                                    ] = (),
+                                                    embedded_data_specifications: Iterable[
+                                                        EmbeddedDataSpecification
+                                                    ] = None,
+                                                ):
+
+                                                    if qualifier is None:
+                                                        qualifier = (
+                                                            Qualifier(
+                                                                type_=r"Cardinality",
+                                                                value_type=str,
+                                                                value=r"One",
+                                                                value_id=None,
+                                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                                semantic_id=None,
+                                                                supplemental_semantic_id=(),
+                                                            ),
+                                                        )
+
+                                                    if (
+                                                        embedded_data_specifications
+                                                        is None
+                                                    ):
+                                                        embedded_data_specifications = (
+                                                            []
+                                                        )
+
+                                                    super().__init__(
+                                                        value=value,
+                                                        id_short=id_short,
+                                                        value_type=value_type,
+                                                        value_id=value_id,
+                                                        display_name=display_name,
+                                                        category=category,
+                                                        description=description,
+                                                        semantic_id=semantic_id,
+                                                        qualifier=qualifier,
+                                                        extension=extension,
+                                                        supplemental_semantic_id=supplemental_semantic_id,
+                                                        embedded_data_specifications=embedded_data_specifications,
+                                                    )
+
+                                            class Bacv_hasDataType(
+                                                SubmodelElementCollection
+                                            ):
+
+                                                def __init__(
+                                                    self,
+                                                    id_short: Optional[
+                                                        str
+                                                    ] = r"bacv_hasDataType",
+                                                    display_name: Optional[
+                                                        MultiLanguageNameType
+                                                    ] = MultiLanguageNameType(
+                                                        dict_={
+                                                            r"en": r"Bacv Has Data Type"
+                                                        }
+                                                    ),
+                                                    category: Optional[str] = None,
+                                                    description: Optional[
+                                                        MultiLanguageTextType
+                                                    ] = MultiLanguageTextType(
+                                                        dict_={
+                                                            r"en": r"Defines the type information of a BACnet payload. This SMC is used to abstract BACnet data model to human and machine readable model by still keeping its wire compatibility on the protocol."
+                                                        }
+                                                    ),
+                                                    semantic_id: Optional[
+                                                        Reference
+                                                    ] = ExternalReference(
+                                                        key=(
+                                                            Key(
+                                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                                value=r"http://www.w3.org/2022/bacnet#hasDataType",
+                                                            ),
+                                                        ),
+                                                        referred_semantic_id=None,
+                                                    ),
+                                                    qualifier: Iterable[
+                                                        Qualifier
+                                                    ] = None,
+                                                    extension: Iterable[Extension] = (),
+                                                    supplemental_semantic_id: Iterable[
+                                                        Reference
+                                                    ] = (),
+                                                    embedded_data_specifications: Iterable[
+                                                        EmbeddedDataSpecification
+                                                    ] = None,
+                                                ):
+
+                                                    if qualifier is None:
+                                                        qualifier = (
+                                                            Qualifier(
+                                                                type_=r"Cardinality",
+                                                                value_type=str,
+                                                                value=r"ZeroToOne",
+                                                                value_id=None,
+                                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                                semantic_id=None,
+                                                                supplemental_semantic_id=(),
+                                                            ),
+                                                        )
+
+                                                    if (
+                                                        embedded_data_specifications
+                                                        is None
+                                                    ):
+                                                        embedded_data_specifications = (
+                                                            []
+                                                        )
+
+                                                    # Add all passed/initialized submodel elements to a single list
+                                                    embedded_submodel_elements = []
+                                                    for se_arg in []:
+                                                        if se_arg is None:
+                                                            continue
+                                                        elif isinstance(
+                                                            se_arg, SubmodelElement
+                                                        ):
+                                                            embedded_submodel_elements.append(
+                                                                se_arg
+                                                            )
+                                                        elif isinstance(
+                                                            se_arg, Iterable
+                                                        ):
+                                                            for n, element in enumerate(
+                                                                se_arg
+                                                            ):
+                                                                element.id_short = f"{element.id_short}{n}"
+                                                                embedded_submodel_elements.append(
+                                                                    element
+                                                                )
+                                                        else:
+                                                            raise TypeError(
+                                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                            )
+
+                                                    super().__init__(
+                                                        value=embedded_submodel_elements,
+                                                        id_short=id_short,
+                                                        display_name=display_name,
+                                                        category=category,
+                                                        description=description,
+                                                        semantic_id=semantic_id,
+                                                        qualifier=qualifier,
+                                                        extension=extension,
+                                                        supplemental_semantic_id=supplemental_semantic_id,
+                                                        embedded_data_specifications=embedded_data_specifications,
+                                                    )
+
+                                            def __init__(
+                                                self,
+                                                bacv_hasFieldName: Union[
+                                                    str, Bacv_hasFieldName
+                                                ],
+                                                bacv_hasContextTag: Union[
+                                                    bool, Bacv_hasContextTag
+                                                ],
+                                                bacv_hasDataType: Optional[
+                                                    Bacv_hasDataType
+                                                ] = None,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"bacv_hasnamedmember_item",
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={r"en": r"Properties"}
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Defines the Named Member of a Sequence or Choice data type."
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"http://www.w3.org/2022/bacnet#NamedMember",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"ZerotoMany",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                # Build a submodel element if a raw value was passed in the argument
+                                                if (
+                                                    bacv_hasFieldName
+                                                    and not isinstance(
+                                                        bacv_hasFieldName,
+                                                        SubmodelElement,
+                                                    )
+                                                ):
+                                                    bacv_hasFieldName = (
+                                                        self.Bacv_hasFieldName(
+                                                            bacv_hasFieldName
+                                                        )
+                                                    )
+
+                                                # Build a submodel element if a raw value was passed in the argument
+                                                if (
+                                                    bacv_hasContextTag
+                                                    and not isinstance(
+                                                        bacv_hasContextTag,
+                                                        SubmodelElement,
+                                                    )
+                                                ):
+                                                    bacv_hasContextTag = (
+                                                        self.Bacv_hasContextTag(
+                                                            bacv_hasContextTag
+                                                        )
+                                                    )
+
+                                                # Add all passed/initialized submodel elements to a single list
+                                                embedded_submodel_elements = []
+                                                for se_arg in [
+                                                    bacv_hasFieldName,
+                                                    bacv_hasContextTag,
+                                                    bacv_hasDataType,
+                                                ]:
+                                                    if se_arg is None:
+                                                        continue
+                                                    elif isinstance(
+                                                        se_arg, SubmodelElement
+                                                    ):
+                                                        embedded_submodel_elements.append(
+                                                            se_arg
+                                                        )
+                                                    elif isinstance(se_arg, Iterable):
+                                                        for n, element in enumerate(
+                                                            se_arg
+                                                        ):
+                                                            element.id_short = (
+                                                                f"{element.id_short}{n}"
+                                                            )
+                                                            embedded_submodel_elements.append(
+                                                                element
+                                                            )
+                                                    else:
+                                                        raise TypeError(
+                                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                        )
+
+                                                super().__init__(
+                                                    value=embedded_submodel_elements,
+                                                    id_short=id_short,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        def __init__(
+                                            self,
+                                            bacv_hasnamedmember_items: Bacv_hasnamedmember_item,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasNamedMember",
+                                            type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                            semantic_id_list_element: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#NamedMember",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            value_type_list_element: Optional[
+                                                DataTypeDefXsd
+                                            ] = None,
+                                            order_relevant: bool = True,
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Bacv Has Named Member"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the Named Member of a Sequence or Choice data type."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasNamedMember",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"One",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            # Add all passed/initialized submodel elements to a single list
+                                            embedded_submodel_elements = []
+                                            for se_arg in [bacv_hasnamedmember_items]:
+                                                if se_arg is None:
+                                                    continue
+                                                elif isinstance(
+                                                    se_arg, SubmodelElement
+                                                ):
+                                                    embedded_submodel_elements.append(
+                                                        se_arg
+                                                    )
+                                                elif isinstance(se_arg, Iterable):
+                                                    for n, element in enumerate(se_arg):
+                                                        element.id_short = (
+                                                            f"{element.id_short}{n}"
+                                                        )
+                                                        embedded_submodel_elements.append(
+                                                            element
+                                                        )
+                                                else:
+                                                    raise TypeError(
+                                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    )
+
+                                            super().__init__(
+                                                value=embedded_submodel_elements,
+                                                id_short=id_short,
+                                                type_value_list_element=type_value_list_element,
+                                                semantic_id_list_element=semantic_id_list_element,
+                                                value_type_list_element=value_type_list_element,
+                                                order_relevant=order_relevant,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                        def _check_constraints(
+                                            self, new, existing
+                                        ) -> None:
+                                            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                            saved_id_short = new.id_short
+                                            new.id_short = None
+
+                                            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                            if not isinstance(
+                                                new, self.type_value_list_element
+                                            ):
+                                                raise base.AASConstraintViolation(
+                                                    108,
+                                                    "All first level elements must be of the type specified in "
+                                                    f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                                    f"got {new!r}",
+                                                )
+
+                                            if (
+                                                self.semantic_id_list_element
+                                                is not None
+                                                and new.semantic_id is not None
+                                                and new.semantic_id
+                                                != self.semantic_id_list_element
+                                            ):
+                                                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                                # Not really a constraint...
+                                                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                                raise base.AASConstraintViolation(
+                                                    107,
+                                                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                                    "is specified all first level children must have the same "
+                                                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                                )
+
+                                            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                            # is either Property or Range. Thus, `new` must have the value_type property.
+                                            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                            if (
+                                                isinstance(
+                                                    self.type_value_list_element,
+                                                    Property,
+                                                )
+                                                or isinstance(
+                                                    self.type_value_list_element, Range
+                                                )
+                                                and not isinstance(
+                                                    new.value_type,
+                                                    self.value_type_list_element,
+                                                )
+                                            ):  # type: ignore
+                                                raise base.AASConstraintViolation(
+                                                    109,
+                                                    "All first level elements must have the value_type "  # type: ignore
+                                                    "specified by value_type_list_element="
+                                                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                                    f"{new!r} with value_type={new.value_type.__name__}",
+                                                )  # type: ignore
+
+                                            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                            if (
+                                                new.semantic_id is not None
+                                                and self.semantic_id_list_element
+                                                is None
+                                            ):
+                                                for item in existing:
+                                                    if (
+                                                        item.semantic_id is not None
+                                                        and new.semantic_id
+                                                        != item.semantic_id
+                                                    ):
+                                                        raise base.AASConstraintViolation(
+                                                            114,
+                                                            f"Element to be added {new!r} has semantic_id "
+                                                            f"{new.semantic_id!r}, while already contained element "
+                                                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                            "aren't equal.",
+                                                        )
+
+                                            # Re-assign id_short
+                                            new.id_short = saved_id_short
+
+                                    class Bacv_hasValueMap(SubmodelElementList):
+
+                                        class Bacv_hasvaluemap_item(
+                                            SubmodelElementCollection
+                                        ):
+
+                                            class Bacv_hasLogicalVal(Property):
+
+                                                def __init__(
+                                                    self,
+                                                    value: str,
+                                                    id_short: Optional[
+                                                        str
+                                                    ] = r"bacv_hasLogicalVal",
+                                                    value_type: DataTypeDefXsd = str,
+                                                    value_id: Optional[
+                                                        Reference
+                                                    ] = None,
+                                                    display_name: Optional[
+                                                        MultiLanguageNameType
+                                                    ] = MultiLanguageNameType(
+                                                        dict_={
+                                                            r"en": r"Bacv Has Logical Val"
+                                                        }
+                                                    ),
+                                                    category: Optional[str] = None,
+                                                    description: Optional[
+                                                        MultiLanguageTextType
+                                                    ] = MultiLanguageTextType(
+                                                        dict_={
+                                                            r"en": r"Defines the logical value for a ValueMap."
+                                                        }
+                                                    ),
+                                                    semantic_id: Optional[
+                                                        Reference
+                                                    ] = ExternalReference(
+                                                        key=(
+                                                            Key(
+                                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                                value=r"http://www.w3.org/2022/bacnet#hasLogicalVal",
+                                                            ),
+                                                        ),
+                                                        referred_semantic_id=None,
+                                                    ),
+                                                    qualifier: Iterable[
+                                                        Qualifier
+                                                    ] = None,
+                                                    extension: Iterable[Extension] = (),
+                                                    supplemental_semantic_id: Iterable[
+                                                        Reference
+                                                    ] = (),
+                                                    embedded_data_specifications: Iterable[
+                                                        EmbeddedDataSpecification
+                                                    ] = None,
+                                                ):
+
+                                                    if qualifier is None:
+                                                        qualifier = (
+                                                            Qualifier(
+                                                                type_=r"Cardinality",
+                                                                value_type=str,
+                                                                value=r"One",
+                                                                value_id=None,
+                                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                                semantic_id=None,
+                                                                supplemental_semantic_id=(),
+                                                            ),
+                                                            Qualifier(
+                                                                type_=r"data type",
+                                                                value_type=str,
+                                                                value=r"one of xsd:integer, xsd:string or xsd:boolean",
+                                                                value_id=None,
+                                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                                semantic_id=None,
+                                                                supplemental_semantic_id=(),
+                                                            ),
+                                                        )
+
+                                                    if (
+                                                        embedded_data_specifications
+                                                        is None
+                                                    ):
+                                                        embedded_data_specifications = (
+                                                            []
+                                                        )
+
+                                                    super().__init__(
+                                                        value=value,
+                                                        id_short=id_short,
+                                                        value_type=value_type,
+                                                        value_id=value_id,
+                                                        display_name=display_name,
+                                                        category=category,
+                                                        description=description,
+                                                        semantic_id=semantic_id,
+                                                        qualifier=qualifier,
+                                                        extension=extension,
+                                                        supplemental_semantic_id=supplemental_semantic_id,
+                                                        embedded_data_specifications=embedded_data_specifications,
+                                                    )
+
+                                            class Bacv_hasProtocolVal(Property):
+
+                                                def __init__(
+                                                    self,
+                                                    value: int,
+                                                    id_short: Optional[
+                                                        str
+                                                    ] = r"bacv_hasProtocolVal",
+                                                    value_type: DataTypeDefXsd = int,
+                                                    value_id: Optional[
+                                                        Reference
+                                                    ] = None,
+                                                    display_name: Optional[
+                                                        MultiLanguageNameType
+                                                    ] = MultiLanguageNameType(
+                                                        dict_={
+                                                            r"en": r"Bacv Has Protocol Val"
+                                                        }
+                                                    ),
+                                                    category: Optional[str] = None,
+                                                    description: Optional[
+                                                        MultiLanguageTextType
+                                                    ] = MultiLanguageTextType(
+                                                        dict_={
+                                                            r"en": r"Defines the protocol value for a ValueMap."
+                                                        }
+                                                    ),
+                                                    semantic_id: Optional[
+                                                        Reference
+                                                    ] = ExternalReference(
+                                                        key=(
+                                                            Key(
+                                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                                value=r"http://www.w3.org/2022/bacnet#hasProtocolVal",
+                                                            ),
+                                                        ),
+                                                        referred_semantic_id=None,
+                                                    ),
+                                                    qualifier: Iterable[
+                                                        Qualifier
+                                                    ] = None,
+                                                    extension: Iterable[Extension] = (),
+                                                    supplemental_semantic_id: Iterable[
+                                                        Reference
+                                                    ] = (),
+                                                    embedded_data_specifications: Iterable[
+                                                        EmbeddedDataSpecification
+                                                    ] = None,
+                                                ):
+
+                                                    if qualifier is None:
+                                                        qualifier = (
+                                                            Qualifier(
+                                                                type_=r"Cardinality",
+                                                                value_type=str,
+                                                                value=r"One",
+                                                                value_id=None,
+                                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                                semantic_id=None,
+                                                                supplemental_semantic_id=(),
+                                                            ),
+                                                        )
+
+                                                    if (
+                                                        embedded_data_specifications
+                                                        is None
+                                                    ):
+                                                        embedded_data_specifications = (
+                                                            []
+                                                        )
+
+                                                    super().__init__(
+                                                        value=value,
+                                                        id_short=id_short,
+                                                        value_type=value_type,
+                                                        value_id=value_id,
+                                                        display_name=display_name,
+                                                        category=category,
+                                                        description=description,
+                                                        semantic_id=semantic_id,
+                                                        qualifier=qualifier,
+                                                        extension=extension,
+                                                        supplemental_semantic_id=supplemental_semantic_id,
+                                                        embedded_data_specifications=embedded_data_specifications,
+                                                    )
+
+                                            def __init__(
+                                                self,
+                                                bacv_hasLogicalVal: Union[
+                                                    str, Bacv_hasLogicalVal
+                                                ],
+                                                bacv_hasProtocolVal: Union[
+                                                    int, Bacv_hasProtocolVal
+                                                ],
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"bacv_hasvaluemap_item",
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={r"en": r"Properties"}
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Defines the value map for an Enumeration."
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"http://www.w3.org/2022/bacnet#hasMapEntry",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"ZerotoMany",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                # Build a submodel element if a raw value was passed in the argument
+                                                if (
+                                                    bacv_hasLogicalVal
+                                                    and not isinstance(
+                                                        bacv_hasLogicalVal,
+                                                        SubmodelElement,
+                                                    )
+                                                ):
+                                                    bacv_hasLogicalVal = (
+                                                        self.Bacv_hasLogicalVal(
+                                                            bacv_hasLogicalVal
+                                                        )
+                                                    )
+
+                                                # Build a submodel element if a raw value was passed in the argument
+                                                if (
+                                                    bacv_hasProtocolVal
+                                                    and not isinstance(
+                                                        bacv_hasProtocolVal,
+                                                        SubmodelElement,
+                                                    )
+                                                ):
+                                                    bacv_hasProtocolVal = (
+                                                        self.Bacv_hasProtocolVal(
+                                                            bacv_hasProtocolVal
+                                                        )
+                                                    )
+
+                                                # Add all passed/initialized submodel elements to a single list
+                                                embedded_submodel_elements = []
+                                                for se_arg in [
+                                                    bacv_hasLogicalVal,
+                                                    bacv_hasProtocolVal,
+                                                ]:
+                                                    if se_arg is None:
+                                                        continue
+                                                    elif isinstance(
+                                                        se_arg, SubmodelElement
+                                                    ):
+                                                        embedded_submodel_elements.append(
+                                                            se_arg
+                                                        )
+                                                    elif isinstance(se_arg, Iterable):
+                                                        for n, element in enumerate(
+                                                            se_arg
+                                                        ):
+                                                            element.id_short = (
+                                                                f"{element.id_short}{n}"
+                                                            )
+                                                            embedded_submodel_elements.append(
+                                                                element
+                                                            )
+                                                    else:
+                                                        raise TypeError(
+                                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                        )
+
+                                                super().__init__(
+                                                    value=embedded_submodel_elements,
+                                                    id_short=id_short,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        def __init__(
+                                            self,
+                                            bacv_hasvaluemap_items: Bacv_hasvaluemap_item,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasValueMap",
+                                            type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                            semantic_id_list_element: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasMapEntry",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            value_type_list_element: Optional[
+                                                DataTypeDefXsd
+                                            ] = None,
+                                            order_relevant: bool = True,
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Bacv Has Value Map"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the value map of an enumeration."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasValueMap",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"ZerotoOne",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            # Add all passed/initialized submodel elements to a single list
+                                            embedded_submodel_elements = []
+                                            for se_arg in [bacv_hasvaluemap_items]:
+                                                if se_arg is None:
+                                                    continue
+                                                elif isinstance(
+                                                    se_arg, SubmodelElement
+                                                ):
+                                                    embedded_submodel_elements.append(
+                                                        se_arg
+                                                    )
+                                                elif isinstance(se_arg, Iterable):
+                                                    for n, element in enumerate(se_arg):
+                                                        element.id_short = (
+                                                            f"{element.id_short}{n}"
+                                                        )
+                                                        embedded_submodel_elements.append(
+                                                            element
+                                                        )
+                                                else:
+                                                    raise TypeError(
+                                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    )
+
+                                            super().__init__(
+                                                value=embedded_submodel_elements,
+                                                id_short=id_short,
+                                                type_value_list_element=type_value_list_element,
+                                                semantic_id_list_element=semantic_id_list_element,
+                                                value_type_list_element=value_type_list_element,
+                                                order_relevant=order_relevant,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                        def _check_constraints(
+                                            self, new, existing
+                                        ) -> None:
+                                            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                            saved_id_short = new.id_short
+                                            new.id_short = None
+
+                                            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                            if not isinstance(
+                                                new, self.type_value_list_element
+                                            ):
+                                                raise base.AASConstraintViolation(
+                                                    108,
+                                                    "All first level elements must be of the type specified in "
+                                                    f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                                    f"got {new!r}",
+                                                )
+
+                                            if (
+                                                self.semantic_id_list_element
+                                                is not None
+                                                and new.semantic_id is not None
+                                                and new.semantic_id
+                                                != self.semantic_id_list_element
+                                            ):
+                                                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                                # Not really a constraint...
+                                                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                                raise base.AASConstraintViolation(
+                                                    107,
+                                                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                                    "is specified all first level children must have the same "
+                                                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                                )
+
+                                            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                            # is either Property or Range. Thus, `new` must have the value_type property.
+                                            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                            if (
+                                                isinstance(
+                                                    self.type_value_list_element,
+                                                    Property,
+                                                )
+                                                or isinstance(
+                                                    self.type_value_list_element, Range
+                                                )
+                                                and not isinstance(
+                                                    new.value_type,
+                                                    self.value_type_list_element,
+                                                )
+                                            ):  # type: ignore
+                                                raise base.AASConstraintViolation(
+                                                    109,
+                                                    "All first level elements must have the value_type "  # type: ignore
+                                                    "specified by value_type_list_element="
+                                                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                                    f"{new!r} with value_type={new.value_type.__name__}",
+                                                )  # type: ignore
+
+                                            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                            if (
+                                                new.semantic_id is not None
+                                                and self.semantic_id_list_element
+                                                is None
+                                            ):
+                                                for item in existing:
+                                                    if (
+                                                        item.semantic_id is not None
+                                                        and new.semantic_id
+                                                        != item.semantic_id
+                                                    ):
+                                                        raise base.AASConstraintViolation(
+                                                            114,
+                                                            f"Element to be added {new!r} has semantic_id "
+                                                            f"{new.semantic_id!r}, while already contained element "
+                                                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                            "aren't equal.",
+                                                        )
+
+                                            # Re-assign id_short
+                                            new.id_short = saved_id_short
+
                                     def __init__(
                                         self,
+                                        bacv_hasNamedMember: Bacv_hasNamedMember,
+                                        bacv_hasValueMap: Bacv_hasValueMap,
                                         bacv_isISO: Optional[
                                             Union[bool, Bacv_isISO]
                                         ] = None,
@@ -46092,6 +49963,8 @@ class AssetInterfacesDescription(Submodel):
                                             bacv_isISO,
                                             bacv_hasBinaryRepresentation,
                                             bacv_hasMember,
+                                            bacv_hasNamedMember,
+                                            bacv_hasValueMap,
                                         ]:
                                             if se_arg is None:
                                                 continue
@@ -46125,8 +49998,1063 @@ class AssetInterfacesDescription(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
+                                class Bacv_hasNamedMember(SubmodelElementList):
+
+                                    class Bacv_hasnamedmember_item(
+                                        SubmodelElementCollection
+                                    ):
+
+                                        class Bacv_hasFieldName(Property):
+
+                                            def __init__(
+                                                self,
+                                                value: str,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"bacv_hasFieldName",
+                                                value_type: DataTypeDefXsd = str,
+                                                value_id: Optional[Reference] = None,
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"Bacv Has Field Name"
+                                                    }
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Defines name of a Named Member of a Sequence or Choice data type."
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"http://www.w3.org/2022/bacnet#hasfieldName",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"One",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                super().__init__(
+                                                    value=value,
+                                                    id_short=id_short,
+                                                    value_type=value_type,
+                                                    value_id=value_id,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        class Bacv_hasContextTag(Property):
+
+                                            def __init__(
+                                                self,
+                                                value: bool,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"bacv_hasContextTag",
+                                                value_type: DataTypeDefXsd = bool,
+                                                value_id: Optional[Reference] = None,
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"Bacv Has Context Tag"
+                                                    }
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Defines Context Tag for a Named Member of a Sequence or Choice data type."
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"http://www.w3.org/2022/bacnet#hasContextTag",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"One",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                super().__init__(
+                                                    value=value,
+                                                    id_short=id_short,
+                                                    value_type=value_type,
+                                                    value_id=value_id,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        class Bacv_hasDataType(
+                                            SubmodelElementCollection
+                                        ):
+
+                                            def __init__(
+                                                self,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"bacv_hasDataType",
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={r"en": r"Bacv Has Data Type"}
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Defines the type information of a BACnet payload. This SMC is used to abstract BACnet data model to human and machine readable model by still keeping its wire compatibility on the protocol."
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"http://www.w3.org/2022/bacnet#hasDataType",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"ZeroToOne",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                # Add all passed/initialized submodel elements to a single list
+                                                embedded_submodel_elements = []
+                                                for se_arg in []:
+                                                    if se_arg is None:
+                                                        continue
+                                                    elif isinstance(
+                                                        se_arg, SubmodelElement
+                                                    ):
+                                                        embedded_submodel_elements.append(
+                                                            se_arg
+                                                        )
+                                                    elif isinstance(se_arg, Iterable):
+                                                        for n, element in enumerate(
+                                                            se_arg
+                                                        ):
+                                                            element.id_short = (
+                                                                f"{element.id_short}{n}"
+                                                            )
+                                                            embedded_submodel_elements.append(
+                                                                element
+                                                            )
+                                                    else:
+                                                        raise TypeError(
+                                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                        )
+
+                                                super().__init__(
+                                                    value=embedded_submodel_elements,
+                                                    id_short=id_short,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        def __init__(
+                                            self,
+                                            bacv_hasFieldName: Union[
+                                                str, Bacv_hasFieldName
+                                            ],
+                                            bacv_hasContextTag: Union[
+                                                bool, Bacv_hasContextTag
+                                            ],
+                                            bacv_hasDataType: Optional[
+                                                Bacv_hasDataType
+                                            ] = None,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasnamedmember_item",
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Properties"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the Named Member of a Sequence or Choice data type."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#NamedMember",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"ZerotoMany",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            # Build a submodel element if a raw value was passed in the argument
+                                            if bacv_hasFieldName and not isinstance(
+                                                bacv_hasFieldName, SubmodelElement
+                                            ):
+                                                bacv_hasFieldName = (
+                                                    self.Bacv_hasFieldName(
+                                                        bacv_hasFieldName
+                                                    )
+                                                )
+
+                                            # Build a submodel element if a raw value was passed in the argument
+                                            if bacv_hasContextTag and not isinstance(
+                                                bacv_hasContextTag, SubmodelElement
+                                            ):
+                                                bacv_hasContextTag = (
+                                                    self.Bacv_hasContextTag(
+                                                        bacv_hasContextTag
+                                                    )
+                                                )
+
+                                            # Add all passed/initialized submodel elements to a single list
+                                            embedded_submodel_elements = []
+                                            for se_arg in [
+                                                bacv_hasFieldName,
+                                                bacv_hasContextTag,
+                                                bacv_hasDataType,
+                                            ]:
+                                                if se_arg is None:
+                                                    continue
+                                                elif isinstance(
+                                                    se_arg, SubmodelElement
+                                                ):
+                                                    embedded_submodel_elements.append(
+                                                        se_arg
+                                                    )
+                                                elif isinstance(se_arg, Iterable):
+                                                    for n, element in enumerate(se_arg):
+                                                        element.id_short = (
+                                                            f"{element.id_short}{n}"
+                                                        )
+                                                        embedded_submodel_elements.append(
+                                                            element
+                                                        )
+                                                else:
+                                                    raise TypeError(
+                                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    )
+
+                                            super().__init__(
+                                                value=embedded_submodel_elements,
+                                                id_short=id_short,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    def __init__(
+                                        self,
+                                        bacv_hasnamedmember_items: Bacv_hasnamedmember_item,
+                                        id_short: Optional[
+                                            str
+                                        ] = r"bacv_hasNamedMember",
+                                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                        semantic_id_list_element: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"http://www.w3.org/2022/bacnet#NamedMember",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        value_type_list_element: Optional[
+                                            DataTypeDefXsd
+                                        ] = None,
+                                        order_relevant: bool = True,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"Bacv Has Named Member"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Defines the Named Member of a Sequence or Choice data type."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"http://www.w3.org/2022/bacnet#hasNamedMember",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"One",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        # Add all passed/initialized submodel elements to a single list
+                                        embedded_submodel_elements = []
+                                        for se_arg in [bacv_hasnamedmember_items]:
+                                            if se_arg is None:
+                                                continue
+                                            elif isinstance(se_arg, SubmodelElement):
+                                                embedded_submodel_elements.append(
+                                                    se_arg
+                                                )
+                                            elif isinstance(se_arg, Iterable):
+                                                for n, element in enumerate(se_arg):
+                                                    element.id_short = (
+                                                        f"{element.id_short}{n}"
+                                                    )
+                                                    embedded_submodel_elements.append(
+                                                        element
+                                                    )
+                                            else:
+                                                raise TypeError(
+                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                )
+
+                                        super().__init__(
+                                            value=embedded_submodel_elements,
+                                            id_short=id_short,
+                                            type_value_list_element=type_value_list_element,
+                                            semantic_id_list_element=semantic_id_list_element,
+                                            value_type_list_element=value_type_list_element,
+                                            order_relevant=order_relevant,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                    def _check_constraints(self, new, existing) -> None:
+                                        # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                        # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                        saved_id_short = new.id_short
+                                        new.id_short = None
+
+                                        # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                        if not isinstance(
+                                            new, self.type_value_list_element
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                108,
+                                                "All first level elements must be of the type specified in "
+                                                f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                                f"got {new!r}",
+                                            )
+
+                                        if (
+                                            self.semantic_id_list_element is not None
+                                            and new.semantic_id is not None
+                                            and new.semantic_id
+                                            != self.semantic_id_list_element
+                                        ):
+                                            # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                            # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                            # Not really a constraint...
+                                            # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                            raise base.AASConstraintViolation(
+                                                107,
+                                                f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                                "is specified all first level children must have the same "
+                                                f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                            )
+
+                                        # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                        # is either Property or Range. Thus, `new` must have the value_type property.
+                                        # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                        if (
+                                            isinstance(
+                                                self.type_value_list_element, Property
+                                            )
+                                            or isinstance(
+                                                self.type_value_list_element, Range
+                                            )
+                                            and not isinstance(
+                                                new.value_type,
+                                                self.value_type_list_element,
+                                            )
+                                        ):  # type: ignore
+                                            raise base.AASConstraintViolation(
+                                                109,
+                                                "All first level elements must have the value_type "  # type: ignore
+                                                "specified by value_type_list_element="
+                                                f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                                f"{new!r} with value_type={new.value_type.__name__}",
+                                            )  # type: ignore
+
+                                        # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                        # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                        if (
+                                            new.semantic_id is not None
+                                            and self.semantic_id_list_element is None
+                                        ):
+                                            for item in existing:
+                                                if (
+                                                    item.semantic_id is not None
+                                                    and new.semantic_id
+                                                    != item.semantic_id
+                                                ):
+                                                    raise base.AASConstraintViolation(
+                                                        114,
+                                                        f"Element to be added {new!r} has semantic_id "
+                                                        f"{new.semantic_id!r}, while already contained element "
+                                                        f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                        "aren't equal.",
+                                                    )
+
+                                        # Re-assign id_short
+                                        new.id_short = saved_id_short
+
+                                class Bacv_hasValueMap(SubmodelElementList):
+
+                                    class Bacv_hasvaluemap_item(
+                                        SubmodelElementCollection
+                                    ):
+
+                                        class Bacv_hasLogicalVal(Property):
+
+                                            def __init__(
+                                                self,
+                                                value: str,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"bacv_hasLogicalVal",
+                                                value_type: DataTypeDefXsd = str,
+                                                value_id: Optional[Reference] = None,
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"Bacv Has Logical Val"
+                                                    }
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Defines the logical value for a ValueMap."
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"http://www.w3.org/2022/bacnet#hasLogicalVal",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"One",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                        Qualifier(
+                                                            type_=r"data type",
+                                                            value_type=str,
+                                                            value=r"one of xsd:integer, xsd:string or xsd:boolean",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                super().__init__(
+                                                    value=value,
+                                                    id_short=id_short,
+                                                    value_type=value_type,
+                                                    value_id=value_id,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        class Bacv_hasProtocolVal(Property):
+
+                                            def __init__(
+                                                self,
+                                                value: int,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"bacv_hasProtocolVal",
+                                                value_type: DataTypeDefXsd = int,
+                                                value_id: Optional[Reference] = None,
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"Bacv Has Protocol Val"
+                                                    }
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Defines the protocol value for a ValueMap."
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"http://www.w3.org/2022/bacnet#hasProtocolVal",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"One",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                super().__init__(
+                                                    value=value,
+                                                    id_short=id_short,
+                                                    value_type=value_type,
+                                                    value_id=value_id,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        def __init__(
+                                            self,
+                                            bacv_hasLogicalVal: Union[
+                                                str, Bacv_hasLogicalVal
+                                            ],
+                                            bacv_hasProtocolVal: Union[
+                                                int, Bacv_hasProtocolVal
+                                            ],
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasvaluemap_item",
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Properties"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the value map for an Enumeration."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasMapEntry",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"ZerotoMany",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            # Build a submodel element if a raw value was passed in the argument
+                                            if bacv_hasLogicalVal and not isinstance(
+                                                bacv_hasLogicalVal, SubmodelElement
+                                            ):
+                                                bacv_hasLogicalVal = (
+                                                    self.Bacv_hasLogicalVal(
+                                                        bacv_hasLogicalVal
+                                                    )
+                                                )
+
+                                            # Build a submodel element if a raw value was passed in the argument
+                                            if bacv_hasProtocolVal and not isinstance(
+                                                bacv_hasProtocolVal, SubmodelElement
+                                            ):
+                                                bacv_hasProtocolVal = (
+                                                    self.Bacv_hasProtocolVal(
+                                                        bacv_hasProtocolVal
+                                                    )
+                                                )
+
+                                            # Add all passed/initialized submodel elements to a single list
+                                            embedded_submodel_elements = []
+                                            for se_arg in [
+                                                bacv_hasLogicalVal,
+                                                bacv_hasProtocolVal,
+                                            ]:
+                                                if se_arg is None:
+                                                    continue
+                                                elif isinstance(
+                                                    se_arg, SubmodelElement
+                                                ):
+                                                    embedded_submodel_elements.append(
+                                                        se_arg
+                                                    )
+                                                elif isinstance(se_arg, Iterable):
+                                                    for n, element in enumerate(se_arg):
+                                                        element.id_short = (
+                                                            f"{element.id_short}{n}"
+                                                        )
+                                                        embedded_submodel_elements.append(
+                                                            element
+                                                        )
+                                                else:
+                                                    raise TypeError(
+                                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    )
+
+                                            super().__init__(
+                                                value=embedded_submodel_elements,
+                                                id_short=id_short,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    def __init__(
+                                        self,
+                                        bacv_hasvaluemap_items: Bacv_hasvaluemap_item,
+                                        id_short: Optional[str] = r"bacv_hasValueMap",
+                                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                        semantic_id_list_element: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"http://www.w3.org/2022/bacnet#hasMapEntry",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        value_type_list_element: Optional[
+                                            DataTypeDefXsd
+                                        ] = None,
+                                        order_relevant: bool = True,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"Bacv Has Value Map"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Defines the value map of an enumeration."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"http://www.w3.org/2022/bacnet#hasValueMap",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZerotoOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        # Add all passed/initialized submodel elements to a single list
+                                        embedded_submodel_elements = []
+                                        for se_arg in [bacv_hasvaluemap_items]:
+                                            if se_arg is None:
+                                                continue
+                                            elif isinstance(se_arg, SubmodelElement):
+                                                embedded_submodel_elements.append(
+                                                    se_arg
+                                                )
+                                            elif isinstance(se_arg, Iterable):
+                                                for n, element in enumerate(se_arg):
+                                                    element.id_short = (
+                                                        f"{element.id_short}{n}"
+                                                    )
+                                                    embedded_submodel_elements.append(
+                                                        element
+                                                    )
+                                            else:
+                                                raise TypeError(
+                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                )
+
+                                        super().__init__(
+                                            value=embedded_submodel_elements,
+                                            id_short=id_short,
+                                            type_value_list_element=type_value_list_element,
+                                            semantic_id_list_element=semantic_id_list_element,
+                                            value_type_list_element=value_type_list_element,
+                                            order_relevant=order_relevant,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                    def _check_constraints(self, new, existing) -> None:
+                                        # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                        # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                        saved_id_short = new.id_short
+                                        new.id_short = None
+
+                                        # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                        if not isinstance(
+                                            new, self.type_value_list_element
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                108,
+                                                "All first level elements must be of the type specified in "
+                                                f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                                f"got {new!r}",
+                                            )
+
+                                        if (
+                                            self.semantic_id_list_element is not None
+                                            and new.semantic_id is not None
+                                            and new.semantic_id
+                                            != self.semantic_id_list_element
+                                        ):
+                                            # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                            # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                            # Not really a constraint...
+                                            # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                            raise base.AASConstraintViolation(
+                                                107,
+                                                f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                                "is specified all first level children must have the same "
+                                                f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                            )
+
+                                        # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                        # is either Property or Range. Thus, `new` must have the value_type property.
+                                        # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                        if (
+                                            isinstance(
+                                                self.type_value_list_element, Property
+                                            )
+                                            or isinstance(
+                                                self.type_value_list_element, Range
+                                            )
+                                            and not isinstance(
+                                                new.value_type,
+                                                self.value_type_list_element,
+                                            )
+                                        ):  # type: ignore
+                                            raise base.AASConstraintViolation(
+                                                109,
+                                                "All first level elements must have the value_type "  # type: ignore
+                                                "specified by value_type_list_element="
+                                                f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                                f"{new!r} with value_type={new.value_type.__name__}",
+                                            )  # type: ignore
+
+                                        # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                        # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                        if (
+                                            new.semantic_id is not None
+                                            and self.semantic_id_list_element is None
+                                        ):
+                                            for item in existing:
+                                                if (
+                                                    item.semantic_id is not None
+                                                    and new.semantic_id
+                                                    != item.semantic_id
+                                                ):
+                                                    raise base.AASConstraintViolation(
+                                                        114,
+                                                        f"Element to be added {new!r} has semantic_id "
+                                                        f"{new.semantic_id!r}, while already contained element "
+                                                        f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                        "aren't equal.",
+                                                    )
+
+                                        # Re-assign id_short
+                                        new.id_short = saved_id_short
+
                                 def __init__(
                                     self,
+                                    bacv_hasNamedMember: Bacv_hasNamedMember,
+                                    bacv_hasValueMap: Bacv_hasValueMap,
                                     bacv_isISO: Optional[
                                         Union[bool, Bacv_isISO]
                                     ] = None,
@@ -46205,6 +51133,8 @@ class AssetInterfacesDescription(Submodel):
                                         bacv_isISO,
                                         bacv_hasBinaryRepresentation,
                                         bacv_hasMember,
+                                        bacv_hasNamedMember,
+                                        bacv_hasValueMap,
                                     ]:
                                         if se_arg is None:
                                             continue
@@ -46236,8 +51166,1029 @@ class AssetInterfacesDescription(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
+                            class Bacv_hasNamedMember(SubmodelElementList):
+
+                                class Bacv_hasnamedmember_item(
+                                    SubmodelElementCollection
+                                ):
+
+                                    class Bacv_hasFieldName(Property):
+
+                                        def __init__(
+                                            self,
+                                            value: str,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasFieldName",
+                                            value_type: DataTypeDefXsd = str,
+                                            value_id: Optional[Reference] = None,
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Bacv Has Field Name"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines name of a Named Member of a Sequence or Choice data type."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasfieldName",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"One",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            super().__init__(
+                                                value=value,
+                                                id_short=id_short,
+                                                value_type=value_type,
+                                                value_id=value_id,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    class Bacv_hasContextTag(Property):
+
+                                        def __init__(
+                                            self,
+                                            value: bool,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasContextTag",
+                                            value_type: DataTypeDefXsd = bool,
+                                            value_id: Optional[Reference] = None,
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Bacv Has Context Tag"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines Context Tag for a Named Member of a Sequence or Choice data type."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasContextTag",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"One",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            super().__init__(
+                                                value=value,
+                                                id_short=id_short,
+                                                value_type=value_type,
+                                                value_id=value_id,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    class Bacv_hasDataType(SubmodelElementCollection):
+
+                                        def __init__(
+                                            self,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasDataType",
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Bacv Has Data Type"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the type information of a BACnet payload. This SMC is used to abstract BACnet data model to human and machine readable model by still keeping its wire compatibility on the protocol."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasDataType",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"ZeroToOne",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            # Add all passed/initialized submodel elements to a single list
+                                            embedded_submodel_elements = []
+                                            for se_arg in []:
+                                                if se_arg is None:
+                                                    continue
+                                                elif isinstance(
+                                                    se_arg, SubmodelElement
+                                                ):
+                                                    embedded_submodel_elements.append(
+                                                        se_arg
+                                                    )
+                                                elif isinstance(se_arg, Iterable):
+                                                    for n, element in enumerate(se_arg):
+                                                        element.id_short = (
+                                                            f"{element.id_short}{n}"
+                                                        )
+                                                        embedded_submodel_elements.append(
+                                                            element
+                                                        )
+                                                else:
+                                                    raise TypeError(
+                                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    )
+
+                                            super().__init__(
+                                                value=embedded_submodel_elements,
+                                                id_short=id_short,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    def __init__(
+                                        self,
+                                        bacv_hasFieldName: Union[
+                                            str, Bacv_hasFieldName
+                                        ],
+                                        bacv_hasContextTag: Union[
+                                            bool, Bacv_hasContextTag
+                                        ],
+                                        bacv_hasDataType: Optional[
+                                            Bacv_hasDataType
+                                        ] = None,
+                                        id_short: Optional[
+                                            str
+                                        ] = r"bacv_hasnamedmember_item",
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"Properties"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Defines the Named Member of a Sequence or Choice data type."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"http://www.w3.org/2022/bacnet#NamedMember",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZerotoMany",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        # Build a submodel element if a raw value was passed in the argument
+                                        if bacv_hasFieldName and not isinstance(
+                                            bacv_hasFieldName, SubmodelElement
+                                        ):
+                                            bacv_hasFieldName = self.Bacv_hasFieldName(
+                                                bacv_hasFieldName
+                                            )
+
+                                        # Build a submodel element if a raw value was passed in the argument
+                                        if bacv_hasContextTag and not isinstance(
+                                            bacv_hasContextTag, SubmodelElement
+                                        ):
+                                            bacv_hasContextTag = (
+                                                self.Bacv_hasContextTag(
+                                                    bacv_hasContextTag
+                                                )
+                                            )
+
+                                        # Add all passed/initialized submodel elements to a single list
+                                        embedded_submodel_elements = []
+                                        for se_arg in [
+                                            bacv_hasFieldName,
+                                            bacv_hasContextTag,
+                                            bacv_hasDataType,
+                                        ]:
+                                            if se_arg is None:
+                                                continue
+                                            elif isinstance(se_arg, SubmodelElement):
+                                                embedded_submodel_elements.append(
+                                                    se_arg
+                                                )
+                                            elif isinstance(se_arg, Iterable):
+                                                for n, element in enumerate(se_arg):
+                                                    element.id_short = (
+                                                        f"{element.id_short}{n}"
+                                                    )
+                                                    embedded_submodel_elements.append(
+                                                        element
+                                                    )
+                                            else:
+                                                raise TypeError(
+                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                )
+
+                                        super().__init__(
+                                            value=embedded_submodel_elements,
+                                            id_short=id_short,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                def __init__(
+                                    self,
+                                    bacv_hasnamedmember_items: Bacv_hasnamedmember_item,
+                                    id_short: Optional[str] = r"bacv_hasNamedMember",
+                                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                    semantic_id_list_element: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"http://www.w3.org/2022/bacnet#NamedMember",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    value_type_list_element: Optional[
+                                        DataTypeDefXsd
+                                    ] = None,
+                                    order_relevant: bool = True,
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Bacv Has Named Member"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Defines the Named Member of a Sequence or Choice data type."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"http://www.w3.org/2022/bacnet#hasNamedMember",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = (
+                                            Qualifier(
+                                                type_=r"Cardinality",
+                                                value_type=str,
+                                                value=r"One",
+                                                value_id=None,
+                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                semantic_id=None,
+                                                supplemental_semantic_id=(),
+                                            ),
+                                        )
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    # Add all passed/initialized submodel elements to a single list
+                                    embedded_submodel_elements = []
+                                    for se_arg in [bacv_hasnamedmember_items]:
+                                        if se_arg is None:
+                                            continue
+                                        elif isinstance(se_arg, SubmodelElement):
+                                            embedded_submodel_elements.append(se_arg)
+                                        elif isinstance(se_arg, Iterable):
+                                            for n, element in enumerate(se_arg):
+                                                element.id_short = (
+                                                    f"{element.id_short}{n}"
+                                                )
+                                                embedded_submodel_elements.append(
+                                                    element
+                                                )
+                                        else:
+                                            raise TypeError(
+                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            )
+
+                                    super().__init__(
+                                        value=embedded_submodel_elements,
+                                        id_short=id_short,
+                                        type_value_list_element=type_value_list_element,
+                                        semantic_id_list_element=semantic_id_list_element,
+                                        value_type_list_element=value_type_list_element,
+                                        order_relevant=order_relevant,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                                def _check_constraints(self, new, existing) -> None:
+                                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                    saved_id_short = new.id_short
+                                    new.id_short = None
+
+                                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                    if not isinstance(
+                                        new, self.type_value_list_element
+                                    ):
+                                        raise base.AASConstraintViolation(
+                                            108,
+                                            "All first level elements must be of the type specified in "
+                                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                            f"got {new!r}",
+                                        )
+
+                                    if (
+                                        self.semantic_id_list_element is not None
+                                        and new.semantic_id is not None
+                                        and new.semantic_id
+                                        != self.semantic_id_list_element
+                                    ):
+                                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                        # Not really a constraint...
+                                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                        raise base.AASConstraintViolation(
+                                            107,
+                                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                            "is specified all first level children must have the same "
+                                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                        )
+
+                                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                    # is either Property or Range. Thus, `new` must have the value_type property.
+                                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                    if (
+                                        isinstance(
+                                            self.type_value_list_element, Property
+                                        )
+                                        or isinstance(
+                                            self.type_value_list_element, Range
+                                        )
+                                        and not isinstance(
+                                            new.value_type, self.value_type_list_element
+                                        )
+                                    ):  # type: ignore
+                                        raise base.AASConstraintViolation(
+                                            109,
+                                            "All first level elements must have the value_type "  # type: ignore
+                                            "specified by value_type_list_element="
+                                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                            f"{new!r} with value_type={new.value_type.__name__}",
+                                        )  # type: ignore
+
+                                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                    if (
+                                        new.semantic_id is not None
+                                        and self.semantic_id_list_element is None
+                                    ):
+                                        for item in existing:
+                                            if (
+                                                item.semantic_id is not None
+                                                and new.semantic_id != item.semantic_id
+                                            ):
+                                                raise base.AASConstraintViolation(
+                                                    114,
+                                                    f"Element to be added {new!r} has semantic_id "
+                                                    f"{new.semantic_id!r}, while already contained element "
+                                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                    "aren't equal.",
+                                                )
+
+                                    # Re-assign id_short
+                                    new.id_short = saved_id_short
+
+                            class Bacv_hasValueMap(SubmodelElementList):
+
+                                class Bacv_hasvaluemap_item(SubmodelElementCollection):
+
+                                    class Bacv_hasLogicalVal(Property):
+
+                                        def __init__(
+                                            self,
+                                            value: str,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasLogicalVal",
+                                            value_type: DataTypeDefXsd = str,
+                                            value_id: Optional[Reference] = None,
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Bacv Has Logical Val"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the logical value for a ValueMap."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasLogicalVal",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"One",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                    Qualifier(
+                                                        type_=r"data type",
+                                                        value_type=str,
+                                                        value=r"one of xsd:integer, xsd:string or xsd:boolean",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            super().__init__(
+                                                value=value,
+                                                id_short=id_short,
+                                                value_type=value_type,
+                                                value_id=value_id,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    class Bacv_hasProtocolVal(Property):
+
+                                        def __init__(
+                                            self,
+                                            value: int,
+                                            id_short: Optional[
+                                                str
+                                            ] = r"bacv_hasProtocolVal",
+                                            value_type: DataTypeDefXsd = int,
+                                            value_id: Optional[Reference] = None,
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={r"en": r"Bacv Has Protocol Val"}
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the protocol value for a ValueMap."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/bacnet#hasProtocolVal",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"One",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            super().__init__(
+                                                value=value,
+                                                id_short=id_short,
+                                                value_type=value_type,
+                                                value_id=value_id,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    def __init__(
+                                        self,
+                                        bacv_hasLogicalVal: Union[
+                                            str, Bacv_hasLogicalVal
+                                        ],
+                                        bacv_hasProtocolVal: Union[
+                                            int, Bacv_hasProtocolVal
+                                        ],
+                                        id_short: Optional[
+                                            str
+                                        ] = r"bacv_hasvaluemap_item",
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"Properties"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Defines the value map for an Enumeration."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"http://www.w3.org/2022/bacnet#hasMapEntry",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZerotoMany",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        # Build a submodel element if a raw value was passed in the argument
+                                        if bacv_hasLogicalVal and not isinstance(
+                                            bacv_hasLogicalVal, SubmodelElement
+                                        ):
+                                            bacv_hasLogicalVal = (
+                                                self.Bacv_hasLogicalVal(
+                                                    bacv_hasLogicalVal
+                                                )
+                                            )
+
+                                        # Build a submodel element if a raw value was passed in the argument
+                                        if bacv_hasProtocolVal and not isinstance(
+                                            bacv_hasProtocolVal, SubmodelElement
+                                        ):
+                                            bacv_hasProtocolVal = (
+                                                self.Bacv_hasProtocolVal(
+                                                    bacv_hasProtocolVal
+                                                )
+                                            )
+
+                                        # Add all passed/initialized submodel elements to a single list
+                                        embedded_submodel_elements = []
+                                        for se_arg in [
+                                            bacv_hasLogicalVal,
+                                            bacv_hasProtocolVal,
+                                        ]:
+                                            if se_arg is None:
+                                                continue
+                                            elif isinstance(se_arg, SubmodelElement):
+                                                embedded_submodel_elements.append(
+                                                    se_arg
+                                                )
+                                            elif isinstance(se_arg, Iterable):
+                                                for n, element in enumerate(se_arg):
+                                                    element.id_short = (
+                                                        f"{element.id_short}{n}"
+                                                    )
+                                                    embedded_submodel_elements.append(
+                                                        element
+                                                    )
+                                            else:
+                                                raise TypeError(
+                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                )
+
+                                        super().__init__(
+                                            value=embedded_submodel_elements,
+                                            id_short=id_short,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                def __init__(
+                                    self,
+                                    bacv_hasvaluemap_items: Bacv_hasvaluemap_item,
+                                    id_short: Optional[str] = r"bacv_hasValueMap",
+                                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                    semantic_id_list_element: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"http://www.w3.org/2022/bacnet#hasMapEntry",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    value_type_list_element: Optional[
+                                        DataTypeDefXsd
+                                    ] = None,
+                                    order_relevant: bool = True,
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Bacv Has Value Map"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Defines the value map of an enumeration."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"http://www.w3.org/2022/bacnet#hasValueMap",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = (
+                                            Qualifier(
+                                                type_=r"Cardinality",
+                                                value_type=str,
+                                                value=r"ZerotoOne",
+                                                value_id=None,
+                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                semantic_id=None,
+                                                supplemental_semantic_id=(),
+                                            ),
+                                        )
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    # Add all passed/initialized submodel elements to a single list
+                                    embedded_submodel_elements = []
+                                    for se_arg in [bacv_hasvaluemap_items]:
+                                        if se_arg is None:
+                                            continue
+                                        elif isinstance(se_arg, SubmodelElement):
+                                            embedded_submodel_elements.append(se_arg)
+                                        elif isinstance(se_arg, Iterable):
+                                            for n, element in enumerate(se_arg):
+                                                element.id_short = (
+                                                    f"{element.id_short}{n}"
+                                                )
+                                                embedded_submodel_elements.append(
+                                                    element
+                                                )
+                                        else:
+                                            raise TypeError(
+                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            )
+
+                                    super().__init__(
+                                        value=embedded_submodel_elements,
+                                        id_short=id_short,
+                                        type_value_list_element=type_value_list_element,
+                                        semantic_id_list_element=semantic_id_list_element,
+                                        value_type_list_element=value_type_list_element,
+                                        order_relevant=order_relevant,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                                def _check_constraints(self, new, existing) -> None:
+                                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                    saved_id_short = new.id_short
+                                    new.id_short = None
+
+                                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                    if not isinstance(
+                                        new, self.type_value_list_element
+                                    ):
+                                        raise base.AASConstraintViolation(
+                                            108,
+                                            "All first level elements must be of the type specified in "
+                                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                            f"got {new!r}",
+                                        )
+
+                                    if (
+                                        self.semantic_id_list_element is not None
+                                        and new.semantic_id is not None
+                                        and new.semantic_id
+                                        != self.semantic_id_list_element
+                                    ):
+                                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                        # Not really a constraint...
+                                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                        raise base.AASConstraintViolation(
+                                            107,
+                                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                            "is specified all first level children must have the same "
+                                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                        )
+
+                                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                    # is either Property or Range. Thus, `new` must have the value_type property.
+                                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                    if (
+                                        isinstance(
+                                            self.type_value_list_element, Property
+                                        )
+                                        or isinstance(
+                                            self.type_value_list_element, Range
+                                        )
+                                        and not isinstance(
+                                            new.value_type, self.value_type_list_element
+                                        )
+                                    ):  # type: ignore
+                                        raise base.AASConstraintViolation(
+                                            109,
+                                            "All first level elements must have the value_type "  # type: ignore
+                                            "specified by value_type_list_element="
+                                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                            f"{new!r} with value_type={new.value_type.__name__}",
+                                        )  # type: ignore
+
+                                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                    if (
+                                        new.semantic_id is not None
+                                        and self.semantic_id_list_element is None
+                                    ):
+                                        for item in existing:
+                                            if (
+                                                item.semantic_id is not None
+                                                and new.semantic_id != item.semantic_id
+                                            ):
+                                                raise base.AASConstraintViolation(
+                                                    114,
+                                                    f"Element to be added {new!r} has semantic_id "
+                                                    f"{new.semantic_id!r}, while already contained element "
+                                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                    "aren't equal.",
+                                                )
+
+                                    # Re-assign id_short
+                                    new.id_short = saved_id_short
+
                             def __init__(
                                 self,
+                                bacv_hasNamedMember: Bacv_hasNamedMember,
+                                bacv_hasValueMap: Bacv_hasValueMap,
                                 bacv_isISO: Optional[Union[bool, Bacv_isISO]] = None,
                                 bacv_hasBinaryRepresentation: Optional[
                                     Union[bool, Bacv_hasBinaryRepresentation]
@@ -46484,6 +52435,8 @@ class AssetInterfacesDescription(Submodel):
                                     bacv_isISO,
                                     bacv_hasBinaryRepresentation,
                                     bacv_hasMember,
+                                    bacv_hasNamedMember,
+                                    bacv_hasValueMap,
                                 ]:
                                     if se_arg is None:
                                         continue
@@ -46514,6 +52467,7 @@ class AssetInterfacesDescription(Submodel):
                         def __init__(
                             self,
                             href: Union[str, Href],
+                            security: Security,
                             bacv_useService: Union[str, Bacv_useService],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
@@ -46581,6 +52535,7 @@ class AssetInterfacesDescription(Submodel):
                                 href,
                                 contentType,
                                 subprotocol,
+                                security,
                                 bacv_useService,
                                 bacv_hasDataType,
                             ]:
@@ -47103,7 +53058,7 @@ class AssetInterfacesDescription(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"fileName",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(dict_={r"en": r"File Name"}),
@@ -47744,6 +53699,231 @@ class AssetInterfacesDescription(Submodel):
                         supplemental_semantic_id=supplemental_semantic_id,
                         embedded_data_specifications=embedded_data_specifications,
                     )
+
+            class Security(SubmodelElementList):
+
+                class Security_item(ReferenceElement):
+
+                    def __init__(
+                        self,
+                        value: Reference,
+                        id_short: Optional[str] = r"security_item",
+                        display_name: Optional[
+                            MultiLanguageNameType
+                        ] = MultiLanguageNameType(
+                            dict_={r"en": r"Defines Security Scheme"}
+                        ),
+                        category: Optional[str] = None,
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = ()
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    security_items: Union[Reference, Security_item],
+                    id_short: Optional[str] = r"security",
+                    type_value_list_element: SubmodelElement = ReferenceElement,
+                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[
+                        MultiLanguageNameType
+                    ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if security_items and not isinstance(
+                        security_items, SubmodelElement
+                    ):
+                        security_items = self.Security_item(security_items)
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [security_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
 
             class SecurityDefinitions(SubmodelElementCollection):
 
@@ -51504,6 +57684,7 @@ class AssetInterfacesDescription(Submodel):
                 self,
                 base: Union[AnyURI, Base],
                 contentType: Union[str, ContentType],
+                security: Security,
                 securityDefinitions: SecurityDefinitions,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -51558,7 +57739,7 @@ class AssetInterfacesDescription(Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [base, contentType, securityDefinitions]:
+                for se_arg in [base, contentType, security, securityDefinitions]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -55625,6 +61806,239 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Security(SubmodelElementList):
+
+                            class Security_item(ReferenceElement):
+
+                                def __init__(
+                                    self,
+                                    value: Reference,
+                                    id_short: Optional[str] = r"security_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"Defines Security Scheme"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"ReferenceElement within the SML points to a sercurity scheme definition in the SMC securityDefinitions."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = ()
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    super().__init__(
+                                        value=value,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                security_items: Union[Reference, Security_item],
+                                id_short: Optional[str] = r"security",
+                                type_value_list_element: SubmodelElement = ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(dict_={r"en": r"Security"}),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Selects one or more of the security scheme(s) that can be applied at runtime from the collection of security schemes defines in securityDefinitions. "
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Build a submodel element if a raw value was passed in the argument
+                                if security_items and not isinstance(
+                                    security_items, SubmodelElement
+                                ):
+                                    security_items = self.Security_item(security_items)
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [security_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         class Iolv_method(Property):
 
                             def __init__(
@@ -56108,9 +62522,1684 @@ class AssetInterfacesDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
+                        class Iolv_enumeratedValues(SubmodelElementList):
+
+                            class Iolv_enumeratedvalues_item(SubmodelElementCollection):
+
+                                class Iolv_encodedPayload(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: str,
+                                        id_short: Optional[
+                                            str
+                                        ] = r"iolv_encodedPayload",
+                                        value_type: DataTypeDefXsd = str,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Encoded Payload"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Specifies the presentation of the payload Logical encoding.  "
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/encodedPayload",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"One",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Iolv_decodedPayload(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: int,
+                                        id_short: Optional[
+                                            str
+                                        ] = r"iolv_decodedPayload",
+                                        value_type: DataTypeDefXsd = int,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Decoded Payload"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Specifies the human readable meaning of the payload Logical encoding.  "
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/decodedPayload",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"One",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                def __init__(
+                                    self,
+                                    iolv_encodedPayload: Union[
+                                        str, Iolv_encodedPayload
+                                    ],
+                                    iolv_decodedPayload: Union[
+                                        int, Iolv_decodedPayload
+                                    ],
+                                    id_short: Optional[
+                                        str
+                                    ] = r"iolv_enumeratedvalues_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={r"en": r"IO-Link Enumerated Value"}
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Defines the logical semantic to encoded payload provided a byte or byte stream."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"http://www.w3.org/2022/wot/iolink#EnumeratedValue",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = (
+                                            Qualifier(
+                                                type_=r"Cardinality",
+                                                value_type=str,
+                                                value=r"ZerotoMany",
+                                                value_id=None,
+                                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                semantic_id=None,
+                                                supplemental_semantic_id=(),
+                                            ),
+                                        )
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_encodedPayload and not isinstance(
+                                        iolv_encodedPayload, SubmodelElement
+                                    ):
+                                        iolv_encodedPayload = self.Iolv_encodedPayload(
+                                            iolv_encodedPayload
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_decodedPayload and not isinstance(
+                                        iolv_decodedPayload, SubmodelElement
+                                    ):
+                                        iolv_decodedPayload = self.Iolv_decodedPayload(
+                                            iolv_decodedPayload
+                                        )
+
+                                    # Add all passed/initialized submodel elements to a single list
+                                    embedded_submodel_elements = []
+                                    for se_arg in [
+                                        iolv_encodedPayload,
+                                        iolv_decodedPayload,
+                                    ]:
+                                        if se_arg is None:
+                                            continue
+                                        elif isinstance(se_arg, SubmodelElement):
+                                            embedded_submodel_elements.append(se_arg)
+                                        elif isinstance(se_arg, Iterable):
+                                            for n, element in enumerate(se_arg):
+                                                element.id_short = (
+                                                    f"{element.id_short}{n}"
+                                                )
+                                                embedded_submodel_elements.append(
+                                                    element
+                                                )
+                                        else:
+                                            raise TypeError(
+                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            )
+
+                                    super().__init__(
+                                        value=embedded_submodel_elements,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                iolv_enumeratedvalues_items: Iolv_enumeratedvalues_item,
+                                id_short: Optional[str] = r"iolv_enumeratedValues",
+                                type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"http://www.w3.org/2022/wot/iolink#EnumeratedValue",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(
+                                    dict_={r"en": r"IO-Link Enumerated Values"}
+                                ),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Contains a list of enumerated values that define the logical semantic to encoded payload provided a byte or byte stream. "
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/hasEnumeratedValues",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"ZeroToOne",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [iolv_enumeratedvalues_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
+                        class Iolv_payloadMapping(SubmodelElementList):
+
+                            class Iolv_payloadmapping_item(SubmodelElementCollection):
+
+                                class Iolv_referenceToProperty(ReferenceElement):
+
+                                    def __init__(
+                                        self,
+                                        value: Reference,
+                                        id_short: Optional[
+                                            str
+                                        ] = r"iolv_referenceToProperty",
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={
+                                                r"en": r"IO-Link Reference to Property"
+                                            }
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Defined the reference to a nested datapoint of an object type datapoint. "
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/referenceToProperty",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZeroToOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Iolv_type(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: str,
+                                        id_short: Optional[str] = r"iolv_type",
+                                        value_type: DataTypeDefXsd = str,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Type"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Specifies the data type contained in the request or response payload. "
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/hasPayloadDataType",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZeroToOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Iolv_byteOffset(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: str,
+                                        id_short: Optional[str] = r"iolv_byteOffset",
+                                        value_type: DataTypeDefXsd = str,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Byte Offset"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"For object type datapoints. Used to identify the starting point within a byte stream payload that represents a datapoint."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/byteOffset",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZeroToOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Iolv_byteLength(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: str,
+                                        id_short: Optional[str] = r"iolv_byteLength",
+                                        value_type: DataTypeDefXsd = str,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Byte Length"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"For object type datapoints. Used to identify the byte length within a byte stream payload that represents a datapoint."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/byteLength",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZeroToOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Iolv_bitOffset(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: int,
+                                        id_short: Optional[str] = r"iolv_bitOffset",
+                                        value_type: DataTypeDefXsd = int,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Bit Offset"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"For object type datapoints. Used to identify the starting point within a bit stream payload that represents a datapoint."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/bitOffset",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZeroToOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Iolv_bitLength(Property):
+
+                                    def __init__(
+                                        self,
+                                        value: str,
+                                        id_short: Optional[str] = r"iolv_bitLength",
+                                        value_type: DataTypeDefXsd = str,
+                                        value_id: Optional[Reference] = None,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Bit Length"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"For object type datapoints. Used to identify the bit length of a datapoint from the bit stream payload."
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/bitLength",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZeroToOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        super().__init__(
+                                            value=value,
+                                            id_short=id_short,
+                                            value_type=value_type,
+                                            value_id=value_id,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                class Iolv_enumeratedValues(SubmodelElementList):
+
+                                    class Iolv_enumeratedvalues_item(
+                                        SubmodelElementCollection
+                                    ):
+
+                                        class Iolv_encodedPayload(Property):
+
+                                            def __init__(
+                                                self,
+                                                value: str,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"iolv_encodedPayload",
+                                                value_type: DataTypeDefXsd = str,
+                                                value_id: Optional[Reference] = None,
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"IO-Link Encoded Payload"
+                                                    }
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Specifies the presentation of the payload Logical encoding.  "
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/encodedPayload",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"One",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                super().__init__(
+                                                    value=value,
+                                                    id_short=id_short,
+                                                    value_type=value_type,
+                                                    value_id=value_id,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        class Iolv_decodedPayload(Property):
+
+                                            def __init__(
+                                                self,
+                                                value: int,
+                                                id_short: Optional[
+                                                    str
+                                                ] = r"iolv_decodedPayload",
+                                                value_type: DataTypeDefXsd = int,
+                                                value_id: Optional[Reference] = None,
+                                                display_name: Optional[
+                                                    MultiLanguageNameType
+                                                ] = MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"IO-Link Decoded Payload"
+                                                    }
+                                                ),
+                                                category: Optional[str] = None,
+                                                description: Optional[
+                                                    MultiLanguageTextType
+                                                ] = MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Specifies the human readable meaning of the payload Logical encoding.  "
+                                                    }
+                                                ),
+                                                semantic_id: Optional[
+                                                    Reference
+                                                ] = ExternalReference(
+                                                    key=(
+                                                        Key(
+                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/decodedPayload",
+                                                        ),
+                                                    ),
+                                                    referred_semantic_id=None,
+                                                ),
+                                                qualifier: Iterable[Qualifier] = None,
+                                                extension: Iterable[Extension] = (),
+                                                supplemental_semantic_id: Iterable[
+                                                    Reference
+                                                ] = (),
+                                                embedded_data_specifications: Iterable[
+                                                    EmbeddedDataSpecification
+                                                ] = None,
+                                            ):
+
+                                                if qualifier is None:
+                                                    qualifier = (
+                                                        Qualifier(
+                                                            type_=r"Cardinality",
+                                                            value_type=str,
+                                                            value=r"One",
+                                                            value_id=None,
+                                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                            semantic_id=None,
+                                                            supplemental_semantic_id=(),
+                                                        ),
+                                                    )
+
+                                                if embedded_data_specifications is None:
+                                                    embedded_data_specifications = []
+
+                                                super().__init__(
+                                                    value=value,
+                                                    id_short=id_short,
+                                                    value_type=value_type,
+                                                    value_id=value_id,
+                                                    display_name=display_name,
+                                                    category=category,
+                                                    description=description,
+                                                    semantic_id=semantic_id,
+                                                    qualifier=qualifier,
+                                                    extension=extension,
+                                                    supplemental_semantic_id=supplemental_semantic_id,
+                                                    embedded_data_specifications=embedded_data_specifications,
+                                                )
+
+                                        def __init__(
+                                            self,
+                                            iolv_encodedPayload: Union[
+                                                str, Iolv_encodedPayload
+                                            ],
+                                            iolv_decodedPayload: Union[
+                                                int, Iolv_decodedPayload
+                                            ],
+                                            id_short: Optional[
+                                                str
+                                            ] = r"iolv_enumeratedvalues_item",
+                                            display_name: Optional[
+                                                MultiLanguageNameType
+                                            ] = MultiLanguageNameType(
+                                                dict_={
+                                                    r"en": r"IO-Link Enumerated Value"
+                                                }
+                                            ),
+                                            category: Optional[str] = None,
+                                            description: Optional[
+                                                MultiLanguageTextType
+                                            ] = MultiLanguageTextType(
+                                                dict_={
+                                                    r"en": r"Defines the logical semantic to encoded payload provided a byte or byte stream."
+                                                }
+                                            ),
+                                            semantic_id: Optional[
+                                                Reference
+                                            ] = ExternalReference(
+                                                key=(
+                                                    Key(
+                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"http://www.w3.org/2022/wot/iolink#EnumeratedValue",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            qualifier: Iterable[Qualifier] = None,
+                                            extension: Iterable[Extension] = (),
+                                            supplemental_semantic_id: Iterable[
+                                                Reference
+                                            ] = (),
+                                            embedded_data_specifications: Iterable[
+                                                EmbeddedDataSpecification
+                                            ] = None,
+                                        ):
+
+                                            if qualifier is None:
+                                                qualifier = (
+                                                    Qualifier(
+                                                        type_=r"Cardinality",
+                                                        value_type=str,
+                                                        value=r"ZerotoMany",
+                                                        value_id=None,
+                                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                        semantic_id=None,
+                                                        supplemental_semantic_id=(),
+                                                    ),
+                                                )
+
+                                            if embedded_data_specifications is None:
+                                                embedded_data_specifications = []
+
+                                            # Build a submodel element if a raw value was passed in the argument
+                                            if iolv_encodedPayload and not isinstance(
+                                                iolv_encodedPayload, SubmodelElement
+                                            ):
+                                                iolv_encodedPayload = (
+                                                    self.Iolv_encodedPayload(
+                                                        iolv_encodedPayload
+                                                    )
+                                                )
+
+                                            # Build a submodel element if a raw value was passed in the argument
+                                            if iolv_decodedPayload and not isinstance(
+                                                iolv_decodedPayload, SubmodelElement
+                                            ):
+                                                iolv_decodedPayload = (
+                                                    self.Iolv_decodedPayload(
+                                                        iolv_decodedPayload
+                                                    )
+                                                )
+
+                                            # Add all passed/initialized submodel elements to a single list
+                                            embedded_submodel_elements = []
+                                            for se_arg in [
+                                                iolv_encodedPayload,
+                                                iolv_decodedPayload,
+                                            ]:
+                                                if se_arg is None:
+                                                    continue
+                                                elif isinstance(
+                                                    se_arg, SubmodelElement
+                                                ):
+                                                    embedded_submodel_elements.append(
+                                                        se_arg
+                                                    )
+                                                elif isinstance(se_arg, Iterable):
+                                                    for n, element in enumerate(se_arg):
+                                                        element.id_short = (
+                                                            f"{element.id_short}{n}"
+                                                        )
+                                                        embedded_submodel_elements.append(
+                                                            element
+                                                        )
+                                                else:
+                                                    raise TypeError(
+                                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    )
+
+                                            super().__init__(
+                                                value=embedded_submodel_elements,
+                                                id_short=id_short,
+                                                display_name=display_name,
+                                                category=category,
+                                                description=description,
+                                                semantic_id=semantic_id,
+                                                qualifier=qualifier,
+                                                extension=extension,
+                                                supplemental_semantic_id=supplemental_semantic_id,
+                                                embedded_data_specifications=embedded_data_specifications,
+                                            )
+
+                                    def __init__(
+                                        self,
+                                        iolv_enumeratedvalues_items: Iolv_enumeratedvalues_item,
+                                        id_short: Optional[
+                                            str
+                                        ] = r"iolv_enumeratedValues",
+                                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                        semantic_id_list_element: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"http://www.w3.org/2022/wot/iolink#EnumeratedValue",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        value_type_list_element: Optional[
+                                            DataTypeDefXsd
+                                        ] = None,
+                                        order_relevant: bool = True,
+                                        display_name: Optional[
+                                            MultiLanguageNameType
+                                        ] = MultiLanguageNameType(
+                                            dict_={r"en": r"IO-Link Enumerated Values"}
+                                        ),
+                                        category: Optional[str] = None,
+                                        description: Optional[
+                                            MultiLanguageTextType
+                                        ] = MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Contains a list of enumerated values that define the logical semantic to encoded payload provided a byte or byte stream. "
+                                            }
+                                        ),
+                                        semantic_id: Optional[
+                                            Reference
+                                        ] = ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/hasEnumeratedValues",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        qualifier: Iterable[Qualifier] = None,
+                                        extension: Iterable[Extension] = (),
+                                        supplemental_semantic_id: Iterable[
+                                            Reference
+                                        ] = (),
+                                        embedded_data_specifications: Iterable[
+                                            EmbeddedDataSpecification
+                                        ] = None,
+                                    ):
+
+                                        if qualifier is None:
+                                            qualifier = (
+                                                Qualifier(
+                                                    type_=r"Cardinality",
+                                                    value_type=str,
+                                                    value=r"ZeroToOne",
+                                                    value_id=None,
+                                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                                    semantic_id=None,
+                                                    supplemental_semantic_id=(),
+                                                ),
+                                            )
+
+                                        if embedded_data_specifications is None:
+                                            embedded_data_specifications = []
+
+                                        # Add all passed/initialized submodel elements to a single list
+                                        embedded_submodel_elements = []
+                                        for se_arg in [iolv_enumeratedvalues_items]:
+                                            if se_arg is None:
+                                                continue
+                                            elif isinstance(se_arg, SubmodelElement):
+                                                embedded_submodel_elements.append(
+                                                    se_arg
+                                                )
+                                            elif isinstance(se_arg, Iterable):
+                                                for n, element in enumerate(se_arg):
+                                                    element.id_short = (
+                                                        f"{element.id_short}{n}"
+                                                    )
+                                                    embedded_submodel_elements.append(
+                                                        element
+                                                    )
+                                            else:
+                                                raise TypeError(
+                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                )
+
+                                        super().__init__(
+                                            value=embedded_submodel_elements,
+                                            id_short=id_short,
+                                            type_value_list_element=type_value_list_element,
+                                            semantic_id_list_element=semantic_id_list_element,
+                                            value_type_list_element=value_type_list_element,
+                                            order_relevant=order_relevant,
+                                            display_name=display_name,
+                                            category=category,
+                                            description=description,
+                                            semantic_id=semantic_id,
+                                            qualifier=qualifier,
+                                            extension=extension,
+                                            supplemental_semantic_id=supplemental_semantic_id,
+                                            embedded_data_specifications=embedded_data_specifications,
+                                        )
+
+                                    def _check_constraints(self, new, existing) -> None:
+                                        # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                        # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                        saved_id_short = new.id_short
+                                        new.id_short = None
+
+                                        # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                        if not isinstance(
+                                            new, self.type_value_list_element
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                108,
+                                                "All first level elements must be of the type specified in "
+                                                f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                                f"got {new!r}",
+                                            )
+
+                                        if (
+                                            self.semantic_id_list_element is not None
+                                            and new.semantic_id is not None
+                                            and new.semantic_id
+                                            != self.semantic_id_list_element
+                                        ):
+                                            # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                            # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                            # Not really a constraint...
+                                            # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                            raise base.AASConstraintViolation(
+                                                107,
+                                                f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                                "is specified all first level children must have the same "
+                                                f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                            )
+
+                                        # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                        # is either Property or Range. Thus, `new` must have the value_type property.
+                                        # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                        if (
+                                            isinstance(
+                                                self.type_value_list_element, Property
+                                            )
+                                            or isinstance(
+                                                self.type_value_list_element, Range
+                                            )
+                                            and not isinstance(
+                                                new.value_type,
+                                                self.value_type_list_element,
+                                            )
+                                        ):  # type: ignore
+                                            raise base.AASConstraintViolation(
+                                                109,
+                                                "All first level elements must have the value_type "  # type: ignore
+                                                "specified by value_type_list_element="
+                                                f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                                f"{new!r} with value_type={new.value_type.__name__}",
+                                            )  # type: ignore
+
+                                        # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                        # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                        if (
+                                            new.semantic_id is not None
+                                            and self.semantic_id_list_element is None
+                                        ):
+                                            for item in existing:
+                                                if (
+                                                    item.semantic_id is not None
+                                                    and new.semantic_id
+                                                    != item.semantic_id
+                                                ):
+                                                    raise base.AASConstraintViolation(
+                                                        114,
+                                                        f"Element to be added {new!r} has semantic_id "
+                                                        f"{new.semantic_id!r}, while already contained element "
+                                                        f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                        "aren't equal.",
+                                                    )
+
+                                        # Re-assign id_short
+                                        new.id_short = saved_id_short
+
+                                def __init__(
+                                    self,
+                                    iolv_referenceToProperty: Optional[
+                                        Union[Reference, Iolv_referenceToProperty]
+                                    ] = None,
+                                    iolv_type: Optional[Union[str, Iolv_type]] = None,
+                                    iolv_byteOffset: Optional[
+                                        Union[str, Iolv_byteOffset]
+                                    ] = None,
+                                    iolv_byteLength: Optional[
+                                        Union[str, Iolv_byteLength]
+                                    ] = None,
+                                    iolv_bitOffset: Optional[
+                                        Union[int, Iolv_bitOffset]
+                                    ] = None,
+                                    iolv_bitLength: Optional[
+                                        Union[str, Iolv_bitLength]
+                                    ] = None,
+                                    iolv_enumeratedValues: Optional[
+                                        Iolv_enumeratedValues
+                                    ] = None,
+                                    id_short: Optional[
+                                        str
+                                    ] = r"iolv_payloadmapping_item",
+                                    display_name: Optional[
+                                        MultiLanguageNameType
+                                    ] = MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"IO-Link Payload Mapping Element"
+                                        }
+                                    ),
+                                    category: Optional[str] = None,
+                                    description: Optional[
+                                        MultiLanguageTextType
+                                    ] = MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Defines the payload mapping associated to a datapoint."
+                                        }
+                                    ),
+                                    semantic_id: Optional[
+                                        Reference
+                                    ] = ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"http://www.w3.org/2022/wot/iolink#PayloadMapping",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    qualifier: Iterable[Qualifier] = None,
+                                    extension: Iterable[Extension] = (),
+                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    embedded_data_specifications: Iterable[
+                                        EmbeddedDataSpecification
+                                    ] = None,
+                                ):
+
+                                    if qualifier is None:
+                                        qualifier = ()
+
+                                    if embedded_data_specifications is None:
+                                        embedded_data_specifications = []
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_referenceToProperty and not isinstance(
+                                        iolv_referenceToProperty, SubmodelElement
+                                    ):
+                                        iolv_referenceToProperty = (
+                                            self.Iolv_referenceToProperty(
+                                                iolv_referenceToProperty
+                                            )
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_type and not isinstance(
+                                        iolv_type, SubmodelElement
+                                    ):
+                                        iolv_type = self.Iolv_type(iolv_type)
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_byteOffset and not isinstance(
+                                        iolv_byteOffset, SubmodelElement
+                                    ):
+                                        iolv_byteOffset = self.Iolv_byteOffset(
+                                            iolv_byteOffset
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_byteLength and not isinstance(
+                                        iolv_byteLength, SubmodelElement
+                                    ):
+                                        iolv_byteLength = self.Iolv_byteLength(
+                                            iolv_byteLength
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_bitOffset and not isinstance(
+                                        iolv_bitOffset, SubmodelElement
+                                    ):
+                                        iolv_bitOffset = self.Iolv_bitOffset(
+                                            iolv_bitOffset
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+                                    if iolv_bitLength and not isinstance(
+                                        iolv_bitLength, SubmodelElement
+                                    ):
+                                        iolv_bitLength = self.Iolv_bitLength(
+                                            iolv_bitLength
+                                        )
+
+                                    # Add all passed/initialized submodel elements to a single list
+                                    embedded_submodel_elements = []
+                                    for se_arg in [
+                                        iolv_referenceToProperty,
+                                        iolv_type,
+                                        iolv_byteOffset,
+                                        iolv_byteLength,
+                                        iolv_bitOffset,
+                                        iolv_bitLength,
+                                        iolv_enumeratedValues,
+                                    ]:
+                                        if se_arg is None:
+                                            continue
+                                        elif isinstance(se_arg, SubmodelElement):
+                                            embedded_submodel_elements.append(se_arg)
+                                        elif isinstance(se_arg, Iterable):
+                                            for n, element in enumerate(se_arg):
+                                                element.id_short = (
+                                                    f"{element.id_short}{n}"
+                                                )
+                                                embedded_submodel_elements.append(
+                                                    element
+                                                )
+                                        else:
+                                            raise TypeError(
+                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            )
+
+                                    super().__init__(
+                                        value=embedded_submodel_elements,
+                                        id_short=id_short,
+                                        display_name=display_name,
+                                        category=category,
+                                        description=description,
+                                        semantic_id=semantic_id,
+                                        qualifier=qualifier,
+                                        extension=extension,
+                                        supplemental_semantic_id=supplemental_semantic_id,
+                                        embedded_data_specifications=embedded_data_specifications,
+                                    )
+
+                            def __init__(
+                                self,
+                                iolv_payloadmapping_items: Iolv_payloadmapping_item,
+                                id_short: Optional[str] = r"iolv_payloadMapping",
+                                type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                semantic_id_list_element: Optional[
+                                    Reference
+                                ] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"http://www.w3.org/2022/wot/iolink#PayloadMapping",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                value_type_list_element: Optional[
+                                    DataTypeDefXsd
+                                ] = None,
+                                order_relevant: bool = True,
+                                display_name: Optional[
+                                    MultiLanguageNameType
+                                ] = MultiLanguageNameType(
+                                    dict_={r"en": r"IO-Link Payload Mapping"}
+                                ),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    MultiLanguageTextType
+                                ] = MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"For object type datapoints. Used to provides logical mapping information of a complex payload from a IO lInk device."
+                                    }
+                                ),
+                                semantic_id: Optional[Reference] = ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/1/IO-Link/hasPayloadMapping",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[Qualifier] = None,
+                                extension: Iterable[Extension] = (),
+                                supplemental_semantic_id: Iterable[Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        Qualifier(
+                                            type_=r"Cardinality",
+                                            value_type=str,
+                                            value=r"ZeroToOne",
+                                            value_id=None,
+                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=None,
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                # Add all passed/initialized submodel elements to a single list
+                                embedded_submodel_elements = []
+                                for se_arg in [iolv_payloadmapping_items]:
+                                    if se_arg is None:
+                                        continue
+                                    elif isinstance(se_arg, SubmodelElement):
+                                        embedded_submodel_elements.append(se_arg)
+                                    elif isinstance(se_arg, Iterable):
+                                        for n, element in enumerate(se_arg):
+                                            element.id_short = f"{element.id_short}{n}"
+                                            embedded_submodel_elements.append(element)
+                                    else:
+                                        raise TypeError(
+                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        )
+
+                                super().__init__(
+                                    value=embedded_submodel_elements,
+                                    id_short=id_short,
+                                    type_value_list_element=type_value_list_element,
+                                    semantic_id_list_element=semantic_id_list_element,
+                                    value_type_list_element=value_type_list_element,
+                                    order_relevant=order_relevant,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                            def _check_constraints(self, new, existing) -> None:
+                                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                                saved_id_short = new.id_short
+                                new.id_short = None
+
+                                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                                if not isinstance(new, self.type_value_list_element):
+                                    raise base.AASConstraintViolation(
+                                        108,
+                                        "All first level elements must be of the type specified in "
+                                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                                        f"got {new!r}",
+                                    )
+
+                                if (
+                                    self.semantic_id_list_element is not None
+                                    and new.semantic_id is not None
+                                    and new.semantic_id != self.semantic_id_list_element
+                                ):
+                                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                                    # Not really a constraint...
+                                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                                    raise base.AASConstraintViolation(
+                                        107,
+                                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                                        "is specified all first level children must have the same "
+                                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                                    )
+
+                                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                                # is either Property or Range. Thus, `new` must have the value_type property.
+                                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                                if (
+                                    isinstance(self.type_value_list_element, Property)
+                                    or isinstance(self.type_value_list_element, Range)
+                                    and not isinstance(
+                                        new.value_type, self.value_type_list_element
+                                    )
+                                ):  # type: ignore
+                                    raise base.AASConstraintViolation(
+                                        109,
+                                        "All first level elements must have the value_type "  # type: ignore
+                                        "specified by value_type_list_element="
+                                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                                        f"{new!r} with value_type={new.value_type.__name__}",
+                                    )  # type: ignore
+
+                                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                                if (
+                                    new.semantic_id is not None
+                                    and self.semantic_id_list_element is None
+                                ):
+                                    for item in existing:
+                                        if (
+                                            item.semantic_id is not None
+                                            and new.semantic_id != item.semantic_id
+                                        ):
+                                            raise base.AASConstraintViolation(
+                                                114,
+                                                f"Element to be added {new!r} has semantic_id "
+                                                f"{new.semantic_id!r}, while already contained element "
+                                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                                "aren't equal.",
+                                            )
+
+                                # Re-assign id_short
+                                new.id_short = saved_id_short
+
                         def __init__(
                             self,
                             href: Union[str, Href],
+                            security: Security,
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
                             iolv_method: Optional[Union[str, Iolv_method]] = None,
@@ -56126,6 +64215,10 @@ class AssetInterfacesDescription(Submodel):
                             ] = None,
                             iolv_bitOffset: Optional[Union[int, Iolv_bitOffset]] = None,
                             iolv_bitLength: Optional[Union[str, Iolv_bitLength]] = None,
+                            iolv_enumeratedValues: Optional[
+                                Iolv_enumeratedValues
+                            ] = None,
+                            iolv_payloadMapping: Optional[Iolv_payloadMapping] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -56225,6 +64318,7 @@ class AssetInterfacesDescription(Submodel):
                                 href,
                                 contentType,
                                 subprotocol,
+                                security,
                                 iolv_method,
                                 iolv_accessRigths,
                                 iolv_type,
@@ -56232,6 +64326,8 @@ class AssetInterfacesDescription(Submodel):
                                 iolv_byteLength,
                                 iolv_bitOffset,
                                 iolv_bitLength,
+                                iolv_enumeratedValues,
+                                iolv_payloadMapping,
                             ]:
                                 if se_arg is None:
                                     continue
@@ -56750,7 +64846,7 @@ class AssetInterfacesDescription(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"fileName",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(dict_={r"en": r"File Name"}),

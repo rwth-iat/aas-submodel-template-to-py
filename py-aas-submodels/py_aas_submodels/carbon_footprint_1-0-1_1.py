@@ -729,7 +729,7 @@ class CarbonFootprint(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"ExplanatoryStatement",
-                    content_type: str = r"application/pdf",
+                    content_type: Optional[str] = r"application/pdf",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(
@@ -1816,7 +1816,7 @@ class CarbonFootprint(Submodel):
                         self,
                         value: str,
                         id_short: Optional[str] = r"PcfRuleOnlineReference",
-                        content_type: str = r"application/pdf",
+                        content_type: Optional[str] = r"application/pdf",
                         display_name: Optional[
                             MultiLanguageNameType
                         ] = MultiLanguageNameType(

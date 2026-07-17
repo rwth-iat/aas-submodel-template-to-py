@@ -11,7 +11,7 @@ class HierarchicalStructures(Submodel):
         def __init__(
             self,
             id_short: Optional[str] = r"EntryNode",
-            entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+            entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
             statement: Iterable[SubmodelElement] = (
                 Entity(
                     id_short=r"Node",

@@ -605,13 +605,473 @@ class CompanyData(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
+        class MainProductGroups(SubmodelElementList):
+
+            class Mainproductgroups_item(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"mainproductgroups_item",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/MainProductGroup/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"OneToMany",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            def __init__(
+                self,
+                mainproductgroups_items: Iterable[
+                    Union[LangStringSet, Mainproductgroups_item]
+                ],
+                id_short: Optional[str] = r"MainProductGroups",
+                type_value_list_element: SubmodelElement = MultiLanguageProperty,
+                semantic_id_list_element: Optional[Reference] = None,
+                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                order_relevant: bool = False,
+                display_name: Optional[MultiLanguageNameType] = None,
+                category: Optional[str] = None,
+                description: Optional[MultiLanguageTextType] = None,
+                semantic_id: Optional[Reference] = ExternalReference(
+                    key=(
+                        Key(
+                            type_=KeyTypes.GLOBAL_REFERENCE,
+                            value=r"https://admin-shell.io/idta/CompanyData/MainProductGroups/1/0",
+                        ),
+                    ),
+                    referred_semantic_id=None,
+                ),
+                qualifier: Iterable[Qualifier] = None,
+                extension: Iterable[Extension] = (),
+                supplemental_semantic_id: Iterable[Reference] = (),
+                embedded_data_specifications: Iterable[
+                    EmbeddedDataSpecification
+                ] = None,
+            ):
+
+                if qualifier is None:
+                    qualifier = (
+                        Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToOne",
+                            value_id=None,
+                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
+
+                if embedded_data_specifications is None:
+                    embedded_data_specifications = []
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if mainproductgroups_items and all(
+                    [isinstance(i, LangStringSet) for i in mainproductgroups_items]
+                ):
+                    mainproductgroups_items = [
+                        self.Mainproductgroups_item(i) for i in mainproductgroups_items
+                    ]
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [mainproductgroups_items]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        )
+
+                super().__init__(
+                    value=embedded_submodel_elements,
+                    id_short=id_short,
+                    type_value_list_element=type_value_list_element,
+                    semantic_id_list_element=semantic_id_list_element,
+                    value_type_list_element=value_type_list_element,
+                    order_relevant=order_relevant,
+                    display_name=display_name,
+                    category=category,
+                    description=description,
+                    semantic_id=semantic_id,
+                    qualifier=qualifier,
+                    extension=extension,
+                    supplemental_semantic_id=supplemental_semantic_id,
+                    embedded_data_specifications=embedded_data_specifications,
+                )
+
+            def _check_constraints(self, new, existing) -> None:
+                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                saved_id_short = new.id_short
+                new.id_short = None
+
+                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                if not isinstance(new, self.type_value_list_element):
+                    raise base.AASConstraintViolation(
+                        108,
+                        "All first level elements must be of the type specified in "
+                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                        f"got {new!r}",
+                    )
+
+                if (
+                    self.semantic_id_list_element is not None
+                    and new.semantic_id is not None
+                    and new.semantic_id != self.semantic_id_list_element
+                ):
+                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                    # Not really a constraint...
+                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                    raise base.AASConstraintViolation(
+                        107,
+                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                        "is specified all first level children must have the same "
+                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                    )
+
+                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                # is either Property or Range. Thus, `new` must have the value_type property.
+                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                if (
+                    isinstance(self.type_value_list_element, Property)
+                    or isinstance(self.type_value_list_element, Range)
+                    and not isinstance(new.value_type, self.value_type_list_element)
+                ):  # type: ignore
+                    raise base.AASConstraintViolation(
+                        109,
+                        "All first level elements must have the value_type "  # type: ignore
+                        "specified by value_type_list_element="
+                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                        f"{new!r} with value_type={new.value_type.__name__}",
+                    )  # type: ignore
+
+                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                if (
+                    new.semantic_id is not None
+                    and self.semantic_id_list_element is None
+                ):
+                    for item in existing:
+                        if (
+                            item.semantic_id is not None
+                            and new.semantic_id != item.semantic_id
+                        ):
+                            raise base.AASConstraintViolation(
+                                114,
+                                f"Element to be added {new!r} has semantic_id "
+                                f"{new.semantic_id!r}, while already contained element "
+                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                "aren't equal.",
+                            )
+
+                # Re-assign id_short
+                new.id_short = saved_id_short
+
+        class Industries(SubmodelElementList):
+
+            class Industries_item(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"industries_item",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/Industry/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"OneToMany",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            def __init__(
+                self,
+                industries_items: Iterable[Union[LangStringSet, Industries_item]],
+                id_short: Optional[str] = r"Industries",
+                type_value_list_element: SubmodelElement = MultiLanguageProperty,
+                semantic_id_list_element: Optional[Reference] = None,
+                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                order_relevant: bool = False,
+                display_name: Optional[MultiLanguageNameType] = None,
+                category: Optional[str] = None,
+                description: Optional[MultiLanguageTextType] = None,
+                semantic_id: Optional[Reference] = ExternalReference(
+                    key=(
+                        Key(
+                            type_=KeyTypes.GLOBAL_REFERENCE,
+                            value=r"https://admin-shell.io/idta/CompanyData/Industries/1/0",
+                        ),
+                    ),
+                    referred_semantic_id=None,
+                ),
+                qualifier: Iterable[Qualifier] = None,
+                extension: Iterable[Extension] = (),
+                supplemental_semantic_id: Iterable[Reference] = (),
+                embedded_data_specifications: Iterable[
+                    EmbeddedDataSpecification
+                ] = None,
+            ):
+
+                if qualifier is None:
+                    qualifier = (
+                        Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToOne",
+                            value_id=None,
+                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
+
+                if embedded_data_specifications is None:
+                    embedded_data_specifications = []
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if industries_items and all(
+                    [isinstance(i, LangStringSet) for i in industries_items]
+                ):
+                    industries_items = [
+                        self.Industries_item(i) for i in industries_items
+                    ]
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [industries_items]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        )
+
+                super().__init__(
+                    value=embedded_submodel_elements,
+                    id_short=id_short,
+                    type_value_list_element=type_value_list_element,
+                    semantic_id_list_element=semantic_id_list_element,
+                    value_type_list_element=value_type_list_element,
+                    order_relevant=order_relevant,
+                    display_name=display_name,
+                    category=category,
+                    description=description,
+                    semantic_id=semantic_id,
+                    qualifier=qualifier,
+                    extension=extension,
+                    supplemental_semantic_id=supplemental_semantic_id,
+                    embedded_data_specifications=embedded_data_specifications,
+                )
+
+            def _check_constraints(self, new, existing) -> None:
+                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                saved_id_short = new.id_short
+                new.id_short = None
+
+                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                if not isinstance(new, self.type_value_list_element):
+                    raise base.AASConstraintViolation(
+                        108,
+                        "All first level elements must be of the type specified in "
+                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                        f"got {new!r}",
+                    )
+
+                if (
+                    self.semantic_id_list_element is not None
+                    and new.semantic_id is not None
+                    and new.semantic_id != self.semantic_id_list_element
+                ):
+                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                    # Not really a constraint...
+                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                    raise base.AASConstraintViolation(
+                        107,
+                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                        "is specified all first level children must have the same "
+                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                    )
+
+                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                # is either Property or Range. Thus, `new` must have the value_type property.
+                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                if (
+                    isinstance(self.type_value_list_element, Property)
+                    or isinstance(self.type_value_list_element, Range)
+                    and not isinstance(new.value_type, self.value_type_list_element)
+                ):  # type: ignore
+                    raise base.AASConstraintViolation(
+                        109,
+                        "All first level elements must have the value_type "  # type: ignore
+                        "specified by value_type_list_element="
+                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                        f"{new!r} with value_type={new.value_type.__name__}",
+                    )  # type: ignore
+
+                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                if (
+                    new.semantic_id is not None
+                    and self.semantic_id_list_element is None
+                ):
+                    for item in existing:
+                        if (
+                            item.semantic_id is not None
+                            and new.semantic_id != item.semantic_id
+                        ):
+                            raise base.AASConstraintViolation(
+                                114,
+                                f"Element to be added {new!r} has semantic_id "
+                                f"{new.semantic_id!r}, while already contained element "
+                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                "aren't equal.",
+                            )
+
+                # Re-assign id_short
+                new.id_short = saved_id_short
+
         class CompanyLogo(File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"CompanyLogo",
-                content_type: str = r"image/png",
+                content_type: Optional[str] = r"image/png",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[MultiLanguageTextType] = None,
@@ -685,6 +1145,8 @@ class CompanyData(Submodel):
             ] = None,
             foundingYear: Optional[Union[GYear, FoundingYear]] = None,
             orderCurrency: Optional[Union[LangStringSet, OrderCurrency]] = None,
+            mainProductGroups: Optional[MainProductGroups] = None,
+            industries: Optional[Industries] = None,
             companyLogo: Optional[CompanyLogo] = None,
             id_short: Optional[str] = r"CompanyIdentification",
             display_name: Optional[MultiLanguageNameType] = None,
@@ -784,6 +1246,8 @@ class CompanyData(Submodel):
                 commercialRegisterNumber,
                 foundingYear,
                 orderCurrency,
+                mainProductGroups,
+                industries,
                 companyLogo,
             ]:
                 if se_arg is None:
@@ -1843,10 +2307,240 @@ class CompanyData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
+            class CADTools(SubmodelElementList):
+
+                class Cadtools_item(Property):
+
+                    def __init__(
+                        self,
+                        value: str,
+                        id_short: Optional[str] = r"cadtools_item",
+                        value_type: DataTypeDefXsd = str,
+                        value_id: Optional[Reference] = None,
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/CADTool/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"OneToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_type=value_type,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    cadtools_items: Iterable[Union[str, Cadtools_item]],
+                    id_short: Optional[str] = r"CADTools",
+                    type_value_list_element: SubmodelElement = Property,
+                    semantic_id_list_element: Optional[Reference] = None,
+                    value_type_list_element: Optional[DataTypeDefXsd] = str,
+                    order_relevant: bool = True,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/CADTools/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a list of submodel elements if a raw values were passed in the argument
+                    if cadtools_items and all(
+                        [isinstance(i, str) for i in cadtools_items]
+                    ):
+                        cadtools_items = [self.Cadtools_item(i) for i in cadtools_items]
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [cadtools_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
+
             def __init__(
                 self,
                 eRPSystem: Optional[ERPSystem] = None,
                 emailSystem: Optional[EmailSystem] = None,
+                cADTools: Optional[Union[Iterable[str], CADTools]] = None,
                 id_short: Optional[str] = r"CompanySystems",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1892,9 +2586,13 @@ class CompanyData(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+                if cADTools and not isinstance(cADTools, SubmodelElement):
+                    cADTools = self.CADTools(cADTools)
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [eRPSystem, emailSystem]:
+                for se_arg in [eRPSystem, emailSystem, cADTools]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -2191,6 +2889,237 @@ class CompanyData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
+            class CADFormats(SubmodelElementList):
+
+                class Cadformats_item(Property):
+
+                    def __init__(
+                        self,
+                        value: str,
+                        id_short: Optional[str] = r"cadformats_item",
+                        value_type: DataTypeDefXsd = str,
+                        value_id: Optional[Reference] = None,
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/CADFormat/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"OneToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_type=value_type,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    cadformats_items: Iterable[Union[str, Cadformats_item]],
+                    id_short: Optional[str] = r"CADFormats",
+                    type_value_list_element: SubmodelElement = Property,
+                    semantic_id_list_element: Optional[Reference] = None,
+                    value_type_list_element: Optional[DataTypeDefXsd] = str,
+                    order_relevant: bool = False,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/CADFormats/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a list of submodel elements if a raw values were passed in the argument
+                    if cadformats_items and all(
+                        [isinstance(i, str) for i in cadformats_items]
+                    ):
+                        cadformats_items = [
+                            self.Cadformats_item(i) for i in cadformats_items
+                        ]
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [cadformats_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
+
             def __init__(
                 self,
                 encryptedDataTransmission: Optional[
@@ -2201,6 +3130,7 @@ class CompanyData(Submodel):
                 ] = None,
                 eDI: Optional[Union[bool, EDI]] = None,
                 webEDI: Optional[Union[bool, WebEDI]] = None,
+                cADFormats: Optional[Union[Iterable[str], CADFormats]] = None,
                 id_short: Optional[str] = r"DataExchange",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -2270,6 +3200,10 @@ class CompanyData(Submodel):
                 if webEDI and not isinstance(webEDI, SubmodelElement):
                     webEDI = self.WebEDI(webEDI)
 
+                # Build a submodel element if a raw value was passed in the argument
+                if cADFormats and not isinstance(cADFormats, SubmodelElement):
+                    cADFormats = self.CADFormats(cADFormats)
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -2277,6 +3211,7 @@ class CompanyData(Submodel):
                     outgoingEInvoiceFormat,
                     eDI,
                     webEDI,
+                    cADFormats,
                 ]:
                     if se_arg is None:
                         continue
@@ -3374,7 +4309,7 @@ class CompanyData(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"ConsolidatedDataFile",
-                    content_type: str = r"application/unknown",
+                    content_type: Optional[str] = r"application/unknown",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[MultiLanguageTextType] = None,
@@ -3956,8 +4891,1008 @@ class CompanyData(Submodel):
 
         class IndustryStandards(SubmodelElementCollection):
 
+            class Memberships(SubmodelElementList):
+
+                class Memberships_item(Property):
+
+                    def __init__(
+                        self,
+                        value: str,
+                        id_short: Optional[str] = r"memberships_item",
+                        value_type: DataTypeDefXsd = str,
+                        value_id: Optional[Reference] = None,
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/Association/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"OneToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_type=value_type,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    memberships_items: Iterable[Union[str, Memberships_item]],
+                    id_short: Optional[str] = r"Memberships",
+                    type_value_list_element: SubmodelElement = Property,
+                    semantic_id_list_element: Optional[Reference] = None,
+                    value_type_list_element: Optional[DataTypeDefXsd] = str,
+                    order_relevant: bool = True,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/Memberships/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a list of submodel elements if a raw values were passed in the argument
+                    if memberships_items and all(
+                        [isinstance(i, str) for i in memberships_items]
+                    ):
+                        memberships_items = [
+                            self.Memberships_item(i) for i in memberships_items
+                        ]
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [memberships_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
+
+            class Certifications(SubmodelElementList):
+
+                class Certifications_item(SubmodelElementCollection):
+
+                    class CertificationStandard(Property):
+
+                        def __init__(
+                            self,
+                            value: str,
+                            id_short: Optional[str] = r"CertificationStandard",
+                            value_type: DataTypeDefXsd = str,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/CertificationStandard/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class ApprovalAgency(Property):
+
+                        def __init__(
+                            self,
+                            value: str,
+                            id_short: Optional[str] = r"ApprovalAgency",
+                            value_type: DataTypeDefXsd = str,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/ApprovalAgency/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class CertificateNumber(Property):
+
+                        def __init__(
+                            self,
+                            value: str,
+                            id_short: Optional[str] = r"CertificateNumber",
+                            value_type: DataTypeDefXsd = str,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/CertificateNumber/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class IssueDate(Property):
+
+                        def __init__(
+                            self,
+                            value: Date,
+                            id_short: Optional[str] = r"IssueDate",
+                            value_type: DataTypeDefXsd = Date,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/IssueDate/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class ExpiryDate(Property):
+
+                        def __init__(
+                            self,
+                            value: Date,
+                            id_short: Optional[str] = r"ExpiryDate",
+                            value_type: DataTypeDefXsd = Date,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/ExpiryDate/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class CertificationDocument(ReferenceElement):
+
+                        def __init__(
+                            self,
+                            value: Reference,
+                            id_short: Optional[str] = r"CertificationDocument",
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/CertificationDocument/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToMany",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class CertificationURL(Property):
+
+                        def __init__(
+                            self,
+                            value: AnyURI,
+                            id_short: Optional[str] = r"CertificationURL",
+                            value_type: DataTypeDefXsd = AnyURI,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/CertificationURL/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    def __init__(
+                        self,
+                        certificationStandard: Optional[
+                            Union[str, CertificationStandard]
+                        ] = None,
+                        approvalAgency: Optional[Union[str, ApprovalAgency]] = None,
+                        certificateNumber: Optional[
+                            Union[str, CertificateNumber]
+                        ] = None,
+                        issueDate: Optional[Union[Date, IssueDate]] = None,
+                        expiryDate: Optional[Union[Date, ExpiryDate]] = None,
+                        certificationDocument: Optional[
+                            Iterable[Union[Reference, CertificationDocument]]
+                        ] = None,
+                        certificationURL: Optional[
+                            Union[AnyURI, CertificationURL]
+                        ] = None,
+                        id_short: Optional[str] = r"certifications_item",
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/Certification/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"OneToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if certificationStandard and not isinstance(
+                            certificationStandard, SubmodelElement
+                        ):
+                            certificationStandard = self.CertificationStandard(
+                                certificationStandard
+                            )
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if approvalAgency and not isinstance(
+                            approvalAgency, SubmodelElement
+                        ):
+                            approvalAgency = self.ApprovalAgency(approvalAgency)
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if certificateNumber and not isinstance(
+                            certificateNumber, SubmodelElement
+                        ):
+                            certificateNumber = self.CertificateNumber(
+                                certificateNumber
+                            )
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if issueDate and not isinstance(issueDate, SubmodelElement):
+                            issueDate = self.IssueDate(issueDate)
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if expiryDate and not isinstance(expiryDate, SubmodelElement):
+                            expiryDate = self.ExpiryDate(expiryDate)
+
+                        # Build a list of submodel elements if a raw values were passed in the argument
+                        if certificationDocument and all(
+                            [isinstance(i, Reference) for i in certificationDocument]
+                        ):
+                            certificationDocument = [
+                                self.CertificationDocument(i)
+                                for i in certificationDocument
+                            ]
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if certificationURL and not isinstance(
+                            certificationURL, SubmodelElement
+                        ):
+                            certificationURL = self.CertificationURL(certificationURL)
+
+                        # Add all passed/initialized submodel elements to a single list
+                        embedded_submodel_elements = []
+                        for se_arg in [
+                            certificationStandard,
+                            approvalAgency,
+                            certificateNumber,
+                            issueDate,
+                            expiryDate,
+                            certificationDocument,
+                            certificationURL,
+                        ]:
+                            if se_arg is None:
+                                continue
+                            elif isinstance(se_arg, SubmodelElement):
+                                embedded_submodel_elements.append(se_arg)
+                            elif isinstance(se_arg, Iterable):
+                                for n, element in enumerate(se_arg):
+                                    element.id_short = f"{element.id_short}{n}"
+                                    embedded_submodel_elements.append(element)
+                            else:
+                                raise TypeError(
+                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                )
+
+                        super().__init__(
+                            value=embedded_submodel_elements,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    certifications_items: Iterable[Certifications_item],
+                    id_short: Optional[str] = r"Certifications",
+                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                    semantic_id_list_element: Optional[Reference] = None,
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/Certifications/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [certifications_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
+
             def __init__(
                 self,
+                memberships: Optional[Union[Iterable[str], Memberships]] = None,
+                certifications: Optional[Certifications] = None,
                 id_short: Optional[str] = r"IndustryStandards",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -4003,9 +5938,13 @@ class CompanyData(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+                if memberships and not isinstance(memberships, SubmodelElement):
+                    memberships = self.Memberships(memberships)
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in []:
+                for se_arg in [memberships, certifications]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -4100,6 +6039,388 @@ class CompanyData(Submodel):
                         supplemental_semantic_id=supplemental_semantic_id,
                         embedded_data_specifications=embedded_data_specifications,
                     )
+
+            class EmployeeTrainings(SubmodelElementList):
+
+                class Employeetrainings_item(SubmodelElementCollection):
+
+                    class TypeOfTraining(Property):
+
+                        def __init__(
+                            self,
+                            value: str,
+                            id_short: Optional[str] = r"TypeOfTraining",
+                            value_type: DataTypeDefXsd = str,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/TypeOfTraining/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"One",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class TrainingDocumentation(ReferenceElement):
+
+                        def __init__(
+                            self,
+                            value: Reference,
+                            id_short: Optional[str] = r"TrainingDocumentation",
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/TrainingDocumentation/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    def __init__(
+                        self,
+                        typeOfTraining: Union[str, TypeOfTraining],
+                        trainingDocumentation: Optional[
+                            Union[Reference, TrainingDocumentation]
+                        ] = None,
+                        id_short: Optional[str] = r"employeetrainings_item",
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/EmployeeTraining/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"OneToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if typeOfTraining and not isinstance(
+                            typeOfTraining, SubmodelElement
+                        ):
+                            typeOfTraining = self.TypeOfTraining(typeOfTraining)
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if trainingDocumentation and not isinstance(
+                            trainingDocumentation, SubmodelElement
+                        ):
+                            trainingDocumentation = self.TrainingDocumentation(
+                                trainingDocumentation
+                            )
+
+                        # Add all passed/initialized submodel elements to a single list
+                        embedded_submodel_elements = []
+                        for se_arg in [typeOfTraining, trainingDocumentation]:
+                            if se_arg is None:
+                                continue
+                            elif isinstance(se_arg, SubmodelElement):
+                                embedded_submodel_elements.append(se_arg)
+                            elif isinstance(se_arg, Iterable):
+                                for n, element in enumerate(se_arg):
+                                    element.id_short = f"{element.id_short}{n}"
+                                    embedded_submodel_elements.append(element)
+                            else:
+                                raise TypeError(
+                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                )
+
+                        super().__init__(
+                            value=embedded_submodel_elements,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    employeetrainings_items: Iterable[Employeetrainings_item],
+                    id_short: Optional[str] = r"EmployeeTrainings",
+                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                    semantic_id_list_element: Optional[Reference] = None,
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/EmployeeTrainings/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [employeetrainings_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
 
             class SecurityPolicies(SubmodelElementCollection):
 
@@ -5169,12 +7490,472 @@ class CompanyData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
+            class Insurances(SubmodelElementList):
+
+                class Insurances_item(SubmodelElementCollection):
+
+                    class InsuranceCompany(Property):
+
+                        def __init__(
+                            self,
+                            value: str,
+                            id_short: Optional[str] = r"InsuranceCompany",
+                            value_type: DataTypeDefXsd = str,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/InsuranceCompany/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class InsuranceType(Property):
+
+                        def __init__(
+                            self,
+                            value: str,
+                            id_short: Optional[str] = r"InsuranceType",
+                            value_type: DataTypeDefXsd = str,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/InsuranceType/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"One",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class InsuranceSum(Property):
+
+                        def __init__(
+                            self,
+                            value: PositiveInteger,
+                            id_short: Optional[str] = r"InsuranceSum",
+                            value_type: DataTypeDefXsd = PositiveInteger,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = None,
+                            description: Optional[MultiLanguageTextType] = None,
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/CompanyData/InsuranceSum/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=ExternalReference(
+                                            key=(
+                                                Key(
+                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    def __init__(
+                        self,
+                        insuranceType: Union[str, InsuranceType],
+                        insuranceCompany: Optional[Union[str, InsuranceCompany]] = None,
+                        insuranceSum: Optional[
+                            Union[PositiveInteger, InsuranceSum]
+                        ] = None,
+                        id_short: Optional[str] = r"insurances_item",
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/Insurance/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"OneToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if insuranceCompany and not isinstance(
+                            insuranceCompany, SubmodelElement
+                        ):
+                            insuranceCompany = self.InsuranceCompany(insuranceCompany)
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if insuranceType and not isinstance(
+                            insuranceType, SubmodelElement
+                        ):
+                            insuranceType = self.InsuranceType(insuranceType)
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if insuranceSum and not isinstance(
+                            insuranceSum, SubmodelElement
+                        ):
+                            insuranceSum = self.InsuranceSum(insuranceSum)
+
+                        # Add all passed/initialized submodel elements to a single list
+                        embedded_submodel_elements = []
+                        for se_arg in [insuranceCompany, insuranceType, insuranceSum]:
+                            if se_arg is None:
+                                continue
+                            elif isinstance(se_arg, SubmodelElement):
+                                embedded_submodel_elements.append(se_arg)
+                            elif isinstance(se_arg, Iterable):
+                                for n, element in enumerate(se_arg):
+                                    element.id_short = f"{element.id_short}{n}"
+                                    embedded_submodel_elements.append(element)
+                            else:
+                                raise TypeError(
+                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                )
+
+                        super().__init__(
+                            value=embedded_submodel_elements,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    insurances_items: Iterable[Insurances_item],
+                    id_short: Optional[str] = r"Insurances",
+                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                    semantic_id_list_element: Optional[Reference] = None,
+                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    order_relevant: bool = True,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/Insurances/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [insurances_items]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        type_value_list_element=type_value_list_element,
+                        semantic_id_list_element=semantic_id_list_element,
+                        value_type_list_element=value_type_list_element,
+                        order_relevant=order_relevant,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+                def _check_constraints(self, new, existing) -> None:
+                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                    saved_id_short = new.id_short
+                    new.id_short = None
+
+                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                    if not isinstance(new, self.type_value_list_element):
+                        raise base.AASConstraintViolation(
+                            108,
+                            "All first level elements must be of the type specified in "
+                            f"type_value_list_element={self.type_value_list_element.__name__}, "
+                            f"got {new!r}",
+                        )
+
+                    if (
+                        self.semantic_id_list_element is not None
+                        and new.semantic_id is not None
+                        and new.semantic_id != self.semantic_id_list_element
+                    ):
+                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                        # Not really a constraint...
+                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                        raise base.AASConstraintViolation(
+                            107,
+                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                            "is specified all first level children must have the same "
+                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                        )
+
+                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                    # is either Property or Range. Thus, `new` must have the value_type property.
+                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                    if (
+                        isinstance(self.type_value_list_element, Property)
+                        or isinstance(self.type_value_list_element, Range)
+                        and not isinstance(new.value_type, self.value_type_list_element)
+                    ):  # type: ignore
+                        raise base.AASConstraintViolation(
+                            109,
+                            "All first level elements must have the value_type "  # type: ignore
+                            "specified by value_type_list_element="
+                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                            f"{new!r} with value_type={new.value_type.__name__}",
+                        )  # type: ignore
+
+                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                    if (
+                        new.semantic_id is not None
+                        and self.semantic_id_list_element is None
+                    ):
+                        for item in existing:
+                            if (
+                                item.semantic_id is not None
+                                and new.semantic_id != item.semantic_id
+                            ):
+                                raise base.AASConstraintViolation(
+                                    114,
+                                    f"Element to be added {new!r} has semantic_id "
+                                    f"{new.semantic_id!r}, while already contained element "
+                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                    "aren't equal.",
+                                )
+
+                    # Re-assign id_short
+                    new.id_short = saved_id_short
+
             def __init__(
                 self,
                 businessContinuityPlan: Optional[
                     Union[bool, BusinessContinuityPlan]
                 ] = None,
+                employeeTrainings: Optional[EmployeeTrainings] = None,
                 securityPolicies: Optional[SecurityPolicies] = None,
+                insurances: Optional[Insurances] = None,
                 id_short: Optional[str] = r"RiskManagement",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -5230,7 +8011,12 @@ class CompanyData(Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [businessContinuityPlan, securityPolicies]:
+                for se_arg in [
+                    businessContinuityPlan,
+                    employeeTrainings,
+                    securityPolicies,
+                    insurances,
+                ]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, SubmodelElement):
@@ -5257,11 +8043,627 @@ class CompanyData(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
+        class LegalCompliance(SubmodelElementList):
+
+            class Legalcompliance_item(SubmodelElementCollection):
+
+                class ComplianceStatus(Property):
+
+                    def __init__(
+                        self,
+                        value: str,
+                        id_short: Optional[str] = r"ComplianceStatus",
+                        value_type: DataTypeDefXsd = str,
+                        value_id: Optional[Reference] = None,
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/ComplianceStatus/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_type=value_type,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                class ComplianceStatement(MultiLanguageProperty):
+
+                    def __init__(
+                        self,
+                        value: LangStringSet,
+                        id_short: Optional[str] = r"ComplianceStatement",
+                        value_id: Optional[Reference] = None,
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/ComplianceStatement/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToOne",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                class DocumentationURI(Property):
+
+                    def __init__(
+                        self,
+                        value: AnyURI,
+                        id_short: Optional[str] = r"DocumentationURI",
+                        value_type: DataTypeDefXsd = AnyURI,
+                        value_id: Optional[Reference] = None,
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/DocumentationURI /1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_type=value_type,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                class DocumentationReference(ReferenceElement):
+
+                    def __init__(
+                        self,
+                        value: Reference,
+                        id_short: Optional[str] = r"DocumentationReference",
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/DocumentationReference/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToMany",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                class RegulationName(MultiLanguageProperty):
+
+                    def __init__(
+                        self,
+                        value: LangStringSet,
+                        id_short: Optional[str] = r"RegulationName",
+                        value_id: Optional[Reference] = None,
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = None,
+                        description: Optional[MultiLanguageTextType] = None,
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/CompanyData/RegulationName/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=ExternalReference(
+                                        key=(
+                                            Key(
+                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    complianceStatus: Union[str, ComplianceStatus],
+                    regulationName: Union[LangStringSet, RegulationName],
+                    complianceStatement: Optional[
+                        Union[LangStringSet, ComplianceStatement]
+                    ] = None,
+                    documentationURI: Optional[
+                        Iterable[Union[AnyURI, DocumentationURI]]
+                    ] = None,
+                    documentationReference: Optional[
+                        Iterable[Union[Reference, DocumentationReference]]
+                    ] = None,
+                    id_short: Optional[str] = r"legalcompliance_item",
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[MultiLanguageTextType] = None,
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/CompanyData/Regulation/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"OneToMany",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=ExternalReference(
+                                    key=(
+                                        Key(
+                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if complianceStatus and not isinstance(
+                        complianceStatus, SubmodelElement
+                    ):
+                        complianceStatus = self.ComplianceStatus(complianceStatus)
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if complianceStatement and not isinstance(
+                        complianceStatement, SubmodelElement
+                    ):
+                        complianceStatement = self.ComplianceStatement(
+                            complianceStatement
+                        )
+
+                    # Build a list of submodel elements if a raw values were passed in the argument
+                    if documentationURI and all(
+                        [isinstance(i, AnyURI) for i in documentationURI]
+                    ):
+                        documentationURI = [
+                            self.DocumentationURI(i) for i in documentationURI
+                        ]
+
+                    # Build a list of submodel elements if a raw values were passed in the argument
+                    if documentationReference and all(
+                        [isinstance(i, Reference) for i in documentationReference]
+                    ):
+                        documentationReference = [
+                            self.DocumentationReference(i)
+                            for i in documentationReference
+                        ]
+
+                    # Build a submodel element if a raw value was passed in the argument
+                    if regulationName and not isinstance(
+                        regulationName, SubmodelElement
+                    ):
+                        regulationName = self.RegulationName(regulationName)
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [
+                        complianceStatus,
+                        complianceStatement,
+                        documentationURI,
+                        documentationReference,
+                        regulationName,
+                    ]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            def __init__(
+                self,
+                legalcompliance_items: Iterable[Legalcompliance_item],
+                id_short: Optional[str] = r"LegalCompliance",
+                type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                semantic_id_list_element: Optional[Reference] = None,
+                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                order_relevant: bool = True,
+                display_name: Optional[MultiLanguageNameType] = None,
+                category: Optional[str] = None,
+                description: Optional[MultiLanguageTextType] = None,
+                semantic_id: Optional[Reference] = ExternalReference(
+                    key=(
+                        Key(
+                            type_=KeyTypes.GLOBAL_REFERENCE,
+                            value=r"https://admin-shell.io/idta/CompanyData/LegalCompliance/1/0",
+                        ),
+                    ),
+                    referred_semantic_id=None,
+                ),
+                qualifier: Iterable[Qualifier] = None,
+                extension: Iterable[Extension] = (),
+                supplemental_semantic_id: Iterable[Reference] = (),
+                embedded_data_specifications: Iterable[
+                    EmbeddedDataSpecification
+                ] = None,
+            ):
+
+                if qualifier is None:
+                    qualifier = (
+                        Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToOne",
+                            value_id=None,
+                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
+
+                if embedded_data_specifications is None:
+                    embedded_data_specifications = []
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [legalcompliance_items]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        )
+
+                super().__init__(
+                    value=embedded_submodel_elements,
+                    id_short=id_short,
+                    type_value_list_element=type_value_list_element,
+                    semantic_id_list_element=semantic_id_list_element,
+                    value_type_list_element=value_type_list_element,
+                    order_relevant=order_relevant,
+                    display_name=display_name,
+                    category=category,
+                    description=description,
+                    semantic_id=semantic_id,
+                    qualifier=qualifier,
+                    extension=extension,
+                    supplemental_semantic_id=supplemental_semantic_id,
+                    embedded_data_specifications=embedded_data_specifications,
+                )
+
+            def _check_constraints(self, new, existing) -> None:
+                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+                saved_id_short = new.id_short
+                new.id_short = None
+
+                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+                if not isinstance(new, self.type_value_list_element):
+                    raise base.AASConstraintViolation(
+                        108,
+                        "All first level elements must be of the type specified in "
+                        f"type_value_list_element={self.type_value_list_element.__name__}, "
+                        f"got {new!r}",
+                    )
+
+                if (
+                    self.semantic_id_list_element is not None
+                    and new.semantic_id is not None
+                    and new.semantic_id != self.semantic_id_list_element
+                ):
+                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                    # Not really a constraint...
+                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                    raise base.AASConstraintViolation(
+                        107,
+                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                        "is specified all first level children must have the same "
+                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                    )
+
+                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+                # is either Property or Range. Thus, `new` must have the value_type property.
+                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+                if (
+                    isinstance(self.type_value_list_element, Property)
+                    or isinstance(self.type_value_list_element, Range)
+                    and not isinstance(new.value_type, self.value_type_list_element)
+                ):  # type: ignore
+                    raise base.AASConstraintViolation(
+                        109,
+                        "All first level elements must have the value_type "  # type: ignore
+                        "specified by value_type_list_element="
+                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                        f"{new!r} with value_type={new.value_type.__name__}",
+                    )  # type: ignore
+
+                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+                if (
+                    new.semantic_id is not None
+                    and self.semantic_id_list_element is None
+                ):
+                    for item in existing:
+                        if (
+                            item.semantic_id is not None
+                            and new.semantic_id != item.semantic_id
+                        ):
+                            raise base.AASConstraintViolation(
+                                114,
+                                f"Element to be added {new!r} has semantic_id "
+                                f"{new.semantic_id!r}, while already contained element "
+                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                                "aren't equal.",
+                            )
+
+                # Re-assign id_short
+                new.id_short = saved_id_short
+
         def __init__(
             self,
             corporatePolicies: Optional[CorporatePolicies] = None,
             industryStandards: Optional[IndustryStandards] = None,
             riskManagement: Optional[RiskManagement] = None,
+            legalCompliance: Optional[LegalCompliance] = None,
             id_short: Optional[str] = r"CompanyGovernance",
             display_name: Optional[MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -5307,7 +8709,12 @@ class CompanyData(Submodel):
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [corporatePolicies, industryStandards, riskManagement]:
+            for se_arg in [
+                corporatePolicies,
+                industryStandards,
+                riskManagement,
+                legalCompliance,
+            ]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, SubmodelElement):

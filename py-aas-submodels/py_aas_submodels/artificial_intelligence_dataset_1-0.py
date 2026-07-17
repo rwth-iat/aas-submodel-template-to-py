@@ -955,7 +955,7 @@ class AIDataset(Submodel):
                             self,
                             value: str,
                             id_short: Optional[str] = r"AnnotationFile",
-                            content_type: str = r"application/json",
+                            content_type: Optional[str] = r"application/json",
                             display_name: Optional[MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[
@@ -1403,7 +1403,7 @@ class AIDataset(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"AnnotationFile",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[
@@ -1618,7 +1618,7 @@ class AIDataset(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"AnnotationFile",
-                    content_type: str = r"text/plain",
+                    content_type: Optional[str] = r"text/plain",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[
@@ -1683,7 +1683,7 @@ class AIDataset(Submodel):
                             self,
                             value: str,
                             id_short: Optional[str] = r"AnnotationFile",
-                            content_type: str = r"text/plain",
+                            content_type: Optional[str] = r"text/plain",
                             display_name: Optional[MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[

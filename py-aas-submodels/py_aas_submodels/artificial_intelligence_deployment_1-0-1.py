@@ -312,7 +312,7 @@ class AIDeployment(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"DeployedModel",
-                content_type: str = r"application/json",
+                content_type: Optional[str] = r"application/json",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -725,7 +725,7 @@ class AIDeployment(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"ExampleFile",
-                content_type: str = r"text/plain",
+                content_type: Optional[str] = r"text/plain",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -855,7 +855,7 @@ class AIDeployment(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"ExampleHardware",
-                content_type: str = r"text/plain",
+                content_type: Optional[str] = r"text/plain",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(

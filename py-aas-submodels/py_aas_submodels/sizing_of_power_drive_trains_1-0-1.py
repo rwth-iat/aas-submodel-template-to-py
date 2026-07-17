@@ -280,7 +280,7 @@ class PowerDriveTrainSizing(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"SizingProjectLink",
-                content_type: str = r"text/xml",
+                content_type: Optional[str] = r"text/xml",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[MultiLanguageTextType] = None,
@@ -2203,7 +2203,7 @@ class PowerDriveTrainSizing(Submodel):
                             self,
                             value: str,
                             id_short: Optional[str] = r"MotionSectionFile",
-                            content_type: str = r"image/png",
+                            content_type: Optional[str] = r"image/png",
                             display_name: Optional[MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[MultiLanguageTextType] = None,
@@ -3446,7 +3446,7 @@ class PowerDriveTrainSizing(Submodel):
                             self,
                             value: str,
                             id_short: Optional[str] = r"MotionSectionFile",
-                            content_type: str = r"image/png",
+                            content_type: Optional[str] = r"image/png",
                             display_name: Optional[MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[MultiLanguageTextType] = None,
@@ -5334,7 +5334,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"Fan",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -5663,7 +5663,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"Pump",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -5992,7 +5992,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"RotraryTable",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -6410,7 +6410,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"ChainConveyor",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -6826,7 +6826,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"BeltConveyor",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -7242,7 +7242,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"RollerConveyor",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -7658,7 +7658,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"BeltDrive",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -8074,7 +8074,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"TravelingDrive",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -8490,7 +8490,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"RackDrive",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -9041,7 +9041,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"SpindleDrive",
-                entity_type: EntityType = EntityType.SELF_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.SELF_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"Efficiency",
@@ -9563,7 +9563,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"OverallSystem",
-                entity_type: EntityType = EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.CO_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"ManufacturerName",
@@ -10077,7 +10077,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"MainComponent",
-                entity_type: EntityType = EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.CO_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"MainComponentType",
@@ -11315,7 +11315,7 @@ class PowerDriveTrainSizing(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"OtherComponent",
-                entity_type: EntityType = EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.CO_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"ManufacturerName",

@@ -936,7 +936,7 @@ class MaintenanceInstructions(Submodel):
                         id_short: Optional[
                             str
                         ] = r"RelatedDocumentOrFileMaintenanceStep",
-                        content_type: str = r"application/pdf",
+                        content_type: Optional[str] = r"application/pdf",
                         display_name: Optional[MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
@@ -2570,6 +2570,3158 @@ class MaintenanceInstructions(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
+    class MaintenanceToolList(SubmodelElementList):
+
+        class Maintenancetoollist_item(SubmodelElementCollection):
+
+            class ToolID(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ToolID",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"ID des Werkzeugs",
+                            r"en": r"An ID can be assigned to uniquely identify a tool.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/toolid/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ToolName(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"ToolName",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Ein Name für das Werkzeug kann gespeichert werden, um das Werkzeug für Menschen verständlicher zu machen.",
+                            r"en": r"A name for the tool can be stored to make the tool more understandable for humans.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/toolname/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CollectionMaxQuantityOfTool(SubmodelElementCollection):
+
+                class CollectionMaxQuantityOfToolForSpecificInterval(
+                    SubmodelElementCollection
+                ):
+
+                    class MaxQuantityOfTool(Property):
+
+                        def __init__(
+                            self,
+                            value: Decimal,
+                            id_short: Optional[str] = r"MaxQuantityOfTool",
+                            value_type: DataTypeDefXsd = Decimal,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = r"CONSTANT",
+                            description: Optional[
+                                MultiLanguageTextType
+                            ] = MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Benötigte Gesamtanzahl des Werkzeugs für einen Wartungsinterval",
+                                    r"en": r"Total number of tools required for specific maintenance interval",
+                                }
+                            ),
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/maintenanceinstructions/maxquantityoftool/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=None,
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class ReferenceNameOfMaintenance(ReferenceElement):
+
+                        def __init__(
+                            self,
+                            value: Reference,
+                            id_short: Optional[str] = r"ReferenceNameOfMaintenance",
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = r"CONSTANT",
+                            description: Optional[
+                                MultiLanguageTextType
+                            ] = MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
+                                    r"en": r"Reference to ID of specific maintenance interval",
+                                }
+                            ),
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/maintenanceinstructions/referencenameofmaintenance/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=None,
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class ReferenceToMaintenanceID(ReferenceElement):
+
+                        def __init__(
+                            self,
+                            value: Reference,
+                            id_short: Optional[str] = r"ReferenceToMaintenanceID",
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = r"CONSTANT",
+                            description: Optional[
+                                MultiLanguageTextType
+                            ] = MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
+                                    r"en": r"Reference to ID of specific maintenance interval",
+                                }
+                            ),
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/maintenanceinstructions/referencenameofmaintenance/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=None,
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    def __init__(
+                        self,
+                        maxQuantityOfTool: Optional[
+                            Union[Decimal, MaxQuantityOfTool]
+                        ] = None,
+                        referenceNameOfMaintenance: Optional[
+                            Union[Reference, ReferenceNameOfMaintenance]
+                        ] = None,
+                        referenceToMaintenanceID: Optional[
+                            Union[Reference, ReferenceToMaintenanceID]
+                        ] = None,
+                        id_short: Optional[
+                            str
+                        ] = r"CollectionMaxQuantityOfToolForSpecificInterval",
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = r"CONSTANT",
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Kollektion Benötige Anzahl des Werkzeugs für ein spezifisches Wartungsintervall.",
+                                r"en": r"Collection Total quantity of tools required for one specific maintenance intervals.",
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionmaxquantityoftoolforspecificinterval/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToOne",
+                                    value_id=None,
+                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=None,
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if maxQuantityOfTool and not isinstance(
+                            maxQuantityOfTool, SubmodelElement
+                        ):
+                            maxQuantityOfTool = self.MaxQuantityOfTool(
+                                maxQuantityOfTool
+                            )
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if referenceNameOfMaintenance and not isinstance(
+                            referenceNameOfMaintenance, SubmodelElement
+                        ):
+                            referenceNameOfMaintenance = (
+                                self.ReferenceNameOfMaintenance(
+                                    referenceNameOfMaintenance
+                                )
+                            )
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if referenceToMaintenanceID and not isinstance(
+                            referenceToMaintenanceID, SubmodelElement
+                        ):
+                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(
+                                referenceToMaintenanceID
+                            )
+
+                        # Add all passed/initialized submodel elements to a single list
+                        embedded_submodel_elements = []
+                        for se_arg in [
+                            maxQuantityOfTool,
+                            referenceNameOfMaintenance,
+                            referenceToMaintenanceID,
+                        ]:
+                            if se_arg is None:
+                                continue
+                            elif isinstance(se_arg, SubmodelElement):
+                                embedded_submodel_elements.append(se_arg)
+                            elif isinstance(se_arg, Iterable):
+                                for n, element in enumerate(se_arg):
+                                    element.id_short = f"{element.id_short}{n}"
+                                    embedded_submodel_elements.append(element)
+                            else:
+                                raise TypeError(
+                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                )
+
+                        super().__init__(
+                            value=embedded_submodel_elements,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    collectionMaxQuantityOfToolForSpecificInterval: Optional[
+                        CollectionMaxQuantityOfToolForSpecificInterval
+                    ] = None,
+                    id_short: Optional[str] = r"CollectionMaxQuantityOfTool",
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Liste der Werkzeuge, die für alle Wartungsintervalle einer Anlage benötigt werden. Die Menge richtet sich nach den verschiedenen Wartungsintervallen. Jede Menge pro Wartungsintervall wird in einer eigenen SMC beschrieben/definiert.",
+                            r"en": r"List of tools required for all maintenance intervals of an asset. The quantity is devied by the different maintenance intervals. Each quantity per maintenance interval is described/ defined in an own SMC.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionmaxquantityoftool/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [collectionMaxQuantityOfToolForSpecificInterval]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CompanyNameToolSupplier(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"CompanyNameToolSupplier",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Name des Werkzeugherstellers",
+                            r"en": r"Name of the tool manufacturer",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/companynametoolsupplier/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class OrderCodeToolOfManufacturer(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"OrderCodeToolOfManufacturer",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Eine vom Hersteller vergebene eindeutige Kombination aus Zahlen und Buchstaben, die zur Identifizierung des Werkzeugs bei der Bestellung verwendet wird",
+                            r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the tool for ordering",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0112/2///61987#ABA950#008",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (
+                        ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"0173-1#02-AAO227#004",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                    ),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ToolDescription(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"ToolDescription",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Detaillierte Beschreibung des Werkzeugs",
+                            r"en": r"Detailed description of the tool",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/tooldescription/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class AddressOfAdditionalLinkTool(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"AddressOfAdditionalLinkTool",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Web site address where information about the tool is given, e.g. link to shop"
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAQ326#004",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            def __init__(
+                self,
+                toolID: Optional[Union[str, ToolID]] = None,
+                toolName: Optional[Union[LangStringSet, ToolName]] = None,
+                collectionMaxQuantityOfTool: Optional[
+                    CollectionMaxQuantityOfTool
+                ] = None,
+                companyNameToolSupplier: Optional[
+                    Union[LangStringSet, CompanyNameToolSupplier]
+                ] = None,
+                orderCodeToolOfManufacturer: Optional[
+                    Union[str, OrderCodeToolOfManufacturer]
+                ] = None,
+                toolDescription: Optional[
+                    Iterable[Union[LangStringSet, ToolDescription]]
+                ] = None,
+                addressOfAdditionalLinkTool: Optional[
+                    Iterable[Union[str, AddressOfAdditionalLinkTool]]
+                ] = None,
+                id_short: Optional[str] = r"maintenancetoollist_item",
+                display_name: Optional[MultiLanguageNameType] = None,
+                category: Optional[str] = r"CONSTANT",
+                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Werkzeug, das für die Wartung benötigt wird. Dazu gehören der Name, die Bestellnummer, der Hersteller und eine Beschreibung.",
+                        r"en": r"The collection contains all the information and details about a tool needed for maintenance. This includes the name, order number, manufacturer and a description.",
+                    }
+                ),
+                semantic_id: Optional[Reference] = ExternalReference(
+                    key=(
+                        Key(
+                            type_=KeyTypes.GLOBAL_REFERENCE,
+                            value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancetool/1/0",
+                        ),
+                    ),
+                    referred_semantic_id=None,
+                ),
+                qualifier: Iterable[Qualifier] = None,
+                extension: Iterable[Extension] = (),
+                supplemental_semantic_id: Iterable[Reference] = (),
+                embedded_data_specifications: Iterable[
+                    EmbeddedDataSpecification
+                ] = None,
+            ):
+
+                if qualifier is None:
+                    qualifier = (
+                        Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToMany",
+                            value_id=None,
+                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=None,
+                            supplemental_semantic_id=(),
+                        ),
+                    )
+
+                if embedded_data_specifications is None:
+                    embedded_data_specifications = []
+
+                # Build a submodel element if a raw value was passed in the argument
+                if toolID and not isinstance(toolID, SubmodelElement):
+                    toolID = self.ToolID(toolID)
+
+                # Build a submodel element if a raw value was passed in the argument
+                if toolName and not isinstance(toolName, SubmodelElement):
+                    toolName = self.ToolName(toolName)
+
+                # Build a submodel element if a raw value was passed in the argument
+                if companyNameToolSupplier and not isinstance(
+                    companyNameToolSupplier, SubmodelElement
+                ):
+                    companyNameToolSupplier = self.CompanyNameToolSupplier(
+                        companyNameToolSupplier
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+                if orderCodeToolOfManufacturer and not isinstance(
+                    orderCodeToolOfManufacturer, SubmodelElement
+                ):
+                    orderCodeToolOfManufacturer = self.OrderCodeToolOfManufacturer(
+                        orderCodeToolOfManufacturer
+                    )
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if toolDescription and all(
+                    [isinstance(i, LangStringSet) for i in toolDescription]
+                ):
+                    toolDescription = [self.ToolDescription(i) for i in toolDescription]
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if addressOfAdditionalLinkTool and all(
+                    [isinstance(i, str) for i in addressOfAdditionalLinkTool]
+                ):
+                    addressOfAdditionalLinkTool = [
+                        self.AddressOfAdditionalLinkTool(i)
+                        for i in addressOfAdditionalLinkTool
+                    ]
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    toolID,
+                    toolName,
+                    collectionMaxQuantityOfTool,
+                    companyNameToolSupplier,
+                    orderCodeToolOfManufacturer,
+                    toolDescription,
+                    addressOfAdditionalLinkTool,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        )
+
+                super().__init__(
+                    value=embedded_submodel_elements,
+                    id_short=id_short,
+                    display_name=display_name,
+                    category=category,
+                    description=description,
+                    semantic_id=semantic_id,
+                    qualifier=qualifier,
+                    extension=extension,
+                    supplemental_semantic_id=supplemental_semantic_id,
+                    embedded_data_specifications=embedded_data_specifications,
+                )
+
+        def __init__(
+            self,
+            maintenancetoollist_items: Optional[
+                Iterable[Maintenancetoollist_item]
+            ] = None,
+            id_short: Optional[str] = r"MaintenanceToolList",
+            type_value_list_element: SubmodelElement = SubmodelElementCollection,
+            semantic_id_list_element: Optional[Reference] = None,
+            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            order_relevant: bool = True,
+            display_name: Optional[MultiLanguageNameType] = None,
+            category: Optional[str] = r"CONSTANT",
+            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                dict_={
+                    r"de": r"Gesamtliste der benötigten Werkzeuge für alle Wartungsintervalle eines Assets",
+                    r"en": r"Total list of tools required for all maintenance intervals of an asset",
+                }
+            ),
+            semantic_id: Optional[Reference] = ExternalReference(
+                key=(
+                    Key(
+                        type_=KeyTypes.GLOBAL_REFERENCE,
+                        value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancetoollist/1/0",
+                    ),
+                ),
+                referred_semantic_id=None,
+            ),
+            qualifier: Iterable[Qualifier] = None,
+            extension: Iterable[Extension] = (),
+            supplemental_semantic_id: Iterable[Reference] = (),
+            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        ):
+
+            if qualifier is None:
+                qualifier = (
+                    Qualifier(
+                        type_=r"SMT/Cardinality",
+                        value_type=str,
+                        value=r"ZeroToOne",
+                        value_id=None,
+                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        semantic_id=None,
+                        supplemental_semantic_id=(),
+                    ),
+                )
+
+            if embedded_data_specifications is None:
+                embedded_data_specifications = []
+
+            # Add all passed/initialized submodel elements to a single list
+            embedded_submodel_elements = []
+            for se_arg in [maintenancetoollist_items]:
+                if se_arg is None:
+                    continue
+                elif isinstance(se_arg, SubmodelElement):
+                    embedded_submodel_elements.append(se_arg)
+                elif isinstance(se_arg, Iterable):
+                    for n, element in enumerate(se_arg):
+                        element.id_short = f"{element.id_short}{n}"
+                        embedded_submodel_elements.append(element)
+                else:
+                    raise TypeError(
+                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    )
+
+            super().__init__(
+                value=embedded_submodel_elements,
+                id_short=id_short,
+                type_value_list_element=type_value_list_element,
+                semantic_id_list_element=semantic_id_list_element,
+                value_type_list_element=value_type_list_element,
+                order_relevant=order_relevant,
+                display_name=display_name,
+                category=category,
+                description=description,
+                semantic_id=semantic_id,
+                qualifier=qualifier,
+                extension=extension,
+                supplemental_semantic_id=supplemental_semantic_id,
+                embedded_data_specifications=embedded_data_specifications,
+            )
+
+        def _check_constraints(self, new, existing) -> None:
+            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+            saved_id_short = new.id_short
+            new.id_short = None
+
+            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+            if not isinstance(new, self.type_value_list_element):
+                raise base.AASConstraintViolation(
+                    108,
+                    "All first level elements must be of the type specified in "
+                    f"type_value_list_element={self.type_value_list_element.__name__}, "
+                    f"got {new!r}",
+                )
+
+            if (
+                self.semantic_id_list_element is not None
+                and new.semantic_id is not None
+                and new.semantic_id != self.semantic_id_list_element
+            ):
+                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                # Not really a constraint...
+                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                raise base.AASConstraintViolation(
+                    107,
+                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                    "is specified all first level children must have the same "
+                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                )
+
+            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+            # is either Property or Range. Thus, `new` must have the value_type property.
+            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+            if (
+                isinstance(self.type_value_list_element, Property)
+                or isinstance(self.type_value_list_element, Range)
+                and not isinstance(new.value_type, self.value_type_list_element)
+            ):  # type: ignore
+                raise base.AASConstraintViolation(
+                    109,
+                    "All first level elements must have the value_type "  # type: ignore
+                    "specified by value_type_list_element="
+                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                    f"{new!r} with value_type={new.value_type.__name__}",
+                )  # type: ignore
+
+            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+            if new.semantic_id is not None and self.semantic_id_list_element is None:
+                for item in existing:
+                    if (
+                        item.semantic_id is not None
+                        and new.semantic_id != item.semantic_id
+                    ):
+                        raise base.AASConstraintViolation(
+                            114,
+                            f"Element to be added {new!r} has semantic_id "
+                            f"{new.semantic_id!r}, while already contained element "
+                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                            "aren't equal.",
+                        )
+
+            # Re-assign id_short
+            new.id_short = saved_id_short
+
+    class MaintenanceConsumablesList(SubmodelElementList):
+
+        class Maintenanceconsumableslist_item(SubmodelElementCollection):
+
+            class ConsumableID(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ConsumableID",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"An ID can be assigned to uniquely identify a consumable, e.g. the globalAssetId of the tool."
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/consumableid/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ConsumableName(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"ConsumableName",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"A name for the consumable can be stored to name the consumable more understandable for humans."
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/consumablename/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CollectionQuantityOfConsumable(SubmodelElementCollection):
+
+                class QuantityOfConsumableForSpecificInterval(
+                    SubmodelElementCollection
+                ):
+
+                    class QuantityOfConsumable(Property):
+
+                        def __init__(
+                            self,
+                            value: Decimal,
+                            id_short: Optional[str] = r"QuantityOfConsumable",
+                            value_type: DataTypeDefXsd = Decimal,
+                            value_id: Optional[Reference] = None,
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = r"CONSTANT",
+                            description: Optional[
+                                MultiLanguageTextType
+                            ] = MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Benötigte Gesamtanzahl des Verbrauchsmaterials für einen Wartungsinterval",
+                                    r"en": r"Total number of consumble required for specific maintenance interval",
+                                }
+                            ),
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityofconsumable/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=None,
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                value_type=value_type,
+                                value_id=value_id,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class ReferenceNameOfMaintenance(ReferenceElement):
+
+                        def __init__(
+                            self,
+                            value: Reference,
+                            id_short: Optional[str] = r"ReferenceNameOfMaintenance",
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = r"CONSTANT",
+                            description: Optional[
+                                MultiLanguageTextType
+                            ] = MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Referenz zu Namen eines spezifischen Wartungsintervals",
+                                    r"en": r"Referenceto name of specific maintenance interval",
+                                }
+                            ),
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/maintenanceinstructions/referencenameofmanintainance/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=None,
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    class ReferenceToMaintenanceID(ReferenceElement):
+
+                        def __init__(
+                            self,
+                            value: Reference,
+                            id_short: Optional[str] = r"ReferenceToMaintenanceID",
+                            display_name: Optional[MultiLanguageNameType] = None,
+                            category: Optional[str] = r"CONSTANT",
+                            description: Optional[
+                                MultiLanguageTextType
+                            ] = MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
+                                    r"en": r"Reference to ID of specific maintenance interval",
+                                }
+                            ),
+                            semantic_id: Optional[Reference] = ExternalReference(
+                                key=(
+                                    Key(
+                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/maintenanceinstructions/referencenameofmaintenance/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier: Iterable[Qualifier] = None,
+                            extension: Iterable[Extension] = (),
+                            supplemental_semantic_id: Iterable[Reference] = (),
+                            embedded_data_specifications: Iterable[
+                                EmbeddedDataSpecification
+                            ] = None,
+                        ):
+
+                            if qualifier is None:
+                                qualifier = (
+                                    Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=None,
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
+
+                            if embedded_data_specifications is None:
+                                embedded_data_specifications = []
+
+                            super().__init__(
+                                value=value,
+                                id_short=id_short,
+                                display_name=display_name,
+                                category=category,
+                                description=description,
+                                semantic_id=semantic_id,
+                                qualifier=qualifier,
+                                extension=extension,
+                                supplemental_semantic_id=supplemental_semantic_id,
+                                embedded_data_specifications=embedded_data_specifications,
+                            )
+
+                    def __init__(
+                        self,
+                        quantityOfConsumable: Optional[
+                            Union[Decimal, QuantityOfConsumable]
+                        ] = None,
+                        referenceNameOfMaintenance: Optional[
+                            Union[Reference, ReferenceNameOfMaintenance]
+                        ] = None,
+                        referenceToMaintenanceID: Optional[
+                            Union[Reference, ReferenceToMaintenanceID]
+                        ] = None,
+                        id_short: Optional[
+                            str
+                        ] = r"QuantityOfConsumableForSpecificInterval",
+                        display_name: Optional[MultiLanguageNameType] = None,
+                        category: Optional[str] = r"CONSTANT",
+                        description: Optional[
+                            MultiLanguageTextType
+                        ] = MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Kollektion benötige Anzahl des Verbrauchmaterials für ein spezifisches Wartungsintervall",
+                                r"en": r"Collection total quantity of consumable required for a specific maintenance intervals",
+                            }
+                        ),
+                        semantic_id: Optional[Reference] = ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityofconsumableforspecificinterval/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[Qualifier] = None,
+                        extension: Iterable[Extension] = (),
+                        supplemental_semantic_id: Iterable[Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToOne",
+                                    value_id=None,
+                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=None,
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if quantityOfConsumable and not isinstance(
+                            quantityOfConsumable, SubmodelElement
+                        ):
+                            quantityOfConsumable = self.QuantityOfConsumable(
+                                quantityOfConsumable
+                            )
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if referenceNameOfMaintenance and not isinstance(
+                            referenceNameOfMaintenance, SubmodelElement
+                        ):
+                            referenceNameOfMaintenance = (
+                                self.ReferenceNameOfMaintenance(
+                                    referenceNameOfMaintenance
+                                )
+                            )
+
+                        # Build a submodel element if a raw value was passed in the argument
+                        if referenceToMaintenanceID and not isinstance(
+                            referenceToMaintenanceID, SubmodelElement
+                        ):
+                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(
+                                referenceToMaintenanceID
+                            )
+
+                        # Add all passed/initialized submodel elements to a single list
+                        embedded_submodel_elements = []
+                        for se_arg in [
+                            quantityOfConsumable,
+                            referenceNameOfMaintenance,
+                            referenceToMaintenanceID,
+                        ]:
+                            if se_arg is None:
+                                continue
+                            elif isinstance(se_arg, SubmodelElement):
+                                embedded_submodel_elements.append(se_arg)
+                            elif isinstance(se_arg, Iterable):
+                                for n, element in enumerate(se_arg):
+                                    element.id_short = f"{element.id_short}{n}"
+                                    embedded_submodel_elements.append(element)
+                            else:
+                                raise TypeError(
+                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                )
+
+                        super().__init__(
+                            value=embedded_submodel_elements,
+                            id_short=id_short,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
+                def __init__(
+                    self,
+                    quantityOfConsumableForSpecificInterval: Optional[
+                        QuantityOfConsumableForSpecificInterval
+                    ] = None,
+                    id_short: Optional[str] = r"CollectionQuantityOfConsumable",
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Sammelmenge des für die Wartungsintervalle benötigten Verbrauchsmaterials.",
+                            r"en": r"Collection quantity of consumable required for maintenance intervals.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionquantityofconsumables/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in [quantityOfConsumableForSpecificInterval]:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class UnitMaxQuantityOfConsumable(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"UnitMaxQuantityOfConsumable",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Einheit zur benötigten Gesamtmenge des Verbauchsmaterials. Beispiel: Blatt, Milliliter, Gramm, ...",
+                            r"en": r"Unit for the total quantity of consumable material required. Example: sheet, millilitre, gram, ...",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/unitmaxquantityofconsumable/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CompanyNameSupplierConsumable(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"CompanyNameSupplierConsumable",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Name des Verbrauchsmaterialherstellers z.B. Max Mustermann GmbH",
+                            r"en": r"Name of the consumables manufacturer e.g. Max Mustermann GmbH",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/companynamesupplierconsumable/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class OrderCodeConsumableOfManufacturer(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"OrderCodeConsumableOfManufacturer",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the consumable for ordering"
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0112/2///61987#ABA950#008",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (
+                        ExternalReference(
+                            key=(
+                                Key(
+                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"0173-1#02-AAO227#004",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                    ),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ConsumableDescription(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"ConsumableDescription",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Beschreibung des Verbauchsmaterials. Beispiel: Reinigungspapier; Farbe blau; Blattgröße 380x 380 mm doppellagig.",
+                            r"en": r"Description of the consumables. Example: Cleaning paper; colour blue; sheet size 380x 380 mm double-ply.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/consumabledescription/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class DisposalInstructionsForConsumable(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"DisposalInstructionsForConsumable",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Angabe zur fachgerechten Entsorgung des Verbauchsmaterials.",
+                            r"en": r"Information on the proper disposal of the consumables.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/disposalinstructionsforconsumable/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class AddressOfAdditionalLinkConsumable(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"AddressOfAdditionalLinkConsumable",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAQ326#004",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            def __init__(
+                self,
+                consumableID: Optional[Union[str, ConsumableID]] = None,
+                consumableName: Optional[Union[LangStringSet, ConsumableName]] = None,
+                collectionQuantityOfConsumable: Optional[
+                    CollectionQuantityOfConsumable
+                ] = None,
+                unitMaxQuantityOfConsumable: Optional[
+                    Union[str, UnitMaxQuantityOfConsumable]
+                ] = None,
+                companyNameSupplierConsumable: Optional[
+                    Union[LangStringSet, CompanyNameSupplierConsumable]
+                ] = None,
+                orderCodeConsumableOfManufacturer: Optional[
+                    Union[str, OrderCodeConsumableOfManufacturer]
+                ] = None,
+                consumableDescription: Optional[
+                    Iterable[Union[LangStringSet, ConsumableDescription]]
+                ] = None,
+                disposalInstructionsForConsumable: Optional[
+                    Iterable[Union[LangStringSet, DisposalInstructionsForConsumable]]
+                ] = None,
+                addressOfAdditionalLinkConsumable: Optional[
+                    Iterable[Union[str, AddressOfAdditionalLinkConsumable]]
+                ] = None,
+                id_short: Optional[str] = r"maintenanceconsumableslist_item",
+                display_name: Optional[MultiLanguageNameType] = None,
+                category: Optional[str] = r"CONSTANT",
+                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
+                        r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
+                    }
+                ),
+                semantic_id: Optional[Reference] = ExternalReference(
+                    key=(
+                        Key(
+                            type_=KeyTypes.GLOBAL_REFERENCE,
+                            value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceconsumable/1/0",
+                        ),
+                    ),
+                    referred_semantic_id=None,
+                ),
+                qualifier: Iterable[Qualifier] = None,
+                extension: Iterable[Extension] = (),
+                supplemental_semantic_id: Iterable[Reference] = (),
+                embedded_data_specifications: Iterable[
+                    EmbeddedDataSpecification
+                ] = None,
+            ):
+
+                if qualifier is None:
+                    qualifier = (
+                        Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToMany",
+                            value_id=None,
+                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=None,
+                            supplemental_semantic_id=(),
+                        ),
+                    )
+
+                if embedded_data_specifications is None:
+                    embedded_data_specifications = []
+
+                # Build a submodel element if a raw value was passed in the argument
+                if consumableID and not isinstance(consumableID, SubmodelElement):
+                    consumableID = self.ConsumableID(consumableID)
+
+                # Build a submodel element if a raw value was passed in the argument
+                if consumableName and not isinstance(consumableName, SubmodelElement):
+                    consumableName = self.ConsumableName(consumableName)
+
+                # Build a submodel element if a raw value was passed in the argument
+                if unitMaxQuantityOfConsumable and not isinstance(
+                    unitMaxQuantityOfConsumable, SubmodelElement
+                ):
+                    unitMaxQuantityOfConsumable = self.UnitMaxQuantityOfConsumable(
+                        unitMaxQuantityOfConsumable
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+                if companyNameSupplierConsumable and not isinstance(
+                    companyNameSupplierConsumable, SubmodelElement
+                ):
+                    companyNameSupplierConsumable = self.CompanyNameSupplierConsumable(
+                        companyNameSupplierConsumable
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+                if orderCodeConsumableOfManufacturer and not isinstance(
+                    orderCodeConsumableOfManufacturer, SubmodelElement
+                ):
+                    orderCodeConsumableOfManufacturer = (
+                        self.OrderCodeConsumableOfManufacturer(
+                            orderCodeConsumableOfManufacturer
+                        )
+                    )
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if consumableDescription and all(
+                    [isinstance(i, LangStringSet) for i in consumableDescription]
+                ):
+                    consumableDescription = [
+                        self.ConsumableDescription(i) for i in consumableDescription
+                    ]
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if disposalInstructionsForConsumable and all(
+                    [
+                        isinstance(i, LangStringSet)
+                        for i in disposalInstructionsForConsumable
+                    ]
+                ):
+                    disposalInstructionsForConsumable = [
+                        self.DisposalInstructionsForConsumable(i)
+                        for i in disposalInstructionsForConsumable
+                    ]
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if addressOfAdditionalLinkConsumable and all(
+                    [isinstance(i, str) for i in addressOfAdditionalLinkConsumable]
+                ):
+                    addressOfAdditionalLinkConsumable = [
+                        self.AddressOfAdditionalLinkConsumable(i)
+                        for i in addressOfAdditionalLinkConsumable
+                    ]
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    consumableID,
+                    consumableName,
+                    collectionQuantityOfConsumable,
+                    unitMaxQuantityOfConsumable,
+                    companyNameSupplierConsumable,
+                    orderCodeConsumableOfManufacturer,
+                    consumableDescription,
+                    disposalInstructionsForConsumable,
+                    addressOfAdditionalLinkConsumable,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        )
+
+                super().__init__(
+                    value=embedded_submodel_elements,
+                    id_short=id_short,
+                    display_name=display_name,
+                    category=category,
+                    description=description,
+                    semantic_id=semantic_id,
+                    qualifier=qualifier,
+                    extension=extension,
+                    supplemental_semantic_id=supplemental_semantic_id,
+                    embedded_data_specifications=embedded_data_specifications,
+                )
+
+        def __init__(
+            self,
+            maintenanceconsumableslist_items: Optional[
+                Iterable[Maintenanceconsumableslist_item]
+            ] = None,
+            id_short: Optional[str] = r"MaintenanceConsumablesList",
+            type_value_list_element: SubmodelElement = SubmodelElementCollection,
+            semantic_id_list_element: Optional[Reference] = None,
+            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            order_relevant: bool = True,
+            display_name: Optional[MultiLanguageNameType] = None,
+            category: Optional[str] = r"CONSTANT",
+            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                dict_={
+                    r"de": r"Gesamtliste der benötigten Verbrauchsmaterialien für alle Wartungsintervalle",
+                    r"en": r"Total list of consumables required for all maintenance intervals of an asset. Each consumable is described/defined in its own SMC’s",
+                }
+            ),
+            semantic_id: Optional[Reference] = ExternalReference(
+                key=(
+                    Key(
+                        type_=KeyTypes.GLOBAL_REFERENCE,
+                        value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceconsumableslist/1/0",
+                    ),
+                ),
+                referred_semantic_id=None,
+            ),
+            qualifier: Iterable[Qualifier] = None,
+            extension: Iterable[Extension] = (),
+            supplemental_semantic_id: Iterable[Reference] = (),
+            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        ):
+
+            if qualifier is None:
+                qualifier = (
+                    Qualifier(
+                        type_=r"SMT/Cardinality",
+                        value_type=str,
+                        value=r"ZeroToOne",
+                        value_id=None,
+                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        semantic_id=None,
+                        supplemental_semantic_id=(),
+                    ),
+                )
+
+            if embedded_data_specifications is None:
+                embedded_data_specifications = []
+
+            # Add all passed/initialized submodel elements to a single list
+            embedded_submodel_elements = []
+            for se_arg in [maintenanceconsumableslist_items]:
+                if se_arg is None:
+                    continue
+                elif isinstance(se_arg, SubmodelElement):
+                    embedded_submodel_elements.append(se_arg)
+                elif isinstance(se_arg, Iterable):
+                    for n, element in enumerate(se_arg):
+                        element.id_short = f"{element.id_short}{n}"
+                        embedded_submodel_elements.append(element)
+                else:
+                    raise TypeError(
+                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    )
+
+            super().__init__(
+                value=embedded_submodel_elements,
+                id_short=id_short,
+                type_value_list_element=type_value_list_element,
+                semantic_id_list_element=semantic_id_list_element,
+                value_type_list_element=value_type_list_element,
+                order_relevant=order_relevant,
+                display_name=display_name,
+                category=category,
+                description=description,
+                semantic_id=semantic_id,
+                qualifier=qualifier,
+                extension=extension,
+                supplemental_semantic_id=supplemental_semantic_id,
+                embedded_data_specifications=embedded_data_specifications,
+            )
+
+        def _check_constraints(self, new, existing) -> None:
+            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+            saved_id_short = new.id_short
+            new.id_short = None
+
+            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+            if not isinstance(new, self.type_value_list_element):
+                raise base.AASConstraintViolation(
+                    108,
+                    "All first level elements must be of the type specified in "
+                    f"type_value_list_element={self.type_value_list_element.__name__}, "
+                    f"got {new!r}",
+                )
+
+            if (
+                self.semantic_id_list_element is not None
+                and new.semantic_id is not None
+                and new.semantic_id != self.semantic_id_list_element
+            ):
+                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                # Not really a constraint...
+                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                raise base.AASConstraintViolation(
+                    107,
+                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                    "is specified all first level children must have the same "
+                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                )
+
+            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+            # is either Property or Range. Thus, `new` must have the value_type property.
+            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+            if (
+                isinstance(self.type_value_list_element, Property)
+                or isinstance(self.type_value_list_element, Range)
+                and not isinstance(new.value_type, self.value_type_list_element)
+            ):  # type: ignore
+                raise base.AASConstraintViolation(
+                    109,
+                    "All first level elements must have the value_type "  # type: ignore
+                    "specified by value_type_list_element="
+                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                    f"{new!r} with value_type={new.value_type.__name__}",
+                )  # type: ignore
+
+            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+            if new.semantic_id is not None and self.semantic_id_list_element is None:
+                for item in existing:
+                    if (
+                        item.semantic_id is not None
+                        and new.semantic_id != item.semantic_id
+                    ):
+                        raise base.AASConstraintViolation(
+                            114,
+                            f"Element to be added {new!r} has semantic_id "
+                            f"{new.semantic_id!r}, while already contained element "
+                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                            "aren't equal.",
+                        )
+
+            # Re-assign id_short
+            new.id_short = saved_id_short
+
+    class MaintenanceSparePartList(SubmodelElementList):
+
+        class Maintenancesparepartlist_item(SubmodelElementCollection):
+
+            class SparePartID(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"SparePartID",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"An ID can be assigned to uniquely identify a spare part, e.g. the globalAssetId of the spare part."
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/sparepartid/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class SparePartName(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"SparePartName",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Eine Bezeichnung des Ersatzteils kann gespeichert werden, um das Ersatzteil für den Menschen verständlicher zu benennen.",
+                            r"en": r"A designation of the spare part can be stored to name the spare part more understandable for people.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/sparepartname/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CollectionQuantityOfSparePart(SubmodelElementCollection):
+
+                def __init__(
+                    self,
+                    id_short: Optional[str] = r"CollectionQuantityOfSparePart",
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Kollektion benötige Anzahl des Ersatzteils für die Wartungsintervalle.",
+                            r"en": r"Collection quantity of spare part required for maintenance intervals.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionquantityofsparepart/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    # Add all passed/initialized submodel elements to a single list
+                    embedded_submodel_elements = []
+                    for se_arg in []:
+                        if se_arg is None:
+                            continue
+                        elif isinstance(se_arg, SubmodelElement):
+                            embedded_submodel_elements.append(se_arg)
+                        elif isinstance(se_arg, Iterable):
+                            for n, element in enumerate(se_arg):
+                                element.id_short = f"{element.id_short}{n}"
+                                embedded_submodel_elements.append(element)
+                        else:
+                            raise TypeError(
+                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            )
+
+                    super().__init__(
+                        value=embedded_submodel_elements,
+                        id_short=id_short,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CompanyNameSupplierSparePart(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"CompanyNameSupplierSparePart",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Name des Ersatzteilherstellers z.B. Max Mustermann GmbH",
+                            r"en": r"Name of the spare parts manufacturer e.g. Max Mustermann GmbH",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/companynamesuppliersparepart/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class OrderCodeSparePartOfManufacturer(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"OrderCodeSparePartOfManufacturer",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the spare part for ordering"
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0112/2///61987#ABA950#008",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class SparePartDescription(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"SparePartDescription",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Beschreibung des Ersatzteils.",
+                            r"en": r"Description of the spare part.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/sparepartdescription/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class DisposalInstructionsForSparePart(MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: LangStringSet,
+                    id_short: Optional[str] = r"DisposalInstructionsForSparePart",
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Angabe zur fachgerechten Entsorgung des Ersatzteils.",
+                            r"en": r"Information on the proper disposal of the spare part.",
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/maintenanceinstructions/disposalinstructionsforsparepart/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class AddressOfAdditionalLinkSparePart(Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"AddressOfAdditionalLinkSparePart",
+                    value_type: DataTypeDefXsd = str,
+                    value_id: Optional[Reference] = None,
+                    display_name: Optional[MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[
+                        MultiLanguageTextType
+                    ] = MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
+                        }
+                    ),
+                    semantic_id: Optional[Reference] = ExternalReference(
+                        key=(
+                            Key(
+                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAQ326#004",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[Qualifier] = None,
+                    extension: Iterable[Extension] = (),
+                    supplemental_semantic_id: Iterable[Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"ZeroToMany",
+                                value_id=None,
+                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=None,
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            def __init__(
+                self,
+                sparePartID: Optional[Union[str, SparePartID]] = None,
+                sparePartName: Optional[Union[LangStringSet, SparePartName]] = None,
+                collectionQuantityOfSparePart: Optional[
+                    CollectionQuantityOfSparePart
+                ] = None,
+                companyNameSupplierSparePart: Optional[
+                    Union[LangStringSet, CompanyNameSupplierSparePart]
+                ] = None,
+                orderCodeSparePartOfManufacturer: Optional[
+                    Union[str, OrderCodeSparePartOfManufacturer]
+                ] = None,
+                sparePartDescription: Optional[
+                    Iterable[Union[LangStringSet, SparePartDescription]]
+                ] = None,
+                disposalInstructionsForSparePart: Optional[
+                    Iterable[Union[LangStringSet, DisposalInstructionsForSparePart]]
+                ] = None,
+                addressOfAdditionalLinkSparePart: Optional[
+                    Iterable[Union[str, AddressOfAdditionalLinkSparePart]]
+                ] = None,
+                id_short: Optional[str] = r"maintenancesparepartlist_item",
+                display_name: Optional[MultiLanguageNameType] = None,
+                category: Optional[str] = r"CONSTANT",
+                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
+                        r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
+                    }
+                ),
+                semantic_id: Optional[Reference] = ExternalReference(
+                    key=(
+                        Key(
+                            type_=KeyTypes.GLOBAL_REFERENCE,
+                            value=r"htthttps://admin-shell.io/idta/maintenanceinstructions/maintenancesparepart/1/0",
+                        ),
+                    ),
+                    referred_semantic_id=None,
+                ),
+                qualifier: Iterable[Qualifier] = None,
+                extension: Iterable[Extension] = (),
+                supplemental_semantic_id: Iterable[Reference] = (),
+                embedded_data_specifications: Iterable[
+                    EmbeddedDataSpecification
+                ] = None,
+            ):
+
+                if qualifier is None:
+                    qualifier = (
+                        Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToMany",
+                            value_id=None,
+                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=None,
+                            supplemental_semantic_id=(),
+                        ),
+                    )
+
+                if embedded_data_specifications is None:
+                    embedded_data_specifications = []
+
+                # Build a submodel element if a raw value was passed in the argument
+                if sparePartID and not isinstance(sparePartID, SubmodelElement):
+                    sparePartID = self.SparePartID(sparePartID)
+
+                # Build a submodel element if a raw value was passed in the argument
+                if sparePartName and not isinstance(sparePartName, SubmodelElement):
+                    sparePartName = self.SparePartName(sparePartName)
+
+                # Build a submodel element if a raw value was passed in the argument
+                if companyNameSupplierSparePart and not isinstance(
+                    companyNameSupplierSparePart, SubmodelElement
+                ):
+                    companyNameSupplierSparePart = self.CompanyNameSupplierSparePart(
+                        companyNameSupplierSparePart
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+                if orderCodeSparePartOfManufacturer and not isinstance(
+                    orderCodeSparePartOfManufacturer, SubmodelElement
+                ):
+                    orderCodeSparePartOfManufacturer = (
+                        self.OrderCodeSparePartOfManufacturer(
+                            orderCodeSparePartOfManufacturer
+                        )
+                    )
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if sparePartDescription and all(
+                    [isinstance(i, LangStringSet) for i in sparePartDescription]
+                ):
+                    sparePartDescription = [
+                        self.SparePartDescription(i) for i in sparePartDescription
+                    ]
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if disposalInstructionsForSparePart and all(
+                    [
+                        isinstance(i, LangStringSet)
+                        for i in disposalInstructionsForSparePart
+                    ]
+                ):
+                    disposalInstructionsForSparePart = [
+                        self.DisposalInstructionsForSparePart(i)
+                        for i in disposalInstructionsForSparePart
+                    ]
+
+                # Build a list of submodel elements if a raw values were passed in the argument
+                if addressOfAdditionalLinkSparePart and all(
+                    [isinstance(i, str) for i in addressOfAdditionalLinkSparePart]
+                ):
+                    addressOfAdditionalLinkSparePart = [
+                        self.AddressOfAdditionalLinkSparePart(i)
+                        for i in addressOfAdditionalLinkSparePart
+                    ]
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    sparePartID,
+                    sparePartName,
+                    collectionQuantityOfSparePart,
+                    companyNameSupplierSparePart,
+                    orderCodeSparePartOfManufacturer,
+                    sparePartDescription,
+                    disposalInstructionsForSparePart,
+                    addressOfAdditionalLinkSparePart,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        )
+
+                super().__init__(
+                    value=embedded_submodel_elements,
+                    id_short=id_short,
+                    display_name=display_name,
+                    category=category,
+                    description=description,
+                    semantic_id=semantic_id,
+                    qualifier=qualifier,
+                    extension=extension,
+                    supplemental_semantic_id=supplemental_semantic_id,
+                    embedded_data_specifications=embedded_data_specifications,
+                )
+
+        def __init__(
+            self,
+            maintenancesparepartlist_items: Optional[
+                Iterable[Maintenancesparepartlist_item]
+            ] = None,
+            id_short: Optional[str] = r"MaintenanceSparePartList",
+            type_value_list_element: SubmodelElement = SubmodelElementCollection,
+            semantic_id_list_element: Optional[Reference] = None,
+            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            order_relevant: bool = True,
+            display_name: Optional[MultiLanguageNameType] = None,
+            category: Optional[str] = r"CONSTANT",
+            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                dict_={
+                    r"de": r"Gesamtliste der benötigten Ersatzteile für alle Wartungsintervalle",
+                    r"en": r"Total list of required spare parts for all maintenance intervals of an asset. Each spare part is described/ defined in its own SMC.",
+                }
+            ),
+            semantic_id: Optional[Reference] = ExternalReference(
+                key=(
+                    Key(
+                        type_=KeyTypes.GLOBAL_REFERENCE,
+                        value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancesparepartlist/1/0",
+                    ),
+                ),
+                referred_semantic_id=None,
+            ),
+            qualifier: Iterable[Qualifier] = None,
+            extension: Iterable[Extension] = (),
+            supplemental_semantic_id: Iterable[Reference] = (),
+            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        ):
+
+            if qualifier is None:
+                qualifier = (
+                    Qualifier(
+                        type_=r"SMT/Cardinality",
+                        value_type=str,
+                        value=r"ZeroToOne",
+                        value_id=None,
+                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        semantic_id=None,
+                        supplemental_semantic_id=(),
+                    ),
+                )
+
+            if embedded_data_specifications is None:
+                embedded_data_specifications = []
+
+            # Add all passed/initialized submodel elements to a single list
+            embedded_submodel_elements = []
+            for se_arg in [maintenancesparepartlist_items]:
+                if se_arg is None:
+                    continue
+                elif isinstance(se_arg, SubmodelElement):
+                    embedded_submodel_elements.append(se_arg)
+                elif isinstance(se_arg, Iterable):
+                    for n, element in enumerate(se_arg):
+                        element.id_short = f"{element.id_short}{n}"
+                        embedded_submodel_elements.append(element)
+                else:
+                    raise TypeError(
+                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    )
+
+            super().__init__(
+                value=embedded_submodel_elements,
+                id_short=id_short,
+                type_value_list_element=type_value_list_element,
+                semantic_id_list_element=semantic_id_list_element,
+                value_type_list_element=value_type_list_element,
+                order_relevant=order_relevant,
+                display_name=display_name,
+                category=category,
+                description=description,
+                semantic_id=semantic_id,
+                qualifier=qualifier,
+                extension=extension,
+                supplemental_semantic_id=supplemental_semantic_id,
+                embedded_data_specifications=embedded_data_specifications,
+            )
+
+        def _check_constraints(self, new, existing) -> None:
+            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+            saved_id_short = new.id_short
+            new.id_short = None
+
+            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
+            if not isinstance(new, self.type_value_list_element):
+                raise base.AASConstraintViolation(
+                    108,
+                    "All first level elements must be of the type specified in "
+                    f"type_value_list_element={self.type_value_list_element.__name__}, "
+                    f"got {new!r}",
+                )
+
+            if (
+                self.semantic_id_list_element is not None
+                and new.semantic_id is not None
+                and new.semantic_id != self.semantic_id_list_element
+            ):
+                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+                # Not really a constraint...
+                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+                raise base.AASConstraintViolation(
+                    107,
+                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                    "is specified all first level children must have the same "
+                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+                )
+
+            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+            # is either Property or Range. Thus, `new` must have the value_type property.
+            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+            if (
+                isinstance(self.type_value_list_element, Property)
+                or isinstance(self.type_value_list_element, Range)
+                and not isinstance(new.value_type, self.value_type_list_element)
+            ):  # type: ignore
+                raise base.AASConstraintViolation(
+                    109,
+                    "All first level elements must have the value_type "  # type: ignore
+                    "specified by value_type_list_element="
+                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                    f"{new!r} with value_type={new.value_type.__name__}",
+                )  # type: ignore
+
+            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+            if new.semantic_id is not None and self.semantic_id_list_element is None:
+                for item in existing:
+                    if (
+                        item.semantic_id is not None
+                        and new.semantic_id != item.semantic_id
+                    ):
+                        raise base.AASConstraintViolation(
+                            114,
+                            f"Element to be added {new!r} has semantic_id "
+                            f"{new.semantic_id!r}, while already contained element "
+                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                            "aren't equal.",
+                        )
+
+            # Re-assign id_short
+            new.id_short = saved_id_short
+
     def __init__(
         self,
         id_: str,
@@ -2577,6 +5729,9 @@ class MaintenanceInstructions(Submodel):
         maintenanceInstructionsForSpecificInterval: Optional[
             Iterable[MaintenanceInstructionsForSpecificInterval]
         ] = None,
+        maintenanceToolList: Optional[MaintenanceToolList] = None,
+        maintenanceConsumablesList: Optional[MaintenanceConsumablesList] = None,
+        maintenanceSparePartList: Optional[MaintenanceSparePartList] = None,
         id_short: Optional[str] = r"MaintenanceInstructions",
         display_name: Optional[MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -2627,6 +5782,9 @@ class MaintenanceInstructions(Submodel):
         for se_arg in [
             maintenanceFreeAsset,
             maintenanceInstructionsForSpecificInterval,
+            maintenanceToolList,
+            maintenanceConsumablesList,
+            maintenanceSparePartList,
         ]:
             if se_arg is None:
                 continue

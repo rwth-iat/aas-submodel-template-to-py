@@ -3478,7 +3478,7 @@ class AssetLocation(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"AreaLayout",
-                    content_type: str = r"application/pdf",
+                    content_type: Optional[str] = r"application/pdf",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(

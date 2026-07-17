@@ -104,7 +104,7 @@ class TechnicalData(Submodel):
                                 
                                 id_short: Optional[str]=r'CompanyLogo',
                                 
-                                content_type: str=r'image/png',
+                                content_type: Optional[str]=r'image/png',
                                 
                                 display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Company logo',r'de': r'Firmenlogo'}),
                                 
@@ -420,7 +420,7 @@ class TechnicalData(Submodel):
                                         
                                         id_short: Optional[str]=r'ImageFile',
                                         
-                                        content_type: str=r'image/png',
+                                        content_type: Optional[str]=r'image/png',
                                         
                                         display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Product image',r'de': r'Bildname Sachaufnahme'}),
                                         

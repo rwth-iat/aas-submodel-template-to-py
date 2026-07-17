@@ -945,7 +945,7 @@ class ControlConfig(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"ControlConfigFile",
-                content_type: str = r"application/json",
+                content_type: Optional[str] = r"application/json",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -2408,7 +2408,7 @@ class ControlConfig(Submodel):
                         self,
                         value: str,
                         id_short: Optional[str] = r"AxisConfigFile",
-                        content_type: str = r"application/json",
+                        content_type: Optional[str] = r"application/json",
                         display_name: Optional[MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -2589,7 +2589,7 @@ class ControlConfig(Submodel):
                         self,
                         value: str,
                         id_short: Optional[str] = r"Manual",
-                        content_type: str = r"application/json",
+                        content_type: Optional[str] = r"application/json",
                         display_name: Optional[MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
@@ -2832,7 +2832,7 @@ class ControlConfig(Submodel):
                             self,
                             value: str,
                             id_short: Optional[str] = r"DriveConfigFile",
-                            content_type: str = r"application/json",
+                            content_type: Optional[str] = r"application/json",
                             display_name: Optional[MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -3514,7 +3514,7 @@ class ControlConfig(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"NCProgramSyntaxManual",
-                content_type: str = r"application/json",
+                content_type: Optional[str] = r"application/json",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(

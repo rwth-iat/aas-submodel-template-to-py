@@ -177,9 +177,9 @@ class CapabilityDescription(Submodel):
                                             
                                             id_short: Optional[str]=r'SameProperty',
                                             
-                                            first: Reference=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'urn:example:capability-description:same-property:first'),), referred_semantic_id=None),
+                                            first: Optional[Reference]=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'urn:example:capability-description:same-property:first'),), referred_semantic_id=None),
                                             
-                                            second: Reference=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'urn:example:capability-description:same-property:second'),), referred_semantic_id=None),
+                                            second: Optional[Reference]=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'urn:example:capability-description:same-property:second'),), referred_semantic_id=None),
                                             
                                             display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Same Property'}),
                                             
@@ -820,9 +820,9 @@ class CapabilityDescription(Submodel):
                                         
                                         id_short: Optional[str]=r'CapabilityRealizedBy',
                                         
-                                        first: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
+                                        first: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
                                         
-                                        second: Reference=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'urn:example:capability-description:capability-realized-by:skill'),), referred_semantic_id=None),
+                                        second: Optional[Reference]=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'urn:example:capability-description:capability-realized-by:skill'),), referred_semantic_id=None),
                                         
                                         display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Capability Realized By'}),
                                         
@@ -903,9 +903,9 @@ class CapabilityDescription(Submodel):
                                                 
                                                 id_short: Optional[str]=r'CapabilityComposedOf',
                                                 
-                                                first: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
+                                                first: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
                                                 
-                                                second: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
+                                                second: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
                                                 
                                                 display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Capability Composed Of'}),
                                                 
@@ -1268,9 +1268,9 @@ class CapabilityDescription(Submodel):
                                             
                                             id_short: Optional[str]=r'CapabilityGeneralizedBy',
                                             
-                                            first: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
+                                            first: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
                                             
-                                            second: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
+                                            second: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
                                             
                                             display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Capability Generalized By'}),
                                             
@@ -1611,6 +1611,81 @@ class CapabilityDescription(Submodel):
                                 
                                 
 
+                        class OCLConstraint(File):
+
+                            
+                                
+                                
+                            def __init__(
+                                    self,
+                                    
+                                                value: str,
+                                                
+                                                
+                                                id_short: Optional[str]=r'OCLConstraint',
+                                                
+                                                content_type: Optional[str]=None,
+                                                
+                                                display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'OCL Constraint'}),
+                                                
+                                                category: Optional[str]=None,
+                                                
+                                                description: Optional[MultiLanguageTextType]=MultiLanguageTextType(dict_={r'en': r'Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties.'}),
+                                                
+                                                semantic_id: Optional[Reference]=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OCLConstraint/1/0'),), referred_semantic_id=None),
+                                                
+                                                qualifier: Iterable[Qualifier]=None,
+                                                
+                                                extension: Iterable[Extension]=(),
+                                                
+                                                supplemental_semantic_id: Iterable[Reference]=(),
+                                                
+                                                embedded_data_specifications: Iterable[EmbeddedDataSpecification]=None,
+                                                
+                                                
+                                                
+                            ):
+                                
+                                if qualifier is None:
+                                    qualifier = (Qualifier(type_=r'SMT/Cardinality', value_type=str, value=r'One', value_id=None, kind=QualifierKind.TEMPLATE_QUALIFIER, semantic_id=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'https://admin-shell.io/SubmodelTemplates/Cardinality/1/0'),), referred_semantic_id=None), supplemental_semantic_id=()),)
+                                
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+                                
+                                
+                                        
+                                super().__init__(
+                                    
+                                                value = value,
+                                                
+                                                
+                                                id_short = id_short,
+                                                
+                                                content_type = content_type,
+                                                
+                                                display_name = display_name,
+                                                
+                                                category = category,
+                                                
+                                                description = description,
+                                                
+                                                semantic_id = semantic_id,
+                                                
+                                                qualifier = qualifier,
+                                                
+                                                extension = extension,
+                                                
+                                                supplemental_semantic_id = supplemental_semantic_id,
+                                                
+                                                embedded_data_specifications = embedded_data_specifications,
+                                                
+                                                
+                                                
+                                )
+                            
+                                
+                                
+
                         class OperationConstraint(ReferenceElement):
 
                             
@@ -1855,9 +1930,9 @@ class CapabilityDescription(Submodel):
                                                     
                                                     id_short: Optional[str]=r'ConstraintHasProperty',
                                                     
-                                                    first: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityRelations'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'ConstraintSet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'PropertyConstraintContainer'), Key(type_=KeyTypes.PROPERTY, value=r'BasicConstraint')), type_=Property, referred_semantic_id=None),
+                                                    first: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityRelations'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'ConstraintSet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'PropertyConstraintContainer'), Key(type_=KeyTypes.PROPERTY, value=r'BasicConstraint')), type_=Property, referred_semantic_id=None),
                                                     
-                                                    second: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'PropertySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'PropertyContainer'), Key(type_=KeyTypes.PROPERTY, value=r'PropertyProperty')), type_=Property, referred_semantic_id=None),
+                                                    second: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'PropertySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'PropertyContainer'), Key(type_=KeyTypes.PROPERTY, value=r'PropertyProperty')), type_=Property, referred_semantic_id=None),
                                                     
                                                     display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Constraint Has Property'}),
                                                     
@@ -2032,6 +2107,10 @@ class CapabilityDescription(Submodel):
                                     
 
                                     
+                                oCLConstraint: OCLConstraint,
+                                    
+
+                                    
                                 operationConstraint: Union[Reference, OperationConstraint],
                                     
 
@@ -2047,6 +2126,8 @@ class CapabilityDescription(Submodel):
                                 constraintPropertyRelations: ConstraintPropertyRelations,
                                     
 
+
+                                    
 
                                     
 
@@ -2111,6 +2192,10 @@ class CapabilityDescription(Submodel):
                                 
 
                                 
+
+                                
+
+                                
                                     
                             # Build a submodel element if a raw value was passed in the argument
                             if operationConstraint and not isinstance(operationConstraint, SubmodelElement):
@@ -2142,7 +2227,7 @@ class CapabilityDescription(Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [basicConstraint,customConstraint,operationConstraint,constraintType,propertyConditionalType,constraintPropertyRelations]:
+                            for se_arg in [basicConstraint,customConstraint,oCLConstraint,operationConstraint,constraintType,propertyConditionalType,constraintPropertyRelations]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, SubmodelElement):
@@ -2200,9 +2285,9 @@ class CapabilityDescription(Submodel):
                                                 
                                                 id_short: Optional[str]=r'TransitionConstrainedBy',
                                                 
-                                                first: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
+                                                first: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
                                                 
-                                                second: Reference=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
+                                                second: Optional[Reference]=ModelReference(key=(Key(type_=KeyTypes.SUBMODEL, value=r'https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilitySet'), Key(type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r'CapabilityContainer'), Key(type_=KeyTypes.CAPABILITY, value=r'Capability')), type_=Capability, referred_semantic_id=None),
                                                 
                                                 display_name: Optional[MultiLanguageNameType]=MultiLanguageNameType(dict_={r'en': r'Transition Constrained By'}),
                                                 

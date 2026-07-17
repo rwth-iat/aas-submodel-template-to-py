@@ -2743,7 +2743,7 @@ class SimulationModels(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"RefSimDocumentation",
-                content_type: str = r"application/pdf",
+                content_type: Optional[str] = r"application/pdf",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Ref Sim Documentation"}
                 ),
@@ -3025,7 +3025,7 @@ class SimulationModels(Submodel):
                         self,
                         value: str,
                         id_short: Optional[str] = r"ModelPreviewImage",
-                        content_type: str = r"image/png",
+                        content_type: Optional[str] = r"image/png",
                         display_name: Optional[
                             MultiLanguageNameType
                         ] = MultiLanguageNameType(
@@ -3119,7 +3119,7 @@ class SimulationModels(Submodel):
                         self,
                         value: str,
                         id_short: Optional[str] = r"DigitalFile",
-                        content_type: str = r"application/octet-stream",
+                        content_type: Optional[str] = r"application/octet-stream",
                         display_name: Optional[
                             MultiLanguageNameType
                         ] = MultiLanguageNameType(dict_={r"en": r"Digital File"}),
@@ -3301,7 +3301,7 @@ class SimulationModels(Submodel):
                         self,
                         value: str,
                         id_short: Optional[str] = r"ModelFileReleaseNotesFile",
-                        content_type: str = r"text/plain",
+                        content_type: Optional[str] = r"text/plain",
                         display_name: Optional[
                             MultiLanguageNameType
                         ] = MultiLanguageNameType(
@@ -3733,7 +3733,7 @@ class SimulationModels(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"ParamFile",
-                content_type: str = r"text/plain",
+                content_type: Optional[str] = r"text/plain",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Param File"}
                 ),
@@ -3924,7 +3924,7 @@ class SimulationModels(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"InitStateFile",
-                content_type: str = r"text/plain",
+                content_type: Optional[str] = r"text/plain",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Init State File"}
                 ),
@@ -7273,7 +7273,7 @@ class SimulationModels(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"QualityMetricFile",
-                    content_type: str = r"text/plain",
+                    content_type: Optional[str] = r"text/plain",
                     display_name: Optional[
                         MultiLanguageNameType
                     ] = MultiLanguageNameType(dict_={r"en": r"Quality Metric File"}),

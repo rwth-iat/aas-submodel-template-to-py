@@ -400,7 +400,7 @@ class DataRetentionPolicies(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"Overrides",
-                    first: Reference = ExternalReference(
+                    first: Optional[Reference] = ExternalReference(
                         key=(
                             Key(
                                 type_=KeyTypes.GLOBAL_REFERENCE,
@@ -417,7 +417,7 @@ class DataRetentionPolicies(Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    second: Reference = ExternalReference(
+                    second: Optional[Reference] = ExternalReference(
                         key=(
                             Key(
                                 type_=KeyTypes.GLOBAL_REFERENCE,
@@ -865,7 +865,7 @@ class DataRetentionPolicies(Submodel):
                         self,
                         value: str,
                         id_short: Optional[str] = r"Document",
-                        content_type: str = r"image/png",
+                        content_type: Optional[str] = r"image/png",
                         display_name: Optional[MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[

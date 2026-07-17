@@ -12,7 +12,7 @@ class ProductionCalendar(Submodel):
             self,
             value: str,
             id_short: Optional[str] = r"calendar",
-            content_type: str = r"text/calendar",
+            content_type: Optional[str] = r"text/calendar",
             display_name: Optional[MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -221,7 +221,7 @@ class ProductionCalendar(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"variableSpecification",
-                    content_type: str = r"text/plain",
+                    content_type: Optional[str] = r"text/plain",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[

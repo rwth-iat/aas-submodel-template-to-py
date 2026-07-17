@@ -3225,7 +3225,7 @@ class HandoverDocumentation(Submodel):
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"digitalfiles_item",
-                                content_type: str = r"application/pdf",
+                                content_type: Optional[str] = r"application/pdf",
                                 display_name: Optional[
                                     MultiLanguageNameType
                                 ] = MultiLanguageNameType(
@@ -3504,7 +3504,7 @@ class HandoverDocumentation(Submodel):
                             self,
                             value: str,
                             id_short: Optional[str] = r"PreviewFile",
-                            content_type: str = r"image/jpeg",
+                            content_type: Optional[str] = r"image/jpeg",
                             display_name: Optional[
                                 MultiLanguageNameType
                             ] = MultiLanguageNameType(
@@ -4479,7 +4479,7 @@ class HandoverDocumentation(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"entities_item",
-                entity_type: EntityType = EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.CO_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (),
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[SpecificAssetId] = (),

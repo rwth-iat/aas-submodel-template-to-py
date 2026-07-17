@@ -13,7 +13,7 @@ class PredictiveMaintenance(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"RemainingUsefulLifetime",
-                entity_type: EntityType = EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[EntityType] = EntityType.CO_MANAGED_ENTITY,
                 statement: Iterable[SubmodelElement] = (
                     Property(
                         id_short=r"IndicationType",

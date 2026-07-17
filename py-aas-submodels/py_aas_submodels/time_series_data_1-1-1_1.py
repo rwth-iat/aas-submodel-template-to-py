@@ -1157,7 +1157,7 @@ class TimeSeries(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"File",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[MultiLanguageTextType] = None,
@@ -1213,7 +1213,7 @@ class TimeSeries(Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"Blob",
-                    content_type: str = r"application/json",
+                    content_type: Optional[str] = r"application/json",
                     value: Optional[bytes] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"VARIABLE",

@@ -5464,7 +5464,7 @@ class InspectionDocumentsOfSteelProducts(Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"Drawing",
-                content_type: str = r"application/pdf",
+                content_type: Optional[str] = r"application/pdf",
                 value: Optional[bytes] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"de": r"Zeichnung", r"en": r"Drawing"}
@@ -10638,7 +10638,7 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"MarkingFile",
-                    content_type: str = r"image/png",
+                    content_type: Optional[str] = r"image/png",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[MultiLanguageTextType] = None,

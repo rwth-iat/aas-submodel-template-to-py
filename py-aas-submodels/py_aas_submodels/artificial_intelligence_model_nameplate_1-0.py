@@ -653,7 +653,7 @@ class AIModelNameplate(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"Preprocessing",
-                content_type: str = r"text/plain",
+                content_type: Optional[str] = r"text/plain",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -1274,7 +1274,7 @@ class AIModelNameplate(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"ExamplePlot",
-                    content_type: str = r"image/jpeg",
+                    content_type: Optional[str] = r"image/jpeg",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[
@@ -1426,7 +1426,7 @@ class AIModelNameplate(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"ExampleStructurePlot",
-                    content_type: str = r"image/jpeg",
+                    content_type: Optional[str] = r"image/jpeg",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[
@@ -1578,7 +1578,7 @@ class AIModelNameplate(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"ExamplePlot",
-                    content_type: str = r"image/jpeg",
+                    content_type: Optional[str] = r"image/jpeg",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[
@@ -2016,7 +2016,7 @@ class AIModelNameplate(Submodel):
                 self,
                 value: str,
                 id_short: Optional[str] = r"Requirements",
-                content_type: str = r"text/plain",
+                content_type: Optional[str] = r"text/plain",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -2551,7 +2551,7 @@ class AIModelNameplate(Submodel):
                     self,
                     value: str,
                     id_short: Optional[str] = r"Weights",
-                    content_type: str = r"text/plain",
+                    content_type: Optional[str] = r"text/plain",
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
