@@ -1433,9 +1433,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, aas.Property)
-                    or isinstance(self.type_value_list_element, aas.Range)
-                    and not isinstance(new.value_type, self.value_type_list_element)
+                    self.type_value_list_element in (aas.Property, aas.Range)
+                    and new.value_type is not self.value_type_list_element
                 ):  # type: ignore
                     raise aas.AASConstraintViolation(
                         109,
@@ -2116,9 +2115,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, aas.Property)
-                    or isinstance(self.type_value_list_element, aas.Range)
-                    and not isinstance(new.value_type, self.value_type_list_element)
+                    self.type_value_list_element in (aas.Property, aas.Range)
+                    and new.value_type is not self.value_type_list_element
                 ):  # type: ignore
                     raise aas.AASConstraintViolation(
                         109,
@@ -2804,9 +2802,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, aas.Property)
-                    or isinstance(self.type_value_list_element, aas.Range)
-                    and not isinstance(new.value_type, self.value_type_list_element)
+                    self.type_value_list_element in (aas.Property, aas.Range)
+                    and new.value_type is not self.value_type_list_element
                 ):  # type: ignore
                     raise aas.AASConstraintViolation(
                         109,
@@ -3637,9 +3634,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, aas.Property)
-                        or isinstance(self.type_value_list_element, aas.Range)
-                        and not isinstance(new.value_type, self.value_type_list_element)
+                        self.type_value_list_element in (aas.Property, aas.Range)
+                        and new.value_type is not self.value_type_list_element
                     ):  # type: ignore
                         raise aas.AASConstraintViolation(
                             109,
@@ -3936,9 +3932,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, aas.Property)
-                or isinstance(self.type_value_list_element, aas.Range)
-                and not isinstance(new.value_type, self.value_type_list_element)
+                self.type_value_list_element in (aas.Property, aas.Range)
+                and new.value_type is not self.value_type_list_element
             ):  # type: ignore
                 raise aas.AASConstraintViolation(
                     109,
@@ -4995,9 +4990,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, aas.Property)
-                        or isinstance(self.type_value_list_element, aas.Range)
-                        and not isinstance(new.value_type, self.value_type_list_element)
+                        self.type_value_list_element in (aas.Property, aas.Range)
+                        and new.value_type is not self.value_type_list_element
                     ):  # type: ignore
                         raise aas.AASConstraintViolation(
                             109,
@@ -5305,9 +5299,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, aas.Property)
-                or isinstance(self.type_value_list_element, aas.Range)
-                and not isinstance(new.value_type, self.value_type_list_element)
+                self.type_value_list_element in (aas.Property, aas.Range)
+                and new.value_type is not self.value_type_list_element
             ):  # type: ignore
                 raise aas.AASConstraintViolation(
                     109,
@@ -6510,9 +6503,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, aas.Property)
-                        or isinstance(self.type_value_list_element, aas.Range)
-                        and not isinstance(new.value_type, self.value_type_list_element)
+                        self.type_value_list_element in (aas.Property, aas.Range)
+                        and new.value_type is not self.value_type_list_element
                     ):  # type: ignore
                         raise aas.AASConstraintViolation(
                             109,
@@ -6814,9 +6806,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, aas.Property)
-                or isinstance(self.type_value_list_element, aas.Range)
-                and not isinstance(new.value_type, self.value_type_list_element)
+                self.type_value_list_element in (aas.Property, aas.Range)
+                and new.value_type is not self.value_type_list_element
             ):  # type: ignore
                 raise aas.AASConstraintViolation(
                     109,

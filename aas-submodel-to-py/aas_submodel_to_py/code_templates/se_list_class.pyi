@@ -27,8 +27,8 @@ def _check_constraints(self, new, existing) -> None:
     # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
     # is either Property or Range. Thus, `new` must have the value_type property.
     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-    if isinstance(self.type_value_list_element, aas.Property) or isinstance(self.type_value_list_element, aas.Range) \
-            and not isinstance(new.value_type, self.value_type_list_element):  # type: ignore
+    if self.type_value_list_element in (aas.Property, aas.Range) \
+            and new.value_type is not self.value_type_list_element:  # type: ignore
         raise aas.AASConstraintViolation(109, "All first level elements must have the value_type "  # type: ignore
                                                "specified by value_type_list_element="
                                                f"{self.value_type_list_element.__name__}, got "  # type: ignore
