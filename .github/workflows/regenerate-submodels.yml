@@ -72,8 +72,18 @@ jobs:
         continue-on-error: true
         run: python py-aas-submodels/regenerate_submodels.py --fail-on-errors --log-file /tmp/generation_failures.log
 
+      - name: Check that all generated modules import
+        if: steps.cache.outputs.cache-hit != 'true'
+        id: check
+        env:
+          # The repository has no tracked .gitignore; don't leave files the commit step could pick up
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          pip install pytest
+          PYTHONPATH=py-aas-submodels python -m pytest -p no:cacheprovider py-aas-submodels/tests
+
       - name: Write hash marker for cache
-        if: steps.cache.outputs.cache-hit != 'true' && steps.regenerate.outcome == 'success'
+        if: steps.cache.outputs.cache-hit != 'true' && steps.regenerate.outcome == 'success' && steps.check.outcome == 'success'
         run: echo "${{ steps.upstream.outputs.hash }}" > /tmp/.upstream-hash-marker
 
       - name: Upload failure log as artifact
@@ -84,13 +94,14 @@ jobs:
           path: /tmp/generation_failures.log
 
       - name: Commit generated changes
-        if: always() && steps.cache.outputs.cache-hit != 'true'
+        # Never commit modules that fail to import
+        if: always() && steps.cache.outputs.cache-hit != 'true' && steps.check.outcome == 'success'
         run: |
           TARGET_BRANCH="${GITHUB_REF_NAME:-master}"
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A py-aas-submodels
+            git add -A -- "py-aas-submodels/py_aas_submodels/*.py"
             if [[ -n "$(git diff --cached --name-only)" ]]; then
               echo "Staged files:"
               git diff --cached --name-only

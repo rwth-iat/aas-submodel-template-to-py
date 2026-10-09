@@ -78,7 +78,17 @@ The script:
 
 A GitHub Actions workflow (`.github/workflows/regenerate-submodels.yml`) runs this
 automatically whenever files under `aas-submodel-to-py/**` change on `master`, and daily
-(on schedule) to pick up newly published submodels.
+(on schedule) to pick up newly published submodels. It commits the
+regenerated modules only if all of them import.
+
+## Running Tests
+
+Check that every module imports and defines a submodel class:
+
+```bash
+pip install -e "./py-aas-submodels[test]"
+python -m pytest py-aas-submodels/tests
+```
 
 ## License
 

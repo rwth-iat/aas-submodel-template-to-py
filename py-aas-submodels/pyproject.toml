@@ -23,8 +23,12 @@ dependencies = [
   "basyx-python-sdk>=2.1.0"
 ]
 
+[project.optional-dependencies]
+test = ["pytest"]
+
 [tool.setuptools.packages.find]
 where = ["."]
+exclude = ["tests*"]
 
 [project.urls]
 Homepage = "https://github.com/rwth-iat/aas-submodel-template-to-py"

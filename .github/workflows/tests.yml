@@ -1,0 +1,39 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    name: Tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.10: oldest supported version, used by the regeneration workflow; 3.14: newest version
+        python-version: ["3.10", "3.14"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e "./aas-submodel-to-py[test]" -e "./py-aas-submodels[test]"
+
+      - name: Test generator
+        run: python -m pytest aas-submodel-to-py/tests -W error::DeprecationWarning
+
+      - name: Test generated modules
+        run: python -m pytest py-aas-submodels/tests
