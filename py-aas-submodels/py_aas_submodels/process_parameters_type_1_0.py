@@ -691,21 +691,29 @@ class ProcessParameters(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processId and not isinstance(processId, aas.SubmodelElement):
+
+                if processId is not None and not isinstance(
+                    processId, aas.SubmodelElement
+                ):
                     processId = self.ProcessId(processId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processName and not isinstance(processName, aas.SubmodelElement):
+
+                if processName is not None and not isinstance(
+                    processName, aas.SubmodelElement
+                ):
                     processName = self.ProcessName(processName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processDescription and not isinstance(
+
+                if processDescription is not None and not isinstance(
                     processDescription, aas.SubmodelElement
                 ):
                     processDescription = self.ProcessDescription(processDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if plannedProcessTime and not isinstance(
+
+                if plannedProcessTime is not None and not isinstance(
                     plannedProcessTime, aas.SubmodelElement
                 ):
                     plannedProcessTime = self.PlannedProcessTime(plannedProcessTime)

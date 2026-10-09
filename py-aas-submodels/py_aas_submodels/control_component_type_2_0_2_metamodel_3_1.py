@@ -297,13 +297,15 @@ class ControlComponentType(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if interfaceProfile and not isinstance(
+
+                if interfaceProfile is not None and not isinstance(
                     interfaceProfile, aas.SubmodelElement
                 ):
                     interfaceProfile = self.InterfaceProfile(interfaceProfile)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if interfaceProfileSupplement and not isinstance(
+
+                if interfaceProfileSupplement is not None and not isinstance(
                     interfaceProfileSupplement, aas.SubmodelElement
                 ):
                     interfaceProfileSupplement = self.InterfaceProfileSupplement(
@@ -311,7 +313,8 @@ class ControlComponentType(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if interfaceReference and not isinstance(
+
+                if interfaceReference is not None and not isinstance(
                     interfaceReference, aas.SubmodelElement
                 ):
                     interfaceReference = self.InterfaceReference(interfaceReference)
@@ -585,7 +588,10 @@ class ControlComponentType(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if errorCode and not isinstance(errorCode, aas.SubmodelElement):
+
+                if errorCode is not None and not isinstance(
+                    errorCode, aas.SubmodelElement
+                ):
                     errorCode = self.ErrorCode(errorCode)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -925,7 +931,8 @@ class ControlComponentType(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mode and not isinstance(mode, aas.SubmodelElement):
+
+                    if mode is not None and not isinstance(mode, aas.SubmodelElement):
                         mode = self.Mode(mode)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1290,11 +1297,17 @@ class ControlComponentType(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if direction and not isinstance(direction, aas.SubmodelElement):
+
+                        if direction is not None and not isinstance(
+                            direction, aas.SubmodelElement
+                        ):
                             direction = self.Direction(direction)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if type and not isinstance(type, aas.SubmodelElement):
+
+                        if type is not None and not isinstance(
+                            type, aas.SubmodelElement
+                        ):
                             type = self.Type(type)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1562,7 +1575,8 @@ class ControlComponentType(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if errorReference and not isinstance(
+
+                    if errorReference is not None and not isinstance(
                         errorReference, aas.SubmodelElement
                     ):
                         errorReference = self.ErrorReference(errorReference)
@@ -1749,7 +1763,8 @@ class ControlComponentType(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skillReference and not isinstance(
+
+                    if skillReference is not None and not isinstance(
                         skillReference, aas.SubmodelElement
                     ):
                         skillReference = self.SkillReference(skillReference)
@@ -1869,7 +1884,10 @@ class ControlComponentType(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if disabled and not isinstance(disabled, aas.SubmodelElement):
+
+                if disabled is not None and not isinstance(
+                    disabled, aas.SubmodelElement
+                ):
                     disabled = self.Disabled(disabled)
 
                 # Add all passed/initialized submodel elements to a single list

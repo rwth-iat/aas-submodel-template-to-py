@@ -820,19 +820,29 @@ class AssetLocation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine1 and not isinstance(addressLine1, aas.SubmodelElement):
+
+                if addressLine1 is not None and not isinstance(
+                    addressLine1, aas.SubmodelElement
+                ):
                     addressLine1 = self.AddressLine1(addressLine1)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine2 and not isinstance(addressLine2, aas.SubmodelElement):
+
+                if addressLine2 is not None and not isinstance(
+                    addressLine2, aas.SubmodelElement
+                ):
                     addressLine2 = self.AddressLine2(addressLine2)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine3 and not isinstance(addressLine3, aas.SubmodelElement):
+
+                if addressLine3 is not None and not isinstance(
+                    addressLine3, aas.SubmodelElement
+                ):
                     addressLine3 = self.AddressLine3(addressLine3)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressOfAdditionalLink and not isinstance(
+
+                if addressOfAdditionalLink is not None and not isinstance(
                     addressOfAdditionalLink, aas.SubmodelElement
                 ):
                     addressOfAdditionalLink = self.AddressOfAdditionalLink(
@@ -840,29 +850,41 @@ class AssetLocation(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressRemarks and not isinstance(
+
+                if addressRemarks is not None and not isinstance(
                     addressRemarks, aas.SubmodelElement
                 ):
                     addressRemarks = self.AddressRemarks(addressRemarks)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nationalCode and not isinstance(nationalCode, aas.SubmodelElement):
+
+                if nationalCode is not None and not isinstance(
+                    nationalCode, aas.SubmodelElement
+                ):
                     nationalCode = self.NationalCode(nationalCode)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statecounty and not isinstance(statecounty, aas.SubmodelElement):
+
+                if statecounty is not None and not isinstance(
+                    statecounty, aas.SubmodelElement
+                ):
                     statecounty = self.Statecounty(statecounty)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if citytown and not isinstance(citytown, aas.SubmodelElement):
+
+                if citytown is not None and not isinstance(
+                    citytown, aas.SubmodelElement
+                ):
                     citytown = self.Citytown(citytown)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if street and not isinstance(street, aas.SubmodelElement):
+
+                if street is not None and not isinstance(street, aas.SubmodelElement):
                     street = self.Street(street)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if zipCode and not isinstance(zipCode, aas.SubmodelElement):
+
+                if zipCode is not None and not isinstance(zipCode, aas.SubmodelElement):
                     zipCode = self.ZipCode(zipCode)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1660,13 +1682,15 @@ class AssetLocation(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if longitude and not isinstance(
+
+                            if longitude is not None and not isinstance(
                                 longitude, aas.SubmodelElement
                             ):
                                 longitude = self.Longitude(longitude)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if latitude and not isinstance(
+
+                            if latitude is not None and not isinstance(
                                 latitude, aas.SubmodelElement
                             ):
                                 latitude = self.Latitude(latitude)
@@ -1920,11 +1944,13 @@ class AssetLocation(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if x and not isinstance(x, aas.SubmodelElement):
+
+                            if x is not None and not isinstance(x, aas.SubmodelElement):
                                 x = self.X(x)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if y and not isinstance(y, aas.SubmodelElement):
+
+                            if y is not None and not isinstance(y, aas.SubmodelElement):
                                 y = self.Y(y)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -2245,7 +2271,8 @@ class AssetLocation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if coordinateSystemName and not isinstance(
+
+                if coordinateSystemName is not None and not isinstance(
                     coordinateSystemName, aas.SubmodelElement
                 ):
                     coordinateSystemName = self.CoordinateSystemName(
@@ -2253,13 +2280,15 @@ class AssetLocation(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if coordinateSystemId and not isinstance(
+
+                if coordinateSystemId is not None and not isinstance(
                     coordinateSystemId, aas.SubmodelElement
                 ):
                     coordinateSystemId = self.CoordinateSystemId(coordinateSystemId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if coordinateSystemType and not isinstance(
+
+                if coordinateSystemType is not None and not isinstance(
                     coordinateSystemType, aas.SubmodelElement
                 ):
                     coordinateSystemType = self.CoordinateSystemType(
@@ -2267,13 +2296,15 @@ class AssetLocation(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if elevationReference and not isinstance(
+
+                if elevationReference is not None and not isinstance(
                     elevationReference, aas.SubmodelElement
                 ):
                     elevationReference = self.ElevationReference(elevationReference)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if seaLevelOfBaseHeight and not isinstance(
+
+                if seaLevelOfBaseHeight is not None and not isinstance(
                     seaLevelOfBaseHeight, aas.SubmodelElement
                 ):
                     seaLevelOfBaseHeight = self.SeaLevelOfBaseHeight(
@@ -2678,7 +2709,8 @@ class AssetLocation(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if addressreferences_items and not isinstance(
+
+                    if addressreferences_items is not None and not isinstance(
                         addressreferences_items, aas.SubmodelElement
                     ):
                         addressreferences_items = self.Addressreferences_item(
@@ -2975,11 +3007,13 @@ class AssetLocation(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if x and not isinstance(x, aas.SubmodelElement):
+
+                        if x is not None and not isinstance(x, aas.SubmodelElement):
                             x = self.X(x)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if y and not isinstance(y, aas.SubmodelElement):
+
+                        if y is not None and not isinstance(y, aas.SubmodelElement):
                             y = self.Y(y)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3716,7 +3750,8 @@ class AssetLocation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if coordinateSystemOfArea and not isinstance(
+
+                if coordinateSystemOfArea is not None and not isinstance(
                     coordinateSystemOfArea, aas.SubmodelElement
                 ):
                     coordinateSystemOfArea = self.CoordinateSystemOfArea(
@@ -3724,25 +3759,36 @@ class AssetLocation(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if kindOfArea and not isinstance(kindOfArea, aas.SubmodelElement):
+
+                if kindOfArea is not None and not isinstance(
+                    kindOfArea, aas.SubmodelElement
+                ):
                     kindOfArea = self.KindOfArea(kindOfArea)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if areaName and not isinstance(areaName, aas.SubmodelElement):
+
+                if areaName is not None and not isinstance(
+                    areaName, aas.SubmodelElement
+                ):
                     areaName = self.AreaName(areaName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if areaId and not isinstance(areaId, aas.SubmodelElement):
+
+                if areaId is not None and not isinstance(areaId, aas.SubmodelElement):
                     areaId = self.AreaId(areaId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if areaDesciption and not isinstance(
+
+                if areaDesciption is not None and not isinstance(
                     areaDesciption, aas.SubmodelElement
                 ):
                     areaDesciption = self.AreaDesciption(areaDesciption)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if buildingLevel and not isinstance(buildingLevel, aas.SubmodelElement):
+
+                if buildingLevel is not None and not isinstance(
+                    buildingLevel, aas.SubmodelElement
+                ):
                     buildingLevel = self.BuildingLevel(buildingLevel)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4514,23 +4560,36 @@ class AssetLocation(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if areaRef and not isinstance(areaRef, aas.SubmodelElement):
+
+                    if areaRef is not None and not isinstance(
+                        areaRef, aas.SubmodelElement
+                    ):
                         areaRef = self.AreaRef(areaRef)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if time and not isinstance(time, aas.SubmodelElement):
+
+                    if time is not None and not isinstance(time, aas.SubmodelElement):
                         time = self.Time(time)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if eventId and not isinstance(eventId, aas.SubmodelElement):
+
+                    if eventId is not None and not isinstance(
+                        eventId, aas.SubmodelElement
+                    ):
                         eventId = self.EventId(eventId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if providerId and not isinstance(providerId, aas.SubmodelElement):
+
+                    if providerId is not None and not isinstance(
+                        providerId, aas.SubmodelElement
+                    ):
                         providerId = self.ProviderId(providerId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if eventType and not isinstance(eventType, aas.SubmodelElement):
+
+                    if eventType is not None and not isinstance(
+                        eventType, aas.SubmodelElement
+                    ):
                         eventType = self.EventType(eventType)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5075,15 +5134,18 @@ class AssetLocation(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if x and not isinstance(x, aas.SubmodelElement):
+
+                        if x is not None and not isinstance(x, aas.SubmodelElement):
                             x = self.X(x)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if y and not isinstance(y, aas.SubmodelElement):
+
+                        if y is not None and not isinstance(y, aas.SubmodelElement):
                             y = self.Y(y)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if z and not isinstance(z, aas.SubmodelElement):
+
+                        if z is not None and not isinstance(z, aas.SubmodelElement):
                             z = self.Z(z)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -6099,7 +6161,8 @@ class AssetLocation(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if coordinateSystemReference and not isinstance(
+
+                    if coordinateSystemReference is not None and not isinstance(
                         coordinateSystemReference, aas.SubmodelElement
                     ):
                         coordinateSystemReference = self.CoordinateSystemReference(
@@ -6107,47 +6170,62 @@ class AssetLocation(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if providerId and not isinstance(providerId, aas.SubmodelElement):
+
+                    if providerId is not None and not isinstance(
+                        providerId, aas.SubmodelElement
+                    ):
                         providerId = self.ProviderId(providerId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if providerType and not isinstance(
+
+                    if providerType is not None and not isinstance(
                         providerType, aas.SubmodelElement
                     ):
                         providerType = self.ProviderType(providerType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if accuracy and not isinstance(accuracy, aas.SubmodelElement):
+
+                    if accuracy is not None and not isinstance(
+                        accuracy, aas.SubmodelElement
+                    ):
                         accuracy = self.Accuracy(accuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if magneticHeading and not isinstance(
+
+                    if magneticHeading is not None and not isinstance(
                         magneticHeading, aas.SubmodelElement
                     ):
                         magneticHeading = self.MagneticHeading(magneticHeading)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if trueHeading and not isinstance(trueHeading, aas.SubmodelElement):
+
+                    if trueHeading is not None and not isinstance(
+                        trueHeading, aas.SubmodelElement
+                    ):
                         trueHeading = self.TrueHeading(trueHeading)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if headingAccuracy and not isinstance(
+
+                    if headingAccuracy is not None and not isinstance(
                         headingAccuracy, aas.SubmodelElement
                     ):
                         headingAccuracy = self.HeadingAccuracy(headingAccuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if time and not isinstance(time, aas.SubmodelElement):
+
+                    if time is not None and not isinstance(time, aas.SubmodelElement):
                         time = self.Time(time)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if transmissionTime and not isinstance(
+
+                    if transmissionTime is not None and not isinstance(
                         transmissionTime, aas.SubmodelElement
                     ):
                         transmissionTime = self.TransmissionTime(transmissionTime)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if locationDescription and not isinstance(
+
+                    if locationDescription is not None and not isinstance(
                         locationDescription, aas.SubmodelElement
                     ):
                         locationDescription = self.LocationDescription(
@@ -6155,15 +6233,20 @@ class AssetLocation(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if speed and not isinstance(speed, aas.SubmodelElement):
+
+                    if speed is not None and not isinstance(speed, aas.SubmodelElement):
                         speed = self.Speed(speed)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if course and not isinstance(course, aas.SubmodelElement):
+
+                    if course is not None and not isinstance(
+                        course, aas.SubmodelElement
+                    ):
                         course = self.Course(course)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if referencePointId and not isinstance(
+
+                    if referencePointId is not None and not isinstance(
                         referencePointId, aas.SubmodelElement
                     ):
                         referencePointId = self.ReferencePointId(referencePointId)
@@ -6450,7 +6533,8 @@ class AssetLocation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if areaEventTimeSeriesData and not isinstance(
+
+            if areaEventTimeSeriesData is not None and not isinstance(
                 areaEventTimeSeriesData, aas.SubmodelElement
             ):
                 areaEventTimeSeriesData = self.AreaEventTimeSeriesData(
@@ -6458,7 +6542,8 @@ class AssetLocation(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if locationEventTimeSeriesData and not isinstance(
+
+            if locationEventTimeSeriesData is not None and not isinstance(
                 locationEventTimeSeriesData, aas.SubmodelElement
             ):
                 locationEventTimeSeriesData = self.LocationEventTimeSeriesData(
@@ -6918,11 +7003,15 @@ class AssetLocation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if localizable and not isinstance(localizable, aas.SubmodelElement):
+
+            if localizable is not None and not isinstance(
+                localizable, aas.SubmodelElement
+            ):
                 localizable = self.Localizable(localizable)
 
             # Build a submodel element if a raw value was passed in the argument
-            if assetLocationServiceRealTimeCapability and not isinstance(
+
+            if assetLocationServiceRealTimeCapability is not None and not isinstance(
                 assetLocationServiceRealTimeCapability, aas.SubmodelElement
             ):
                 assetLocationServiceRealTimeCapability = (
@@ -6932,7 +7021,8 @@ class AssetLocation(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if realtimeLocationSourceType and not isinstance(
+
+            if realtimeLocationSourceType is not None and not isinstance(
                 realtimeLocationSourceType, aas.SubmodelElement
             ):
                 realtimeLocationSourceType = self.RealtimeLocationSourceType(
@@ -6940,7 +7030,8 @@ class AssetLocation(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if realtimeLocationSource and not isinstance(
+
+            if realtimeLocationSource is not None and not isinstance(
                 realtimeLocationSource, aas.SubmodelElement
             ):
                 realtimeLocationSource = self.RealtimeLocationSource(

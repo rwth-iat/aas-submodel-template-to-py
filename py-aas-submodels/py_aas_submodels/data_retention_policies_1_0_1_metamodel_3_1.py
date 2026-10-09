@@ -1134,15 +1134,22 @@ class DataRetentionPolicies(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if identifier and not isinstance(identifier, aas.SubmodelElement):
+
+                    if identifier is not None and not isinstance(
+                        identifier, aas.SubmodelElement
+                    ):
                         identifier = self.Identifier(identifier)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if link and not isinstance(link, aas.SubmodelElement):
+
+                    if link is not None and not isinstance(link, aas.SubmodelElement):
                         link = self.Link(link)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if reference and not isinstance(reference, aas.SubmodelElement):
+
+                    if reference is not None and not isinstance(
+                        reference, aas.SubmodelElement
+                    ):
                         reference = self.Reference(reference)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1740,23 +1747,38 @@ class DataRetentionPolicies(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                        if timestamp is not None and not isinstance(
+                            timestamp, aas.SubmodelElement
+                        ):
                             timestamp = self.Timestamp(timestamp)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if identity and not isinstance(identity, aas.SubmodelElement):
+
+                        if identity is not None and not isinstance(
+                            identity, aas.SubmodelElement
+                        ):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if operation and not isinstance(operation, aas.SubmodelElement):
+
+                        if operation is not None and not isinstance(
+                            operation, aas.SubmodelElement
+                        ):
                             operation = self.Operation(operation)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if reason and not isinstance(reason, aas.SubmodelElement):
+
+                        if reason is not None and not isinstance(
+                            reason, aas.SubmodelElement
+                        ):
                             reason = self.Reason(reason)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if signature and not isinstance(signature, aas.SubmodelElement):
+
+                        if signature is not None and not isinstance(
+                            signature, aas.SubmodelElement
+                        ):
                             signature = self.Signature(signature)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2042,31 +2064,48 @@ class DataRetentionPolicies(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if retentionTime and not isinstance(retentionTime, aas.SubmodelElement):
+
+                if retentionTime is not None and not isinstance(
+                    retentionTime, aas.SubmodelElement
+                ):
                     retentionTime = self.RetentionTime(retentionTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if immutable and not isinstance(immutable, aas.SubmodelElement):
+
+                if immutable is not None and not isinstance(
+                    immutable, aas.SubmodelElement
+                ):
                     immutable = self.Immutable(immutable)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if createdBy and not isinstance(createdBy, aas.SubmodelElement):
+
+                if createdBy is not None and not isinstance(
+                    createdBy, aas.SubmodelElement
+                ):
                     createdBy = self.CreatedBy(createdBy)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if creationTime and not isinstance(creationTime, aas.SubmodelElement):
+
+                if creationTime is not None and not isinstance(
+                    creationTime, aas.SubmodelElement
+                ):
                     creationTime = self.CreationTime(creationTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if issuer and not isinstance(issuer, aas.SubmodelElement):
+
+                if issuer is not None and not isinstance(issuer, aas.SubmodelElement):
                     issuer = self.Issuer(issuer)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if effectiveFrom and not isinstance(effectiveFrom, aas.SubmodelElement):
+
+                if effectiveFrom is not None and not isinstance(
+                    effectiveFrom, aas.SubmodelElement
+                ):
                     effectiveFrom = self.EffectiveFrom(effectiveFrom)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if effectiveUntil and not isinstance(
+
+                if effectiveUntil is not None and not isinstance(
                     effectiveUntil, aas.SubmodelElement
                 ):
                     effectiveUntil = self.EffectiveUntil(effectiveUntil)
@@ -2239,7 +2278,10 @@ class DataRetentionPolicies(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if inheritedFrom and not isinstance(inheritedFrom, aas.SubmodelElement):
+
+        if inheritedFrom is not None and not isinstance(
+            inheritedFrom, aas.SubmodelElement
+        ):
             inheritedFrom = self.InheritedFrom(inheritedFrom)
 
         # Add all passed/initialized submodel elements to a single list

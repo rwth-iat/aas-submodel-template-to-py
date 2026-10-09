@@ -530,25 +530,34 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+            if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                 tagName = self.TagName(tagName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagDescription and not isinstance(tagDescription, aas.SubmodelElement):
+
+            if tagDescription is not None and not isinstance(
+                tagDescription, aas.SubmodelElement
+            ):
                 tagDescription = self.TagDescription(tagDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if subsystem and not isinstance(subsystem, aas.SubmodelElement):
+
+            if subsystem is not None and not isinstance(subsystem, aas.SubmodelElement):
                 subsystem = self.Subsystem(subsystem)
 
             # Build a submodel element if a raw value was passed in the argument
-            if safeStateOfDevice and not isinstance(
+
+            if safeStateOfDevice is not None and not isinstance(
                 safeStateOfDevice, aas.SubmodelElement
             ):
                 safeStateOfDevice = self.SafeStateOfDevice(safeStateOfDevice)
 
             # Build a submodel element if a raw value was passed in the argument
-            if equipmentType and not isinstance(equipmentType, aas.SubmodelElement):
+
+            if equipmentType is not None and not isinstance(
+                equipmentType, aas.SubmodelElement
+            ):
                 equipmentType = self.EquipmentType(equipmentType)
 
             # Build submodel elements from raw values passed in the argument
@@ -1926,7 +1935,8 @@ class SISDevice(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if failCriterionFailureMode and not isinstance(
+
+                    if failCriterionFailureMode is not None and not isinstance(
                         failCriterionFailureMode, aas.SubmodelElement
                     ):
                         failCriterionFailureMode = self.FailCriterionFailureMode(
@@ -1934,7 +1944,8 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if booleanFailCriterionDescription and not isinstance(
+
+                    if booleanFailCriterionDescription is not None and not isinstance(
                         booleanFailCriterionDescription, aas.SubmodelElement
                     ):
                         booleanFailCriterionDescription = (
@@ -1944,9 +1955,13 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numericFailCriterionDescriptionOfMeasurement and not isinstance(
-                        numericFailCriterionDescriptionOfMeasurement,
-                        aas.SubmodelElement,
+
+                    if (
+                        numericFailCriterionDescriptionOfMeasurement is not None
+                        and not isinstance(
+                            numericFailCriterionDescriptionOfMeasurement,
+                            aas.SubmodelElement,
+                        )
                     ):
                         numericFailCriterionDescriptionOfMeasurement = (
                             self.NumericFailCriterionDescriptionOfMeasurement(
@@ -1955,7 +1970,8 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numericFailCriterionValue and not isinstance(
+
+                    if numericFailCriterionValue is not None and not isinstance(
                         numericFailCriterionValue, aas.SubmodelElement
                     ):
                         numericFailCriterionValue = self.NumericFailCriterionValue(
@@ -1963,13 +1979,15 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unitOfMeasure and not isinstance(
+
+                    if unitOfMeasure is not None and not isinstance(
                         unitOfMeasure, aas.SubmodelElement
                     ):
                         unitOfMeasure = self.UnitOfMeasure(unitOfMeasure)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numericFailCriterionOperator and not isinstance(
+
+                    if numericFailCriterionOperator is not None and not isinstance(
                         numericFailCriterionOperator, aas.SubmodelElement
                     ):
                         numericFailCriterionOperator = (
@@ -2092,12 +2110,19 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testCoverage and not isinstance(testCoverage, aas.SubmodelElement):
+
+                if testCoverage is not None and not isinstance(
+                    testCoverage, aas.SubmodelElement
+                ):
                     testCoverage = self.TestCoverage(testCoverage)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if minimumTestIntervalOperatorSpecification and not isinstance(
-                    minimumTestIntervalOperatorSpecification, aas.SubmodelElement
+
+                if (
+                    minimumTestIntervalOperatorSpecification is not None
+                    and not isinstance(
+                        minimumTestIntervalOperatorSpecification, aas.SubmodelElement
+                    )
                 ):
                     minimumTestIntervalOperatorSpecification = (
                         self.MinimumTestIntervalOperatorSpecification(
@@ -2106,7 +2131,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumTestIntervalForSILCompliance and not isinstance(
+
+                if maximumTestIntervalForSILCompliance is not None and not isinstance(
                     maximumTestIntervalForSILCompliance, aas.SubmodelElement
                 ):
                     maximumTestIntervalForSILCompliance = (
@@ -3098,7 +3124,8 @@ class SISDevice(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if failCriterionFailureMode and not isinstance(
+
+                    if failCriterionFailureMode is not None and not isinstance(
                         failCriterionFailureMode, aas.SubmodelElement
                     ):
                         failCriterionFailureMode = self.FailCriterionFailureMode(
@@ -3106,7 +3133,8 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if booleanFailCriterionDescription and not isinstance(
+
+                    if booleanFailCriterionDescription is not None and not isinstance(
                         booleanFailCriterionDescription, aas.SubmodelElement
                     ):
                         booleanFailCriterionDescription = (
@@ -3116,9 +3144,13 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numericFailCriterionDescriptionOfMeasurement and not isinstance(
-                        numericFailCriterionDescriptionOfMeasurement,
-                        aas.SubmodelElement,
+
+                    if (
+                        numericFailCriterionDescriptionOfMeasurement is not None
+                        and not isinstance(
+                            numericFailCriterionDescriptionOfMeasurement,
+                            aas.SubmodelElement,
+                        )
                     ):
                         numericFailCriterionDescriptionOfMeasurement = (
                             self.NumericFailCriterionDescriptionOfMeasurement(
@@ -3127,7 +3159,8 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numericFailCriterionValue and not isinstance(
+
+                    if numericFailCriterionValue is not None and not isinstance(
                         numericFailCriterionValue, aas.SubmodelElement
                     ):
                         numericFailCriterionValue = self.NumericFailCriterionValue(
@@ -3135,13 +3168,15 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unitOfMeasure and not isinstance(
+
+                    if unitOfMeasure is not None and not isinstance(
                         unitOfMeasure, aas.SubmodelElement
                     ):
                         unitOfMeasure = self.UnitOfMeasure(unitOfMeasure)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numericFailCriterionComparison and not isinstance(
+
+                    if numericFailCriterionComparison is not None and not isinstance(
                         numericFailCriterionComparison, aas.SubmodelElement
                     ):
                         numericFailCriterionComparison = (
@@ -3261,12 +3296,19 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testCoverage and not isinstance(testCoverage, aas.SubmodelElement):
+
+                if testCoverage is not None and not isinstance(
+                    testCoverage, aas.SubmodelElement
+                ):
                     testCoverage = self.TestCoverage(testCoverage)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if minimumTestIntervalOperatorSpecification and not isinstance(
-                    minimumTestIntervalOperatorSpecification, aas.SubmodelElement
+
+                if (
+                    minimumTestIntervalOperatorSpecification is not None
+                    and not isinstance(
+                        minimumTestIntervalOperatorSpecification, aas.SubmodelElement
+                    )
                 ):
                     minimumTestIntervalOperatorSpecification = (
                         self.MinimumTestIntervalOperatorSpecification(
@@ -3275,7 +3317,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumTestIntervalForSILCompliance and not isinstance(
+
+                if maximumTestIntervalForSILCompliance is not None and not isinstance(
                     maximumTestIntervalForSILCompliance, aas.SubmodelElement
                 ):
                     maximumTestIntervalForSILCompliance = (
@@ -3870,7 +3913,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumAllowableBypassTime and not isinstance(
+
+                if maximumAllowableBypassTime is not None and not isinstance(
                     maximumAllowableBypassTime, aas.SubmodelElement
                 ):
                     maximumAllowableBypassTime = self.MaximumAllowableBypassTime(
@@ -3878,8 +3922,12 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bypassAdministrativeControlIsRequired and not isinstance(
-                    bypassAdministrativeControlIsRequired, aas.SubmodelElement
+
+                if (
+                    bypassAdministrativeControlIsRequired is not None
+                    and not isinstance(
+                        bypassAdministrativeControlIsRequired, aas.SubmodelElement
+                    )
                 ):
                     bypassAdministrativeControlIsRequired = (
                         self.BypassAdministrativeControlIsRequired(
@@ -5816,7 +5864,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if minimumAllowableTemperature and not isinstance(
+
+                if minimumAllowableTemperature is not None and not isinstance(
                     minimumAllowableTemperature, aas.SubmodelElement
                 ):
                     minimumAllowableTemperature = self.MinimumAllowableTemperature(
@@ -5824,7 +5873,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumAllowableTemperature and not isinstance(
+
+                if maximumAllowableTemperature is not None and not isinstance(
                     maximumAllowableTemperature, aas.SubmodelElement
                 ):
                     maximumAllowableTemperature = self.MaximumAllowableTemperature(
@@ -5832,7 +5882,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if minimumAllowableHumidity and not isinstance(
+
+                if minimumAllowableHumidity is not None and not isinstance(
                     minimumAllowableHumidity, aas.SubmodelElement
                 ):
                     minimumAllowableHumidity = self.MinimumAllowableHumidity(
@@ -5840,7 +5891,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumAllowableHumidity and not isinstance(
+
+                if maximumAllowableHumidity is not None and not isinstance(
                     maximumAllowableHumidity, aas.SubmodelElement
                 ):
                     maximumAllowableHumidity = self.MaximumAllowableHumidity(
@@ -5870,7 +5922,8 @@ class SISDevice(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumElectromagneticInterference and not isinstance(
+
+                if maximumElectromagneticInterference is not None and not isinstance(
                     maximumElectromagneticInterference, aas.SubmodelElement
                 ):
                     maximumElectromagneticInterference = (
@@ -5880,13 +5933,15 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if shockResistance and not isinstance(
+
+                if shockResistance is not None and not isinstance(
                     shockResistance, aas.SubmodelElement
                 ):
                     shockResistance = self.ShockResistance(shockResistance)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if vibrationResistance and not isinstance(
+
+                if vibrationResistance is not None and not isinstance(
                     vibrationResistance, aas.SubmodelElement
                 ):
                     vibrationResistance = self.VibrationResistance(vibrationResistance)
@@ -5903,15 +5958,22 @@ class SISDevice(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if aTEXZone and not isinstance(aTEXZone, aas.SubmodelElement):
+
+                if aTEXZone is not None and not isinstance(
+                    aTEXZone, aas.SubmodelElement
+                ):
                     aTEXZone = self.ATEXZone(aTEXZone)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if gasGroup and not isinstance(gasGroup, aas.SubmodelElement):
+
+                if gasGroup is not None and not isinstance(
+                    gasGroup, aas.SubmodelElement
+                ):
                     gasGroup = self.GasGroup(gasGroup)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if temperatureClass and not isinstance(
+
+                if temperatureClass is not None and not isinstance(
                     temperatureClass, aas.SubmodelElement
                 ):
                     temperatureClass = self.TemperatureClass(temperatureClass)
@@ -6362,7 +6424,8 @@ class SISDevice(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if failurePhilosophy and not isinstance(
+
+                    if failurePhilosophy is not None and not isinstance(
                         failurePhilosophy, aas.SubmodelElement
                     ):
                         failurePhilosophy = self.FailurePhilosophy(failurePhilosophy)
@@ -6617,7 +6680,8 @@ class SISDevice(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if manualResponseActionDescription and not isinstance(
+
+                    if manualResponseActionDescription is not None and not isinstance(
                         manualResponseActionDescription, aas.SubmodelElement
                     ):
                         manualResponseActionDescription = (
@@ -6713,7 +6777,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if failureModeAbbreviation and not isinstance(
+
+                if failureModeAbbreviation is not None and not isinstance(
                     failureModeAbbreviation, aas.SubmodelElement
                 ):
                     failureModeAbbreviation = self.FailureModeAbbreviation(
@@ -6721,7 +6786,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if failureModeName and not isinstance(
+
+                if failureModeName is not None and not isinstance(
                     failureModeName, aas.SubmodelElement
                 ):
                     failureModeName = self.FailureModeName(failureModeName)
@@ -7202,25 +7268,36 @@ class SISDevice(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unitOfMeasure and not isinstance(
+
+                    if unitOfMeasure is not None and not isinstance(
                         unitOfMeasure, aas.SubmodelElement
                     ):
                         unitOfMeasure = self.UnitOfMeasure(unitOfMeasure)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if rangeMin and not isinstance(rangeMin, aas.SubmodelElement):
+
+                    if rangeMin is not None and not isinstance(
+                        rangeMin, aas.SubmodelElement
+                    ):
                         rangeMin = self.RangeMin(rangeMin)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if rangeMax and not isinstance(rangeMax, aas.SubmodelElement):
+
+                    if rangeMax is not None and not isinstance(
+                        rangeMax, aas.SubmodelElement
+                    ):
                         rangeMax = self.RangeMax(rangeMax)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if accuracy and not isinstance(accuracy, aas.SubmodelElement):
+
+                    if accuracy is not None and not isinstance(
+                        accuracy, aas.SubmodelElement
+                    ):
                         accuracy = self.Accuracy(accuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if substistuteValue and not isinstance(
+
+                    if substistuteValue is not None and not isinstance(
                         substistuteValue, aas.SubmodelElement
                     ):
                         substistuteValue = self.SubstistuteValue(substistuteValue)
@@ -7709,19 +7786,22 @@ class SISDevice(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tripPointName and not isinstance(
+
+                    if tripPointName is not None and not isinstance(
                         tripPointName, aas.SubmodelElement
                     ):
                         tripPointName = self.TripPointName(tripPointName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tripPointValue and not isinstance(
+
+                    if tripPointValue is not None and not isinstance(
                         tripPointValue, aas.SubmodelElement
                     ):
                         tripPointValue = self.TripPointValue(tripPointValue)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if hysteresisOfTripPoint and not isinstance(
+
+                    if hysteresisOfTripPoint is not None and not isinstance(
                         hysteresisOfTripPoint, aas.SubmodelElement
                     ):
                         hysteresisOfTripPoint = self.HysteresisOfTripPoint(
@@ -7729,13 +7809,15 @@ class SISDevice(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tripDeadTime and not isinstance(
+
+                    if tripDeadTime is not None and not isinstance(
                         tripDeadTime, aas.SubmodelElement
                     ):
                         tripDeadTime = self.TripDeadTime(tripDeadTime)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if referenceToAlarm and not isinstance(
+
+                    if referenceToAlarm is not None and not isinstance(
                         referenceToAlarm, aas.SubmodelElement
                     ):
                         referenceToAlarm = self.ReferenceToAlarm(referenceToAlarm)
@@ -8206,11 +8288,17 @@ class SISDevice(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if alarmName and not isinstance(alarmName, aas.SubmodelElement):
+
+                    if alarmName is not None and not isinstance(
+                        alarmName, aas.SubmodelElement
+                    ):
                         alarmName = self.AlarmName(alarmName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if alarmValue and not isinstance(alarmValue, aas.SubmodelElement):
+
+                    if alarmValue is not None and not isinstance(
+                        alarmValue, aas.SubmodelElement
+                    ):
                         alarmValue = self.AlarmValue(alarmValue)
 
                     # Build submodel elements from raw values passed in the argument
@@ -8236,7 +8324,8 @@ class SISDevice(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if alarmMessage and not isinstance(
+
+                    if alarmMessage is not None and not isinstance(
                         alarmMessage, aas.SubmodelElement
                     ):
                         alarmMessage = self.AlarmMessage(alarmMessage)
@@ -8491,7 +8580,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if alarmResetAfterShutdownIsRequired and not isinstance(
+
+                if alarmResetAfterShutdownIsRequired is not None and not isinstance(
                     alarmResetAfterShutdownIsRequired, aas.SubmodelElement
                 ):
                     alarmResetAfterShutdownIsRequired = (
@@ -8501,7 +8591,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if measurementComparisonIsRequired and not isinstance(
+
+                if measurementComparisonIsRequired is not None and not isinstance(
                     measurementComparisonIsRequired, aas.SubmodelElement
                 ):
                     measurementComparisonIsRequired = (
@@ -8683,8 +8774,12 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if logicSolverResetAfterShutdownIsRequired and not isinstance(
-                    logicSolverResetAfterShutdownIsRequired, aas.SubmodelElement
+
+                if (
+                    logicSolverResetAfterShutdownIsRequired is not None
+                    and not isinstance(
+                        logicSolverResetAfterShutdownIsRequired, aas.SubmodelElement
+                    )
                 ):
                     logicSolverResetAfterShutdownIsRequired = (
                         self.LogicSolverResetAfterShutdownIsRequired(
@@ -9186,7 +9281,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumAllowableLeakageRate and not isinstance(
+
+                if maximumAllowableLeakageRate is not None and not isinstance(
                     maximumAllowableLeakageRate, aas.SubmodelElement
                 ):
                     maximumAllowableLeakageRate = self.MaximumAllowableLeakageRate(
@@ -9194,7 +9290,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if tightShutOffIsRequired and not isinstance(
+
+                if tightShutOffIsRequired is not None and not isinstance(
                     tightShutOffIsRequired, aas.SubmodelElement
                 ):
                     tightShutOffIsRequired = self.TightShutOffIsRequired(
@@ -9202,7 +9299,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if manualOperationIsPossible and not isinstance(
+
+                if manualOperationIsPossible is not None and not isinstance(
                     manualOperationIsPossible, aas.SubmodelElement
                 ):
                     manualOperationIsPossible = self.ManualOperationIsPossible(
@@ -9210,7 +9308,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resetAfterShutdownRequirement and not isinstance(
+
+                if resetAfterShutdownRequirement is not None and not isinstance(
                     resetAfterShutdownRequirement, aas.SubmodelElement
                 ):
                     resetAfterShutdownRequirement = self.ResetAfterShutdownRequirement(
@@ -9218,7 +9317,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if finalElementFunction and not isinstance(
+
+                if finalElementFunction is not None and not isinstance(
                     finalElementFunction, aas.SubmodelElement
                 ):
                     finalElementFunction = self.FinalElementFunction(
@@ -9562,7 +9662,8 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if systematicCapabilityRequirement and not isinstance(
+
+            if systematicCapabilityRequirement is not None and not isinstance(
                 systematicCapabilityRequirement, aas.SubmodelElement
             ):
                 systematicCapabilityRequirement = self.SystematicCapabilityRequirement(
@@ -9570,15 +9671,18 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFDBudget and not isinstance(pFDBudget, aas.SubmodelElement):
+
+            if pFDBudget is not None and not isinstance(pFDBudget, aas.SubmodelElement):
                 pFDBudget = self.PFDBudget(pFDBudget)
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFHBudget and not isinstance(pFHBudget, aas.SubmodelElement):
+
+            if pFHBudget is not None and not isinstance(pFHBudget, aas.SubmodelElement):
                 pFHBudget = self.PFHBudget(pFHBudget)
 
             # Build a submodel element if a raw value was passed in the argument
-            if internalHFTRequirement and not isinstance(
+
+            if internalHFTRequirement is not None and not isinstance(
                 internalHFTRequirement, aas.SubmodelElement
             ):
                 internalHFTRequirement = self.InternalHFTRequirement(
@@ -9586,7 +9690,8 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if maximumAllowableSISDeviceResponseTime and not isinstance(
+
+            if maximumAllowableSISDeviceResponseTime is not None and not isinstance(
                 maximumAllowableSISDeviceResponseTime, aas.SubmodelElement
             ):
                 maximumAllowableSISDeviceResponseTime = (
@@ -9596,7 +9701,8 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if minimumAllowableSISDeviceResponseTime and not isinstance(
+
+            if minimumAllowableSISDeviceResponseTime is not None and not isinstance(
                 minimumAllowableSISDeviceResponseTime, aas.SubmodelElement
             ):
                 minimumAllowableSISDeviceResponseTime = (
@@ -9606,7 +9712,8 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if maximumPermittedRepairTime and not isinstance(
+
+            if maximumPermittedRepairTime is not None and not isinstance(
                 maximumPermittedRepairTime, aas.SubmodelElement
             ):
                 maximumPermittedRepairTime = self.MaximumPermittedRepairTime(
@@ -9614,7 +9721,10 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if tripEnergyMode and not isinstance(tripEnergyMode, aas.SubmodelElement):
+
+            if tripEnergyMode is not None and not isinstance(
+                tripEnergyMode, aas.SubmodelElement
+            ):
                 tripEnergyMode = self.TripEnergyMode(tripEnergyMode)
 
             # Build submodel elements from raw values passed in the argument
@@ -9629,7 +9739,10 @@ class SISDevice(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if tripAction and not isinstance(tripAction, aas.SubmodelElement):
+
+            if tripAction is not None and not isinstance(
+                tripAction, aas.SubmodelElement
+            ):
                 tripAction = self.TripAction(tripAction)
 
             # Build submodel elements from raw values passed in the argument
@@ -9677,17 +9790,24 @@ class SISDevice(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if sharedUseIsAllowed and not isinstance(
+
+            if sharedUseIsAllowed is not None and not isinstance(
                 sharedUseIsAllowed, aas.SubmodelElement
             ):
                 sharedUseIsAllowed = self.SharedUseIsAllowed(sharedUseIsAllowed)
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceToSIF and not isinstance(referenceToSIF, aas.SubmodelElement):
+
+            if referenceToSIF is not None and not isinstance(
+                referenceToSIF, aas.SubmodelElement
+            ):
                 referenceToSIF = self.ReferenceToSIF(referenceToSIF)
 
             # Build a submodel element if a raw value was passed in the argument
-            if usefulLife and not isinstance(usefulLife, aas.SubmodelElement):
+
+            if usefulLife is not None and not isinstance(
+                usefulLife, aas.SubmodelElement
+            ):
                 usefulLife = self.UsefulLife(usefulLife)
 
             # Add all passed/initialized submodel elements to a single list
@@ -10932,7 +11052,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if energizeSource and not isinstance(
+
+                if energizeSource is not None and not isinstance(
                     energizeSource, aas.SubmodelElement
                 ):
                     energizeSource = self.EnergizeSource(energizeSource)
@@ -11440,35 +11561,45 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if productTypeName and not isinstance(productTypeName, aas.SubmodelElement):
+
+            if productTypeName is not None and not isinstance(
+                productTypeName, aas.SubmodelElement
+            ):
                 productTypeName = self.ProductTypeName(productTypeName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if productFamilyName and not isinstance(
+
+            if productFamilyName is not None and not isinstance(
                 productFamilyName, aas.SubmodelElement
             ):
                 productFamilyName = self.ProductFamilyName(productFamilyName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if productModelName and not isinstance(
+
+            if productModelName is not None and not isinstance(
                 productModelName, aas.SubmodelElement
             ):
                 productModelName = self.ProductModelName(productModelName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if nameOfManufacturer and not isinstance(
+
+            if nameOfManufacturer is not None and not isinstance(
                 nameOfManufacturer, aas.SubmodelElement
             ):
                 nameOfManufacturer = self.NameOfManufacturer(nameOfManufacturer)
 
             # Build a submodel element if a raw value was passed in the argument
-            if deviceDescription and not isinstance(
+
+            if deviceDescription is not None and not isinstance(
                 deviceDescription, aas.SubmodelElement
             ):
                 deviceDescription = self.DeviceDescription(deviceDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if deviceBoundary and not isinstance(deviceBoundary, aas.SubmodelElement):
+
+            if deviceBoundary is not None and not isinstance(
+                deviceBoundary, aas.SubmodelElement
+            ):
                 deviceBoundary = self.DeviceBoundary(deviceBoundary)
 
             # Build submodel elements from raw values passed in the argument
@@ -11483,7 +11614,8 @@ class SISDevice(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if systematicCapabilitySpecified and not isinstance(
+
+            if systematicCapabilitySpecified is not None and not isinstance(
                 systematicCapabilitySpecified, aas.SubmodelElement
             ):
                 systematicCapabilitySpecified = self.SystematicCapabilitySpecified(
@@ -11491,21 +11623,29 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if internalHFTSpecified and not isinstance(
+
+            if internalHFTSpecified is not None and not isinstance(
                 internalHFTSpecified, aas.SubmodelElement
             ):
                 internalHFTSpecified = self.InternalHFTSpecified(internalHFTSpecified)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPriorUse and not isinstance(isPriorUse, aas.SubmodelElement):
+
+            if isPriorUse is not None and not isinstance(
+                isPriorUse, aas.SubmodelElement
+            ):
                 isPriorUse = self.IsPriorUse(isPriorUse)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isProvenInUse and not isinstance(isProvenInUse, aas.SubmodelElement):
+
+            if isProvenInUse is not None and not isinstance(
+                isProvenInUse, aas.SubmodelElement
+            ):
                 isProvenInUse = self.IsProvenInUse(isProvenInUse)
 
             # Build a submodel element if a raw value was passed in the argument
-            if meanTimeToRestoration and not isinstance(
+
+            if meanTimeToRestoration is not None and not isinstance(
                 meanTimeToRestoration, aas.SubmodelElement
             ):
                 meanTimeToRestoration = self.MeanTimeToRestoration(
@@ -11513,15 +11653,22 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if typeAOrB and not isinstance(typeAOrB, aas.SubmodelElement):
+
+            if typeAOrB is not None and not isinstance(typeAOrB, aas.SubmodelElement):
                 typeAOrB = self.TypeAOrB(typeAOrB)
 
             # Build a submodel element if a raw value was passed in the argument
-            if hardwareVersion and not isinstance(hardwareVersion, aas.SubmodelElement):
+
+            if hardwareVersion is not None and not isinstance(
+                hardwareVersion, aas.SubmodelElement
+            ):
                 hardwareVersion = self.HardwareVersion(hardwareVersion)
 
             # Build a submodel element if a raw value was passed in the argument
-            if softwareVersion and not isinstance(softwareVersion, aas.SubmodelElement):
+
+            if softwareVersion is not None and not isinstance(
+                softwareVersion, aas.SubmodelElement
+            ):
                 softwareVersion = self.SoftwareVersion(softwareVersion)
 
             # Add all passed/initialized submodel elements to a single list
@@ -12394,7 +12541,8 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if meanTimeBetweenFailures and not isinstance(
+
+            if meanTimeBetweenFailures is not None and not isinstance(
                 meanTimeBetweenFailures, aas.SubmodelElement
             ):
                 meanTimeBetweenFailures = self.MeanTimeBetweenFailures(
@@ -12402,27 +12550,41 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaDUDesign and not isinstance(lambdaDUDesign, aas.SubmodelElement):
+
+            if lambdaDUDesign is not None and not isinstance(
+                lambdaDUDesign, aas.SubmodelElement
+            ):
                 lambdaDUDesign = self.LambdaDUDesign(lambdaDUDesign)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaDDDesign and not isinstance(lambdaDDDesign, aas.SubmodelElement):
+
+            if lambdaDDDesign is not None and not isinstance(
+                lambdaDDDesign, aas.SubmodelElement
+            ):
                 lambdaDDDesign = self.LambdaDDDesign(lambdaDDDesign)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaSUDesign and not isinstance(lambdaSUDesign, aas.SubmodelElement):
+
+            if lambdaSUDesign is not None and not isinstance(
+                lambdaSUDesign, aas.SubmodelElement
+            ):
                 lambdaSUDesign = self.LambdaSUDesign(lambdaSUDesign)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaSDDesign and not isinstance(lambdaSDDesign, aas.SubmodelElement):
+
+            if lambdaSDDesign is not None and not isinstance(
+                lambdaSDDesign, aas.SubmodelElement
+            ):
                 lambdaSDDesign = self.LambdaSDDesign(lambdaSDDesign)
 
             # Build a submodel element if a raw value was passed in the argument
-            if beta and not isinstance(beta, aas.SubmodelElement):
+
+            if beta is not None and not isinstance(beta, aas.SubmodelElement):
                 beta = self.Beta(beta)
 
             # Build a submodel element if a raw value was passed in the argument
-            if safeFailureFractionDesign and not isinstance(
+
+            if safeFailureFractionDesign is not None and not isinstance(
                 safeFailureFractionDesign, aas.SubmodelElement
             ):
                 safeFailureFractionDesign = self.SafeFailureFractionDesign(
@@ -12430,7 +12592,8 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if diagnosticCoverageDesign and not isinstance(
+
+            if diagnosticCoverageDesign is not None and not isinstance(
                 diagnosticCoverageDesign, aas.SubmodelElement
             ):
                 diagnosticCoverageDesign = self.DiagnosticCoverageDesign(
@@ -13105,13 +13268,15 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if measuringPrinciple and not isinstance(
+
+                if measuringPrinciple is not None and not isinstance(
                     measuringPrinciple, aas.SubmodelElement
                 ):
                     measuringPrinciple = self.MeasuringPrinciple(measuringPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if interfaceMeasurement and not isinstance(
+
+                if interfaceMeasurement is not None and not isinstance(
                     interfaceMeasurement, aas.SubmodelElement
                 ):
                     interfaceMeasurement = self.InterfaceMeasurement(
@@ -13119,7 +13284,10 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if function and not isinstance(function, aas.SubmodelElement):
+
+                if function is not None and not isinstance(
+                    function, aas.SubmodelElement
+                ):
                     function = self.Function(function)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -13507,21 +13675,29 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if designPrinciple and not isinstance(
+
+                if designPrinciple is not None and not isinstance(
                     designPrinciple, aas.SubmodelElement
                 ):
                     designPrinciple = self.DesignPrinciple(designPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if deviceType and not isinstance(deviceType, aas.SubmodelElement):
+
+                if deviceType is not None and not isinstance(
+                    deviceType, aas.SubmodelElement
+                ):
                     deviceType = self.DeviceType(deviceType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if application and not isinstance(application, aas.SubmodelElement):
+
+                if application is not None and not isinstance(
+                    application, aas.SubmodelElement
+                ):
                     application = self.Application(application)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if styleOfFailSafe and not isinstance(
+
+                if styleOfFailSafe is not None and not isinstance(
                     styleOfFailSafe, aas.SubmodelElement
                 ):
                     styleOfFailSafe = self.StyleOfFailSafe(styleOfFailSafe)
@@ -14344,41 +14520,57 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if deviceType and not isinstance(deviceType, aas.SubmodelElement):
+
+                if deviceType is not None and not isinstance(
+                    deviceType, aas.SubmodelElement
+                ):
                     deviceType = self.DeviceType(deviceType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if designPrinciple and not isinstance(
+
+                if designPrinciple is not None and not isinstance(
                     designPrinciple, aas.SubmodelElement
                 ):
                     designPrinciple = self.DesignPrinciple(designPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if actuationPrinciple and not isinstance(
+
+                if actuationPrinciple is not None and not isinstance(
                     actuationPrinciple, aas.SubmodelElement
                 ):
                     actuationPrinciple = self.ActuationPrinciple(actuationPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if valveSize and not isinstance(valveSize, aas.SubmodelElement):
+
+                if valveSize is not None and not isinstance(
+                    valveSize, aas.SubmodelElement
+                ):
                     valveSize = self.ValveSize(valveSize)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if damperLength and not isinstance(damperLength, aas.SubmodelElement):
+
+                if damperLength is not None and not isinstance(
+                    damperLength, aas.SubmodelElement
+                ):
                     damperLength = self.DamperLength(damperLength)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if damperWidth and not isinstance(damperWidth, aas.SubmodelElement):
+
+                if damperWidth is not None and not isinstance(
+                    damperWidth, aas.SubmodelElement
+                ):
                     damperWidth = self.DamperWidth(damperWidth)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mountingPrinciple and not isinstance(
+
+                if mountingPrinciple is not None and not isinstance(
                     mountingPrinciple, aas.SubmodelElement
                 ):
                     mountingPrinciple = self.MountingPrinciple(mountingPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if doorHasPersonnelProtectionSystem and not isinstance(
+
+                if doorHasPersonnelProtectionSystem is not None and not isinstance(
                     doorHasPersonnelProtectionSystem, aas.SubmodelElement
                 ):
                     doorHasPersonnelProtectionSystem = (
@@ -14388,7 +14580,10 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if voltageClass and not isinstance(voltageClass, aas.SubmodelElement):
+
+                if voltageClass is not None and not isinstance(
+                    voltageClass, aas.SubmodelElement
+                ):
                     voltageClass = self.VoltageClass(voltageClass)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -14652,17 +14847,22 @@ class SISDevice(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if externalExposure and not isinstance(
+
+            if externalExposure is not None and not isinstance(
                 externalExposure, aas.SubmodelElement
             ):
                 externalExposure = self.ExternalExposure(externalExposure)
 
             # Build a submodel element if a raw value was passed in the argument
-            if fluidSeverity and not isinstance(fluidSeverity, aas.SubmodelElement):
+
+            if fluidSeverity is not None and not isinstance(
+                fluidSeverity, aas.SubmodelElement
+            ):
                 fluidSeverity = self.FluidSeverity(fluidSeverity)
 
             # Build a submodel element if a raw value was passed in the argument
-            if fluid and not isinstance(fluid, aas.SubmodelElement):
+
+            if fluid is not None and not isinstance(fluid, aas.SubmodelElement):
                 fluid = self.Fluid(fluid)
 
             # Build submodel elements from raw values passed in the argument
@@ -15450,33 +15650,43 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if equipmentNumber and not isinstance(equipmentNumber, aas.SubmodelElement):
+
+            if equipmentNumber is not None and not isinstance(
+                equipmentNumber, aas.SubmodelElement
+            ):
                 equipmentNumber = self.EquipmentNumber(equipmentNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if serialNumber and not isinstance(serialNumber, aas.SubmodelElement):
+
+            if serialNumber is not None and not isinstance(
+                serialNumber, aas.SubmodelElement
+            ):
                 serialNumber = self.SerialNumber(serialNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if dateOfProduction and not isinstance(
+
+            if dateOfProduction is not None and not isinstance(
                 dateOfProduction, aas.SubmodelElement
             ):
                 dateOfProduction = self.DateOfProduction(dateOfProduction)
 
             # Build a submodel element if a raw value was passed in the argument
-            if startDateOperation and not isinstance(
+
+            if startDateOperation is not None and not isinstance(
                 startDateOperation, aas.SubmodelElement
             ):
                 startDateOperation = self.StartDateOperation(startDateOperation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if endDateOperation and not isinstance(
+
+            if endDateOperation is not None and not isinstance(
                 endDateOperation, aas.SubmodelElement
             ):
                 endDateOperation = self.EndDateOperation(endDateOperation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if physicalLocation and not isinstance(
+
+            if physicalLocation is not None and not isinstance(
                 physicalLocation, aas.SubmodelElement
             ):
                 physicalLocation = self.PhysicalLocation(physicalLocation)
@@ -15493,7 +15703,8 @@ class SISDevice(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceToModelNumber and not isinstance(
+
+            if referenceToModelNumber is not None and not isinstance(
                 referenceToModelNumber, aas.SubmodelElement
             ):
                 referenceToModelNumber = self.ReferenceToModelNumber(
@@ -15501,7 +15712,10 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceToTag and not isinstance(referenceToTag, aas.SubmodelElement):
+
+            if referenceToTag is not None and not isinstance(
+                referenceToTag, aas.SubmodelElement
+            ):
                 referenceToTag = self.ReferenceToTag(referenceToTag)
 
             # Add all passed/initialized submodel elements to a single list
@@ -15989,7 +16203,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStampDateAndTime and not isinstance(
+
+                if timeStampDateAndTime is not None and not isinstance(
                     timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
@@ -15997,13 +16212,15 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bypassDescription and not isinstance(
+
+                if bypassDescription is not None and not isinstance(
                     bypassDescription, aas.SubmodelElement
                 ):
                     bypassDescription = self.BypassDescription(bypassDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bypassDuration and not isinstance(
+
+                if bypassDuration is not None and not isinstance(
                     bypassDuration, aas.SubmodelElement
                 ):
                     bypassDuration = self.BypassDuration(bypassDuration)
@@ -16094,13 +16311,15 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfBypasses and not isinstance(
+
+            if numberOfBypasses is not None and not isinstance(
                 numberOfBypasses, aas.SubmodelElement
             ):
                 numberOfBypasses = self.NumberOfBypasses(numberOfBypasses)
 
             # Build a submodel element if a raw value was passed in the argument
-            if totalBypassDuration and not isinstance(
+
+            if totalBypassDuration is not None and not isinstance(
                 totalBypassDuration, aas.SubmodelElement
             ):
                 totalBypassDuration = self.TotalBypassDuration(totalBypassDuration)
@@ -16845,13 +17064,15 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if alarmDescription and not isinstance(
+
+                if alarmDescription is not None and not isinstance(
                     alarmDescription, aas.SubmodelElement
                 ):
                     alarmDescription = self.AlarmDescription(alarmDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStampDateAndTime and not isinstance(
+
+                if timeStampDateAndTime is not None and not isinstance(
                     timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
@@ -16859,19 +17080,29 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if alarmSource and not isinstance(alarmSource, aas.SubmodelElement):
+
+                if alarmSource is not None and not isinstance(
+                    alarmSource, aas.SubmodelElement
+                ):
                     alarmSource = self.AlarmSource(alarmSource)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if alarmState and not isinstance(alarmState, aas.SubmodelElement):
+
+                if alarmState is not None and not isinstance(
+                    alarmState, aas.SubmodelElement
+                ):
                     alarmState = self.AlarmState(alarmState)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if alarmStatus and not isinstance(alarmStatus, aas.SubmodelElement):
+
+                if alarmStatus is not None and not isinstance(
+                    alarmStatus, aas.SubmodelElement
+                ):
                     alarmStatus = self.AlarmStatus(alarmStatus)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceToFailureEvent and not isinstance(
+
+                if referenceToFailureEvent is not None and not isinstance(
                     referenceToFailureEvent, aas.SubmodelElement
                 ):
                     referenceToFailureEvent = self.ReferenceToFailureEvent(
@@ -16973,7 +17204,8 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if diagnosticFunction and not isinstance(
+
+            if diagnosticFunction is not None and not isinstance(
                 diagnosticFunction, aas.SubmodelElement
             ):
                 diagnosticFunction = self.DiagnosticFunction(diagnosticFunction)
@@ -17689,17 +17921,22 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if operatingTime and not isinstance(operatingTime, aas.SubmodelElement):
+
+            if operatingTime is not None and not isinstance(
+                operatingTime, aas.SubmodelElement
+            ):
                 operatingTime = self.OperatingTime(operatingTime)
 
             # Build a submodel element if a raw value was passed in the argument
-            if surveillanceTime and not isinstance(
+
+            if surveillanceTime is not None and not isinstance(
                 surveillanceTime, aas.SubmodelElement
             ):
                 surveillanceTime = self.SurveillanceTime(surveillanceTime)
 
             # Build a submodel element if a raw value was passed in the argument
-            if deviceOperationalStatus and not isinstance(
+
+            if deviceOperationalStatus is not None and not isinstance(
                 deviceOperationalStatus, aas.SubmodelElement
             ):
                 deviceOperationalStatus = self.DeviceOperationalStatus(
@@ -17707,25 +17944,31 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if failureStatusSignal and not isinstance(
+
+            if failureStatusSignal is not None and not isinstance(
                 failureStatusSignal, aas.SubmodelElement
             ):
                 failureStatusSignal = self.FailureStatusSignal(failureStatusSignal)
 
             # Build a submodel element if a raw value was passed in the argument
-            if presentTestInterval and not isinstance(
+
+            if presentTestInterval is not None and not isinstance(
                 presentTestInterval, aas.SubmodelElement
             ):
                 presentTestInterval = self.PresentTestInterval(presentTestInterval)
 
             # Build a submodel element if a raw value was passed in the argument
-            if actualMeanRepairTime and not isinstance(
+
+            if actualMeanRepairTime is not None and not isinstance(
                 actualMeanRepairTime, aas.SubmodelElement
             ):
                 actualMeanRepairTime = self.ActualMeanRepairTime(actualMeanRepairTime)
 
             # Build a submodel element if a raw value was passed in the argument
-            if missionTime and not isinstance(missionTime, aas.SubmodelElement):
+
+            if missionTime is not None and not isinstance(
+                missionTime, aas.SubmodelElement
+            ):
                 missionTime = self.MissionTime(missionTime)
 
             # Add all passed/initialized submodel elements to a single list
@@ -18442,7 +18685,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStampDateAndTime and not isinstance(
+
+                if timeStampDateAndTime is not None and not isinstance(
                     timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
@@ -18450,17 +18694,22 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if demandDescription and not isinstance(
+
+                if demandDescription is not None and not isinstance(
                     demandDescription, aas.SubmodelElement
                 ):
                     demandDescription = self.DemandDescription(demandDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if demandClass and not isinstance(demandClass, aas.SubmodelElement):
+
+                if demandClass is not None and not isinstance(
+                    demandClass, aas.SubmodelElement
+                ):
                     demandClass = self.DemandClass(demandClass)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sISDeviceResponseTimeActual and not isinstance(
+
+                if sISDeviceResponseTimeActual is not None and not isinstance(
                     sISDeviceResponseTimeActual, aas.SubmodelElement
                 ):
                     sISDeviceResponseTimeActual = self.SISDeviceResponseTimeActual(
@@ -18468,7 +18717,8 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceToFailureEvent and not isinstance(
+
+                if referenceToFailureEvent is not None and not isinstance(
                     referenceToFailureEvent, aas.SubmodelElement
                 ):
                     referenceToFailureEvent = self.ReferenceToFailureEvent(
@@ -18476,7 +18726,10 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isSIFDemand and not isinstance(isSIFDemand, aas.SubmodelElement):
+
+                if isSIFDemand is not None and not isinstance(
+                    isSIFDemand, aas.SubmodelElement
+                ):
                     isSIFDemand = self.IsSIFDemand(isSIFDemand)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -18572,7 +18825,8 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if operationalDemandRate and not isinstance(
+
+            if operationalDemandRate is not None and not isinstance(
                 operationalDemandRate, aas.SubmodelElement
             ):
                 operationalDemandRate = self.OperationalDemandRate(
@@ -18580,7 +18834,10 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfDemands and not isinstance(numberOfDemands, aas.SubmodelElement):
+
+            if numberOfDemands is not None and not isinstance(
+                numberOfDemands, aas.SubmodelElement
+            ):
                 numberOfDemands = self.NumberOfDemands(numberOfDemands)
 
             # Add all passed/initialized submodel elements to a single list
@@ -20229,7 +20486,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStampDateAndTime and not isinstance(
+
+                if timeStampDateAndTime is not None and not isinstance(
                     timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
@@ -20237,25 +20495,36 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if detectionMethod and not isinstance(
+
+                if detectionMethod is not None and not isinstance(
                     detectionMethod, aas.SubmodelElement
                 ):
                     detectionMethod = self.DetectionMethod(detectionMethod)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if detectionMode and not isinstance(detectionMode, aas.SubmodelElement):
+
+                if detectionMode is not None and not isinstance(
+                    detectionMode, aas.SubmodelElement
+                ):
                     detectionMode = self.DetectionMode(detectionMode)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if failureMode and not isinstance(failureMode, aas.SubmodelElement):
+
+                if failureMode is not None and not isinstance(
+                    failureMode, aas.SubmodelElement
+                ):
                     failureMode = self.FailureMode(failureMode)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if failureClass and not isinstance(failureClass, aas.SubmodelElement):
+
+                if failureClass is not None and not isinstance(
+                    failureClass, aas.SubmodelElement
+                ):
                     failureClass = self.FailureClass(failureClass)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isSpuriousTrip and not isinstance(
+
+                if isSpuriousTrip is not None and not isinstance(
                     isSpuriousTrip, aas.SubmodelElement
                 ):
                     isSpuriousTrip = self.IsSpuriousTrip(isSpuriousTrip)
@@ -20272,7 +20541,8 @@ class SISDevice(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isSystematicOrRandomHardwareFailure and not isinstance(
+
+                if isSystematicOrRandomHardwareFailure is not None and not isinstance(
                     isSystematicOrRandomHardwareFailure, aas.SubmodelElement
                 ):
                     isSystematicOrRandomHardwareFailure = (
@@ -20293,11 +20563,15 @@ class SISDevice(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if failureCause and not isinstance(failureCause, aas.SubmodelElement):
+
+                if failureCause is not None and not isinstance(
+                    failureCause, aas.SubmodelElement
+                ):
                     failureCause = self.FailureCause(failureCause)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if failureIndependencyType and not isinstance(
+
+                if failureIndependencyType is not None and not isinstance(
                     failureIndependencyType, aas.SubmodelElement
                 ):
                     failureIndependencyType = self.FailureIndependencyType(
@@ -20305,29 +20579,36 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isSIFFailure and not isinstance(isSIFFailure, aas.SubmodelElement):
+
+                if isSIFFailure is not None and not isinstance(
+                    isSIFFailure, aas.SubmodelElement
+                ):
                     isSIFFailure = self.IsSIFFailure(isSIFFailure)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if expectedRepairTime and not isinstance(
+
+                if expectedRepairTime is not None and not isinstance(
                     expectedRepairTime, aas.SubmodelElement
                 ):
                     expectedRepairTime = self.ExpectedRepairTime(expectedRepairTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if actualRepairTime and not isinstance(
+
+                if actualRepairTime is not None and not isinstance(
                     actualRepairTime, aas.SubmodelElement
                 ):
                     actualRepairTime = self.ActualRepairTime(actualRepairTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if notificationNumber and not isinstance(
+
+                if notificationNumber is not None and not isinstance(
                     notificationNumber, aas.SubmodelElement
                 ):
                     notificationNumber = self.NotificationNumber(notificationNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workOrderNumber and not isinstance(
+
+                if workOrderNumber is not None and not isinstance(
                     workOrderNumber, aas.SubmodelElement
                 ):
                     workOrderNumber = self.WorkOrderNumber(workOrderNumber)
@@ -20446,19 +20727,22 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfFailures and not isinstance(
+
+            if numberOfFailures is not None and not isinstance(
                 numberOfFailures, aas.SubmodelElement
             ):
                 numberOfFailures = self.NumberOfFailures(numberOfFailures)
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfDUFailures and not isinstance(
+
+            if numberOfDUFailures is not None and not isinstance(
                 numberOfDUFailures, aas.SubmodelElement
             ):
                 numberOfDUFailures = self.NumberOfDUFailures(numberOfDUFailures)
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfSpuriousTrips and not isinstance(
+
+            if numberOfSpuriousTrips is not None and not isinstance(
                 numberOfSpuriousTrips, aas.SubmodelElement
             ):
                 numberOfSpuriousTrips = self.NumberOfSpuriousTrips(
@@ -21318,13 +21602,15 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaDUOperational and not isinstance(
+
+            if lambdaDUOperational is not None and not isinstance(
                 lambdaDUOperational, aas.SubmodelElement
             ):
                 lambdaDUOperational = self.LambdaDUOperational(lambdaDUOperational)
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFHAverageBasedOnOperationalData and not isinstance(
+
+            if pFHAverageBasedOnOperationalData is not None and not isinstance(
                 pFHAverageBasedOnOperationalData, aas.SubmodelElement
             ):
                 pFHAverageBasedOnOperationalData = (
@@ -21334,7 +21620,8 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFDAverageBasedOnOperationalData and not isinstance(
+
+            if pFDAverageBasedOnOperationalData is not None and not isinstance(
                 pFDAverageBasedOnOperationalData, aas.SubmodelElement
             ):
                 pFDAverageBasedOnOperationalData = (
@@ -21344,19 +21631,22 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaDDOperational and not isinstance(
+
+            if lambdaDDOperational is not None and not isinstance(
                 lambdaDDOperational, aas.SubmodelElement
             ):
                 lambdaDDOperational = self.LambdaDDOperational(lambdaDDOperational)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaSUOperational and not isinstance(
+
+            if lambdaSUOperational is not None and not isinstance(
                 lambdaSUOperational, aas.SubmodelElement
             ):
                 lambdaSUOperational = self.LambdaSUOperational(lambdaSUOperational)
 
             # Build a submodel element if a raw value was passed in the argument
-            if spuriousTripRateOperational and not isinstance(
+
+            if spuriousTripRateOperational is not None and not isinstance(
                 spuriousTripRateOperational, aas.SubmodelElement
             ):
                 spuriousTripRateOperational = self.SpuriousTripRateOperational(
@@ -21364,13 +21654,15 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lambdaSDOperational and not isinstance(
+
+            if lambdaSDOperational is not None and not isinstance(
                 lambdaSDOperational, aas.SubmodelElement
             ):
                 lambdaSDOperational = self.LambdaSDOperational(lambdaSDOperational)
 
             # Build a submodel element if a raw value was passed in the argument
-            if safeFailureFractionOperational and not isinstance(
+
+            if safeFailureFractionOperational is not None and not isinstance(
                 safeFailureFractionOperational, aas.SubmodelElement
             ):
                 safeFailureFractionOperational = self.SafeFailureFractionOperational(
@@ -21378,7 +21670,8 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if diagnosticCoverageOperational and not isinstance(
+
+            if diagnosticCoverageOperational is not None and not isinstance(
                 diagnosticCoverageOperational, aas.SubmodelElement
             ):
                 diagnosticCoverageOperational = self.DiagnosticCoverageOperational(
@@ -22856,7 +23149,8 @@ class SISDevice(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStampDateAndTime and not isinstance(
+
+                if timeStampDateAndTime is not None and not isinstance(
                     timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
@@ -22864,11 +23158,15 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testLocation and not isinstance(testLocation, aas.SubmodelElement):
+
+                if testLocation is not None and not isinstance(
+                    testLocation, aas.SubmodelElement
+                ):
                     testLocation = self.TestLocation(testLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testResultFailedOrPassed and not isinstance(
+
+                if testResultFailedOrPassed is not None and not isinstance(
                     testResultFailedOrPassed, aas.SubmodelElement
                 ):
                     testResultFailedOrPassed = self.TestResultFailedOrPassed(
@@ -22876,25 +23174,29 @@ class SISDevice(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testResultNumeric and not isinstance(
+
+                if testResultNumeric is not None and not isinstance(
                     testResultNumeric, aas.SubmodelElement
                 ):
                     testResultNumeric = self.TestResultNumeric(testResultNumeric)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testResultText and not isinstance(
+
+                if testResultText is not None and not isinstance(
                     testResultText, aas.SubmodelElement
                 ):
                     testResultText = self.TestResultText(testResultText)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if commentToTestResult and not isinstance(
+
+                if commentToTestResult is not None and not isinstance(
                     commentToTestResult, aas.SubmodelElement
                 ):
                     commentToTestResult = self.CommentToTestResult(commentToTestResult)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceToFailureEvent and not isinstance(
+
+                if referenceToFailureEvent is not None and not isinstance(
                     referenceToFailureEvent, aas.SubmodelElement
                 ):
                     referenceToFailureEvent = self.ReferenceToFailureEvent(
@@ -23010,15 +23312,22 @@ class SISDevice(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if typeOfTest and not isinstance(typeOfTest, aas.SubmodelElement):
+
+            if typeOfTest is not None and not isinstance(
+                typeOfTest, aas.SubmodelElement
+            ):
                 typeOfTest = self.TypeOfTest(typeOfTest)
 
             # Build a submodel element if a raw value was passed in the argument
-            if testDescription and not isinstance(testDescription, aas.SubmodelElement):
+
+            if testDescription is not None and not isinstance(
+                testDescription, aas.SubmodelElement
+            ):
                 testDescription = self.TestDescription(testDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if shutdownIsNeededForTesting and not isinstance(
+
+            if shutdownIsNeededForTesting is not None and not isinstance(
                 shutdownIsNeededForTesting, aas.SubmodelElement
             ):
                 shutdownIsNeededForTesting = self.ShutdownIsNeededForTesting(
@@ -23026,7 +23335,8 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if minimumTimeRequiredForTesting and not isinstance(
+
+            if minimumTimeRequiredForTesting is not None and not isinstance(
                 minimumTimeRequiredForTesting, aas.SubmodelElement
             ):
                 minimumTimeRequiredForTesting = self.MinimumTimeRequiredForTesting(
@@ -23034,13 +23344,15 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if requiredResources and not isinstance(
+
+            if requiredResources is not None and not isinstance(
                 requiredResources, aas.SubmodelElement
             ):
                 requiredResources = self.RequiredResources(requiredResources)
 
             # Build a submodel element if a raw value was passed in the argument
-            if presentTestInterval and not isinstance(
+
+            if presentTestInterval is not None and not isinstance(
                 presentTestInterval, aas.SubmodelElement
             ):
                 presentTestInterval = self.PresentTestInterval(presentTestInterval)
@@ -23057,11 +23369,15 @@ class SISDevice(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if testDuration and not isinstance(testDuration, aas.SubmodelElement):
+
+            if testDuration is not None and not isinstance(
+                testDuration, aas.SubmodelElement
+            ):
                 testDuration = self.TestDuration(testDuration)
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfPerformedTests and not isinstance(
+
+            if numberOfPerformedTests is not None and not isinstance(
                 numberOfPerformedTests, aas.SubmodelElement
             ):
                 numberOfPerformedTests = self.NumberOfPerformedTests(
@@ -23069,13 +23385,15 @@ class SISDevice(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfFailedTests and not isinstance(
+
+            if numberOfFailedTests is not None and not isinstance(
                 numberOfFailedTests, aas.SubmodelElement
             ):
                 numberOfFailedTests = self.NumberOfFailedTests(numberOfFailedTests)
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceToFailCriterion and not isinstance(
+
+            if referenceToFailCriterion is not None and not isinstance(
                 referenceToFailCriterion, aas.SubmodelElement
             ):
                 referenceToFailCriterion = self.ReferenceToFailCriterion(

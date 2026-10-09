@@ -229,7 +229,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if energyThroughputValue and not isinstance(
+
+            if energyThroughputValue is not None and not isinstance(
                 energyThroughputValue, aas.SubmodelElement
             ):
                 energyThroughputValue = self.EnergyThroughputValue(
@@ -237,7 +238,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -481,13 +485,17 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if stateOfChargeValue and not isinstance(
+
+            if stateOfChargeValue is not None and not isinstance(
                 stateOfChargeValue, aas.SubmodelElement
             ):
                 stateOfChargeValue = self.StateOfChargeValue(stateOfChargeValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -743,7 +751,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if capacityThroughputValue and not isinstance(
+
+            if capacityThroughputValue is not None and not isinstance(
                 capacityThroughputValue, aas.SubmodelElement
             ):
                 capacityThroughputValue = self.CapacityThroughputValue(
@@ -751,7 +760,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1007,7 +1019,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfFullCyclesValue and not isinstance(
+
+            if numberOfFullCyclesValue is not None and not isinstance(
                 numberOfFullCyclesValue, aas.SubmodelElement
             ):
                 numberOfFullCyclesValue = self.NumberOfFullCyclesValue(
@@ -1015,7 +1028,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1271,7 +1287,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if stateOfCertifiedEnergyValue and not isinstance(
+
+            if stateOfCertifiedEnergyValue is not None and not isinstance(
                 stateOfCertifiedEnergyValue, aas.SubmodelElement
             ):
                 stateOfCertifiedEnergyValue = self.StateOfCertifiedEnergyValue(
@@ -1279,7 +1296,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1533,13 +1553,17 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if remainingEnergyValue and not isinstance(
+
+            if remainingEnergyValue is not None and not isinstance(
                 remainingEnergyValue, aas.SubmodelElement
             ):
                 remainingEnergyValue = self.RemainingEnergyValue(remainingEnergyValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1795,7 +1819,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if remainingCapacityValue and not isinstance(
+
+            if remainingCapacityValue is not None and not isinstance(
                 remainingCapacityValue, aas.SubmodelElement
             ):
                 remainingCapacityValue = self.RemainingCapacityValue(
@@ -1803,7 +1828,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2047,13 +2075,17 @@ class ProductCondition(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if negativeEventValue and not isinstance(
+
+                if negativeEventValue is not None and not isinstance(
                     negativeEventValue, aas.SubmodelElement
                 ):
                     negativeEventValue = self.NegativeEventValue(negativeEventValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+                if lastUpdate is not None and not isinstance(
+                    lastUpdate, aas.SubmodelElement
+                ):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3024,23 +3056,29 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if measuredTemp and not isinstance(measuredTemp, aas.SubmodelElement):
+
+            if measuredTemp is not None and not isinstance(
+                measuredTemp, aas.SubmodelElement
+            ):
                 measuredTemp = self.MeasuredTemp(measuredTemp)
 
             # Build a submodel element if a raw value was passed in the argument
-            if timeExtremeHighTemp and not isinstance(
+
+            if timeExtremeHighTemp is not None and not isinstance(
                 timeExtremeHighTemp, aas.SubmodelElement
             ):
                 timeExtremeHighTemp = self.TimeExtremeHighTemp(timeExtremeHighTemp)
 
             # Build a submodel element if a raw value was passed in the argument
-            if timeExtremeLowTemp and not isinstance(
+
+            if timeExtremeLowTemp is not None and not isinstance(
                 timeExtremeLowTemp, aas.SubmodelElement
             ):
                 timeExtremeLowTemp = self.TimeExtremeLowTemp(timeExtremeLowTemp)
 
             # Build a submodel element if a raw value was passed in the argument
-            if timeExtremeHighTempCharging and not isinstance(
+
+            if timeExtremeHighTempCharging is not None and not isinstance(
                 timeExtremeHighTempCharging, aas.SubmodelElement
             ):
                 timeExtremeHighTempCharging = self.TimeExtremeHighTempCharging(
@@ -3048,7 +3086,8 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if timeExtremeLowTempCharging and not isinstance(
+
+            if timeExtremeLowTempCharging is not None and not isinstance(
                 timeExtremeLowTempCharging, aas.SubmodelElement
             ):
                 timeExtremeLowTempCharging = self.TimeExtremeLowTempCharging(
@@ -3056,7 +3095,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3383,17 +3425,20 @@ class ProductCondition(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if rPCLastUpdated and not isinstance(
+
+                if rPCLastUpdated is not None and not isinstance(
                     rPCLastUpdated, aas.SubmodelElement
                 ):
                     rPCLastUpdated = self.RPCLastUpdated(rPCLastUpdated)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if atSoC and not isinstance(atSoC, aas.SubmodelElement):
+
+                if atSoC is not None and not isinstance(atSoC, aas.SubmodelElement):
                     atSoC = self.AtSoC(atSoC)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if powerCapabilityAt and not isinstance(
+
+                if powerCapabilityAt is not None and not isinstance(
                     powerCapabilityAt, aas.SubmodelElement
                 ):
                     powerCapabilityAt = self.PowerCapabilityAt(powerCapabilityAt)
@@ -3568,7 +3613,10 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3818,7 +3866,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if evolutionOfSelfDischargeValue and not isinstance(
+
+            if evolutionOfSelfDischargeValue is not None and not isinstance(
                 evolutionOfSelfDischargeValue, aas.SubmodelElement
             ):
                 evolutionOfSelfDischargeValue = self.EvolutionOfSelfDischargeValue(
@@ -3826,7 +3875,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4076,7 +4128,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentSelfDischargingRateValue and not isinstance(
+
+            if currentSelfDischargingRateValue is not None and not isinstance(
                 currentSelfDischargingRateValue, aas.SubmodelElement
             ):
                 currentSelfDischargingRateValue = self.CurrentSelfDischargingRateValue(
@@ -4084,7 +4137,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4334,7 +4390,8 @@ class ProductCondition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if remainingRoundTripEnergyEfficiencyValue and not isinstance(
+
+            if remainingRoundTripEnergyEfficiencyValue is not None and not isinstance(
                 remainingRoundTripEnergyEfficiencyValue, aas.SubmodelElement
             ):
                 remainingRoundTripEnergyEfficiencyValue = (
@@ -4344,7 +4401,10 @@ class ProductCondition(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+            if lastUpdate is not None and not isinstance(
+                lastUpdate, aas.SubmodelElement
+            ):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4433,7 +4493,8 @@ class ProductCondition(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if informationOnAccidents and not isinstance(
+
+        if informationOnAccidents is not None and not isinstance(
             informationOnAccidents, aas.SubmodelElement
         ):
             informationOnAccidents = self.InformationOnAccidents(informationOnAccidents)

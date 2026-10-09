@@ -402,13 +402,15 @@ class ServiceRequestNotification(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if customerNumber and not isinstance(
+
+                if customerNumber is not None and not isinstance(
                     customerNumber, aas.SubmodelElement
                 ):
                     customerNumber = self.CustomerNumber(customerNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if numberOfContacs and not isinstance(
+
+                if numberOfContacs is not None and not isinstance(
                     numberOfContacs, aas.SubmodelElement
                 ):
                     numberOfContacs = self.NumberOfContacs(numberOfContacs)
@@ -1281,7 +1283,10 @@ class ServiceRequestNotification(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if comment and not isinstance(comment, aas.SubmodelElement):
+
+                        if comment is not None and not isinstance(
+                            comment, aas.SubmodelElement
+                        ):
                             comment = self.Comment(comment)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1359,7 +1364,8 @@ class ServiceRequestNotification(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numberOfMedias and not isinstance(
+
+                    if numberOfMedias is not None and not isinstance(
                         numberOfMedias, aas.SubmodelElement
                     ):
                         numberOfMedias = self.NumberOfMedias(numberOfMedias)
@@ -1444,15 +1450,24 @@ class ServiceRequestNotification(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if longText and not isinstance(longText, aas.SubmodelElement):
+
+                if longText is not None and not isinstance(
+                    longText, aas.SubmodelElement
+                ):
                     longText = self.LongText(longText)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if startOfFault and not isinstance(startOfFault, aas.SubmodelElement):
+
+                if startOfFault is not None and not isinstance(
+                    startOfFault, aas.SubmodelElement
+                ):
                     startOfFault = self.StartOfFault(startOfFault)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if errorCode and not isinstance(errorCode, aas.SubmodelElement):
+
+                if errorCode is not None and not isinstance(
+                    errorCode, aas.SubmodelElement
+                ):
                     errorCode = self.ErrorCode(errorCode)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1745,11 +1760,15 @@ class ServiceRequestNotification(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if partnerNumber and not isinstance(partnerNumber, aas.SubmodelElement):
+
+                if partnerNumber is not None and not isinstance(
+                    partnerNumber, aas.SubmodelElement
+                ):
                     partnerNumber = self.PartnerNumber(partnerNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if numberOfContacts and not isinstance(
+
+                if numberOfContacts is not None and not isinstance(
                     numberOfContacts, aas.SubmodelElement
                 ):
                     numberOfContacts = self.NumberOfContacts(numberOfContacts)
@@ -1841,7 +1860,8 @@ class ServiceRequestNotification(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if serviceRequestNotificationId and not isinstance(
+
+            if serviceRequestNotificationId is not None and not isinstance(
                 serviceRequestNotificationId, aas.SubmodelElement
             ):
                 serviceRequestNotificationId = self.ServiceRequestNotificationId(
@@ -1849,19 +1869,25 @@ class ServiceRequestNotification(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if status and not isinstance(status, aas.SubmodelElement):
+
+            if status is not None and not isinstance(status, aas.SubmodelElement):
                 status = self.Status(status)
 
             # Build a submodel element if a raw value was passed in the argument
-            if priority and not isinstance(priority, aas.SubmodelElement):
+
+            if priority is not None and not isinstance(priority, aas.SubmodelElement):
                 priority = self.Priority(priority)
 
             # Build a submodel element if a raw value was passed in the argument
-            if shortText and not isinstance(shortText, aas.SubmodelElement):
+
+            if shortText is not None and not isinstance(shortText, aas.SubmodelElement):
                 shortText = self.ShortText(shortText)
 
             # Build a submodel element if a raw value was passed in the argument
-            if serviceType and not isinstance(serviceType, aas.SubmodelElement):
+
+            if serviceType is not None and not isinstance(
+                serviceType, aas.SubmodelElement
+            ):
                 serviceType = self.ServiceType(serviceType)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1948,7 +1974,8 @@ class ServiceRequestNotification(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if numberOfServiceRequestNotifications and not isinstance(
+
+        if numberOfServiceRequestNotifications is not None and not isinstance(
             numberOfServiceRequestNotifications, aas.SubmodelElement
         ):
             numberOfServiceRequestNotifications = (

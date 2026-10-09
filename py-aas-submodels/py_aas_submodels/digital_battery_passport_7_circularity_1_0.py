@@ -645,17 +645,24 @@ class Circularity(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if nationalCode and not isinstance(
+
+                    if nationalCode is not None and not isinstance(
                         nationalCode, aas.SubmodelElement
                     ):
                         nationalCode = self.NationalCode(nationalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if postalCode and not isinstance(postalCode, aas.SubmodelElement):
+
+                    if postalCode is not None and not isinstance(
+                        postalCode, aas.SubmodelElement
+                    ):
                         postalCode = self.PostalCode(postalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if street and not isinstance(street, aas.SubmodelElement):
+
+                    if street is not None and not isinstance(
+                        street, aas.SubmodelElement
+                    ):
                         street = self.Street(street)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1079,23 +1086,29 @@ class Circularity(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if emailAddress and not isinstance(
+
+                    if emailAddress is not None and not isinstance(
                         emailAddress, aas.SubmodelElement
                     ):
                         emailAddress = self.EmailAddress(emailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if publicKey and not isinstance(publicKey, aas.SubmodelElement):
+
+                    if publicKey is not None and not isinstance(
+                        publicKey, aas.SubmodelElement
+                    ):
                         publicKey = self.PublicKey(publicKey)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if typeOfEmailAddress and not isinstance(
+
+                    if typeOfEmailAddress is not None and not isinstance(
                         typeOfEmailAddress, aas.SubmodelElement
                     ):
                         typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if typeOfPublicKey and not isinstance(
+
+                    if typeOfPublicKey is not None and not isinstance(
                         typeOfPublicKey, aas.SubmodelElement
                     ):
                         typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
@@ -1419,11 +1432,15 @@ class Circularity(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if partName and not isinstance(partName, aas.SubmodelElement):
+
+                        if partName is not None and not isinstance(
+                            partName, aas.SubmodelElement
+                        ):
                             partName = self.PartName(partName)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if partNumber and not isinstance(
+
+                        if partNumber is not None and not isinstance(
                             partNumber, aas.SubmodelElement
                         ):
                             partNumber = self.PartNumber(partNumber)
@@ -1668,13 +1685,15 @@ class Circularity(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nameOfSupplier and not isinstance(
+
+                if nameOfSupplier is not None and not isinstance(
                     nameOfSupplier, aas.SubmodelElement
                 ):
                     nameOfSupplier = self.NameOfSupplier(nameOfSupplier)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if supplierWebAddress and not isinstance(
+
+                if supplierWebAddress is not None and not isinstance(
                     supplierWebAddress, aas.SubmodelElement
                 ):
                     supplierWebAddress = self.SupplierWebAddress(supplierWebAddress)
@@ -2133,19 +2152,22 @@ class Circularity(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if preConsumerShare and not isinstance(
+
+                if preConsumerShare is not None and not isinstance(
                     preConsumerShare, aas.SubmodelElement
                 ):
                     preConsumerShare = self.PreConsumerShare(preConsumerShare)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if recycledMaterial and not isinstance(
+
+                if recycledMaterial is not None and not isinstance(
                     recycledMaterial, aas.SubmodelElement
                 ):
                     recycledMaterial = self.RecycledMaterial(recycledMaterial)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if postConsumerShare and not isinstance(
+
+                if postConsumerShare is not None and not isinstance(
                     postConsumerShare, aas.SubmodelElement
                 ):
                     postConsumerShare = self.PostConsumerShare(postConsumerShare)
@@ -2870,13 +2892,15 @@ class Circularity(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if safetyInstructions and not isinstance(
+
+            if safetyInstructions is not None and not isinstance(
                 safetyInstructions, aas.SubmodelElement
             ):
                 safetyInstructions = self.SafetyInstructions(safetyInstructions)
 
             # Build a submodel element if a raw value was passed in the argument
-            if extinguishingAgents and not isinstance(
+
+            if extinguishingAgents is not None and not isinstance(
                 extinguishingAgents, aas.SubmodelElement
             ):
                 extinguishingAgents = self.ExtinguishingAgents(extinguishingAgents)
@@ -3719,17 +3743,22 @@ class Circularity(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if wastePrevention and not isinstance(wastePrevention, aas.SubmodelElement):
+
+            if wastePrevention is not None and not isinstance(
+                wastePrevention, aas.SubmodelElement
+            ):
                 wastePrevention = self.WastePrevention(wastePrevention)
 
             # Build a submodel element if a raw value was passed in the argument
-            if separateCollection and not isinstance(
+
+            if separateCollection is not None and not isinstance(
                 separateCollection, aas.SubmodelElement
             ):
                 separateCollection = self.SeparateCollection(separateCollection)
 
             # Build a submodel element if a raw value was passed in the argument
-            if informationOnCollection and not isinstance(
+
+            if informationOnCollection is not None and not isinstance(
                 informationOnCollection, aas.SubmodelElement
             ):
                 informationOnCollection = self.InformationOnCollection(
@@ -3901,7 +3930,8 @@ class Circularity(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if dismantlingAndRemovalInformation and not isinstance(
+
+        if dismantlingAndRemovalInformation is not None and not isinstance(
             dismantlingAndRemovalInformation, aas.SubmodelElement
         ):
             dismantlingAndRemovalInformation = self.DismantlingAndRemovalInformation(
@@ -3909,7 +3939,10 @@ class Circularity(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if renewableContent and not isinstance(renewableContent, aas.SubmodelElement):
+
+        if renewableContent is not None and not isinstance(
+            renewableContent, aas.SubmodelElement
+        ):
             renewableContent = self.RenewableContent(renewableContent)
 
         # Add all passed/initialized submodel elements to a single list

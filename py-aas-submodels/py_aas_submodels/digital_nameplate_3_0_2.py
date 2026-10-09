@@ -1976,11 +1976,15 @@ class Nameplate(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if markingName and not isinstance(markingName, aas.SubmodelElement):
+
+                if markingName is not None and not isinstance(
+                    markingName, aas.SubmodelElement
+                ):
                     markingName = self.MarkingName(markingName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if designationOfCertificateOrApproval and not isinstance(
+
+                if designationOfCertificateOrApproval is not None and not isinstance(
                     designationOfCertificateOrApproval, aas.SubmodelElement
                 ):
                     designationOfCertificateOrApproval = (
@@ -1990,11 +1994,17 @@ class Nameplate(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if issueDate and not isinstance(issueDate, aas.SubmodelElement):
+
+                if issueDate is not None and not isinstance(
+                    issueDate, aas.SubmodelElement
+                ):
                     issueDate = self.IssueDate(issueDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if expiryDate and not isinstance(expiryDate, aas.SubmodelElement):
+
+                if expiryDate is not None and not isinstance(
+                    expiryDate, aas.SubmodelElement
+                ):
                     expiryDate = self.ExpiryDate(expiryDate)
 
                 # Build submodel elements from raw values passed in the argument
@@ -2772,8 +2782,12 @@ class Nameplate(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if guidelineForConformityDeclaration and not isinstance(
-                        guidelineForConformityDeclaration, aas.SubmodelElement
+
+                    if (
+                        guidelineForConformityDeclaration is not None
+                        and not isinstance(
+                            guidelineForConformityDeclaration, aas.SubmodelElement
+                        )
                     ):
                         guidelineForConformityDeclaration = (
                             self.GuidelineForConformityDeclaration(
@@ -3167,15 +3181,22 @@ class Nameplate(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if uRIOfTheProduct and not isinstance(uRIOfTheProduct, aas.SubmodelElement):
+
+        if uRIOfTheProduct is not None and not isinstance(
+            uRIOfTheProduct, aas.SubmodelElement
+        ):
             uRIOfTheProduct = self.URIOfTheProduct(uRIOfTheProduct)
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturerName and not isinstance(manufacturerName, aas.SubmodelElement):
+
+        if manufacturerName is not None and not isinstance(
+            manufacturerName, aas.SubmodelElement
+        ):
             manufacturerName = self.ManufacturerName(manufacturerName)
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturerProductDesignation and not isinstance(
+
+        if manufacturerProductDesignation is not None and not isinstance(
             manufacturerProductDesignation, aas.SubmodelElement
         ):
             manufacturerProductDesignation = self.ManufacturerProductDesignation(
@@ -3183,7 +3204,8 @@ class Nameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturerProductRoot and not isinstance(
+
+        if manufacturerProductRoot is not None and not isinstance(
             manufacturerProductRoot, aas.SubmodelElement
         ):
             manufacturerProductRoot = self.ManufacturerProductRoot(
@@ -3191,7 +3213,8 @@ class Nameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturerProductFamily and not isinstance(
+
+        if manufacturerProductFamily is not None and not isinstance(
             manufacturerProductFamily, aas.SubmodelElement
         ):
             manufacturerProductFamily = self.ManufacturerProductFamily(
@@ -3199,7 +3222,8 @@ class Nameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturerProductType and not isinstance(
+
+        if manufacturerProductType is not None and not isinstance(
             manufacturerProductType, aas.SubmodelElement
         ):
             manufacturerProductType = self.ManufacturerProductType(
@@ -3207,7 +3231,8 @@ class Nameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if orderCodeOfManufacturer and not isinstance(
+
+        if orderCodeOfManufacturer is not None and not isinstance(
             orderCodeOfManufacturer, aas.SubmodelElement
         ):
             orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
@@ -3215,7 +3240,8 @@ class Nameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if productArticleNumberOfManufacturer and not isinstance(
+
+        if productArticleNumberOfManufacturer is not None and not isinstance(
             productArticleNumberOfManufacturer, aas.SubmodelElement
         ):
             productArticleNumberOfManufacturer = (
@@ -3225,37 +3251,57 @@ class Nameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if serialNumber and not isinstance(serialNumber, aas.SubmodelElement):
+
+        if serialNumber is not None and not isinstance(
+            serialNumber, aas.SubmodelElement
+        ):
             serialNumber = self.SerialNumber(serialNumber)
 
         # Build a submodel element if a raw value was passed in the argument
-        if yearOfConstruction and not isinstance(
+
+        if yearOfConstruction is not None and not isinstance(
             yearOfConstruction, aas.SubmodelElement
         ):
             yearOfConstruction = self.YearOfConstruction(yearOfConstruction)
 
         # Build a submodel element if a raw value was passed in the argument
-        if dateOfManufacture and not isinstance(dateOfManufacture, aas.SubmodelElement):
+
+        if dateOfManufacture is not None and not isinstance(
+            dateOfManufacture, aas.SubmodelElement
+        ):
             dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
 
         # Build a submodel element if a raw value was passed in the argument
-        if hardwareVersion and not isinstance(hardwareVersion, aas.SubmodelElement):
+
+        if hardwareVersion is not None and not isinstance(
+            hardwareVersion, aas.SubmodelElement
+        ):
             hardwareVersion = self.HardwareVersion(hardwareVersion)
 
         # Build a submodel element if a raw value was passed in the argument
-        if firmwareVersion and not isinstance(firmwareVersion, aas.SubmodelElement):
+
+        if firmwareVersion is not None and not isinstance(
+            firmwareVersion, aas.SubmodelElement
+        ):
             firmwareVersion = self.FirmwareVersion(firmwareVersion)
 
         # Build a submodel element if a raw value was passed in the argument
-        if softwareVersion and not isinstance(softwareVersion, aas.SubmodelElement):
+
+        if softwareVersion is not None and not isinstance(
+            softwareVersion, aas.SubmodelElement
+        ):
             softwareVersion = self.SoftwareVersion(softwareVersion)
 
         # Build a submodel element if a raw value was passed in the argument
-        if countryOfOrigin and not isinstance(countryOfOrigin, aas.SubmodelElement):
+
+        if countryOfOrigin is not None and not isinstance(
+            countryOfOrigin, aas.SubmodelElement
+        ):
             countryOfOrigin = self.CountryOfOrigin(countryOfOrigin)
 
         # Build a submodel element if a raw value was passed in the argument
-        if uniqueFacilityIdentifier and not isinstance(
+
+        if uniqueFacilityIdentifier is not None and not isinstance(
             uniqueFacilityIdentifier, aas.SubmodelElement
         ):
             uniqueFacilityIdentifier = self.UniqueFacilityIdentifier(

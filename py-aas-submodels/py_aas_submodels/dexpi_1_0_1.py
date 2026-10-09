@@ -1889,17 +1889,22 @@ class DEXPI(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if enterpriseReference and not isinstance(
+
+            if enterpriseReference is not None and not isinstance(
                 enterpriseReference, aas.SubmodelElement
             ):
                 enterpriseReference = self.EnterpriseReference(enterpriseReference)
 
             # Build a submodel element if a raw value was passed in the argument
-            if siteReference and not isinstance(siteReference, aas.SubmodelElement):
+
+            if siteReference is not None and not isinstance(
+                siteReference, aas.SubmodelElement
+            ):
                 siteReference = self.SiteReference(siteReference)
 
             # Build a submodel element if a raw value was passed in the argument
-            if industrialComplexReference and not isinstance(
+
+            if industrialComplexReference is not None and not isinstance(
                 industrialComplexReference, aas.SubmodelElement
             ):
                 industrialComplexReference = self.IndustrialComplexReference(
@@ -1907,7 +1912,8 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if processPlantReference and not isinstance(
+
+            if processPlantReference is not None and not isinstance(
                 processPlantReference, aas.SubmodelElement
             ):
                 processPlantReference = self.ProcessPlantReference(
@@ -1915,7 +1921,8 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if plantSectionReference and not isinstance(
+
+            if plantSectionReference is not None and not isinstance(
                 plantSectionReference, aas.SubmodelElement
             ):
                 plantSectionReference = self.PlantSectionReference(
@@ -1923,7 +1930,8 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if enterpriseIdentificationCode and not isinstance(
+
+            if enterpriseIdentificationCode is not None and not isinstance(
                 enterpriseIdentificationCode, aas.SubmodelElement
             ):
                 enterpriseIdentificationCode = self.EnterpriseIdentificationCode(
@@ -1931,11 +1939,15 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if enterpriseName and not isinstance(enterpriseName, aas.SubmodelElement):
+
+            if enterpriseName is not None and not isinstance(
+                enterpriseName, aas.SubmodelElement
+            ):
                 enterpriseName = self.EnterpriseName(enterpriseName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if industrialComplexIdentificationCode and not isinstance(
+
+            if industrialComplexIdentificationCode is not None and not isinstance(
                 industrialComplexIdentificationCode, aas.SubmodelElement
             ):
                 industrialComplexIdentificationCode = (
@@ -1945,7 +1957,8 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if industrialComplexName and not isinstance(
+
+            if industrialComplexName is not None and not isinstance(
                 industrialComplexName, aas.SubmodelElement
             ):
                 industrialComplexName = self.IndustrialComplexName(
@@ -1953,7 +1966,8 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if plantSectionIdentificationCode and not isinstance(
+
+            if plantSectionIdentificationCode is not None and not isinstance(
                 plantSectionIdentificationCode, aas.SubmodelElement
             ):
                 plantSectionIdentificationCode = self.PlantSectionIdentificationCode(
@@ -1961,13 +1975,15 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if plantSectionName and not isinstance(
+
+            if plantSectionName is not None and not isinstance(
                 plantSectionName, aas.SubmodelElement
             ):
                 plantSectionName = self.PlantSectionName(plantSectionName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if processPlantIdentificationCode and not isinstance(
+
+            if processPlantIdentificationCode is not None and not isinstance(
                 processPlantIdentificationCode, aas.SubmodelElement
             ):
                 processPlantIdentificationCode = self.ProcessPlantIdentificationCode(
@@ -1975,21 +1991,29 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if processPlantName and not isinstance(
+
+            if processPlantName is not None and not isinstance(
                 processPlantName, aas.SubmodelElement
             ):
                 processPlantName = self.ProcessPlantName(processPlantName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if projectName and not isinstance(projectName, aas.SubmodelElement):
+
+            if projectName is not None and not isinstance(
+                projectName, aas.SubmodelElement
+            ):
                 projectName = self.ProjectName(projectName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if projectNumber and not isinstance(projectNumber, aas.SubmodelElement):
+
+            if projectNumber is not None and not isinstance(
+                projectNumber, aas.SubmodelElement
+            ):
                 projectNumber = self.ProjectNumber(projectNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if siteIdentificationCode and not isinstance(
+
+            if siteIdentificationCode is not None and not isinstance(
                 siteIdentificationCode, aas.SubmodelElement
             ):
                 siteIdentificationCode = self.SiteIdentificationCode(
@@ -1997,27 +2021,34 @@ class DEXPI(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if siteName and not isinstance(siteName, aas.SubmodelElement):
+
+            if siteName is not None and not isinstance(siteName, aas.SubmodelElement):
                 siteName = self.SiteName(siteName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if subProjectName and not isinstance(subProjectName, aas.SubmodelElement):
+
+            if subProjectName is not None and not isinstance(
+                subProjectName, aas.SubmodelElement
+            ):
                 subProjectName = self.SubProjectName(subProjectName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if subProjectNumber and not isinstance(
+
+            if subProjectNumber is not None and not isinstance(
                 subProjectNumber, aas.SubmodelElement
             ):
                 subProjectNumber = self.SubProjectNumber(subProjectNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerName and not isinstance(
+
+            if manufacturerName is not None and not isinstance(
                 manufacturerName, aas.SubmodelElement
             ):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if dateOfManufacture and not isinstance(
+
+            if dateOfManufacture is not None and not isinstance(
                 dateOfManufacture, aas.SubmodelElement
             ):
                 dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
@@ -2963,47 +2994,71 @@ class DEXPI(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if approvalDate and not isinstance(approvalDate, aas.SubmodelElement):
+
+                if approvalDate is not None and not isinstance(
+                    approvalDate, aas.SubmodelElement
+                ):
                     approvalDate = self.ApprovalDate(approvalDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if approvalDescription and not isinstance(
+
+                if approvalDescription is not None and not isinstance(
                     approvalDescription, aas.SubmodelElement
                 ):
                     approvalDescription = self.ApprovalDescription(approvalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if archiveNumber and not isinstance(archiveNumber, aas.SubmodelElement):
+
+                if archiveNumber is not None and not isinstance(
+                    archiveNumber, aas.SubmodelElement
+                ):
                     archiveNumber = self.ArchiveNumber(archiveNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if checkerName and not isinstance(checkerName, aas.SubmodelElement):
+
+                if checkerName is not None and not isinstance(
+                    checkerName, aas.SubmodelElement
+                ):
                     checkerName = self.CheckerName(checkerName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if creationDate and not isinstance(creationDate, aas.SubmodelElement):
+
+                if creationDate is not None and not isinstance(
+                    creationDate, aas.SubmodelElement
+                ):
                     creationDate = self.CreationDate(creationDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if creatorName and not isinstance(creatorName, aas.SubmodelElement):
+
+                if creatorName is not None and not isinstance(
+                    creatorName, aas.SubmodelElement
+                ):
                     creatorName = self.CreatorName(creatorName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if designerName and not isinstance(designerName, aas.SubmodelElement):
+
+                if designerName is not None and not isinstance(
+                    designerName, aas.SubmodelElement
+                ):
                     designerName = self.DesignerName(designerName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if drawingNumber and not isinstance(drawingNumber, aas.SubmodelElement):
+
+                if drawingNumber is not None and not isinstance(
+                    drawingNumber, aas.SubmodelElement
+                ):
                     drawingNumber = self.DrawingNumber(drawingNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if drawingSubTitle and not isinstance(
+
+                if drawingSubTitle is not None and not isinstance(
                     drawingSubTitle, aas.SubmodelElement
                 ):
                     drawingSubTitle = self.DrawingSubTitle(drawingSubTitle)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lastModificationDate and not isinstance(
+
+                if lastModificationDate is not None and not isinstance(
                     lastModificationDate, aas.SubmodelElement
                 ):
                     lastModificationDate = self.LastModificationDate(
@@ -3522,15 +3577,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3907,15 +3971,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4292,15 +4365,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4677,15 +4759,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5060,15 +5151,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5438,15 +5538,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5816,15 +5925,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6194,15 +6312,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6572,15 +6699,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6955,15 +7091,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7333,15 +7478,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7711,15 +7865,24 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+                    if tagName is not None and not isinstance(
+                        tagName, aas.SubmodelElement
+                    ):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8157,21 +8320,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8615,21 +8788,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9073,21 +9256,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9531,21 +9724,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9989,21 +10192,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -10447,21 +10660,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -10905,21 +11128,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -11363,21 +11596,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -11821,21 +12064,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -12279,21 +12532,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -12737,21 +13000,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -13195,21 +13468,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -13653,21 +13936,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -14111,21 +14404,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -14569,21 +14872,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -15027,21 +15340,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -15485,21 +15808,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -15943,21 +16276,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16401,21 +16744,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16859,21 +17212,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -17317,21 +17680,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -17775,21 +18148,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -18233,21 +18616,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -18691,21 +19084,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19149,21 +19552,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19607,21 +20020,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -20065,21 +20488,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -20523,21 +20956,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -20981,21 +21424,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -21439,21 +21892,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -21897,21 +22360,31 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
+
+                    if subTagName is not None and not isinstance(
+                        subTagName, aas.SubmodelElement
+                    ):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(
+
+                    if parentLocalId is not None and not isinstance(
                         parentLocalId, aas.SubmodelElement
                     ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, aas.SubmodelElement):
+
+                    if class_ is not None and not isinstance(
+                        class_, aas.SubmodelElement
+                    ):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, aas.SubmodelElement):
+
+                    if localId is not None and not isinstance(
+                        localId, aas.SubmodelElement
+                    ):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list

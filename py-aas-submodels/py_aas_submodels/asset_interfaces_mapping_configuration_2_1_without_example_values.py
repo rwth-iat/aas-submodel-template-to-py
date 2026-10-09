@@ -451,17 +451,24 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if source and not isinstance(source, aas.SubmodelElement):
+
+                        if source is not None and not isinstance(
+                            source, aas.SubmodelElement
+                        ):
                             source = self.Source(source)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if pollingInterval and not isinstance(
+
+                        if pollingInterval is not None and not isinstance(
                             pollingInterval, aas.SubmodelElement
                         ):
                             pollingInterval = self.PollingInterval(pollingInterval)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sourceId and not isinstance(sourceId, aas.SubmodelElement):
+
+                        if sourceId is not None and not isinstance(
+                            sourceId, aas.SubmodelElement
+                        ):
                             sourceId = self.SourceId(sourceId)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -877,11 +884,17 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sink and not isinstance(sink, aas.SubmodelElement):
+
+                        if sink is not None and not isinstance(
+                            sink, aas.SubmodelElement
+                        ):
                             sink = self.Sink(sink)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sinkId and not isinstance(sinkId, aas.SubmodelElement):
+
+                        if sinkId is not None and not isinstance(
+                            sinkId, aas.SubmodelElement
+                        ):
                             sinkId = self.SinkId(sinkId)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1147,7 +1160,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if defaultPollingInterval and not isinstance(
+
+                if defaultPollingInterval is not None and not isinstance(
                     defaultPollingInterval, aas.SubmodelElement
                 ):
                     defaultPollingInterval = self.DefaultPollingInterval(

@@ -1200,33 +1200,44 @@ class CompanyData(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if companyName and not isinstance(companyName, aas.SubmodelElement):
+
+            if companyName is not None and not isinstance(
+                companyName, aas.SubmodelElement
+            ):
                 companyName = self.CompanyName(companyName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if companyDescription and not isinstance(
+
+            if companyDescription is not None and not isinstance(
                 companyDescription, aas.SubmodelElement
             ):
                 companyDescription = self.CompanyDescription(companyDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if homepageURL and not isinstance(homepageURL, aas.SubmodelElement):
+
+            if homepageURL is not None and not isinstance(
+                homepageURL, aas.SubmodelElement
+            ):
                 homepageURL = self.HomepageURL(homepageURL)
 
             # Build a submodel element if a raw value was passed in the argument
-            if vATNumber and not isinstance(vATNumber, aas.SubmodelElement):
+
+            if vATNumber is not None and not isinstance(vATNumber, aas.SubmodelElement):
                 vATNumber = self.VATNumber(vATNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if taxNumber and not isinstance(taxNumber, aas.SubmodelElement):
+
+            if taxNumber is not None and not isinstance(taxNumber, aas.SubmodelElement):
                 taxNumber = self.TaxNumber(taxNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if dUNS and not isinstance(dUNS, aas.SubmodelElement):
+
+            if dUNS is not None and not isinstance(dUNS, aas.SubmodelElement):
                 dUNS = self.DUNS(dUNS)
 
             # Build a submodel element if a raw value was passed in the argument
-            if commercialRegisterNumber and not isinstance(
+
+            if commercialRegisterNumber is not None and not isinstance(
                 commercialRegisterNumber, aas.SubmodelElement
             ):
                 commercialRegisterNumber = self.CommercialRegisterNumber(
@@ -1234,11 +1245,17 @@ class CompanyData(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if foundingYear and not isinstance(foundingYear, aas.SubmodelElement):
+
+            if foundingYear is not None and not isinstance(
+                foundingYear, aas.SubmodelElement
+            ):
                 foundingYear = self.FoundingYear(foundingYear)
 
             # Build a submodel element if a raw value was passed in the argument
-            if orderCurrency and not isinstance(orderCurrency, aas.SubmodelElement):
+
+            if orderCurrency is not None and not isinstance(
+                orderCurrency, aas.SubmodelElement
+            ):
                 orderCurrency = self.OrderCurrency(orderCurrency)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1670,21 +1687,27 @@ class CompanyData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accountHolder and not isinstance(accountHolder, aas.SubmodelElement):
+
+                if accountHolder is not None and not isinstance(
+                    accountHolder, aas.SubmodelElement
+                ):
                     accountHolder = self.AccountHolder(accountHolder)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bankAccountType and not isinstance(
+
+                if bankAccountType is not None and not isinstance(
                     bankAccountType, aas.SubmodelElement
                 ):
                     bankAccountType = self.BankAccountType(bankAccountType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if iBAN and not isinstance(iBAN, aas.SubmodelElement):
+
+                if iBAN is not None and not isinstance(iBAN, aas.SubmodelElement):
                     iBAN = self.IBAN(iBAN)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bIC and not isinstance(bIC, aas.SubmodelElement):
+
+                if bIC is not None and not isinstance(bIC, aas.SubmodelElement):
                     bIC = self.BIC(bIC)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2129,15 +2152,22 @@ class CompanyData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if eRPName and not isinstance(eRPName, aas.SubmodelElement):
+
+                    if eRPName is not None and not isinstance(
+                        eRPName, aas.SubmodelElement
+                    ):
                         eRPName = self.ERPName(eRPName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if eRPVersion and not isinstance(eRPVersion, aas.SubmodelElement):
+
+                    if eRPVersion is not None and not isinstance(
+                        eRPVersion, aas.SubmodelElement
+                    ):
                         eRPVersion = self.ERPVersion(eRPVersion)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if eRPReference and not isinstance(
+
+                    if eRPReference is not None and not isinstance(
                         eRPReference, aas.SubmodelElement
                     ):
                         eRPReference = self.ERPReference(eRPReference)
@@ -2355,13 +2385,15 @@ class CompanyData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if emailSystemName and not isinstance(
+
+                    if emailSystemName is not None and not isinstance(
                         emailSystemName, aas.SubmodelElement
                     ):
                         emailSystemName = self.EmailSystemName(emailSystemName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if emailSystemReference and not isinstance(
+
+                    if emailSystemReference is not None and not isinstance(
                         emailSystemReference, aas.SubmodelElement
                     ):
                         emailSystemReference = self.EmailSystemReference(
@@ -2682,7 +2714,10 @@ class CompanyData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if cADTools and not isinstance(cADTools, aas.SubmodelElement):
+
+                if cADTools is not None and not isinstance(
+                    cADTools, aas.SubmodelElement
+                ):
                     cADTools = self.CADTools(cADTools)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3275,7 +3310,8 @@ class CompanyData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if encryptedDataTransmission and not isinstance(
+
+                if encryptedDataTransmission is not None and not isinstance(
                     encryptedDataTransmission, aas.SubmodelElement
                 ):
                     encryptedDataTransmission = self.EncryptedDataTransmission(
@@ -3283,7 +3319,8 @@ class CompanyData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if outgoingEInvoiceFormat and not isinstance(
+
+                if outgoingEInvoiceFormat is not None and not isinstance(
                     outgoingEInvoiceFormat, aas.SubmodelElement
                 ):
                     outgoingEInvoiceFormat = self.OutgoingEInvoiceFormat(
@@ -3291,15 +3328,20 @@ class CompanyData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if eDI and not isinstance(eDI, aas.SubmodelElement):
+
+                if eDI is not None and not isinstance(eDI, aas.SubmodelElement):
                     eDI = self.EDI(eDI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if webEDI and not isinstance(webEDI, aas.SubmodelElement):
+
+                if webEDI is not None and not isinstance(webEDI, aas.SubmodelElement):
                     webEDI = self.WebEDI(webEDI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if cADFormats and not isinstance(cADFormats, aas.SubmodelElement):
+
+                if cADFormats is not None and not isinstance(
+                    cADFormats, aas.SubmodelElement
+                ):
                     cADFormats = self.CADFormats(cADFormats)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4210,7 +4252,8 @@ class CompanyData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if referenceToCustomer and not isinstance(
+
+                        if referenceToCustomer is not None and not isinstance(
                             referenceToCustomer, aas.SubmodelElement
                         ):
                             referenceToCustomer = self.ReferenceToCustomer(
@@ -4218,7 +4261,8 @@ class CompanyData(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if customerWebsite and not isinstance(
+
+                        if customerWebsite is not None and not isinstance(
                             customerWebsite, aas.SubmodelElement
                         ):
                             customerWebsite = self.CustomerWebsite(customerWebsite)
@@ -4304,7 +4348,8 @@ class CompanyData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if totalNumberCustomers and not isinstance(
+
+                    if totalNumberCustomers is not None and not isinstance(
                         totalNumberCustomers, aas.SubmodelElement
                     ):
                         totalNumberCustomers = self.TotalNumberCustomers(
@@ -4532,11 +4577,15 @@ class CompanyData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if financialYear and not isinstance(financialYear, aas.SubmodelElement):
+
+                if financialYear is not None and not isinstance(
+                    financialYear, aas.SubmodelElement
+                ):
                     financialYear = self.FinancialYear(financialYear)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if beginOfReporttimeFrame and not isinstance(
+
+                if beginOfReporttimeFrame is not None and not isinstance(
                     beginOfReporttimeFrame, aas.SubmodelElement
                 ):
                     beginOfReporttimeFrame = self.BeginOfReporttimeFrame(
@@ -4544,7 +4593,8 @@ class CompanyData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if endOfReporttimeFrame and not isinstance(
+
+                if endOfReporttimeFrame is not None and not isinstance(
                     endOfReporttimeFrame, aas.SubmodelElement
                 ):
                     endOfReporttimeFrame = self.EndOfReporttimeFrame(
@@ -4552,27 +4602,36 @@ class CompanyData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if yearOfPublication and not isinstance(
+
+                if yearOfPublication is not None and not isinstance(
                     yearOfPublication, aas.SubmodelElement
                 ):
                     yearOfPublication = self.YearOfPublication(yearOfPublication)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if turnover and not isinstance(turnover, aas.SubmodelElement):
+
+                if turnover is not None and not isinstance(
+                    turnover, aas.SubmodelElement
+                ):
                     turnover = self.Turnover(turnover)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if investmentVolume and not isinstance(
+
+                if investmentVolume is not None and not isinstance(
                     investmentVolume, aas.SubmodelElement
                 ):
                     investmentVolume = self.InvestmentVolume(investmentVolume)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if equityRatio and not isinstance(equityRatio, aas.SubmodelElement):
+
+                if equityRatio is not None and not isinstance(
+                    equityRatio, aas.SubmodelElement
+                ):
                     equityRatio = self.EquityRatio(equityRatio)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if totalEmployees and not isinstance(
+
+                if totalEmployees is not None and not isinstance(
                     totalEmployees, aas.SubmodelElement
                 ):
                     totalEmployees = self.TotalEmployees(totalEmployees)
@@ -4667,7 +4726,10 @@ class CompanyData(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastReport and not isinstance(lastReport, aas.SubmodelElement):
+
+            if lastReport is not None and not isinstance(
+                lastReport, aas.SubmodelElement
+            ):
                 lastReport = self.LastReport(lastReport)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4947,11 +5009,15 @@ class CompanyData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if codeOfConduct and not isinstance(codeOfConduct, aas.SubmodelElement):
+
+                if codeOfConduct is not None and not isinstance(
+                    codeOfConduct, aas.SubmodelElement
+                ):
                     codeOfConduct = self.CodeOfConduct(codeOfConduct)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if generalTermsAndConditions and not isinstance(
+
+                if generalTermsAndConditions is not None and not isinstance(
                     generalTermsAndConditions, aas.SubmodelElement
                 ):
                     generalTermsAndConditions = self.GeneralTermsAndConditions(
@@ -4959,7 +5025,8 @@ class CompanyData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if qualityAssuranceAgreements and not isinstance(
+
+                if qualityAssuranceAgreements is not None and not isinstance(
                     qualityAssuranceAgreements, aas.SubmodelElement
                 ):
                     qualityAssuranceAgreements = self.QualityAssuranceAgreements(
@@ -5781,7 +5848,8 @@ class CompanyData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if certificationStandard and not isinstance(
+
+                        if certificationStandard is not None and not isinstance(
                             certificationStandard, aas.SubmodelElement
                         ):
                             certificationStandard = self.CertificationStandard(
@@ -5789,13 +5857,15 @@ class CompanyData(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if approvalAgency and not isinstance(
+
+                        if approvalAgency is not None and not isinstance(
                             approvalAgency, aas.SubmodelElement
                         ):
                             approvalAgency = self.ApprovalAgency(approvalAgency)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if certificateNumber and not isinstance(
+
+                        if certificateNumber is not None and not isinstance(
                             certificateNumber, aas.SubmodelElement
                         ):
                             certificateNumber = self.CertificateNumber(
@@ -5803,11 +5873,15 @@ class CompanyData(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if issueDate and not isinstance(issueDate, aas.SubmodelElement):
+
+                        if issueDate is not None and not isinstance(
+                            issueDate, aas.SubmodelElement
+                        ):
                             issueDate = self.IssueDate(issueDate)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if expiryDate and not isinstance(
+
+                        if expiryDate is not None and not isinstance(
                             expiryDate, aas.SubmodelElement
                         ):
                             expiryDate = self.ExpiryDate(expiryDate)
@@ -5824,7 +5898,8 @@ class CompanyData(aas.Submodel):
                             ]
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if certificationURL and not isinstance(
+
+                        if certificationURL is not None and not isinstance(
                             certificationURL, aas.SubmodelElement
                         ):
                             certificationURL = self.CertificationURL(certificationURL)
@@ -6070,7 +6145,10 @@ class CompanyData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if memberships and not isinstance(memberships, aas.SubmodelElement):
+
+                if memberships is not None and not isinstance(
+                    memberships, aas.SubmodelElement
+                ):
                     memberships = self.Memberships(memberships)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6361,13 +6439,15 @@ class CompanyData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if typeOfTraining and not isinstance(
+
+                        if typeOfTraining is not None and not isinstance(
                             typeOfTraining, aas.SubmodelElement
                         ):
                             typeOfTraining = self.TypeOfTraining(typeOfTraining)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if trainingDocumentation and not isinstance(
+
+                        if trainingDocumentation is not None and not isinstance(
                             trainingDocumentation, aas.SubmodelElement
                         ):
                             trainingDocumentation = self.TrainingDocumentation(
@@ -7503,7 +7583,8 @@ class CompanyData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if informationSecurityPolicy and not isinstance(
+
+                    if informationSecurityPolicy is not None and not isinstance(
                         informationSecurityPolicy, aas.SubmodelElement
                     ):
                         informationSecurityPolicy = self.InformationSecurityPolicy(
@@ -7511,7 +7592,8 @@ class CompanyData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if dataProtectionPolicy and not isinstance(
+
+                    if dataProtectionPolicy is not None and not isinstance(
                         dataProtectionPolicy, aas.SubmodelElement
                     ):
                         dataProtectionPolicy = self.DataProtectionPolicy(
@@ -7519,13 +7601,15 @@ class CompanyData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if passwordPolicy and not isinstance(
+
+                    if passwordPolicy is not None and not isinstance(
                         passwordPolicy, aas.SubmodelElement
                     ):
                         passwordPolicy = self.PasswordPolicy(passwordPolicy)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if authorizationConcept and not isinstance(
+
+                    if authorizationConcept is not None and not isinstance(
                         authorizationConcept, aas.SubmodelElement
                     ):
                         authorizationConcept = self.AuthorizationConcept(
@@ -7533,7 +7617,8 @@ class CompanyData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if accessControlProcess and not isinstance(
+
+                    if accessControlProcess is not None and not isinstance(
                         accessControlProcess, aas.SubmodelElement
                     ):
                         accessControlProcess = self.AccessControlProcess(
@@ -7541,7 +7626,8 @@ class CompanyData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if userAccessInventory and not isinstance(
+
+                    if userAccessInventory is not None and not isinstance(
                         userAccessInventory, aas.SubmodelElement
                     ):
                         userAccessInventory = self.UserAccessInventory(
@@ -7549,7 +7635,8 @@ class CompanyData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if permissionDocumentation and not isinstance(
+
+                    if permissionDocumentation is not None and not isinstance(
                         permissionDocumentation, aas.SubmodelElement
                     ):
                         permissionDocumentation = self.PermissionDocumentation(
@@ -7557,35 +7644,43 @@ class CompanyData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if lockingSystem and not isinstance(
+
+                    if lockingSystem is not None and not isinstance(
                         lockingSystem, aas.SubmodelElement
                     ):
                         lockingSystem = self.LockingSystem(lockingSystem)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if keyAllocation and not isinstance(
+
+                    if keyAllocation is not None and not isinstance(
                         keyAllocation, aas.SubmodelElement
                     ):
                         keyAllocation = self.KeyAllocation(keyAllocation)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if visitorLog and not isinstance(visitorLog, aas.SubmodelElement):
+
+                    if visitorLog is not None and not isinstance(
+                        visitorLog, aas.SubmodelElement
+                    ):
                         visitorLog = self.VisitorLog(visitorLog)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if visitorEscort and not isinstance(
+
+                    if visitorEscort is not None and not isinstance(
                         visitorEscort, aas.SubmodelElement
                     ):
                         visitorEscort = self.VisitorEscort(visitorEscort)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if visitorBadge and not isinstance(
+
+                    if visitorBadge is not None and not isinstance(
                         visitorBadge, aas.SubmodelElement
                     ):
                         visitorBadge = self.VisitorBadge(visitorBadge)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if customerAudits and not isinstance(
+
+                    if customerAudits is not None and not isinstance(
                         customerAudits, aas.SubmodelElement
                     ):
                         customerAudits = self.CustomerAudits(customerAudits)
@@ -7897,19 +7992,22 @@ class CompanyData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if insuranceCompany and not isinstance(
+
+                        if insuranceCompany is not None and not isinstance(
                             insuranceCompany, aas.SubmodelElement
                         ):
                             insuranceCompany = self.InsuranceCompany(insuranceCompany)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if insuranceType and not isinstance(
+
+                        if insuranceType is not None and not isinstance(
                             insuranceType, aas.SubmodelElement
                         ):
                             insuranceType = self.InsuranceType(insuranceType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if insuranceSum and not isinstance(
+
+                        if insuranceSum is not None and not isinstance(
                             insuranceSum, aas.SubmodelElement
                         ):
                             insuranceSum = self.InsuranceSum(insuranceSum)
@@ -8151,7 +8249,8 @@ class CompanyData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if businessContinuityPlan and not isinstance(
+
+                if businessContinuityPlan is not None and not isinstance(
                     businessContinuityPlan, aas.SubmodelElement
                 ):
                     businessContinuityPlan = self.BusinessContinuityPlan(
@@ -8582,13 +8681,15 @@ class CompanyData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if complianceStatus and not isinstance(
+
+                    if complianceStatus is not None and not isinstance(
                         complianceStatus, aas.SubmodelElement
                     ):
                         complianceStatus = self.ComplianceStatus(complianceStatus)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if complianceStatement and not isinstance(
+
+                    if complianceStatement is not None and not isinstance(
                         complianceStatement, aas.SubmodelElement
                     ):
                         complianceStatement = self.ComplianceStatement(
@@ -8618,7 +8719,8 @@ class CompanyData(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if regulationName and not isinstance(
+
+                    if regulationName is not None and not isinstance(
                         regulationName, aas.SubmodelElement
                     ):
                         regulationName = self.RegulationName(regulationName)
@@ -8944,7 +9046,8 @@ class CompanyData(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if mainAccount and not isinstance(mainAccount, aas.SubmodelElement):
+
+        if mainAccount is not None and not isinstance(mainAccount, aas.SubmodelElement):
             mainAccount = self.MainAccount(mainAccount)
 
         # Add all passed/initialized submodel elements to a single list

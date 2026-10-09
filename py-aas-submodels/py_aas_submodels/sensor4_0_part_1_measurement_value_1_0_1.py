@@ -283,15 +283,18 @@ class MeasurementValue(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if value_ and not isinstance(value_, aas.SubmodelElement):
+
+            if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                 value_ = self.Value(value_)
 
             # Build a submodel element if a raw value was passed in the argument
-            if unit and not isinstance(unit, aas.SubmodelElement):
+
+            if unit is not None and not isinstance(unit, aas.SubmodelElement):
                 unit = self.Unit(unit)
 
             # Build a submodel element if a raw value was passed in the argument
-            if kind and not isinstance(kind, aas.SubmodelElement):
+
+            if kind is not None and not isinstance(kind, aas.SubmodelElement):
                 kind = self.Kind(kind)
 
             # Add all passed/initialized submodel elements to a single list
@@ -445,7 +448,8 @@ class MeasurementValue(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if distance and not isinstance(distance, aas.SubmodelElement):
+
+            if distance is not None and not isinstance(distance, aas.SubmodelElement):
                 distance = self.Distance(distance)
 
             # Add all passed/initialized submodel elements to a single list
@@ -808,15 +812,20 @@ class MeasurementValue(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if origin and not isinstance(origin, aas.SubmodelElement):
+
+            if origin is not None and not isinstance(origin, aas.SubmodelElement):
                 origin = self.Origin(origin)
 
             # Build a submodel element if a raw value was passed in the argument
-            if version and not isinstance(version, aas.SubmodelElement):
+
+            if version is not None and not isinstance(version, aas.SubmodelElement):
                 version = self.Version(version)
 
             # Build a submodel element if a raw value was passed in the argument
-            if identifier and not isinstance(identifier, aas.SubmodelElement):
+
+            if identifier is not None and not isinstance(
+                identifier, aas.SubmodelElement
+            ):
                 identifier = self.Identifier(identifier)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1215,19 +1224,23 @@ class MeasurementValue(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if quality and not isinstance(quality, aas.SubmodelElement):
+
+            if quality is not None and not isinstance(quality, aas.SubmodelElement):
                 quality = self.Quality(quality)
 
             # Build a submodel element if a raw value was passed in the argument
-            if range and not isinstance(range, aas.SubmodelElement):
+
+            if range is not None and not isinstance(range, aas.SubmodelElement):
                 range = self.Range(min=range[0], max=range[1])
 
             # Build a submodel element if a raw value was passed in the argument
-            if scale and not isinstance(scale, aas.SubmodelElement):
+
+            if scale is not None and not isinstance(scale, aas.SubmodelElement):
                 scale = self.Scale(scale)
 
             # Build a submodel element if a raw value was passed in the argument
-            if tag and not isinstance(tag, aas.SubmodelElement):
+
+            if tag is not None and not isinstance(tag, aas.SubmodelElement):
                 tag = self.Tag(tag)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1299,7 +1312,8 @@ class MeasurementValue(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if measurementTimestamp and not isinstance(
+
+        if measurementTimestamp is not None and not isinstance(
             measurementTimestamp, aas.SubmodelElement
         ):
             measurementTimestamp = self.MeasurementTimestamp(measurementTimestamp)

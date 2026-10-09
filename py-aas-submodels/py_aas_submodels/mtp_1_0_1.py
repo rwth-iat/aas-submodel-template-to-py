@@ -78,7 +78,10 @@ class AssetIdentification(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturer and not isinstance(manufacturer, aas.SubmodelElement):
+
+        if manufacturer is not None and not isinstance(
+            manufacturer, aas.SubmodelElement
+        ):
             manufacturer = self.Manufacturer(manufacturer)
 
         # Add all passed/initialized submodel elements to a single list
@@ -937,47 +940,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -1061,27 +1080,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -1945,47 +1973,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -2069,27 +2113,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -2953,47 +3006,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -3077,27 +3146,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -3961,47 +4039,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -4085,27 +4179,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -4969,47 +5072,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -5093,27 +5212,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -5977,47 +6105,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -6101,27 +6245,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -7035,51 +7188,70 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language01 and not isinstance(language01, aas.SubmodelElement):
+
+                if language01 is not None and not isinstance(
+                    language01, aas.SubmodelElement
+                ):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language02 and not isinstance(language02, aas.SubmodelElement):
+
+                if language02 is not None and not isinstance(
+                    language02, aas.SubmodelElement
+                ):
                     language02 = self.Language02(language02)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -7164,27 +7336,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -8048,47 +8229,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -8172,27 +8369,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -9056,47 +9262,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -9180,27 +9402,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -9451,11 +9682,17 @@ class AssetIdentification(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if serialNumber and not isinstance(serialNumber, aas.SubmodelElement):
+
+        if serialNumber is not None and not isinstance(
+            serialNumber, aas.SubmodelElement
+        ):
             serialNumber = self.SerialNumber(serialNumber)
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturer and not isinstance(manufacturer, aas.SubmodelElement):
+
+        if manufacturer is not None and not isinstance(
+            manufacturer, aas.SubmodelElement
+        ):
             manufacturer = self.Manufacturer(manufacturer)
 
         # Add all passed/initialized submodel elements to a single list
@@ -10644,11 +10881,15 @@ class ProcessEquipmentAssembly(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if displayName and not isinstance(displayName, aas.SubmodelElement):
+
+        if displayName is not None and not isinstance(displayName, aas.SubmodelElement):
             displayName = self.DisplayName(displayName)
 
         # Build a submodel element if a raw value was passed in the argument
-        if description_ and not isinstance(description_, aas.SubmodelElement):
+
+        if description_ is not None and not isinstance(
+            description_, aas.SubmodelElement
+        ):
             description_ = self.Description(description_)
 
         # Add all passed/initialized submodel elements to a single list
@@ -11513,47 +11754,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -11637,27 +11894,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -12521,47 +12787,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -12645,27 +12927,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -13529,47 +13820,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -13653,27 +13960,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -14537,47 +14853,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -14661,27 +14993,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -15545,47 +15886,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -15669,27 +16026,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -16553,47 +16919,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -16677,27 +17059,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -17611,51 +18002,70 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language01 and not isinstance(language01, aas.SubmodelElement):
+
+                if language01 is not None and not isinstance(
+                    language01, aas.SubmodelElement
+                ):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language02 and not isinstance(language02, aas.SubmodelElement):
+
+                if language02 is not None and not isinstance(
+                    language02, aas.SubmodelElement
+                ):
                     language02 = self.Language02(language02)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -17740,27 +18150,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -18624,47 +19043,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -18748,27 +19183,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(
@@ -19632,47 +20076,63 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersionId and not isinstance(
+
+                if documentVersionId is not None and not isinstance(
                     documentVersionId, aas.SubmodelElement
                 ):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if summary and not isinstance(summary, aas.SubmodelElement):
+
+                if summary is not None and not isinstance(summary, aas.SubmodelElement):
                     summary = self.Summary(summary)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if keyWords and not isinstance(keyWords, aas.SubmodelElement):
+
+                if keyWords is not None and not isinstance(
+                    keyWords, aas.SubmodelElement
+                ):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                if setDate is not None and not isinstance(setDate, aas.SubmodelElement):
                     setDate = self.SetDate(setDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationName and not isinstance(
+
+                if organizationName is not None and not isinstance(
                     organizationName, aas.SubmodelElement
                 ):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(
@@ -19756,27 +20216,36 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentId and not isinstance(documentId, aas.SubmodelElement):
+
+            if documentId is not None and not isinstance(
+                documentId, aas.SubmodelElement
+            ):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if isPrimaryDocumentId and not isinstance(
+
+            if isPrimaryDocumentId is not None and not isinstance(
                 isPrimaryDocumentId, aas.SubmodelElement
             ):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassId and not isinstance(documentClassId, aas.SubmodelElement):
+
+            if documentClassId is not None and not isinstance(
+                documentClassId, aas.SubmodelElement
+            ):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassName and not isinstance(
+
+            if documentClassName is not None and not isinstance(
                 documentClassName, aas.SubmodelElement
             ):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if documentClassificationSystem and not isinstance(
+
+            if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
                 documentClassificationSystem = self.DocumentClassificationSystem(

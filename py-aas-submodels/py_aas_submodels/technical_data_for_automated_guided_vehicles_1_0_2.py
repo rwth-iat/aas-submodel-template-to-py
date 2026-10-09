@@ -610,7 +610,10 @@ class TechnicalDataAGV(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if imageNote and not isinstance(imageNote, aas.SubmodelElement):
+
+                    if imageNote is not None and not isinstance(
+                        imageNote, aas.SubmodelElement
+                    ):
                         imageNote = self.ImageNote(imageNote)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -907,13 +910,15 @@ class TechnicalDataAGV(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerName and not isinstance(
+
+            if manufacturerName is not None and not isinstance(
                 manufacturerName, aas.SubmodelElement
             ):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerProductDesignation and not isinstance(
+
+            if manufacturerProductDesignation is not None and not isinstance(
                 manufacturerProductDesignation, aas.SubmodelElement
             ):
                 manufacturerProductDesignation = self.ManufacturerProductDesignation(
@@ -921,7 +926,8 @@ class TechnicalDataAGV(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if productArticleNumberOfManufacturer and not isinstance(
+
+            if productArticleNumberOfManufacturer is not None and not isinstance(
                 productArticleNumberOfManufacturer, aas.SubmodelElement
             ):
                 productArticleNumberOfManufacturer = (
@@ -931,7 +937,8 @@ class TechnicalDataAGV(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerOrderCode and not isinstance(
+
+            if manufacturerOrderCode is not None and not isinstance(
                 manufacturerOrderCode, aas.SubmodelElement
             ):
                 manufacturerOrderCode = self.ManufacturerOrderCode(
@@ -2079,41 +2086,50 @@ class TechnicalDataAGV(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if agvKinematic and not isinstance(
+
+                    if agvKinematic is not None and not isinstance(
                         agvKinematic, aas.SubmodelElement
                     ):
                         agvKinematic = self.AgvKinematic(agvKinematic)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if agvClass and not isinstance(agvClass, aas.SubmodelElement):
+
+                    if agvClass is not None and not isinstance(
+                        agvClass, aas.SubmodelElement
+                    ):
                         agvClass = self.AgvClass(agvClass)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if travelDirection and not isinstance(
+
+                    if travelDirection is not None and not isinstance(
                         travelDirection, aas.SubmodelElement
                     ):
                         travelDirection = self.TravelDirection(travelDirection)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if transportPrinciple and not isinstance(
+
+                    if transportPrinciple is not None and not isinstance(
                         transportPrinciple, aas.SubmodelElement
                     ):
                         transportPrinciple = self.TransportPrinciple(transportPrinciple)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localizationType and not isinstance(
+
+                    if localizationType is not None and not isinstance(
                         localizationType, aas.SubmodelElement
                     ):
                         localizationType = self.LocalizationType(localizationType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if navigationType and not isinstance(
+
+                    if navigationType is not None and not isinstance(
                         navigationType, aas.SubmodelElement
                     ):
                         navigationType = self.NavigationType(navigationType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if specialApplications and not isinstance(
+
+                    if specialApplications is not None and not isinstance(
                         specialApplications, aas.SubmodelElement
                     ):
                         specialApplications = self.SpecialApplications(
@@ -2121,7 +2137,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if specialCapabilities and not isinstance(
+
+                    if specialCapabilities is not None and not isinstance(
                         specialCapabilities, aas.SubmodelElement
                     ):
                         specialCapabilities = self.SpecialCapabilities(
@@ -2129,13 +2146,15 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if protectionClassIP and not isinstance(
+
+                    if protectionClassIP is not None and not isinstance(
                         protectionClassIP, aas.SubmodelElement
                     ):
                         protectionClassIP = self.ProtectionClassIP(protectionClassIP)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if suitableForOutdoorUse and not isinstance(
+
+                    if suitableForOutdoorUse is not None and not isinstance(
                         suitableForOutdoorUse, aas.SubmodelElement
                     ):
                         suitableForOutdoorUse = self.SuitableForOutdoorUse(
@@ -2143,7 +2162,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if requiredEnvironmentalConditions and not isinstance(
+
+                    if requiredEnvironmentalConditions is not None and not isinstance(
                         requiredEnvironmentalConditions, aas.SubmodelElement
                     ):
                         requiredEnvironmentalConditions = (
@@ -2153,7 +2173,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if specialQualificationDemand and not isinstance(
+
+                    if specialQualificationDemand is not None and not isinstance(
                         specialQualificationDemand, aas.SubmodelElement
                     ):
                         specialQualificationDemand = self.SpecialQualificationDemand(
@@ -4652,7 +4673,8 @@ class TechnicalDataAGV(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxLateralInclinationMaxLoad and not isinstance(
+
+                    if maxLateralInclinationMaxLoad is not None and not isinstance(
                         maxLateralInclinationMaxLoad, aas.SubmodelElement
                     ):
                         maxLateralInclinationMaxLoad = (
@@ -4662,7 +4684,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxLateralInclinationWithoutLoad and not isinstance(
+
+                    if maxLateralInclinationWithoutLoad is not None and not isinstance(
                         maxLateralInclinationWithoutLoad, aas.SubmodelElement
                     ):
                         maxLateralInclinationWithoutLoad = (
@@ -4672,7 +4695,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxClimbingInclinationMaxLoad and not isinstance(
+
+                    if maxClimbingInclinationMaxLoad is not None and not isinstance(
                         maxClimbingInclinationMaxLoad, aas.SubmodelElement
                     ):
                         maxClimbingInclinationMaxLoad = (
@@ -4682,8 +4706,12 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxClimbingInclinationWithoutLoad and not isinstance(
-                        maxClimbingInclinationWithoutLoad, aas.SubmodelElement
+
+                    if (
+                        maxClimbingInclinationWithoutLoad is not None
+                        and not isinstance(
+                            maxClimbingInclinationWithoutLoad, aas.SubmodelElement
+                        )
                     ):
                         maxClimbingInclinationWithoutLoad = (
                             self.MaxClimbingInclinationWithoutLoad(
@@ -4692,7 +4720,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localizationSensorDetails and not isinstance(
+
+                    if localizationSensorDetails is not None and not isinstance(
                         localizationSensorDetails, aas.SubmodelElement
                     ):
                         localizationSensorDetails = self.LocalizationSensorDetails(
@@ -4700,7 +4729,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localizationAccuracy and not isinstance(
+
+                    if localizationAccuracy is not None and not isinstance(
                         localizationAccuracy, aas.SubmodelElement
                     ):
                         localizationAccuracy = self.LocalizationAccuracy(
@@ -4708,7 +4738,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if positioningAccuracy and not isinstance(
+
+                    if positioningAccuracy is not None and not isinstance(
                         positioningAccuracy, aas.SubmodelElement
                     ):
                         positioningAccuracy = self.PositioningAccuracy(
@@ -4716,11 +4747,15 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxLoadMass and not isinstance(maxLoadMass, aas.SubmodelElement):
+
+                    if maxLoadMass is not None and not isinstance(
+                        maxLoadMass, aas.SubmodelElement
+                    ):
                         maxLoadMass = self.MaxLoadMass(maxLoadMass)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if interfacesForAttachments and not isinstance(
+
+                    if interfacesForAttachments is not None and not isinstance(
                         interfacesForAttachments, aas.SubmodelElement
                     ):
                         interfacesForAttachments = self.InterfacesForAttachments(
@@ -4728,13 +4763,15 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if systemAvailability and not isinstance(
+
+                    if systemAvailability is not None and not isinstance(
                         systemAvailability, aas.SubmodelElement
                     ):
                         systemAvailability = self.SystemAvailability(systemAvailability)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxRunTimeAsSpecified and not isinstance(
+
+                    if maxRunTimeAsSpecified is not None and not isinstance(
                         maxRunTimeAsSpecified, aas.SubmodelElement
                     ):
                         maxRunTimeAsSpecified = self.MaxRunTimeAsSpecified(
@@ -4742,7 +4779,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxRunTimeAsOperated and not isinstance(
+
+                    if maxRunTimeAsOperated is not None and not isinstance(
                         maxRunTimeAsOperated, aas.SubmodelElement
                     ):
                         maxRunTimeAsOperated = self.MaxRunTimeAsOperated(
@@ -4750,11 +4788,15 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if speedMin and not isinstance(speedMin, aas.SubmodelElement):
+
+                    if speedMin is not None and not isinstance(
+                        speedMin, aas.SubmodelElement
+                    ):
                         speedMin = self.SpeedMin(speedMin)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if speedMaxEmptyAsSpecified and not isinstance(
+
+                    if speedMaxEmptyAsSpecified is not None and not isinstance(
                         speedMaxEmptyAsSpecified, aas.SubmodelElement
                     ):
                         speedMaxEmptyAsSpecified = self.SpeedMaxEmptyAsSpecified(
@@ -4762,7 +4804,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if speedMaxEmptyAsOperated and not isinstance(
+
+                    if speedMaxEmptyAsOperated is not None and not isinstance(
                         speedMaxEmptyAsOperated, aas.SubmodelElement
                     ):
                         speedMaxEmptyAsOperated = self.SpeedMaxEmptyAsOperated(
@@ -4770,7 +4813,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if speedMaxWithMaxLoadAsSpecified and not isinstance(
+
+                    if speedMaxWithMaxLoadAsSpecified is not None and not isinstance(
                         speedMaxWithMaxLoadAsSpecified, aas.SubmodelElement
                     ):
                         speedMaxWithMaxLoadAsSpecified = (
@@ -4780,7 +4824,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if speedMaxWithMaxLoadAsOperated and not isinstance(
+
+                    if speedMaxWithMaxLoadAsOperated is not None and not isinstance(
                         speedMaxWithMaxLoadAsOperated, aas.SubmodelElement
                     ):
                         speedMaxWithMaxLoadAsOperated = (
@@ -4790,47 +4835,57 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if accelerationMax and not isinstance(
+
+                    if accelerationMax is not None and not isinstance(
                         accelerationMax, aas.SubmodelElement
                     ):
                         accelerationMax = self.AccelerationMax(accelerationMax)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if decelerationMax and not isinstance(
+
+                    if decelerationMax is not None and not isinstance(
                         decelerationMax, aas.SubmodelElement
                     ):
                         decelerationMax = self.DecelerationMax(decelerationMax)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if vehicleHeightMax and not isinstance(
+
+                    if vehicleHeightMax is not None and not isinstance(
                         vehicleHeightMax, aas.SubmodelElement
                     ):
                         vehicleHeightMax = self.VehicleHeightMax(vehicleHeightMax)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if vehicleWidth and not isinstance(
+
+                    if vehicleWidth is not None and not isinstance(
                         vehicleWidth, aas.SubmodelElement
                     ):
                         vehicleWidth = self.VehicleWidth(vehicleWidth)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if vehicleLength and not isinstance(
+
+                    if vehicleLength is not None and not isinstance(
                         vehicleLength, aas.SubmodelElement
                     ):
                         vehicleLength = self.VehicleLength(vehicleLength)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if vehicleWeight and not isinstance(
+
+                    if vehicleWeight is not None and not isinstance(
                         vehicleWeight, aas.SubmodelElement
                     ):
                         vehicleWeight = self.VehicleWeight(vehicleWeight)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if emissions and not isinstance(emissions, aas.SubmodelElement):
+
+                    if emissions is not None and not isinstance(
+                        emissions, aas.SubmodelElement
+                    ):
                         emissions = self.Emissions(emissions)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mapProcessingInformation and not isinstance(
+
+                    if mapProcessingInformation is not None and not isinstance(
                         mapProcessingInformation, aas.SubmodelElement
                     ):
                         mapProcessingInformation = self.MapProcessingInformation(
@@ -4838,7 +4893,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if manualControllerInformation and not isinstance(
+
+                    if manualControllerInformation is not None and not isinstance(
                         manualControllerInformation, aas.SubmodelElement
                     ):
                         manualControllerInformation = self.ManualControllerInformation(
@@ -4846,7 +4902,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if digitalAnalogInterfaces and not isinstance(
+
+                    if digitalAnalogInterfaces is not None and not isinstance(
                         digitalAnalogInterfaces, aas.SubmodelElement
                     ):
                         digitalAnalogInterfaces = self.DigitalAnalogInterfaces(
@@ -6301,7 +6358,8 @@ class TechnicalDataAGV(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if chargingDeviceRequirements and not isinstance(
+
+                        if chargingDeviceRequirements is not None and not isinstance(
                             chargingDeviceRequirements, aas.SubmodelElement
                         ):
                             chargingDeviceRequirements = (
@@ -6311,7 +6369,8 @@ class TechnicalDataAGV(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if batteryInformation and not isinstance(
+
+                        if batteryInformation is not None and not isinstance(
                             batteryInformation, aas.SubmodelElement
                         ):
                             batteryInformation = self.BatteryInformation(
@@ -6319,7 +6378,8 @@ class TechnicalDataAGV(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if chargingTimeAsSpecified and not isinstance(
+
+                        if chargingTimeAsSpecified is not None and not isinstance(
                             chargingTimeAsSpecified, aas.SubmodelElement
                         ):
                             chargingTimeAsSpecified = self.ChargingTimeAsSpecified(
@@ -6327,7 +6387,8 @@ class TechnicalDataAGV(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if chargingTimeAsOperated and not isinstance(
+
+                        if chargingTimeAsOperated is not None and not isinstance(
                             chargingTimeAsOperated, aas.SubmodelElement
                         ):
                             chargingTimeAsOperated = self.ChargingTimeAsOperated(
@@ -6335,7 +6396,8 @@ class TechnicalDataAGV(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if remainingChargeCycles and not isinstance(
+
+                        if remainingChargeCycles is not None and not isinstance(
                             remainingChargeCycles, aas.SubmodelElement
                         ):
                             remainingChargeCycles = self.RemainingChargeCycles(
@@ -6516,25 +6578,29 @@ class TechnicalDataAGV(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if energySource and not isinstance(
+
+                    if energySource is not None and not isinstance(
                         energySource, aas.SubmodelElement
                     ):
                         energySource = self.EnergySource(energySource)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if energyAbsorption and not isinstance(
+
+                    if energyAbsorption is not None and not isinstance(
                         energyAbsorption, aas.SubmodelElement
                     ):
                         energyAbsorption = self.EnergyAbsorption(energyAbsorption)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if energyStorage and not isinstance(
+
+                    if energyStorage is not None and not isinstance(
                         energyStorage, aas.SubmodelElement
                     ):
                         energyStorage = self.EnergyStorage(energyStorage)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if powerTransmissionToExternal and not isinstance(
+
+                    if powerTransmissionToExternal is not None and not isinstance(
                         powerTransmissionToExternal, aas.SubmodelElement
                     ):
                         powerTransmissionToExternal = self.PowerTransmissionToExternal(
@@ -7037,7 +7103,8 @@ class TechnicalDataAGV(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if communicationProtocol and not isinstance(
+
+                    if communicationProtocol is not None and not isinstance(
                         communicationProtocol, aas.SubmodelElement
                     ):
                         communicationProtocol = self.CommunicationProtocol(
@@ -7045,7 +7112,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if communicationNetwork and not isinstance(
+
+                    if communicationNetwork is not None and not isinstance(
                         communicationNetwork, aas.SubmodelElement
                     ):
                         communicationNetwork = self.CommunicationNetwork(
@@ -7053,7 +7121,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if vDA5050InterfaceDescription and not isinstance(
+
+                    if vDA5050InterfaceDescription is not None and not isinstance(
                         vDA5050InterfaceDescription, aas.SubmodelElement
                     ):
                         vDA5050InterfaceDescription = self.VDA5050InterfaceDescription(
@@ -7061,7 +7130,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if automationInterface and not isinstance(
+
+                    if automationInterface is not None and not isinstance(
                         automationInterface, aas.SubmodelElement
                     ):
                         automationInterface = self.AutomationInterface(
@@ -7069,7 +7139,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if controlSystemInformation and not isinstance(
+
+                    if controlSystemInformation is not None and not isinstance(
                         controlSystemInformation, aas.SubmodelElement
                     ):
                         controlSystemInformation = self.ControlSystemInformation(
@@ -7491,7 +7562,8 @@ class TechnicalDataAGV(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if conformityToSafetyStandards and not isinstance(
+
+                    if conformityToSafetyStandards is not None and not isinstance(
                         conformityToSafetyStandards, aas.SubmodelElement
                     ):
                         conformityToSafetyStandards = self.ConformityToSafetyStandards(
@@ -7499,7 +7571,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if manualControlInformation and not isinstance(
+
+                    if manualControlInformation is not None and not isinstance(
                         manualControlInformation, aas.SubmodelElement
                     ):
                         manualControlInformation = self.ManualControlInformation(
@@ -7507,7 +7580,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if safetySensorTechnology and not isinstance(
+
+                    if safetySensorTechnology is not None and not isinstance(
                         safetySensorTechnology, aas.SubmodelElement
                     ):
                         safetySensorTechnology = self.SafetySensorTechnology(
@@ -7515,7 +7589,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if safetyMechanics and not isinstance(
+
+                    if safetyMechanics is not None and not isinstance(
                         safetyMechanics, aas.SubmodelElement
                     ):
                         safetyMechanics = self.SafetyMechanics(safetyMechanics)
@@ -8370,13 +8445,15 @@ class TechnicalDataAGV(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if optionName and not isinstance(
+
+                            if optionName is not None and not isinstance(
                                 optionName, aas.SubmodelElement
                             ):
                                 optionName = self.OptionName(optionName)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if optionValue and not isinstance(
+
+                            if optionValue is not None and not isinstance(
                                 optionValue, aas.SubmodelElement
                             ):
                                 optionValue = self.OptionValue(optionValue)
@@ -8660,7 +8737,8 @@ class TechnicalDataAGV(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if currentWorkingSetupName and not isinstance(
+
+                    if currentWorkingSetupName is not None and not isinstance(
                         currentWorkingSetupName, aas.SubmodelElement
                     ):
                         currentWorkingSetupName = self.CurrentWorkingSetupName(
@@ -8668,17 +8746,22 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if activeLoading and not isinstance(
+
+                    if activeLoading is not None and not isinstance(
                         activeLoading, aas.SubmodelElement
                     ):
                         activeLoading = self.ActiveLoading(activeLoading)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if loadingType and not isinstance(loadingType, aas.SubmodelElement):
+
+                    if loadingType is not None and not isinstance(
+                        loadingType, aas.SubmodelElement
+                    ):
                         loadingType = self.LoadingType(loadingType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if loadingRequirements and not isinstance(
+
+                    if loadingRequirements is not None and not isinstance(
                         loadingRequirements, aas.SubmodelElement
                     ):
                         loadingRequirements = self.LoadingRequirements(
@@ -8686,7 +8769,8 @@ class TechnicalDataAGV(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if currentAttachments and not isinstance(
+
+                    if currentAttachments is not None and not isinstance(
                         currentAttachments, aas.SubmodelElement
                     ):
                         currentAttachments = self.CurrentAttachments(currentAttachments)

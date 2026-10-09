@@ -153,7 +153,8 @@ class CarbonFootprint(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfcalculationmethods_items and not isinstance(
+
+                    if pcfcalculationmethods_items is not None and not isinstance(
                         pcfcalculationmethods_items, aas.SubmodelElement
                     ):
                         pcfcalculationmethods_items = self.Pcfcalculationmethods_item(
@@ -617,7 +618,8 @@ class CarbonFootprint(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if lifecyclephases_items and not isinstance(
+
+                    if lifecyclephases_items is not None and not isinstance(
                         lifecyclephases_items, aas.SubmodelElement
                     ):
                         lifecyclephases_items = self.Lifecyclephases_item(
@@ -1101,7 +1103,8 @@ class CarbonFootprint(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcfCalculationMethods and not isinstance(
+
+                if pcfCalculationMethods is not None and not isinstance(
                     pcfCalculationMethods, aas.SubmodelElement
                 ):
                     pcfCalculationMethods = self.PcfCalculationMethods(
@@ -1109,11 +1112,15 @@ class CarbonFootprint(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcfCO2eq and not isinstance(pcfCO2eq, aas.SubmodelElement):
+
+                if pcfCO2eq is not None and not isinstance(
+                    pcfCO2eq, aas.SubmodelElement
+                ):
                     pcfCO2eq = self.PcfCO2eq(pcfCO2eq)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceImpactUnitForCalculation and not isinstance(
+
+                if referenceImpactUnitForCalculation is not None and not isinstance(
                     referenceImpactUnitForCalculation, aas.SubmodelElement
                 ):
                     referenceImpactUnitForCalculation = (
@@ -1123,7 +1130,8 @@ class CarbonFootprint(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if quantityOfMeasureForCalculation and not isinstance(
+
+                if quantityOfMeasureForCalculation is not None and not isinstance(
                     quantityOfMeasureForCalculation, aas.SubmodelElement
                 ):
                     quantityOfMeasureForCalculation = (
@@ -1133,19 +1141,22 @@ class CarbonFootprint(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lifeCyclePhases and not isinstance(
+
+                if lifeCyclePhases is not None and not isinstance(
                     lifeCyclePhases, aas.SubmodelElement
                 ):
                     lifeCyclePhases = self.LifeCyclePhases(lifeCyclePhases)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if publicationDate and not isinstance(
+
+                if publicationDate is not None and not isinstance(
                     publicationDate, aas.SubmodelElement
                 ):
                     publicationDate = self.PublicationDate(publicationDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if expirationDate and not isinstance(
+
+                if expirationDate is not None and not isinstance(
                     expirationDate, aas.SubmodelElement
                 ):
                     expirationDate = self.ExpirationDate(expirationDate)
@@ -1503,7 +1514,8 @@ class CarbonFootprint(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfcalculationmethods_items and not isinstance(
+
+                    if pcfcalculationmethods_items is not None and not isinstance(
                         pcfcalculationmethods_items, aas.SubmodelElement
                     ):
                         pcfcalculationmethods_items = self.Pcfcalculationmethods_item(
@@ -1962,17 +1974,22 @@ class CarbonFootprint(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfRuleOperator and not isinstance(
+
+                    if pcfRuleOperator is not None and not isinstance(
                         pcfRuleOperator, aas.SubmodelElement
                     ):
                         pcfRuleOperator = self.PcfRuleOperator(pcfRuleOperator)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfRuleName and not isinstance(pcfRuleName, aas.SubmodelElement):
+
+                    if pcfRuleName is not None and not isinstance(
+                        pcfRuleName, aas.SubmodelElement
+                    ):
                         pcfRuleName = self.PcfRuleName(pcfRuleName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfRuleVersion and not isinstance(
+
+                    if pcfRuleVersion is not None and not isinstance(
                         pcfRuleVersion, aas.SubmodelElement
                     ):
                         pcfRuleVersion = self.PcfRuleVersion(pcfRuleVersion)
@@ -2209,13 +2226,17 @@ class CarbonFootprint(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfApiEndpoint and not isinstance(
+
+                    if pcfApiEndpoint is not None and not isinstance(
                         pcfApiEndpoint, aas.SubmodelElement
                     ):
                         pcfApiEndpoint = self.PcfApiEndpoint(pcfApiEndpoint)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfApiQuery and not isinstance(pcfApiQuery, aas.SubmodelElement):
+
+                    if pcfApiQuery is not None and not isinstance(
+                        pcfApiQuery, aas.SubmodelElement
+                    ):
                         pcfApiQuery = self.PcfApiQuery(pcfApiQuery)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2445,7 +2466,8 @@ class CarbonFootprint(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcfCalculationMethods and not isinstance(
+
+                if pcfCalculationMethods is not None and not isinstance(
                     pcfCalculationMethods, aas.SubmodelElement
                 ):
                     pcfCalculationMethods = self.PcfCalculationMethods(

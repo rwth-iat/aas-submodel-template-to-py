@@ -401,7 +401,8 @@ class PAMSpecificationSheet(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if pAMSpecificationSheetIdentification and not isinstance(
+
+            if pAMSpecificationSheetIdentification is not None and not isinstance(
                 pAMSpecificationSheetIdentification, aas.SubmodelElement
             ):
                 pAMSpecificationSheetIdentification = (
@@ -411,11 +412,15 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if assetTypeClass and not isinstance(assetTypeClass, aas.SubmodelElement):
+
+            if assetTypeClass is not None and not isinstance(
+                assetTypeClass, aas.SubmodelElement
+            ):
                 assetTypeClass = self.AssetTypeClass(assetTypeClass)
 
             # Build a submodel element if a raw value was passed in the argument
-            if assetTypeIdentification and not isinstance(
+
+            if assetTypeIdentification is not None and not isinstance(
                 assetTypeIdentification, aas.SubmodelElement
             ):
                 assetTypeIdentification = self.AssetTypeIdentification(
@@ -2350,27 +2355,36 @@ class PAMSpecificationSheet(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if functionalLocation and not isinstance(
+
+            if functionalLocation is not None and not isinstance(
                 functionalLocation, aas.SubmodelElement
             ):
                 functionalLocation = self.FunctionalLocation(functionalLocation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if technicalLocation and not isinstance(
+
+            if technicalLocation is not None and not isinstance(
                 technicalLocation, aas.SubmodelElement
             ):
                 technicalLocation = self.TechnicalLocation(technicalLocation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if description_ and not isinstance(description_, aas.SubmodelElement):
+
+            if description_ is not None and not isinstance(
+                description_, aas.SubmodelElement
+            ):
                 description_ = self.Description(description_)
 
             # Build a submodel element if a raw value was passed in the argument
-            if assetSubtype and not isinstance(assetSubtype, aas.SubmodelElement):
+
+            if assetSubtype is not None and not isinstance(
+                assetSubtype, aas.SubmodelElement
+            ):
                 assetSubtype = self.AssetSubtype(assetSubtype)
 
             # Build a submodel element if a raw value was passed in the argument
-            if specificationSheetReference and not isinstance(
+
+            if specificationSheetReference is not None and not isinstance(
                 specificationSheetReference, aas.SubmodelElement
             ):
                 specificationSheetReference = self.SpecificationSheetReference(
@@ -2378,29 +2392,43 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if safetyMeasure and not isinstance(safetyMeasure, aas.SubmodelElement):
+
+            if safetyMeasure is not None and not isinstance(
+                safetyMeasure, aas.SubmodelElement
+            ):
                 safetyMeasure = self.SafetyMeasure(safetyMeasure)
 
             # Build a submodel element if a raw value was passed in the argument
-            if redundantAssets and not isinstance(redundantAssets, aas.SubmodelElement):
+
+            if redundantAssets is not None and not isinstance(
+                redundantAssets, aas.SubmodelElement
+            ):
                 redundantAssets = self.RedundantAssets(redundantAssets)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sILCategory and not isinstance(sILCategory, aas.SubmodelElement):
+
+            if sILCategory is not None and not isinstance(
+                sILCategory, aas.SubmodelElement
+            ):
                 sILCategory = self.SILCategory(sILCategory)
 
             # Build a submodel element if a raw value was passed in the argument
-            if failureProbability and not isinstance(
+
+            if failureProbability is not None and not isinstance(
                 failureProbability, aas.SubmodelElement
             ):
                 failureProbability = self.FailureProbability(failureProbability)
 
             # Build a submodel element if a raw value was passed in the argument
-            if failureSeverity and not isinstance(failureSeverity, aas.SubmodelElement):
+
+            if failureSeverity is not None and not isinstance(
+                failureSeverity, aas.SubmodelElement
+            ):
                 failureSeverity = self.FailureSeverity(failureSeverity)
 
             # Build a submodel element if a raw value was passed in the argument
-            if criticalityCategory and not isinstance(
+
+            if criticalityCategory is not None and not isinstance(
                 criticalityCategory, aas.SubmodelElement
             ):
                 criticalityCategory = self.CriticalityCategory(criticalityCategory)
@@ -2428,7 +2456,10 @@ class PAMSpecificationSheet(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if generalTask and not isinstance(generalTask, aas.SubmodelElement):
+
+            if generalTask is not None and not isinstance(
+                generalTask, aas.SubmodelElement
+            ):
                 generalTask = self.GeneralTask(generalTask)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3381,33 +3412,43 @@ class PAMSpecificationSheet(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusConditionName and not isinstance(
+
+                if statusConditionName is not None and not isinstance(
                     statusConditionName, aas.SubmodelElement
                 ):
                     statusConditionName = self.StatusConditionName(statusConditionName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if monitoringRequired and not isinstance(
+
+                if monitoringRequired is not None and not isinstance(
                     monitoringRequired, aas.SubmodelElement
                 ):
                     monitoringRequired = self.MonitoringRequired(monitoringRequired)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if methodAbbreviation and not isinstance(
+
+                if methodAbbreviation is not None and not isinstance(
                     methodAbbreviation, aas.SubmodelElement
                 ):
                     methodAbbreviation = self.MethodAbbreviation(methodAbbreviation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nE107Status and not isinstance(nE107Status, aas.SubmodelElement):
+
+                if nE107Status is not None and not isinstance(
+                    nE107Status, aas.SubmodelElement
+                ):
                     nE107Status = self.NE107Status(nE107Status)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nE129AlarmCategory and not isinstance(
+
+                if nE129AlarmCategory is not None and not isinstance(
                     nE129AlarmCategory, aas.SubmodelElement
                 ):
                     nE129AlarmCategory = self.NE129AlarmCategory(nE129AlarmCategory)
@@ -4775,33 +4816,43 @@ class PAMSpecificationSheet(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusConditionName and not isinstance(
+
+                if statusConditionName is not None and not isinstance(
                     statusConditionName, aas.SubmodelElement
                 ):
                     statusConditionName = self.StatusConditionName(statusConditionName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if monitoringRequired and not isinstance(
+
+                if monitoringRequired is not None and not isinstance(
                     monitoringRequired, aas.SubmodelElement
                 ):
                     monitoringRequired = self.MonitoringRequired(monitoringRequired)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if methodAbbreviation and not isinstance(
+
+                if methodAbbreviation is not None and not isinstance(
                     methodAbbreviation, aas.SubmodelElement
                 ):
                     methodAbbreviation = self.MethodAbbreviation(methodAbbreviation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nE107Status and not isinstance(nE107Status, aas.SubmodelElement):
+
+                if nE107Status is not None and not isinstance(
+                    nE107Status, aas.SubmodelElement
+                ):
                     nE107Status = self.NE107Status(nE107Status)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nE129AlarmCategory and not isinstance(
+
+                if nE129AlarmCategory is not None and not isinstance(
                     nE129AlarmCategory, aas.SubmodelElement
                 ):
                     nE129AlarmCategory = self.NE129AlarmCategory(nE129AlarmCategory)
@@ -5213,29 +5264,36 @@ class PAMSpecificationSheet(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if subSystemName and not isinstance(subSystemName, aas.SubmodelElement):
+
+            if subSystemName is not None and not isinstance(
+                subSystemName, aas.SubmodelElement
+            ):
                 subSystemName = self.SubSystemName(subSystemName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if functionalLocation and not isinstance(
+
+            if functionalLocation is not None and not isinstance(
                 functionalLocation, aas.SubmodelElement
             ):
                 functionalLocation = self.FunctionalLocation(functionalLocation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if technicalLocation and not isinstance(
+
+            if technicalLocation is not None and not isinstance(
                 technicalLocation, aas.SubmodelElement
             ):
                 technicalLocation = self.TechnicalLocation(technicalLocation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if subSystemReference and not isinstance(
+
+            if subSystemReference is not None and not isinstance(
                 subSystemReference, aas.SubmodelElement
             ):
                 subSystemReference = self.SubSystemReference(subSystemReference)
 
             # Build a submodel element if a raw value was passed in the argument
-            if pAMSpecificationSheetIdentification and not isinstance(
+
+            if pAMSpecificationSheetIdentification is not None and not isinstance(
                 pAMSpecificationSheetIdentification, aas.SubmodelElement
             ):
                 pAMSpecificationSheetIdentification = (
@@ -5245,7 +5303,8 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if pAMSpecificationSheetReference and not isinstance(
+
+            if pAMSpecificationSheetReference is not None and not isinstance(
                 pAMSpecificationSheetReference, aas.SubmodelElement
             ):
                 pAMSpecificationSheetReference = self.PAMSpecificationSheetReference(
@@ -5792,15 +5851,22 @@ class PAMSpecificationSheet(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if parameterName and not isinstance(parameterName, aas.SubmodelElement):
+
+                if parameterName is not None and not isinstance(
+                    parameterName, aas.SubmodelElement
+                ):
                     parameterName = self.ParameterName(parameterName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if staticParameterValue and not isinstance(
+
+                if staticParameterValue is not None and not isinstance(
                     staticParameterValue, aas.SubmodelElement
                 ):
                     staticParameterValue = self.StaticParameterValue(
@@ -5808,7 +5874,10 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if physicalUnit and not isinstance(physicalUnit, aas.SubmodelElement):
+
+                if physicalUnit is not None and not isinstance(
+                    physicalUnit, aas.SubmodelElement
+                ):
                     physicalUnit = self.PhysicalUnit(physicalUnit)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6675,29 +6744,45 @@ class PAMSpecificationSheet(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if signalName and not isinstance(signalName, aas.SubmodelElement):
+
+                if signalName is not None and not isinstance(
+                    signalName, aas.SubmodelElement
+                ):
                     signalName = self.SignalName(signalName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if valueRange and not isinstance(valueRange, aas.SubmodelElement):
+
+                if valueRange is not None and not isinstance(
+                    valueRange, aas.SubmodelElement
+                ):
                     valueRange = self.ValueRange(valueRange)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if physicalUnit and not isinstance(physicalUnit, aas.SubmodelElement):
+
+                if physicalUnit is not None and not isinstance(
+                    physicalUnit, aas.SubmodelElement
+                ):
                     physicalUnit = self.PhysicalUnit(physicalUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if recordingRequired and not isinstance(
+
+                if recordingRequired is not None and not isinstance(
                     recordingRequired, aas.SubmodelElement
                 ):
                     recordingRequired = self.RecordingRequired(recordingRequired)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if signalType and not isinstance(signalType, aas.SubmodelElement):
+
+                if signalType is not None and not isinstance(
+                    signalType, aas.SubmodelElement
+                ):
                     signalType = self.SignalType(signalType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7835,39 +7920,55 @@ class PAMSpecificationSheet(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if name and not isinstance(name, aas.SubmodelElement):
+
+                if name is not None and not isinstance(name, aas.SubmodelElement):
                     name = self.Name(name)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if valueRange and not isinstance(valueRange, aas.SubmodelElement):
+
+                if valueRange is not None and not isinstance(
+                    valueRange, aas.SubmodelElement
+                ):
                     valueRange = self.ValueRange(valueRange)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if physicalUnit and not isinstance(physicalUnit, aas.SubmodelElement):
+
+                if physicalUnit is not None and not isinstance(
+                    physicalUnit, aas.SubmodelElement
+                ):
                     physicalUnit = self.PhysicalUnit(physicalUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if required and not isinstance(required, aas.SubmodelElement):
+
+                if required is not None and not isinstance(
+                    required, aas.SubmodelElement
+                ):
                     required = self.Required(required)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if inputAvailable and not isinstance(
+
+                if inputAvailable is not None and not isinstance(
                     inputAvailable, aas.SubmodelElement
                 ):
                     inputAvailable = self.InputAvailable(inputAvailable)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if functionalLocation and not isinstance(
+
+                if functionalLocation is not None and not isinstance(
                     functionalLocation, aas.SubmodelElement
                 ):
                     functionalLocation = self.FunctionalLocation(functionalLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if recordingRequired and not isinstance(
+
+                if recordingRequired is not None and not isinstance(
                     recordingRequired, aas.SubmodelElement
                 ):
                     recordingRequired = self.RecordingRequired(recordingRequired)
@@ -8731,29 +8832,37 @@ class PAMSpecificationSheet(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if date and not isinstance(date, aas.SubmodelElement):
+
+                if date is not None and not isinstance(date, aas.SubmodelElement):
                     date = self.Date(date)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if author and not isinstance(author, aas.SubmodelElement):
+
+                if author is not None and not isinstance(author, aas.SubmodelElement):
                     author = self.Author(author)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if checked and not isinstance(checked, aas.SubmodelElement):
+
+                if checked is not None and not isinstance(checked, aas.SubmodelElement):
                     checked = self.Checked(checked)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if released and not isinstance(released, aas.SubmodelElement):
+
+                if released is not None and not isinstance(
+                    released, aas.SubmodelElement
+                ):
                     released = self.Released(released)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentVersion and not isinstance(
+
+                if documentVersion is not None and not isinstance(
                     documentVersion, aas.SubmodelElement
                 ):
                     documentVersion = self.DocumentVersion(documentVersion)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if company and not isinstance(company, aas.SubmodelElement):
+
+                if company is not None and not isinstance(company, aas.SubmodelElement):
                     company = self.Company(company)
 
                 # Add all passed/initialized submodel elements to a single list

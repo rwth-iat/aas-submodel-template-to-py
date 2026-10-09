@@ -44,7 +44,8 @@ if {{ arg_for_se }}:
     {{ arg_for_se }}=[i if isinstance(i, aas.SubmodelElement) else {{ builder.code }} for i in {{ arg_for_se }}]
     {% elif builder %}
 # Build a submodel element if a raw value was passed in the argument
-if {{ arg_for_se }} and not isinstance({{ arg_for_se }}, aas.SubmodelElement):
+{# Compare with None, as falsy raw values (0, False, "") must be built as well #}
+if {{ arg_for_se }} is not None and not isinstance({{ arg_for_se }}, aas.SubmodelElement):
     {{ arg_for_se }}={{ builder.code }}
     {% endif %}
 {% endfor %}

@@ -441,19 +441,22 @@ class TimeSeries(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sampleAccelerationX and not isinstance(
+
+                if sampleAccelerationX is not None and not isinstance(
                     sampleAccelerationX, aas.SubmodelElement
                 ):
                     sampleAccelerationX = self.SampleAccelerationX(sampleAccelerationX)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sampleAccelerationY and not isinstance(
+
+                if sampleAccelerationY is not None and not isinstance(
                     sampleAccelerationY, aas.SubmodelElement
                 ):
                     sampleAccelerationY = self.SampleAccelerationY(sampleAccelerationY)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sampleAccelerationZ and not isinstance(
+
+                if sampleAccelerationZ is not None and not isinstance(
                     sampleAccelerationZ, aas.SubmodelElement
                 ):
                     sampleAccelerationZ = self.SampleAccelerationZ(sampleAccelerationZ)
@@ -535,11 +538,15 @@ class TimeSeries(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if name and not isinstance(name, aas.SubmodelElement):
+
+            if name is not None and not isinstance(name, aas.SubmodelElement):
                 name = self.Name(name)
 
             # Build a submodel element if a raw value was passed in the argument
-            if description_ and not isinstance(description_, aas.SubmodelElement):
+
+            if description_ is not None and not isinstance(
+                description_, aas.SubmodelElement
+            ):
                 description_ = self.Description(description_)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1327,45 +1334,67 @@ class TimeSeries(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if name and not isinstance(name, aas.SubmodelElement):
+
+                if name is not None and not isinstance(name, aas.SubmodelElement):
                     name = self.Name(name)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if recordCount and not isinstance(recordCount, aas.SubmodelElement):
+
+                if recordCount is not None and not isinstance(
+                    recordCount, aas.SubmodelElement
+                ):
                     recordCount = self.RecordCount(recordCount)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if startTime and not isinstance(startTime, aas.SubmodelElement):
+
+                if startTime is not None and not isinstance(
+                    startTime, aas.SubmodelElement
+                ):
                     startTime = self.StartTime(startTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if endTime and not isinstance(endTime, aas.SubmodelElement):
+
+                if endTime is not None and not isinstance(endTime, aas.SubmodelElement):
                     endTime = self.EndTime(endTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duration and not isinstance(duration, aas.SubmodelElement):
+
+                if duration is not None and not isinstance(
+                    duration, aas.SubmodelElement
+                ):
                     duration = self.Duration(duration)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if samplingInterval and not isinstance(
+
+                if samplingInterval is not None and not isinstance(
                     samplingInterval, aas.SubmodelElement
                 ):
                     samplingInterval = self.SamplingInterval(samplingInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if samplingRate and not isinstance(samplingRate, aas.SubmodelElement):
+
+                if samplingRate is not None and not isinstance(
+                    samplingRate, aas.SubmodelElement
+                ):
                     samplingRate = self.SamplingRate(samplingRate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if state and not isinstance(state, aas.SubmodelElement):
+
+                if state is not None and not isinstance(state, aas.SubmodelElement):
                     state = self.State(state)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+                if lastUpdate is not None and not isinstance(
+                    lastUpdate, aas.SubmodelElement
+                ):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2168,53 +2197,79 @@ class TimeSeries(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if name and not isinstance(name, aas.SubmodelElement):
+
+                if name is not None and not isinstance(name, aas.SubmodelElement):
                     name = self.Name(name)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if recordCount and not isinstance(recordCount, aas.SubmodelElement):
+
+                if recordCount is not None and not isinstance(
+                    recordCount, aas.SubmodelElement
+                ):
                     recordCount = self.RecordCount(recordCount)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if startTime and not isinstance(startTime, aas.SubmodelElement):
+
+                if startTime is not None and not isinstance(
+                    startTime, aas.SubmodelElement
+                ):
                     startTime = self.StartTime(startTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if endTime and not isinstance(endTime, aas.SubmodelElement):
+
+                if endTime is not None and not isinstance(endTime, aas.SubmodelElement):
                     endTime = self.EndTime(endTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duration and not isinstance(duration, aas.SubmodelElement):
+
+                if duration is not None and not isinstance(
+                    duration, aas.SubmodelElement
+                ):
                     duration = self.Duration(duration)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if samplingInterval and not isinstance(
+
+                if samplingInterval is not None and not isinstance(
                     samplingInterval, aas.SubmodelElement
                 ):
                     samplingInterval = self.SamplingInterval(samplingInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if samplingRate and not isinstance(samplingRate, aas.SubmodelElement):
+
+                if samplingRate is not None and not isinstance(
+                    samplingRate, aas.SubmodelElement
+                ):
                     samplingRate = self.SamplingRate(samplingRate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if state and not isinstance(state, aas.SubmodelElement):
+
+                if state is not None and not isinstance(state, aas.SubmodelElement):
                     state = self.State(state)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+                if lastUpdate is not None and not isinstance(
+                    lastUpdate, aas.SubmodelElement
+                ):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if endpoint and not isinstance(endpoint, aas.SubmodelElement):
+
+                if endpoint is not None and not isinstance(
+                    endpoint, aas.SubmodelElement
+                ):
                     endpoint = self.Endpoint(endpoint)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if query and not isinstance(query, aas.SubmodelElement):
+
+                if query is not None and not isinstance(query, aas.SubmodelElement):
                     query = self.Query(query)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3181,7 +3236,8 @@ class TimeSeries(aas.Submodel):
                             ]
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sampleAccelerationX and not isinstance(
+
+                        if sampleAccelerationX is not None and not isinstance(
                             sampleAccelerationX, aas.SubmodelElement
                         ):
                             sampleAccelerationX = self.SampleAccelerationX(
@@ -3189,7 +3245,8 @@ class TimeSeries(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sampleAccelerationY and not isinstance(
+
+                        if sampleAccelerationY is not None and not isinstance(
                             sampleAccelerationY, aas.SubmodelElement
                         ):
                             sampleAccelerationY = self.SampleAccelerationY(
@@ -3197,7 +3254,8 @@ class TimeSeries(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sampleAccelerationZ and not isinstance(
+
+                        if sampleAccelerationZ is not None and not isinstance(
                             sampleAccelerationZ, aas.SubmodelElement
                         ):
                             sampleAccelerationZ = self.SampleAccelerationZ(
@@ -3358,45 +3416,67 @@ class TimeSeries(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if name and not isinstance(name, aas.SubmodelElement):
+
+                if name is not None and not isinstance(name, aas.SubmodelElement):
                     name = self.Name(name)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if recordCount and not isinstance(recordCount, aas.SubmodelElement):
+
+                if recordCount is not None and not isinstance(
+                    recordCount, aas.SubmodelElement
+                ):
                     recordCount = self.RecordCount(recordCount)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if startTime and not isinstance(startTime, aas.SubmodelElement):
+
+                if startTime is not None and not isinstance(
+                    startTime, aas.SubmodelElement
+                ):
                     startTime = self.StartTime(startTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if endTime and not isinstance(endTime, aas.SubmodelElement):
+
+                if endTime is not None and not isinstance(endTime, aas.SubmodelElement):
                     endTime = self.EndTime(endTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duration and not isinstance(duration, aas.SubmodelElement):
+
+                if duration is not None and not isinstance(
+                    duration, aas.SubmodelElement
+                ):
                     duration = self.Duration(duration)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if samplingInterval and not isinstance(
+
+                if samplingInterval is not None and not isinstance(
                     samplingInterval, aas.SubmodelElement
                 ):
                     samplingInterval = self.SamplingInterval(samplingInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if samplingRate and not isinstance(samplingRate, aas.SubmodelElement):
+
+                if samplingRate is not None and not isinstance(
+                    samplingRate, aas.SubmodelElement
+                ):
                     samplingRate = self.SamplingRate(samplingRate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if state and not isinstance(state, aas.SubmodelElement):
+
+                if state is not None and not isinstance(state, aas.SubmodelElement):
                     state = self.State(state)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+                if lastUpdate is not None and not isinstance(
+                    lastUpdate, aas.SubmodelElement
+                ):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Add all passed/initialized submodel elements to a single list

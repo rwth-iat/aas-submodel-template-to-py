@@ -842,13 +842,15 @@ class UAServerDataSheet(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if allowAnonymousUser and not isinstance(
+
+            if allowAnonymousUser is not None and not isinstance(
                 allowAnonymousUser, aas.SubmodelElement
             ):
                 allowAnonymousUser = self.AllowAnonymousUser(allowAnonymousUser)
 
             # Build a submodel element if a raw value was passed in the argument
-            if supportSecurityModeNone and not isinstance(
+
+            if supportSecurityModeNone is not None and not isinstance(
                 supportSecurityModeNone, aas.SubmodelElement
             ):
                 supportSecurityModeNone = self.SupportSecurityModeNone(
@@ -856,7 +858,8 @@ class UAServerDataSheet(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if supportSecurityModeSign and not isinstance(
+
+            if supportSecurityModeSign is not None and not isinstance(
                 supportSecurityModeSign, aas.SubmodelElement
             ):
                 supportSecurityModeSign = self.SupportSecurityModeSign(
@@ -864,7 +867,8 @@ class UAServerDataSheet(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if supportSecurityModeSignEncrypt and not isinstance(
+
+            if supportSecurityModeSignEncrypt is not None and not isinstance(
                 supportSecurityModeSignEncrypt, aas.SubmodelElement
             ):
                 supportSecurityModeSignEncrypt = self.SupportSecurityModeSignEncrypt(
@@ -872,7 +876,8 @@ class UAServerDataSheet(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if supportSecurityPolicyUris and not isinstance(
+
+            if supportSecurityPolicyUris is not None and not isinstance(
                 supportSecurityPolicyUris, aas.SubmodelElement
             ):
                 supportSecurityPolicyUris = self.SupportSecurityPolicyUris(
@@ -880,7 +885,8 @@ class UAServerDataSheet(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if supportRedundancy and not isinstance(
+
+            if supportRedundancy is not None and not isinstance(
                 supportRedundancy, aas.SubmodelElement
             ):
                 supportRedundancy = self.SupportRedundancy(supportRedundancy)
@@ -1364,29 +1370,43 @@ class UAServerDataSheet(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if productUri and not isinstance(productUri, aas.SubmodelElement):
+
+            if productUri is not None and not isinstance(
+                productUri, aas.SubmodelElement
+            ):
                 productUri = self.ProductUri(productUri)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerName and not isinstance(
+
+            if manufacturerName is not None and not isinstance(
                 manufacturerName, aas.SubmodelElement
             ):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if productName and not isinstance(productName, aas.SubmodelElement):
+
+            if productName is not None and not isinstance(
+                productName, aas.SubmodelElement
+            ):
                 productName = self.ProductName(productName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if softwareVersion and not isinstance(softwareVersion, aas.SubmodelElement):
+
+            if softwareVersion is not None and not isinstance(
+                softwareVersion, aas.SubmodelElement
+            ):
                 softwareVersion = self.SoftwareVersion(softwareVersion)
 
             # Build a submodel element if a raw value was passed in the argument
-            if buildNumber and not isinstance(buildNumber, aas.SubmodelElement):
+
+            if buildNumber is not None and not isinstance(
+                buildNumber, aas.SubmodelElement
+            ):
                 buildNumber = self.BuildNumber(buildNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if buildDate and not isinstance(buildDate, aas.SubmodelElement):
+
+            if buildDate is not None and not isinstance(buildDate, aas.SubmodelElement):
                 buildDate = self.BuildDate(buildDate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2175,35 +2195,43 @@ class UAServerDataSheet(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if applicationUri and not isinstance(
+
+                    if applicationUri is not None and not isinstance(
                         applicationUri, aas.SubmodelElement
                     ):
                         applicationUri = self.ApplicationUri(applicationUri)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if productUri and not isinstance(productUri, aas.SubmodelElement):
+
+                    if productUri is not None and not isinstance(
+                        productUri, aas.SubmodelElement
+                    ):
                         productUri = self.ProductUri(productUri)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if applicationName and not isinstance(
+
+                    if applicationName is not None and not isinstance(
                         applicationName, aas.SubmodelElement
                     ):
                         applicationName = self.ApplicationName(applicationName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if applicationType and not isinstance(
+
+                    if applicationType is not None and not isinstance(
                         applicationType, aas.SubmodelElement
                     ):
                         applicationType = self.ApplicationType(applicationType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if gatewayServerUri and not isinstance(
+
+                    if gatewayServerUri is not None and not isinstance(
                         gatewayServerUri, aas.SubmodelElement
                     ):
                         gatewayServerUri = self.GatewayServerUri(gatewayServerUri)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if discoveryProfileUri and not isinstance(
+
+                    if discoveryProfileUri is not None and not isinstance(
                         discoveryProfileUri, aas.SubmodelElement
                     ):
                         discoveryProfileUri = self.DiscoveryProfileUri(
@@ -2211,7 +2239,8 @@ class UAServerDataSheet(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if discoveryUrls and not isinstance(
+
+                    if discoveryUrls is not None and not isinstance(
                         discoveryUrls, aas.SubmodelElement
                     ):
                         discoveryUrls = self.DiscoveryUrls(discoveryUrls)
@@ -2840,21 +2869,29 @@ class UAServerDataSheet(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if policyId and not isinstance(policyId, aas.SubmodelElement):
+
+                        if policyId is not None and not isinstance(
+                            policyId, aas.SubmodelElement
+                        ):
                             policyId = self.PolicyId(policyId)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if tokenType and not isinstance(tokenType, aas.SubmodelElement):
+
+                        if tokenType is not None and not isinstance(
+                            tokenType, aas.SubmodelElement
+                        ):
                             tokenType = self.TokenType(tokenType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if issuedTokenType and not isinstance(
+
+                        if issuedTokenType is not None and not isinstance(
                             issuedTokenType, aas.SubmodelElement
                         ):
                             issuedTokenType = self.IssuedTokenType(issuedTokenType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if issuerEndpointUri and not isinstance(
+
+                        if issuerEndpointUri is not None and not isinstance(
                             issuerEndpointUri, aas.SubmodelElement
                         ):
                             issuerEndpointUri = self.IssuerEndpointUri(
@@ -2862,7 +2899,8 @@ class UAServerDataSheet(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if securityPolicyUri and not isinstance(
+
+                        if securityPolicyUri is not None and not isinstance(
                             securityPolicyUri, aas.SubmodelElement
                         ):
                             securityPolicyUri = self.SecurityPolicyUri(
@@ -3242,27 +3280,38 @@ class UAServerDataSheet(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if endpointUri and not isinstance(endpointUri, aas.SubmodelElement):
+
+                if endpointUri is not None and not isinstance(
+                    endpointUri, aas.SubmodelElement
+                ):
                     endpointUri = self.EndpointUri(endpointUri)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if securityMode and not isinstance(securityMode, aas.SubmodelElement):
+
+                if securityMode is not None and not isinstance(
+                    securityMode, aas.SubmodelElement
+                ):
                     securityMode = self.SecurityMode(securityMode)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if securityPolicyUri and not isinstance(
+
+                if securityPolicyUri is not None and not isinstance(
                     securityPolicyUri, aas.SubmodelElement
                 ):
                     securityPolicyUri = self.SecurityPolicyUri(securityPolicyUri)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if transportProfileUri and not isinstance(
+
+                if transportProfileUri is not None and not isinstance(
                     transportProfileUri, aas.SubmodelElement
                 ):
                     transportProfileUri = self.TransportProfileUri(transportProfileUri)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if securityLevel and not isinstance(securityLevel, aas.SubmodelElement):
+
+                if securityLevel is not None and not isinstance(
+                    securityLevel, aas.SubmodelElement
+                ):
                     securityLevel = self.SecurityLevel(securityLevel)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3731,7 +3780,10 @@ class UAServerDataSheet(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if discoveryUrls and not isinstance(discoveryUrls, aas.SubmodelElement):
+
+        if discoveryUrls is not None and not isinstance(
+            discoveryUrls, aas.SubmodelElement
+        ):
             discoveryUrls = self.DiscoveryUrls(discoveryUrls)
 
         # Add all passed/initialized submodel elements to a single list

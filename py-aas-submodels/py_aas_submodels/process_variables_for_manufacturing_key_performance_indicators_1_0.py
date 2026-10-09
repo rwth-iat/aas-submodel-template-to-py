@@ -300,15 +300,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -637,15 +642,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -972,15 +982,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1309,15 +1324,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1646,15 +1666,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1981,15 +2006,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2316,15 +2346,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2651,15 +2686,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2986,15 +3026,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3321,15 +3366,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3656,15 +3706,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3989,15 +4044,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4322,15 +4382,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4655,15 +4720,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4988,15 +5058,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -5321,15 +5396,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -5654,15 +5734,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -5987,15 +6072,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list
@@ -6322,15 +6412,20 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if key and not isinstance(key, aas.SubmodelElement):
+
+            if key is not None and not isinstance(key, aas.SubmodelElement):
                 key = self.Key(key)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if comment and not isinstance(comment, aas.SubmodelElement):
+
+            if comment is not None and not isinstance(comment, aas.SubmodelElement):
                 comment = self.Comment(comment)
 
             # Add all passed/initialized submodel elements to a single list

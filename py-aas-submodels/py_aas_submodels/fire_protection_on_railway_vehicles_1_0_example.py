@@ -283,13 +283,15 @@ class RailwayFireProtection(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerName and not isinstance(
+
+            if manufacturerName is not None and not isinstance(
                 manufacturerName, aas.SubmodelElement
             ):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerProductDesignation and not isinstance(
+
+            if manufacturerProductDesignation is not None and not isinstance(
                 manufacturerProductDesignation, aas.SubmodelElement
             ):
                 manufacturerProductDesignation = self.ManufacturerProductDesignation(
@@ -297,7 +299,8 @@ class RailwayFireProtection(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if orderCodeOfManufacturer and not isinstance(
+
+            if orderCodeOfManufacturer is not None and not isinstance(
                 orderCodeOfManufacturer, aas.SubmodelElement
             ):
                 orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
@@ -305,7 +308,8 @@ class RailwayFireProtection(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if productArticleNumberOfManufacturer and not isinstance(
+
+            if productArticleNumberOfManufacturer is not None and not isinstance(
                 productArticleNumberOfManufacturer, aas.SubmodelElement
             ):
                 productArticleNumberOfManufacturer = (
@@ -517,7 +521,8 @@ class RailwayFireProtection(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if reportreferences_items and not isinstance(
+
+                        if reportreferences_items is not None and not isinstance(
                             reportreferences_items, aas.SubmodelElement
                         ):
                             reportreferences_items = self.Reportreferences_item(
@@ -726,11 +731,17 @@ class RailwayFireProtection(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if hazardLevel and not isinstance(hazardLevel, aas.SubmodelElement):
+
+                    if hazardLevel is not None and not isinstance(
+                        hazardLevel, aas.SubmodelElement
+                    ):
                         hazardLevel = self.HazardLevel(hazardLevel)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if requirement and not isinstance(requirement, aas.SubmodelElement):
+
+                    if requirement is not None and not isinstance(
+                        requirement, aas.SubmodelElement
+                    ):
                         requirement = self.Requirement(requirement)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1255,25 +1266,29 @@ class RailwayFireProtection(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if testProcedure and not isinstance(
+
+                            if testProcedure is not None and not isinstance(
                                 testProcedure, aas.SubmodelElement
                             ):
                                 testProcedure = self.TestProcedure(testProcedure)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if testResult and not isinstance(
+
+                            if testResult is not None and not isinstance(
                                 testResult, aas.SubmodelElement
                             ):
                                 testResult = self.TestResult(testResult)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if testDate and not isinstance(
+
+                            if testDate is not None and not isinstance(
                                 testDate, aas.SubmodelElement
                             ):
                                 testDate = self.TestDate(testDate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if testReportNumber and not isinstance(
+
+                            if testReportNumber is not None and not isinstance(
                                 testReportNumber, aas.SubmodelElement
                             ):
                                 testReportNumber = self.TestReportNumber(
@@ -1893,7 +1908,8 @@ class RailwayFireProtection(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if telephoneNumber and not isinstance(
+
+                                if telephoneNumber is not None and not isinstance(
                                     telephoneNumber, aas.SubmodelElement
                                 ):
                                     telephoneNumber = self.TelephoneNumber(
@@ -2043,7 +2059,8 @@ class RailwayFireProtection(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if emailAddress and not isinstance(
+
+                                if emailAddress is not None and not isinstance(
                                     emailAddress, aas.SubmodelElement
                                 ):
                                     emailAddress = self.EmailAddress(emailAddress)
@@ -2271,7 +2288,8 @@ class RailwayFireProtection(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if addressOfAdditionalLink and not isinstance(
+
+                            if addressOfAdditionalLink is not None and not isinstance(
                                 addressOfAdditionalLink, aas.SubmodelElement
                             ):
                                 addressOfAdditionalLink = self.AddressOfAdditionalLink(
@@ -2279,27 +2297,38 @@ class RailwayFireProtection(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if nationalCode and not isinstance(
+
+                            if nationalCode is not None and not isinstance(
                                 nationalCode, aas.SubmodelElement
                             ):
                                 nationalCode = self.NationalCode(nationalCode)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if cityTown and not isinstance(
+
+                            if cityTown is not None and not isinstance(
                                 cityTown, aas.SubmodelElement
                             ):
                                 cityTown = self.CityTown(cityTown)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if company and not isinstance(company, aas.SubmodelElement):
+
+                            if company is not None and not isinstance(
+                                company, aas.SubmodelElement
+                            ):
                                 company = self.Company(company)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if street and not isinstance(street, aas.SubmodelElement):
+
+                            if street is not None and not isinstance(
+                                street, aas.SubmodelElement
+                            ):
                                 street = self.Street(street)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if zipcode and not isinstance(zipcode, aas.SubmodelElement):
+
+                            if zipcode is not None and not isinstance(
+                                zipcode, aas.SubmodelElement
+                            ):
                                 zipcode = self.Zipcode(zipcode)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -2506,17 +2535,22 @@ class RailwayFireProtection(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if labName and not isinstance(labName, aas.SubmodelElement):
+
+                        if labName is not None and not isinstance(
+                            labName, aas.SubmodelElement
+                        ):
                             labName = self.LabName(labName)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if labAccreditation and not isinstance(
+
+                        if labAccreditation is not None and not isinstance(
                             labAccreditation, aas.SubmodelElement
                         ):
                             labAccreditation = self.LabAccreditation(labAccreditation)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if reportAuthor and not isinstance(
+
+                        if reportAuthor is not None and not isinstance(
                             reportAuthor, aas.SubmodelElement
                         ):
                             reportAuthor = self.ReportAuthor(reportAuthor)
@@ -3148,13 +3182,15 @@ class RailwayFireProtection(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if totalMassPerUnit and not isinstance(
+
+                if totalMassPerUnit is not None and not isinstance(
                     totalMassPerUnit, aas.SubmodelElement
                 ):
                     totalMassPerUnit = self.TotalMassPerUnit(totalMassPerUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if combustibleMassPerUnit and not isinstance(
+
+                if combustibleMassPerUnit is not None and not isinstance(
                     combustibleMassPerUnit, aas.SubmodelElement
                 ):
                     combustibleMassPerUnit = self.CombustibleMassPerUnit(
@@ -3162,7 +3198,8 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                if unit is not None and not isinstance(unit, aas.SubmodelElement):
                     unit = self.Unit(unit)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3299,11 +3336,15 @@ class RailwayFireProtection(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialName and not isinstance(materialName, aas.SubmodelElement):
+
+            if materialName is not None and not isinstance(
+                materialName, aas.SubmodelElement
+            ):
                 materialName = self.MaterialName(materialName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialCharacteristics and not isinstance(
+
+            if materialCharacteristics is not None and not isinstance(
                 materialCharacteristics, aas.SubmodelElement
             ):
                 materialCharacteristics = self.MaterialCharacteristics(
@@ -3311,7 +3352,8 @@ class RailwayFireProtection(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if testedMaterialCombinationDescription and not isinstance(
+
+            if testedMaterialCombinationDescription is not None and not isinstance(
                 testedMaterialCombinationDescription, aas.SubmodelElement
             ):
                 testedMaterialCombinationDescription = (

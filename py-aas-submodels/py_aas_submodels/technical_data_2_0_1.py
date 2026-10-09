@@ -622,7 +622,10 @@ class TechnicalData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if imageNote and not isinstance(imageNote, aas.SubmodelElement):
+
+                    if imageNote is not None and not isinstance(
+                        imageNote, aas.SubmodelElement
+                    ):
                         imageNote = self.ImageNote(imageNote)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -905,13 +908,15 @@ class TechnicalData(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerName and not isinstance(
+
+            if manufacturerName is not None and not isinstance(
                 manufacturerName, aas.SubmodelElement
             ):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerProductDesignation and not isinstance(
+
+            if manufacturerProductDesignation is not None and not isinstance(
                 manufacturerProductDesignation, aas.SubmodelElement
             ):
                 manufacturerProductDesignation = self.ManufacturerProductDesignation(
@@ -919,7 +924,8 @@ class TechnicalData(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerArticleNumber and not isinstance(
+
+            if manufacturerArticleNumber is not None and not isinstance(
                 manufacturerArticleNumber, aas.SubmodelElement
             ):
                 manufacturerArticleNumber = self.ManufacturerArticleNumber(
@@ -927,7 +933,8 @@ class TechnicalData(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerOrderCode and not isinstance(
+
+            if manufacturerOrderCode is not None and not isinstance(
                 manufacturerOrderCode, aas.SubmodelElement
             ):
                 manufacturerOrderCode = self.ManufacturerOrderCode(
@@ -1725,7 +1732,8 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if classificationSystem and not isinstance(
+
+                if classificationSystem is not None and not isinstance(
                     classificationSystem, aas.SubmodelElement
                 ):
                     classificationSystem = self.ClassificationSystem(
@@ -1733,7 +1741,8 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if classificationSystemVersion and not isinstance(
+
+                if classificationSystemVersion is not None and not isinstance(
                     classificationSystemVersion, aas.SubmodelElement
                 ):
                     classificationSystemVersion = self.ClassificationSystemVersion(
@@ -1741,7 +1750,8 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if classificationSystemUrl and not isinstance(
+
+                if classificationSystemUrl is not None and not isinstance(
                     classificationSystemUrl, aas.SubmodelElement
                 ):
                     classificationSystemUrl = self.ClassificationSystemUrl(
@@ -1749,13 +1759,15 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if productClassId and not isinstance(
+
+                if productClassId is not None and not isinstance(
                     productClassId, aas.SubmodelElement
                 ):
                     productClassId = self.ProductClassId(productClassId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if productClassCodedName and not isinstance(
+
+                if productClassCodedName is not None and not isinstance(
                     productClassCodedName, aas.SubmodelElement
                 ):
                     productClassCodedName = self.ProductClassCodedName(
@@ -1763,13 +1775,15 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if productClassName and not isinstance(
+
+                if productClassName is not None and not isinstance(
                     productClassName, aas.SubmodelElement
                 ):
                     productClassName = self.ProductClassName(productClassName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceToTechnicalPropertyArea and not isinstance(
+
+                if referenceToTechnicalPropertyArea is not None and not isinstance(
                     referenceToTechnicalPropertyArea, aas.SubmodelElement
                 ):
                     referenceToTechnicalPropertyArea = (
@@ -4223,7 +4237,8 @@ class TechnicalData(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if validDate and not isinstance(validDate, aas.SubmodelElement):
+
+            if validDate is not None and not isinstance(validDate, aas.SubmodelElement):
                 validDate = self.ValidDate(validDate)
 
             # Add all passed/initialized submodel elements to a single list

@@ -825,27 +825,34 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workstationName and not isinstance(
+
+                if workstationName is not None and not isinstance(
                     workstationName, aas.SubmodelElement
                 ):
                     workstationName = self.WorkstationName(workstationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workstationId and not isinstance(workstationId, aas.SubmodelElement):
+
+                if workstationId is not None and not isinstance(
+                    workstationId, aas.SubmodelElement
+                ):
                     workstationId = self.WorkstationId(workstationId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if orgName and not isinstance(orgName, aas.SubmodelElement):
+
+                if orgName is not None and not isinstance(orgName, aas.SubmodelElement):
                     orgName = self.OrgName(orgName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if typeOfWorkstation and not isinstance(
+
+                if typeOfWorkstation is not None and not isinstance(
                     typeOfWorkstation, aas.SubmodelElement
                 ):
                     typeOfWorkstation = self.TypeOfWorkstation(typeOfWorkstation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workerAssistanceInformation and not isinstance(
+
+                if workerAssistanceInformation is not None and not isinstance(
                     workerAssistanceInformation, aas.SubmodelElement
                 ):
                     workerAssistanceInformation = self.WorkerAssistanceInformation(
@@ -853,7 +860,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if requiredPersonalSafetyEquipment and not isinstance(
+
+                if requiredPersonalSafetyEquipment is not None and not isinstance(
                     requiredPersonalSafetyEquipment, aas.SubmodelElement
                 ):
                     requiredPersonalSafetyEquipment = (
@@ -863,7 +871,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if necessaryPersonalTools and not isinstance(
+
+                if necessaryPersonalTools is not None and not isinstance(
                     necessaryPersonalTools, aas.SubmodelElement
                 ):
                     necessaryPersonalTools = self.NecessaryPersonalTools(
@@ -871,7 +880,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if personalDataProcessing and not isinstance(
+
+                if personalDataProcessing is not None and not isinstance(
                     personalDataProcessing, aas.SubmodelElement
                 ):
                     personalDataProcessing = self.PersonalDataProcessing(
@@ -879,13 +889,17 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if locationDescription and not isinstance(
+
+                if locationDescription is not None and not isinstance(
                     locationDescription, aas.SubmodelElement
                 ):
                     locationDescription = self.LocationDescription(locationDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if directions and not isinstance(directions, aas.SubmodelElement):
+
+                if directions is not None and not isinstance(
+                    directions, aas.SubmodelElement
+                ):
                     directions = self.Directions(directions)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1222,7 +1236,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if qualificationClassificationId and not isinstance(
+
+                    if qualificationClassificationId is not None and not isinstance(
                         qualificationClassificationId, aas.SubmodelElement
                     ):
                         qualificationClassificationId = (
@@ -1232,13 +1247,15 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if qualificationId and not isinstance(
+
+                    if qualificationId is not None and not isinstance(
                         qualificationId, aas.SubmodelElement
                     ):
                         qualificationId = self.QualificationId(qualificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if exceptionRules and not isinstance(
+
+                    if exceptionRules is not None and not isinstance(
                         exceptionRules, aas.SubmodelElement
                     ):
                         exceptionRules = self.ExceptionRules(exceptionRules)
@@ -1882,7 +1899,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skillClassificationId and not isinstance(
+
+                    if skillClassificationId is not None and not isinstance(
                         skillClassificationId, aas.SubmodelElement
                     ):
                         skillClassificationId = self.SkillClassificationId(
@@ -1890,7 +1908,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skillLevelClassificationId and not isinstance(
+
+                    if skillLevelClassificationId is not None and not isinstance(
                         skillLevelClassificationId, aas.SubmodelElement
                     ):
                         skillLevelClassificationId = self.SkillLevelClassificationId(
@@ -1898,17 +1917,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skillLevelId and not isinstance(
+
+                    if skillLevelId is not None and not isinstance(
                         skillLevelId, aas.SubmodelElement
                     ):
                         skillLevelId = self.SkillLevelId(skillLevelId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skillId and not isinstance(skillId, aas.SubmodelElement):
+
+                    if skillId is not None and not isinstance(
+                        skillId, aas.SubmodelElement
+                    ):
                         skillId = self.SkillId(skillId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if exceptionRules and not isinstance(
+
+                    if exceptionRules is not None and not isinstance(
                         exceptionRules, aas.SubmodelElement
                     ):
                         exceptionRules = self.ExceptionRules(exceptionRules)
@@ -2548,7 +2572,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if limitationClassificationId and not isinstance(
+
+                    if limitationClassificationId is not None and not isinstance(
                         limitationClassificationId, aas.SubmodelElement
                     ):
                         limitationClassificationId = self.LimitationClassificationId(
@@ -2556,7 +2581,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if personalLimitationId and not isinstance(
+
+                    if personalLimitationId is not None and not isinstance(
                         personalLimitationId, aas.SubmodelElement
                     ):
                         personalLimitationId = self.PersonalLimitationId(
@@ -2825,13 +2851,17 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if maxLiftingWeight and not isinstance(
+
+            if maxLiftingWeight is not None and not isinstance(
                 maxLiftingWeight, aas.SubmodelElement
             ):
                 maxLiftingWeight = self.MaxLiftingWeight(maxLiftingWeight)
 
             # Build a submodel element if a raw value was passed in the argument
-            if minWorkerHeight and not isinstance(minWorkerHeight, aas.SubmodelElement):
+
+            if minWorkerHeight is not None and not isinstance(
+                minWorkerHeight, aas.SubmodelElement
+            ):
                 minWorkerHeight = self.MinWorkerHeight(minWorkerHeight)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3347,7 +3377,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if configurationName and not isinstance(
+
+                        if configurationName is not None and not isinstance(
                             configurationName, aas.SubmodelElement
                         ):
                             configurationName = self.ConfigurationName(
@@ -3355,7 +3386,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if configurationValue and not isinstance(
+
+                        if configurationValue is not None and not isinstance(
                             configurationValue, aas.SubmodelElement
                         ):
                             configurationValue = self.ConfigurationValue(
@@ -3600,19 +3632,29 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workerId and not isinstance(workerId, aas.SubmodelElement):
+
+                if workerId is not None and not isinstance(
+                    workerId, aas.SubmodelElement
+                ):
                     workerId = self.WorkerId(workerId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accessStart and not isinstance(accessStart, aas.SubmodelElement):
+
+                if accessStart is not None and not isinstance(
+                    accessStart, aas.SubmodelElement
+                ):
                     accessStart = self.AccessStart(accessStart)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accessEnd and not isinstance(accessEnd, aas.SubmodelElement):
+
+                if accessEnd is not None and not isinstance(
+                    accessEnd, aas.SubmodelElement
+                ):
                     accessEnd = self.AccessEnd(accessEnd)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if preferredHeight and not isinstance(
+
+                if preferredHeight is not None and not isinstance(
                     preferredHeight, aas.SubmodelElement
                 ):
                     preferredHeight = self.PreferredHeight(preferredHeight)
@@ -4620,8 +4662,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if qualificationClassificationId and not isinstance(
-                            qualificationClassificationId, aas.SubmodelElement
+
+                        if (
+                            qualificationClassificationId is not None
+                            and not isinstance(
+                                qualificationClassificationId, aas.SubmodelElement
+                            )
                         ):
                             qualificationClassificationId = (
                                 self.QualificationClassificationId(
@@ -4630,33 +4676,43 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if qualificationId and not isinstance(
+
+                        if qualificationId is not None and not isinstance(
                             qualificationId, aas.SubmodelElement
                         ):
                             qualificationId = self.QualificationId(qualificationId)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if exceptionRules and not isinstance(
+
+                        if exceptionRules is not None and not isinstance(
                             exceptionRules, aas.SubmodelElement
                         ):
                             exceptionRules = self.ExceptionRules(exceptionRules)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if demandKind and not isinstance(
+
+                        if demandKind is not None and not isinstance(
                             demandKind, aas.SubmodelElement
                         ):
                             demandKind = self.DemandKind(demandKind)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if startTime and not isinstance(startTime, aas.SubmodelElement):
+
+                        if startTime is not None and not isinstance(
+                            startTime, aas.SubmodelElement
+                        ):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if endTime and not isinstance(endTime, aas.SubmodelElement):
+
+                        if endTime is not None and not isinstance(
+                            endTime, aas.SubmodelElement
+                        ):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if processTime and not isinstance(
+
+                        if processTime is not None and not isinstance(
                             processTime, aas.SubmodelElement
                         ):
                             processTime = self.ProcessTime(processTime)
@@ -4919,17 +4975,24 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalDescription and not isinstance(
+
+                if intervalDescription is not None and not isinstance(
                     intervalDescription, aas.SubmodelElement
                 ):
                     intervalDescription = self.IntervalDescription(intervalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalStart and not isinstance(intervalStart, aas.SubmodelElement):
+
+                if intervalStart is not None and not isinstance(
+                    intervalStart, aas.SubmodelElement
+                ):
                     intervalStart = self.IntervalStart(intervalStart)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalEnd and not isinstance(intervalEnd, aas.SubmodelElement):
+
+                if intervalEnd is not None and not isinstance(
+                    intervalEnd, aas.SubmodelElement
+                ):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6087,7 +6150,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if skillClassificationId and not isinstance(
+
+                        if skillClassificationId is not None and not isinstance(
                             skillClassificationId, aas.SubmodelElement
                         ):
                             skillClassificationId = self.SkillClassificationId(
@@ -6095,7 +6159,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if skillLevelClassificationId and not isinstance(
+
+                        if skillLevelClassificationId is not None and not isinstance(
                             skillLevelClassificationId, aas.SubmodelElement
                         ):
                             skillLevelClassificationId = (
@@ -6105,37 +6170,50 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if skillLevelId and not isinstance(
+
+                        if skillLevelId is not None and not isinstance(
                             skillLevelId, aas.SubmodelElement
                         ):
                             skillLevelId = self.SkillLevelId(skillLevelId)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if skillId and not isinstance(skillId, aas.SubmodelElement):
+
+                        if skillId is not None and not isinstance(
+                            skillId, aas.SubmodelElement
+                        ):
                             skillId = self.SkillId(skillId)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if exceptionRules and not isinstance(
+
+                        if exceptionRules is not None and not isinstance(
                             exceptionRules, aas.SubmodelElement
                         ):
                             exceptionRules = self.ExceptionRules(exceptionRules)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if demandKind and not isinstance(
+
+                        if demandKind is not None and not isinstance(
                             demandKind, aas.SubmodelElement
                         ):
                             demandKind = self.DemandKind(demandKind)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if startTime and not isinstance(startTime, aas.SubmodelElement):
+
+                        if startTime is not None and not isinstance(
+                            startTime, aas.SubmodelElement
+                        ):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if endTime and not isinstance(endTime, aas.SubmodelElement):
+
+                        if endTime is not None and not isinstance(
+                            endTime, aas.SubmodelElement
+                        ):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if processTime and not isinstance(
+
+                        if processTime is not None and not isinstance(
                             processTime, aas.SubmodelElement
                         ):
                             processTime = self.ProcessTime(processTime)
@@ -6382,17 +6460,24 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalDescription and not isinstance(
+
+                if intervalDescription is not None and not isinstance(
                     intervalDescription, aas.SubmodelElement
                 ):
                     intervalDescription = self.IntervalDescription(intervalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalStart and not isinstance(intervalStart, aas.SubmodelElement):
+
+                if intervalStart is not None and not isinstance(
+                    intervalStart, aas.SubmodelElement
+                ):
                     intervalStart = self.IntervalStart(intervalStart)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalEnd and not isinstance(intervalEnd, aas.SubmodelElement):
+
+                if intervalEnd is not None and not isinstance(
+                    intervalEnd, aas.SubmodelElement
+                ):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
                 # Add all passed/initialized submodel elements to a single list

@@ -2124,14 +2124,19 @@ class SimulationModels(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if solverAlgorithm and not isinstance(
+
+                            if solverAlgorithm is not None and not isinstance(
                                 solverAlgorithm, aas.SubmodelElement
                             ):
                                 solverAlgorithm = self.SolverAlgorithm(solverAlgorithm)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if toolSolverFurtherDescription and not isinstance(
-                                toolSolverFurtherDescription, aas.SubmodelElement
+
+                            if (
+                                toolSolverFurtherDescription is not None
+                                and not isinstance(
+                                    toolSolverFurtherDescription, aas.SubmodelElement
+                                )
                             ):
                                 toolSolverFurtherDescription = (
                                     self.ToolSolverFurtherDescription(
@@ -2140,7 +2145,8 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if tolerance and not isinstance(
+
+                            if tolerance is not None and not isinstance(
                                 tolerance, aas.SubmodelElement
                             ):
                                 tolerance = self.Tolerance(tolerance)
@@ -2252,7 +2258,8 @@ class SimulationModels(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if stepSizeControlNeeded and not isinstance(
+
+                        if stepSizeControlNeeded is not None and not isinstance(
                             stepSizeControlNeeded, aas.SubmodelElement
                         ):
                             stepSizeControlNeeded = self.StepSizeControlNeeded(
@@ -2260,13 +2267,15 @@ class SimulationModels(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fixedStepSize and not isinstance(
+
+                        if fixedStepSize is not None and not isinstance(
                             fixedStepSize, aas.SubmodelElement
                         ):
                             fixedStepSize = self.FixedStepSize(fixedStepSize)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if stiffSolverNeeded and not isinstance(
+
+                        if stiffSolverNeeded is not None and not isinstance(
                             stiffSolverNeeded, aas.SubmodelElement
                         ):
                             stiffSolverNeeded = self.StiffSolverNeeded(
@@ -2274,7 +2283,8 @@ class SimulationModels(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if solverIncluded and not isinstance(
+
+                        if solverIncluded is not None and not isinstance(
                             solverIncluded, aas.SubmodelElement
                         ):
                             solverIncluded = self.SolverIncluded(solverIncluded)
@@ -2387,7 +2397,10 @@ class SimulationModels(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if simToolName and not isinstance(simToolName, aas.SubmodelElement):
+
+                    if simToolName is not None and not isinstance(
+                        simToolName, aas.SubmodelElement
+                    ):
                         simToolName = self.SimToolName(simToolName)
 
                     # Build submodel elements from raw values passed in the argument
@@ -2522,7 +2535,8 @@ class SimulationModels(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if operatingSystem and not isinstance(
+
+                if operatingSystem is not None and not isinstance(
                     operatingSystem, aas.SubmodelElement
                 ):
                     operatingSystem = self.OperatingSystem(operatingSystem)
@@ -2539,7 +2553,8 @@ class SimulationModels(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dependencyEnvironment and not isinstance(
+
+                if dependencyEnvironment is not None and not isinstance(
                     dependencyEnvironment, aas.SubmodelElement
                 ):
                     dependencyEnvironment = self.DependencyEnvironment(
@@ -2547,7 +2562,8 @@ class SimulationModels(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if visualizationInformation and not isinstance(
+
+                if visualizationInformation is not None and not isinstance(
                     visualizationInformation, aas.SubmodelElement
                 ):
                     visualizationInformation = self.VisualizationInformation(
@@ -3261,13 +3277,15 @@ class SimulationModels(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modelVersionId and not isinstance(
+
+                    if modelVersionId is not None and not isinstance(
                         modelVersionId, aas.SubmodelElement
                     ):
                         modelVersionId = self.ModelVersionId(modelVersionId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modelFileReleaseNotesTxt and not isinstance(
+
+                    if modelFileReleaseNotesTxt is not None and not isinstance(
                         modelFileReleaseNotesTxt, aas.SubmodelElement
                     ):
                         modelFileReleaseNotesTxt = self.ModelFileReleaseNotesTxt(
@@ -3378,7 +3396,10 @@ class SimulationModels(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modelFileType and not isinstance(modelFileType, aas.SubmodelElement):
+
+                if modelFileType is not None and not isinstance(
+                    modelFileType, aas.SubmodelElement
+                ):
                     modelFileType = self.ModelFileType(modelFileType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4445,25 +4466,31 @@ class SimulationModels(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if typeOfEmailAddress and not isinstance(
+
+                    if typeOfEmailAddress is not None and not isinstance(
                         typeOfEmailAddress, aas.SubmodelElement
                     ):
                         typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if emailAddress and not isinstance(
+
+                    if emailAddress is not None and not isinstance(
                         emailAddress, aas.SubmodelElement
                     ):
                         emailAddress = self.EmailAddress(emailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if typeOfPublicKey and not isinstance(
+
+                    if typeOfPublicKey is not None and not isinstance(
                         typeOfPublicKey, aas.SubmodelElement
                     ):
                         typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if publicKey and not isinstance(publicKey, aas.SubmodelElement):
+
+                    if publicKey is not None and not isinstance(
+                        publicKey, aas.SubmodelElement
+                    ):
                         publicKey = self.PublicKey(publicKey)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4830,19 +4857,22 @@ class SimulationModels(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if typeOfTelephone and not isinstance(
+
+                    if typeOfTelephone is not None and not isinstance(
                         typeOfTelephone, aas.SubmodelElement
                     ):
                         typeOfTelephone = self.TypeOfTelephone(typeOfTelephone)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if telephoneNumber and not isinstance(
+
+                    if telephoneNumber is not None and not isinstance(
                         telephoneNumber, aas.SubmodelElement
                     ):
                         telephoneNumber = self.TelephoneNumber(telephoneNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if availableTime and not isinstance(
+
+                    if availableTime is not None and not isinstance(
                         availableTime, aas.SubmodelElement
                     ):
                         availableTime = self.AvailableTime(availableTime)
@@ -4947,7 +4977,8 @@ class SimulationModels(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if company and not isinstance(company, aas.SubmodelElement):
+
+                if company is not None and not isinstance(company, aas.SubmodelElement):
                     company = self.Company(company)
 
                 # Build submodel elements from raw values passed in the argument
@@ -5977,23 +6008,29 @@ class SimulationModels(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableName and not isinstance(
+
+                        if variableName is not None and not isinstance(
                             variableName, aas.SubmodelElement
                         ):
                             variableName = self.VariableName(variableName)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if range and not isinstance(range, aas.SubmodelElement):
+
+                        if range is not None and not isinstance(
+                            range, aas.SubmodelElement
+                        ):
                             range = self.Range(range)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableType and not isinstance(
+
+                        if variableType is not None and not isinstance(
                             variableType, aas.SubmodelElement
                         ):
                             variableType = self.VariableType(variableType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableDescription and not isinstance(
+
+                        if variableDescription is not None and not isinstance(
                             variableDescription, aas.SubmodelElement
                         ):
                             variableDescription = self.VariableDescription(
@@ -6001,17 +6038,22 @@ class SimulationModels(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unitList and not isinstance(unitList, aas.SubmodelElement):
+
+                        if unitList is not None and not isinstance(
+                            unitList, aas.SubmodelElement
+                        ):
                             unitList = self.UnitList(unitList)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unitDescription and not isinstance(
+
+                        if unitDescription is not None and not isinstance(
                             unitDescription, aas.SubmodelElement
                         ):
                             unitDescription = self.UnitDescription(unitDescription)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableCausality and not isinstance(
+
+                        if variableCausality is not None and not isinstance(
                             variableCausality, aas.SubmodelElement
                         ):
                             variableCausality = self.VariableCausality(
@@ -6019,7 +6061,8 @@ class SimulationModels(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variablePrefix and not isinstance(
+
+                        if variablePrefix is not None and not isinstance(
                             variablePrefix, aas.SubmodelElement
                         ):
                             variablePrefix = self.VariablePrefix(variablePrefix)
@@ -6134,13 +6177,15 @@ class SimulationModels(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if portConnectorName and not isinstance(
+
+                    if portConnectorName is not None and not isinstance(
                         portConnectorName, aas.SubmodelElement
                     ):
                         portConnectorName = self.PortConnectorName(portConnectorName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if portConDescription and not isinstance(
+
+                    if portConDescription is not None and not isinstance(
                         portConDescription, aas.SubmodelElement
                     ):
                         portConDescription = self.PortConDescription(portConDescription)
@@ -6417,13 +6462,15 @@ class SimulationModels(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if binaryConName and not isinstance(
+
+                    if binaryConName is not None and not isinstance(
                         binaryConName, aas.SubmodelElement
                     ):
                         binaryConName = self.BinaryConName(binaryConName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if binaryConDescription and not isinstance(
+
+                    if binaryConDescription is not None and not isinstance(
                         binaryConDescription, aas.SubmodelElement
                     ):
                         binaryConDescription = self.BinaryConDescription(
@@ -6641,7 +6688,8 @@ class SimulationModels(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if summary and not isinstance(summary, aas.SubmodelElement):
+
+            if summary is not None and not isinstance(summary, aas.SubmodelElement):
                 summary = self.Summary(summary)
 
             # Build submodel elements from raw values passed in the argument
@@ -6659,7 +6707,10 @@ class SimulationModels(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if licenseModel and not isinstance(licenseModel, aas.SubmodelElement):
+
+            if licenseModel is not None and not isinstance(
+                licenseModel, aas.SubmodelElement
+            ):
                 licenseModel = self.LicenseModel(licenseModel)
 
             # Build submodel elements from raw values passed in the argument
@@ -6674,15 +6725,24 @@ class SimulationModels(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if paramMethod and not isinstance(paramMethod, aas.SubmodelElement):
+
+            if paramMethod is not None and not isinstance(
+                paramMethod, aas.SubmodelElement
+            ):
                 paramMethod = self.ParamMethod(paramMethod)
 
             # Build a submodel element if a raw value was passed in the argument
-            if initStateMethod and not isinstance(initStateMethod, aas.SubmodelElement):
+
+            if initStateMethod is not None and not isinstance(
+                initStateMethod, aas.SubmodelElement
+            ):
                 initStateMethod = self.InitStateMethod(initStateMethod)
 
             # Build a submodel element if a raw value was passed in the argument
-            if defaultSimTime and not isinstance(defaultSimTime, aas.SubmodelElement):
+
+            if defaultSimTime is not None and not isinstance(
+                defaultSimTime, aas.SubmodelElement
+            ):
                 defaultSimTime = self.DefaultSimTime(defaultSimTime)
 
             # Add all passed/initialized submodel elements to a single list

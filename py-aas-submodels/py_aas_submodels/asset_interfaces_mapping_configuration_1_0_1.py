@@ -339,7 +339,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if interfaceReference and not isinstance(
+
+                if interfaceReference is not None and not isinstance(
                     interfaceReference, aas.SubmodelElement
                 ):
                     interfaceReference = self.InterfaceReference(interfaceReference)

@@ -480,7 +480,8 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if onOff and not isinstance(onOff, aas.SubmodelElement):
+
+                if onOff is not None and not isinstance(onOff, aas.SubmodelElement):
                     onOff = self.OnOff(onOff)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -727,13 +728,15 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if automationMLVersion and not isinstance(
+
+        if automationMLVersion is not None and not isinstance(
             automationMLVersion, aas.SubmodelElement
         ):
             automationMLVersion = self.AutomationMLVersion(automationMLVersion)
 
         # Build a submodel element if a raw value was passed in the argument
-        if automationMLElementReference and not isinstance(
+
+        if automationMLElementReference is not None and not isinstance(
             automationMLElementReference, aas.SubmodelElement
         ):
             automationMLElementReference = self.AutomationMLElementReference(

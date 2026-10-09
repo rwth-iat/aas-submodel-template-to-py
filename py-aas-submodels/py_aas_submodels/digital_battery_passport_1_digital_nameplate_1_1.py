@@ -1531,11 +1531,15 @@ class BatteryNameplate(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if markingName and not isinstance(markingName, aas.SubmodelElement):
+
+                if markingName is not None and not isinstance(
+                    markingName, aas.SubmodelElement
+                ):
                     markingName = self.MarkingName(markingName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if designationOfCertificateOrApproval and not isinstance(
+
+                if designationOfCertificateOrApproval is not None and not isinstance(
                     designationOfCertificateOrApproval, aas.SubmodelElement
                 ):
                     designationOfCertificateOrApproval = (
@@ -1545,11 +1549,17 @@ class BatteryNameplate(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if issueDate and not isinstance(issueDate, aas.SubmodelElement):
+
+                if issueDate is not None and not isinstance(
+                    issueDate, aas.SubmodelElement
+                ):
                     issueDate = self.IssueDate(issueDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if expiryDate and not isinstance(expiryDate, aas.SubmodelElement):
+
+                if expiryDate is not None and not isinstance(
+                    expiryDate, aas.SubmodelElement
+                ):
                     expiryDate = self.ExpiryDate(expiryDate)
 
                 # Build submodel elements from raw values passed in the argument
@@ -2389,23 +2399,36 @@ class BatteryNameplate(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if uRIOfTheProduct and not isinstance(uRIOfTheProduct, aas.SubmodelElement):
+
+        if uRIOfTheProduct is not None and not isinstance(
+            uRIOfTheProduct, aas.SubmodelElement
+        ):
             uRIOfTheProduct = self.URIOfTheProduct(uRIOfTheProduct)
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturerName and not isinstance(manufacturerName, aas.SubmodelElement):
+
+        if manufacturerName is not None and not isinstance(
+            manufacturerName, aas.SubmodelElement
+        ):
             manufacturerName = self.ManufacturerName(manufacturerName)
 
         # Build a submodel element if a raw value was passed in the argument
-        if serialNumber and not isinstance(serialNumber, aas.SubmodelElement):
+
+        if serialNumber is not None and not isinstance(
+            serialNumber, aas.SubmodelElement
+        ):
             serialNumber = self.SerialNumber(serialNumber)
 
         # Build a submodel element if a raw value was passed in the argument
-        if dateOfManufacture and not isinstance(dateOfManufacture, aas.SubmodelElement):
+
+        if dateOfManufacture is not None and not isinstance(
+            dateOfManufacture, aas.SubmodelElement
+        ):
             dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
 
         # Build a submodel element if a raw value was passed in the argument
-        if dateOfPuttingIntoService and not isinstance(
+
+        if dateOfPuttingIntoService is not None and not isinstance(
             dateOfPuttingIntoService, aas.SubmodelElement
         ):
             dateOfPuttingIntoService = self.DateOfPuttingIntoService(
@@ -2413,7 +2436,8 @@ class BatteryNameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if uniqueFacilityIdentifier and not isinstance(
+
+        if uniqueFacilityIdentifier is not None and not isinstance(
             uniqueFacilityIdentifier, aas.SubmodelElement
         ):
             uniqueFacilityIdentifier = self.UniqueFacilityIdentifier(
@@ -2421,23 +2445,29 @@ class BatteryNameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if lifeCycleStage and not isinstance(lifeCycleStage, aas.SubmodelElement):
+
+        if lifeCycleStage is not None and not isinstance(
+            lifeCycleStage, aas.SubmodelElement
+        ):
             lifeCycleStage = self.LifeCycleStage(lifeCycleStage)
 
         # Build a submodel element if a raw value was passed in the argument
-        if operatorIdentifier and not isinstance(
+
+        if operatorIdentifier is not None and not isinstance(
             operatorIdentifier, aas.SubmodelElement
         ):
             operatorIdentifier = self.OperatorIdentifier(operatorIdentifier)
 
         # Build a submodel element if a raw value was passed in the argument
-        if manufacturerIdentifier and not isinstance(
+
+        if manufacturerIdentifier is not None and not isinstance(
             manufacturerIdentifier, aas.SubmodelElement
         ):
             manufacturerIdentifier = self.ManufacturerIdentifier(manufacturerIdentifier)
 
         # Build a submodel element if a raw value was passed in the argument
-        if eUDeclarationOfConformity and not isinstance(
+
+        if eUDeclarationOfConformity is not None and not isinstance(
             eUDeclarationOfConformity, aas.SubmodelElement
         ):
             eUDeclarationOfConformity = self.EUDeclarationOfConformity(
@@ -2445,7 +2475,8 @@ class BatteryNameplate(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if resultsOfTestReportsProvingCompliance and not isinstance(
+
+        if resultsOfTestReportsProvingCompliance is not None and not isinstance(
             resultsOfTestReportsProvingCompliance, aas.SubmodelElement
         ):
             resultsOfTestReportsProvingCompliance = (

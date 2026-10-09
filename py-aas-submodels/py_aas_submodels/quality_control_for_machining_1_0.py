@@ -1494,11 +1494,15 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if page and not isinstance(page, aas.SubmodelElement):
+
+                            if page is not None and not isinstance(
+                                page, aas.SubmodelElement
+                            ):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if coordinate and not isinstance(
+
+                            if coordinate is not None and not isinstance(
                                 coordinate, aas.SubmodelElement
                             ):
                                 coordinate = self.Coordinate(coordinate)
@@ -1767,13 +1771,15 @@ class QualityControlForMachining(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if linearFeatureName and not isinstance(
+
+                    if linearFeatureName is not None and not isinstance(
                         linearFeatureName, aas.SubmodelElement
                     ):
                         linearFeatureName = self.LinearFeatureName(linearFeatureName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if dimensionDescription and not isinstance(
+
+                    if dimensionDescription is not None and not isinstance(
                         dimensionDescription, aas.SubmodelElement
                     ):
                         dimensionDescription = self.DimensionDescription(
@@ -1781,7 +1787,8 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if measurementProcedure and not isinstance(
+
+                    if measurementProcedure is not None and not isinstance(
                         measurementProcedure, aas.SubmodelElement
                     ):
                         measurementProcedure = self.MeasurementProcedure(
@@ -1789,7 +1796,8 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if inspectionRelevant and not isinstance(
+
+                    if inspectionRelevant is not None and not isinstance(
                         inspectionRelevant, aas.SubmodelElement
                     ):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
@@ -1806,35 +1814,43 @@ class QualityControlForMachining(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if nominalValue and not isinstance(
+
+                    if nominalValue is not None and not isinstance(
                         nominalValue, aas.SubmodelElement
                     ):
                         nominalValue = self.NominalValue(nominalValue)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if upperTolerance and not isinstance(
+
+                    if upperTolerance is not None and not isinstance(
                         upperTolerance, aas.SubmodelElement
                     ):
                         upperTolerance = self.UpperTolerance(upperTolerance)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if lowerTolerance and not isinstance(
+
+                    if lowerTolerance is not None and not isinstance(
                         lowerTolerance, aas.SubmodelElement
                     ):
                         lowerTolerance = self.LowerTolerance(lowerTolerance)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if oneSided and not isinstance(oneSided, aas.SubmodelElement):
+
+                    if oneSided is not None and not isinstance(
+                        oneSided, aas.SubmodelElement
+                    ):
                         oneSided = self.OneSided(oneSided)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if engineeringUnit and not isinstance(
+
+                    if engineeringUnit is not None and not isinstance(
                         engineeringUnit, aas.SubmodelElement
                     ):
                         engineeringUnit = self.EngineeringUnit(engineeringUnit)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if iDList3DModel and not isinstance(
+
+                    if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
@@ -3152,11 +3168,15 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if page and not isinstance(page, aas.SubmodelElement):
+
+                            if page is not None and not isinstance(
+                                page, aas.SubmodelElement
+                            ):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if coordinate and not isinstance(
+
+                            if coordinate is not None and not isinstance(
                                 coordinate, aas.SubmodelElement
                             ):
                                 coordinate = self.Coordinate(coordinate)
@@ -3930,7 +3950,8 @@ class QualityControlForMachining(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if attributiveFeatureName and not isinstance(
+
+                    if attributiveFeatureName is not None and not isinstance(
                         attributiveFeatureName, aas.SubmodelElement
                     ):
                         attributiveFeatureName = self.AttributiveFeatureName(
@@ -3938,7 +3959,8 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if attibutiveFeatureDescription and not isinstance(
+
+                    if attibutiveFeatureDescription is not None and not isinstance(
                         attibutiveFeatureDescription, aas.SubmodelElement
                     ):
                         attibutiveFeatureDescription = (
@@ -3948,7 +3970,8 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if measurementProcedure and not isinstance(
+
+                    if measurementProcedure is not None and not isinstance(
                         measurementProcedure, aas.SubmodelElement
                     ):
                         measurementProcedure = self.MeasurementProcedure(
@@ -3967,25 +3990,29 @@ class QualityControlForMachining(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if inspectionRelevant and not isinstance(
+
+                    if inspectionRelevant is not None and not isinstance(
                         inspectionRelevant, aas.SubmodelElement
                     ):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if iDList3DModel and not isinstance(
+
+                    if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if oKAttributesList and not isinstance(
+
+                    if oKAttributesList is not None and not isinstance(
                         oKAttributesList, aas.SubmodelElement
                     ):
                         oKAttributesList = self.OKAttributesList(oKAttributesList)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if nOKAttributesList and not isinstance(
+
+                    if nOKAttributesList is not None and not isinstance(
                         nOKAttributesList, aas.SubmodelElement
                     ):
                         nOKAttributesList = self.NOKAttributesList(nOKAttributesList)
@@ -5493,11 +5520,15 @@ class QualityControlForMachining(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if shape and not isinstance(shape, aas.SubmodelElement):
+
+                        if shape is not None and not isinstance(
+                            shape, aas.SubmodelElement
+                        ):
                             shape = self.Shape(shape)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if toleranceZoneDescription and not isinstance(
+
+                        if toleranceZoneDescription is not None and not isinstance(
                             toleranceZoneDescription, aas.SubmodelElement
                         ):
                             toleranceZoneDescription = self.ToleranceZoneDescription(
@@ -5527,7 +5558,8 @@ class QualityControlForMachining(aas.Submodel):
                             ]
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendTolerance1 and not isinstance(
+
+                        if widthExtendTolerance1 is not None and not isinstance(
                             widthExtendTolerance1, aas.SubmodelElement
                         ):
                             widthExtendTolerance1 = self.WidthExtendTolerance1(
@@ -5535,13 +5567,15 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendSign1 and not isinstance(
+
+                        if widthExtendSign1 is not None and not isinstance(
                             widthExtendSign1, aas.SubmodelElement
                         ):
                             widthExtendSign1 = self.WidthExtendSign1(widthExtendSign1)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendTolerance2 and not isinstance(
+
+                        if widthExtendTolerance2 is not None and not isinstance(
                             widthExtendTolerance2, aas.SubmodelElement
                         ):
                             widthExtendTolerance2 = self.WidthExtendTolerance2(
@@ -5549,13 +5583,15 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendSign2 and not isinstance(
+
+                        if widthExtendSign2 is not None and not isinstance(
                             widthExtendSign2, aas.SubmodelElement
                         ):
                             widthExtendSign2 = self.WidthExtendSign2(widthExtendSign2)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if engineeringUnit and not isinstance(
+
+                        if engineeringUnit is not None and not isinstance(
                             engineeringUnit, aas.SubmodelElement
                         ):
                             engineeringUnit = self.EngineeringUnit(engineeringUnit)
@@ -6322,11 +6358,15 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if page and not isinstance(page, aas.SubmodelElement):
+
+                            if page is not None and not isinstance(
+                                page, aas.SubmodelElement
+                            ):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if coordinate and not isinstance(
+
+                            if coordinate is not None and not isinstance(
                                 coordinate, aas.SubmodelElement
                             ):
                                 coordinate = self.Coordinate(coordinate)
@@ -7255,19 +7295,22 @@ class QualityControlForMachining(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if gPS_FeatureName and not isinstance(
+
+                    if gPS_FeatureName is not None and not isinstance(
                         gPS_FeatureName, aas.SubmodelElement
                     ):
                         gPS_FeatureName = self.GPS_FeatureName(gPS_FeatureName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if gPS_Description and not isinstance(
+
+                    if gPS_Description is not None and not isinstance(
                         gPS_Description, aas.SubmodelElement
                     ):
                         gPS_Description = self.GPS_Description(gPS_Description)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if measurementProcedure and not isinstance(
+
+                    if measurementProcedure is not None and not isinstance(
                         measurementProcedure, aas.SubmodelElement
                     ):
                         measurementProcedure = self.MeasurementProcedure(
@@ -7286,17 +7329,22 @@ class QualityControlForMachining(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if inspectionRelevant and not isinstance(
+
+                    if inspectionRelevant is not None and not isinstance(
                         inspectionRelevant, aas.SubmodelElement
                     ):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if gPS_Type and not isinstance(gPS_Type, aas.SubmodelElement):
+
+                    if gPS_Type is not None and not isinstance(
+                        gPS_Type, aas.SubmodelElement
+                    ):
                         gPS_Type = self.GPS_Type(gPS_Type)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if gPS_ReferenceRequired and not isinstance(
+
+                    if gPS_ReferenceRequired is not None and not isinstance(
                         gPS_ReferenceRequired, aas.SubmodelElement
                     ):
                         gPS_ReferenceRequired = self.GPS_ReferenceRequired(
@@ -7304,21 +7352,31 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if iDList3DModel and not isinstance(
+
+                    if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if datumField1 and not isinstance(datumField1, aas.SubmodelElement):
+
+                    if datumField1 is not None and not isinstance(
+                        datumField1, aas.SubmodelElement
+                    ):
                         datumField1 = self.DatumField1(datumField1)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if datumField2 and not isinstance(datumField2, aas.SubmodelElement):
+
+                    if datumField2 is not None and not isinstance(
+                        datumField2, aas.SubmodelElement
+                    ):
                         datumField2 = self.DatumField2(datumField2)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if datumField3 and not isinstance(datumField3, aas.SubmodelElement):
+
+                    if datumField3 is not None and not isinstance(
+                        datumField3, aas.SubmodelElement
+                    ):
                         datumField3 = self.DatumField3(datumField3)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8710,11 +8768,15 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if page and not isinstance(page, aas.SubmodelElement):
+
+                            if page is not None and not isinstance(
+                                page, aas.SubmodelElement
+                            ):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if coordinate and not isinstance(
+
+                            if coordinate is not None and not isinstance(
                                 coordinate, aas.SubmodelElement
                             ):
                                 coordinate = self.Coordinate(coordinate)
@@ -9744,13 +9806,15 @@ class QualityControlForMachining(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_Limit and not isinstance(
+
+                        if sL_ASP_Limit is not None and not isinstance(
                             sL_ASP_Limit, aas.SubmodelElement
                         ):
                             sL_ASP_Limit = self.SL_ASP_Limit(sL_ASP_Limit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_S_FilterType and not isinstance(
+
+                        if sL_ASP_S_FilterType is not None and not isinstance(
                             sL_ASP_S_FilterType, aas.SubmodelElement
                         ):
                             sL_ASP_S_FilterType = self.SL_ASP_S_FilterType(
@@ -9758,7 +9822,8 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_S_FilterNestingIndex and not isinstance(
+
+                        if sL_ASP_S_FilterNestingIndex is not None and not isinstance(
                             sL_ASP_S_FilterNestingIndex, aas.SubmodelElement
                         ):
                             sL_ASP_S_FilterNestingIndex = (
@@ -9768,7 +9833,8 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_L_FilterType and not isinstance(
+
+                        if sL_ASP_L_FilterType is not None and not isinstance(
                             sL_ASP_L_FilterType, aas.SubmodelElement
                         ):
                             sL_ASP_L_FilterType = self.SL_ASP_L_FilterType(
@@ -9776,7 +9842,8 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_L_FilterNestingIndex and not isinstance(
+
+                        if sL_ASP_L_FilterNestingIndex is not None and not isinstance(
                             sL_ASP_L_FilterNestingIndex, aas.SubmodelElement
                         ):
                             sL_ASP_L_FilterNestingIndex = (
@@ -9786,7 +9853,8 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_F_Operator and not isinstance(
+
+                        if sL_ASP_F_Operator is not None and not isinstance(
                             sL_ASP_F_Operator, aas.SubmodelElement
                         ):
                             sL_ASP_F_Operator = self.SL_ASP_F_Operator(
@@ -9794,25 +9862,31 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_Indicator and not isinstance(
+
+                        if sL_ASP_Indicator is not None and not isinstance(
                             sL_ASP_Indicator, aas.SubmodelElement
                         ):
                             sL_ASP_Indicator = self.SL_ASP_Indicator(sL_ASP_Indicator)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_Value and not isinstance(
+
+                        if sL_ASP_Value is not None and not isinstance(
                             sL_ASP_Value, aas.SubmodelElement
                         ):
                             sL_ASP_Value = self.SL_ASP_Value(sL_ASP_Value)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_Unit and not isinstance(
+
+                        if sL_ASP_Unit is not None and not isinstance(
                             sL_ASP_Unit, aas.SubmodelElement
                         ):
                             sL_ASP_Unit = self.SL_ASP_Unit(sL_ASP_Unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sL_ASP_Or and not isinstance(sL_ASP_Or, aas.SubmodelElement):
+
+                        if sL_ASP_Or is not None and not isinstance(
+                            sL_ASP_Or, aas.SubmodelElement
+                        ):
                             sL_ASP_Or = self.SL_ASP_Or(sL_ASP_Or)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -10607,13 +10681,15 @@ class QualityControlForMachining(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_Limit and not isinstance(
+
+                        if sF_ASP_Limit is not None and not isinstance(
                             sF_ASP_Limit, aas.SubmodelElement
                         ):
                             sF_ASP_Limit = self.SF_ASP_Limit(sF_ASP_Limit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_S_FilterType and not isinstance(
+
+                        if sF_ASP_S_FilterType is not None and not isinstance(
                             sF_ASP_S_FilterType, aas.SubmodelElement
                         ):
                             sF_ASP_S_FilterType = self.SF_ASP_S_FilterType(
@@ -10621,7 +10697,8 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_S_FilterNestingIndex and not isinstance(
+
+                        if sF_ASP_S_FilterNestingIndex is not None and not isinstance(
                             sF_ASP_S_FilterNestingIndex, aas.SubmodelElement
                         ):
                             sF_ASP_S_FilterNestingIndex = (
@@ -10631,7 +10708,8 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_F_Operator and not isinstance(
+
+                        if sF_ASP_F_Operator is not None and not isinstance(
                             sF_ASP_F_Operator, aas.SubmodelElement
                         ):
                             sF_ASP_F_Operator = self.SF_ASP_F_Operator(
@@ -10639,29 +10717,38 @@ class QualityControlForMachining(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_Indicator and not isinstance(
+
+                        if sF_ASP_Indicator is not None and not isinstance(
                             sF_ASP_Indicator, aas.SubmodelElement
                         ):
                             sF_ASP_Indicator = self.SF_ASP_Indicator(sF_ASP_Indicator)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_Value and not isinstance(
+
+                        if sF_ASP_Value is not None and not isinstance(
                             sF_ASP_Value, aas.SubmodelElement
                         ):
                             sF_ASP_Value = self.SF_ASP_Value(sF_ASP_Value)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_Unit and not isinstance(
+
+                        if sF_ASP_Unit is not None and not isinstance(
                             sF_ASP_Unit, aas.SubmodelElement
                         ):
                             sF_ASP_Unit = self.SF_ASP_Unit(sF_ASP_Unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_ES and not isinstance(sF_ASP_ES, aas.SubmodelElement):
+
+                        if sF_ASP_ES is not None and not isinstance(
+                            sF_ASP_ES, aas.SubmodelElement
+                        ):
                             sF_ASP_ES = self.SF_ASP_ES(sF_ASP_ES)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sF_ASP_Or and not isinstance(sF_ASP_Or, aas.SubmodelElement):
+
+                        if sF_ASP_Or is not None and not isinstance(
+                            sF_ASP_Or, aas.SubmodelElement
+                        ):
                             sF_ASP_Or = self.SF_ASP_Or(sF_ASP_Or)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -11068,23 +11155,31 @@ class QualityControlForMachining(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if smr_RefCValue and not isinstance(
+
+                        if smr_RefCValue is not None and not isinstance(
                             smr_RefCValue, aas.SubmodelElement
                         ):
                             smr_RefCValue = self.Smr_RefCValue(smr_RefCValue)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if smr_CValue and not isinstance(
+
+                        if smr_CValue is not None and not isinstance(
                             smr_CValue, aas.SubmodelElement
                         ):
                             smr_CValue = self.Smr_CValue(smr_CValue)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if smr_Value and not isinstance(smr_Value, aas.SubmodelElement):
+
+                        if smr_Value is not None and not isinstance(
+                            smr_Value, aas.SubmodelElement
+                        ):
                             smr_Value = self.Smr_Value(smr_Value)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if smr_Unit and not isinstance(smr_Unit, aas.SubmodelElement):
+
+                        if smr_Unit is not None and not isinstance(
+                            smr_Unit, aas.SubmodelElement
+                        ):
                             smr_Unit = self.Smr_Unit(smr_Unit)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -11183,19 +11278,22 @@ class QualityControlForMachining(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if aSF_FeatureName and not isinstance(
+
+                    if aSF_FeatureName is not None and not isinstance(
                         aSF_FeatureName, aas.SubmodelElement
                     ):
                         aSF_FeatureName = self.ASF_FeatureName(aSF_FeatureName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if aSF_Description and not isinstance(
+
+                    if aSF_Description is not None and not isinstance(
                         aSF_Description, aas.SubmodelElement
                     ):
                         aSF_Description = self.ASF_Description(aSF_Description)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if measurementProcedure and not isinstance(
+
+                    if measurementProcedure is not None and not isinstance(
                         measurementProcedure, aas.SubmodelElement
                     ):
                         measurementProcedure = self.MeasurementProcedure(
@@ -11214,13 +11312,15 @@ class QualityControlForMachining(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if inspectionRelevant and not isinstance(
+
+                    if inspectionRelevant is not None and not isinstance(
                         inspectionRelevant, aas.SubmodelElement
                     ):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if arealSurfaceFeatureType and not isinstance(
+
+                    if arealSurfaceFeatureType is not None and not isinstance(
                         arealSurfaceFeatureType, aas.SubmodelElement
                     ):
                         arealSurfaceFeatureType = self.ArealSurfaceFeatureType(
@@ -11228,7 +11328,8 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if iDList3DModel and not isinstance(
+
+                    if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
@@ -12279,17 +12380,22 @@ class QualityControlForMachining(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if productionStart and not isinstance(
+
+                if productionStart is not None and not isinstance(
                     productionStart, aas.SubmodelElement
                 ):
                     productionStart = self.ProductionStart(productionStart)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if productionEnd and not isinstance(productionEnd, aas.SubmodelElement):
+
+                if productionEnd is not None and not isinstance(
+                    productionEnd, aas.SubmodelElement
+                ):
                     productionEnd = self.ProductionEnd(productionEnd)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if jobName and not isinstance(jobName, aas.SubmodelElement):
+
+                if jobName is not None and not isinstance(jobName, aas.SubmodelElement):
                     jobName = self.JobName(jobName)
 
                 # Build submodel elements from raw values passed in the argument
@@ -12304,13 +12410,15 @@ class QualityControlForMachining(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if plannedPartsPerRun and not isinstance(
+
+                if plannedPartsPerRun is not None and not isinstance(
                     plannedPartsPerRun, aas.SubmodelElement
                 ):
                     plannedPartsPerRun = self.PlannedPartsPerRun(plannedPartsPerRun)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if plannedOrderQuantity and not isinstance(
+
+                if plannedOrderQuantity is not None and not isinstance(
                     plannedOrderQuantity, aas.SubmodelElement
                 ):
                     plannedOrderQuantity = self.PlannedOrderQuantity(
@@ -12318,13 +12426,17 @@ class QualityControlForMachining(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if actualPartsInRun and not isinstance(
+
+                if actualPartsInRun is not None and not isinstance(
                     actualPartsInRun, aas.SubmodelElement
                 ):
                     actualPartsInRun = self.ActualPartsInRun(actualPartsInRun)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if jobFinished and not isinstance(jobFinished, aas.SubmodelElement):
+
+                if jobFinished is not None and not isinstance(
+                    jobFinished, aas.SubmodelElement
+                ):
                     jobFinished = self.JobFinished(jobFinished)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -12422,7 +12534,10 @@ class QualityControlForMachining(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if technicalData and not isinstance(technicalData, aas.SubmodelElement):
+
+            if technicalData is not None and not isinstance(
+                technicalData, aas.SubmodelElement
+            ):
                 technicalData = self.TechnicalData(technicalData)
 
             # Add all passed/initialized submodel elements to a single list
@@ -13115,41 +13230,55 @@ class QualityControlForMachining(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if digitalNameplate and not isinstance(
+
+            if digitalNameplate is not None and not isinstance(
                 digitalNameplate, aas.SubmodelElement
             ):
                 digitalNameplate = self.DigitalNameplate(digitalNameplate)
 
             # Build a submodel element if a raw value was passed in the argument
-            if partIdentifier and not isinstance(partIdentifier, aas.SubmodelElement):
+
+            if partIdentifier is not None and not isinstance(
+                partIdentifier, aas.SubmodelElement
+            ):
                 partIdentifier = self.PartIdentifier(partIdentifier)
 
             # Build a submodel element if a raw value was passed in the argument
-            if partNumber and not isinstance(partNumber, aas.SubmodelElement):
+
+            if partNumber is not None and not isinstance(
+                partNumber, aas.SubmodelElement
+            ):
                 partNumber = self.PartNumber(partNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if orderNumber and not isinstance(orderNumber, aas.SubmodelElement):
+
+            if orderNumber is not None and not isinstance(
+                orderNumber, aas.SubmodelElement
+            ):
                 orderNumber = self.OrderNumber(orderNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lotNumber and not isinstance(lotNumber, aas.SubmodelElement):
+
+            if lotNumber is not None and not isinstance(lotNumber, aas.SubmodelElement):
                 lotNumber = self.LotNumber(lotNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if submodelReference3D and not isinstance(
+
+            if submodelReference3D is not None and not isinstance(
                 submodelReference3D, aas.SubmodelElement
             ):
                 submodelReference3D = self.SubmodelReference3D(submodelReference3D)
 
             # Build a submodel element if a raw value was passed in the argument
-            if drawingReference2D and not isinstance(
+
+            if drawingReference2D is not None and not isinstance(
                 drawingReference2D, aas.SubmodelElement
             ):
                 drawingReference2D = self.DrawingReference2D(drawingReference2D)
 
             # Build a submodel element if a raw value was passed in the argument
-            if cADFileReference3D and not isinstance(
+
+            if cADFileReference3D is not None and not isinstance(
                 cADFileReference3D, aas.SubmodelElement
             ):
                 cADFileReference3D = self.CADFileReference3D(cADFileReference3D)
@@ -13474,17 +13603,20 @@ class QualityControlForMachining(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if departmentName and not isinstance(
+
+                if departmentName is not None and not isinstance(
                     departmentName, aas.SubmodelElement
                 ):
                     departmentName = self.DepartmentName(departmentName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if role and not isinstance(role, aas.SubmodelElement):
+
+                if role is not None and not isinstance(role, aas.SubmodelElement):
                     role = self.Role(role)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contactInformation and not isinstance(
+
+                if contactInformation is not None and not isinstance(
                     contactInformation, aas.SubmodelElement
                 ):
                     contactInformation = self.ContactInformation(contactInformation)
@@ -14499,13 +14631,15 @@ class QualityControlForMachining(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if responsibility and not isinstance(
+
+                if responsibility is not None and not isinstance(
                     responsibility, aas.SubmodelElement
                 ):
                     responsibility = self.Responsibility(responsibility)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if digitalNameplateTestingDevice and not isinstance(
+
+                if digitalNameplateTestingDevice is not None and not isinstance(
                     digitalNameplateTestingDevice, aas.SubmodelElement
                 ):
                     digitalNameplateTestingDevice = self.DigitalNameplateTestingDevice(
@@ -14513,19 +14647,29 @@ class QualityControlForMachining(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if deviceName and not isinstance(deviceName, aas.SubmodelElement):
+
+                if deviceName is not None and not isinstance(
+                    deviceName, aas.SubmodelElement
+                ):
                     deviceName = self.DeviceName(deviceName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if measuringType and not isinstance(measuringType, aas.SubmodelElement):
+
+                if measuringType is not None and not isinstance(
+                    measuringType, aas.SubmodelElement
+                ):
                     measuringType = self.MeasuringType(measuringType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if measuringUnit and not isinstance(measuringUnit, aas.SubmodelElement):
+
+                if measuringUnit is not None and not isinstance(
+                    measuringUnit, aas.SubmodelElement
+                ):
                     measuringUnit = self.MeasuringUnit(measuringUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if measuringRange and not isinstance(
+
+                if measuringRange is not None and not isinstance(
                     measuringRange, aas.SubmodelElement
                 ):
                     measuringRange = self.MeasuringRange(
@@ -14533,15 +14677,22 @@ class QualityControlForMachining(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resolution and not isinstance(resolution, aas.SubmodelElement):
+
+                if resolution is not None and not isinstance(
+                    resolution, aas.SubmodelElement
+                ):
                     resolution = self.Resolution(resolution)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accuracy and not isinstance(accuracy, aas.SubmodelElement):
+
+                if accuracy is not None and not isinstance(
+                    accuracy, aas.SubmodelElement
+                ):
                     accuracy = self.Accuracy(accuracy)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if norm and not isinstance(norm, aas.SubmodelElement):
+
+                if norm is not None and not isinstance(norm, aas.SubmodelElement):
                     norm = self.Norm(norm)
 
                 # Build submodel elements from raw values passed in the argument
@@ -16860,11 +17011,17 @@ class QualityControlForMachining(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fileLink and not isinstance(fileLink, aas.SubmodelElement):
+
+                        if fileLink is not None and not isinstance(
+                            fileLink, aas.SubmodelElement
+                        ):
                             fileLink = self.FileLink(fileLink)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if mimeType and not isinstance(mimeType, aas.SubmodelElement):
+
+                        if mimeType is not None and not isinstance(
+                            mimeType, aas.SubmodelElement
+                        ):
                             mimeType = self.MimeType(mimeType)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -16978,7 +17135,8 @@ class QualityControlForMachining(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if qualityFeatureReference and not isinstance(
+
+                    if qualityFeatureReference is not None and not isinstance(
                         qualityFeatureReference, aas.SubmodelElement
                     ):
                         qualityFeatureReference = self.QualityFeatureReference(
@@ -16986,7 +17144,8 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if testingDeviceReference and not isinstance(
+
+                    if testingDeviceReference is not None and not isinstance(
                         testingDeviceReference, aas.SubmodelElement
                     ):
                         testingDeviceReference = self.TestingDeviceReference(
@@ -16994,23 +17153,27 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if partReference and not isinstance(
+
+                    if partReference is not None and not isinstance(
                         partReference, aas.SubmodelElement
                     ):
                         partReference = self.PartReference(partReference)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if iD and not isinstance(iD, aas.SubmodelElement):
+
+                    if iD is not None and not isinstance(iD, aas.SubmodelElement):
                         iD = self.ID(iD)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if description_ and not isinstance(
+
+                    if description_ is not None and not isinstance(
                         description_, aas.SubmodelElement
                     ):
                         description_ = self.Description(description_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if engineeringUnit and not isinstance(
+
+                    if engineeringUnit is not None and not isinstance(
                         engineeringUnit, aas.SubmodelElement
                     ):
                         engineeringUnit = self.EngineeringUnit(engineeringUnit)
@@ -17038,37 +17201,50 @@ class QualityControlForMachining(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if qualityInSpec and not isinstance(
+
+                    if qualityInSpec is not None and not isinstance(
                         qualityInSpec, aas.SubmodelElement
                     ):
                         qualityInSpec = self.QualityInSpec(qualityInSpec)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if deviation and not isinstance(deviation, aas.SubmodelElement):
+
+                    if deviation is not None and not isinstance(
+                        deviation, aas.SubmodelElement
+                    ):
                         deviation = self.Deviation(deviation)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if averageValue and not isinstance(
+
+                    if averageValue is not None and not isinstance(
                         averageValue, aas.SubmodelElement
                     ):
                         averageValue = self.AverageValue(averageValue)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if minValue and not isinstance(minValue, aas.SubmodelElement):
+
+                    if minValue is not None and not isinstance(
+                        minValue, aas.SubmodelElement
+                    ):
                         minValue = self.MinValue(minValue)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maxValue and not isinstance(maxValue, aas.SubmodelElement):
+
+                    if maxValue is not None and not isinstance(
+                        maxValue, aas.SubmodelElement
+                    ):
                         maxValue = self.MaxValue(maxValue)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if standarddeviation and not isinstance(
+
+                    if standarddeviation is not None and not isinstance(
                         standarddeviation, aas.SubmodelElement
                     ):
                         standarddeviation = self.Standarddeviation(standarddeviation)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if dataAggregatedFromSeries and not isinstance(
+
+                    if dataAggregatedFromSeries is not None and not isinstance(
                         dataAggregatedFromSeries, aas.SubmodelElement
                     ):
                         dataAggregatedFromSeries = self.DataAggregatedFromSeries(
@@ -17076,7 +17252,8 @@ class QualityControlForMachining(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if measuredValuesList and not isinstance(
+
+                    if measuredValuesList is not None and not isinstance(
                         measuredValuesList, aas.SubmodelElement
                     ):
                         measuredValuesList = self.MeasuredValuesList(measuredValuesList)
@@ -17352,15 +17529,18 @@ class QualityControlForMachining(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if jobStart and not isinstance(jobStart, aas.SubmodelElement):
+
+            if jobStart is not None and not isinstance(jobStart, aas.SubmodelElement):
                 jobStart = self.JobStart(jobStart)
 
             # Build a submodel element if a raw value was passed in the argument
-            if jobEnd and not isinstance(jobEnd, aas.SubmodelElement):
+
+            if jobEnd is not None and not isinstance(jobEnd, aas.SubmodelElement):
                 jobEnd = self.JobEnd(jobEnd)
 
             # Build a submodel element if a raw value was passed in the argument
-            if jobName and not isinstance(jobName, aas.SubmodelElement):
+
+            if jobName is not None and not isinstance(jobName, aas.SubmodelElement):
                 jobName = self.JobName(jobName)
 
             # Build submodel elements from raw values passed in the argument
@@ -17371,19 +17551,24 @@ class QualityControlForMachining(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if plannedPartsPerRun and not isinstance(
+
+            if plannedPartsPerRun is not None and not isinstance(
                 plannedPartsPerRun, aas.SubmodelElement
             ):
                 plannedPartsPerRun = self.PlannedPartsPerRun(plannedPartsPerRun)
 
             # Build a submodel element if a raw value was passed in the argument
-            if actualPartsInRun and not isinstance(
+
+            if actualPartsInRun is not None and not isinstance(
                 actualPartsInRun, aas.SubmodelElement
             ):
                 actualPartsInRun = self.ActualPartsInRun(actualPartsInRun)
 
             # Build a submodel element if a raw value was passed in the argument
-            if jobFinished and not isinstance(jobFinished, aas.SubmodelElement):
+
+            if jobFinished is not None and not isinstance(
+                jobFinished, aas.SubmodelElement
+            ):
                 jobFinished = self.JobFinished(jobFinished)
 
             # Add all passed/initialized submodel elements to a single list

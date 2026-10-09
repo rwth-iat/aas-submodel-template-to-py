@@ -2351,21 +2351,27 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfCreation and not isinstance(
+
+                if dateOfCreation is not None and not isinstance(
                     dateOfCreation, aas.SubmodelElement
                 ):
                     dateOfCreation = self.DateOfCreation(dateOfCreation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfLastModification and not isinstance(
+
+                if dateOfLastModification is not None and not isinstance(
                     dateOfLastModification, aas.SubmodelElement
                 ):
                     dateOfLastModification = self.DateOfLastModification(
@@ -2380,7 +2386,10 @@ class IntelligentInformationforUse(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if revision and not isinstance(revision, aas.SubmodelElement):
+
+                if revision is not None and not isinstance(
+                    revision, aas.SubmodelElement
+                ):
                     revision = self.Revision(revision)
 
                 # Build submodel elements from raw values passed in the argument
@@ -2391,7 +2400,8 @@ class IntelligentInformationforUse(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isReplacementOf and not isinstance(
+
+                if isReplacementOf is not None and not isinstance(
                     isReplacementOf, aas.SubmodelElement
                 ):
                     isReplacementOf = self.IsReplacementOf(isReplacementOf)
@@ -4686,21 +4696,27 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfCreation and not isinstance(
+
+                if dateOfCreation is not None and not isinstance(
                     dateOfCreation, aas.SubmodelElement
                 ):
                     dateOfCreation = self.DateOfCreation(dateOfCreation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfLastModification and not isinstance(
+
+                if dateOfLastModification is not None and not isinstance(
                     dateOfLastModification, aas.SubmodelElement
                 ):
                     dateOfLastModification = self.DateOfLastModification(
@@ -4715,7 +4731,10 @@ class IntelligentInformationforUse(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if revision and not isinstance(revision, aas.SubmodelElement):
+
+                if revision is not None and not isinstance(
+                    revision, aas.SubmodelElement
+                ):
                     revision = self.Revision(revision)
 
                 # Build submodel elements from raw values passed in the argument
@@ -4726,7 +4745,8 @@ class IntelligentInformationforUse(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isReplacementOf and not isinstance(
+
+                if isReplacementOf is not None and not isinstance(
                     isReplacementOf, aas.SubmodelElement
                 ):
                     isReplacementOf = self.IsReplacementOf(isReplacementOf)
@@ -6751,21 +6771,27 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfCreation and not isinstance(
+
+                if dateOfCreation is not None and not isinstance(
                     dateOfCreation, aas.SubmodelElement
                 ):
                     dateOfCreation = self.DateOfCreation(dateOfCreation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfLastModification and not isinstance(
+
+                if dateOfLastModification is not None and not isinstance(
                     dateOfLastModification, aas.SubmodelElement
                 ):
                     dateOfLastModification = self.DateOfLastModification(
@@ -6780,7 +6806,10 @@ class IntelligentInformationforUse(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if revision and not isinstance(revision, aas.SubmodelElement):
+
+                if revision is not None and not isinstance(
+                    revision, aas.SubmodelElement
+                ):
                     revision = self.Revision(revision)
 
                 # Build submodel elements from raw values passed in the argument
@@ -6791,7 +6820,8 @@ class IntelligentInformationforUse(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isReplacementOf and not isinstance(
+
+                if isReplacementOf is not None and not isinstance(
                     isReplacementOf, aas.SubmodelElement
                 ):
                     isReplacementOf = self.IsReplacementOf(isReplacementOf)
@@ -7041,7 +7071,10 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7669,11 +7702,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -8399,7 +8436,10 @@ class IntelligentInformationforUse(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                    if resourceIRI is not None and not isinstance(
+                        resourceIRI, aas.SubmodelElement
+                    ):
                         resourceIRI = self.ResourceIRI(resourceIRI)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8665,15 +8705,24 @@ class IntelligentInformationforUse(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                    if resourceIRI is not None and not isinstance(
+                        resourceIRI, aas.SubmodelElement
+                    ):
                         resourceIRI = self.ResourceIRI(resourceIRI)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if conformsTo and not isinstance(conformsTo, aas.SubmodelElement):
+
+                    if conformsTo is not None and not isinstance(
+                        conformsTo, aas.SubmodelElement
+                    ):
                         conformsTo = self.ConformsTo(conformsTo)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                    if value_ is not None and not isinstance(
+                        value_, aas.SubmodelElement
+                    ):
                         value_ = self.Value(value_)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8757,11 +8806,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if format and not isinstance(format, aas.SubmodelElement):
+
+                if format is not None and not isinstance(format, aas.SubmodelElement):
                     format = self.Format(format)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -9498,19 +9551,31 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfEffect and not isinstance(dateOfEffect, aas.SubmodelElement):
+
+                if dateOfEffect is not None and not isinstance(
+                    dateOfEffect, aas.SubmodelElement
+                ):
                     dateOfEffect = self.DateOfEffect(dateOfEffect)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfExpiry and not isinstance(dateOfExpiry, aas.SubmodelElement):
+
+                if dateOfExpiry is not None and not isinstance(
+                    dateOfExpiry, aas.SubmodelElement
+                ):
                     dateOfExpiry = self.DateOfExpiry(dateOfExpiry)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfStatus and not isinstance(dateOfStatus, aas.SubmodelElement):
+
+                if dateOfStatus is not None and not isinstance(
+                    dateOfStatus, aas.SubmodelElement
+                ):
                     dateOfStatus = self.DateOfStatus(dateOfStatus)
 
                 # Build submodel elements from raw values passed in the argument
@@ -9525,7 +9590,8 @@ class IntelligentInformationforUse(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if purpose and not isinstance(purpose, aas.SubmodelElement):
+
+                if purpose is not None and not isinstance(purpose, aas.SubmodelElement):
                     purpose = self.Purpose(purpose)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -9845,11 +9911,17 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if identifier and not isinstance(identifier, aas.SubmodelElement):
+
+                if identifier is not None and not isinstance(
+                    identifier, aas.SubmodelElement
+                ):
                     identifier = self.Identifier(identifier)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -10181,7 +10253,10 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -10893,11 +10968,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -11301,11 +11380,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -11663,11 +11746,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -11875,11 +11962,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -12087,11 +12178,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -12363,15 +12458,22 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duration and not isinstance(duration, aas.SubmodelElement):
+
+                if duration is not None and not isinstance(
+                    duration, aas.SubmodelElement
+                ):
                     duration = self.Duration(duration)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -12709,19 +12811,29 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if frequency and not isinstance(frequency, aas.SubmodelElement):
+
+                if frequency is not None and not isinstance(
+                    frequency, aas.SubmodelElement
+                ):
                     frequency = self.Frequency(frequency)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duration and not isinstance(duration, aas.SubmodelElement):
+
+                if duration is not None and not isinstance(
+                    duration, aas.SubmodelElement
+                ):
                     duration = self.Duration(duration)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -12993,15 +13105,22 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duration and not isinstance(duration, aas.SubmodelElement):
+
+                if duration is not None and not isinstance(
+                    duration, aas.SubmodelElement
+                ):
                     duration = self.Duration(duration)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -13468,11 +13587,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -13680,11 +13803,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -13888,11 +14015,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -14200,11 +14331,15 @@ class IntelligentInformationforUse(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+                if resourceIRI is not None and not isinstance(
+                    resourceIRI, aas.SubmodelElement
+                ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if label and not isinstance(label, aas.SubmodelElement):
+
+                if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -14374,15 +14509,22 @@ class IntelligentInformationforUse(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if resourceIRI and not isinstance(resourceIRI, aas.SubmodelElement):
+
+        if resourceIRI is not None and not isinstance(resourceIRI, aas.SubmodelElement):
             resourceIRI = self.ResourceIRI(resourceIRI)
 
         # Build a submodel element if a raw value was passed in the argument
-        if formatRestriction and not isinstance(formatRestriction, aas.SubmodelElement):
+
+        if formatRestriction is not None and not isinstance(
+            formatRestriction, aas.SubmodelElement
+        ):
             formatRestriction = self.FormatRestriction(formatRestriction)
 
         # Build a submodel element if a raw value was passed in the argument
-        if iirdsVersion and not isinstance(iirdsVersion, aas.SubmodelElement):
+
+        if iirdsVersion is not None and not isinstance(
+            iirdsVersion, aas.SubmodelElement
+        ):
             iirdsVersion = self.IirdsVersion(iirdsVersion)
 
         # Add all passed/initialized submodel elements to a single list

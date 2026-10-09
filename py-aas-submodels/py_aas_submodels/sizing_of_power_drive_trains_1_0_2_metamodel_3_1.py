@@ -753,17 +753,22 @@ class PowerDriveTrainSizing(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if clientName and not isinstance(clientName, aas.SubmodelElement):
+
+            if clientName is not None and not isinstance(
+                clientName, aas.SubmodelElement
+            ):
                 clientName = self.ClientName(clientName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sizingProjectName and not isinstance(
+
+            if sizingProjectName is not None and not isinstance(
                 sizingProjectName, aas.SubmodelElement
             ):
                 sizingProjectName = self.SizingProjectName(sizingProjectName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sizingProjectAxisReference and not isinstance(
+
+            if sizingProjectAxisReference is not None and not isinstance(
                 sizingProjectAxisReference, aas.SubmodelElement
             ):
                 sizingProjectAxisReference = self.SizingProjectAxisReference(
@@ -771,7 +776,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if sizingProjectDescription and not isinstance(
+
+            if sizingProjectDescription is not None and not isinstance(
                 sizingProjectDescription, aas.SubmodelElement
             ):
                 sizingProjectDescription = self.SizingProjectDescription(
@@ -779,19 +785,29 @@ class PowerDriveTrainSizing(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if sizingToolName and not isinstance(sizingToolName, aas.SubmodelElement):
+
+            if sizingToolName is not None and not isinstance(
+                sizingToolName, aas.SubmodelElement
+            ):
                 sizingToolName = self.SizingToolName(sizingToolName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if dateCreated and not isinstance(dateCreated, aas.SubmodelElement):
+
+            if dateCreated is not None and not isinstance(
+                dateCreated, aas.SubmodelElement
+            ):
                 dateCreated = self.DateCreated(dateCreated)
 
             # Build a submodel element if a raw value was passed in the argument
-            if dateChanged and not isinstance(dateChanged, aas.SubmodelElement):
+
+            if dateChanged is not None and not isinstance(
+                dateChanged, aas.SubmodelElement
+            ):
                 dateChanged = self.DateChanged(dateChanged)
 
             # Build a submodel element if a raw value was passed in the argument
-            if amlDriveConfigVersion and not isinstance(
+
+            if amlDriveConfigVersion is not None and not isinstance(
                 amlDriveConfigVersion, aas.SubmodelElement
             ):
                 amlDriveConfigVersion = self.AmlDriveConfigVersion(
@@ -2162,23 +2178,29 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if time and not isinstance(time, aas.SubmodelElement):
+
+                            if time is not None and not isinstance(
+                                time, aas.SubmodelElement
+                            ):
                                 time = self.Time(time)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if angularPosition and not isinstance(
+
+                            if angularPosition is not None and not isinstance(
                                 angularPosition, aas.SubmodelElement
                             ):
                                 angularPosition = self.AngularPosition(angularPosition)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if angularVelocity and not isinstance(
+
+                            if angularVelocity is not None and not isinstance(
                                 angularVelocity, aas.SubmodelElement
                             ):
                                 angularVelocity = self.AngularVelocity(angularVelocity)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if angularAcceleration and not isinstance(
+
+                            if angularAcceleration is not None and not isinstance(
                                 angularAcceleration, aas.SubmodelElement
                             ):
                                 angularAcceleration = self.AngularAcceleration(
@@ -2186,31 +2208,36 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if angularJerk and not isinstance(
+
+                            if angularJerk is not None and not isinstance(
                                 angularJerk, aas.SubmodelElement
                             ):
                                 angularJerk = self.AngularJerk(angularJerk)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if frictionTorque and not isinstance(
+
+                            if frictionTorque is not None and not isinstance(
                                 frictionTorque, aas.SubmodelElement
                             ):
                                 frictionTorque = self.FrictionTorque(frictionTorque)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if axialForce and not isinstance(
+
+                            if axialForce is not None and not isinstance(
                                 axialForce, aas.SubmodelElement
                             ):
                                 axialForce = self.AxialForce(axialForce)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if radialForce and not isinstance(
+
+                            if radialForce is not None and not isinstance(
                                 radialForce, aas.SubmodelElement
                             ):
                                 radialForce = self.RadialForce(radialForce)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if loadTorque and not isinstance(
+
+                            if loadTorque is not None and not isinstance(
                                 loadTorque, aas.SubmodelElement
                             ):
                                 loadTorque = self.LoadTorque(loadTorque)
@@ -2378,13 +2405,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if frictionTorque and not isinstance(
+
+                        if frictionTorque is not None and not isinstance(
                             frictionTorque, aas.SubmodelElement
                         ):
                             frictionTorque = self.FrictionTorque(frictionTorque)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if leverArmAxialForce and not isinstance(
+
+                        if leverArmAxialForce is not None and not isinstance(
                             leverArmAxialForce, aas.SubmodelElement
                         ):
                             leverArmAxialForce = self.LeverArmAxialForce(
@@ -2392,13 +2421,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if axialForce and not isinstance(
+
+                        if axialForce is not None and not isinstance(
                             axialForce, aas.SubmodelElement
                         ):
                             axialForce = self.AxialForce(axialForce)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if leverArmRadialForce and not isinstance(
+
+                        if leverArmRadialForce is not None and not isinstance(
                             leverArmRadialForce, aas.SubmodelElement
                         ):
                             leverArmRadialForce = self.LeverArmRadialForce(
@@ -2406,13 +2437,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if radialForce and not isinstance(
+
+                        if radialForce is not None and not isinstance(
                             radialForce, aas.SubmodelElement
                         ):
                             radialForce = self.RadialForce(radialForce)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if momentOfInertiaOfLoad and not isinstance(
+
+                        if momentOfInertiaOfLoad is not None and not isinstance(
                             momentOfInertiaOfLoad, aas.SubmodelElement
                         ):
                             momentOfInertiaOfLoad = self.MomentOfInertiaOfLoad(
@@ -2420,7 +2453,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if loadTorque and not isinstance(
+
+                        if loadTorque is not None and not isinstance(
                             loadTorque, aas.SubmodelElement
                         ):
                             loadTorque = self.LoadTorque(loadTorque)
@@ -3477,23 +3511,29 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if time and not isinstance(time, aas.SubmodelElement):
+
+                            if time is not None and not isinstance(
+                                time, aas.SubmodelElement
+                            ):
                                 time = self.Time(time)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if position and not isinstance(
+
+                            if position is not None and not isinstance(
                                 position, aas.SubmodelElement
                             ):
                                 position = self.Position(position)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if linearVelocity and not isinstance(
+
+                            if linearVelocity is not None and not isinstance(
                                 linearVelocity, aas.SubmodelElement
                             ):
                                 linearVelocity = self.LinearVelocity(linearVelocity)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if linearAcceleration and not isinstance(
+
+                            if linearAcceleration is not None and not isinstance(
                                 linearAcceleration, aas.SubmodelElement
                             ):
                                 linearAcceleration = self.LinearAcceleration(
@@ -3501,19 +3541,22 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if linearJerk and not isinstance(
+
+                            if linearJerk is not None and not isinstance(
                                 linearJerk, aas.SubmodelElement
                             ):
                                 linearJerk = self.LinearJerk(linearJerk)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if frictionForce and not isinstance(
+
+                            if frictionForce is not None and not isinstance(
                                 frictionForce, aas.SubmodelElement
                             ):
                                 frictionForce = self.FrictionForce(frictionForce)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if loadSideForce and not isinstance(
+
+                            if loadSideForce is not None and not isinstance(
                                 loadSideForce, aas.SubmodelElement
                             ):
                                 loadSideForce = self.LoadSideForce(loadSideForce)
@@ -3674,7 +3717,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if frictionCoefficient and not isinstance(
+
+                        if frictionCoefficient is not None and not isinstance(
                             frictionCoefficient, aas.SubmodelElement
                         ):
                             frictionCoefficient = self.FrictionCoefficient(
@@ -3682,13 +3726,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if frictionForce and not isinstance(
+
+                        if frictionForce is not None and not isinstance(
                             frictionForce, aas.SubmodelElement
                         ):
                             frictionForce = self.FrictionForce(frictionForce)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if compensationForce and not isinstance(
+
+                        if compensationForce is not None and not isinstance(
                             compensationForce, aas.SubmodelElement
                         ):
                             compensationForce = self.CompensationForce(
@@ -3696,17 +3742,22 @@ class PowerDriveTrainSizing(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if loadMass and not isinstance(loadMass, aas.SubmodelElement):
+
+                        if loadMass is not None and not isinstance(
+                            loadMass, aas.SubmodelElement
+                        ):
                             loadMass = self.LoadMass(loadMass)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if loadSideForce and not isinstance(
+
+                        if loadSideForce is not None and not isinstance(
                             loadSideForce, aas.SubmodelElement
                         ):
                             loadSideForce = self.LoadSideForce(loadSideForce)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if counterMass and not isinstance(
+
+                        if counterMass is not None and not isinstance(
                             counterMass, aas.SubmodelElement
                         ):
                             counterMass = self.CounterMass(counterMass)
@@ -3877,7 +3928,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if motionPatternName and not isinstance(
+
+                if motionPatternName is not None and not isinstance(
                     motionPatternName, aas.SubmodelElement
                 ):
                     motionPatternName = self.MotionPatternName(motionPatternName)
@@ -4305,7 +4357,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if installationAltitude and not isinstance(
+
+                if installationAltitude is not None and not isinstance(
                     installationAltitude, aas.SubmodelElement
                 ):
                     installationAltitude = self.InstallationAltitude(
@@ -4313,15 +4366,22 @@ class PowerDriveTrainSizing(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if atex2Gas and not isinstance(atex2Gas, aas.SubmodelElement):
+
+                if atex2Gas is not None and not isinstance(
+                    atex2Gas, aas.SubmodelElement
+                ):
                     atex2Gas = self.Atex2Gas(atex2Gas)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if atex2Dust and not isinstance(atex2Dust, aas.SubmodelElement):
+
+                if atex2Dust is not None and not isinstance(
+                    atex2Dust, aas.SubmodelElement
+                ):
                     atex2Dust = self.Atex2Dust(atex2Dust)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if ambientTemperatureController and not isinstance(
+
+                if ambientTemperatureController is not None and not isinstance(
                     ambientTemperatureController, aas.SubmodelElement
                 ):
                     ambientTemperatureController = self.AmbientTemperatureController(
@@ -4330,7 +4390,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if ambientTemperatureMotor and not isinstance(
+
+                if ambientTemperatureMotor is not None and not isinstance(
                     ambientTemperatureMotor, aas.SubmodelElement
                 ):
                     ambientTemperatureMotor = self.AmbientTemperatureMotor(
@@ -4969,27 +5030,36 @@ class PowerDriveTrainSizing(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dcLinkCoupling and not isinstance(
+
+                if dcLinkCoupling is not None and not isinstance(
                     dcLinkCoupling, aas.SubmodelElement
                 ):
                     dcLinkCoupling = self.DcLinkCoupling(dcLinkCoupling)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if brakePresent and not isinstance(brakePresent, aas.SubmodelElement):
+
+                if brakePresent is not None and not isinstance(
+                    brakePresent, aas.SubmodelElement
+                ):
                     brakePresent = self.BrakePresent(brakePresent)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mainsConnection and not isinstance(
+
+                if mainsConnection is not None and not isinstance(
                     mainsConnection, aas.SubmodelElement
                 ):
                     mainsConnection = self.MainsConnection(mainsConnection)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mountingType and not isinstance(mountingType, aas.SubmodelElement):
+
+                if mountingType is not None and not isinstance(
+                    mountingType, aas.SubmodelElement
+                ):
                     mountingType = self.MountingType(mountingType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if minSwitchingFrequency and not isinstance(
+
+                if minSwitchingFrequency is not None and not isinstance(
                     minSwitchingFrequency, aas.SubmodelElement
                 ):
                     minSwitchingFrequency = self.MinSwitchingFrequency(
@@ -4997,23 +5067,29 @@ class PowerDriveTrainSizing(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if coolingType and not isinstance(coolingType, aas.SubmodelElement):
+
+                if coolingType is not None and not isinstance(
+                    coolingType, aas.SubmodelElement
+                ):
                     coolingType = self.CoolingType(coolingType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if protectionType and not isinstance(
+
+                if protectionType is not None and not isinstance(
                     protectionType, aas.SubmodelElement
                 ):
                     protectionType = self.ProtectionType(protectionType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if certificateApproval and not isinstance(
+
+                if certificateApproval is not None and not isinstance(
                     certificateApproval, aas.SubmodelElement
                 ):
                     certificateApproval = self.CertificateApproval(certificateApproval)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if safetyIntegrityLevel and not isinstance(
+
+                if safetyIntegrityLevel is not None and not isinstance(
                     safetyIntegrityLevel, aas.SubmodelElement
                 ):
                     safetyIntegrityLevel = self.SafetyIntegrityLevel(
@@ -5313,13 +5389,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if cyclesPerMinute and not isinstance(
+
+                if cyclesPerMinute is not None and not isinstance(
                     cyclesPerMinute, aas.SubmodelElement
                 ):
                     cyclesPerMinute = self.CyclesPerMinute(cyclesPerMinute)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if operatingHoursPerDay and not isinstance(
+
+                if operatingHoursPerDay is not None and not isinstance(
                     operatingHoursPerDay, aas.SubmodelElement
                 ):
                     operatingHoursPerDay = self.OperatingHoursPerDay(
@@ -5327,7 +5405,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if operatingDaysPerYear and not isinstance(
+
+                if operatingDaysPerYear is not None and not isinstance(
                     operatingDaysPerYear, aas.SubmodelElement
                 ):
                     operatingDaysPerYear = self.OperatingDaysPerYear(
@@ -12056,7 +12135,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if criticalityOfMessage and not isinstance(
+
+                    if criticalityOfMessage is not None and not isinstance(
                         criticalityOfMessage, aas.SubmodelElement
                     ):
                         criticalityOfMessage = self.CriticalityOfMessage(
@@ -12064,7 +12144,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if messageText and not isinstance(messageText, aas.SubmodelElement):
+
+                    if messageText is not None and not isinstance(
+                        messageText, aas.SubmodelElement
+                    ):
                         messageText = self.MessageText(messageText)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -12303,7 +12386,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if textStatement and not isinstance(textStatement, aas.SubmodelElement):
+
+            if textStatement is not None and not isinstance(
+                textStatement, aas.SubmodelElement
+            ):
                 textStatement = self.TextStatement(textStatement)
 
             # Add all passed/initialized submodel elements to a single list

@@ -1250,7 +1250,8 @@ class Reliability(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if numberOfReliabilitySets and not isinstance(
+
+        if numberOfReliabilitySets is not None and not isinstance(
             numberOfReliabilitySets, aas.SubmodelElement
         ):
             numberOfReliabilitySets = self.NumberOfReliabilitySets(

@@ -392,7 +392,8 @@ class MaintenanceInstructions(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if valueTotalEstimatedWorkingTime and not isinstance(
+
+                    if valueTotalEstimatedWorkingTime is not None and not isinstance(
                         valueTotalEstimatedWorkingTime, aas.SubmodelElement
                     ):
                         valueTotalEstimatedWorkingTime = (
@@ -402,8 +403,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unitValueTotalEstimatedWorkingTime and not isinstance(
-                        unitValueTotalEstimatedWorkingTime, aas.SubmodelElement
+
+                    if (
+                        unitValueTotalEstimatedWorkingTime is not None
+                        and not isinstance(
+                            unitValueTotalEstimatedWorkingTime, aas.SubmodelElement
+                        )
                     ):
                         unitValueTotalEstimatedWorkingTime = (
                             self.UnitValueTotalEstimatedWorkingTime(
@@ -497,7 +502,8 @@ class MaintenanceInstructions(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if numberOfRequiredTechnicians and not isinstance(
+
+                if numberOfRequiredTechnicians is not None and not isinstance(
                     numberOfRequiredTechnicians, aas.SubmodelElement
                 ):
                     numberOfRequiredTechnicians = self.NumberOfRequiredTechnicians(
@@ -1724,8 +1730,9 @@ class MaintenanceInstructions(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
+
                         if (
-                            valueEstimatedDurationTimeMaintenanceStep
+                            valueEstimatedDurationTimeMaintenanceStep is not None
                             and not isinstance(
                                 valueEstimatedDurationTimeMaintenanceStep,
                                 aas.SubmodelElement,
@@ -1738,9 +1745,13 @@ class MaintenanceInstructions(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unitEstimatedDurationTimeMaintenanceStep and not isinstance(
-                            unitEstimatedDurationTimeMaintenanceStep,
-                            aas.SubmodelElement,
+
+                        if (
+                            unitEstimatedDurationTimeMaintenanceStep is not None
+                            and not isinstance(
+                                unitEstimatedDurationTimeMaintenanceStep,
+                                aas.SubmodelElement,
+                            )
                         ):
                             unitEstimatedDurationTimeMaintenanceStep = (
                                 self.UnitEstimatedDurationTimeMaintenanceStep(
@@ -2208,13 +2219,15 @@ class MaintenanceInstructions(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maintenanceStepID and not isinstance(
+
+                    if maintenanceStepID is not None and not isinstance(
                         maintenanceStepID, aas.SubmodelElement
                     ):
                         maintenanceStepID = self.MaintenanceStepID(maintenanceStepID)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if maintenanceStepName and not isinstance(
+
+                    if maintenanceStepName is not None and not isinstance(
                         maintenanceStepName, aas.SubmodelElement
                     ):
                         maintenanceStepName = self.MaintenanceStepName(
@@ -2222,7 +2235,8 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localizationDescription and not isinstance(
+
+                    if localizationDescription is not None and not isinstance(
                         localizationDescription, aas.SubmodelElement
                     ):
                         localizationDescription = self.LocalizationDescription(
@@ -2230,8 +2244,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if linkSMMaintenanceComponentModuleMachine and not isinstance(
-                        linkSMMaintenanceComponentModuleMachine, aas.SubmodelElement
+
+                    if (
+                        linkSMMaintenanceComponentModuleMachine is not None
+                        and not isinstance(
+                            linkSMMaintenanceComponentModuleMachine, aas.SubmodelElement
+                        )
                     ):
                         linkSMMaintenanceComponentModuleMachine = (
                             self.LinkSMMaintenanceComponentModuleMachine(
@@ -2240,7 +2258,8 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if linkAASComponentModuleMachine and not isinstance(
+
+                    if linkAASComponentModuleMachine is not None and not isinstance(
                         linkAASComponentModuleMachine, aas.SubmodelElement
                     ):
                         linkAASComponentModuleMachine = (
@@ -2250,7 +2269,8 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if instructionMaintenanceStep and not isinstance(
+
+                    if instructionMaintenanceStep is not None and not isinstance(
                         instructionMaintenanceStep, aas.SubmodelElement
                     ):
                         instructionMaintenanceStep = self.InstructionMaintenanceStep(
@@ -2269,8 +2289,12 @@ class MaintenanceInstructions(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if quantityOfSparePartForMaintenanceStep and not isinstance(
-                        quantityOfSparePartForMaintenanceStep, aas.SubmodelElement
+
+                    if (
+                        quantityOfSparePartForMaintenanceStep is not None
+                        and not isinstance(
+                            quantityOfSparePartForMaintenanceStep, aas.SubmodelElement
+                        )
                     ):
                         quantityOfSparePartForMaintenanceStep = (
                             self.QuantityOfSparePartForMaintenanceStep(
@@ -2301,8 +2325,9 @@ class MaintenanceInstructions(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
+
                     if (
-                        unitForQuantityOfConsumablesForMaintenanceStep
+                        unitForQuantityOfConsumablesForMaintenanceStep is not None
                         and not isinstance(
                             unitForQuantityOfConsumablesForMaintenanceStep,
                             aas.SubmodelElement,
@@ -2326,8 +2351,12 @@ class MaintenanceInstructions(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if quantityOfToolsForMaintenanceStep and not isinstance(
-                        quantityOfToolsForMaintenanceStep, aas.SubmodelElement
+
+                    if (
+                        quantityOfToolsForMaintenanceStep is not None
+                        and not isinstance(
+                            quantityOfToolsForMaintenanceStep, aas.SubmodelElement
+                        )
                     ):
                         quantityOfToolsForMaintenanceStep = (
                             self.QuantityOfToolsForMaintenanceStep(
@@ -2336,7 +2365,8 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if documentationSignatureMandatory and not isinstance(
+
+                    if documentationSignatureMandatory is not None and not isinstance(
                         documentationSignatureMandatory, aas.SubmodelElement
                     ):
                         documentationSignatureMandatory = (
@@ -2346,7 +2376,8 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if conditionForNextMaintenanceStep and not isinstance(
+
+                    if conditionForNextMaintenanceStep is not None and not isinstance(
                         conditionForNextMaintenanceStep, aas.SubmodelElement
                     ):
                         conditionForNextMaintenanceStep = (
@@ -2356,7 +2387,8 @@ class MaintenanceInstructions(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if nextMaintenanceStep and not isinstance(
+
+                    if nextMaintenanceStep is not None and not isinstance(
                         nextMaintenanceStep, aas.SubmodelElement
                     ):
                         nextMaintenanceStep = self.NextMaintenanceStep(
@@ -2386,7 +2418,8 @@ class MaintenanceInstructions(aas.Submodel):
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if endOfMaintenance and not isinstance(
+
+                    if endOfMaintenance is not None and not isinstance(
                         endOfMaintenance, aas.SubmodelElement
                     ):
                         endOfMaintenance = self.EndOfMaintenance(endOfMaintenance)
@@ -2989,7 +3022,8 @@ class MaintenanceInstructions(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if maxQuantityOfTool and not isinstance(
+
+                        if maxQuantityOfTool is not None and not isinstance(
                             maxQuantityOfTool, aas.SubmodelElement
                         ):
                             maxQuantityOfTool = self.MaxQuantityOfTool(
@@ -2997,7 +3031,8 @@ class MaintenanceInstructions(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if referenceNameOfMaintenance and not isinstance(
+
+                        if referenceNameOfMaintenance is not None and not isinstance(
                             referenceNameOfMaintenance, aas.SubmodelElement
                         ):
                             referenceNameOfMaintenance = (
@@ -3007,7 +3042,8 @@ class MaintenanceInstructions(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if referenceToMaintenanceID and not isinstance(
+
+                        if referenceToMaintenanceID is not None and not isinstance(
                             referenceToMaintenanceID, aas.SubmodelElement
                         ):
                             referenceToMaintenanceID = self.ReferenceToMaintenanceID(
@@ -3458,15 +3494,20 @@ class MaintenanceInstructions(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if toolID and not isinstance(toolID, aas.SubmodelElement):
+
+                if toolID is not None and not isinstance(toolID, aas.SubmodelElement):
                     toolID = self.ToolID(toolID)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if toolName and not isinstance(toolName, aas.SubmodelElement):
+
+                if toolName is not None and not isinstance(
+                    toolName, aas.SubmodelElement
+                ):
                     toolName = self.ToolName(toolName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if companyNameToolSupplier and not isinstance(
+
+                if companyNameToolSupplier is not None and not isinstance(
                     companyNameToolSupplier, aas.SubmodelElement
                 ):
                     companyNameToolSupplier = self.CompanyNameToolSupplier(
@@ -3474,7 +3515,8 @@ class MaintenanceInstructions(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if orderCodeToolOfManufacturer and not isinstance(
+
+                if orderCodeToolOfManufacturer is not None and not isinstance(
                     orderCodeToolOfManufacturer, aas.SubmodelElement
                 ):
                     orderCodeToolOfManufacturer = self.OrderCodeToolOfManufacturer(
@@ -4084,7 +4126,8 @@ class MaintenanceInstructions(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if quantityOfConsumable and not isinstance(
+
+                        if quantityOfConsumable is not None and not isinstance(
                             quantityOfConsumable, aas.SubmodelElement
                         ):
                             quantityOfConsumable = self.QuantityOfConsumable(
@@ -4092,7 +4135,8 @@ class MaintenanceInstructions(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if referenceNameOfMaintenance and not isinstance(
+
+                        if referenceNameOfMaintenance is not None and not isinstance(
                             referenceNameOfMaintenance, aas.SubmodelElement
                         ):
                             referenceNameOfMaintenance = (
@@ -4102,7 +4146,8 @@ class MaintenanceInstructions(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if referenceToMaintenanceID and not isinstance(
+
+                        if referenceToMaintenanceID is not None and not isinstance(
                             referenceToMaintenanceID, aas.SubmodelElement
                         ):
                             referenceToMaintenanceID = self.ReferenceToMaintenanceID(
@@ -4692,17 +4737,22 @@ class MaintenanceInstructions(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if consumableID and not isinstance(consumableID, aas.SubmodelElement):
+
+                if consumableID is not None and not isinstance(
+                    consumableID, aas.SubmodelElement
+                ):
                     consumableID = self.ConsumableID(consumableID)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if consumableName and not isinstance(
+
+                if consumableName is not None and not isinstance(
                     consumableName, aas.SubmodelElement
                 ):
                     consumableName = self.ConsumableName(consumableName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if unitMaxQuantityOfConsumable and not isinstance(
+
+                if unitMaxQuantityOfConsumable is not None and not isinstance(
                     unitMaxQuantityOfConsumable, aas.SubmodelElement
                 ):
                     unitMaxQuantityOfConsumable = self.UnitMaxQuantityOfConsumable(
@@ -4710,7 +4760,8 @@ class MaintenanceInstructions(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if companyNameSupplierConsumable and not isinstance(
+
+                if companyNameSupplierConsumable is not None and not isinstance(
                     companyNameSupplierConsumable, aas.SubmodelElement
                 ):
                     companyNameSupplierConsumable = self.CompanyNameSupplierConsumable(
@@ -4718,7 +4769,8 @@ class MaintenanceInstructions(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if orderCodeConsumableOfManufacturer and not isinstance(
+
+                if orderCodeConsumableOfManufacturer is not None and not isinstance(
                     orderCodeConsumableOfManufacturer, aas.SubmodelElement
                 ):
                     orderCodeConsumableOfManufacturer = (
@@ -5550,15 +5602,22 @@ class MaintenanceInstructions(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sparePartID and not isinstance(sparePartID, aas.SubmodelElement):
+
+                if sparePartID is not None and not isinstance(
+                    sparePartID, aas.SubmodelElement
+                ):
                     sparePartID = self.SparePartID(sparePartID)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sparePartName and not isinstance(sparePartName, aas.SubmodelElement):
+
+                if sparePartName is not None and not isinstance(
+                    sparePartName, aas.SubmodelElement
+                ):
                     sparePartName = self.SparePartName(sparePartName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if companyNameSupplierSparePart and not isinstance(
+
+                if companyNameSupplierSparePart is not None and not isinstance(
                     companyNameSupplierSparePart, aas.SubmodelElement
                 ):
                     companyNameSupplierSparePart = self.CompanyNameSupplierSparePart(
@@ -5566,7 +5625,8 @@ class MaintenanceInstructions(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if orderCodeSparePartOfManufacturer and not isinstance(
+
+                if orderCodeSparePartOfManufacturer is not None and not isinstance(
                     orderCodeSparePartOfManufacturer, aas.SubmodelElement
                 ):
                     orderCodeSparePartOfManufacturer = (
@@ -5850,7 +5910,8 @@ class MaintenanceInstructions(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if maintenanceFreeAsset and not isinstance(
+
+        if maintenanceFreeAsset is not None and not isinstance(
             maintenanceFreeAsset, aas.SubmodelElement
         ):
             maintenanceFreeAsset = self.MaintenanceFreeAsset(maintenanceFreeAsset)

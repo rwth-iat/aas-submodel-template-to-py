@@ -1407,19 +1407,31 @@ class ExecutedProcesses(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if stageId and not isinstance(stageId, aas.SubmodelElement):
+
+                        if stageId is not None and not isinstance(
+                            stageId, aas.SubmodelElement
+                        ):
                             stageId = self.StageId(stageId)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if startTime and not isinstance(startTime, aas.SubmodelElement):
+
+                        if startTime is not None and not isinstance(
+                            startTime, aas.SubmodelElement
+                        ):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if endTime and not isinstance(endTime, aas.SubmodelElement):
+
+                        if endTime is not None and not isinstance(
+                            endTime, aas.SubmodelElement
+                        ):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if result and not isinstance(result, aas.SubmodelElement):
+
+                        if result is not None and not isinstance(
+                            result, aas.SubmodelElement
+                        ):
                             result = self.Result(result)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1736,11 +1748,15 @@ class ExecutedProcesses(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if errorCode and not isinstance(errorCode, aas.SubmodelElement):
+
+                        if errorCode is not None and not isinstance(
+                            errorCode, aas.SubmodelElement
+                        ):
                             errorCode = self.ErrorCode(errorCode)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if errorDescription and not isinstance(
+
+                        if errorDescription is not None and not isinstance(
                             errorDescription, aas.SubmodelElement
                         ):
                             errorDescription = self.ErrorDescription(errorDescription)
@@ -1926,45 +1942,64 @@ class ExecutedProcesses(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processId and not isinstance(processId, aas.SubmodelElement):
+
+                if processId is not None and not isinstance(
+                    processId, aas.SubmodelElement
+                ):
                     processId = self.ProcessId(processId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processName and not isinstance(processName, aas.SubmodelElement):
+
+                if processName is not None and not isinstance(
+                    processName, aas.SubmodelElement
+                ):
                     processName = self.ProcessName(processName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processDescription and not isinstance(
+
+                if processDescription is not None and not isinstance(
                     processDescription, aas.SubmodelElement
                 ):
                     processDescription = self.ProcessDescription(processDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if plannedProcessTime and not isinstance(
+
+                if plannedProcessTime is not None and not isinstance(
                     plannedProcessTime, aas.SubmodelElement
                 ):
                     plannedProcessTime = self.PlannedProcessTime(plannedProcessTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processStatus and not isinstance(processStatus, aas.SubmodelElement):
+
+                if processStatus is not None and not isinstance(
+                    processStatus, aas.SubmodelElement
+                ):
                     processStatus = self.ProcessStatus(processStatus)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processResult and not isinstance(processResult, aas.SubmodelElement):
+
+                if processResult is not None and not isinstance(
+                    processResult, aas.SubmodelElement
+                ):
                     processResult = self.ProcessResult(processResult)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if operatorRole and not isinstance(operatorRole, aas.SubmodelElement):
+
+                if operatorRole is not None and not isinstance(
+                    operatorRole, aas.SubmodelElement
+                ):
                     operatorRole = self.OperatorRole(operatorRole)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processStartTime and not isinstance(
+
+                if processStartTime is not None and not isinstance(
                     processStartTime, aas.SubmodelElement
                 ):
                     processStartTime = self.ProcessStartTime(processStartTime)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if processEndTime and not isinstance(
+
+                if processEndTime is not None and not isinstance(
                     processEndTime, aas.SubmodelElement
                 ):
                     processEndTime = self.ProcessEndTime(processEndTime)
@@ -2070,7 +2105,8 @@ class ExecutedProcesses(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if runResult and not isinstance(runResult, aas.SubmodelElement):
+
+            if runResult is not None and not isinstance(runResult, aas.SubmodelElement):
                 runResult = self.RunResult(runResult)
 
             # Add all passed/initialized submodel elements to a single list

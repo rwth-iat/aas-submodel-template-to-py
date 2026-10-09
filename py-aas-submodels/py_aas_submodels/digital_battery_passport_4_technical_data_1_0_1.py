@@ -830,7 +830,8 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if warrantyPeriod and not isinstance(
+
+                if warrantyPeriod is not None and not isinstance(
                     warrantyPeriod, aas.SubmodelElement
                 ):
                     warrantyPeriod = self.WarrantyPeriod(warrantyPeriod)
@@ -929,13 +930,15 @@ class TechnicalData(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerName and not isinstance(
+
+            if manufacturerName is not None and not isinstance(
                 manufacturerName, aas.SubmodelElement
             ):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerIdentifier and not isinstance(
+
+            if manufacturerIdentifier is not None and not isinstance(
                 manufacturerIdentifier, aas.SubmodelElement
             ):
                 manufacturerIdentifier = self.ManufacturerIdentifier(
@@ -943,11 +946,17 @@ class TechnicalData(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if batteryCategory and not isinstance(batteryCategory, aas.SubmodelElement):
+
+            if batteryCategory is not None and not isinstance(
+                batteryCategory, aas.SubmodelElement
+            ):
                 batteryCategory = self.BatteryCategory(batteryCategory)
 
             # Build a submodel element if a raw value was passed in the argument
-            if batteryMass and not isinstance(batteryMass, aas.SubmodelElement):
+
+            if batteryMass is not None and not isinstance(
+                batteryMass, aas.SubmodelElement
+            ):
                 batteryMass = self.BatteryMass(batteryMass)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1567,29 +1576,43 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nominalVoltage and not isinstance(
+
+                if nominalVoltage is not None and not isinstance(
                     nominalVoltage, aas.SubmodelElement
                 ):
                     nominalVoltage = self.NominalVoltage(nominalVoltage)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if minVoltage and not isinstance(minVoltage, aas.SubmodelElement):
+
+                if minVoltage is not None and not isinstance(
+                    minVoltage, aas.SubmodelElement
+                ):
                     minVoltage = self.MinVoltage(minVoltage)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maxVoltage and not isinstance(maxVoltage, aas.SubmodelElement):
+
+                if maxVoltage is not None and not isinstance(
+                    maxVoltage, aas.SubmodelElement
+                ):
                     maxVoltage = self.MaxVoltage(maxVoltage)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if ratedCapacity and not isinstance(ratedCapacity, aas.SubmodelElement):
+
+                if ratedCapacity is not None and not isinstance(
+                    ratedCapacity, aas.SubmodelElement
+                ):
                     ratedCapacity = self.RatedCapacity(ratedCapacity)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if capacityFade and not isinstance(capacityFade, aas.SubmodelElement):
+
+                if capacityFade is not None and not isinstance(
+                    capacityFade, aas.SubmodelElement
+                ):
                     capacityFade = self.CapacityFade(capacityFade)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if certifiedUsableBatteryEnergy and not isinstance(
+
+                if certifiedUsableBatteryEnergy is not None and not isinstance(
                     certifiedUsableBatteryEnergy, aas.SubmodelElement
                 ):
                     certifiedUsableBatteryEnergy = self.CertifiedUsableBatteryEnergy(
@@ -2048,7 +2071,8 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if initialRoundTripEnergyEfficiency and not isinstance(
+
+                if initialRoundTripEnergyEfficiency is not None and not isinstance(
                     initialRoundTripEnergyEfficiency, aas.SubmodelElement
                 ):
                     initialRoundTripEnergyEfficiency = (
@@ -2058,8 +2082,13 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if roundTripEnergyEfficiencyAt50PercentOfCycleLife and not isinstance(
-                    roundTripEnergyEfficiencyAt50PercentOfCycleLife, aas.SubmodelElement
+
+                if (
+                    roundTripEnergyEfficiencyAt50PercentOfCycleLife is not None
+                    and not isinstance(
+                        roundTripEnergyEfficiencyAt50PercentOfCycleLife,
+                        aas.SubmodelElement,
+                    )
                 ):
                     roundTripEnergyEfficiencyAt50PercentOfCycleLife = (
                         self.RoundTripEnergyEfficiencyAt50PercentOfCycleLife(
@@ -2068,7 +2097,8 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if energyRoundTripEfficiencyFade and not isinstance(
+
+                if energyRoundTripEfficiencyFade is not None and not isinstance(
                     energyRoundTripEfficiencyFade, aas.SubmodelElement
                 ):
                     energyRoundTripEfficiencyFade = self.EnergyRoundTripEfficiencyFade(
@@ -2076,7 +2106,8 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if initialSelfDischargingRate and not isinstance(
+
+                if initialSelfDischargingRate is not None and not isinstance(
                     initialSelfDischargingRate, aas.SubmodelElement
                 ):
                     initialSelfDischargingRate = self.InitialSelfDischargingRate(
@@ -2709,8 +2740,12 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if initialInternalResistanceOnBatteryCellLevel and not isinstance(
-                    initialInternalResistanceOnBatteryCellLevel, aas.SubmodelElement
+
+                if (
+                    initialInternalResistanceOnBatteryCellLevel is not None
+                    and not isinstance(
+                        initialInternalResistanceOnBatteryCellLevel, aas.SubmodelElement
+                    )
                 ):
                     initialInternalResistanceOnBatteryCellLevel = (
                         self.InitialInternalResistanceOnBatteryCellLevel(
@@ -2719,8 +2754,12 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if initialInternalResistanceOnBatteryPackLevel and not isinstance(
-                    initialInternalResistanceOnBatteryPackLevel, aas.SubmodelElement
+
+                if (
+                    initialInternalResistanceOnBatteryPackLevel is not None
+                    and not isinstance(
+                        initialInternalResistanceOnBatteryPackLevel, aas.SubmodelElement
+                    )
                 ):
                     initialInternalResistanceOnBatteryPackLevel = (
                         self.InitialInternalResistanceOnBatteryPackLevel(
@@ -2729,8 +2768,13 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if initialInternalResistanceOnBatteryModuleLevel and not isinstance(
-                    initialInternalResistanceOnBatteryModuleLevel, aas.SubmodelElement
+
+                if (
+                    initialInternalResistanceOnBatteryModuleLevel is not None
+                    and not isinstance(
+                        initialInternalResistanceOnBatteryModuleLevel,
+                        aas.SubmodelElement,
+                    )
                 ):
                     initialInternalResistanceOnBatteryModuleLevel = (
                         self.InitialInternalResistanceOnBatteryModuleLevel(
@@ -2739,8 +2783,13 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if internalResistanceIncreaseOfBatteryCellLevel and not isinstance(
-                    internalResistanceIncreaseOfBatteryCellLevel, aas.SubmodelElement
+
+                if (
+                    internalResistanceIncreaseOfBatteryCellLevel is not None
+                    and not isinstance(
+                        internalResistanceIncreaseOfBatteryCellLevel,
+                        aas.SubmodelElement,
+                    )
                 ):
                     internalResistanceIncreaseOfBatteryCellLevel = (
                         self.InternalResistanceIncreaseOfBatteryCellLevel(
@@ -2749,8 +2798,13 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if internalResistanceIncreaseOfBatteryPackLevel and not isinstance(
-                    internalResistanceIncreaseOfBatteryPackLevel, aas.SubmodelElement
+
+                if (
+                    internalResistanceIncreaseOfBatteryPackLevel is not None
+                    and not isinstance(
+                        internalResistanceIncreaseOfBatteryPackLevel,
+                        aas.SubmodelElement,
+                    )
                 ):
                     internalResistanceIncreaseOfBatteryPackLevel = (
                         self.InternalResistanceIncreaseOfBatteryPackLevel(
@@ -2759,8 +2813,13 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if internalResistanceIncreaseOfBatteryModuleLevel and not isinstance(
-                    internalResistanceIncreaseOfBatteryModuleLevel, aas.SubmodelElement
+
+                if (
+                    internalResistanceIncreaseOfBatteryModuleLevel is not None
+                    and not isinstance(
+                        internalResistanceIncreaseOfBatteryModuleLevel,
+                        aas.SubmodelElement,
+                    )
                 ):
                     internalResistanceIncreaseOfBatteryModuleLevel = (
                         self.InternalResistanceIncreaseOfBatteryModuleLevel(
@@ -3261,11 +3320,15 @@ class TechnicalData(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if atSoc and not isinstance(atSoc, aas.SubmodelElement):
+
+                        if atSoc is not None and not isinstance(
+                            atSoc, aas.SubmodelElement
+                        ):
                             atSoc = self.AtSoc(atSoc)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if powerCapabilityAt and not isinstance(
+
+                        if powerCapabilityAt is not None and not isinstance(
                             powerCapabilityAt, aas.SubmodelElement
                         ):
                             powerCapabilityAt = self.PowerCapabilityAt(
@@ -3549,7 +3612,8 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maximumPermittedBatteryPower and not isinstance(
+
+                if maximumPermittedBatteryPower is not None and not isinstance(
                     maximumPermittedBatteryPower, aas.SubmodelElement
                 ):
                     maximumPermittedBatteryPower = self.MaximumPermittedBatteryPower(
@@ -3557,12 +3621,19 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if powerFade and not isinstance(powerFade, aas.SubmodelElement):
+
+                if powerFade is not None and not isinstance(
+                    powerFade, aas.SubmodelElement
+                ):
                     powerFade = self.PowerFade(powerFade)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if ratioNorminalBatteryPowerAndBatteryEnergy and not isinstance(
-                    ratioNorminalBatteryPowerAndBatteryEnergy, aas.SubmodelElement
+
+                if (
+                    ratioNorminalBatteryPowerAndBatteryEnergy is not None
+                    and not isinstance(
+                        ratioNorminalBatteryPowerAndBatteryEnergy, aas.SubmodelElement
+                    )
                 ):
                     ratioNorminalBatteryPowerAndBatteryEnergy = (
                         self.RatioNorminalBatteryPowerAndBatteryEnergy(
@@ -3848,8 +3919,12 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if temperatureRangeIdleState_LowerBoundary and not isinstance(
-                    temperatureRangeIdleState_LowerBoundary, aas.SubmodelElement
+
+                if (
+                    temperatureRangeIdleState_LowerBoundary is not None
+                    and not isinstance(
+                        temperatureRangeIdleState_LowerBoundary, aas.SubmodelElement
+                    )
                 ):
                     temperatureRangeIdleState_LowerBoundary = (
                         self.TemperatureRangeIdleState_LowerBoundary(
@@ -3858,8 +3933,12 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if temperatureRangeIdleState_UpperBoundary and not isinstance(
-                    temperatureRangeIdleState_UpperBoundary, aas.SubmodelElement
+
+                if (
+                    temperatureRangeIdleState_UpperBoundary is not None
+                    and not isinstance(
+                        temperatureRangeIdleState_UpperBoundary, aas.SubmodelElement
+                    )
                 ):
                     temperatureRangeIdleState_UpperBoundary = (
                         self.TemperatureRangeIdleState_UpperBoundary(
@@ -4280,7 +4359,8 @@ class TechnicalData(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if expectedLifetimeInCalendarYears and not isinstance(
+
+                if expectedLifetimeInCalendarYears is not None and not isinstance(
                     expectedLifetimeInCalendarYears, aas.SubmodelElement
                 ):
                     expectedLifetimeInCalendarYears = (
@@ -4290,7 +4370,8 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if expectedNumberOfCycles and not isinstance(
+
+                if expectedNumberOfCycles is not None and not isinstance(
                     expectedNumberOfCycles, aas.SubmodelElement
                 ):
                     expectedNumberOfCycles = self.ExpectedNumberOfCycles(
@@ -4298,7 +4379,8 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if capacityThresholdExhaustion and not isinstance(
+
+                if capacityThresholdExhaustion is not None and not isinstance(
                     capacityThresholdExhaustion, aas.SubmodelElement
                 ):
                     capacityThresholdExhaustion = self.CapacityThresholdExhaustion(
@@ -4306,7 +4388,8 @@ class TechnicalData(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if cRateOfRelevantCycleLifeTest and not isinstance(
+
+                if cRateOfRelevantCycleLifeTest is not None and not isinstance(
                     cRateOfRelevantCycleLifeTest, aas.SubmodelElement
                 ):
                     cRateOfRelevantCycleLifeTest = self.CRateOfRelevantCycleLifeTest(

@@ -489,23 +489,32 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if companyName and not isinstance(companyName, aas.SubmodelElement):
+
+            if companyName is not None and not isinstance(
+                companyName, aas.SubmodelElement
+            ):
                 companyName = self.CompanyName(companyName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if street and not isinstance(street, aas.SubmodelElement):
+
+            if street is not None and not isinstance(street, aas.SubmodelElement):
                 street = self.Street(street)
 
             # Build a submodel element if a raw value was passed in the argument
-            if zIPCode and not isinstance(zIPCode, aas.SubmodelElement):
+
+            if zIPCode is not None and not isinstance(zIPCode, aas.SubmodelElement):
                 zIPCode = self.ZIPCode(zIPCode)
 
             # Build a submodel element if a raw value was passed in the argument
-            if city and not isinstance(city, aas.SubmodelElement):
+
+            if city is not None and not isinstance(city, aas.SubmodelElement):
                 city = self.City(city)
 
             # Build a submodel element if a raw value was passed in the argument
-            if nationalCode and not isinstance(nationalCode, aas.SubmodelElement):
+
+            if nationalCode is not None and not isinstance(
+                nationalCode, aas.SubmodelElement
+            ):
                 nationalCode = self.NationalCode(nationalCode)
 
             # Build submodel elements from raw values passed in the argument
@@ -1180,7 +1189,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if companyName and not isinstance(companyName, aas.SubmodelElement):
+
+            if companyName is not None and not isinstance(
+                companyName, aas.SubmodelElement
+            ):
                 companyName = self.CompanyName(companyName)
 
             # Build submodel elements from raw values passed in the argument
@@ -1198,15 +1210,20 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if zIPCode and not isinstance(zIPCode, aas.SubmodelElement):
+
+            if zIPCode is not None and not isinstance(zIPCode, aas.SubmodelElement):
                 zIPCode = self.ZIPCode(zIPCode)
 
             # Build a submodel element if a raw value was passed in the argument
-            if city and not isinstance(city, aas.SubmodelElement):
+
+            if city is not None and not isinstance(city, aas.SubmodelElement):
                 city = self.City(city)
 
             # Build a submodel element if a raw value was passed in the argument
-            if nationalCode and not isinstance(nationalCode, aas.SubmodelElement):
+
+            if nationalCode is not None and not isinstance(
+                nationalCode, aas.SubmodelElement
+            ):
                 nationalCode = self.NationalCode(nationalCode)
 
             # Build submodel elements from raw values passed in the argument
@@ -1688,7 +1705,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if typeOfInspectionDocument and not isinstance(
+
+            if typeOfInspectionDocument is not None and not isinstance(
                 typeOfInspectionDocument, aas.SubmodelElement
             ):
                 typeOfInspectionDocument = self.TypeOfInspectionDocument(
@@ -1696,11 +1714,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if orderDate and not isinstance(orderDate, aas.SubmodelElement):
+
+            if orderDate is not None and not isinstance(orderDate, aas.SubmodelElement):
                 orderDate = self.OrderDate(orderDate)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerOrderNumber and not isinstance(
+
+            if manufacturerOrderNumber is not None and not isinstance(
                 manufacturerOrderNumber, aas.SubmodelElement
             ):
                 manufacturerOrderNumber = self.ManufacturerOrderNumber(
@@ -1708,13 +1728,15 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if purchaserOrderNumber and not isinstance(
+
+            if purchaserOrderNumber is not None and not isinstance(
                 purchaserOrderNumber, aas.SubmodelElement
             ):
                 purchaserOrderNumber = self.PurchaserOrderNumber(purchaserOrderNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if deliveryNoteNumber and not isinstance(
+
+            if deliveryNoteNumber is not None and not isinstance(
                 deliveryNoteNumber, aas.SubmodelElement
             ):
                 deliveryNoteNumber = self.DeliveryNoteNumber(deliveryNoteNumber)
@@ -2909,19 +2931,24 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if wallThickness and not isinstance(
+
+                    if wallThickness is not None and not isinstance(
                         wallThickness, aas.SubmodelElement
                     ):
                         wallThickness = self.WallThickness(wallThickness)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if outerDiameter and not isinstance(
+
+                    if outerDiameter is not None and not isinstance(
                         outerDiameter, aas.SubmodelElement
                     ):
                         outerDiameter = self.OuterDiameter(outerDiameter)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if length and not isinstance(length, aas.SubmodelElement):
+
+                    if length is not None and not isinstance(
+                        length, aas.SubmodelElement
+                    ):
                         length = self.Length(length)
 
                     # Build submodel elements from raw values passed in the argument
@@ -3402,21 +3429,29 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if wallThickness and not isinstance(
+
+                    if wallThickness is not None and not isinstance(
                         wallThickness, aas.SubmodelElement
                     ):
                         wallThickness = self.WallThickness(wallThickness)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if height and not isinstance(height, aas.SubmodelElement):
+
+                    if height is not None and not isinstance(
+                        height, aas.SubmodelElement
+                    ):
                         height = self.Height(height)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if width and not isinstance(width, aas.SubmodelElement):
+
+                    if width is not None and not isinstance(width, aas.SubmodelElement):
                         width = self.Width(width)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if length and not isinstance(length, aas.SubmodelElement):
+
+                    if length is not None and not isinstance(
+                        length, aas.SubmodelElement
+                    ):
                         length = self.Length(length)
 
                     # Build submodel elements from raw values passed in the argument
@@ -3754,13 +3789,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if outerDiameter and not isinstance(
+
+                    if outerDiameter is not None and not isinstance(
                         outerDiameter, aas.SubmodelElement
                     ):
                         outerDiameter = self.OuterDiameter(outerDiameter)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if length and not isinstance(length, aas.SubmodelElement):
+
+                    if length is not None and not isinstance(
+                        length, aas.SubmodelElement
+                    ):
                         length = self.Length(length)
 
                     # Build submodel elements from raw values passed in the argument
@@ -4095,13 +4134,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if widthAcrossFlats and not isinstance(
+
+                    if widthAcrossFlats is not None and not isinstance(
                         widthAcrossFlats, aas.SubmodelElement
                     ):
                         widthAcrossFlats = self.WidthAcrossFlats(widthAcrossFlats)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if length and not isinstance(length, aas.SubmodelElement):
+
+                    if length is not None and not isinstance(
+                        length, aas.SubmodelElement
+                    ):
                         length = self.Length(length)
 
                     # Build submodel elements from raw values passed in the argument
@@ -4505,15 +4548,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if height and not isinstance(height, aas.SubmodelElement):
+
+                    if height is not None and not isinstance(
+                        height, aas.SubmodelElement
+                    ):
                         height = self.Height(height)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if width and not isinstance(width, aas.SubmodelElement):
+
+                    if width is not None and not isinstance(width, aas.SubmodelElement):
                         width = self.Width(width)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if length and not isinstance(length, aas.SubmodelElement):
+
+                    if length is not None and not isinstance(
+                        length, aas.SubmodelElement
+                    ):
                         length = self.Length(length)
 
                     # Build submodel elements from raw values passed in the argument
@@ -4917,15 +4967,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if thickness and not isinstance(thickness, aas.SubmodelElement):
+
+                    if thickness is not None and not isinstance(
+                        thickness, aas.SubmodelElement
+                    ):
                         thickness = self.Thickness(thickness)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if width and not isinstance(width, aas.SubmodelElement):
+
+                    if width is not None and not isinstance(width, aas.SubmodelElement):
                         width = self.Width(width)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if length and not isinstance(length, aas.SubmodelElement):
+
+                    if length is not None and not isinstance(
+                        length, aas.SubmodelElement
+                    ):
                         length = self.Length(length)
 
                     # Build submodel elements from raw values passed in the argument
@@ -5404,7 +5461,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if profileSpecification and not isinstance(
+
+                    if profileSpecification is not None and not isinstance(
                         profileSpecification, aas.SubmodelElement
                     ):
                         profileSpecification = self.ProfileSpecification(
@@ -5412,15 +5470,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if height and not isinstance(height, aas.SubmodelElement):
+
+                    if height is not None and not isinstance(
+                        height, aas.SubmodelElement
+                    ):
                         height = self.Height(height)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if width and not isinstance(width, aas.SubmodelElement):
+
+                    if width is not None and not isinstance(width, aas.SubmodelElement):
                         width = self.Width(width)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if length and not isinstance(length, aas.SubmodelElement):
+
+                    if length is not None and not isinstance(
+                        length, aas.SubmodelElement
+                    ):
                         length = self.Length(length)
 
                     # Build submodel elements from raw values passed in the argument
@@ -5711,7 +5776,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerProductNumber and not isinstance(
+
+            if manufacturerProductNumber is not None and not isinstance(
                 manufacturerProductNumber, aas.SubmodelElement
             ):
                 manufacturerProductNumber = self.ManufacturerProductNumber(
@@ -5719,7 +5785,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if purchaserArticleNumber and not isinstance(
+
+            if purchaserArticleNumber is not None and not isinstance(
                 purchaserArticleNumber, aas.SubmodelElement
             ):
                 purchaserArticleNumber = self.PurchaserArticleNumber(
@@ -5727,13 +5794,15 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if productDescription and not isinstance(
+
+            if productDescription is not None and not isinstance(
                 productDescription, aas.SubmodelElement
             ):
                 productDescription = self.ProductDescription(productDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if additionalProductRequirements and not isinstance(
+
+            if additionalProductRequirements is not None and not isinstance(
                 additionalProductRequirements, aas.SubmodelElement
             ):
                 additionalProductRequirements = self.AdditionalProductRequirements(
@@ -5741,21 +5810,29 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if batchNumber and not isinstance(batchNumber, aas.SubmodelElement):
+
+            if batchNumber is not None and not isinstance(
+                batchNumber, aas.SubmodelElement
+            ):
                 batchNumber = self.BatchNumber(batchNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialNumber and not isinstance(materialNumber, aas.SubmodelElement):
+
+            if materialNumber is not None and not isinstance(
+                materialNumber, aas.SubmodelElement
+            ):
                 materialNumber = self.MaterialNumber(materialNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialShortName and not isinstance(
+
+            if materialShortName is not None and not isinstance(
                 materialShortName, aas.SubmodelElement
             ):
                 materialShortName = self.MaterialShortName(materialShortName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialAdditionalInformation and not isinstance(
+
+            if materialAdditionalInformation is not None and not isinstance(
                 materialAdditionalInformation, aas.SubmodelElement
             ):
                 materialAdditionalInformation = self.MaterialAdditionalInformation(
@@ -5763,15 +5840,24 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfPieces and not isinstance(numberOfPieces, aas.SubmodelElement):
+
+            if numberOfPieces is not None and not isinstance(
+                numberOfPieces, aas.SubmodelElement
+            ):
                 numberOfPieces = self.NumberOfPieces(numberOfPieces)
 
             # Build a submodel element if a raw value was passed in the argument
-            if theoreticalMass and not isinstance(theoreticalMass, aas.SubmodelElement):
+
+            if theoreticalMass is not None and not isinstance(
+                theoreticalMass, aas.SubmodelElement
+            ):
                 theoreticalMass = self.TheoreticalMass(theoreticalMass)
 
             # Build a submodel element if a raw value was passed in the argument
-            if actualMass and not isinstance(actualMass, aas.SubmodelElement):
+
+            if actualMass is not None and not isinstance(
+                actualMass, aas.SubmodelElement
+            ):
                 actualMass = self.ActualMass(actualMass)
 
             # Add all passed/initialized submodel elements to a single list
@@ -6923,7 +7009,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if yieldOrProofStrengthMean and not isinstance(
+
+                if yieldOrProofStrengthMean is not None and not isinstance(
                     yieldOrProofStrengthMean, aas.SubmodelElement
                 ):
                     yieldOrProofStrengthMean = self.YieldOrProofStrengthMean(
@@ -6931,13 +7018,15 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if tensileStrengthMean and not isinstance(
+
+                if tensileStrengthMean is not None and not isinstance(
                     tensileStrengthMean, aas.SubmodelElement
                 ):
                     tensileStrengthMean = self.TensileStrengthMean(tensileStrengthMean)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if elongationAfterFractureMean and not isinstance(
+
+                if elongationAfterFractureMean is not None and not isinstance(
                     elongationAfterFractureMean, aas.SubmodelElement
                 ):
                     elongationAfterFractureMean = self.ElongationAfterFractureMean(
@@ -6945,7 +7034,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if yieldOrProofStrengthIndividualValues and not isinstance(
+
+                if yieldOrProofStrengthIndividualValues is not None and not isinstance(
                     yieldOrProofStrengthIndividualValues, aas.SubmodelElement
                 ):
                     yieldOrProofStrengthIndividualValues = (
@@ -6955,7 +7045,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if tensileStrengthIndividualValues and not isinstance(
+
+                if tensileStrengthIndividualValues is not None and not isinstance(
                     tensileStrengthIndividualValues, aas.SubmodelElement
                 ):
                     tensileStrengthIndividualValues = (
@@ -6965,8 +7056,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if elongationAfterFractureIndividualValues and not isinstance(
-                    elongationAfterFractureIndividualValues, aas.SubmodelElement
+
+                if (
+                    elongationAfterFractureIndividualValues is not None
+                    and not isinstance(
+                        elongationAfterFractureIndividualValues, aas.SubmodelElement
+                    )
                 ):
                     elongationAfterFractureIndividualValues = (
                         self.ElongationAfterFractureIndividualValues(
@@ -6975,13 +7070,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testTemperature and not isinstance(
+
+                if testTemperature is not None and not isinstance(
                     testTemperature, aas.SubmodelElement
                 ):
                     testTemperature = self.TestTemperature(testTemperature)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sampleShape and not isinstance(sampleShape, aas.SubmodelElement):
+
+                if sampleShape is not None and not isinstance(
+                    sampleShape, aas.SubmodelElement
+                ):
                     sampleShape = self.SampleShape(sampleShape)
 
                 # Build submodel elements from raw values passed in the argument
@@ -7646,7 +7745,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hardnessTestingMethod and not isinstance(
+
+                if hardnessTestingMethod is not None and not isinstance(
                     hardnessTestingMethod, aas.SubmodelElement
                 ):
                     hardnessTestingMethod = self.HardnessTestingMethod(
@@ -7654,11 +7754,15 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hardnessMean and not isinstance(hardnessMean, aas.SubmodelElement):
+
+                if hardnessMean is not None and not isinstance(
+                    hardnessMean, aas.SubmodelElement
+                ):
                     hardnessMean = self.HardnessMean(hardnessMean)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hardnessIndividualValues and not isinstance(
+
+                if hardnessIndividualValues is not None and not isinstance(
                     hardnessIndividualValues, aas.SubmodelElement
                 ):
                     hardnessIndividualValues = self.HardnessIndividualValues(
@@ -7666,7 +7770,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testTemperature and not isinstance(
+
+                if testTemperature is not None and not isinstance(
                     testTemperature, aas.SubmodelElement
                 ):
                     testTemperature = self.TestTemperature(testTemperature)
@@ -8658,7 +8763,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if notchImpactStrengthMean and not isinstance(
+
+                if notchImpactStrengthMean is not None and not isinstance(
                     notchImpactStrengthMean, aas.SubmodelElement
                 ):
                     notchImpactStrengthMean = self.NotchImpactStrengthMean(
@@ -8666,7 +8772,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if notchImpactStrengthIndividualValues and not isinstance(
+
+                if notchImpactStrengthIndividualValues is not None and not isinstance(
                     notchImpactStrengthIndividualValues, aas.SubmodelElement
                 ):
                     notchImpactStrengthIndividualValues = (
@@ -8676,13 +8783,15 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if notchImpactWorkMean and not isinstance(
+
+                if notchImpactWorkMean is not None and not isinstance(
                     notchImpactWorkMean, aas.SubmodelElement
                 ):
                     notchImpactWorkMean = self.NotchImpactWorkMean(notchImpactWorkMean)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if notchImpactWorkIndividualValues and not isinstance(
+
+                if notchImpactWorkIndividualValues is not None and not isinstance(
                     notchImpactWorkIndividualValues, aas.SubmodelElement
                 ):
                     notchImpactWorkIndividualValues = (
@@ -8692,15 +8801,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sampleType and not isinstance(sampleType, aas.SubmodelElement):
+
+                if sampleType is not None and not isinstance(
+                    sampleType, aas.SubmodelElement
+                ):
                     sampleType = self.SampleType(sampleType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sampleWidth and not isinstance(sampleWidth, aas.SubmodelElement):
+
+                if sampleWidth is not None and not isinstance(
+                    sampleWidth, aas.SubmodelElement
+                ):
                     sampleWidth = self.SampleWidth(sampleWidth)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testTemperature and not isinstance(
+
+                if testTemperature is not None and not isinstance(
                     testTemperature, aas.SubmodelElement
                 ):
                     testTemperature = self.TestTemperature(testTemperature)
@@ -10274,79 +10390,134 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Al and not isinstance(massFraction_Al, aas.SubmodelElement):
+
+            if massFraction_Al is not None and not isinstance(
+                massFraction_Al, aas.SubmodelElement
+            ):
                 massFraction_Al = self.MassFraction_Al(massFraction_Al)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Be and not isinstance(massFraction_Be, aas.SubmodelElement):
+
+            if massFraction_Be is not None and not isinstance(
+                massFraction_Be, aas.SubmodelElement
+            ):
                 massFraction_Be = self.MassFraction_Be(massFraction_Be)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_C and not isinstance(massFraction_C, aas.SubmodelElement):
+
+            if massFraction_C is not None and not isinstance(
+                massFraction_C, aas.SubmodelElement
+            ):
                 massFraction_C = self.MassFraction_C(massFraction_C)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Cr and not isinstance(massFraction_Cr, aas.SubmodelElement):
+
+            if massFraction_Cr is not None and not isinstance(
+                massFraction_Cr, aas.SubmodelElement
+            ):
                 massFraction_Cr = self.MassFraction_Cr(massFraction_Cr)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Cu and not isinstance(massFraction_Cu, aas.SubmodelElement):
+
+            if massFraction_Cu is not None and not isinstance(
+                massFraction_Cu, aas.SubmodelElement
+            ):
                 massFraction_Cu = self.MassFraction_Cu(massFraction_Cu)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Mn and not isinstance(massFraction_Mn, aas.SubmodelElement):
+
+            if massFraction_Mn is not None and not isinstance(
+                massFraction_Mn, aas.SubmodelElement
+            ):
                 massFraction_Mn = self.MassFraction_Mn(massFraction_Mn)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Mo and not isinstance(massFraction_Mo, aas.SubmodelElement):
+
+            if massFraction_Mo is not None and not isinstance(
+                massFraction_Mo, aas.SubmodelElement
+            ):
                 massFraction_Mo = self.MassFraction_Mo(massFraction_Mo)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_N and not isinstance(massFraction_N, aas.SubmodelElement):
+
+            if massFraction_N is not None and not isinstance(
+                massFraction_N, aas.SubmodelElement
+            ):
                 massFraction_N = self.MassFraction_N(massFraction_N)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Nb and not isinstance(massFraction_Nb, aas.SubmodelElement):
+
+            if massFraction_Nb is not None and not isinstance(
+                massFraction_Nb, aas.SubmodelElement
+            ):
                 massFraction_Nb = self.MassFraction_Nb(massFraction_Nb)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Ni and not isinstance(massFraction_Ni, aas.SubmodelElement):
+
+            if massFraction_Ni is not None and not isinstance(
+                massFraction_Ni, aas.SubmodelElement
+            ):
                 massFraction_Ni = self.MassFraction_Ni(massFraction_Ni)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_P and not isinstance(massFraction_P, aas.SubmodelElement):
+
+            if massFraction_P is not None and not isinstance(
+                massFraction_P, aas.SubmodelElement
+            ):
                 massFraction_P = self.MassFraction_P(massFraction_P)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Pb and not isinstance(massFraction_Pb, aas.SubmodelElement):
+
+            if massFraction_Pb is not None and not isinstance(
+                massFraction_Pb, aas.SubmodelElement
+            ):
                 massFraction_Pb = self.MassFraction_Pb(massFraction_Pb)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_S and not isinstance(massFraction_S, aas.SubmodelElement):
+
+            if massFraction_S is not None and not isinstance(
+                massFraction_S, aas.SubmodelElement
+            ):
                 massFraction_S = self.MassFraction_S(massFraction_S)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Si and not isinstance(massFraction_Si, aas.SubmodelElement):
+
+            if massFraction_Si is not None and not isinstance(
+                massFraction_Si, aas.SubmodelElement
+            ):
                 massFraction_Si = self.MassFraction_Si(massFraction_Si)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Ta and not isinstance(massFraction_Ta, aas.SubmodelElement):
+
+            if massFraction_Ta is not None and not isinstance(
+                massFraction_Ta, aas.SubmodelElement
+            ):
                 massFraction_Ta = self.MassFraction_Ta(massFraction_Ta)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_Ti and not isinstance(massFraction_Ti, aas.SubmodelElement):
+
+            if massFraction_Ti is not None and not isinstance(
+                massFraction_Ti, aas.SubmodelElement
+            ):
                 massFraction_Ti = self.MassFraction_Ti(massFraction_Ti)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_V and not isinstance(massFraction_V, aas.SubmodelElement):
+
+            if massFraction_V is not None and not isinstance(
+                massFraction_V, aas.SubmodelElement
+            ):
                 massFraction_V = self.MassFraction_V(massFraction_V)
 
             # Build a submodel element if a raw value was passed in the argument
-            if massFraction_W and not isinstance(massFraction_W, aas.SubmodelElement):
+
+            if massFraction_W is not None and not isinstance(
+                massFraction_W, aas.SubmodelElement
+            ):
                 massFraction_W = self.MassFraction_W(massFraction_W)
 
             # Build a submodel element if a raw value was passed in the argument
-            if steelmakingProcess and not isinstance(
+
+            if steelmakingProcess is not None and not isinstance(
                 steelmakingProcess, aas.SubmodelElement
             ):
                 steelmakingProcess = self.SteelmakingProcess(steelmakingProcess)
@@ -11055,11 +11226,15 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if markingName and not isinstance(markingName, aas.SubmodelElement):
+
+                if markingName is not None and not isinstance(
+                    markingName, aas.SubmodelElement
+                ):
                     markingName = self.MarkingName(markingName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if designationOfCertificateOrApproval and not isinstance(
+
+                if designationOfCertificateOrApproval is not None and not isinstance(
                     designationOfCertificateOrApproval, aas.SubmodelElement
                 ):
                     designationOfCertificateOrApproval = (
@@ -11069,7 +11244,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if issueDate and not isinstance(issueDate, aas.SubmodelElement):
+
+                if issueDate is not None and not isinstance(
+                    issueDate, aas.SubmodelElement
+                ):
                     issueDate = self.IssueDate(issueDate)
 
                 # Build submodel elements from raw values passed in the argument
@@ -11174,7 +11352,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if statementOfCompliance and not isinstance(
+
+            if statementOfCompliance is not None and not isinstance(
                 statementOfCompliance, aas.SubmodelElement
             ):
                 statementOfCompliance = self.StatementOfCompliance(
@@ -11182,11 +11361,15 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if dateOfIssue and not isinstance(dateOfIssue, aas.SubmodelElement):
+
+            if dateOfIssue is not None and not isinstance(
+                dateOfIssue, aas.SubmodelElement
+            ):
                 dateOfIssue = self.DateOfIssue(dateOfIssue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if originatorOfDocument and not isinstance(
+
+            if originatorOfDocument is not None and not isinstance(
                 originatorOfDocument, aas.SubmodelElement
             ):
                 originatorOfDocument = self.OriginatorOfDocument(originatorOfDocument)

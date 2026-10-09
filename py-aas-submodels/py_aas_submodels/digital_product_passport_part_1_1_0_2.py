@@ -1076,7 +1076,8 @@ class DppMetadata(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if digitalProductPassportId and not isinstance(
+
+        if digitalProductPassportId is not None and not isinstance(
             digitalProductPassportId, aas.SubmodelElement
         ):
             digitalProductPassportId = self.DigitalProductPassportId(
@@ -1084,7 +1085,8 @@ class DppMetadata(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if uniqueProductIdentifier and not isinstance(
+
+        if uniqueProductIdentifier is not None and not isinstance(
             uniqueProductIdentifier, aas.SubmodelElement
         ):
             uniqueProductIdentifier = self.UniqueProductIdentifier(
@@ -1092,33 +1094,42 @@ class DppMetadata(aas.Submodel):
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if granularity and not isinstance(granularity, aas.SubmodelElement):
+
+        if granularity is not None and not isinstance(granularity, aas.SubmodelElement):
             granularity = self.Granularity(granularity)
 
         # Build a submodel element if a raw value was passed in the argument
-        if dppSchemaVersion and not isinstance(dppSchemaVersion, aas.SubmodelElement):
+
+        if dppSchemaVersion is not None and not isinstance(
+            dppSchemaVersion, aas.SubmodelElement
+        ):
             dppSchemaVersion = self.DppSchemaVersion(dppSchemaVersion)
 
         # Build a submodel element if a raw value was passed in the argument
-        if dppStatus and not isinstance(dppStatus, aas.SubmodelElement):
+
+        if dppStatus is not None and not isinstance(dppStatus, aas.SubmodelElement):
             dppStatus = self.DppStatus(dppStatus)
 
         # Build a submodel element if a raw value was passed in the argument
-        if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
+
+        if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
             lastUpdate = self.LastUpdate(lastUpdate)
 
         # Build a submodel element if a raw value was passed in the argument
-        if economicOperatorId and not isinstance(
+
+        if economicOperatorId is not None and not isinstance(
             economicOperatorId, aas.SubmodelElement
         ):
             economicOperatorId = self.EconomicOperatorId(economicOperatorId)
 
         # Build a submodel element if a raw value was passed in the argument
-        if facilityId and not isinstance(facilityId, aas.SubmodelElement):
+
+        if facilityId is not None and not isinstance(facilityId, aas.SubmodelElement):
             facilityId = self.FacilityId(facilityId)
 
         # Build a submodel element if a raw value was passed in the argument
-        if contentSpecificationIds and not isinstance(
+
+        if contentSpecificationIds is not None and not isinstance(
             contentSpecificationIds, aas.SubmodelElement
         ):
             contentSpecificationIds = self.ContentSpecificationIds(

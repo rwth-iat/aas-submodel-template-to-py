@@ -293,19 +293,22 @@ class DigitalQualityDocuments(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentDomainId and not isinstance(
+
+                if documentDomainId is not None and not isinstance(
                     documentDomainId, aas.SubmodelElement
                 ):
                     documentDomainId = self.DocumentDomainId(documentDomainId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentIdentifier and not isinstance(
+
+                if documentIdentifier is not None and not isinstance(
                     documentIdentifier, aas.SubmodelElement
                 ):
                     documentIdentifier = self.DocumentIdentifier(documentIdentifier)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if documentIsPrimary and not isinstance(
+
+                if documentIsPrimary is not None and not isinstance(
                     documentIsPrimary, aas.SubmodelElement
                 ):
                     documentIsPrimary = self.DocumentIsPrimary(documentIsPrimary)
@@ -774,15 +777,20 @@ class DigitalQualityDocuments(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if classId and not isinstance(classId, aas.SubmodelElement):
+
+                if classId is not None and not isinstance(classId, aas.SubmodelElement):
                     classId = self.ClassId(classId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if className and not isinstance(className, aas.SubmodelElement):
+
+                if className is not None and not isinstance(
+                    className, aas.SubmodelElement
+                ):
                     className = self.ClassName(className)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if classificationSystem and not isinstance(
+
+                if classificationSystem is not None and not isinstance(
                     classificationSystem, aas.SubmodelElement
                 ):
                     classificationSystem = self.ClassificationSystem(
@@ -1081,7 +1089,8 @@ class DigitalQualityDocuments(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if language_items and not isinstance(
+
+                    if language_items is not None and not isinstance(
                         language_items, aas.SubmodelElement
                     ):
                         language_items = self.Language_item(language_items)
@@ -1833,7 +1842,8 @@ class DigitalQualityDocuments(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if referstoentities_items and not isinstance(
+
+                    if referstoentities_items is not None and not isinstance(
                         referstoentities_items, aas.SubmodelElement
                     ):
                         referstoentities_items = self.Referstoentities_item(
@@ -2056,7 +2066,8 @@ class DigitalQualityDocuments(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if basedonreferences_items and not isinstance(
+
+                    if basedonreferences_items is not None and not isinstance(
                         basedonreferences_items, aas.SubmodelElement
                     ):
                         basedonreferences_items = self.Basedonreferences_item(
@@ -3034,7 +3045,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if identificationName and not isinstance(
+
+                                if identificationName is not None and not isinstance(
                                     identificationName, aas.SubmodelElement
                                 ):
                                     identificationName = self.IdentificationName(
@@ -3042,7 +3054,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if identificationIssuer and not isinstance(
+
+                                if identificationIssuer is not None and not isinstance(
                                     identificationIssuer, aas.SubmodelElement
                                 ):
                                     identificationIssuer = self.IdentificationIssuer(
@@ -3050,7 +3063,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if identificationValue and not isinstance(
+
+                                if identificationValue is not None and not isinstance(
                                     identificationValue, aas.SubmodelElement
                                 ):
                                     identificationValue = self.IdentificationValue(
@@ -3058,7 +3072,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if iD and not isinstance(iD, aas.SubmodelElement):
+
+                                if iD is not None and not isinstance(
+                                    iD, aas.SubmodelElement
+                                ):
                                     iD = self.ID(iD)
 
                                 # Build submodel elements from raw values passed in the argument
@@ -3073,7 +3090,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ]
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if refType and not isinstance(
+
+                                if refType is not None and not isinstance(
                                     refType, aas.SubmodelElement
                                 ):
                                     refType = self.RefType(refType)
@@ -3396,13 +3414,17 @@ class DigitalQualityDocuments(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if uniqueIdentifier and not isinstance(
+
+                        if uniqueIdentifier is not None and not isinstance(
                             uniqueIdentifier, aas.SubmodelElement
                         ):
                             uniqueIdentifier = self.UniqueIdentifier(uniqueIdentifier)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if issueDate and not isinstance(issueDate, aas.SubmodelElement):
+
+                        if issueDate is not None and not isinstance(
+                            issueDate, aas.SubmodelElement
+                        ):
                             issueDate = self.IssueDate(issueDate)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3924,7 +3946,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if identificationName and not isinstance(
+
+                                if identificationName is not None and not isinstance(
                                     identificationName, aas.SubmodelElement
                                 ):
                                     identificationName = self.IdentificationName(
@@ -3932,7 +3955,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if identificationIssuer and not isinstance(
+
+                                if identificationIssuer is not None and not isinstance(
                                     identificationIssuer, aas.SubmodelElement
                                 ):
                                     identificationIssuer = self.IdentificationIssuer(
@@ -3940,7 +3964,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if identificationValue and not isinstance(
+
+                                if identificationValue is not None and not isinstance(
                                     identificationValue, aas.SubmodelElement
                                 ):
                                     identificationValue = self.IdentificationValue(
@@ -3948,7 +3973,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if iD and not isinstance(iD, aas.SubmodelElement):
+
+                                if iD is not None and not isinstance(
+                                    iD, aas.SubmodelElement
+                                ):
                                     iD = self.ID(iD)
 
                                 # Build submodel elements from raw values passed in the argument
@@ -3963,7 +3991,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ]
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if refType and not isinstance(
+
+                                if refType is not None and not isinstance(
                                     refType, aas.SubmodelElement
                                 ):
                                     refType = self.RefType(refType)
@@ -4664,8 +4693,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if identificationName and not isinstance(
-                                            identificationName, aas.SubmodelElement
+
+                                        if (
+                                            identificationName is not None
+                                            and not isinstance(
+                                                identificationName, aas.SubmodelElement
+                                            )
                                         ):
                                             identificationName = (
                                                 self.IdentificationName(
@@ -4674,8 +4707,13 @@ class DigitalQualityDocuments(aas.Submodel):
                                             )
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if identificationIssuer and not isinstance(
-                                            identificationIssuer, aas.SubmodelElement
+
+                                        if (
+                                            identificationIssuer is not None
+                                            and not isinstance(
+                                                identificationIssuer,
+                                                aas.SubmodelElement,
+                                            )
                                         ):
                                             identificationIssuer = (
                                                 self.IdentificationIssuer(
@@ -4684,8 +4722,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                             )
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if identificationValue and not isinstance(
-                                            identificationValue, aas.SubmodelElement
+
+                                        if (
+                                            identificationValue is not None
+                                            and not isinstance(
+                                                identificationValue, aas.SubmodelElement
+                                            )
                                         ):
                                             identificationValue = (
                                                 self.IdentificationValue(
@@ -4694,7 +4736,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                             )
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if iD and not isinstance(
+
+                                        if iD is not None and not isinstance(
                                             iD, aas.SubmodelElement
                                         ):
                                             iD = self.ID(iD)
@@ -4713,7 +4756,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                             ]
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if refType and not isinstance(
+
+                                        if refType is not None and not isinstance(
                                             refType, aas.SubmodelElement
                                         ):
                                             refType = self.RefType(refType)
@@ -5565,13 +5609,15 @@ class DigitalQualityDocuments(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if dateOfStatement and not isinstance(
+
+                            if dateOfStatement is not None and not isinstance(
                                 dateOfStatement, aas.SubmodelElement
                             ):
                                 dateOfStatement = self.DateOfStatement(dateOfStatement)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if statementReference and not isinstance(
+
+                            if statementReference is not None and not isinstance(
                                 statementReference, aas.SubmodelElement
                             ):
                                 statementReference = self.StatementReference(
@@ -5579,13 +5625,15 @@ class DigitalQualityDocuments(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if declaration and not isinstance(
+
+                            if declaration is not None and not isinstance(
                                 declaration, aas.SubmodelElement
                             ):
                                 declaration = self.Declaration(declaration)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if conformity and not isinstance(
+
+                            if conformity is not None and not isinstance(
                                 conformity, aas.SubmodelElement
                             ):
                                 conformity = self.Conformity(conformity)
@@ -6277,19 +6325,22 @@ class DigitalQualityDocuments(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if transforms and not isinstance(
+
+                            if transforms is not None and not isinstance(
                                 transforms, aas.SubmodelElement
                             ):
                                 transforms = self.Transforms(transforms)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if digestMethod and not isinstance(
+
+                            if digestMethod is not None and not isinstance(
                                 digestMethod, aas.SubmodelElement
                             ):
                                 digestMethod = self.DigestMethod(digestMethod)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if digestValue and not isinstance(
+
+                            if digestValue is not None and not isinstance(
                                 digestValue, aas.SubmodelElement
                             ):
                                 digestValue = self.DigestValue(digestValue)
@@ -6374,7 +6425,8 @@ class DigitalQualityDocuments(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if canonicalizationMethod and not isinstance(
+
+                        if canonicalizationMethod is not None and not isinstance(
                             canonicalizationMethod, aas.SubmodelElement
                         ):
                             canonicalizationMethod = self.CanonicalizationMethod(
@@ -6382,7 +6434,8 @@ class DigitalQualityDocuments(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if signatureMethod and not isinstance(
+
+                        if signatureMethod is not None and not isinstance(
                             signatureMethod, aas.SubmodelElement
                         ):
                             signatureMethod = self.SignatureMethod(signatureMethod)
@@ -6617,13 +6670,17 @@ class DigitalQualityDocuments(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if signatureValue and not isinstance(
+
+                    if signatureValue is not None and not isinstance(
                         signatureValue, aas.SubmodelElement
                     ):
                         signatureValue = self.SignatureValue(signatureValue)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if keyInfo and not isinstance(keyInfo, aas.SubmodelElement):
+
+                    if keyInfo is not None and not isinstance(
+                        keyInfo, aas.SubmodelElement
+                    ):
                         keyInfo = self.KeyInfo(keyInfo)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6707,31 +6764,46 @@ class DigitalQualityDocuments(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
+
+                if language is not None and not isinstance(
+                    language, aas.SubmodelElement
+                ):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if version and not isinstance(version, aas.SubmodelElement):
+
+                if version is not None and not isinstance(version, aas.SubmodelElement):
                     version = self.Version(version)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if title and not isinstance(title, aas.SubmodelElement):
+
+                if title is not None and not isinstance(title, aas.SubmodelElement):
                     title = self.Title(title)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusSetDate and not isinstance(statusSetDate, aas.SubmodelElement):
+
+                if statusSetDate is not None and not isinstance(
+                    statusSetDate, aas.SubmodelElement
+                ):
                     statusSetDate = self.StatusSetDate(statusSetDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statusValue and not isinstance(statusValue, aas.SubmodelElement):
+
+                if statusValue is not None and not isinstance(
+                    statusValue, aas.SubmodelElement
+                ):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationShortName and not isinstance(
+
+                if organizationShortName is not None and not isinstance(
                     organizationShortName, aas.SubmodelElement
                 ):
                     organizationShortName = self.OrganizationShortName(
@@ -6739,7 +6811,8 @@ class DigitalQualityDocuments(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if organizationOfficialName and not isinstance(
+
+                if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
                     organizationOfficialName = self.OrganizationOfficialName(

@@ -758,7 +758,8 @@ class CapabilityDescription(aas.Submodel):
                             ]
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if propertyComment and not isinstance(
+
+                        if propertyComment is not None and not isinstance(
                             propertyComment, aas.SubmodelElement
                         ):
                             propertyComment = self.PropertyComment(propertyComment)
@@ -1288,7 +1289,8 @@ class CapabilityDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if composedOfComment and not isinstance(
+
+                            if composedOfComment is not None and not isinstance(
                                 composedOfComment, aas.SubmodelElement
                             ):
                                 composedOfComment = self.ComposedOfComment(
@@ -2467,13 +2469,15 @@ class CapabilityDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if basicConstraint and not isinstance(
+
+                            if basicConstraint is not None and not isinstance(
                                 basicConstraint, aas.SubmodelElement
                             ):
                                 basicConstraint = self.BasicConstraint(basicConstraint)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if operationConstraint and not isinstance(
+
+                            if operationConstraint is not None and not isinstance(
                                 operationConstraint, aas.SubmodelElement
                             ):
                                 operationConstraint = self.OperationConstraint(
@@ -2481,13 +2485,15 @@ class CapabilityDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if constraintType and not isinstance(
+
+                            if constraintType is not None and not isinstance(
                                 constraintType, aas.SubmodelElement
                             ):
                                 constraintType = self.ConstraintType(constraintType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if propertyConditionalType and not isinstance(
+
+                            if propertyConditionalType is not None and not isinstance(
                                 propertyConditionalType, aas.SubmodelElement
                             ):
                                 propertyConditionalType = self.PropertyConditionalType(
@@ -2804,8 +2810,12 @@ class CapabilityDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if transitionConditionalType and not isinstance(
-                                transitionConditionalType, aas.SubmodelElement
+
+                            if (
+                                transitionConditionalType is not None
+                                and not isinstance(
+                                    transitionConditionalType, aas.SubmodelElement
+                                )
                             ):
                                 transitionConditionalType = (
                                     self.TransitionConditionalType(
@@ -3106,7 +3116,8 @@ class CapabilityDescription(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if capabilityComment and not isinstance(
+
+                if capabilityComment is not None and not isinstance(
                     capabilityComment, aas.SubmodelElement
                 ):
                     capabilityComment = self.CapabilityComment(capabilityComment)

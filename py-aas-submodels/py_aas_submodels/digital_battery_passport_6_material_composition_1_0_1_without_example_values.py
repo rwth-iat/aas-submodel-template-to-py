@@ -197,11 +197,13 @@ class MaterialComposition(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if shortName and not isinstance(shortName, aas.SubmodelElement):
+
+            if shortName is not None and not isinstance(shortName, aas.SubmodelElement):
                 shortName = self.ShortName(shortName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if clearName and not isinstance(clearName, aas.SubmodelElement):
+
+            if clearName is not None and not isinstance(clearName, aas.SubmodelElement):
                 clearName = self.ClearName(clearName)
 
             # Add all passed/initialized submodel elements to a single list
@@ -465,13 +467,17 @@ class MaterialComposition(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentName and not isinstance(
+
+                    if componentName is not None and not isinstance(
                         componentName, aas.SubmodelElement
                     ):
                         componentName = self.ComponentName(componentName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentId and not isinstance(componentId, aas.SubmodelElement):
+
+                    if componentId is not None and not isinstance(
+                        componentId, aas.SubmodelElement
+                    ):
                         componentId = self.ComponentId(componentId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -890,7 +896,8 @@ class MaterialComposition(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if batteryMaterialIdentifier and not isinstance(
+
+                if batteryMaterialIdentifier is not None and not isinstance(
                     batteryMaterialIdentifier, aas.SubmodelElement
                 ):
                     batteryMaterialIdentifier = self.BatteryMaterialIdentifier(
@@ -898,19 +905,22 @@ class MaterialComposition(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if batteryMaterialName and not isinstance(
+
+                if batteryMaterialName is not None and not isinstance(
                     batteryMaterialName, aas.SubmodelElement
                 ):
                     batteryMaterialName = self.BatteryMaterialName(batteryMaterialName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if batteryMaterialMass and not isinstance(
+
+                if batteryMaterialMass is not None and not isinstance(
                     batteryMaterialMass, aas.SubmodelElement
                 ):
                     batteryMaterialMass = self.BatteryMaterialMass(batteryMaterialMass)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if isCriticalRawMaterial and not isinstance(
+
+                if isCriticalRawMaterial is not None and not isinstance(
                     isCriticalRawMaterial, aas.SubmodelElement
                 ):
                     isCriticalRawMaterial = self.IsCriticalRawMaterial(
@@ -1843,13 +1853,17 @@ class MaterialComposition(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentName and not isinstance(
+
+                    if componentName is not None and not isinstance(
                         componentName, aas.SubmodelElement
                     ):
                         componentName = self.ComponentName(componentName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentId and not isinstance(componentId, aas.SubmodelElement):
+
+                    if componentId is not None and not isinstance(
+                        componentId, aas.SubmodelElement
+                    ):
                         componentId = self.ComponentId(componentId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2024,7 +2038,8 @@ class MaterialComposition(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hazardousSubstanceClass and not isinstance(
+
+                if hazardousSubstanceClass is not None and not isinstance(
                     hazardousSubstanceClass, aas.SubmodelElement
                 ):
                     hazardousSubstanceClass = self.HazardousSubstanceClass(
@@ -2032,7 +2047,8 @@ class MaterialComposition(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hazardousSubstanceName and not isinstance(
+
+                if hazardousSubstanceName is not None and not isinstance(
                     hazardousSubstanceName, aas.SubmodelElement
                 ):
                     hazardousSubstanceName = self.HazardousSubstanceName(
@@ -2040,7 +2056,8 @@ class MaterialComposition(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hazardousSubstanceConcentration and not isinstance(
+
+                if hazardousSubstanceConcentration is not None and not isinstance(
                     hazardousSubstanceConcentration, aas.SubmodelElement
                 ):
                     hazardousSubstanceConcentration = (
@@ -2050,7 +2067,8 @@ class MaterialComposition(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hazardousSubstanceImpact and not isinstance(
+
+                if hazardousSubstanceImpact is not None and not isinstance(
                     hazardousSubstanceImpact, aas.SubmodelElement
                 ):
                     hazardousSubstanceImpact = self.HazardousSubstanceImpact(
@@ -2058,7 +2076,8 @@ class MaterialComposition(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if hazardousSubstanceIdentifier and not isinstance(
+
+                if hazardousSubstanceIdentifier is not None and not isinstance(
                     hazardousSubstanceIdentifier, aas.SubmodelElement
                 ):
                     hazardousSubstanceIdentifier = self.HazardousSubstanceIdentifier(

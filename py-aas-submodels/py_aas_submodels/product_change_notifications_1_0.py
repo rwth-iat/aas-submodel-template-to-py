@@ -440,7 +440,8 @@ class ProductChangeNotifications(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if manufacturerName and not isinstance(
+
+                    if manufacturerName is not None and not isinstance(
                         manufacturerName, aas.SubmodelElement
                     ):
                         manufacturerName = self.ManufacturerName(manufacturerName)
@@ -840,7 +841,8 @@ class ProductChangeNotifications(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if milestoneClassification and not isinstance(
+
+                        if milestoneClassification is not None and not isinstance(
                             milestoneClassification, aas.SubmodelElement
                         ):
                             milestoneClassification = self.MilestoneClassification(
@@ -848,7 +850,8 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if dateOfValidity and not isinstance(
+
+                        if dateOfValidity is not None and not isinstance(
                             dateOfValidity, aas.SubmodelElement
                         ):
                             dateOfValidity = self.DateOfValidity(dateOfValidity)
@@ -1330,7 +1333,8 @@ class ProductChangeNotifications(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if reasonClassificationSystem and not isinstance(
+
+                        if reasonClassificationSystem is not None and not isinstance(
                             reasonClassificationSystem, aas.SubmodelElement
                         ):
                             reasonClassificationSystem = (
@@ -1340,8 +1344,12 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if versionOfClassificationSystem and not isinstance(
-                            versionOfClassificationSystem, aas.SubmodelElement
+
+                        if (
+                            versionOfClassificationSystem is not None
+                            and not isinstance(
+                                versionOfClassificationSystem, aas.SubmodelElement
+                            )
                         ):
                             versionOfClassificationSystem = (
                                 self.VersionOfClassificationSystem(
@@ -1350,7 +1358,10 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if reasonId and not isinstance(reasonId, aas.SubmodelElement):
+
+                        if reasonId is not None and not isinstance(
+                            reasonId, aas.SubmodelElement
+                        ):
                             reasonId = self.ReasonId(reasonId)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1838,7 +1849,8 @@ class ProductChangeNotifications(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemClassificationSystem and not isinstance(
+
+                        if itemClassificationSystem is not None and not isinstance(
                             itemClassificationSystem, aas.SubmodelElement
                         ):
                             itemClassificationSystem = self.ItemClassificationSystem(
@@ -1846,8 +1858,12 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if versionOfClassificationSystem and not isinstance(
-                            versionOfClassificationSystem, aas.SubmodelElement
+
+                        if (
+                            versionOfClassificationSystem is not None
+                            and not isinstance(
+                                versionOfClassificationSystem, aas.SubmodelElement
+                            )
                         ):
                             versionOfClassificationSystem = (
                                 self.VersionOfClassificationSystem(
@@ -1856,7 +1872,8 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemCategory and not isinstance(
+
+                        if itemCategory is not None and not isinstance(
                             itemCategory, aas.SubmodelElement
                         ):
                             itemCategory = self.ItemCategory(itemCategory)
@@ -2575,11 +2592,15 @@ class ProductChangeNotifications(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if changeTitle and not isinstance(changeTitle, aas.SubmodelElement):
+
+                    if changeTitle is not None and not isinstance(
+                        changeTitle, aas.SubmodelElement
+                    ):
                         changeTitle = self.ChangeTitle(changeTitle)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if changeDetail and not isinstance(
+
+                    if changeDetail is not None and not isinstance(
                         changeDetail, aas.SubmodelElement
                     ):
                         changeDetail = self.ChangeDetail(changeDetail)
@@ -3501,7 +3522,8 @@ class ProductChangeNotifications(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if classificationSystem and not isinstance(
+
+                            if classificationSystem is not None and not isinstance(
                                 classificationSystem, aas.SubmodelElement
                             ):
                                 classificationSystem = self.ClassificationSystem(
@@ -3509,8 +3531,12 @@ class ProductChangeNotifications(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if versionOfClassificationSystem and not isinstance(
-                                versionOfClassificationSystem, aas.SubmodelElement
+
+                            if (
+                                versionOfClassificationSystem is not None
+                                and not isinstance(
+                                    versionOfClassificationSystem, aas.SubmodelElement
+                                )
                             ):
                                 versionOfClassificationSystem = (
                                     self.VersionOfClassificationSystem(
@@ -3519,7 +3545,8 @@ class ProductChangeNotifications(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if productClassId and not isinstance(
+
+                            if productClassId is not None and not isinstance(
                                 productClassId, aas.SubmodelElement
                             ):
                                 productClassId = self.ProductClassId(productClassId)
@@ -4174,19 +4201,22 @@ class ProductChangeNotifications(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(
+
+                            if arbitrary is not None and not isinstance(
                                 arbitrary, aas.SubmodelElement
                             ):
                                 arbitrary = self.Arbitrary(arbitrary)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if originOfChange and not isinstance(
+
+                            if originOfChange is not None and not isinstance(
                                 originOfChange, aas.SubmodelElement
                             ):
                                 originOfChange = self.OriginOfChange(originOfChange)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if reasonId and not isinstance(
+
+                            if reasonId is not None and not isinstance(
                                 reasonId, aas.SubmodelElement
                             ):
                                 reasonId = self.ReasonId(reasonId)
@@ -4629,7 +4659,8 @@ class ProductChangeNotifications(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if manufacturerProductFamily and not isinstance(
+
+                    if manufacturerProductFamily is not None and not isinstance(
                         manufacturerProductFamily, aas.SubmodelElement
                     ):
                         manufacturerProductFamily = self.ManufacturerProductFamily(
@@ -4637,7 +4668,8 @@ class ProductChangeNotifications(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if manufacturerProductDesignation and not isinstance(
+
+                    if manufacturerProductDesignation is not None and not isinstance(
                         manufacturerProductDesignation, aas.SubmodelElement
                     ):
                         manufacturerProductDesignation = (
@@ -4647,7 +4679,8 @@ class ProductChangeNotifications(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if orderCodeOfManufacturer and not isinstance(
+
+                    if orderCodeOfManufacturer is not None and not isinstance(
                         orderCodeOfManufacturer, aas.SubmodelElement
                     ):
                         orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
@@ -4655,7 +4688,8 @@ class ProductChangeNotifications(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if manufacturerAssetID and not isinstance(
+
+                    if manufacturerAssetID is not None and not isinstance(
                         manufacturerAssetID, aas.SubmodelElement
                     ):
                         manufacturerAssetID = self.ManufacturerAssetID(
@@ -4663,13 +4697,15 @@ class ProductChangeNotifications(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if hardwareVersion and not isinstance(
+
+                    if hardwareVersion is not None and not isinstance(
                         hardwareVersion, aas.SubmodelElement
                     ):
                         hardwareVersion = self.HardwareVersion(hardwareVersion)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if remainingAmountAvailable and not isinstance(
+
+                    if remainingAmountAvailable is not None and not isinstance(
                         remainingAmountAvailable, aas.SubmodelElement
                     ):
                         remainingAmountAvailable = self.RemainingAmountAvailable(
@@ -5182,7 +5218,8 @@ class ProductChangeNotifications(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if classificationSystem and not isinstance(
+
+                                if classificationSystem is not None and not isinstance(
                                     classificationSystem, aas.SubmodelElement
                                 ):
                                     classificationSystem = self.ClassificationSystem(
@@ -5190,8 +5227,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if versionOfClassificationSystem and not isinstance(
-                                    versionOfClassificationSystem, aas.SubmodelElement
+
+                                if (
+                                    versionOfClassificationSystem is not None
+                                    and not isinstance(
+                                        versionOfClassificationSystem,
+                                        aas.SubmodelElement,
+                                    )
                                 ):
                                     versionOfClassificationSystem = (
                                         self.VersionOfClassificationSystem(
@@ -5200,7 +5242,8 @@ class ProductChangeNotifications(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if productClassId and not isinstance(
+
+                                if productClassId is not None and not isinstance(
                                     productClassId, aas.SubmodelElement
                                 ):
                                     productClassId = self.ProductClassId(productClassId)
@@ -5608,13 +5651,15 @@ class ProductChangeNotifications(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if targetEstimate and not isinstance(
+
+                            if targetEstimate is not None and not isinstance(
                                 targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(
+
+                            if arbitrary is not None and not isinstance(
                                 arbitrary, aas.SubmodelElement
                             ):
                                 arbitrary = self.Arbitrary(arbitrary)
@@ -5846,13 +5891,15 @@ class ProductChangeNotifications(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if targetEstimate and not isinstance(
+
+                            if targetEstimate is not None and not isinstance(
                                 targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(
+
+                            if arbitrary is not None and not isinstance(
                                 arbitrary, aas.SubmodelElement
                             ):
                                 arbitrary = self.Arbitrary(arbitrary)
@@ -6084,13 +6131,15 @@ class ProductChangeNotifications(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if targetEstimate and not isinstance(
+
+                            if targetEstimate is not None and not isinstance(
                                 targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(
+
+                            if arbitrary is not None and not isinstance(
                                 arbitrary, aas.SubmodelElement
                             ):
                                 arbitrary = self.Arbitrary(arbitrary)
@@ -6322,13 +6371,15 @@ class ProductChangeNotifications(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if targetEstimate and not isinstance(
+
+                            if targetEstimate is not None and not isinstance(
                                 targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(
+
+                            if arbitrary is not None and not isinstance(
                                 arbitrary, aas.SubmodelElement
                             ):
                                 arbitrary = self.Arbitrary(arbitrary)
@@ -6687,7 +6738,8 @@ class ProductChangeNotifications(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(
+
+                            if arbitrary is not None and not isinstance(
                                 arbitrary, aas.SubmodelElement
                             ):
                                 arbitrary = self.Arbitrary(arbitrary)
@@ -6791,7 +6843,8 @@ class ProductChangeNotifications(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if manufacturerProductFamily and not isinstance(
+
+                        if manufacturerProductFamily is not None and not isinstance(
                             manufacturerProductFamily, aas.SubmodelElement
                         ):
                             manufacturerProductFamily = self.ManufacturerProductFamily(
@@ -6799,8 +6852,12 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if manufacturerProductDesignation and not isinstance(
-                            manufacturerProductDesignation, aas.SubmodelElement
+
+                        if (
+                            manufacturerProductDesignation is not None
+                            and not isinstance(
+                                manufacturerProductDesignation, aas.SubmodelElement
+                            )
                         ):
                             manufacturerProductDesignation = (
                                 self.ManufacturerProductDesignation(
@@ -6809,7 +6866,8 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if orderCodeOfManufacturer and not isinstance(
+
+                        if orderCodeOfManufacturer is not None and not isinstance(
                             orderCodeOfManufacturer, aas.SubmodelElement
                         ):
                             orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
@@ -6817,13 +6875,15 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if incotermCode and not isinstance(
+
+                        if incotermCode is not None and not isinstance(
                             incotermCode, aas.SubmodelElement
                         ):
                             incotermCode = self.IncotermCode(incotermCode)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if deliveryTimeClassOtherRegion and not isinstance(
+
+                        if deliveryTimeClassOtherRegion is not None and not isinstance(
                             deliveryTimeClassOtherRegion, aas.SubmodelElement
                         ):
                             deliveryTimeClassOtherRegion = (
@@ -6833,7 +6893,8 @@ class ProductChangeNotifications(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if deliveryTimeClassSameRegion and not isinstance(
+
+                        if deliveryTimeClassSameRegion is not None and not isinstance(
                             deliveryTimeClassSameRegion, aas.SubmodelElement
                         ):
                             deliveryTimeClassSameRegion = (
@@ -7121,7 +7182,8 @@ class ProductChangeNotifications(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if manufacturerChangeID and not isinstance(
+
+                if manufacturerChangeID is not None and not isinstance(
                     manufacturerChangeID, aas.SubmodelElement
                 ):
                     manufacturerChangeID = self.ManufacturerChangeID(
@@ -7129,23 +7191,29 @@ class ProductChangeNotifications(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcnType and not isinstance(pcnType, aas.SubmodelElement):
+
+                if pcnType is not None and not isinstance(pcnType, aas.SubmodelElement):
                     pcnType = self.PcnType(pcnType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if affectedPartNumbers and not isinstance(
+
+                if affectedPartNumbers is not None and not isinstance(
                     affectedPartNumbers, aas.SubmodelElement
                 ):
                     affectedPartNumbers = self.AffectedPartNumbers(affectedPartNumbers)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcnReasonComment and not isinstance(
+
+                if pcnReasonComment is not None and not isinstance(
                     pcnReasonComment, aas.SubmodelElement
                 ):
                     pcnReasonComment = self.PcnReasonComment(pcnReasonComment)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfRecord and not isinstance(dateOfRecord, aas.SubmodelElement):
+
+                if dateOfRecord is not None and not isinstance(
+                    dateOfRecord, aas.SubmodelElement
+                ):
                     dateOfRecord = self.DateOfRecord(dateOfRecord)
 
                 # Add all passed/initialized submodel elements to a single list

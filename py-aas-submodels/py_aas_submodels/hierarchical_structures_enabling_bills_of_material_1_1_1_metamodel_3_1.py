@@ -800,7 +800,8 @@ class HierarchicalStructures(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if archeType and not isinstance(archeType, aas.SubmodelElement):
+
+        if archeType is not None and not isinstance(archeType, aas.SubmodelElement):
             archeType = self.ArcheType(archeType)
 
         # Add all passed/initialized submodel elements to a single list

@@ -349,7 +349,10 @@ class ProductionCalendar(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if variableName and not isinstance(variableName, aas.SubmodelElement):
+
+                if variableName is not None and not isinstance(
+                    variableName, aas.SubmodelElement
+                ):
                     variableName = self.VariableName(variableName)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -587,7 +590,10 @@ class ProductionCalendar(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if inheritedFrom and not isinstance(inheritedFrom, aas.SubmodelElement):
+
+        if inheritedFrom is not None and not isinstance(
+            inheritedFrom, aas.SubmodelElement
+        ):
             inheritedFrom = self.InheritedFrom(inheritedFrom)
 
         # Add all passed/initialized submodel elements to a single list

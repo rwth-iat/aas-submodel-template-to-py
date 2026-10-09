@@ -139,7 +139,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if dataQualityLevel and not isinstance(
+
+            if dataQualityLevel is not None and not isinstance(
                 dataQualityLevel, aas.SubmodelElement
             ):
                 dataQualityLevel = self.DataQualityLevel(dataQualityLevel)
@@ -321,7 +322,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if applicationspecificstandards_items and not isinstance(
+
+            if applicationspecificstandards_items is not None and not isinstance(
                 applicationspecificstandards_items, aas.SubmodelElement
             ):
                 applicationspecificstandards_items = (
@@ -1225,13 +1227,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if attributionModel and not isinstance(
+
+                if attributionModel is not None and not isinstance(
                     attributionModel, aas.SubmodelElement
                 ):
                     attributionModel = self.AttributionModel(attributionModel)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if relevantEuropeanOrInternationalNorm and not isinstance(
+
+                if relevantEuropeanOrInternationalNorm is not None and not isinstance(
                     relevantEuropeanOrInternationalNorm, aas.SubmodelElement
                 ):
                     relevantEuropeanOrInternationalNorm = (
@@ -1676,11 +1680,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if filler and not isinstance(filler, aas.SubmodelElement):
+
+                    if filler is not None and not isinstance(
+                        filler, aas.SubmodelElement
+                    ):
                         filler = self.Filler(filler)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if fillerMassPercentage and not isinstance(
+
+                    if fillerMassPercentage is not None and not isinstance(
                         fillerMassPercentage, aas.SubmodelElement
                     ):
                         fillerMassPercentage = self.FillerMassPercentage(
@@ -2218,7 +2226,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if typeOfInspectionCertificate and not isinstance(
+
+                if typeOfInspectionCertificate is not None and not isinstance(
                     typeOfInspectionCertificate, aas.SubmodelElement
                 ):
                     typeOfInspectionCertificate = self.TypeOfInspectionCertificate(
@@ -2799,7 +2808,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modifyingAdditiveName and not isinstance(
+
+                    if modifyingAdditiveName is not None and not isinstance(
                         modifyingAdditiveName, aas.SubmodelElement
                     ):
                         modifyingAdditiveName = self.ModifyingAdditiveName(
@@ -2807,7 +2817,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modifyingAdditiveCASNumber and not isinstance(
+
+                    if modifyingAdditiveCASNumber is not None and not isinstance(
                         modifyingAdditiveCASNumber, aas.SubmodelElement
                     ):
                         modifyingAdditiveCASNumber = self.ModifyingAdditiveCASNumber(
@@ -3302,17 +3313,22 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if mainMaterialType and not isinstance(
+
+            if mainMaterialType is not None and not isinstance(
                 mainMaterialType, aas.SubmodelElement
             ):
                 mainMaterialType = self.MainMaterialType(mainMaterialType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if typeOfPackaging and not isinstance(typeOfPackaging, aas.SubmodelElement):
+
+            if typeOfPackaging is not None and not isinstance(
+                typeOfPackaging, aas.SubmodelElement
+            ):
                 typeOfPackaging = self.TypeOfPackaging(typeOfPackaging)
 
             # Build a submodel element if a raw value was passed in the argument
-            if colorByVisualInspection and not isinstance(
+
+            if colorByVisualInspection is not None and not isinstance(
                 colorByVisualInspection, aas.SubmodelElement
             ):
                 colorByVisualInspection = self.ColorByVisualInspection(
@@ -3320,31 +3336,42 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if form and not isinstance(form, aas.SubmodelElement):
+
+            if form is not None and not isinstance(form, aas.SubmodelElement):
                 form = self.Form(form)
 
             # Build a submodel element if a raw value was passed in the argument
-            if tradeName and not isinstance(tradeName, aas.SubmodelElement):
+
+            if tradeName is not None and not isinstance(tradeName, aas.SubmodelElement):
                 tradeName = self.TradeName(tradeName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if recycledContent and not isinstance(recycledContent, aas.SubmodelElement):
+
+            if recycledContent is not None and not isinstance(
+                recycledContent, aas.SubmodelElement
+            ):
                 recycledContent = self.RecycledContent(recycledContent)
 
             # Build a submodel element if a raw value was passed in the argument
-            if recyclingMethod and not isinstance(recyclingMethod, aas.SubmodelElement):
+
+            if recyclingMethod is not None and not isinstance(
+                recyclingMethod, aas.SubmodelElement
+            ):
                 recyclingMethod = self.RecyclingMethod(recyclingMethod)
 
             # Build a submodel element if a raw value was passed in the argument
-            if source and not isinstance(source, aas.SubmodelElement):
+
+            if source is not None and not isinstance(source, aas.SubmodelElement):
                 source = self.Source(source)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lotNumber and not isinstance(lotNumber, aas.SubmodelElement):
+
+            if lotNumber is not None and not isinstance(lotNumber, aas.SubmodelElement):
                 lotNumber = self.LotNumber(lotNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if contentOfTheMainPlasticType and not isinstance(
+
+            if contentOfTheMainPlasticType is not None and not isinstance(
                 contentOfTheMainPlasticType, aas.SubmodelElement
             ):
                 contentOfTheMainPlasticType = self.ContentOfTheMainPlasticType(
@@ -3352,7 +3379,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if percentConfidenceOfCertificateOfAnalysis and not isinstance(
+
+            if percentConfidenceOfCertificateOfAnalysis is not None and not isinstance(
                 percentConfidenceOfCertificateOfAnalysis, aas.SubmodelElement
             ):
                 percentConfidenceOfCertificateOfAnalysis = (
@@ -3362,8 +3390,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if coefficientOfVariationWRTCertificateOfAnalysis and not isinstance(
-                coefficientOfVariationWRTCertificateOfAnalysis, aas.SubmodelElement
+
+            if (
+                coefficientOfVariationWRTCertificateOfAnalysis is not None
+                and not isinstance(
+                    coefficientOfVariationWRTCertificateOfAnalysis, aas.SubmodelElement
+                )
             ):
                 coefficientOfVariationWRTCertificateOfAnalysis = (
                     self.CoefficientOfVariationWRTCertificateOfAnalysis(
@@ -3372,7 +3404,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if originalUseOfMaterial and not isinstance(
+
+            if originalUseOfMaterial is not None and not isinstance(
                 originalUseOfMaterial, aas.SubmodelElement
             ):
                 originalUseOfMaterial = self.OriginalUseOfMaterial(
@@ -3380,7 +3413,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if recyclingFeedstockConversionTechnology and not isinstance(
+
+            if recyclingFeedstockConversionTechnology is not None and not isinstance(
                 recyclingFeedstockConversionTechnology, aas.SubmodelElement
             ):
                 recyclingFeedstockConversionTechnology = (
@@ -3796,15 +3830,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                    if value_ is not None and not isinstance(
+                        value_, aas.SubmodelElement
+                    ):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unit and not isinstance(unit, aas.SubmodelElement):
+
+                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                         unit = self.Unit(unit)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if kind and not isinstance(kind, aas.SubmodelElement):
+
+                    if kind is not None and not isinstance(kind, aas.SubmodelElement):
                         kind = self.Kind(kind)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3911,7 +3950,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if standardOrNorm and not isinstance(
+
+                if standardOrNorm is not None and not isinstance(
                     standardOrNorm, aas.SubmodelElement
                 ):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
@@ -4302,15 +4342,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                    if value_ is not None and not isinstance(
+                        value_, aas.SubmodelElement
+                    ):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unit and not isinstance(unit, aas.SubmodelElement):
+
+                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                         unit = self.Unit(unit)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if kind and not isinstance(kind, aas.SubmodelElement):
+
+                    if kind is not None and not isinstance(kind, aas.SubmodelElement):
                         kind = self.Kind(kind)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4419,7 +4464,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if standardOrNorm and not isinstance(
+
+                if standardOrNorm is not None and not isinstance(
                     standardOrNorm, aas.SubmodelElement
                 ):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
@@ -4810,15 +4856,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                    if value_ is not None and not isinstance(
+                        value_, aas.SubmodelElement
+                    ):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unit and not isinstance(unit, aas.SubmodelElement):
+
+                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                         unit = self.Unit(unit)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if kind and not isinstance(kind, aas.SubmodelElement):
+
+                    if kind is not None and not isinstance(kind, aas.SubmodelElement):
                         kind = self.Kind(kind)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4927,7 +4978,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if standardOrNorm and not isinstance(
+
+                if standardOrNorm is not None and not isinstance(
                     standardOrNorm, aas.SubmodelElement
                 ):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
@@ -5318,15 +5370,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                    if value_ is not None and not isinstance(
+                        value_, aas.SubmodelElement
+                    ):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unit and not isinstance(unit, aas.SubmodelElement):
+
+                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                         unit = self.Unit(unit)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if kind and not isinstance(kind, aas.SubmodelElement):
+
+                    if kind is not None and not isinstance(kind, aas.SubmodelElement):
                         kind = self.Kind(kind)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5433,7 +5490,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if standardOrNorm and not isinstance(
+
+                if standardOrNorm is not None and not isinstance(
                     standardOrNorm, aas.SubmodelElement
                 ):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
@@ -5824,15 +5882,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                    if value_ is not None and not isinstance(
+                        value_, aas.SubmodelElement
+                    ):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unit and not isinstance(unit, aas.SubmodelElement):
+
+                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                         unit = self.Unit(unit)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if kind and not isinstance(kind, aas.SubmodelElement):
+
+                    if kind is not None and not isinstance(kind, aas.SubmodelElement):
                         kind = self.Kind(kind)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5941,7 +6004,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if standardOrNorm and not isinstance(
+
+                if standardOrNorm is not None and not isinstance(
                     standardOrNorm, aas.SubmodelElement
                 ):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
@@ -6332,15 +6396,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                    if value_ is not None and not isinstance(
+                        value_, aas.SubmodelElement
+                    ):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if unit and not isinstance(unit, aas.SubmodelElement):
+
+                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                         unit = self.Unit(unit)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if kind and not isinstance(kind, aas.SubmodelElement):
+
+                    if kind is not None and not isinstance(kind, aas.SubmodelElement):
                         kind = self.Kind(kind)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6449,7 +6518,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if standardOrNorm and not isinstance(
+
+                if standardOrNorm is not None and not isinstance(
                     standardOrNorm, aas.SubmodelElement
                 ):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
@@ -6777,15 +6847,24 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if value_ and not isinstance(value_, aas.SubmodelElement):
+
+                        if value_ is not None and not isinstance(
+                            value_, aas.SubmodelElement
+                        ):
                             value_ = self.Value(value_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unit and not isinstance(unit, aas.SubmodelElement):
+
+                        if unit is not None and not isinstance(
+                            unit, aas.SubmodelElement
+                        ):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if kind and not isinstance(kind, aas.SubmodelElement):
+
+                        if kind is not None and not isinstance(
+                            kind, aas.SubmodelElement
+                        ):
                             kind = self.Kind(kind)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -7139,7 +7218,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if standardOrNorm and not isinstance(
+
+                if standardOrNorm is not None and not isinstance(
                     standardOrNorm, aas.SubmodelElement
                 ):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
@@ -7737,7 +7817,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if applicationSpecificStandards and not isinstance(
+
+        if applicationSpecificStandards is not None and not isinstance(
             applicationSpecificStandards, aas.SubmodelElement
         ):
             applicationSpecificStandards = self.ApplicationSpecificStandards(

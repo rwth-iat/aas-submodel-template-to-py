@@ -450,7 +450,8 @@ class WirelessCommunication(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numberOfDownlinkSlots and not isinstance(
+
+                    if numberOfDownlinkSlots is not None and not isinstance(
                         numberOfDownlinkSlots, aas.SubmodelElement
                     ):
                         numberOfDownlinkSlots = self.NumberOfDownlinkSlots(
@@ -458,7 +459,8 @@ class WirelessCommunication(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numberOfUplinkSlots and not isinstance(
+
+                    if numberOfUplinkSlots is not None and not isinstance(
                         numberOfUplinkSlots, aas.SubmodelElement
                     ):
                         numberOfUplinkSlots = self.NumberOfUplinkSlots(
@@ -466,7 +468,8 @@ class WirelessCommunication(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numberOfSharedSlots and not isinstance(
+
+                    if numberOfSharedSlots is not None and not isinstance(
                         numberOfSharedSlots, aas.SubmodelElement
                     ):
                         numberOfSharedSlots = self.NumberOfSharedSlots(
@@ -554,7 +557,8 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mediumAccessType and not isinstance(
+
+                if mediumAccessType is not None and not isinstance(
                     mediumAccessType, aas.SubmodelElement
                 ):
                     mediumAccessType = self.MediumAccessType(mediumAccessType)
@@ -716,7 +720,8 @@ class WirelessCommunication(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if technologyStandard and not isinstance(
+
+            if technologyStandard is not None and not isinstance(
                 technologyStandard, aas.SubmodelElement
             ):
                 technologyStandard = self.TechnologyStandard(technologyStandard)
@@ -1151,17 +1156,24 @@ class WirelessCommunication(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bandIDCurrent and not isinstance(bandIDCurrent, aas.SubmodelElement):
+
+                if bandIDCurrent is not None and not isinstance(
+                    bandIDCurrent, aas.SubmodelElement
+                ):
                     bandIDCurrent = self.BandIDCurrent(bandIDCurrent)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if centerFrequecy and not isinstance(
+
+                if centerFrequecy is not None and not isinstance(
                     centerFrequecy, aas.SubmodelElement
                 ):
                     centerFrequecy = self.CenterFrequecy(centerFrequecy)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bandwidth and not isinstance(bandwidth, aas.SubmodelElement):
+
+                if bandwidth is not None and not isinstance(
+                    bandwidth, aas.SubmodelElement
+                ):
                     bandwidth = self.Bandwidth(bandwidth)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1456,7 +1468,8 @@ class WirelessCommunication(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if usedChannelCentreFrequency and not isinstance(
+
+                if usedChannelCentreFrequency is not None and not isinstance(
                     usedChannelCentreFrequency, aas.SubmodelElement
                 ):
                     usedChannelCentreFrequency = self.UsedChannelCentreFrequency(
@@ -1464,7 +1477,8 @@ class WirelessCommunication(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if usedChannelBandwidth and not isinstance(
+
+                if usedChannelBandwidth is not None and not isinstance(
                     usedChannelBandwidth, aas.SubmodelElement
                 ):
                     usedChannelBandwidth = self.UsedChannelBandwidth(
@@ -1956,23 +1970,36 @@ class WirelessCommunication(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if parameterType and not isinstance(parameterType, aas.SubmodelElement):
+
+            if parameterType is not None and not isinstance(
+                parameterType, aas.SubmodelElement
+            ):
                 parameterType = self.ParameterType(parameterType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if range and not isinstance(range, aas.SubmodelElement):
+
+            if range is not None and not isinstance(range, aas.SubmodelElement):
                 range = self.Range(min=range[0], max=range[1])
 
             # Build a submodel element if a raw value was passed in the argument
-            if specifiedValue and not isinstance(specifiedValue, aas.SubmodelElement):
+
+            if specifiedValue is not None and not isinstance(
+                specifiedValue, aas.SubmodelElement
+            ):
                 specifiedValue = self.SpecifiedValue(specifiedValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceValue and not isinstance(referenceValue, aas.SubmodelElement):
+
+            if referenceValue is not None and not isinstance(
+                referenceValue, aas.SubmodelElement
+            ):
                 referenceValue = self.ReferenceValue(referenceValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2404,23 +2431,36 @@ class WirelessCommunication(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if parameterType and not isinstance(parameterType, aas.SubmodelElement):
+
+            if parameterType is not None and not isinstance(
+                parameterType, aas.SubmodelElement
+            ):
                 parameterType = self.ParameterType(parameterType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if range and not isinstance(range, aas.SubmodelElement):
+
+            if range is not None and not isinstance(range, aas.SubmodelElement):
                 range = self.Range(min=range[0], max=range[1])
 
             # Build a submodel element if a raw value was passed in the argument
-            if specifiedValue and not isinstance(specifiedValue, aas.SubmodelElement):
+
+            if specifiedValue is not None and not isinstance(
+                specifiedValue, aas.SubmodelElement
+            ):
                 specifiedValue = self.SpecifiedValue(specifiedValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceValue and not isinstance(referenceValue, aas.SubmodelElement):
+
+            if referenceValue is not None and not isinstance(
+                referenceValue, aas.SubmodelElement
+            ):
                 referenceValue = self.ReferenceValue(referenceValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if currentValue and not isinstance(currentValue, aas.SubmodelElement):
+
+            if currentValue is not None and not isinstance(
+                currentValue, aas.SubmodelElement
+            ):
                 currentValue = self.CurrentValue(currentValue)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3088,43 +3128,58 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if companyName and not isinstance(companyName, aas.SubmodelElement):
+
+                if companyName is not None and not isinstance(
+                    companyName, aas.SubmodelElement
+                ):
                     companyName = self.CompanyName(companyName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contactSurname and not isinstance(
+
+                if contactSurname is not None and not isinstance(
                     contactSurname, aas.SubmodelElement
                 ):
                     contactSurname = self.ContactSurname(contactSurname)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contactFirstName and not isinstance(
+
+                if contactFirstName is not None and not isinstance(
                     contactFirstName, aas.SubmodelElement
                 ):
                     contactFirstName = self.ContactFirstName(contactFirstName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if address and not isinstance(address, aas.SubmodelElement):
+
+                if address is not None and not isinstance(address, aas.SubmodelElement):
                     address = self.Address(address)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if phone and not isinstance(phone, aas.SubmodelElement):
+
+                if phone is not None and not isinstance(phone, aas.SubmodelElement):
                     phone = self.Phone(phone)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if fax and not isinstance(fax, aas.SubmodelElement):
+
+                if fax is not None and not isinstance(fax, aas.SubmodelElement):
                     fax = self.Fax(fax)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mail and not isinstance(mail, aas.SubmodelElement):
+
+                if mail is not None and not isinstance(mail, aas.SubmodelElement):
                     mail = self.Mail(mail)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if description_ and not isinstance(description_, aas.SubmodelElement):
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if licenseType and not isinstance(licenseType, aas.SubmodelElement):
+
+                if licenseType is not None and not isinstance(
+                    licenseType, aas.SubmodelElement
+                ):
                     licenseType = self.LicenseType(licenseType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3413,15 +3468,22 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if frequency and not isinstance(frequency, aas.SubmodelElement):
+
+                if frequency is not None and not isinstance(
+                    frequency, aas.SubmodelElement
+                ):
                     frequency = self.Frequency(frequency)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if frequencies and not isinstance(frequencies, aas.SubmodelElement):
+
+                if frequencies is not None and not isinstance(
+                    frequencies, aas.SubmodelElement
+                ):
                     frequencies = self.Frequencies(frequencies)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if frequencyRange and not isinstance(
+
+                if frequencyRange is not None and not isinstance(
                     frequencyRange, aas.SubmodelElement
                 ):
                     frequencyRange = self.FrequencyRange(
@@ -3761,19 +3823,25 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if day and not isinstance(day, aas.SubmodelElement):
+
+                if day is not None and not isinstance(day, aas.SubmodelElement):
                     day = self.Day(day)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if month and not isinstance(month, aas.SubmodelElement):
+
+                if month is not None and not isinstance(month, aas.SubmodelElement):
                     month = self.Month(month)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if year and not isinstance(year, aas.SubmodelElement):
+
+                if year is not None and not isinstance(year, aas.SubmodelElement):
                     year = self.Year(year)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duration and not isinstance(duration, aas.SubmodelElement):
+
+                if duration is not None and not isinstance(
+                    duration, aas.SubmodelElement
+                ):
                     duration = self.Duration(duration)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4175,29 +4243,38 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if location and not isinstance(location, aas.SubmodelElement):
+
+                if location is not None and not isinstance(
+                    location, aas.SubmodelElement
+                ):
                     location = self.Location(location)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if geographicPosition and not isinstance(
+
+                if geographicPosition is not None and not isinstance(
                     geographicPosition, aas.SubmodelElement
                 ):
                     geographicPosition = self.GeographicPosition(geographicPosition)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if altitudeLocation and not isinstance(
+
+                if altitudeLocation is not None and not isinstance(
                     altitudeLocation, aas.SubmodelElement
                 ):
                     altitudeLocation = self.AltitudeLocation(altitudeLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if altitudeAntenna and not isinstance(
+
+                if altitudeAntenna is not None and not isinstance(
                     altitudeAntenna, aas.SubmodelElement
                 ):
                     altitudeAntenna = self.AltitudeAntenna(altitudeAntenna)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if stationID and not isinstance(stationID, aas.SubmodelElement):
+
+                if stationID is not None and not isinstance(
+                    stationID, aas.SubmodelElement
+                ):
                     stationID = self.StationID(stationID)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4475,15 +4552,20 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if region and not isinstance(region, aas.SubmodelElement):
+
+                if region is not None and not isinstance(region, aas.SubmodelElement):
                     region = self.Region(region)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if stationID and not isinstance(stationID, aas.SubmodelElement):
+
+                if stationID is not None and not isinstance(
+                    stationID, aas.SubmodelElement
+                ):
                     stationID = self.StationID(stationID)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if kindOfOperation and not isinstance(
+
+                if kindOfOperation is not None and not isinstance(
                     kindOfOperation, aas.SubmodelElement
                 ):
                     kindOfOperation = self.KindOfOperation(kindOfOperation)
@@ -5341,35 +5423,50 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if equipmentMarketing and not isinstance(
+
+                if equipmentMarketing is not None and not isinstance(
                     equipmentMarketing, aas.SubmodelElement
                 ):
                     equipmentMarketing = self.EquipmentMarketing(equipmentMarketing)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if manufacturer and not isinstance(manufacturer, aas.SubmodelElement):
+
+                if manufacturer is not None and not isinstance(
+                    manufacturer, aas.SubmodelElement
+                ):
                     manufacturer = self.Manufacturer(manufacturer)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if duplexMethod and not isinstance(duplexMethod, aas.SubmodelElement):
+
+                if duplexMethod is not None and not isinstance(
+                    duplexMethod, aas.SubmodelElement
+                ):
                     duplexMethod = self.DuplexMethod(duplexMethod)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accessMethod and not isinstance(accessMethod, aas.SubmodelElement):
+
+                if accessMethod is not None and not isinstance(
+                    accessMethod, aas.SubmodelElement
+                ):
                     accessMethod = self.AccessMethod(accessMethod)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if typeOfModulation and not isinstance(
+
+                if typeOfModulation is not None and not isinstance(
                     typeOfModulation, aas.SubmodelElement
                 ):
                     typeOfModulation = self.TypeOfModulation(typeOfModulation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if bandwidth and not isinstance(bandwidth, aas.SubmodelElement):
+
+                if bandwidth is not None and not isinstance(
+                    bandwidth, aas.SubmodelElement
+                ):
                     bandwidth = self.Bandwidth(bandwidth)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if transmiterOutputPower and not isinstance(
+
+                if transmiterOutputPower is not None and not isinstance(
                     transmiterOutputPower, aas.SubmodelElement
                 ):
                     transmiterOutputPower = self.TransmiterOutputPower(
@@ -5377,23 +5474,36 @@ class WirelessCommunication(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if antennaGain and not isinstance(antennaGain, aas.SubmodelElement):
+
+                if antennaGain is not None and not isinstance(
+                    antennaGain, aas.SubmodelElement
+                ):
                     antennaGain = self.AntennaGain(antennaGain)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if polarisation and not isinstance(polarisation, aas.SubmodelElement):
+
+                if polarisation is not None and not isinstance(
+                    polarisation, aas.SubmodelElement
+                ):
                     polarisation = self.Polarisation(polarisation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if azimuth and not isinstance(azimuth, aas.SubmodelElement):
+
+                if azimuth is not None and not isinstance(azimuth, aas.SubmodelElement):
                     azimuth = self.Azimuth(azimuth)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if elevation and not isinstance(elevation, aas.SubmodelElement):
+
+                if elevation is not None and not isinstance(
+                    elevation, aas.SubmodelElement
+                ):
                     elevation = self.Elevation(elevation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if interfaces and not isinstance(interfaces, aas.SubmodelElement):
+
+                if interfaces is not None and not isinstance(
+                    interfaces, aas.SubmodelElement
+                ):
                     interfaces = self.Interfaces(interfaces)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -5746,21 +5856,29 @@ class WirelessCommunication(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeOfRequest and not isinstance(timeOfRequest, aas.SubmodelElement):
+
+                if timeOfRequest is not None and not isinstance(
+                    timeOfRequest, aas.SubmodelElement
+                ):
                     timeOfRequest = self.TimeOfRequest(timeOfRequest)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeOfResponse and not isinstance(
+
+                if timeOfResponse is not None and not isinstance(
                     timeOfResponse, aas.SubmodelElement
                 ):
                     timeOfResponse = self.TimeOfResponse(timeOfResponse)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if status and not isinstance(status, aas.SubmodelElement):
+
+                if status is not None and not isinstance(status, aas.SubmodelElement):
                     status = self.Status(status)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if conditions and not isinstance(conditions, aas.SubmodelElement):
+
+                if conditions is not None and not isinstance(
+                    conditions, aas.SubmodelElement
+                ):
                     conditions = self.Conditions(conditions)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6502,7 +6620,8 @@ class WirelessCommunication(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if authenticationIdentifier and not isinstance(
+
+            if authenticationIdentifier is not None and not isinstance(
                 authenticationIdentifier, aas.SubmodelElement
             ):
                 authenticationIdentifier = self.AuthenticationIdentifier(
@@ -6510,7 +6629,8 @@ class WirelessCommunication(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if authenticationKey and not isinstance(
+
+            if authenticationKey is not None and not isinstance(
                 authenticationKey, aas.SubmodelElement
             ):
                 authenticationKey = self.AuthenticationKey(authenticationKey)

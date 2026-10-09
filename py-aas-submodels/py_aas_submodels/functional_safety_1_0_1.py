@@ -774,27 +774,36 @@ class FunctionalSafety(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if typeOfVoltage and not isinstance(typeOfVoltage, aas.SubmodelElement):
+
+            if typeOfVoltage is not None and not isinstance(
+                typeOfVoltage, aas.SubmodelElement
+            ):
                 typeOfVoltage = self.TypeOfVoltage(typeOfVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
-            if ratedVoltage and not isinstance(ratedVoltage, aas.SubmodelElement):
+
+            if ratedVoltage is not None and not isinstance(
+                ratedVoltage, aas.SubmodelElement
+            ):
                 ratedVoltage = self.RatedVoltage(ratedVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
-            if minimumRatedVoltage and not isinstance(
+
+            if minimumRatedVoltage is not None and not isinstance(
                 minimumRatedVoltage, aas.SubmodelElement
             ):
                 minimumRatedVoltage = self.MinimumRatedVoltage(minimumRatedVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
-            if maximumRatedVoltage and not isinstance(
+
+            if maximumRatedVoltage is not None and not isinstance(
                 maximumRatedVoltage, aas.SubmodelElement
             ):
                 maximumRatedVoltage = self.MaximumRatedVoltage(maximumRatedVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
-            if ratedOperationalCurrent and not isinstance(
+
+            if ratedOperationalCurrent is not None and not isinstance(
                 ratedOperationalCurrent, aas.SubmodelElement
             ):
                 ratedOperationalCurrent = self.RatedOperationalCurrent(
@@ -802,7 +811,8 @@ class FunctionalSafety(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if typeOfInterlockingDevice and not isinstance(
+
+            if typeOfInterlockingDevice is not None and not isinstance(
                 typeOfInterlockingDevice, aas.SubmodelElement
             ):
                 typeOfInterlockingDevice = self.TypeOfInterlockingDevice(
@@ -810,7 +820,8 @@ class FunctionalSafety(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if otherOperatingConditions and not isinstance(
+
+            if otherOperatingConditions is not None and not isinstance(
                 otherOperatingConditions, aas.SubmodelElement
             ):
                 otherOperatingConditions = self.OtherOperatingConditions(
@@ -818,7 +829,8 @@ class FunctionalSafety(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if usefulLifeInNumberOfOperations and not isinstance(
+
+            if usefulLifeInNumberOfOperations is not None and not isinstance(
                 usefulLifeInNumberOfOperations, aas.SubmodelElement
             ):
                 usefulLifeInNumberOfOperations = self.UsefulLifeInNumberOfOperations(
@@ -826,7 +838,8 @@ class FunctionalSafety(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if usefulLifeInTimeInterval and not isinstance(
+
+            if usefulLifeInTimeInterval is not None and not isinstance(
                 usefulLifeInTimeInterval, aas.SubmodelElement
             ):
                 usefulLifeInTimeInterval = self.UsefulLifeInTimeInterval(
@@ -1405,25 +1418,32 @@ class FunctionalSafety(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sIL and not isinstance(sIL, aas.SubmodelElement):
+
+                if sIL is not None and not isinstance(sIL, aas.SubmodelElement):
                     sIL = self.SIL(sIL)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pFH and not isinstance(pFH, aas.SubmodelElement):
+
+                if pFH is not None and not isinstance(pFH, aas.SubmodelElement):
                     pFH = self.PFH(pFH)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if proofTestInterval and not isinstance(
+
+                if proofTestInterval is not None and not isinstance(
                     proofTestInterval, aas.SubmodelElement
                 ):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pL and not isinstance(pL, aas.SubmodelElement):
+
+                if pL is not None and not isinstance(pL, aas.SubmodelElement):
                     pL = self.PL(pL)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if category_ and not isinstance(category_, aas.SubmodelElement):
+
+                if category_ is not None and not isinstance(
+                    category_, aas.SubmodelElement
+                ):
                     category_ = self.Category(category_)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1699,15 +1719,18 @@ class FunctionalSafety(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mTTFD and not isinstance(mTTFD, aas.SubmodelElement):
+
+                if mTTFD is not None and not isinstance(mTTFD, aas.SubmodelElement):
                     mTTFD = self.MTTFD(mTTFD)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if rDF and not isinstance(rDF, aas.SubmodelElement):
+
+                if rDF is not None and not isinstance(rDF, aas.SubmodelElement):
                     rDF = self.RDF(rDF)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if proofTestInterval and not isinstance(
+
+                if proofTestInterval is not None and not isinstance(
                     proofTestInterval, aas.SubmodelElement
                 ):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
@@ -1924,11 +1947,13 @@ class FunctionalSafety(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if b10D and not isinstance(b10D, aas.SubmodelElement):
+
+                if b10D is not None and not isinstance(b10D, aas.SubmodelElement):
                     b10D = self.B10D(b10D)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if proofTestInterval and not isinstance(
+
+                if proofTestInterval is not None and not isinstance(
                     proofTestInterval, aas.SubmodelElement
                 ):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
@@ -2340,21 +2365,27 @@ class FunctionalSafety(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sIL and not isinstance(sIL, aas.SubmodelElement):
+
+                if sIL is not None and not isinstance(sIL, aas.SubmodelElement):
                     sIL = self.SIL(sIL)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if proofTestInterval and not isinstance(
+
+                if proofTestInterval is not None and not isinstance(
                     proofTestInterval, aas.SubmodelElement
                 ):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pL and not isinstance(pL, aas.SubmodelElement):
+
+                if pL is not None and not isinstance(pL, aas.SubmodelElement):
                     pL = self.PL(pL)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if category_ and not isinstance(category_, aas.SubmodelElement):
+
+                if category_ is not None and not isinstance(
+                    category_, aas.SubmodelElement
+                ):
                     category_ = self.Category(category_)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2435,7 +2466,8 @@ class FunctionalSafety(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if functionalSafetyDeviceType and not isinstance(
+
+            if functionalSafetyDeviceType is not None and not isinstance(
                 functionalSafetyDeviceType, aas.SubmodelElement
             ):
                 functionalSafetyDeviceType = self.FunctionalSafetyDeviceType(
@@ -2524,8 +2556,12 @@ class FunctionalSafety(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if numberOfFunctionalSafetySetsOfCharacteristics and not isinstance(
-            numberOfFunctionalSafetySetsOfCharacteristics, aas.SubmodelElement
+
+        if (
+            numberOfFunctionalSafetySetsOfCharacteristics is not None
+            and not isinstance(
+                numberOfFunctionalSafetySetsOfCharacteristics, aas.SubmodelElement
+            )
         ):
             numberOfFunctionalSafetySetsOfCharacteristics = (
                 self.NumberOfFunctionalSafetySetsOfCharacteristics(

@@ -596,19 +596,25 @@ class EquipmentUnderControl(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+            if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                 tagName = self.TagName(tagName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if pIDName and not isinstance(pIDName, aas.SubmodelElement):
+
+            if pIDName is not None and not isinstance(pIDName, aas.SubmodelElement):
                 pIDName = self.PIDName(pIDName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagDescription and not isinstance(tagDescription, aas.SubmodelElement):
+
+            if tagDescription is not None and not isinstance(
+                tagDescription, aas.SubmodelElement
+            ):
                 tagDescription = self.TagDescription(tagDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if boundary and not isinstance(boundary, aas.SubmodelElement):
+
+            if boundary is not None and not isinstance(boundary, aas.SubmodelElement):
                 boundary = self.Boundary(boundary)
 
             # Build submodel elements from raw values passed in the argument
@@ -623,7 +629,8 @@ class EquipmentUnderControl(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if processSafetyTime and not isinstance(
+
+            if processSafetyTime is not None and not isinstance(
                 processSafetyTime, aas.SubmodelElement
             ):
                 processSafetyTime = self.ProcessSafetyTime(processSafetyTime)
@@ -962,7 +969,8 @@ class EquipmentUnderControl(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardousEventDescription and not isinstance(
+
+            if hazardousEventDescription is not None and not isinstance(
                 hazardousEventDescription, aas.SubmodelElement
             ):
                 hazardousEventDescription = self.HazardousEventDescription(
@@ -970,7 +978,8 @@ class EquipmentUnderControl(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardID and not isinstance(hazardID, aas.SubmodelElement):
+
+            if hazardID is not None and not isinstance(hazardID, aas.SubmodelElement):
                 hazardID = self.HazardID(hazardID)
 
             # Build submodel elements from raw values passed in the argument
@@ -1459,7 +1468,8 @@ class EquipmentUnderControl(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardousEventDescription and not isinstance(
+
+            if hazardousEventDescription is not None and not isinstance(
                 hazardousEventDescription, aas.SubmodelElement
             ):
                 hazardousEventDescription = self.HazardousEventDescription(
@@ -1467,7 +1477,8 @@ class EquipmentUnderControl(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardID and not isinstance(hazardID, aas.SubmodelElement):
+
+            if hazardID is not None and not isinstance(hazardID, aas.SubmodelElement):
                 hazardID = self.HazardID(hazardID)
 
             # Build submodel elements from raw values passed in the argument

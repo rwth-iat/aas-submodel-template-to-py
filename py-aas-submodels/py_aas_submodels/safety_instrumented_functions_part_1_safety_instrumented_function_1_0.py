@@ -1391,11 +1391,15 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceName and not isinstance(referenceName, aas.SubmodelElement):
+
+                if referenceName is not None and not isinstance(
+                    referenceName, aas.SubmodelElement
+                ):
                     referenceName = self.ReferenceName(referenceName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceVersion and not isinstance(
+
+                if referenceVersion is not None and not isinstance(
                     referenceVersion, aas.SubmodelElement
                 ):
                     referenceVersion = self.ReferenceVersion(referenceVersion)
@@ -1660,41 +1664,54 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFID and not isinstance(sIFID, aas.SubmodelElement):
+
+            if sIFID is not None and not isinstance(sIFID, aas.SubmodelElement):
                 sIFID = self.SIFID(sIFID)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFName and not isinstance(sIFName, aas.SubmodelElement):
+
+            if sIFName is not None and not isinstance(sIFName, aas.SubmodelElement):
                 sIFName = self.SIFName(sIFName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFDescription and not isinstance(sIFDescription, aas.SubmodelElement):
+
+            if sIFDescription is not None and not isinstance(
+                sIFDescription, aas.SubmodelElement
+            ):
                 sIFDescription = self.SIFDescription(sIFDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if safeStateOfProcess and not isinstance(
+
+            if safeStateOfProcess is not None and not isinstance(
                 safeStateOfProcess, aas.SubmodelElement
             ):
                 safeStateOfProcess = self.SafeStateOfProcess(safeStateOfProcess)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFType and not isinstance(sIFType, aas.SubmodelElement):
+
+            if sIFType is not None and not isinstance(sIFType, aas.SubmodelElement):
                 sIFType = self.SIFType(sIFType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modeOfOperation and not isinstance(modeOfOperation, aas.SubmodelElement):
+
+            if modeOfOperation is not None and not isinstance(
+                modeOfOperation, aas.SubmodelElement
+            ):
                 modeOfOperation = self.ModeOfOperation(modeOfOperation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if cause and not isinstance(cause, aas.SubmodelElement):
+
+            if cause is not None and not isinstance(cause, aas.SubmodelElement):
                 cause = self.Cause(cause)
 
             # Build a submodel element if a raw value was passed in the argument
-            if effect and not isinstance(effect, aas.SubmodelElement):
+
+            if effect is not None and not isinstance(effect, aas.SubmodelElement):
                 effect = self.Effect(effect)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sILAllocationMethod and not isinstance(
+
+            if sILAllocationMethod is not None and not isinstance(
                 sILAllocationMethod, aas.SubmodelElement
             ):
                 sILAllocationMethod = self.SILAllocationMethod(sILAllocationMethod)
@@ -1711,7 +1728,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceToEquipmentUnderControl and not isinstance(
+
+            if referenceToEquipmentUnderControl is not None and not isinstance(
                 referenceToEquipmentUnderControl, aas.SubmodelElement
             ):
                 referenceToEquipmentUnderControl = (
@@ -1721,7 +1739,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if referenceToHazardousEvent and not isinstance(
+
+            if referenceToHazardousEvent is not None and not isinstance(
                 referenceToHazardousEvent, aas.SubmodelElement
             ):
                 referenceToHazardousEvent = self.ReferenceToHazardousEvent(
@@ -1762,7 +1781,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFTypicalID and not isinstance(sIFTypicalID, aas.SubmodelElement):
+
+            if sIFTypicalID is not None and not isinstance(
+                sIFTypicalID, aas.SubmodelElement
+            ):
                 sIFTypicalID = self.SIFTypicalID(sIFTypicalID)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3182,11 +3204,15 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if assumption and not isinstance(assumption, aas.SubmodelElement):
+
+                if assumption is not None and not isinstance(
+                    assumption, aas.SubmodelElement
+                ):
                     assumption = self.Assumption(assumption)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceToAssumption and not isinstance(
+
+                if referenceToAssumption is not None and not isinstance(
                     referenceToAssumption, aas.SubmodelElement
                 ):
                     referenceToAssumption = self.ReferenceToAssumption(
@@ -3422,11 +3448,15 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if requirement and not isinstance(requirement, aas.SubmodelElement):
+
+                if requirement is not None and not isinstance(
+                    requirement, aas.SubmodelElement
+                ):
                     requirement = self.Requirement(requirement)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceToRequirement and not isinstance(
+
+                if referenceToRequirement is not None and not isinstance(
                     referenceToRequirement, aas.SubmodelElement
                 ):
                     referenceToRequirement = self.ReferenceToRequirement(
@@ -3627,7 +3657,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if safetyIntegrityLevelRequirement and not isinstance(
+
+            if safetyIntegrityLevelRequirement is not None and not isinstance(
                 safetyIntegrityLevelRequirement, aas.SubmodelElement
             ):
                 safetyIntegrityLevelRequirement = self.SafetyIntegrityLevelRequirement(
@@ -3635,7 +3666,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if environmentalIntegrityLevelRequirement and not isinstance(
+
+            if environmentalIntegrityLevelRequirement is not None and not isinstance(
                 environmentalIntegrityLevelRequirement, aas.SubmodelElement
             ):
                 environmentalIntegrityLevelRequirement = (
@@ -3645,7 +3677,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if assetIntegrityLevelRequirement and not isinstance(
+
+            if assetIntegrityLevelRequirement is not None and not isinstance(
                 assetIntegrityLevelRequirement, aas.SubmodelElement
             ):
                 assetIntegrityLevelRequirement = self.AssetIntegrityLevelRequirement(
@@ -3664,19 +3697,29 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFDRequirement and not isinstance(pFDRequirement, aas.SubmodelElement):
+
+            if pFDRequirement is not None and not isinstance(
+                pFDRequirement, aas.SubmodelElement
+            ):
                 pFDRequirement = self.PFDRequirement(pFDRequirement)
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFHRequirement and not isinstance(pFHRequirement, aas.SubmodelElement):
+
+            if pFHRequirement is not None and not isinstance(
+                pFHRequirement, aas.SubmodelElement
+            ):
                 pFHRequirement = self.PFHRequirement(pFHRequirement)
 
             # Build a submodel element if a raw value was passed in the argument
-            if demandSource and not isinstance(demandSource, aas.SubmodelElement):
+
+            if demandSource is not None and not isinstance(
+                demandSource, aas.SubmodelElement
+            ):
                 demandSource = self.DemandSource(demandSource)
 
             # Build a submodel element if a raw value was passed in the argument
-            if maximumAllowableDemandRate and not isinstance(
+
+            if maximumAllowableDemandRate is not None and not isinstance(
                 maximumAllowableDemandRate, aas.SubmodelElement
             ):
                 maximumAllowableDemandRate = self.MaximumAllowableDemandRate(
@@ -3684,7 +3727,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if maximumAllowableSpuriousTripRate and not isinstance(
+
+            if maximumAllowableSpuriousTripRate is not None and not isinstance(
                 maximumAllowableSpuriousTripRate, aas.SubmodelElement
             ):
                 maximumAllowableSpuriousTripRate = (
@@ -3694,7 +3738,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if maximumAllowableSIFResponseTime and not isinstance(
+
+            if maximumAllowableSIFResponseTime is not None and not isinstance(
                 maximumAllowableSIFResponseTime, aas.SubmodelElement
             ):
                 maximumAllowableSIFResponseTime = self.MaximumAllowableSIFResponseTime(
@@ -3702,7 +3747,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if manualActivatedShutdownRequirement and not isinstance(
+
+            if manualActivatedShutdownRequirement is not None and not isinstance(
                 manualActivatedShutdownRequirement, aas.SubmodelElement
             ):
                 manualActivatedShutdownRequirement = (
@@ -4063,15 +4109,20 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagName and not isinstance(tagName, aas.SubmodelElement):
+
+            if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                 tagName = self.TagName(tagName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagDescription and not isinstance(tagDescription, aas.SubmodelElement):
+
+            if tagDescription is not None and not isinstance(
+                tagDescription, aas.SubmodelElement
+            ):
                 tagDescription = self.TagDescription(tagDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if processSafetyTime and not isinstance(
+
+            if processSafetyTime is not None and not isinstance(
                 processSafetyTime, aas.SubmodelElement
             ):
                 processSafetyTime = self.ProcessSafetyTime(processSafetyTime)
@@ -4703,7 +4754,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardousEventDescription and not isinstance(
+
+            if hazardousEventDescription is not None and not isinstance(
                 hazardousEventDescription, aas.SubmodelElement
             ):
                 hazardousEventDescription = self.HazardousEventDescription(
@@ -4711,11 +4763,13 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardID and not isinstance(hazardID, aas.SubmodelElement):
+
+            if hazardID is not None and not isinstance(hazardID, aas.SubmodelElement):
                 hazardID = self.HazardID(hazardID)
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardIsFromCombinedSafeProcessStates and not isinstance(
+
+            if hazardIsFromCombinedSafeProcessStates is not None and not isinstance(
                 hazardIsFromCombinedSafeProcessStates, aas.SubmodelElement
             ):
                 hazardIsFromCombinedSafeProcessStates = (
@@ -5074,7 +5128,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numberOfDevicesWithinGroup and not isinstance(
+
+                    if numberOfDevicesWithinGroup is not None and not isinstance(
                         numberOfDevicesWithinGroup, aas.SubmodelElement
                     ):
                         numberOfDevicesWithinGroup = self.NumberOfDevicesWithinGroup(
@@ -5082,7 +5137,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mInVotingMooN and not isinstance(
+
+                    if mInVotingMooN is not None and not isinstance(
                         mInVotingMooN, aas.SubmodelElement
                     ):
                         mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
@@ -5502,7 +5558,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numberOfDevicesWithinGroup and not isinstance(
+
+                    if numberOfDevicesWithinGroup is not None and not isinstance(
                         numberOfDevicesWithinGroup, aas.SubmodelElement
                     ):
                         numberOfDevicesWithinGroup = self.NumberOfDevicesWithinGroup(
@@ -5510,7 +5567,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mInVotingMooN and not isinstance(
+
+                    if mInVotingMooN is not None and not isinstance(
                         mInVotingMooN, aas.SubmodelElement
                     ):
                         mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
@@ -5930,7 +5988,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if numberOfDevicesWithinGroup and not isinstance(
+
+                    if numberOfDevicesWithinGroup is not None and not isinstance(
                         numberOfDevicesWithinGroup, aas.SubmodelElement
                     ):
                         numberOfDevicesWithinGroup = self.NumberOfDevicesWithinGroup(
@@ -5938,7 +5997,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mInVotingMooN and not isinstance(
+
+                    if mInVotingMooN is not None and not isinstance(
                         mInVotingMooN, aas.SubmodelElement
                     ):
                         mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
@@ -6362,13 +6422,17 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if numberOfGroups and not isinstance(
+
+                if numberOfGroups is not None and not isinstance(
                     numberOfGroups, aas.SubmodelElement
                 ):
                     numberOfGroups = self.NumberOfGroups(numberOfGroups)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mInVotingMooN and not isinstance(mInVotingMooN, aas.SubmodelElement):
+
+                if mInVotingMooN is not None and not isinstance(
+                    mInVotingMooN, aas.SubmodelElement
+                ):
                     mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6610,7 +6674,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if rBDFormula and not isinstance(rBDFormula, aas.SubmodelElement):
+
+                if rBDFormula is not None and not isinstance(
+                    rBDFormula, aas.SubmodelElement
+                ):
                     rBDFormula = self.RBDFormula(rBDFormula)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7402,7 +7469,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStampDateAndTime and not isinstance(
+
+                if timeStampDateAndTime is not None and not isinstance(
                     timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
@@ -7410,7 +7478,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if demandDescription and not isinstance(
+
+                if demandDescription is not None and not isinstance(
                     demandDescription, aas.SubmodelElement
                 ):
                     demandDescription = self.DemandDescription(demandDescription)
@@ -7427,7 +7496,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sIFResponseTimeActual and not isinstance(
+
+                if sIFResponseTimeActual is not None and not isinstance(
                     sIFResponseTimeActual, aas.SubmodelElement
                 ):
                     sIFResponseTimeActual = self.SIFResponseTimeActual(
@@ -7529,7 +7599,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if operationalDemandRate and not isinstance(
+
+            if operationalDemandRate is not None and not isinstance(
                 operationalDemandRate, aas.SubmodelElement
             ):
                 operationalDemandRate = self.OperationalDemandRate(
@@ -7537,11 +7608,15 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfDemands and not isinstance(numberOfDemands, aas.SubmodelElement):
+
+            if numberOfDemands is not None and not isinstance(
+                numberOfDemands, aas.SubmodelElement
+            ):
                 numberOfDemands = self.NumberOfDemands(numberOfDemands)
 
             # Build a submodel element if a raw value was passed in the argument
-            if operationalSpuriousTripRate and not isinstance(
+
+            if operationalSpuriousTripRate is not None and not isinstance(
                 operationalSpuriousTripRate, aas.SubmodelElement
             ):
                 operationalSpuriousTripRate = self.OperationalSpuriousTripRate(
@@ -7549,7 +7624,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfSpuriousTrips and not isinstance(
+
+            if numberOfSpuriousTrips is not None and not isinstance(
                 numberOfSpuriousTrips, aas.SubmodelElement
             ):
                 numberOfSpuriousTrips = self.NumberOfSpuriousTrips(
@@ -8343,7 +8419,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStampDateAndTime and not isinstance(
+
+                if timeStampDateAndTime is not None and not isinstance(
                     timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
@@ -8351,11 +8428,15 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testLocation and not isinstance(testLocation, aas.SubmodelElement):
+
+                if testLocation is not None and not isinstance(
+                    testLocation, aas.SubmodelElement
+                ):
                     testLocation = self.TestLocation(testLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testResultFailedOrPassed and not isinstance(
+
+                if testResultFailedOrPassed is not None and not isinstance(
                     testResultFailedOrPassed, aas.SubmodelElement
                 ):
                     testResultFailedOrPassed = self.TestResultFailedOrPassed(
@@ -8363,19 +8444,22 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testResultNumeric and not isinstance(
+
+                if testResultNumeric is not None and not isinstance(
                     testResultNumeric, aas.SubmodelElement
                 ):
                     testResultNumeric = self.TestResultNumeric(testResultNumeric)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testResultText and not isinstance(
+
+                if testResultText is not None and not isinstance(
                     testResultText, aas.SubmodelElement
                 ):
                     testResultText = self.TestResultText(testResultText)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if commentToTestResult and not isinstance(
+
+                if commentToTestResult is not None and not isinstance(
                     commentToTestResult, aas.SubmodelElement
                 ):
                     commentToTestResult = self.CommentToTestResult(commentToTestResult)
@@ -8485,7 +8569,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfPerformedTests and not isinstance(
+
+            if numberOfPerformedTests is not None and not isinstance(
                 numberOfPerformedTests, aas.SubmodelElement
             ):
                 numberOfPerformedTests = self.NumberOfPerformedTests(
@@ -8493,7 +8578,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfFailedTests and not isinstance(
+
+            if numberOfFailedTests is not None and not isinstance(
                 numberOfFailedTests, aas.SubmodelElement
             ):
                 numberOfFailedTests = self.NumberOfFailedTests(numberOfFailedTests)
@@ -8820,7 +8906,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFDAverageBasedOnOperationalData and not isinstance(
+
+            if pFDAverageBasedOnOperationalData is not None and not isinstance(
                 pFDAverageBasedOnOperationalData, aas.SubmodelElement
             ):
                 pFDAverageBasedOnOperationalData = (
@@ -8830,7 +8917,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFHAverageBasedOnOperationalData and not isinstance(
+
+            if pFHAverageBasedOnOperationalData is not None and not isinstance(
                 pFHAverageBasedOnOperationalData, aas.SubmodelElement
             ):
                 pFHAverageBasedOnOperationalData = (
@@ -8840,7 +8928,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if safetyIntegrityLevelAchieved and not isinstance(
+
+            if safetyIntegrityLevelAchieved is not None and not isinstance(
                 safetyIntegrityLevelAchieved, aas.SubmodelElement
             ):
                 safetyIntegrityLevelAchieved = self.SafetyIntegrityLevelAchieved(

@@ -637,11 +637,15 @@ class AIModelNameplate(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if size and not isinstance(size, aas.SubmodelElement):
+
+                if size is not None and not isinstance(size, aas.SubmodelElement):
                     size = self.Size(size)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if information and not isinstance(information, aas.SubmodelElement):
+
+                if information is not None and not isinstance(
+                    information, aas.SubmodelElement
+                ):
                     information = self.Information(information)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -799,7 +803,10 @@ class AIModelNameplate(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if kindOfInput and not isinstance(kindOfInput, aas.SubmodelElement):
+
+            if kindOfInput is not None and not isinstance(
+                kindOfInput, aas.SubmodelElement
+            ):
                 kindOfInput = self.KindOfInput(kindOfInput)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1031,11 +1038,13 @@ class AIModelNameplate(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if size and not isinstance(size, aas.SubmodelElement):
+
+                if size is not None and not isinstance(size, aas.SubmodelElement):
                     size = self.Size(size)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if result and not isinstance(result, aas.SubmodelElement):
+
+                if result is not None and not isinstance(result, aas.SubmodelElement):
                     result = self.Result(result)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1276,7 +1285,10 @@ class AIModelNameplate(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if exampleResult and not isinstance(exampleResult, aas.SubmodelElement):
+
+            if exampleResult is not None and not isinstance(
+                exampleResult, aas.SubmodelElement
+            ):
                 exampleResult = self.ExampleResult(exampleResult)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2197,15 +2209,24 @@ class AIModelNameplate(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if fileExtension and not isinstance(fileExtension, aas.SubmodelElement):
+
+            if fileExtension is not None and not isinstance(
+                fileExtension, aas.SubmodelElement
+            ):
                 fileExtension = self.FileExtension(fileExtension)
 
             # Build a submodel element if a raw value was passed in the argument
-            if aIFramework and not isinstance(aIFramework, aas.SubmodelElement):
+
+            if aIFramework is not None and not isinstance(
+                aIFramework, aas.SubmodelElement
+            ):
                 aIFramework = self.AIFramework(aIFramework)
 
             # Build a submodel element if a raw value was passed in the argument
-            if programLanguage and not isinstance(programLanguage, aas.SubmodelElement):
+
+            if programLanguage is not None and not isinstance(
+                programLanguage, aas.SubmodelElement
+            ):
                 programLanguage = self.ProgramLanguage(programLanguage)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2435,13 +2456,15 @@ class AIModelNameplate(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if aIDatasetReference and not isinstance(
+
+            if aIDatasetReference is not None and not isinstance(
                 aIDatasetReference, aas.SubmodelElement
             ):
                 aIDatasetReference = self.AIDatasetReference(aIDatasetReference)
 
             # Build a submodel element if a raw value was passed in the argument
-            if timeStamp and not isinstance(timeStamp, aas.SubmodelElement):
+
+            if timeStamp is not None and not isinstance(timeStamp, aas.SubmodelElement):
                 timeStamp = self.TimeStamp(min=timeStamp[0], max=timeStamp[1])
 
             # Add all passed/initialized submodel elements to a single list
@@ -2821,15 +2844,20 @@ class AIModelNameplate(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if name and not isinstance(name, aas.SubmodelElement):
+
+                if name is not None and not isinstance(name, aas.SubmodelElement):
                     name = self.Name(name)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if timeStamp and not isinstance(timeStamp, aas.SubmodelElement):
+
+                if timeStamp is not None and not isinstance(
+                    timeStamp, aas.SubmodelElement
+                ):
                     timeStamp = self.TimeStamp(timeStamp)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if aIModelNameplate and not isinstance(
+
+                if aIModelNameplate is not None and not isinstance(
                     aIModelNameplate, aas.SubmodelElement
                 ):
                     aIModelNameplate = self.AIModelNameplate(aIModelNameplate)
@@ -2991,7 +3019,8 @@ class AIModelNameplate(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if example and not isinstance(example, aas.SubmodelElement):
+
+                if example is not None and not isinstance(example, aas.SubmodelElement):
                     example = self.Example(example)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3149,7 +3178,8 @@ class AIModelNameplate(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if type and not isinstance(type, aas.SubmodelElement):
+
+            if type is not None and not isinstance(type, aas.SubmodelElement):
                 type = self.Type(type)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3225,25 +3255,34 @@ class AIModelNameplate(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if uRIOfTheProduct and not isinstance(uRIOfTheProduct, aas.SubmodelElement):
+
+        if uRIOfTheProduct is not None and not isinstance(
+            uRIOfTheProduct, aas.SubmodelElement
+        ):
             uRIOfTheProduct = self.URIOfTheProduct(uRIOfTheProduct)
 
         # Build a submodel element if a raw value was passed in the argument
-        if version and not isinstance(version, aas.SubmodelElement):
+
+        if version is not None and not isinstance(version, aas.SubmodelElement):
             version = self.Version(version)
 
         # Build a submodel element if a raw value was passed in the argument
-        if contactInformation and not isinstance(
+
+        if contactInformation is not None and not isinstance(
             contactInformation, aas.SubmodelElement
         ):
             contactInformation = self.ContactInformation(contactInformation)
 
         # Build a submodel element if a raw value was passed in the argument
-        if storage and not isinstance(storage, aas.SubmodelElement):
+
+        if storage is not None and not isinstance(storage, aas.SubmodelElement):
             storage = self.Storage(storage)
 
         # Build a submodel element if a raw value was passed in the argument
-        if kindOfLearning and not isinstance(kindOfLearning, aas.SubmodelElement):
+
+        if kindOfLearning is not None and not isinstance(
+            kindOfLearning, aas.SubmodelElement
+        ):
             kindOfLearning = self.KindOfLearning(kindOfLearning)
 
         # Add all passed/initialized submodel elements to a single list

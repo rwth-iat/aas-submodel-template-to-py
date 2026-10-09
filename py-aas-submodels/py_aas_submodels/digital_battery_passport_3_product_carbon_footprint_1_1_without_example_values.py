@@ -156,7 +156,8 @@ class CarbonFootprint(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if pcfcalculationmethods_items and not isinstance(
+
+                    if pcfcalculationmethods_items is not None and not isinstance(
                         pcfcalculationmethods_items, aas.SubmodelElement
                     ):
                         pcfcalculationmethods_items = self.Pcfcalculationmethods_item(
@@ -661,7 +662,8 @@ class CarbonFootprint(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if lifecyclephases_items and not isinstance(
+
+                    if lifecyclephases_items is not None and not isinstance(
                         lifecyclephases_items, aas.SubmodelElement
                     ):
                         lifecyclephases_items = self.Lifecyclephases_item(
@@ -1167,7 +1169,8 @@ class CarbonFootprint(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcfCalculationMethods and not isinstance(
+
+                if pcfCalculationMethods is not None and not isinstance(
                     pcfCalculationMethods, aas.SubmodelElement
                 ):
                     pcfCalculationMethods = self.PcfCalculationMethods(
@@ -1175,11 +1178,15 @@ class CarbonFootprint(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcfCO2eq and not isinstance(pcfCO2eq, aas.SubmodelElement):
+
+                if pcfCO2eq is not None and not isinstance(
+                    pcfCO2eq, aas.SubmodelElement
+                ):
                     pcfCO2eq = self.PcfCO2eq(pcfCO2eq)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceImpactUnitForCalculation and not isinstance(
+
+                if referenceImpactUnitForCalculation is not None and not isinstance(
                     referenceImpactUnitForCalculation, aas.SubmodelElement
                 ):
                     referenceImpactUnitForCalculation = (
@@ -1189,7 +1196,8 @@ class CarbonFootprint(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if quantityOfMeasureForCalculation and not isinstance(
+
+                if quantityOfMeasureForCalculation is not None and not isinstance(
                     quantityOfMeasureForCalculation, aas.SubmodelElement
                 ):
                     quantityOfMeasureForCalculation = (
@@ -1199,19 +1207,22 @@ class CarbonFootprint(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lifeCyclePhases and not isinstance(
+
+                if lifeCyclePhases is not None and not isinstance(
                     lifeCyclePhases, aas.SubmodelElement
                 ):
                     lifeCyclePhases = self.LifeCyclePhases(lifeCyclePhases)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if performanceClass and not isinstance(
+
+                if performanceClass is not None and not isinstance(
                     performanceClass, aas.SubmodelElement
                 ):
                     performanceClass = self.PerformanceClass(performanceClass)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if webLinkToPublicCarbonFootprintStudy and not isinstance(
+
+                if webLinkToPublicCarbonFootprintStudy is not None and not isinstance(
                     webLinkToPublicCarbonFootprintStudy, aas.SubmodelElement
                 ):
                     webLinkToPublicCarbonFootprintStudy = (

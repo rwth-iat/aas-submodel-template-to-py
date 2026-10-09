@@ -362,13 +362,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if versionNumber and not isinstance(
+
+                    if versionNumber is not None and not isinstance(
                         versionNumber, aas.SubmodelElement
                     ):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if schemaLink and not isinstance(schemaLink, aas.SubmodelElement):
+
+                    if schemaLink is not None and not isinstance(
+                        schemaLink, aas.SubmodelElement
+                    ):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -609,11 +613,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if originId and not isinstance(originId, aas.SubmodelElement):
+
+                    if originId is not None and not isinstance(
+                        originId, aas.SubmodelElement
+                    ):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -858,13 +868,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modificationId and not isinstance(
+
+                    if modificationId is not None and not isinstance(
                         modificationId, aas.SubmodelElement
                     ):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -958,11 +972,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if instanceId and not isinstance(instanceId, aas.SubmodelElement):
+
+                if instanceId is not None and not isinstance(
+                    instanceId, aas.SubmodelElement
+                ):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if comment and not isinstance(comment, aas.SubmodelElement):
+
+                if comment is not None and not isinstance(comment, aas.SubmodelElement):
                     comment = self.Comment(comment)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1525,11 +1543,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if power and not isinstance(power, aas.SubmodelElement):
+
+                            if power is not None and not isinstance(
+                                power, aas.SubmodelElement
+                            ):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if timestamp and not isinstance(
+
+                            if timestamp is not None and not isinstance(
                                 timestamp, aas.SubmodelElement
                             ):
                                 timestamp = self.Timestamp(timestamp)
@@ -1792,7 +1814,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if flexibleLoadMeasureId and not isinstance(
+
+                    if flexibleLoadMeasureId is not None and not isinstance(
                         flexibleLoadMeasureId, aas.SubmodelElement
                     ):
                         flexibleLoadMeasureId = self.FlexibleLoadMeasureId(
@@ -1800,17 +1823,24 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if status and not isinstance(status, aas.SubmodelElement):
+
+                    if status is not None and not isinstance(
+                        status, aas.SubmodelElement
+                    ):
                         status = self.Status(status)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if flexibleLoadId and not isinstance(
+
+                    if flexibleLoadId is not None and not isinstance(
                         flexibleLoadId, aas.SubmodelElement
                     ):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if reward and not isinstance(reward, aas.SubmodelElement):
+
+                    if reward is not None and not isinstance(
+                        reward, aas.SubmodelElement
+                    ):
                         reward = self.Reward(reward)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2455,13 +2485,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if versionNumber and not isinstance(
+
+                    if versionNumber is not None and not isinstance(
                         versionNumber, aas.SubmodelElement
                     ):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if schemaLink and not isinstance(schemaLink, aas.SubmodelElement):
+
+                    if schemaLink is not None and not isinstance(
+                        schemaLink, aas.SubmodelElement
+                    ):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2702,11 +2736,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if originId and not isinstance(originId, aas.SubmodelElement):
+
+                    if originId is not None and not isinstance(
+                        originId, aas.SubmodelElement
+                    ):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2949,13 +2989,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modificationId and not isinstance(
+
+                    if modificationId is not None and not isinstance(
                         modificationId, aas.SubmodelElement
                     ):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3049,11 +3093,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if instanceId and not isinstance(instanceId, aas.SubmodelElement):
+
+                if instanceId is not None and not isinstance(
+                    instanceId, aas.SubmodelElement
+                ):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if comment and not isinstance(comment, aas.SubmodelElement):
+
+                if comment is not None and not isinstance(comment, aas.SubmodelElement):
                     comment = self.Comment(comment)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3450,7 +3498,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if externallyTradeable and not isinstance(
+
+                    if externallyTradeable is not None and not isinstance(
                         externallyTradeable, aas.SubmodelElement
                     ):
                         externallyTradeable = self.ExternallyTradeable(
@@ -3458,7 +3507,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if autoTradeable and not isinstance(
+
+                    if autoTradeable is not None and not isinstance(
                         autoTradeable, aas.SubmodelElement
                     ):
                         autoTradeable = self.AutoTradeable(autoTradeable)
@@ -3551,11 +3601,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if status and not isinstance(status, aas.SubmodelElement):
+
+                if status is not None and not isinstance(status, aas.SubmodelElement):
                     status = self.Status(status)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modellingScope and not isinstance(
+
+                if modellingScope is not None and not isinstance(
                     modellingScope, aas.SubmodelElement
                 ):
                     modellingScope = self.ModellingScope(modellingScope)
@@ -4041,15 +4093,22 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if from_ and not isinstance(from_, aas.SubmodelElement):
+
+                        if from_ is not None and not isinstance(
+                            from_, aas.SubmodelElement
+                        ):
                             from_ = self.From(from_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if until and not isinstance(until, aas.SubmodelElement):
+
+                        if until is not None and not isinstance(
+                            until, aas.SubmodelElement
+                        ):
                             until = self.Until(until)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if temporalType and not isinstance(
+
+                        if temporalType is not None and not isinstance(
                             temporalType, aas.SubmodelElement
                         ):
                             temporalType = self.TemporalType(temporalType)
@@ -4467,11 +4526,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if power and not isinstance(power, aas.SubmodelElement):
+
+                            if power is not None and not isinstance(
+                                power, aas.SubmodelElement
+                            ):
                                 power = self.Power(min=power[0], max=power[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if duration and not isinstance(
+
+                            if duration is not None and not isinstance(
                                 duration, aas.SubmodelElement
                             ):
                                 duration = self.Duration(
@@ -4479,13 +4542,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if referencePoint and not isinstance(
+
+                            if referencePoint is not None and not isinstance(
                                 referencePoint, aas.SubmodelElement
                             ):
                                 referencePoint = self.ReferencePoint(referencePoint)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if durationType and not isinstance(
+
+                            if durationType is not None and not isinstance(
                                 durationType, aas.SubmodelElement
                             ):
                                 durationType = self.DurationType(durationType)
@@ -5144,7 +5209,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if activationGradient and not isinstance(
+
+                        if activationGradient is not None and not isinstance(
                             activationGradient, aas.SubmodelElement
                         ):
                             activationGradient = self.ActivationGradient(
@@ -5152,7 +5218,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if modulationGradient and not isinstance(
+
+                        if modulationGradient is not None and not isinstance(
                             modulationGradient, aas.SubmodelElement
                         ):
                             modulationGradient = self.ModulationGradient(
@@ -5160,7 +5227,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if deactivationGradient and not isinstance(
+
+                        if deactivationGradient is not None and not isinstance(
                             deactivationGradient, aas.SubmodelElement
                         ):
                             deactivationGradient = self.DeactivationGradient(
@@ -5592,19 +5660,24 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableCost and not isinstance(
+
+                        if variableCost is not None and not isinstance(
                             variableCost, aas.SubmodelElement
                         ):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if costPerUsage and not isinstance(
+
+                        if costPerUsage is not None and not isinstance(
                             costPerUsage, aas.SubmodelElement
                         ):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fixedCost and not isinstance(fixedCost, aas.SubmodelElement):
+
+                        if fixedCost is not None and not isinstance(
+                            fixedCost, aas.SubmodelElement
+                        ):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -5877,8 +5950,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if orderConfirmationDeadlineAbsolute and not isinstance(
-                            orderConfirmationDeadlineAbsolute, aas.SubmodelElement
+
+                        if (
+                            orderConfirmationDeadlineAbsolute is not None
+                            and not isinstance(
+                                orderConfirmationDeadlineAbsolute, aas.SubmodelElement
+                            )
                         ):
                             orderConfirmationDeadlineAbsolute = (
                                 self.OrderConfirmationDeadlineAbsolute(
@@ -5887,8 +5964,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if orderConfirmationDeadlineRelative and not isinstance(
-                            orderConfirmationDeadlineRelative, aas.SubmodelElement
+
+                        if (
+                            orderConfirmationDeadlineRelative is not None
+                            and not isinstance(
+                                orderConfirmationDeadlineRelative, aas.SubmodelElement
+                            )
                         ):
                             orderConfirmationDeadlineRelative = (
                                 self.OrderConfirmationDeadlineRelative(
@@ -6224,19 +6305,22 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variablePrice and not isinstance(
+
+                        if variablePrice is not None and not isinstance(
                             variablePrice, aas.SubmodelElement
                         ):
                             variablePrice = self.VariablePrice(variablePrice)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if pricePerUsage and not isinstance(
+
+                        if pricePerUsage is not None and not isinstance(
                             pricePerUsage, aas.SubmodelElement
                         ):
                             pricePerUsage = self.PricePerUsage(pricePerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fixedPrice and not isinstance(
+
+                        if fixedPrice is not None and not isinstance(
                             fixedPrice, aas.SubmodelElement
                         ):
                             fixedPrice = self.FixedPrice(fixedPrice)
@@ -6505,13 +6589,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if meterLocation and not isinstance(
+
+                        if meterLocation is not None and not isinstance(
                             meterLocation, aas.SubmodelElement
                         ):
                             meterLocation = self.MeterLocation(meterLocation)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if voltageLevel and not isinstance(
+
+                        if voltageLevel is not None and not isinstance(
                             voltageLevel, aas.SubmodelElement
                         ):
                             voltageLevel = self.VoltageLevel(voltageLevel)
@@ -6629,13 +6715,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if flexibleLoadId and not isinstance(
+
+                    if flexibleLoadId is not None and not isinstance(
                         flexibleLoadId, aas.SubmodelElement
                     ):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if reactionDuration and not isinstance(
+
+                    if reactionDuration is not None and not isinstance(
                         reactionDuration, aas.SubmodelElement
                     ):
                         reactionDuration = self.ReactionDuration(
@@ -6643,13 +6731,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if usageNumber and not isinstance(usageNumber, aas.SubmodelElement):
+
+                    if usageNumber is not None and not isinstance(
+                        usageNumber, aas.SubmodelElement
+                    ):
                         usageNumber = self.UsageNumber(
                             min=usageNumber[0], max=usageNumber[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modulationNumber and not isinstance(
+
+                    if modulationNumber is not None and not isinstance(
                         modulationNumber, aas.SubmodelElement
                     ):
                         modulationNumber = self.ModulationNumber(
@@ -6657,7 +6749,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if regenerationDuration and not isinstance(
+
+                    if regenerationDuration is not None and not isinstance(
                         regenerationDuration, aas.SubmodelElement
                     ):
                         regenerationDuration = self.RegenerationDuration(
@@ -7238,19 +7331,24 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableCost and not isinstance(
+
+                        if variableCost is not None and not isinstance(
                             variableCost, aas.SubmodelElement
                         ):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if costPerUsage and not isinstance(
+
+                        if costPerUsage is not None and not isinstance(
                             costPerUsage, aas.SubmodelElement
                         ):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fixedCost and not isinstance(fixedCost, aas.SubmodelElement):
+
+                        if fixedCost is not None and not isinstance(
+                            fixedCost, aas.SubmodelElement
+                        ):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -7827,13 +7925,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if flexibleLoadId and not isinstance(
+
+                            if flexibleLoadId is not None and not isinstance(
                                 flexibleLoadId, aas.SubmodelElement
                             ):
                                 flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if conversionEfficiency and not isinstance(
+
+                            if conversionEfficiency is not None and not isinstance(
                                 conversionEfficiency, aas.SubmodelElement
                             ):
                                 conversionEfficiency = self.ConversionEfficiency(
@@ -8251,11 +8351,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if power and not isinstance(power, aas.SubmodelElement):
+
+                            if power is not None and not isinstance(
+                                power, aas.SubmodelElement
+                            ):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if timestamp and not isinstance(
+
+                            if timestamp is not None and not isinstance(
                                 timestamp, aas.SubmodelElement
                             ):
                                 timestamp = self.Timestamp(timestamp)
@@ -8522,11 +8626,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if storageId and not isinstance(storageId, aas.SubmodelElement):
+
+                    if storageId is not None and not isinstance(
+                        storageId, aas.SubmodelElement
+                    ):
                         storageId = self.StorageId(storageId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if usableCapacity and not isinstance(
+
+                    if usableCapacity is not None and not isinstance(
                         usableCapacity, aas.SubmodelElement
                     ):
                         usableCapacity = self.UsableCapacity(
@@ -8534,7 +8642,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if initialEnergyContent and not isinstance(
+
+                    if initialEnergyContent is not None and not isinstance(
                         initialEnergyContent, aas.SubmodelElement
                     ):
                         initialEnergyContent = self.InitialEnergyContent(
@@ -8542,7 +8651,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if targetEnergyContent and not isinstance(
+
+                    if targetEnergyContent is not None and not isinstance(
                         targetEnergyContent, aas.SubmodelElement
                     ):
                         targetEnergyContent = self.TargetEnergyContent(
@@ -8550,7 +8660,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if energyLoss and not isinstance(energyLoss, aas.SubmodelElement):
+
+                    if energyLoss is not None and not isinstance(
+                        energyLoss, aas.SubmodelElement
+                    ):
                         energyLoss = self.EnergyLoss(energyLoss)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9212,19 +9325,22 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if comparator and not isinstance(
+
+                            if comparator is not None and not isinstance(
                                 comparator, aas.SubmodelElement
                             ):
                                 comparator = self.Comparator(comparator)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if formulaRight and not isinstance(
+
+                            if formulaRight is not None and not isinstance(
                                 formulaRight, aas.SubmodelElement
                             ):
                                 formulaRight = self.FormulaRight(formulaRight)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if formulaLeft and not isinstance(
+
+                            if formulaLeft is not None and not isinstance(
                                 formulaLeft, aas.SubmodelElement
                             ):
                                 formulaLeft = self.FormulaLeft(formulaLeft)
@@ -9645,13 +9761,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if temporalType and not isinstance(
+
+                        if temporalType is not None and not isinstance(
                             temporalType, aas.SubmodelElement
                         ):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if triggeringFlexibleLoadId and not isinstance(
+
+                        if triggeringFlexibleLoadId is not None and not isinstance(
                             triggeringFlexibleLoadId, aas.SubmodelElement
                         ):
                             triggeringFlexibleLoadId = self.TriggeringFlexibleLoadId(
@@ -9895,13 +10013,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if temporalType and not isinstance(
+
+                        if temporalType is not None and not isinstance(
                             temporalType, aas.SubmodelElement
                         ):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if targetFlexibleLoadId and not isinstance(
+
+                        if targetFlexibleLoadId is not None and not isinstance(
                             targetFlexibleLoadId, aas.SubmodelElement
                         ):
                             targetFlexibleLoadId = self.TargetFlexibleLoadId(
@@ -10077,13 +10197,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if dependencyId and not isinstance(
+
+                    if dependencyId is not None and not isinstance(
                         dependencyId, aas.SubmodelElement
                     ):
                         dependencyId = self.DependencyId(dependencyId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if applicabilityDuration and not isinstance(
+
+                    if applicabilityDuration is not None and not isinstance(
                         applicabilityDuration, aas.SubmodelElement
                     ):
                         applicabilityDuration = self.ApplicabilityDuration(
@@ -10091,7 +10213,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if logicalType and not isinstance(logicalType, aas.SubmodelElement):
+
+                    if logicalType is not None and not isinstance(
+                        logicalType, aas.SubmodelElement
+                    ):
                         logicalType = self.LogicalType(logicalType)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -10747,13 +10872,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if versionNumber and not isinstance(
+
+                    if versionNumber is not None and not isinstance(
                         versionNumber, aas.SubmodelElement
                     ):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if schemaLink and not isinstance(schemaLink, aas.SubmodelElement):
+
+                    if schemaLink is not None and not isinstance(
+                        schemaLink, aas.SubmodelElement
+                    ):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -10994,11 +11123,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if originId and not isinstance(originId, aas.SubmodelElement):
+
+                    if originId is not None and not isinstance(
+                        originId, aas.SubmodelElement
+                    ):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -11243,13 +11378,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modificationId and not isinstance(
+
+                    if modificationId is not None and not isinstance(
                         modificationId, aas.SubmodelElement
                     ):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -11343,11 +11482,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if instanceId and not isinstance(instanceId, aas.SubmodelElement):
+
+                if instanceId is not None and not isinstance(
+                    instanceId, aas.SubmodelElement
+                ):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if comment and not isinstance(comment, aas.SubmodelElement):
+
+                if comment is not None and not isinstance(comment, aas.SubmodelElement):
                     comment = self.Comment(comment)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -11744,7 +11887,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if externallyTradeable and not isinstance(
+
+                    if externallyTradeable is not None and not isinstance(
                         externallyTradeable, aas.SubmodelElement
                     ):
                         externallyTradeable = self.ExternallyTradeable(
@@ -11752,7 +11896,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if autoTradeable and not isinstance(
+
+                    if autoTradeable is not None and not isinstance(
                         autoTradeable, aas.SubmodelElement
                     ):
                         autoTradeable = self.AutoTradeable(autoTradeable)
@@ -11845,11 +11990,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if status and not isinstance(status, aas.SubmodelElement):
+
+                if status is not None and not isinstance(status, aas.SubmodelElement):
                     status = self.Status(status)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modellingScope and not isinstance(
+
+                if modellingScope is not None and not isinstance(
                     modellingScope, aas.SubmodelElement
                 ):
                     modellingScope = self.ModellingScope(modellingScope)
@@ -12335,15 +12482,22 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if from_ and not isinstance(from_, aas.SubmodelElement):
+
+                        if from_ is not None and not isinstance(
+                            from_, aas.SubmodelElement
+                        ):
                             from_ = self.From(from_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if until and not isinstance(until, aas.SubmodelElement):
+
+                        if until is not None and not isinstance(
+                            until, aas.SubmodelElement
+                        ):
                             until = self.Until(until)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if temporalType and not isinstance(
+
+                        if temporalType is not None and not isinstance(
                             temporalType, aas.SubmodelElement
                         ):
                             temporalType = self.TemporalType(temporalType)
@@ -12761,11 +12915,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if power and not isinstance(power, aas.SubmodelElement):
+
+                            if power is not None and not isinstance(
+                                power, aas.SubmodelElement
+                            ):
                                 power = self.Power(min=power[0], max=power[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if duration and not isinstance(
+
+                            if duration is not None and not isinstance(
                                 duration, aas.SubmodelElement
                             ):
                                 duration = self.Duration(
@@ -12773,13 +12931,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if durationType and not isinstance(
+
+                            if durationType is not None and not isinstance(
                                 durationType, aas.SubmodelElement
                             ):
                                 durationType = self.DurationType(durationType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if referencePoint and not isinstance(
+
+                            if referencePoint is not None and not isinstance(
                                 referencePoint, aas.SubmodelElement
                             ):
                                 referencePoint = self.ReferencePoint(referencePoint)
@@ -13438,7 +13598,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if activationGradient and not isinstance(
+
+                        if activationGradient is not None and not isinstance(
                             activationGradient, aas.SubmodelElement
                         ):
                             activationGradient = self.ActivationGradient(
@@ -13446,7 +13607,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if modulationGradient and not isinstance(
+
+                        if modulationGradient is not None and not isinstance(
                             modulationGradient, aas.SubmodelElement
                         ):
                             modulationGradient = self.ModulationGradient(
@@ -13454,7 +13616,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if deactivationGradient and not isinstance(
+
+                        if deactivationGradient is not None and not isinstance(
                             deactivationGradient, aas.SubmodelElement
                         ):
                             deactivationGradient = self.DeactivationGradient(
@@ -13886,19 +14049,24 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableCost and not isinstance(
+
+                        if variableCost is not None and not isinstance(
                             variableCost, aas.SubmodelElement
                         ):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if costPerUsage and not isinstance(
+
+                        if costPerUsage is not None and not isinstance(
                             costPerUsage, aas.SubmodelElement
                         ):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fixedCost and not isinstance(fixedCost, aas.SubmodelElement):
+
+                        if fixedCost is not None and not isinstance(
+                            fixedCost, aas.SubmodelElement
+                        ):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -14171,8 +14339,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if orderConfirmationDeadlineAbsolute and not isinstance(
-                            orderConfirmationDeadlineAbsolute, aas.SubmodelElement
+
+                        if (
+                            orderConfirmationDeadlineAbsolute is not None
+                            and not isinstance(
+                                orderConfirmationDeadlineAbsolute, aas.SubmodelElement
+                            )
                         ):
                             orderConfirmationDeadlineAbsolute = (
                                 self.OrderConfirmationDeadlineAbsolute(
@@ -14181,8 +14353,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if orderConfirmationDeadlineRelative and not isinstance(
-                            orderConfirmationDeadlineRelative, aas.SubmodelElement
+
+                        if (
+                            orderConfirmationDeadlineRelative is not None
+                            and not isinstance(
+                                orderConfirmationDeadlineRelative, aas.SubmodelElement
+                            )
                         ):
                             orderConfirmationDeadlineRelative = (
                                 self.OrderConfirmationDeadlineRelative(
@@ -14518,19 +14694,22 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variablePrice and not isinstance(
+
+                        if variablePrice is not None and not isinstance(
                             variablePrice, aas.SubmodelElement
                         ):
                             variablePrice = self.VariablePrice(variablePrice)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if pricePerUsage and not isinstance(
+
+                        if pricePerUsage is not None and not isinstance(
                             pricePerUsage, aas.SubmodelElement
                         ):
                             pricePerUsage = self.PricePerUsage(pricePerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fixedPrice and not isinstance(
+
+                        if fixedPrice is not None and not isinstance(
                             fixedPrice, aas.SubmodelElement
                         ):
                             fixedPrice = self.FixedPrice(fixedPrice)
@@ -14799,13 +14978,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if meterLocation and not isinstance(
+
+                        if meterLocation is not None and not isinstance(
                             meterLocation, aas.SubmodelElement
                         ):
                             meterLocation = self.MeterLocation(meterLocation)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if voltageLevel and not isinstance(
+
+                        if voltageLevel is not None and not isinstance(
                             voltageLevel, aas.SubmodelElement
                         ):
                             voltageLevel = self.VoltageLevel(voltageLevel)
@@ -14923,13 +15104,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if flexibleLoadId and not isinstance(
+
+                    if flexibleLoadId is not None and not isinstance(
                         flexibleLoadId, aas.SubmodelElement
                     ):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if reactionDuration and not isinstance(
+
+                    if reactionDuration is not None and not isinstance(
                         reactionDuration, aas.SubmodelElement
                     ):
                         reactionDuration = self.ReactionDuration(
@@ -14937,13 +15120,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if usageNumber and not isinstance(usageNumber, aas.SubmodelElement):
+
+                    if usageNumber is not None and not isinstance(
+                        usageNumber, aas.SubmodelElement
+                    ):
                         usageNumber = self.UsageNumber(
                             min=usageNumber[0], max=usageNumber[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modulationNumber and not isinstance(
+
+                    if modulationNumber is not None and not isinstance(
                         modulationNumber, aas.SubmodelElement
                     ):
                         modulationNumber = self.ModulationNumber(
@@ -14951,7 +15138,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if regenerationDuration and not isinstance(
+
+                    if regenerationDuration is not None and not isinstance(
                         regenerationDuration, aas.SubmodelElement
                     ):
                         regenerationDuration = self.RegenerationDuration(
@@ -15532,19 +15720,24 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if variableCost and not isinstance(
+
+                        if variableCost is not None and not isinstance(
                             variableCost, aas.SubmodelElement
                         ):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if costPerUsage and not isinstance(
+
+                        if costPerUsage is not None and not isinstance(
                             costPerUsage, aas.SubmodelElement
                         ):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if fixedCost and not isinstance(fixedCost, aas.SubmodelElement):
+
+                        if fixedCost is not None and not isinstance(
+                            fixedCost, aas.SubmodelElement
+                        ):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -16121,13 +16314,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if flexibleLoadId and not isinstance(
+
+                            if flexibleLoadId is not None and not isinstance(
                                 flexibleLoadId, aas.SubmodelElement
                             ):
                                 flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if conversionEfficiency and not isinstance(
+
+                            if conversionEfficiency is not None and not isinstance(
                                 conversionEfficiency, aas.SubmodelElement
                             ):
                                 conversionEfficiency = self.ConversionEfficiency(
@@ -16545,11 +16740,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if power and not isinstance(power, aas.SubmodelElement):
+
+                            if power is not None and not isinstance(
+                                power, aas.SubmodelElement
+                            ):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if timestamp and not isinstance(
+
+                            if timestamp is not None and not isinstance(
                                 timestamp, aas.SubmodelElement
                             ):
                                 timestamp = self.Timestamp(timestamp)
@@ -16816,11 +17015,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if storageId and not isinstance(storageId, aas.SubmodelElement):
+
+                    if storageId is not None and not isinstance(
+                        storageId, aas.SubmodelElement
+                    ):
                         storageId = self.StorageId(storageId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if usableCapacity and not isinstance(
+
+                    if usableCapacity is not None and not isinstance(
                         usableCapacity, aas.SubmodelElement
                     ):
                         usableCapacity = self.UsableCapacity(
@@ -16828,7 +17031,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if initialEnergyContent and not isinstance(
+
+                    if initialEnergyContent is not None and not isinstance(
                         initialEnergyContent, aas.SubmodelElement
                     ):
                         initialEnergyContent = self.InitialEnergyContent(
@@ -16836,7 +17040,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if targetEnergyContent and not isinstance(
+
+                    if targetEnergyContent is not None and not isinstance(
                         targetEnergyContent, aas.SubmodelElement
                     ):
                         targetEnergyContent = self.TargetEnergyContent(
@@ -16844,7 +17049,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if energyLoss and not isinstance(energyLoss, aas.SubmodelElement):
+
+                    if energyLoss is not None and not isinstance(
+                        energyLoss, aas.SubmodelElement
+                    ):
                         energyLoss = self.EnergyLoss(energyLoss)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -17506,19 +17714,22 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if comparator and not isinstance(
+
+                            if comparator is not None and not isinstance(
                                 comparator, aas.SubmodelElement
                             ):
                                 comparator = self.Comparator(comparator)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if formulaRight and not isinstance(
+
+                            if formulaRight is not None and not isinstance(
                                 formulaRight, aas.SubmodelElement
                             ):
                                 formulaRight = self.FormulaRight(formulaRight)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if formulaLeft and not isinstance(
+
+                            if formulaLeft is not None and not isinstance(
                                 formulaLeft, aas.SubmodelElement
                             ):
                                 formulaLeft = self.FormulaLeft(formulaLeft)
@@ -17939,13 +18150,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if temporalType and not isinstance(
+
+                        if temporalType is not None and not isinstance(
                             temporalType, aas.SubmodelElement
                         ):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if triggeringFlexibleLoadId and not isinstance(
+
+                        if triggeringFlexibleLoadId is not None and not isinstance(
                             triggeringFlexibleLoadId, aas.SubmodelElement
                         ):
                             triggeringFlexibleLoadId = self.TriggeringFlexibleLoadId(
@@ -18189,13 +18402,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if temporalType and not isinstance(
+
+                        if temporalType is not None and not isinstance(
                             temporalType, aas.SubmodelElement
                         ):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if targetFlexibleLoadId and not isinstance(
+
+                        if targetFlexibleLoadId is not None and not isinstance(
                             targetFlexibleLoadId, aas.SubmodelElement
                         ):
                             targetFlexibleLoadId = self.TargetFlexibleLoadId(
@@ -18371,13 +18586,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if dependencyId and not isinstance(
+
+                    if dependencyId is not None and not isinstance(
                         dependencyId, aas.SubmodelElement
                     ):
                         dependencyId = self.DependencyId(dependencyId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if applicabilityDuration and not isinstance(
+
+                    if applicabilityDuration is not None and not isinstance(
                         applicabilityDuration, aas.SubmodelElement
                     ):
                         applicabilityDuration = self.ApplicabilityDuration(
@@ -18385,7 +18602,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if logicalType and not isinstance(logicalType, aas.SubmodelElement):
+
+                    if logicalType is not None and not isinstance(
+                        logicalType, aas.SubmodelElement
+                    ):
                         logicalType = self.LogicalType(logicalType)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19041,13 +19261,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if versionNumber and not isinstance(
+
+                    if versionNumber is not None and not isinstance(
                         versionNumber, aas.SubmodelElement
                     ):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if schemaLink and not isinstance(schemaLink, aas.SubmodelElement):
+
+                    if schemaLink is not None and not isinstance(
+                        schemaLink, aas.SubmodelElement
+                    ):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19288,11 +19512,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if originId and not isinstance(originId, aas.SubmodelElement):
+
+                    if originId is not None and not isinstance(
+                        originId, aas.SubmodelElement
+                    ):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19535,13 +19765,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modificationId and not isinstance(
+
+                    if modificationId is not None and not isinstance(
                         modificationId, aas.SubmodelElement
                     ):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19635,11 +19869,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if instanceId and not isinstance(instanceId, aas.SubmodelElement):
+
+                if instanceId is not None and not isinstance(
+                    instanceId, aas.SubmodelElement
+                ):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if comment and not isinstance(comment, aas.SubmodelElement):
+
+                if comment is not None and not isinstance(comment, aas.SubmodelElement):
                     comment = self.Comment(comment)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -19882,11 +20120,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if status and not isinstance(status, aas.SubmodelElement):
+
+                if status is not None and not isinstance(status, aas.SubmodelElement):
                     status = self.Status(status)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modellingScope and not isinstance(
+
+                if modellingScope is not None and not isinstance(
                     modellingScope, aas.SubmodelElement
                 ):
                     modellingScope = self.ModellingScope(modellingScope)
@@ -20475,7 +20715,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if activationGradient and not isinstance(
+
+                        if activationGradient is not None and not isinstance(
                             activationGradient, aas.SubmodelElement
                         ):
                             activationGradient = self.ActivationGradient(
@@ -20483,7 +20724,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if modulationGradient and not isinstance(
+
+                        if modulationGradient is not None and not isinstance(
                             modulationGradient, aas.SubmodelElement
                         ):
                             modulationGradient = self.ModulationGradient(
@@ -20491,7 +20733,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if deactivationGradient and not isinstance(
+
+                        if deactivationGradient is not None and not isinstance(
                             deactivationGradient, aas.SubmodelElement
                         ):
                             deactivationGradient = self.DeactivationGradient(
@@ -20749,7 +20992,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if power and not isinstance(power, aas.SubmodelElement):
+
+                            if power is not None and not isinstance(
+                                power, aas.SubmodelElement
+                            ):
                                 power = self.Power(min=power[0], max=power[1])
 
                             # Add all passed/initialized submodel elements to a single list
@@ -21016,13 +21262,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if flexibleLoadId and not isinstance(
+
+                    if flexibleLoadId is not None and not isinstance(
                         flexibleLoadId, aas.SubmodelElement
                     ):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if reactionDuration and not isinstance(
+
+                    if reactionDuration is not None and not isinstance(
                         reactionDuration, aas.SubmodelElement
                     ):
                         reactionDuration = self.ReactionDuration(
@@ -21030,7 +21278,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if regenerationDuration and not isinstance(
+
+                    if regenerationDuration is not None and not isinstance(
                         regenerationDuration, aas.SubmodelElement
                     ):
                         regenerationDuration = self.RegenerationDuration(
@@ -21038,7 +21287,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modulationNumber and not isinstance(
+
+                    if modulationNumber is not None and not isinstance(
                         modulationNumber, aas.SubmodelElement
                     ):
                         modulationNumber = self.ModulationNumber(
@@ -21788,13 +22038,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if flexibleLoadId and not isinstance(
+
+                            if flexibleLoadId is not None and not isinstance(
                                 flexibleLoadId, aas.SubmodelElement
                             ):
                                 flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if conversionEfficiency and not isinstance(
+
+                            if conversionEfficiency is not None and not isinstance(
                                 conversionEfficiency, aas.SubmodelElement
                             ):
                                 conversionEfficiency = self.ConversionEfficiency(
@@ -22058,11 +22310,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if storageId and not isinstance(storageId, aas.SubmodelElement):
+
+                    if storageId is not None and not isinstance(
+                        storageId, aas.SubmodelElement
+                    ):
                         storageId = self.StorageId(storageId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if usableCapacity and not isinstance(
+
+                    if usableCapacity is not None and not isinstance(
                         usableCapacity, aas.SubmodelElement
                     ):
                         usableCapacity = self.UsableCapacity(
@@ -22070,7 +22326,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if initialEnergyContent and not isinstance(
+
+                    if initialEnergyContent is not None and not isinstance(
                         initialEnergyContent, aas.SubmodelElement
                     ):
                         initialEnergyContent = self.InitialEnergyContent(
@@ -22078,7 +22335,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if energyLoss and not isinstance(energyLoss, aas.SubmodelElement):
+
+                    if energyLoss is not None and not isinstance(
+                        energyLoss, aas.SubmodelElement
+                    ):
                         energyLoss = self.EnergyLoss(energyLoss)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -22726,13 +22986,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if versionNumber and not isinstance(
+
+                    if versionNumber is not None and not isinstance(
                         versionNumber, aas.SubmodelElement
                     ):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if schemaLink and not isinstance(schemaLink, aas.SubmodelElement):
+
+                    if schemaLink is not None and not isinstance(
+                        schemaLink, aas.SubmodelElement
+                    ):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -22973,11 +23237,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if originId and not isinstance(originId, aas.SubmodelElement):
+
+                    if originId is not None and not isinstance(
+                        originId, aas.SubmodelElement
+                    ):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -23220,13 +23490,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if modificationId and not isinstance(
+
+                    if modificationId is not None and not isinstance(
                         modificationId, aas.SubmodelElement
                     ):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if timestamp and not isinstance(timestamp, aas.SubmodelElement):
+
+                    if timestamp is not None and not isinstance(
+                        timestamp, aas.SubmodelElement
+                    ):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -23320,11 +23594,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if instanceId and not isinstance(instanceId, aas.SubmodelElement):
+
+                if instanceId is not None and not isinstance(
+                    instanceId, aas.SubmodelElement
+                ):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if comment and not isinstance(comment, aas.SubmodelElement):
+
+                if comment is not None and not isinstance(comment, aas.SubmodelElement):
                     comment = self.Comment(comment)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -23885,17 +24163,22 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if power and not isinstance(power, aas.SubmodelElement):
+
+                            if power is not None and not isinstance(
+                                power, aas.SubmodelElement
+                            ):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if timestamp and not isinstance(
+
+                            if timestamp is not None and not isinstance(
                                 timestamp, aas.SubmodelElement
                             ):
                                 timestamp = self.Timestamp(timestamp)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if referencePoint and not isinstance(
+
+                            if referencePoint is not None and not isinstance(
                                 referencePoint, aas.SubmodelElement
                             ):
                                 referencePoint = self.ReferencePoint(referencePoint)
@@ -24139,7 +24422,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if flexibleLoadMeasureId and not isinstance(
+
+                    if flexibleLoadMeasureId is not None and not isinstance(
                         flexibleLoadMeasureId, aas.SubmodelElement
                     ):
                         flexibleLoadMeasureId = self.FlexibleLoadMeasureId(
@@ -24147,11 +24431,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if reward and not isinstance(reward, aas.SubmodelElement):
+
+                    if reward is not None and not isinstance(
+                        reward, aas.SubmodelElement
+                    ):
                         reward = self.Reward(reward)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if exceptions and not isinstance(exceptions, aas.SubmodelElement):
+
+                    if exceptions is not None and not isinstance(
+                        exceptions, aas.SubmodelElement
+                    ):
                         exceptions = self.Exceptions(exceptions)
 
                     # Add all passed/initialized submodel elements to a single list

@@ -523,37 +523,55 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialType and not isinstance(materialType, aas.SubmodelElement):
+
+            if materialType is not None and not isinstance(
+                materialType, aas.SubmodelElement
+            ):
                 materialType = self.MaterialType(materialType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if baseUnitOfMeasure and not isinstance(
+
+            if baseUnitOfMeasure is not None and not isinstance(
                 baseUnitOfMeasure, aas.SubmodelElement
             ):
                 baseUnitOfMeasure = self.BaseUnitOfMeasure(baseUnitOfMeasure)
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialStatus and not isinstance(materialStatus, aas.SubmodelElement):
+
+            if materialStatus is not None and not isinstance(
+                materialStatus, aas.SubmodelElement
+            ):
                 materialStatus = self.MaterialStatus(materialStatus)
 
             # Build a submodel element if a raw value was passed in the argument
-            if industry and not isinstance(industry, aas.SubmodelElement):
+
+            if industry is not None and not isinstance(industry, aas.SubmodelElement):
                 industry = self.Industry(industry)
 
             # Build a submodel element if a raw value was passed in the argument
-            if productName and not isinstance(productName, aas.SubmodelElement):
+
+            if productName is not None and not isinstance(
+                productName, aas.SubmodelElement
+            ):
                 productName = self.ProductName(productName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if materialNumber and not isinstance(materialNumber, aas.SubmodelElement):
+
+            if materialNumber is not None and not isinstance(
+                materialNumber, aas.SubmodelElement
+            ):
                 materialNumber = self.MaterialNumber(materialNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if description_ and not isinstance(description_, aas.SubmodelElement):
+
+            if description_ is not None and not isinstance(
+                description_, aas.SubmodelElement
+            ):
                 description_ = self.Description(description_)
 
             # Build a submodel element if a raw value was passed in the argument
-            if plant and not isinstance(plant, aas.SubmodelElement):
+
+            if plant is not None and not isinstance(plant, aas.SubmodelElement):
                 plant = self.Plant(plant)
 
             # Add all passed/initialized submodel elements to a single list

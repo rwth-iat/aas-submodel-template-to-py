@@ -1244,13 +1244,15 @@ class PredictiveMaintenance(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if conditionName and not isinstance(
+
+                    if conditionName is not None and not isinstance(
                         conditionName, aas.SubmodelElement
                     ):
                         conditionName = self.ConditionName(conditionName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if isBoundaryConditionUsedInModel and not isinstance(
+
+                    if isBoundaryConditionUsedInModel is not None and not isinstance(
                         isBoundaryConditionUsedInModel, aas.SubmodelElement
                     ):
                         isBoundaryConditionUsedInModel = (
@@ -1260,13 +1262,15 @@ class PredictiveMaintenance(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if boundaryValueRange and not isinstance(
+
+                    if boundaryValueRange is not None and not isinstance(
                         boundaryValueRange, aas.SubmodelElement
                     ):
                         boundaryValueRange = self.BoundaryValueRange(boundaryValueRange)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if boundaryEngineeringUnit and not isinstance(
+
+                    if boundaryEngineeringUnit is not None and not isinstance(
                         boundaryEngineeringUnit, aas.SubmodelElement
                     ):
                         boundaryEngineeringUnit = self.BoundaryEngineeringUnit(
@@ -1274,7 +1278,8 @@ class PredictiveMaintenance(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if driftInfoAIModel and not isinstance(
+
+                    if driftInfoAIModel is not None and not isinstance(
                         driftInfoAIModel, aas.SubmodelElement
                     ):
                         driftInfoAIModel = self.DriftInfoAIModel(
@@ -1282,21 +1287,29 @@ class PredictiveMaintenance(aas.Submodel):
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if meanValue and not isinstance(meanValue, aas.SubmodelElement):
+
+                    if meanValue is not None and not isinstance(
+                        meanValue, aas.SubmodelElement
+                    ):
                         meanValue = self.MeanValue(meanValue)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if standarddeviation and not isinstance(
+
+                    if standarddeviation is not None and not isinstance(
                         standarddeviation, aas.SubmodelElement
                     ):
                         standarddeviation = self.Standarddeviation(standarddeviation)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skewness and not isinstance(skewness, aas.SubmodelElement):
+
+                    if skewness is not None and not isinstance(
+                        skewness, aas.SubmodelElement
+                    ):
                         skewness = self.Skewness(skewness)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if boundaryDescription and not isinstance(
+
+                    if boundaryDescription is not None and not isinstance(
                         boundaryDescription, aas.SubmodelElement
                     ):
                         boundaryDescription = self.BoundaryDescription(
@@ -1785,17 +1798,22 @@ class PredictiveMaintenance(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modelType and not isinstance(modelType, aas.SubmodelElement):
+
+                if modelType is not None and not isinstance(
+                    modelType, aas.SubmodelElement
+                ):
                     modelType = self.ModelType(modelType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modelDescription and not isinstance(
+
+                if modelDescription is not None and not isinstance(
                     modelDescription, aas.SubmodelElement
                 ):
                     modelDescription = self.ModelDescription(modelDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sMAIModelNamePlate and not isinstance(
+
+                if sMAIModelNamePlate is not None and not isinstance(
                     sMAIModelNamePlate, aas.SubmodelElement
                 ):
                     sMAIModelNamePlate = self.SMAIModelNamePlate(sMAIModelNamePlate)
@@ -2038,13 +2056,15 @@ class PredictiveMaintenance(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if preAlertMessage and not isinstance(
+
+                    if preAlertMessage is not None and not isinstance(
                         preAlertMessage, aas.SubmodelElement
                     ):
                         preAlertMessage = self.PreAlertMessage(preAlertMessage)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if preAlertValue and not isinstance(
+
+                    if preAlertValue is not None and not isinstance(
                         preAlertValue, aas.SubmodelElement
                     ):
                         preAlertValue = self.PreAlertValue(preAlertValue)
@@ -2446,11 +2466,15 @@ class PredictiveMaintenance(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if alertMessage and not isinstance(alertMessage, aas.SubmodelElement):
+
+                if alertMessage is not None and not isinstance(
+                    alertMessage, aas.SubmodelElement
+                ):
                     alertMessage = self.AlertMessage(alertMessage)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maintenanceRequired and not isinstance(
+
+                if maintenanceRequired is not None and not isinstance(
                     maintenanceRequired, aas.SubmodelElement
                 ):
                     maintenanceRequired = self.MaintenanceRequired(maintenanceRequired)
@@ -2550,7 +2574,8 @@ class PredictiveMaintenance(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if remainingUsfulLifeDateTime and not isinstance(
+
+            if remainingUsfulLifeDateTime is not None and not isinstance(
                 remainingUsfulLifeDateTime, aas.SubmodelElement
             ):
                 remainingUsfulLifeDateTime = self.RemainingUsfulLifeDateTime(
@@ -2558,7 +2583,8 @@ class PredictiveMaintenance(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if confidenceInterval and not isinstance(
+
+            if confidenceInterval is not None and not isinstance(
                 confidenceInterval, aas.SubmodelElement
             ):
                 confidenceInterval = self.ConfidenceInterval(

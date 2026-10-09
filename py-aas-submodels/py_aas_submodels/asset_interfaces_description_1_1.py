@@ -531,7 +531,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if security_items and not isinstance(
+
+                    if security_items is not None and not isinstance(
                         security_items, aas.SubmodelElement
                     ):
                         security_items = self.Security_item(security_items)
@@ -760,7 +761,10 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -982,11 +986,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1348,19 +1358,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1926,11 +1946,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2292,19 +2318,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2596,15 +2632,24 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if identity and not isinstance(identity, aas.SubmodelElement):
+
+                        if identity is not None and not isinstance(
+                            identity, aas.SubmodelElement
+                        ):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3036,23 +3081,34 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if qop and not isinstance(qop, aas.SubmodelElement):
+
+                        if qop is not None and not isinstance(qop, aas.SubmodelElement):
                             qop = self.Qop(qop)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3626,33 +3682,48 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if alg and not isinstance(alg, aas.SubmodelElement):
+
+                        if alg is not None and not isinstance(alg, aas.SubmodelElement):
                             alg = self.Alg(alg)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if format and not isinstance(format, aas.SubmodelElement):
+
+                        if format is not None and not isinstance(
+                            format, aas.SubmodelElement
+                        ):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4324,29 +4395,45 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if token and not isinstance(token, aas.SubmodelElement):
+
+                        if token is not None and not isinstance(
+                            token, aas.SubmodelElement
+                        ):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if refresh and not isinstance(refresh, aas.SubmodelElement):
+
+                        if refresh is not None and not isinstance(
+                            refresh, aas.SubmodelElement
+                        ):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if flow and not isinstance(flow, aas.SubmodelElement):
+
+                        if flow is not None and not isinstance(
+                            flow, aas.SubmodelElement
+                        ):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4533,11 +4620,15 @@ class AssetInterfacesDescription(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if base and not isinstance(base, aas.SubmodelElement):
+
+                if base is not None and not isinstance(base, aas.SubmodelElement):
                     base = self.Base(base)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contentType and not isinstance(contentType, aas.SubmodelElement):
+
+                if contentType is not None and not isinstance(
+                    contentType, aas.SubmodelElement
+                ):
                     contentType = self.ContentType(contentType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6057,37 +6148,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if type and not isinstance(type, aas.SubmodelElement):
+
+                            if type is not None and not isinstance(
+                                type, aas.SubmodelElement
+                            ):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, aas.SubmodelElement):
+
+                            if title is not None and not isinstance(
+                                title, aas.SubmodelElement
+                            ):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if observable and not isinstance(
+
+                            if observable is not None and not isinstance(
                                 observable, aas.SubmodelElement
                             ):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if const and not isinstance(const, aas.SubmodelElement):
+
+                            if const is not None and not isinstance(
+                                const, aas.SubmodelElement
+                            ):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if default and not isinstance(default, aas.SubmodelElement):
+
+                            if default is not None and not isinstance(
+                                default, aas.SubmodelElement
+                            ):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if unit and not isinstance(unit, aas.SubmodelElement):
+
+                            if unit is not None and not isinstance(
+                                unit, aas.SubmodelElement
+                            ):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                            if min_max is not None and not isinstance(
+                                min_max, aas.SubmodelElement
+                            ):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if lengthRange and not isinstance(
+
+                            if lengthRange is not None and not isinstance(
                                 lengthRange, aas.SubmodelElement
                             ):
                                 lengthRange = self.LengthRange(
@@ -6095,7 +6206,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueSemantics and not isinstance(
+
+                            if valueSemantics is not None and not isinstance(
                                 valueSemantics, aas.SubmodelElement
                             ):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
@@ -7801,43 +7913,50 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if type and not isinstance(
+
+                                    if type is not None and not isinstance(
                                         type, aas.SubmodelElement
                                     ):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if title and not isinstance(
+
+                                    if title is not None and not isinstance(
                                         title, aas.SubmodelElement
                                     ):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if observable and not isinstance(
+
+                                    if observable is not None and not isinstance(
                                         observable, aas.SubmodelElement
                                     ):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if const and not isinstance(
+
+                                    if const is not None and not isinstance(
                                         const, aas.SubmodelElement
                                     ):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if default and not isinstance(
+
+                                    if default is not None and not isinstance(
                                         default, aas.SubmodelElement
                                     ):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if unit and not isinstance(
+
+                                    if unit is not None and not isinstance(
                                         unit, aas.SubmodelElement
                                     ):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if min_max and not isinstance(
+
+                                    if min_max is not None and not isinstance(
                                         min_max, aas.SubmodelElement
                                     ):
                                         min_max = self.Min_max(
@@ -7845,7 +7964,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if lengthRange and not isinstance(
+
+                                    if lengthRange is not None and not isinstance(
                                         lengthRange, aas.SubmodelElement
                                     ):
                                         lengthRange = self.LengthRange(
@@ -7853,7 +7973,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if valueSemantics and not isinstance(
+
+                                    if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
                                         valueSemantics = self.ValueSemantics(
@@ -8261,39 +8382,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if key and not isinstance(key, aas.SubmodelElement):
+
+                                if key is not None and not isinstance(
+                                    key, aas.SubmodelElement
+                                ):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if type and not isinstance(type, aas.SubmodelElement):
+
+                                if type is not None and not isinstance(
+                                    type, aas.SubmodelElement
+                                ):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if title and not isinstance(title, aas.SubmodelElement):
+
+                                if title is not None and not isinstance(
+                                    title, aas.SubmodelElement
+                                ):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if observable and not isinstance(
+
+                                if observable is not None and not isinstance(
                                     observable, aas.SubmodelElement
                                 ):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if const and not isinstance(const, aas.SubmodelElement):
+
+                                if const is not None and not isinstance(
+                                    const, aas.SubmodelElement
+                                ):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if default and not isinstance(
+
+                                if default is not None and not isinstance(
                                     default, aas.SubmodelElement
                                 ):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                                if unit is not None and not isinstance(
+                                    unit, aas.SubmodelElement
+                                ):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if min_max and not isinstance(
+
+                                if min_max is not None and not isinstance(
                                     min_max, aas.SubmodelElement
                                 ):
                                     min_max = self.Min_max(
@@ -8301,7 +8440,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if lengthRange and not isinstance(
+
+                                if lengthRange is not None and not isinstance(
                                     lengthRange, aas.SubmodelElement
                                 ):
                                     lengthRange = self.LengthRange(
@@ -8309,7 +8449,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if itemsRange and not isinstance(
+
+                                if itemsRange is not None and not isinstance(
                                     itemsRange, aas.SubmodelElement
                                 ):
                                     itemsRange = self.ItemsRange(
@@ -8317,7 +8458,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if valueSemantics and not isinstance(
+
+                                if valueSemantics is not None and not isinstance(
                                     valueSemantics, aas.SubmodelElement
                                 ):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
@@ -8863,7 +9005,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if security_items and not isinstance(
+
+                                if security_items is not None and not isinstance(
                                     security_items, aas.SubmodelElement
                                 ):
                                     security_items = self.Security_item(security_items)
@@ -9262,7 +9405,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if htv_fieldName and not isinstance(
+
+                                    if htv_fieldName is not None and not isinstance(
                                         htv_fieldName, aas.SubmodelElement
                                     ):
                                         htv_fieldName = self.Htv_fieldName(
@@ -9270,7 +9414,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if htv_fieldValue and not isinstance(
+
+                                    if htv_fieldValue is not None and not isinstance(
                                         htv_fieldValue, aas.SubmodelElement
                                     ):
                                         htv_fieldValue = self.Htv_fieldValue(
@@ -9541,23 +9686,29 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if href and not isinstance(href, aas.SubmodelElement):
+
+                            if href is not None and not isinstance(
+                                href, aas.SubmodelElement
+                            ):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if contentType and not isinstance(
+
+                            if contentType is not None and not isinstance(
                                 contentType, aas.SubmodelElement
                             ):
                                 contentType = self.ContentType(contentType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if subprotocol and not isinstance(
+
+                            if subprotocol is not None and not isinstance(
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if htv_methodName and not isinstance(
+
+                            if htv_methodName is not None and not isinstance(
                                 htv_methodName, aas.SubmodelElement
                             ):
                                 htv_methodName = self.Htv_methodName(htv_methodName)
@@ -9683,41 +9834,62 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if key and not isinstance(key, aas.SubmodelElement):
+
+                        if key is not None and not isinstance(key, aas.SubmodelElement):
                             key = self.Key(key)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if type and not isinstance(type, aas.SubmodelElement):
+
+                        if type is not None and not isinstance(
+                            type, aas.SubmodelElement
+                        ):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if title and not isinstance(title, aas.SubmodelElement):
+
+                        if title is not None and not isinstance(
+                            title, aas.SubmodelElement
+                        ):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if observable and not isinstance(
+
+                        if observable is not None and not isinstance(
                             observable, aas.SubmodelElement
                         ):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if const and not isinstance(const, aas.SubmodelElement):
+
+                        if const is not None and not isinstance(
+                            const, aas.SubmodelElement
+                        ):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if default and not isinstance(default, aas.SubmodelElement):
+
+                        if default is not None and not isinstance(
+                            default, aas.SubmodelElement
+                        ):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unit and not isinstance(unit, aas.SubmodelElement):
+
+                        if unit is not None and not isinstance(
+                            unit, aas.SubmodelElement
+                        ):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                        if min_max is not None and not isinstance(
+                            min_max, aas.SubmodelElement
+                        ):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if lengthRange and not isinstance(
+
+                        if lengthRange is not None and not isinstance(
                             lengthRange, aas.SubmodelElement
                         ):
                             lengthRange = self.LengthRange(
@@ -9725,7 +9897,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemsRange and not isinstance(
+
+                        if itemsRange is not None and not isinstance(
                             itemsRange, aas.SubmodelElement
                         ):
                             itemsRange = self.ItemsRange(
@@ -9733,7 +9906,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if valueSemantics and not isinstance(
+
+                        if valueSemantics is not None and not isinstance(
                             valueSemantics, aas.SubmodelElement
                         ):
                             valueSemantics = self.ValueSemantics(valueSemantics)
@@ -10310,19 +10484,23 @@ class AssetInterfacesDescription(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if title and not isinstance(title, aas.SubmodelElement):
+
+            if title is not None and not isinstance(title, aas.SubmodelElement):
                 title = self.Title(title)
 
             # Build a submodel element if a raw value was passed in the argument
-            if created and not isinstance(created, aas.SubmodelElement):
+
+            if created is not None and not isinstance(created, aas.SubmodelElement):
                 created = self.Created(created)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modified and not isinstance(modified, aas.SubmodelElement):
+
+            if modified is not None and not isinstance(modified, aas.SubmodelElement):
                 modified = self.Modified(modified)
 
             # Build a submodel element if a raw value was passed in the argument
-            if support and not isinstance(support, aas.SubmodelElement):
+
+            if support is not None and not isinstance(support, aas.SubmodelElement):
                 support = self.Support(support)
 
             # Add all passed/initialized submodel elements to a single list
@@ -10888,7 +11066,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if security_items and not isinstance(
+
+                    if security_items is not None and not isinstance(
                         security_items, aas.SubmodelElement
                     ):
                         security_items = self.Security_item(security_items)
@@ -11117,7 +11296,10 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -11440,15 +11622,20 @@ class AssetInterfacesDescription(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if base and not isinstance(base, aas.SubmodelElement):
+
+                if base is not None and not isinstance(base, aas.SubmodelElement):
                     base = self.Base(base)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contentType and not isinstance(contentType, aas.SubmodelElement):
+
+                if contentType is not None and not isinstance(
+                    contentType, aas.SubmodelElement
+                ):
                     contentType = self.ContentType(contentType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modv_mostSignificantByte and not isinstance(
+
+                if modv_mostSignificantByte is not None and not isinstance(
                     modv_mostSignificantByte, aas.SubmodelElement
                 ):
                     modv_mostSignificantByte = self.Modv_mostSignificantByte(
@@ -11456,7 +11643,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if modv_mostSignificantWord and not isinstance(
+
+                if modv_mostSignificantWord is not None and not isinstance(
                     modv_mostSignificantWord, aas.SubmodelElement
                 ):
                     modv_mostSignificantWord = self.Modv_mostSignificantWord(
@@ -12987,37 +13175,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if type and not isinstance(type, aas.SubmodelElement):
+
+                            if type is not None and not isinstance(
+                                type, aas.SubmodelElement
+                            ):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, aas.SubmodelElement):
+
+                            if title is not None and not isinstance(
+                                title, aas.SubmodelElement
+                            ):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if observable and not isinstance(
+
+                            if observable is not None and not isinstance(
                                 observable, aas.SubmodelElement
                             ):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if const and not isinstance(const, aas.SubmodelElement):
+
+                            if const is not None and not isinstance(
+                                const, aas.SubmodelElement
+                            ):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if default and not isinstance(default, aas.SubmodelElement):
+
+                            if default is not None and not isinstance(
+                                default, aas.SubmodelElement
+                            ):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if unit and not isinstance(unit, aas.SubmodelElement):
+
+                            if unit is not None and not isinstance(
+                                unit, aas.SubmodelElement
+                            ):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                            if min_max is not None and not isinstance(
+                                min_max, aas.SubmodelElement
+                            ):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if lengthRange and not isinstance(
+
+                            if lengthRange is not None and not isinstance(
                                 lengthRange, aas.SubmodelElement
                             ):
                                 lengthRange = self.LengthRange(
@@ -13025,7 +13233,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueSemantics and not isinstance(
+
+                            if valueSemantics is not None and not isinstance(
                                 valueSemantics, aas.SubmodelElement
                             ):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
@@ -14731,43 +14940,50 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if type and not isinstance(
+
+                                    if type is not None and not isinstance(
                                         type, aas.SubmodelElement
                                     ):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if title and not isinstance(
+
+                                    if title is not None and not isinstance(
                                         title, aas.SubmodelElement
                                     ):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if observable and not isinstance(
+
+                                    if observable is not None and not isinstance(
                                         observable, aas.SubmodelElement
                                     ):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if const and not isinstance(
+
+                                    if const is not None and not isinstance(
                                         const, aas.SubmodelElement
                                     ):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if default and not isinstance(
+
+                                    if default is not None and not isinstance(
                                         default, aas.SubmodelElement
                                     ):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if unit and not isinstance(
+
+                                    if unit is not None and not isinstance(
                                         unit, aas.SubmodelElement
                                     ):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if min_max and not isinstance(
+
+                                    if min_max is not None and not isinstance(
                                         min_max, aas.SubmodelElement
                                     ):
                                         min_max = self.Min_max(
@@ -14775,7 +14991,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if lengthRange and not isinstance(
+
+                                    if lengthRange is not None and not isinstance(
                                         lengthRange, aas.SubmodelElement
                                     ):
                                         lengthRange = self.LengthRange(
@@ -14783,7 +15000,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if valueSemantics and not isinstance(
+
+                                    if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
                                         valueSemantics = self.ValueSemantics(
@@ -15191,39 +15409,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if key and not isinstance(key, aas.SubmodelElement):
+
+                                if key is not None and not isinstance(
+                                    key, aas.SubmodelElement
+                                ):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if type and not isinstance(type, aas.SubmodelElement):
+
+                                if type is not None and not isinstance(
+                                    type, aas.SubmodelElement
+                                ):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if title and not isinstance(title, aas.SubmodelElement):
+
+                                if title is not None and not isinstance(
+                                    title, aas.SubmodelElement
+                                ):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if observable and not isinstance(
+
+                                if observable is not None and not isinstance(
                                     observable, aas.SubmodelElement
                                 ):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if const and not isinstance(const, aas.SubmodelElement):
+
+                                if const is not None and not isinstance(
+                                    const, aas.SubmodelElement
+                                ):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if default and not isinstance(
+
+                                if default is not None and not isinstance(
                                     default, aas.SubmodelElement
                                 ):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                                if unit is not None and not isinstance(
+                                    unit, aas.SubmodelElement
+                                ):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if min_max and not isinstance(
+
+                                if min_max is not None and not isinstance(
                                     min_max, aas.SubmodelElement
                                 ):
                                     min_max = self.Min_max(
@@ -15231,7 +15467,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if lengthRange and not isinstance(
+
+                                if lengthRange is not None and not isinstance(
                                     lengthRange, aas.SubmodelElement
                                 ):
                                     lengthRange = self.LengthRange(
@@ -15239,7 +15476,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if itemsRange and not isinstance(
+
+                                if itemsRange is not None and not isinstance(
                                     itemsRange, aas.SubmodelElement
                                 ):
                                     itemsRange = self.ItemsRange(
@@ -15247,7 +15485,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if valueSemantics and not isinstance(
+
+                                if valueSemantics is not None and not isinstance(
                                     valueSemantics, aas.SubmodelElement
                                 ):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
@@ -15793,7 +16032,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if security_items and not isinstance(
+
+                                if security_items is not None and not isinstance(
                                     security_items, aas.SubmodelElement
                                 ):
                                     security_items = self.Security_item(security_items)
@@ -16606,35 +16846,43 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if href and not isinstance(href, aas.SubmodelElement):
+
+                            if href is not None and not isinstance(
+                                href, aas.SubmodelElement
+                            ):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if contentType and not isinstance(
+
+                            if contentType is not None and not isinstance(
                                 contentType, aas.SubmodelElement
                             ):
                                 contentType = self.ContentType(contentType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if subprotocol and not isinstance(
+
+                            if subprotocol is not None and not isinstance(
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_function and not isinstance(
+
+                            if modv_function is not None and not isinstance(
                                 modv_function, aas.SubmodelElement
                             ):
                                 modv_function = self.Modv_function(modv_function)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_entity and not isinstance(
+
+                            if modv_entity is not None and not isinstance(
                                 modv_entity, aas.SubmodelElement
                             ):
                                 modv_entity = self.Modv_entity(modv_entity)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_zeroBasedAddressing and not isinstance(
+
+                            if modv_zeroBasedAddressing is not None and not isinstance(
                                 modv_zeroBasedAddressing, aas.SubmodelElement
                             ):
                                 modv_zeroBasedAddressing = (
@@ -16644,7 +16892,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_pollingTime and not isinstance(
+
+                            if modv_pollingTime is not None and not isinstance(
                                 modv_pollingTime, aas.SubmodelElement
                             ):
                                 modv_pollingTime = self.Modv_pollingTime(
@@ -16652,19 +16901,22 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_timeout and not isinstance(
+
+                            if modv_timeout is not None and not isinstance(
                                 modv_timeout, aas.SubmodelElement
                             ):
                                 modv_timeout = self.Modv_timeout(modv_timeout)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_type and not isinstance(
+
+                            if modv_type is not None and not isinstance(
                                 modv_type, aas.SubmodelElement
                             ):
                                 modv_type = self.Modv_type(modv_type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_mostSignificantByte and not isinstance(
+
+                            if modv_mostSignificantByte is not None and not isinstance(
                                 modv_mostSignificantByte, aas.SubmodelElement
                             ):
                                 modv_mostSignificantByte = (
@@ -16674,7 +16926,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if modv_mostSignificantWord and not isinstance(
+
+                            if modv_mostSignificantWord is not None and not isinstance(
                                 modv_mostSignificantWord, aas.SubmodelElement
                             ):
                                 modv_mostSignificantWord = (
@@ -16801,41 +17054,62 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if key and not isinstance(key, aas.SubmodelElement):
+
+                        if key is not None and not isinstance(key, aas.SubmodelElement):
                             key = self.Key(key)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if type and not isinstance(type, aas.SubmodelElement):
+
+                        if type is not None and not isinstance(
+                            type, aas.SubmodelElement
+                        ):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if title and not isinstance(title, aas.SubmodelElement):
+
+                        if title is not None and not isinstance(
+                            title, aas.SubmodelElement
+                        ):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if observable and not isinstance(
+
+                        if observable is not None and not isinstance(
                             observable, aas.SubmodelElement
                         ):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if const and not isinstance(const, aas.SubmodelElement):
+
+                        if const is not None and not isinstance(
+                            const, aas.SubmodelElement
+                        ):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if default and not isinstance(default, aas.SubmodelElement):
+
+                        if default is not None and not isinstance(
+                            default, aas.SubmodelElement
+                        ):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unit and not isinstance(unit, aas.SubmodelElement):
+
+                        if unit is not None and not isinstance(
+                            unit, aas.SubmodelElement
+                        ):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                        if min_max is not None and not isinstance(
+                            min_max, aas.SubmodelElement
+                        ):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if lengthRange and not isinstance(
+
+                        if lengthRange is not None and not isinstance(
                             lengthRange, aas.SubmodelElement
                         ):
                             lengthRange = self.LengthRange(
@@ -16843,7 +17117,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemsRange and not isinstance(
+
+                        if itemsRange is not None and not isinstance(
                             itemsRange, aas.SubmodelElement
                         ):
                             itemsRange = self.ItemsRange(
@@ -16851,7 +17126,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if valueSemantics and not isinstance(
+
+                        if valueSemantics is not None and not isinstance(
                             valueSemantics, aas.SubmodelElement
                         ):
                             valueSemantics = self.ValueSemantics(valueSemantics)
@@ -17428,19 +17704,23 @@ class AssetInterfacesDescription(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if title and not isinstance(title, aas.SubmodelElement):
+
+            if title is not None and not isinstance(title, aas.SubmodelElement):
                 title = self.Title(title)
 
             # Build a submodel element if a raw value was passed in the argument
-            if created and not isinstance(created, aas.SubmodelElement):
+
+            if created is not None and not isinstance(created, aas.SubmodelElement):
                 created = self.Created(created)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modified and not isinstance(modified, aas.SubmodelElement):
+
+            if modified is not None and not isinstance(modified, aas.SubmodelElement):
                 modified = self.Modified(modified)
 
             # Build a submodel element if a raw value was passed in the argument
-            if support and not isinstance(support, aas.SubmodelElement):
+
+            if support is not None and not isinstance(support, aas.SubmodelElement):
                 support = self.Support(support)
 
             # Add all passed/initialized submodel elements to a single list
@@ -18006,7 +18286,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if security_items and not isinstance(
+
+                    if security_items is not None and not isinstance(
                         security_items, aas.SubmodelElement
                     ):
                         security_items = self.Security_item(security_items)
@@ -18235,7 +18516,10 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -18457,11 +18741,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -18823,19 +19113,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -19401,11 +19701,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -19767,19 +20073,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -20071,15 +20387,24 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if identity and not isinstance(identity, aas.SubmodelElement):
+
+                        if identity is not None and not isinstance(
+                            identity, aas.SubmodelElement
+                        ):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -20511,23 +20836,34 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if qop and not isinstance(qop, aas.SubmodelElement):
+
+                        if qop is not None and not isinstance(qop, aas.SubmodelElement):
                             qop = self.Qop(qop)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -21101,33 +21437,48 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if alg and not isinstance(alg, aas.SubmodelElement):
+
+                        if alg is not None and not isinstance(alg, aas.SubmodelElement):
                             alg = self.Alg(alg)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if format and not isinstance(format, aas.SubmodelElement):
+
+                        if format is not None and not isinstance(
+                            format, aas.SubmodelElement
+                        ):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -21799,29 +22150,45 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if token and not isinstance(token, aas.SubmodelElement):
+
+                        if token is not None and not isinstance(
+                            token, aas.SubmodelElement
+                        ):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if refresh and not isinstance(refresh, aas.SubmodelElement):
+
+                        if refresh is not None and not isinstance(
+                            refresh, aas.SubmodelElement
+                        ):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if flow and not isinstance(flow, aas.SubmodelElement):
+
+                        if flow is not None and not isinstance(
+                            flow, aas.SubmodelElement
+                        ):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -22008,11 +22375,15 @@ class AssetInterfacesDescription(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if base and not isinstance(base, aas.SubmodelElement):
+
+                if base is not None and not isinstance(base, aas.SubmodelElement):
                     base = self.Base(base)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contentType and not isinstance(contentType, aas.SubmodelElement):
+
+                if contentType is not None and not isinstance(
+                    contentType, aas.SubmodelElement
+                ):
                     contentType = self.ContentType(contentType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -23532,37 +23903,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if type and not isinstance(type, aas.SubmodelElement):
+
+                            if type is not None and not isinstance(
+                                type, aas.SubmodelElement
+                            ):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, aas.SubmodelElement):
+
+                            if title is not None and not isinstance(
+                                title, aas.SubmodelElement
+                            ):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if observable and not isinstance(
+
+                            if observable is not None and not isinstance(
                                 observable, aas.SubmodelElement
                             ):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if const and not isinstance(const, aas.SubmodelElement):
+
+                            if const is not None and not isinstance(
+                                const, aas.SubmodelElement
+                            ):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if default and not isinstance(default, aas.SubmodelElement):
+
+                            if default is not None and not isinstance(
+                                default, aas.SubmodelElement
+                            ):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if unit and not isinstance(unit, aas.SubmodelElement):
+
+                            if unit is not None and not isinstance(
+                                unit, aas.SubmodelElement
+                            ):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                            if min_max is not None and not isinstance(
+                                min_max, aas.SubmodelElement
+                            ):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if lengthRange and not isinstance(
+
+                            if lengthRange is not None and not isinstance(
                                 lengthRange, aas.SubmodelElement
                             ):
                                 lengthRange = self.LengthRange(
@@ -23570,7 +23961,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueSemantics and not isinstance(
+
+                            if valueSemantics is not None and not isinstance(
                                 valueSemantics, aas.SubmodelElement
                             ):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
@@ -25276,43 +25668,50 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if type and not isinstance(
+
+                                    if type is not None and not isinstance(
                                         type, aas.SubmodelElement
                                     ):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if title and not isinstance(
+
+                                    if title is not None and not isinstance(
                                         title, aas.SubmodelElement
                                     ):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if observable and not isinstance(
+
+                                    if observable is not None and not isinstance(
                                         observable, aas.SubmodelElement
                                     ):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if const and not isinstance(
+
+                                    if const is not None and not isinstance(
                                         const, aas.SubmodelElement
                                     ):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if default and not isinstance(
+
+                                    if default is not None and not isinstance(
                                         default, aas.SubmodelElement
                                     ):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if unit and not isinstance(
+
+                                    if unit is not None and not isinstance(
                                         unit, aas.SubmodelElement
                                     ):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if min_max and not isinstance(
+
+                                    if min_max is not None and not isinstance(
                                         min_max, aas.SubmodelElement
                                     ):
                                         min_max = self.Min_max(
@@ -25320,7 +25719,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if lengthRange and not isinstance(
+
+                                    if lengthRange is not None and not isinstance(
                                         lengthRange, aas.SubmodelElement
                                     ):
                                         lengthRange = self.LengthRange(
@@ -25328,7 +25728,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if valueSemantics and not isinstance(
+
+                                    if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
                                         valueSemantics = self.ValueSemantics(
@@ -25736,39 +26137,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if key and not isinstance(key, aas.SubmodelElement):
+
+                                if key is not None and not isinstance(
+                                    key, aas.SubmodelElement
+                                ):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if type and not isinstance(type, aas.SubmodelElement):
+
+                                if type is not None and not isinstance(
+                                    type, aas.SubmodelElement
+                                ):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if title and not isinstance(title, aas.SubmodelElement):
+
+                                if title is not None and not isinstance(
+                                    title, aas.SubmodelElement
+                                ):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if observable and not isinstance(
+
+                                if observable is not None and not isinstance(
                                     observable, aas.SubmodelElement
                                 ):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if const and not isinstance(const, aas.SubmodelElement):
+
+                                if const is not None and not isinstance(
+                                    const, aas.SubmodelElement
+                                ):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if default and not isinstance(
+
+                                if default is not None and not isinstance(
                                     default, aas.SubmodelElement
                                 ):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                                if unit is not None and not isinstance(
+                                    unit, aas.SubmodelElement
+                                ):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if min_max and not isinstance(
+
+                                if min_max is not None and not isinstance(
                                     min_max, aas.SubmodelElement
                                 ):
                                     min_max = self.Min_max(
@@ -25776,7 +26195,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if lengthRange and not isinstance(
+
+                                if lengthRange is not None and not isinstance(
                                     lengthRange, aas.SubmodelElement
                                 ):
                                     lengthRange = self.LengthRange(
@@ -25784,7 +26204,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if itemsRange and not isinstance(
+
+                                if itemsRange is not None and not isinstance(
                                     itemsRange, aas.SubmodelElement
                                 ):
                                     itemsRange = self.ItemsRange(
@@ -25792,7 +26213,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if valueSemantics and not isinstance(
+
+                                if valueSemantics is not None and not isinstance(
                                     valueSemantics, aas.SubmodelElement
                                 ):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
@@ -26338,7 +26760,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if security_items and not isinstance(
+
+                                if security_items is not None and not isinstance(
                                     security_items, aas.SubmodelElement
                                 ):
                                     security_items = self.Security_item(security_items)
@@ -26740,29 +27163,36 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if href and not isinstance(href, aas.SubmodelElement):
+
+                            if href is not None and not isinstance(
+                                href, aas.SubmodelElement
+                            ):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if contentType and not isinstance(
+
+                            if contentType is not None and not isinstance(
                                 contentType, aas.SubmodelElement
                             ):
                                 contentType = self.ContentType(contentType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if subprotocol and not isinstance(
+
+                            if subprotocol is not None and not isinstance(
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if mqv_retain and not isinstance(
+
+                            if mqv_retain is not None and not isinstance(
                                 mqv_retain, aas.SubmodelElement
                             ):
                                 mqv_retain = self.Mqv_retain(mqv_retain)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if mqv_controlPacket and not isinstance(
+
+                            if mqv_controlPacket is not None and not isinstance(
                                 mqv_controlPacket, aas.SubmodelElement
                             ):
                                 mqv_controlPacket = self.Mqv_controlPacket(
@@ -26770,7 +27200,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if mqv_qos and not isinstance(mqv_qos, aas.SubmodelElement):
+
+                            if mqv_qos is not None and not isinstance(
+                                mqv_qos, aas.SubmodelElement
+                            ):
                                 mqv_qos = self.Mqv_qos(mqv_qos)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -26886,41 +27319,62 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if key and not isinstance(key, aas.SubmodelElement):
+
+                        if key is not None and not isinstance(key, aas.SubmodelElement):
                             key = self.Key(key)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if type and not isinstance(type, aas.SubmodelElement):
+
+                        if type is not None and not isinstance(
+                            type, aas.SubmodelElement
+                        ):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if title and not isinstance(title, aas.SubmodelElement):
+
+                        if title is not None and not isinstance(
+                            title, aas.SubmodelElement
+                        ):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if observable and not isinstance(
+
+                        if observable is not None and not isinstance(
                             observable, aas.SubmodelElement
                         ):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if const and not isinstance(const, aas.SubmodelElement):
+
+                        if const is not None and not isinstance(
+                            const, aas.SubmodelElement
+                        ):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if default and not isinstance(default, aas.SubmodelElement):
+
+                        if default is not None and not isinstance(
+                            default, aas.SubmodelElement
+                        ):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unit and not isinstance(unit, aas.SubmodelElement):
+
+                        if unit is not None and not isinstance(
+                            unit, aas.SubmodelElement
+                        ):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                        if min_max is not None and not isinstance(
+                            min_max, aas.SubmodelElement
+                        ):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if lengthRange and not isinstance(
+
+                        if lengthRange is not None and not isinstance(
                             lengthRange, aas.SubmodelElement
                         ):
                             lengthRange = self.LengthRange(
@@ -26928,7 +27382,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemsRange and not isinstance(
+
+                        if itemsRange is not None and not isinstance(
                             itemsRange, aas.SubmodelElement
                         ):
                             itemsRange = self.ItemsRange(
@@ -26936,7 +27391,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if valueSemantics and not isinstance(
+
+                        if valueSemantics is not None and not isinstance(
                             valueSemantics, aas.SubmodelElement
                         ):
                             valueSemantics = self.ValueSemantics(valueSemantics)
@@ -27513,19 +27969,23 @@ class AssetInterfacesDescription(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if title and not isinstance(title, aas.SubmodelElement):
+
+            if title is not None and not isinstance(title, aas.SubmodelElement):
                 title = self.Title(title)
 
             # Build a submodel element if a raw value was passed in the argument
-            if created and not isinstance(created, aas.SubmodelElement):
+
+            if created is not None and not isinstance(created, aas.SubmodelElement):
                 created = self.Created(created)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modified and not isinstance(modified, aas.SubmodelElement):
+
+            if modified is not None and not isinstance(modified, aas.SubmodelElement):
                 modified = self.Modified(modified)
 
             # Build a submodel element if a raw value was passed in the argument
-            if support and not isinstance(support, aas.SubmodelElement):
+
+            if support is not None and not isinstance(support, aas.SubmodelElement):
                 support = self.Support(support)
 
             # Add all passed/initialized submodel elements to a single list
@@ -28091,7 +28551,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if security_items and not isinstance(
+
+                    if security_items is not None and not isinstance(
                         security_items, aas.SubmodelElement
                     ):
                         security_items = self.Security_item(security_items)
@@ -28320,7 +28781,10 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -28542,11 +29006,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -28908,19 +29378,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -29486,11 +29966,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -29852,19 +30338,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -30156,15 +30652,24 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if identity and not isinstance(identity, aas.SubmodelElement):
+
+                        if identity is not None and not isinstance(
+                            identity, aas.SubmodelElement
+                        ):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -30596,23 +31101,34 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if qop and not isinstance(qop, aas.SubmodelElement):
+
+                        if qop is not None and not isinstance(qop, aas.SubmodelElement):
                             qop = self.Qop(qop)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -31186,33 +31702,48 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if alg and not isinstance(alg, aas.SubmodelElement):
+
+                        if alg is not None and not isinstance(alg, aas.SubmodelElement):
                             alg = self.Alg(alg)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if format and not isinstance(format, aas.SubmodelElement):
+
+                        if format is not None and not isinstance(
+                            format, aas.SubmodelElement
+                        ):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -31884,29 +32415,45 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if token and not isinstance(token, aas.SubmodelElement):
+
+                        if token is not None and not isinstance(
+                            token, aas.SubmodelElement
+                        ):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if refresh and not isinstance(refresh, aas.SubmodelElement):
+
+                        if refresh is not None and not isinstance(
+                            refresh, aas.SubmodelElement
+                        ):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if flow and not isinstance(flow, aas.SubmodelElement):
+
+                        if flow is not None and not isinstance(
+                            flow, aas.SubmodelElement
+                        ):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -32282,21 +32829,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if uav_securityMode and not isinstance(
+
+                        if uav_securityMode is not None and not isinstance(
                             uav_securityMode, aas.SubmodelElement
                         ):
                             uav_securityMode = self.Uav_securityMode(uav_securityMode)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if uav_securityPolicy and not isinstance(
+
+                        if uav_securityPolicy is not None and not isinstance(
                             uav_securityPolicy, aas.SubmodelElement
                         ):
                             uav_securityPolicy = self.Uav_securityPolicy(
@@ -32671,15 +33226,22 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if uav_userIdentityToken and not isinstance(
+
+                        if uav_userIdentityToken is not None and not isinstance(
                             uav_userIdentityToken, aas.SubmodelElement
                         ):
                             uav_userIdentityToken = self.Uav_userIdentityToken(
@@ -32687,7 +33249,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if uav_issueToken and not isinstance(
+
+                        if uav_issueToken is not None and not isinstance(
                             uav_issueToken, aas.SubmodelElement
                         ):
                             uav_issueToken = self.Uav_issueToken(uav_issueToken)
@@ -32877,11 +33440,15 @@ class AssetInterfacesDescription(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if base and not isinstance(base, aas.SubmodelElement):
+
+                if base is not None and not isinstance(base, aas.SubmodelElement):
                     base = self.Base(base)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contentType and not isinstance(contentType, aas.SubmodelElement):
+
+                if contentType is not None and not isinstance(
+                    contentType, aas.SubmodelElement
+                ):
                     contentType = self.ContentType(contentType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -34401,37 +34968,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if type and not isinstance(type, aas.SubmodelElement):
+
+                            if type is not None and not isinstance(
+                                type, aas.SubmodelElement
+                            ):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, aas.SubmodelElement):
+
+                            if title is not None and not isinstance(
+                                title, aas.SubmodelElement
+                            ):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if observable and not isinstance(
+
+                            if observable is not None and not isinstance(
                                 observable, aas.SubmodelElement
                             ):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if const and not isinstance(const, aas.SubmodelElement):
+
+                            if const is not None and not isinstance(
+                                const, aas.SubmodelElement
+                            ):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if default and not isinstance(default, aas.SubmodelElement):
+
+                            if default is not None and not isinstance(
+                                default, aas.SubmodelElement
+                            ):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if unit and not isinstance(unit, aas.SubmodelElement):
+
+                            if unit is not None and not isinstance(
+                                unit, aas.SubmodelElement
+                            ):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                            if min_max is not None and not isinstance(
+                                min_max, aas.SubmodelElement
+                            ):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if lengthRange and not isinstance(
+
+                            if lengthRange is not None and not isinstance(
                                 lengthRange, aas.SubmodelElement
                             ):
                                 lengthRange = self.LengthRange(
@@ -34439,7 +35026,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueSemantics and not isinstance(
+
+                            if valueSemantics is not None and not isinstance(
                                 valueSemantics, aas.SubmodelElement
                             ):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
@@ -36145,43 +36733,50 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if type and not isinstance(
+
+                                    if type is not None and not isinstance(
                                         type, aas.SubmodelElement
                                     ):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if title and not isinstance(
+
+                                    if title is not None and not isinstance(
                                         title, aas.SubmodelElement
                                     ):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if observable and not isinstance(
+
+                                    if observable is not None and not isinstance(
                                         observable, aas.SubmodelElement
                                     ):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if const and not isinstance(
+
+                                    if const is not None and not isinstance(
                                         const, aas.SubmodelElement
                                     ):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if default and not isinstance(
+
+                                    if default is not None and not isinstance(
                                         default, aas.SubmodelElement
                                     ):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if unit and not isinstance(
+
+                                    if unit is not None and not isinstance(
                                         unit, aas.SubmodelElement
                                     ):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if min_max and not isinstance(
+
+                                    if min_max is not None and not isinstance(
                                         min_max, aas.SubmodelElement
                                     ):
                                         min_max = self.Min_max(
@@ -36189,7 +36784,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if lengthRange and not isinstance(
+
+                                    if lengthRange is not None and not isinstance(
                                         lengthRange, aas.SubmodelElement
                                     ):
                                         lengthRange = self.LengthRange(
@@ -36197,7 +36793,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if valueSemantics and not isinstance(
+
+                                    if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
                                         valueSemantics = self.ValueSemantics(
@@ -36605,39 +37202,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if key and not isinstance(key, aas.SubmodelElement):
+
+                                if key is not None and not isinstance(
+                                    key, aas.SubmodelElement
+                                ):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if type and not isinstance(type, aas.SubmodelElement):
+
+                                if type is not None and not isinstance(
+                                    type, aas.SubmodelElement
+                                ):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if title and not isinstance(title, aas.SubmodelElement):
+
+                                if title is not None and not isinstance(
+                                    title, aas.SubmodelElement
+                                ):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if observable and not isinstance(
+
+                                if observable is not None and not isinstance(
                                     observable, aas.SubmodelElement
                                 ):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if const and not isinstance(const, aas.SubmodelElement):
+
+                                if const is not None and not isinstance(
+                                    const, aas.SubmodelElement
+                                ):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if default and not isinstance(
+
+                                if default is not None and not isinstance(
                                     default, aas.SubmodelElement
                                 ):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                                if unit is not None and not isinstance(
+                                    unit, aas.SubmodelElement
+                                ):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if min_max and not isinstance(
+
+                                if min_max is not None and not isinstance(
                                     min_max, aas.SubmodelElement
                                 ):
                                     min_max = self.Min_max(
@@ -36645,7 +37260,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if lengthRange and not isinstance(
+
+                                if lengthRange is not None and not isinstance(
                                     lengthRange, aas.SubmodelElement
                                 ):
                                     lengthRange = self.LengthRange(
@@ -36653,7 +37269,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if itemsRange and not isinstance(
+
+                                if itemsRange is not None and not isinstance(
                                     itemsRange, aas.SubmodelElement
                                 ):
                                     itemsRange = self.ItemsRange(
@@ -36661,7 +37278,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if valueSemantics and not isinstance(
+
+                                if valueSemantics is not None and not isinstance(
                                     valueSemantics, aas.SubmodelElement
                                 ):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
@@ -37207,7 +37825,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if security_items and not isinstance(
+
+                                if security_items is not None and not isinstance(
                                     security_items, aas.SubmodelElement
                                 ):
                                     security_items = self.Security_item(security_items)
@@ -37436,23 +38055,29 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if href and not isinstance(href, aas.SubmodelElement):
+
+                            if href is not None and not isinstance(
+                                href, aas.SubmodelElement
+                            ):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if contentType and not isinstance(
+
+                            if contentType is not None and not isinstance(
                                 contentType, aas.SubmodelElement
                             ):
                                 contentType = self.ContentType(contentType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if subprotocol and not isinstance(
+
+                            if subprotocol is not None and not isinstance(
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if uav_browsePath and not isinstance(
+
+                            if uav_browsePath is not None and not isinstance(
                                 uav_browsePath, aas.SubmodelElement
                             ):
                                 uav_browsePath = self.Uav_browsePath(uav_browsePath)
@@ -37568,41 +38193,62 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if key and not isinstance(key, aas.SubmodelElement):
+
+                        if key is not None and not isinstance(key, aas.SubmodelElement):
                             key = self.Key(key)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if type and not isinstance(type, aas.SubmodelElement):
+
+                        if type is not None and not isinstance(
+                            type, aas.SubmodelElement
+                        ):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if title and not isinstance(title, aas.SubmodelElement):
+
+                        if title is not None and not isinstance(
+                            title, aas.SubmodelElement
+                        ):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if observable and not isinstance(
+
+                        if observable is not None and not isinstance(
                             observable, aas.SubmodelElement
                         ):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if const and not isinstance(const, aas.SubmodelElement):
+
+                        if const is not None and not isinstance(
+                            const, aas.SubmodelElement
+                        ):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if default and not isinstance(default, aas.SubmodelElement):
+
+                        if default is not None and not isinstance(
+                            default, aas.SubmodelElement
+                        ):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unit and not isinstance(unit, aas.SubmodelElement):
+
+                        if unit is not None and not isinstance(
+                            unit, aas.SubmodelElement
+                        ):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                        if min_max is not None and not isinstance(
+                            min_max, aas.SubmodelElement
+                        ):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if lengthRange and not isinstance(
+
+                        if lengthRange is not None and not isinstance(
                             lengthRange, aas.SubmodelElement
                         ):
                             lengthRange = self.LengthRange(
@@ -37610,7 +38256,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemsRange and not isinstance(
+
+                        if itemsRange is not None and not isinstance(
                             itemsRange, aas.SubmodelElement
                         ):
                             itemsRange = self.ItemsRange(
@@ -37618,7 +38265,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if valueSemantics and not isinstance(
+
+                        if valueSemantics is not None and not isinstance(
                             valueSemantics, aas.SubmodelElement
                         ):
                             valueSemantics = self.ValueSemantics(valueSemantics)
@@ -38195,19 +38843,23 @@ class AssetInterfacesDescription(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if title and not isinstance(title, aas.SubmodelElement):
+
+            if title is not None and not isinstance(title, aas.SubmodelElement):
                 title = self.Title(title)
 
             # Build a submodel element if a raw value was passed in the argument
-            if created and not isinstance(created, aas.SubmodelElement):
+
+            if created is not None and not isinstance(created, aas.SubmodelElement):
                 created = self.Created(created)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modified and not isinstance(modified, aas.SubmodelElement):
+
+            if modified is not None and not isinstance(modified, aas.SubmodelElement):
                 modified = self.Modified(modified)
 
             # Build a submodel element if a raw value was passed in the argument
-            if support and not isinstance(support, aas.SubmodelElement):
+
+            if support is not None and not isinstance(support, aas.SubmodelElement):
                 support = self.Support(support)
 
             # Add all passed/initialized submodel elements to a single list
@@ -38773,7 +39425,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if security_items and not isinstance(
+
+                    if security_items is not None and not isinstance(
                         security_items, aas.SubmodelElement
                     ):
                         security_items = self.Security_item(security_items)
@@ -39002,7 +39655,10 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -39224,11 +39880,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -39590,19 +40252,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -40168,11 +40840,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -40534,19 +41212,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -40838,15 +41526,24 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if identity and not isinstance(identity, aas.SubmodelElement):
+
+                        if identity is not None and not isinstance(
+                            identity, aas.SubmodelElement
+                        ):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -41278,23 +41975,34 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if qop and not isinstance(qop, aas.SubmodelElement):
+
+                        if qop is not None and not isinstance(qop, aas.SubmodelElement):
                             qop = self.Qop(qop)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -41868,33 +42576,48 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if alg and not isinstance(alg, aas.SubmodelElement):
+
+                        if alg is not None and not isinstance(alg, aas.SubmodelElement):
                             alg = self.Alg(alg)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if format and not isinstance(format, aas.SubmodelElement):
+
+                        if format is not None and not isinstance(
+                            format, aas.SubmodelElement
+                        ):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -42566,29 +43289,45 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if token and not isinstance(token, aas.SubmodelElement):
+
+                        if token is not None and not isinstance(
+                            token, aas.SubmodelElement
+                        ):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if refresh and not isinstance(refresh, aas.SubmodelElement):
+
+                        if refresh is not None and not isinstance(
+                            refresh, aas.SubmodelElement
+                        ):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if flow and not isinstance(flow, aas.SubmodelElement):
+
+                        if flow is not None and not isinstance(
+                            flow, aas.SubmodelElement
+                        ):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -42775,11 +43514,15 @@ class AssetInterfacesDescription(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if base and not isinstance(base, aas.SubmodelElement):
+
+                if base is not None and not isinstance(base, aas.SubmodelElement):
                     base = self.Base(base)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contentType and not isinstance(contentType, aas.SubmodelElement):
+
+                if contentType is not None and not isinstance(
+                    contentType, aas.SubmodelElement
+                ):
                     contentType = self.ContentType(contentType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -44299,37 +45042,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if type and not isinstance(type, aas.SubmodelElement):
+
+                            if type is not None and not isinstance(
+                                type, aas.SubmodelElement
+                            ):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, aas.SubmodelElement):
+
+                            if title is not None and not isinstance(
+                                title, aas.SubmodelElement
+                            ):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if observable and not isinstance(
+
+                            if observable is not None and not isinstance(
                                 observable, aas.SubmodelElement
                             ):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if const and not isinstance(const, aas.SubmodelElement):
+
+                            if const is not None and not isinstance(
+                                const, aas.SubmodelElement
+                            ):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if default and not isinstance(default, aas.SubmodelElement):
+
+                            if default is not None and not isinstance(
+                                default, aas.SubmodelElement
+                            ):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if unit and not isinstance(unit, aas.SubmodelElement):
+
+                            if unit is not None and not isinstance(
+                                unit, aas.SubmodelElement
+                            ):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                            if min_max is not None and not isinstance(
+                                min_max, aas.SubmodelElement
+                            ):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if lengthRange and not isinstance(
+
+                            if lengthRange is not None and not isinstance(
                                 lengthRange, aas.SubmodelElement
                             ):
                                 lengthRange = self.LengthRange(
@@ -44337,7 +45100,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueSemantics and not isinstance(
+
+                            if valueSemantics is not None and not isinstance(
                                 valueSemantics, aas.SubmodelElement
                             ):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
@@ -46043,43 +46807,50 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if type and not isinstance(
+
+                                    if type is not None and not isinstance(
                                         type, aas.SubmodelElement
                                     ):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if title and not isinstance(
+
+                                    if title is not None and not isinstance(
                                         title, aas.SubmodelElement
                                     ):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if observable and not isinstance(
+
+                                    if observable is not None and not isinstance(
                                         observable, aas.SubmodelElement
                                     ):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if const and not isinstance(
+
+                                    if const is not None and not isinstance(
                                         const, aas.SubmodelElement
                                     ):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if default and not isinstance(
+
+                                    if default is not None and not isinstance(
                                         default, aas.SubmodelElement
                                     ):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if unit and not isinstance(
+
+                                    if unit is not None and not isinstance(
                                         unit, aas.SubmodelElement
                                     ):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if min_max and not isinstance(
+
+                                    if min_max is not None and not isinstance(
                                         min_max, aas.SubmodelElement
                                     ):
                                         min_max = self.Min_max(
@@ -46087,7 +46858,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if lengthRange and not isinstance(
+
+                                    if lengthRange is not None and not isinstance(
                                         lengthRange, aas.SubmodelElement
                                     ):
                                         lengthRange = self.LengthRange(
@@ -46095,7 +46867,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if valueSemantics and not isinstance(
+
+                                    if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
                                         valueSemantics = self.ValueSemantics(
@@ -46503,39 +47276,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if key and not isinstance(key, aas.SubmodelElement):
+
+                                if key is not None and not isinstance(
+                                    key, aas.SubmodelElement
+                                ):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if type and not isinstance(type, aas.SubmodelElement):
+
+                                if type is not None and not isinstance(
+                                    type, aas.SubmodelElement
+                                ):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if title and not isinstance(title, aas.SubmodelElement):
+
+                                if title is not None and not isinstance(
+                                    title, aas.SubmodelElement
+                                ):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if observable and not isinstance(
+
+                                if observable is not None and not isinstance(
                                     observable, aas.SubmodelElement
                                 ):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if const and not isinstance(const, aas.SubmodelElement):
+
+                                if const is not None and not isinstance(
+                                    const, aas.SubmodelElement
+                                ):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if default and not isinstance(
+
+                                if default is not None and not isinstance(
                                     default, aas.SubmodelElement
                                 ):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                                if unit is not None and not isinstance(
+                                    unit, aas.SubmodelElement
+                                ):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if min_max and not isinstance(
+
+                                if min_max is not None and not isinstance(
                                     min_max, aas.SubmodelElement
                                 ):
                                     min_max = self.Min_max(
@@ -46543,7 +47334,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if lengthRange and not isinstance(
+
+                                if lengthRange is not None and not isinstance(
                                     lengthRange, aas.SubmodelElement
                                 ):
                                     lengthRange = self.LengthRange(
@@ -46551,7 +47343,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if itemsRange and not isinstance(
+
+                                if itemsRange is not None and not isinstance(
                                     itemsRange, aas.SubmodelElement
                                 ):
                                     itemsRange = self.ItemsRange(
@@ -46559,7 +47352,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if valueSemantics and not isinstance(
+
+                                if valueSemantics is not None and not isinstance(
                                     valueSemantics, aas.SubmodelElement
                                 ):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
@@ -48306,13 +49100,15 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if type and not isinstance(
+
+                                    if type is not None and not isinstance(
                                         type, aas.SubmodelElement
                                     ):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if valueSemantics and not isinstance(
+
+                                    if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
                                         valueSemantics = self.ValueSemantics(
@@ -48320,37 +49116,43 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if unit and not isinstance(
+
+                                    if unit is not None and not isinstance(
                                         unit, aas.SubmodelElement
                                     ):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if default and not isinstance(
+
+                                    if default is not None and not isinstance(
                                         default, aas.SubmodelElement
                                     ):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if const and not isinstance(
+
+                                    if const is not None and not isinstance(
                                         const, aas.SubmodelElement
                                     ):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if observable and not isinstance(
+
+                                    if observable is not None and not isinstance(
                                         observable, aas.SubmodelElement
                                     ):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if title and not isinstance(
+
+                                    if title is not None and not isinstance(
                                         title, aas.SubmodelElement
                                     ):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if min_max and not isinstance(
+
+                                    if min_max is not None and not isinstance(
                                         min_max, aas.SubmodelElement
                                     ):
                                         min_max = self.Min_max(
@@ -48358,7 +49160,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if lengthRange and not isinstance(
+
+                                    if lengthRange is not None and not isinstance(
                                         lengthRange, aas.SubmodelElement
                                     ):
                                         lengthRange = self.LengthRange(
@@ -48768,39 +49571,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if key and not isinstance(key, aas.SubmodelElement):
+
+                                if key is not None and not isinstance(
+                                    key, aas.SubmodelElement
+                                ):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if type and not isinstance(type, aas.SubmodelElement):
+
+                                if type is not None and not isinstance(
+                                    type, aas.SubmodelElement
+                                ):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if title and not isinstance(title, aas.SubmodelElement):
+
+                                if title is not None and not isinstance(
+                                    title, aas.SubmodelElement
+                                ):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if observable and not isinstance(
+
+                                if observable is not None and not isinstance(
                                     observable, aas.SubmodelElement
                                 ):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if const and not isinstance(const, aas.SubmodelElement):
+
+                                if const is not None and not isinstance(
+                                    const, aas.SubmodelElement
+                                ):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if default and not isinstance(
+
+                                if default is not None and not isinstance(
                                     default, aas.SubmodelElement
                                 ):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                                if unit is not None and not isinstance(
+                                    unit, aas.SubmodelElement
+                                ):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if min_max and not isinstance(
+
+                                if min_max is not None and not isinstance(
                                     min_max, aas.SubmodelElement
                                 ):
                                     min_max = self.Min_max(
@@ -48808,7 +49629,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if lengthRange and not isinstance(
+
+                                if lengthRange is not None and not isinstance(
                                     lengthRange, aas.SubmodelElement
                                 ):
                                     lengthRange = self.LengthRange(
@@ -48816,7 +49638,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if itemsRange and not isinstance(
+
+                                if itemsRange is not None and not isinstance(
                                     itemsRange, aas.SubmodelElement
                                 ):
                                     itemsRange = self.ItemsRange(
@@ -48824,7 +49647,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if valueSemantics and not isinstance(
+
+                                if valueSemantics is not None and not isinstance(
                                     valueSemantics, aas.SubmodelElement
                                 ):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
@@ -49305,7 +50129,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if security_items and not isinstance(
+
+                                if security_items is not None and not isinstance(
                                     security_items, aas.SubmodelElement
                                 ):
                                     security_items = self.Security_item(security_items)
@@ -50406,8 +51231,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     embedded_data_specifications = []
 
                                                 # Build a submodel element if a raw value was passed in the argument
+
                                                 if (
-                                                    bacv_hasFieldName
+                                                    bacv_hasFieldName is not None
                                                     and not isinstance(
                                                         bacv_hasFieldName,
                                                         aas.SubmodelElement,
@@ -50420,8 +51246,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 # Build a submodel element if a raw value was passed in the argument
+
                                                 if (
-                                                    bacv_hasContextTag
+                                                    bacv_hasContextTag is not None
                                                     and not isinstance(
                                                         bacv_hasContextTag,
                                                         aas.SubmodelElement,
@@ -50930,8 +51757,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     embedded_data_specifications = []
 
                                                 # Build a submodel element if a raw value was passed in the argument
+
                                                 if (
-                                                    bacv_hasLogicalVal
+                                                    bacv_hasLogicalVal is not None
                                                     and not isinstance(
                                                         bacv_hasLogicalVal,
                                                         aas.SubmodelElement,
@@ -50944,8 +51772,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 # Build a submodel element if a raw value was passed in the argument
+
                                                 if (
-                                                    bacv_hasProtocolVal
+                                                    bacv_hasProtocolVal is not None
                                                     and not isinstance(
                                                         bacv_hasProtocolVal,
                                                         aas.SubmodelElement,
@@ -51261,14 +52090,16 @@ class AssetInterfacesDescription(aas.Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if bacv_isISO and not isinstance(
+
+                                        if bacv_isISO is not None and not isinstance(
                                             bacv_isISO, aas.SubmodelElement
                                         ):
                                             bacv_isISO = self.Bacv_isISO(bacv_isISO)
 
                                         # Build a submodel element if a raw value was passed in the argument
+
                                         if (
-                                            bacv_hasBinaryRepresentation
+                                            bacv_hasBinaryRepresentation is not None
                                             and not isinstance(
                                                 bacv_hasBinaryRepresentation,
                                                 aas.SubmodelElement,
@@ -51656,8 +52487,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 embedded_data_specifications = []
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if bacv_hasFieldName and not isinstance(
-                                                bacv_hasFieldName, aas.SubmodelElement
+
+                                            if (
+                                                bacv_hasFieldName is not None
+                                                and not isinstance(
+                                                    bacv_hasFieldName,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 bacv_hasFieldName = (
                                                     self.Bacv_hasFieldName(
@@ -51666,8 +52502,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if bacv_hasContextTag and not isinstance(
-                                                bacv_hasContextTag, aas.SubmodelElement
+
+                                            if (
+                                                bacv_hasContextTag is not None
+                                                and not isinstance(
+                                                    bacv_hasContextTag,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 bacv_hasContextTag = (
                                                     self.Bacv_hasContextTag(
@@ -52149,8 +52990,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 embedded_data_specifications = []
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if bacv_hasLogicalVal and not isinstance(
-                                                bacv_hasLogicalVal, aas.SubmodelElement
+
+                                            if (
+                                                bacv_hasLogicalVal is not None
+                                                and not isinstance(
+                                                    bacv_hasLogicalVal,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 bacv_hasLogicalVal = (
                                                     self.Bacv_hasLogicalVal(
@@ -52159,8 +53005,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if bacv_hasProtocolVal and not isinstance(
-                                                bacv_hasProtocolVal, aas.SubmodelElement
+
+                                            if (
+                                                bacv_hasProtocolVal is not None
+                                                and not isinstance(
+                                                    bacv_hasProtocolVal,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 bacv_hasProtocolVal = (
                                                     self.Bacv_hasProtocolVal(
@@ -52463,15 +53314,20 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if bacv_isISO and not isinstance(
+
+                                    if bacv_isISO is not None and not isinstance(
                                         bacv_isISO, aas.SubmodelElement
                                     ):
                                         bacv_isISO = self.Bacv_isISO(bacv_isISO)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if bacv_hasBinaryRepresentation and not isinstance(
-                                        bacv_hasBinaryRepresentation,
-                                        aas.SubmodelElement,
+
+                                    if (
+                                        bacv_hasBinaryRepresentation is not None
+                                        and not isinstance(
+                                            bacv_hasBinaryRepresentation,
+                                            aas.SubmodelElement,
+                                        )
                                     ):
                                         bacv_hasBinaryRepresentation = (
                                             self.Bacv_hasBinaryRepresentation(
@@ -52835,16 +53691,24 @@ class AssetInterfacesDescription(aas.Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if bacv_hasFieldName and not isinstance(
-                                            bacv_hasFieldName, aas.SubmodelElement
+
+                                        if (
+                                            bacv_hasFieldName is not None
+                                            and not isinstance(
+                                                bacv_hasFieldName, aas.SubmodelElement
+                                            )
                                         ):
                                             bacv_hasFieldName = self.Bacv_hasFieldName(
                                                 bacv_hasFieldName
                                             )
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if bacv_hasContextTag and not isinstance(
-                                            bacv_hasContextTag, aas.SubmodelElement
+
+                                        if (
+                                            bacv_hasContextTag is not None
+                                            and not isinstance(
+                                                bacv_hasContextTag, aas.SubmodelElement
+                                            )
                                         ):
                                             bacv_hasContextTag = (
                                                 self.Bacv_hasContextTag(
@@ -53305,8 +54169,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if bacv_hasLogicalVal and not isinstance(
-                                            bacv_hasLogicalVal, aas.SubmodelElement
+
+                                        if (
+                                            bacv_hasLogicalVal is not None
+                                            and not isinstance(
+                                                bacv_hasLogicalVal, aas.SubmodelElement
+                                            )
                                         ):
                                             bacv_hasLogicalVal = (
                                                 self.Bacv_hasLogicalVal(
@@ -53315,8 +54183,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if bacv_hasProtocolVal and not isinstance(
-                                            bacv_hasProtocolVal, aas.SubmodelElement
+
+                                        if (
+                                            bacv_hasProtocolVal is not None
+                                            and not isinstance(
+                                                bacv_hasProtocolVal, aas.SubmodelElement
+                                            )
                                         ):
                                             bacv_hasProtocolVal = (
                                                 self.Bacv_hasProtocolVal(
@@ -53780,14 +54652,20 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if bacv_isISO and not isinstance(
+
+                                if bacv_isISO is not None and not isinstance(
                                     bacv_isISO, aas.SubmodelElement
                                 ):
                                     bacv_isISO = self.Bacv_isISO(bacv_isISO)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if bacv_hasBinaryRepresentation and not isinstance(
-                                    bacv_hasBinaryRepresentation, aas.SubmodelElement
+
+                                if (
+                                    bacv_hasBinaryRepresentation is not None
+                                    and not isinstance(
+                                        bacv_hasBinaryRepresentation,
+                                        aas.SubmodelElement,
+                                    )
                                 ):
                                     bacv_hasBinaryRepresentation = (
                                         self.Bacv_hasBinaryRepresentation(
@@ -53876,23 +54754,29 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if href and not isinstance(href, aas.SubmodelElement):
+
+                            if href is not None and not isinstance(
+                                href, aas.SubmodelElement
+                            ):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if contentType and not isinstance(
+
+                            if contentType is not None and not isinstance(
                                 contentType, aas.SubmodelElement
                             ):
                                 contentType = self.ContentType(contentType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if subprotocol and not isinstance(
+
+                            if subprotocol is not None and not isinstance(
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if bacv_useService and not isinstance(
+
+                            if bacv_useService is not None and not isinstance(
                                 bacv_useService, aas.SubmodelElement
                             ):
                                 bacv_useService = self.Bacv_useService(bacv_useService)
@@ -54010,41 +54894,62 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if key and not isinstance(key, aas.SubmodelElement):
+
+                        if key is not None and not isinstance(key, aas.SubmodelElement):
                             key = self.Key(key)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if type and not isinstance(type, aas.SubmodelElement):
+
+                        if type is not None and not isinstance(
+                            type, aas.SubmodelElement
+                        ):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if title and not isinstance(title, aas.SubmodelElement):
+
+                        if title is not None and not isinstance(
+                            title, aas.SubmodelElement
+                        ):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if observable and not isinstance(
+
+                        if observable is not None and not isinstance(
                             observable, aas.SubmodelElement
                         ):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if const and not isinstance(const, aas.SubmodelElement):
+
+                        if const is not None and not isinstance(
+                            const, aas.SubmodelElement
+                        ):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if default and not isinstance(default, aas.SubmodelElement):
+
+                        if default is not None and not isinstance(
+                            default, aas.SubmodelElement
+                        ):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unit and not isinstance(unit, aas.SubmodelElement):
+
+                        if unit is not None and not isinstance(
+                            unit, aas.SubmodelElement
+                        ):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                        if min_max is not None and not isinstance(
+                            min_max, aas.SubmodelElement
+                        ):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if lengthRange and not isinstance(
+
+                        if lengthRange is not None and not isinstance(
                             lengthRange, aas.SubmodelElement
                         ):
                             lengthRange = self.LengthRange(
@@ -54052,7 +54957,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemsRange and not isinstance(
+
+                        if itemsRange is not None and not isinstance(
                             itemsRange, aas.SubmodelElement
                         ):
                             itemsRange = self.ItemsRange(
@@ -54060,7 +54966,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if valueSemantics and not isinstance(
+
+                        if valueSemantics is not None and not isinstance(
                             valueSemantics, aas.SubmodelElement
                         ):
                             valueSemantics = self.ValueSemantics(valueSemantics)
@@ -54638,19 +55545,23 @@ class AssetInterfacesDescription(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if title and not isinstance(title, aas.SubmodelElement):
+
+            if title is not None and not isinstance(title, aas.SubmodelElement):
                 title = self.Title(title)
 
             # Build a submodel element if a raw value was passed in the argument
-            if created and not isinstance(created, aas.SubmodelElement):
+
+            if created is not None and not isinstance(created, aas.SubmodelElement):
                 created = self.Created(created)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modified and not isinstance(modified, aas.SubmodelElement):
+
+            if modified is not None and not isinstance(modified, aas.SubmodelElement):
                 modified = self.Modified(modified)
 
             # Build a submodel element if a raw value was passed in the argument
-            if support and not isinstance(support, aas.SubmodelElement):
+
+            if support is not None and not isinstance(support, aas.SubmodelElement):
                 support = self.Support(support)
 
             # Add all passed/initialized submodel elements to a single list
@@ -55216,7 +56127,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if security_items and not isinstance(
+
+                    if security_items is not None and not isinstance(
                         security_items, aas.SubmodelElement
                     ):
                         security_items = self.Security_item(security_items)
@@ -55445,7 +56357,10 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -55667,11 +56582,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -56033,19 +56954,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -56611,11 +57542,17 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -56977,19 +57914,29 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -57281,15 +58228,24 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if identity and not isinstance(identity, aas.SubmodelElement):
+
+                        if identity is not None and not isinstance(
+                            identity, aas.SubmodelElement
+                        ):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -57721,23 +58677,34 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if qop and not isinstance(qop, aas.SubmodelElement):
+
+                        if qop is not None and not isinstance(qop, aas.SubmodelElement):
                             qop = self.Qop(qop)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -58311,33 +59278,48 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if name and not isinstance(name, aas.SubmodelElement):
+
+                        if name is not None and not isinstance(
+                            name, aas.SubmodelElement
+                        ):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if in_ and not isinstance(in_, aas.SubmodelElement):
+
+                        if in_ is not None and not isinstance(in_, aas.SubmodelElement):
                             in_ = self.In(in_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if alg and not isinstance(alg, aas.SubmodelElement):
+
+                        if alg is not None and not isinstance(alg, aas.SubmodelElement):
                             alg = self.Alg(alg)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if format and not isinstance(format, aas.SubmodelElement):
+
+                        if format is not None and not isinstance(
+                            format, aas.SubmodelElement
+                        ):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -59009,29 +59991,45 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if scheme and not isinstance(scheme, aas.SubmodelElement):
+
+                        if scheme is not None and not isinstance(
+                            scheme, aas.SubmodelElement
+                        ):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if token and not isinstance(token, aas.SubmodelElement):
+
+                        if token is not None and not isinstance(
+                            token, aas.SubmodelElement
+                        ):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if refresh and not isinstance(refresh, aas.SubmodelElement):
+
+                        if refresh is not None and not isinstance(
+                            refresh, aas.SubmodelElement
+                        ):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if authorization and not isinstance(
+
+                        if authorization is not None and not isinstance(
                             authorization, aas.SubmodelElement
                         ):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if flow and not isinstance(flow, aas.SubmodelElement):
+
+                        if flow is not None and not isinstance(
+                            flow, aas.SubmodelElement
+                        ):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if proxy and not isinstance(proxy, aas.SubmodelElement):
+
+                        if proxy is not None and not isinstance(
+                            proxy, aas.SubmodelElement
+                        ):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -59218,11 +60216,15 @@ class AssetInterfacesDescription(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if base and not isinstance(base, aas.SubmodelElement):
+
+                if base is not None and not isinstance(base, aas.SubmodelElement):
                     base = self.Base(base)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if contentType and not isinstance(contentType, aas.SubmodelElement):
+
+                if contentType is not None and not isinstance(
+                    contentType, aas.SubmodelElement
+                ):
                     contentType = self.ContentType(contentType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -60742,37 +61744,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if type and not isinstance(type, aas.SubmodelElement):
+
+                            if type is not None and not isinstance(
+                                type, aas.SubmodelElement
+                            ):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, aas.SubmodelElement):
+
+                            if title is not None and not isinstance(
+                                title, aas.SubmodelElement
+                            ):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if observable and not isinstance(
+
+                            if observable is not None and not isinstance(
                                 observable, aas.SubmodelElement
                             ):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if const and not isinstance(const, aas.SubmodelElement):
+
+                            if const is not None and not isinstance(
+                                const, aas.SubmodelElement
+                            ):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if default and not isinstance(default, aas.SubmodelElement):
+
+                            if default is not None and not isinstance(
+                                default, aas.SubmodelElement
+                            ):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if unit and not isinstance(unit, aas.SubmodelElement):
+
+                            if unit is not None and not isinstance(
+                                unit, aas.SubmodelElement
+                            ):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                            if min_max is not None and not isinstance(
+                                min_max, aas.SubmodelElement
+                            ):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if lengthRange and not isinstance(
+
+                            if lengthRange is not None and not isinstance(
                                 lengthRange, aas.SubmodelElement
                             ):
                                 lengthRange = self.LengthRange(
@@ -60780,7 +61802,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueSemantics and not isinstance(
+
+                            if valueSemantics is not None and not isinstance(
                                 valueSemantics, aas.SubmodelElement
                             ):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
@@ -62486,43 +63509,50 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if type and not isinstance(
+
+                                    if type is not None and not isinstance(
                                         type, aas.SubmodelElement
                                     ):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if title and not isinstance(
+
+                                    if title is not None and not isinstance(
                                         title, aas.SubmodelElement
                                     ):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if observable and not isinstance(
+
+                                    if observable is not None and not isinstance(
                                         observable, aas.SubmodelElement
                                     ):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if const and not isinstance(
+
+                                    if const is not None and not isinstance(
                                         const, aas.SubmodelElement
                                     ):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if default and not isinstance(
+
+                                    if default is not None and not isinstance(
                                         default, aas.SubmodelElement
                                     ):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if unit and not isinstance(
+
+                                    if unit is not None and not isinstance(
                                         unit, aas.SubmodelElement
                                     ):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if min_max and not isinstance(
+
+                                    if min_max is not None and not isinstance(
                                         min_max, aas.SubmodelElement
                                     ):
                                         min_max = self.Min_max(
@@ -62530,7 +63560,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if lengthRange and not isinstance(
+
+                                    if lengthRange is not None and not isinstance(
                                         lengthRange, aas.SubmodelElement
                                     ):
                                         lengthRange = self.LengthRange(
@@ -62538,7 +63569,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if valueSemantics and not isinstance(
+
+                                    if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
                                         valueSemantics = self.ValueSemantics(
@@ -62946,39 +63978,57 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if key and not isinstance(key, aas.SubmodelElement):
+
+                                if key is not None and not isinstance(
+                                    key, aas.SubmodelElement
+                                ):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if type and not isinstance(type, aas.SubmodelElement):
+
+                                if type is not None and not isinstance(
+                                    type, aas.SubmodelElement
+                                ):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if title and not isinstance(title, aas.SubmodelElement):
+
+                                if title is not None and not isinstance(
+                                    title, aas.SubmodelElement
+                                ):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if observable and not isinstance(
+
+                                if observable is not None and not isinstance(
                                     observable, aas.SubmodelElement
                                 ):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if const and not isinstance(const, aas.SubmodelElement):
+
+                                if const is not None and not isinstance(
+                                    const, aas.SubmodelElement
+                                ):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if default and not isinstance(
+
+                                if default is not None and not isinstance(
                                     default, aas.SubmodelElement
                                 ):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if unit and not isinstance(unit, aas.SubmodelElement):
+
+                                if unit is not None and not isinstance(
+                                    unit, aas.SubmodelElement
+                                ):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if min_max and not isinstance(
+
+                                if min_max is not None and not isinstance(
                                     min_max, aas.SubmodelElement
                                 ):
                                     min_max = self.Min_max(
@@ -62986,7 +64036,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if lengthRange and not isinstance(
+
+                                if lengthRange is not None and not isinstance(
                                     lengthRange, aas.SubmodelElement
                                 ):
                                     lengthRange = self.LengthRange(
@@ -62994,7 +64045,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if itemsRange and not isinstance(
+
+                                if itemsRange is not None and not isinstance(
                                     itemsRange, aas.SubmodelElement
                                 ):
                                     itemsRange = self.ItemsRange(
@@ -63002,7 +64054,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if valueSemantics and not isinstance(
+
+                                if valueSemantics is not None and not isinstance(
                                     valueSemantics, aas.SubmodelElement
                                 ):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
@@ -63548,7 +64601,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if security_items and not isinstance(
+
+                                if security_items is not None and not isinstance(
                                     security_items, aas.SubmodelElement
                                 ):
                                     security_items = self.Security_item(security_items)
@@ -64376,16 +65430,24 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_encodedPayload and not isinstance(
-                                        iolv_encodedPayload, aas.SubmodelElement
+
+                                    if (
+                                        iolv_encodedPayload is not None
+                                        and not isinstance(
+                                            iolv_encodedPayload, aas.SubmodelElement
+                                        )
                                     ):
                                         iolv_encodedPayload = self.Iolv_encodedPayload(
                                             iolv_encodedPayload
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_decodedPayload and not isinstance(
-                                        iolv_decodedPayload, aas.SubmodelElement
+
+                                    if (
+                                        iolv_decodedPayload is not None
+                                        and not isinstance(
+                                            iolv_decodedPayload, aas.SubmodelElement
+                                        )
                                     ):
                                         iolv_decodedPayload = self.Iolv_decodedPayload(
                                             iolv_decodedPayload
@@ -65279,8 +66341,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 embedded_data_specifications = []
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if iolv_encodedPayload and not isinstance(
-                                                iolv_encodedPayload, aas.SubmodelElement
+
+                                            if (
+                                                iolv_encodedPayload is not None
+                                                and not isinstance(
+                                                    iolv_encodedPayload,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 iolv_encodedPayload = (
                                                     self.Iolv_encodedPayload(
@@ -65289,8 +66356,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if iolv_decodedPayload and not isinstance(
-                                                iolv_decodedPayload, aas.SubmodelElement
+
+                                            if (
+                                                iolv_decodedPayload is not None
+                                                and not isinstance(
+                                                    iolv_decodedPayload,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 iolv_decodedPayload = (
                                                     self.Iolv_decodedPayload(
@@ -65599,8 +66671,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_referenceToProperty and not isinstance(
-                                        iolv_referenceToProperty, aas.SubmodelElement
+
+                                    if (
+                                        iolv_referenceToProperty is not None
+                                        and not isinstance(
+                                            iolv_referenceToProperty,
+                                            aas.SubmodelElement,
+                                        )
                                     ):
                                         iolv_referenceToProperty = (
                                             self.Iolv_referenceToProperty(
@@ -65609,13 +66686,15 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_type and not isinstance(
+
+                                    if iolv_type is not None and not isinstance(
                                         iolv_type, aas.SubmodelElement
                                     ):
                                         iolv_type = self.Iolv_type(iolv_type)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_byteOffset and not isinstance(
+
+                                    if iolv_byteOffset is not None and not isinstance(
                                         iolv_byteOffset, aas.SubmodelElement
                                     ):
                                         iolv_byteOffset = self.Iolv_byteOffset(
@@ -65623,7 +66702,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_byteLength and not isinstance(
+
+                                    if iolv_byteLength is not None and not isinstance(
                                         iolv_byteLength, aas.SubmodelElement
                                     ):
                                         iolv_byteLength = self.Iolv_byteLength(
@@ -65631,7 +66711,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_bitOffset and not isinstance(
+
+                                    if iolv_bitOffset is not None and not isinstance(
                                         iolv_bitOffset, aas.SubmodelElement
                                     ):
                                         iolv_bitOffset = self.Iolv_bitOffset(
@@ -65639,7 +66720,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if iolv_bitLength and not isinstance(
+
+                                    if iolv_bitLength is not None and not isinstance(
                                         iolv_bitLength, aas.SubmodelElement
                                     ):
                                         iolv_bitLength = self.Iolv_bitLength(
@@ -65924,29 +67006,36 @@ class AssetInterfacesDescription(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if href and not isinstance(href, aas.SubmodelElement):
+
+                            if href is not None and not isinstance(
+                                href, aas.SubmodelElement
+                            ):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if contentType and not isinstance(
+
+                            if contentType is not None and not isinstance(
                                 contentType, aas.SubmodelElement
                             ):
                                 contentType = self.ContentType(contentType)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if subprotocol and not isinstance(
+
+                            if subprotocol is not None and not isinstance(
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if iolv_method and not isinstance(
+
+                            if iolv_method is not None and not isinstance(
                                 iolv_method, aas.SubmodelElement
                             ):
                                 iolv_method = self.Iolv_method(iolv_method)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if iolv_accessRigths and not isinstance(
+
+                            if iolv_accessRigths is not None and not isinstance(
                                 iolv_accessRigths, aas.SubmodelElement
                             ):
                                 iolv_accessRigths = self.Iolv_accessRigths(
@@ -65954,31 +67043,36 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if iolv_type and not isinstance(
+
+                            if iolv_type is not None and not isinstance(
                                 iolv_type, aas.SubmodelElement
                             ):
                                 iolv_type = self.Iolv_type(iolv_type)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if iolv_byteOffset and not isinstance(
+
+                            if iolv_byteOffset is not None and not isinstance(
                                 iolv_byteOffset, aas.SubmodelElement
                             ):
                                 iolv_byteOffset = self.Iolv_byteOffset(iolv_byteOffset)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if iolv_byteLength and not isinstance(
+
+                            if iolv_byteLength is not None and not isinstance(
                                 iolv_byteLength, aas.SubmodelElement
                             ):
                                 iolv_byteLength = self.Iolv_byteLength(iolv_byteLength)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if iolv_bitOffset and not isinstance(
+
+                            if iolv_bitOffset is not None and not isinstance(
                                 iolv_bitOffset, aas.SubmodelElement
                             ):
                                 iolv_bitOffset = self.Iolv_bitOffset(iolv_bitOffset)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if iolv_bitLength and not isinstance(
+
+                            if iolv_bitLength is not None and not isinstance(
                                 iolv_bitLength, aas.SubmodelElement
                             ):
                                 iolv_bitLength = self.Iolv_bitLength(iolv_bitLength)
@@ -66102,41 +67196,62 @@ class AssetInterfacesDescription(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if key and not isinstance(key, aas.SubmodelElement):
+
+                        if key is not None and not isinstance(key, aas.SubmodelElement):
                             key = self.Key(key)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if type and not isinstance(type, aas.SubmodelElement):
+
+                        if type is not None and not isinstance(
+                            type, aas.SubmodelElement
+                        ):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if title and not isinstance(title, aas.SubmodelElement):
+
+                        if title is not None and not isinstance(
+                            title, aas.SubmodelElement
+                        ):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if observable and not isinstance(
+
+                        if observable is not None and not isinstance(
                             observable, aas.SubmodelElement
                         ):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if const and not isinstance(const, aas.SubmodelElement):
+
+                        if const is not None and not isinstance(
+                            const, aas.SubmodelElement
+                        ):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if default and not isinstance(default, aas.SubmodelElement):
+
+                        if default is not None and not isinstance(
+                            default, aas.SubmodelElement
+                        ):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if unit and not isinstance(unit, aas.SubmodelElement):
+
+                        if unit is not None and not isinstance(
+                            unit, aas.SubmodelElement
+                        ):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if min_max and not isinstance(min_max, aas.SubmodelElement):
+
+                        if min_max is not None and not isinstance(
+                            min_max, aas.SubmodelElement
+                        ):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if lengthRange and not isinstance(
+
+                        if lengthRange is not None and not isinstance(
                             lengthRange, aas.SubmodelElement
                         ):
                             lengthRange = self.LengthRange(
@@ -66144,7 +67259,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if itemsRange and not isinstance(
+
+                        if itemsRange is not None and not isinstance(
                             itemsRange, aas.SubmodelElement
                         ):
                             itemsRange = self.ItemsRange(
@@ -66152,7 +67268,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if valueSemantics and not isinstance(
+
+                        if valueSemantics is not None and not isinstance(
                             valueSemantics, aas.SubmodelElement
                         ):
                             valueSemantics = self.ValueSemantics(valueSemantics)
@@ -66731,19 +67848,23 @@ class AssetInterfacesDescription(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if title and not isinstance(title, aas.SubmodelElement):
+
+            if title is not None and not isinstance(title, aas.SubmodelElement):
                 title = self.Title(title)
 
             # Build a submodel element if a raw value was passed in the argument
-            if created and not isinstance(created, aas.SubmodelElement):
+
+            if created is not None and not isinstance(created, aas.SubmodelElement):
                 created = self.Created(created)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modified and not isinstance(modified, aas.SubmodelElement):
+
+            if modified is not None and not isinstance(modified, aas.SubmodelElement):
                 modified = self.Modified(modified)
 
             # Build a submodel element if a raw value was passed in the argument
-            if support and not isinstance(support, aas.SubmodelElement):
+
+            if support is not None and not isinstance(support, aas.SubmodelElement):
                 support = self.Support(support)
 
             # Add all passed/initialized submodel elements to a single list

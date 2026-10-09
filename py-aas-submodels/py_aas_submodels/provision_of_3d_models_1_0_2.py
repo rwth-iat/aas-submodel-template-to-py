@@ -251,13 +251,17 @@ class Models3D(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if fileDomainId and not isinstance(
+
+                            if fileDomainId is not None and not isinstance(
                                 fileDomainId, aas.SubmodelElement
                             ):
                                 fileDomainId = self.FileDomainId(fileDomainId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueId and not isinstance(valueId, aas.SubmodelElement):
+
+                            if valueId is not None and not isinstance(
+                                valueId, aas.SubmodelElement
+                            ):
                                 valueId = self.ValueId(valueId)
 
                             # Build submodel elements from raw values passed in the argument
@@ -1693,17 +1697,25 @@ class Models3D(aas.Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if organizationName and not isinstance(
-                                            organizationName, aas.SubmodelElement
+
+                                        if (
+                                            organizationName is not None
+                                            and not isinstance(
+                                                organizationName, aas.SubmodelElement
+                                            )
                                         ):
                                             organizationName = self.OrganizationName(
                                                 organizationName
                                             )
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if organizationOfficialName and not isinstance(
-                                            organizationOfficialName,
-                                            aas.SubmodelElement,
+
+                                        if (
+                                            organizationOfficialName is not None
+                                            and not isinstance(
+                                                organizationOfficialName,
+                                                aas.SubmodelElement,
+                                            )
                                         ):
                                             organizationOfficialName = (
                                                 self.OrganizationOfficialName(
@@ -2027,14 +2039,23 @@ class Models3D(aas.Submodel):
                                                 embedded_data_specifications = []
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if apiVersion and not isinstance(
-                                                apiVersion, aas.SubmodelElement
+
+                                            if (
+                                                apiVersion is not None
+                                                and not isinstance(
+                                                    apiVersion, aas.SubmodelElement
+                                                )
                                             ):
                                                 apiVersion = self.ApiVersion(apiVersion)
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if apiDocumentationUrl and not isinstance(
-                                                apiDocumentationUrl, aas.SubmodelElement
+
+                                            if (
+                                                apiDocumentationUrl is not None
+                                                and not isinstance(
+                                                    apiDocumentationUrl,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 apiDocumentationUrl = (
                                                     self.ApiDocumentationUrl(
@@ -2043,8 +2064,13 @@ class Models3D(aas.Submodel):
                                                 )
 
                                             # Build a submodel element if a raw value was passed in the argument
-                                            if apiSpecificationUrl and not isinstance(
-                                                apiSpecificationUrl, aas.SubmodelElement
+
+                                            if (
+                                                apiSpecificationUrl is not None
+                                                and not isinstance(
+                                                    apiSpecificationUrl,
+                                                    aas.SubmodelElement,
+                                                )
                                             ):
                                                 apiSpecificationUrl = (
                                                     self.ApiSpecificationUrl(
@@ -2323,13 +2349,15 @@ class Models3D(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if externalUrl and not isinstance(
+
+                                    if externalUrl is not None and not isinstance(
                                         externalUrl, aas.SubmodelElement
                                     ):
                                         externalUrl = self.ExternalUrl(externalUrl)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if fileIdentifier and not isinstance(
+
+                                    if fileIdentifier is not None and not isinstance(
                                         fileIdentifier, aas.SubmodelElement
                                     ):
                                         fileIdentifier = self.FileIdentifier(
@@ -2786,19 +2814,22 @@ class Models3D(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if formatName and not isinstance(
+
+                                if formatName is not None and not isinstance(
                                     formatName, aas.SubmodelElement
                                 ):
                                     formatName = self.FormatName(formatName)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if formatVersion and not isinstance(
+
+                                if formatVersion is not None and not isinstance(
                                     formatVersion, aas.SubmodelElement
                                 ):
                                     formatVersion = self.FormatVersion(formatVersion)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if formatQualifier and not isinstance(
+
+                                if formatQualifier is not None and not isinstance(
                                     formatQualifier, aas.SubmodelElement
                                 ):
                                     formatQualifier = self.FormatQualifier(
@@ -3305,14 +3336,19 @@ class Models3D(aas.Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if apiVersion and not isinstance(
+
+                                        if apiVersion is not None and not isinstance(
                                             apiVersion, aas.SubmodelElement
                                         ):
                                             apiVersion = self.ApiVersion(apiVersion)
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if apiDocumentationUrl and not isinstance(
-                                            apiDocumentationUrl, aas.SubmodelElement
+
+                                        if (
+                                            apiDocumentationUrl is not None
+                                            and not isinstance(
+                                                apiDocumentationUrl, aas.SubmodelElement
+                                            )
                                         ):
                                             apiDocumentationUrl = (
                                                 self.ApiDocumentationUrl(
@@ -3321,8 +3357,12 @@ class Models3D(aas.Submodel):
                                             )
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if apiSpecificationUrl and not isinstance(
-                                            apiSpecificationUrl, aas.SubmodelElement
+
+                                        if (
+                                            apiSpecificationUrl is not None
+                                            and not isinstance(
+                                                apiSpecificationUrl, aas.SubmodelElement
+                                            )
                                         ):
                                             apiSpecificationUrl = (
                                                 self.ApiSpecificationUrl(
@@ -3732,7 +3772,8 @@ class Models3D(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if organizationName and not isinstance(
+
+                                    if organizationName is not None and not isinstance(
                                         organizationName, aas.SubmodelElement
                                     ):
                                         organizationName = self.OrganizationName(
@@ -3740,8 +3781,13 @@ class Models3D(aas.Submodel):
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if organizationOfficialName and not isinstance(
-                                        organizationOfficialName, aas.SubmodelElement
+
+                                    if (
+                                        organizationOfficialName is not None
+                                        and not isinstance(
+                                            organizationOfficialName,
+                                            aas.SubmodelElement,
+                                        )
                                     ):
                                         organizationOfficialName = (
                                             self.OrganizationOfficialName(
@@ -3834,7 +3880,8 @@ class Models3D(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if applicationName and not isinstance(
+
+                                if applicationName is not None and not isinstance(
                                     applicationName, aas.SubmodelElement
                                 ):
                                     applicationName = self.ApplicationName(
@@ -3842,7 +3889,8 @@ class Models3D(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if applicationVersion and not isinstance(
+
+                                if applicationVersion is not None and not isinstance(
                                     applicationVersion, aas.SubmodelElement
                                 ):
                                     applicationVersion = self.ApplicationVersion(
@@ -3850,7 +3898,8 @@ class Models3D(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if applicationQualifier and not isinstance(
+
+                                if applicationQualifier is not None and not isinstance(
                                     applicationQualifier, aas.SubmodelElement
                                 ):
                                     applicationQualifier = self.ApplicationQualifier(
@@ -4078,7 +4127,8 @@ class Models3D(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if organizationName and not isinstance(
+
+                                if organizationName is not None and not isinstance(
                                     organizationName, aas.SubmodelElement
                                 ):
                                     organizationName = self.OrganizationName(
@@ -4086,8 +4136,12 @@ class Models3D(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if organizationOfficialName and not isinstance(
-                                    organizationOfficialName, aas.SubmodelElement
+
+                                if (
+                                    organizationOfficialName is not None
+                                    and not isinstance(
+                                        organizationOfficialName, aas.SubmodelElement
+                                    )
                                 ):
                                     organizationOfficialName = (
                                         self.OrganizationOfficialName(
@@ -4182,29 +4236,38 @@ class Models3D(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, aas.SubmodelElement):
+
+                            if title is not None and not isinstance(
+                                title, aas.SubmodelElement
+                            ):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if fileName and not isinstance(
+
+                            if fileName is not None and not isinstance(
                                 fileName, aas.SubmodelElement
                             ):
                                 fileName = self.FileName(fileName)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if fileVersionId and not isinstance(
+
+                            if fileVersionId is not None and not isinstance(
                                 fileVersionId, aas.SubmodelElement
                             ):
                                 fileVersionId = self.FileVersionId(fileVersionId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if statusValue and not isinstance(
+
+                            if statusValue is not None and not isinstance(
                                 statusValue, aas.SubmodelElement
                             ):
                                 statusValue = self.StatusValue(statusValue)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if setDate and not isinstance(setDate, aas.SubmodelElement):
+
+                            if setDate is not None and not isinstance(
+                                setDate, aas.SubmodelElement
+                            ):
                                 setDate = self.SetDate(setDate)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -4777,7 +4840,8 @@ class Models3D(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if organizationName and not isinstance(
+
+                                if organizationName is not None and not isinstance(
                                     organizationName, aas.SubmodelElement
                                 ):
                                     organizationName = self.OrganizationName(
@@ -4785,8 +4849,12 @@ class Models3D(aas.Submodel):
                                     )
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if organizationOfficialName and not isinstance(
-                                    organizationOfficialName, aas.SubmodelElement
+
+                                if (
+                                    organizationOfficialName is not None
+                                    and not isinstance(
+                                        organizationOfficialName, aas.SubmodelElement
+                                    )
                                 ):
                                     organizationOfficialName = (
                                         self.OrganizationOfficialName(
@@ -5090,22 +5158,31 @@ class Models3D(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if apiVersion and not isinstance(
+
+                                    if apiVersion is not None and not isinstance(
                                         apiVersion, aas.SubmodelElement
                                     ):
                                         apiVersion = self.ApiVersion(apiVersion)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if apiDocumentationUrl and not isinstance(
-                                        apiDocumentationUrl, aas.SubmodelElement
+
+                                    if (
+                                        apiDocumentationUrl is not None
+                                        and not isinstance(
+                                            apiDocumentationUrl, aas.SubmodelElement
+                                        )
                                     ):
                                         apiDocumentationUrl = self.ApiDocumentationUrl(
                                             apiDocumentationUrl
                                         )
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if apiSpecificationUrl and not isinstance(
-                                        apiSpecificationUrl, aas.SubmodelElement
+
+                                    if (
+                                        apiSpecificationUrl is not None
+                                        and not isinstance(
+                                            apiSpecificationUrl, aas.SubmodelElement
+                                        )
                                     ):
                                         apiSpecificationUrl = self.ApiSpecificationUrl(
                                             apiSpecificationUrl
@@ -5355,13 +5432,15 @@ class Models3D(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if applicationName and not isinstance(
+
+                            if applicationName is not None and not isinstance(
                                 applicationName, aas.SubmodelElement
                             ):
                                 applicationName = self.ApplicationName(applicationName)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if applicationVersion and not isinstance(
+
+                            if applicationVersion is not None and not isinstance(
                                 applicationVersion, aas.SubmodelElement
                             ):
                                 applicationVersion = self.ApplicationVersion(
@@ -5369,7 +5448,8 @@ class Models3D(aas.Submodel):
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if applicationQualifier and not isinstance(
+
+                            if applicationQualifier is not None and not isinstance(
                                 applicationQualifier, aas.SubmodelElement
                             ):
                                 applicationQualifier = self.ApplicationQualifier(
@@ -5797,17 +5877,22 @@ class Models3D(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if classId and not isinstance(classId, aas.SubmodelElement):
+
+                            if classId is not None and not isinstance(
+                                classId, aas.SubmodelElement
+                            ):
                                 classId = self.ClassId(classId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if className and not isinstance(
+
+                            if className is not None and not isinstance(
                                 className, aas.SubmodelElement
                             ):
                                 className = self.ClassName(className)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if classificationSystem and not isinstance(
+
+                            if classificationSystem is not None and not isinstance(
                                 classificationSystem, aas.SubmodelElement
                             ):
                                 classificationSystem = self.ClassificationSystem(
@@ -7475,19 +7560,22 @@ class Models3D(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if description_ and not isinstance(
+
+                        if description_ is not None and not isinstance(
                             description_, aas.SubmodelElement
                         ):
                             description_ = self.Description(description_)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if reducedElements and not isinstance(
+
+                        if reducedElements is not None and not isinstance(
                             reducedElements, aas.SubmodelElement
                         ):
                             reducedElements = self.ReducedElements(reducedElements)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if derivedFrom and not isinstance(
+
+                        if derivedFrom is not None and not isinstance(
                             derivedFrom, aas.SubmodelElement
                         ):
                             derivedFrom = self.DerivedFrom(derivedFrom)
@@ -7570,33 +7658,43 @@ class Models3D(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if posModelPurpose and not isinstance(
+
+                    if posModelPurpose is not None and not isinstance(
                         posModelPurpose, aas.SubmodelElement
                     ):
                         posModelPurpose = self.PosModelPurpose(posModelPurpose)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if negModelPurpose and not isinstance(
+
+                    if negModelPurpose is not None and not isinstance(
                         negModelPurpose, aas.SubmodelElement
                     ):
                         negModelPurpose = self.NegModelPurpose(negModelPurpose)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if embeddedInfo and not isinstance(
+
+                    if embeddedInfo is not None and not isinstance(
                         embeddedInfo, aas.SubmodelElement
                     ):
                         embeddedInfo = self.EmbeddedInfo(embeddedInfo)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if state and not isinstance(state, aas.SubmodelElement):
+
+                    if state is not None and not isinstance(state, aas.SubmodelElement):
                         state = self.State(state)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if objectType and not isinstance(objectType, aas.SubmodelElement):
+
+                    if objectType is not None and not isinstance(
+                        objectType, aas.SubmodelElement
+                    ):
                         objectType = self.ObjectType(objectType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if origin and not isinstance(origin, aas.SubmodelElement):
+
+                    if origin is not None and not isinstance(
+                        origin, aas.SubmodelElement
+                    ):
                         origin = self.Origin(origin)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8079,15 +8177,24 @@ class Models3D(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if x and not isinstance(x, aas.SubmodelElement):
+
+                                    if x is not None and not isinstance(
+                                        x, aas.SubmodelElement
+                                    ):
                                         x = self.X(x)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if y and not isinstance(y, aas.SubmodelElement):
+
+                                    if y is not None and not isinstance(
+                                        y, aas.SubmodelElement
+                                    ):
                                         y = self.Y(y)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if z and not isinstance(z, aas.SubmodelElement):
+
+                                    if z is not None and not isinstance(
+                                        z, aas.SubmodelElement
+                                    ):
                                         z = self.Z(z)
 
                                     # Add all passed/initialized submodel elements to a single list
@@ -8383,15 +8490,24 @@ class Models3D(aas.Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if x and not isinstance(x, aas.SubmodelElement):
+
+                                        if x is not None and not isinstance(
+                                            x, aas.SubmodelElement
+                                        ):
                                             x = self.X(x)
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if y and not isinstance(y, aas.SubmodelElement):
+
+                                        if y is not None and not isinstance(
+                                            y, aas.SubmodelElement
+                                        ):
                                             y = self.Y(y)
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if z and not isinstance(z, aas.SubmodelElement):
+
+                                        if z is not None and not isinstance(
+                                            z, aas.SubmodelElement
+                                        ):
                                             z = self.Z(z)
 
                                         # Add all passed/initialized submodel elements to a single list
@@ -8928,15 +9044,24 @@ class Models3D(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if x and not isinstance(x, aas.SubmodelElement):
+
+                                if x is not None and not isinstance(
+                                    x, aas.SubmodelElement
+                                ):
                                     x = self.X(x)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if y and not isinstance(y, aas.SubmodelElement):
+
+                                if y is not None and not isinstance(
+                                    y, aas.SubmodelElement
+                                ):
                                     y = self.Y(y)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if z and not isinstance(z, aas.SubmodelElement):
+
+                                if z is not None and not isinstance(
+                                    z, aas.SubmodelElement
+                                ):
                                     z = self.Z(z)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -9013,7 +9138,8 @@ class Models3D(aas.Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if boundingBoxKind and not isinstance(
+
+                            if boundingBoxKind is not None and not isinstance(
                                 boundingBoxKind, aas.SubmodelElement
                             ):
                                 boundingBoxKind = self.BoundingBoxKind(boundingBoxKind)
@@ -9455,15 +9581,24 @@ class Models3D(aas.Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if x and not isinstance(x, aas.SubmodelElement):
+
+                                if x is not None and not isinstance(
+                                    x, aas.SubmodelElement
+                                ):
                                     x = self.X(x)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if y and not isinstance(y, aas.SubmodelElement):
+
+                                if y is not None and not isinstance(
+                                    y, aas.SubmodelElement
+                                ):
                                     y = self.Y(y)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if z and not isinstance(z, aas.SubmodelElement):
+
+                                if z is not None and not isinstance(
+                                    z, aas.SubmodelElement
+                                ):
                                     z = self.Z(z)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -9755,15 +9890,24 @@ class Models3D(aas.Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if x and not isinstance(x, aas.SubmodelElement):
+
+                                    if x is not None and not isinstance(
+                                        x, aas.SubmodelElement
+                                    ):
                                         x = self.X(x)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if y and not isinstance(y, aas.SubmodelElement):
+
+                                    if y is not None and not isinstance(
+                                        y, aas.SubmodelElement
+                                    ):
                                         y = self.Y(y)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if z and not isinstance(z, aas.SubmodelElement):
+
+                                    if z is not None and not isinstance(
+                                        z, aas.SubmodelElement
+                                    ):
                                         z = self.Z(z)
 
                                     # Add all passed/initialized submodel elements to a single list
@@ -10227,13 +10371,17 @@ class Models3D(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if representation and not isinstance(
+
+                    if representation is not None and not isinstance(
                         representation, aas.SubmodelElement
                     ):
                         representation = self.Representation(representation)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if lengthUnit and not isinstance(lengthUnit, aas.SubmodelElement):
+
+                    if lengthUnit is not None and not isinstance(
+                        lengthUnit, aas.SubmodelElement
+                    ):
                         lengthUnit = self.LengthUnit(lengthUnit)
 
                     # Add all passed/initialized submodel elements to a single list

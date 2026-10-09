@@ -1126,7 +1126,8 @@ class ControlConfig(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if controlConfigFileName and not isinstance(
+
+            if controlConfigFileName is not None and not isinstance(
                 controlConfigFileName, aas.SubmodelElement
             ):
                 controlConfigFileName = self.ControlConfigFileName(
@@ -1499,11 +1500,15 @@ class ControlConfig(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if axisName and not isinstance(axisName, aas.SubmodelElement):
+
+                    if axisName is not None and not isinstance(
+                        axisName, aas.SubmodelElement
+                    ):
                         axisName = self.AxisName(axisName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if referenceToAxis and not isinstance(
+
+                    if referenceToAxis is not None and not isinstance(
                         referenceToAxis, aas.SubmodelElement
                     ):
                         referenceToAxis = self.ReferenceToAxis(referenceToAxis)
@@ -1601,7 +1606,8 @@ class ControlConfig(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if channelIdentification and not isinstance(
+
+                if channelIdentification is not None and not isinstance(
                     channelIdentification, aas.SubmodelElement
                 ):
                     channelIdentification = self.ChannelIdentification(
@@ -2604,7 +2610,8 @@ class ControlConfig(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if axisConfigFileName and not isinstance(
+
+                    if axisConfigFileName is not None and not isinstance(
                         axisConfigFileName, aas.SubmodelElement
                     ):
                         axisConfigFileName = self.AxisConfigFileName(axisConfigFileName)
@@ -3034,7 +3041,8 @@ class ControlConfig(aas.Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if driveConfigFileName and not isinstance(
+
+                        if driveConfigFileName is not None and not isinstance(
                             driveConfigFileName, aas.SubmodelElement
                         ):
                             driveConfigFileName = self.DriveConfigFileName(
@@ -3137,7 +3145,8 @@ class ControlConfig(aas.Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if technicalData and not isinstance(
+
+                    if technicalData is not None and not isinstance(
                         technicalData, aas.SubmodelElement
                     ):
                         technicalData = self.TechnicalData(technicalData)
@@ -3245,43 +3254,59 @@ class ControlConfig(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if axisName and not isinstance(axisName, aas.SubmodelElement):
+
+                if axisName is not None and not isinstance(
+                    axisName, aas.SubmodelElement
+                ):
                     axisName = self.AxisName(axisName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if axisType and not isinstance(axisType, aas.SubmodelElement):
+
+                if axisType is not None and not isinstance(
+                    axisType, aas.SubmodelElement
+                ):
                     axisType = self.AxisType(axisType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if simulationAxis and not isinstance(
+
+                if simulationAxis is not None and not isinstance(
                     simulationAxis, aas.SubmodelElement
                 ):
                     simulationAxis = self.SimulationAxis(simulationAxis)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if swLimitSwitchNeg and not isinstance(
+
+                if swLimitSwitchNeg is not None and not isinstance(
                     swLimitSwitchNeg, aas.SubmodelElement
                 ):
                     swLimitSwitchNeg = self.SwLimitSwitchNeg(swLimitSwitchNeg)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if swLimitSwitchPos and not isinstance(
+
+                if swLimitSwitchPos is not None and not isinstance(
                     swLimitSwitchPos, aas.SubmodelElement
                 ):
                     swLimitSwitchPos = self.SwLimitSwitchPos(swLimitSwitchPos)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if velocityLimit and not isinstance(velocityLimit, aas.SubmodelElement):
+
+                if velocityLimit is not None and not isinstance(
+                    velocityLimit, aas.SubmodelElement
+                ):
                     velocityLimit = self.VelocityLimit(velocityLimit)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accelerationLimit and not isinstance(
+
+                if accelerationLimit is not None and not isinstance(
                     accelerationLimit, aas.SubmodelElement
                 ):
                     accelerationLimit = self.AccelerationLimit(accelerationLimit)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if jerkLimit and not isinstance(jerkLimit, aas.SubmodelElement):
+
+                if jerkLimit is not None and not isinstance(
+                    jerkLimit, aas.SubmodelElement
+                ):
                     jerkLimit = self.JerkLimit(jerkLimit)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3727,13 +3752,15 @@ class ControlConfig(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if nCProgramFileType and not isinstance(
+
+            if nCProgramFileType is not None and not isinstance(
                 nCProgramFileType, aas.SubmodelElement
             ):
                 nCProgramFileType = self.NCProgramFileType(nCProgramFileType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if nCProgramSyntaxType and not isinstance(
+
+            if nCProgramSyntaxType is not None and not isinstance(
                 nCProgramSyntaxType, aas.SubmodelElement
             ):
                 nCProgramSyntaxType = self.NCProgramSyntaxType(nCProgramSyntaxType)
@@ -4175,19 +4202,22 @@ class ControlConfig(aas.Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if communicationType and not isinstance(
+
+            if communicationType is not None and not isinstance(
                 communicationType, aas.SubmodelElement
             ):
                 communicationType = self.CommunicationType(communicationType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if communicationAdress and not isinstance(
+
+            if communicationAdress is not None and not isinstance(
                 communicationAdress, aas.SubmodelElement
             ):
                 communicationAdress = self.CommunicationAdress(communicationAdress)
 
             # Build a submodel element if a raw value was passed in the argument
-            if communicationInformationModel and not isinstance(
+
+            if communicationInformationModel is not None and not isinstance(
                 communicationInformationModel, aas.SubmodelElement
             ):
                 communicationInformationModel = self.CommunicationInformationModel(
@@ -4195,7 +4225,8 @@ class ControlConfig(aas.Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if oPCUAServerDataSheet and not isinstance(
+
+            if oPCUAServerDataSheet is not None and not isinstance(
                 oPCUAServerDataSheet, aas.SubmodelElement
             ):
                 oPCUAServerDataSheet = self.OPCUAServerDataSheet(oPCUAServerDataSheet)
@@ -4390,7 +4421,8 @@ class ControlConfig(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if toolDescription and not isinstance(
+
+                if toolDescription is not None and not isinstance(
                     toolDescription, aas.SubmodelElement
                 ):
                     toolDescription = self.ToolDescription(toolDescription)
@@ -4578,47 +4610,74 @@ class ControlConfig(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if digitalNameplate and not isinstance(digitalNameplate, aas.SubmodelElement):
+
+        if digitalNameplate is not None and not isinstance(
+            digitalNameplate, aas.SubmodelElement
+        ):
             digitalNameplate = self.DigitalNameplate(digitalNameplate)
 
         # Build a submodel element if a raw value was passed in the argument
-        if controllerType and not isinstance(controllerType, aas.SubmodelElement):
+
+        if controllerType is not None and not isinstance(
+            controllerType, aas.SubmodelElement
+        ):
             controllerType = self.ControllerType(controllerType)
 
         # Build a submodel element if a raw value was passed in the argument
-        if timeUnit and not isinstance(timeUnit, aas.SubmodelElement):
+
+        if timeUnit is not None and not isinstance(timeUnit, aas.SubmodelElement):
             timeUnit = self.TimeUnit(timeUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if lengthUnit and not isinstance(lengthUnit, aas.SubmodelElement):
+
+        if lengthUnit is not None and not isinstance(lengthUnit, aas.SubmodelElement):
             lengthUnit = self.LengthUnit(lengthUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if fieldbusType and not isinstance(fieldbusType, aas.SubmodelElement):
+
+        if fieldbusType is not None and not isinstance(
+            fieldbusType, aas.SubmodelElement
+        ):
             fieldbusType = self.FieldbusType(fieldbusType)
 
         # Build a submodel element if a raw value was passed in the argument
-        if cNCCycleTime and not isinstance(cNCCycleTime, aas.SubmodelElement):
+
+        if cNCCycleTime is not None and not isinstance(
+            cNCCycleTime, aas.SubmodelElement
+        ):
             cNCCycleTime = self.CNCCycleTime(cNCCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
-        if pLCCycleTime and not isinstance(pLCCycleTime, aas.SubmodelElement):
+
+        if pLCCycleTime is not None and not isinstance(
+            pLCCycleTime, aas.SubmodelElement
+        ):
             pLCCycleTime = self.PLCCycleTime(pLCCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
-        if fieldbusCycleTime and not isinstance(fieldbusCycleTime, aas.SubmodelElement):
+
+        if fieldbusCycleTime is not None and not isinstance(
+            fieldbusCycleTime, aas.SubmodelElement
+        ):
             fieldbusCycleTime = self.FieldbusCycleTime(fieldbusCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
-        if velocityUnit and not isinstance(velocityUnit, aas.SubmodelElement):
+
+        if velocityUnit is not None and not isinstance(
+            velocityUnit, aas.SubmodelElement
+        ):
             velocityUnit = self.VelocityUnit(velocityUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if accelerationUnit and not isinstance(accelerationUnit, aas.SubmodelElement):
+
+        if accelerationUnit is not None and not isinstance(
+            accelerationUnit, aas.SubmodelElement
+        ):
             accelerationUnit = self.AccelerationUnit(accelerationUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if jerkUnit and not isinstance(jerkUnit, aas.SubmodelElement):
+
+        if jerkUnit is not None and not isinstance(jerkUnit, aas.SubmodelElement):
             jerkUnit = self.JerkUnit(jerkUnit)
 
         # Add all passed/initialized submodel elements to a single list

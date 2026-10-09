@@ -530,17 +530,22 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if interfacingSystem and not isinstance(
+
+                if interfacingSystem is not None and not isinstance(
                     interfacingSystem, aas.SubmodelElement
                 ):
                     interfacingSystem = self.InterfacingSystem(interfacingSystem)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if networkType and not isinstance(networkType, aas.SubmodelElement):
+
+                if networkType is not None and not isinstance(
+                    networkType, aas.SubmodelElement
+                ):
                     networkType = self.NetworkType(networkType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if typeOfLinksHardwiredOrSoftware and not isinstance(
+
+                if typeOfLinksHardwiredOrSoftware is not None and not isinstance(
                     typeOfLinksHardwiredOrSoftware, aas.SubmodelElement
                 ):
                     typeOfLinksHardwiredOrSoftware = (
@@ -1040,7 +1045,8 @@ class SafetyInstrumentedSystem(aas.Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if sISName and not isinstance(sISName, aas.SubmodelElement):
+
+        if sISName is not None and not isinstance(sISName, aas.SubmodelElement):
             sISName = self.SISName(sISName)
 
         # Add all passed/initialized submodel elements to a single list
