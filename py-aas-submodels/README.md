@@ -17,17 +17,25 @@ pip install py-aas-submodels
 Modules are generated from every `.json` template published in
 [`admin-shell-io/submodel-templates`](https://github.com/admin-shell-io/submodel-templates/tree/main/published)
 that contains a submodel (files containing only concept descriptions or a generic form are skipped).
-Each module is named after the template and its version, joined with underscores:
+Each module is named after the template, its part (if the template consists of several parts)
+and its version, joined with underscores:
 
-| Template | Module |
+| Template file | Module |
 |---|---|
 | `Digital nameplate/3/0/1/...json` | `digital_nameplate_3_0_1` |
-| `Handover Documentation/2/0/1/...json` | `handover_documentation_2_0_1` |
 | `Contact Information/1/0/...json` | `contact_information_1_0` |
+| `Digital Battery Passport/1_Digital Nameplate/1/0/...json` | `digital_battery_passport_1_digital_nameplate_1_0` |
 
-If several templates share the same name and version (e.g. a template and its
-`_forAASMetamodelV3.1` variant), the additional modules get a double-underscore
-suffix: `contact_information_1_0_1`, `contact_information_1_0_1__1`.
+Variants of a template file get a suffix:
+
+| File name contains | Suffix | Example |
+|---|---|---|
+| `_forAASMetamodelV3.1` | `_metamodel_3_1` | `contact_information_1_0_1_metamodel_3_1` |
+| `_without_examplevalues` | `_without_example_values` | `digital_battery_passport_1_digital_nameplate_1_0_without_example_values` |
+| `Example` (instead of `Template`) | `_example` | `fire_protection_on_railway_vehicles_1_0_example` |
+| `withOperations` | `_with_operations` | `time_series_data_1_1_1_with_operations` |
+
+If names still collide, the additional modules get a double-underscore counter (`__1`, `__2`, ...).
 
 ## Usage
 

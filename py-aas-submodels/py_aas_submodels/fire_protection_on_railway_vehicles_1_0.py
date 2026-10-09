@@ -43,7 +43,42 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                        aas.Qualifier(
+                            type_=r"SMT/ExampleValue",
+                            value_type=str,
+                            value=r"Generic Manufacturing Corp.",
+                            value_id=None,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -100,7 +135,42 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                        aas.Qualifier(
+                            type_=r"SMT/ExampleValue",
+                            value_type=str,
+                            value=r"Modular FireSafe Component X100",
+                            value_id=None,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -158,7 +228,42 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                        aas.Qualifier(
+                            type_=r"SMT/ExampleValue",
+                            value_type=str,
+                            value=r"ORD-XS-000123",
+                            value_id=None,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -217,7 +322,42 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                        aas.Qualifier(
+                            type_=r"SMT/ExampleValue",
+                            value_type=str,
+                            value=r"PAN-4587-AX9",
+                            value_id=None,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -277,7 +417,25 @@ class RailwayFireProtection(aas.Submodel):
         ):
 
             if qualifier is None:
-                qualifier = ()
+                qualifier = (
+                    aas.Qualifier(
+                        type_=r"SMT/Cardinality",
+                        value_type=str,
+                        value=r"One",
+                        value_id=None,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        supplemental_semantic_id=(),
+                    ),
+                )
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -370,16 +528,17 @@ class RailwayFireProtection(aas.Submodel):
                             aas.MultiLanguageTextType
                         ] = aas.MultiLanguageTextType(
                             dict_={
-                                r"en": 'hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\n\nFollowing values can be assigned:\n\n"Compliant: Hazard Level 1"\n\n"Compliant: Hazard Level 2"\n\n"Compliant: Hazard Level 3"\n\n"Approved Functional Necessity Report"\n\n"Missing Test Results"\n\n"Not Compliant"'
+                                r"en": 'hazard level indicating the achieved fire hazard classification of the product, component, or material according to the applicable fire protection standard.\n\nFollowing values can be assigned:\n\n"Compliant: Hazard Level 1"\n\n"Compliant: Hazard Level 2"\n\n"Compliant: Hazard Level 3"\n\n"Approved Functional Necessity Report"\n\n"Missing Test Results"\n\n"Not Compliant"'
                             }
                         ),
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/RailwayFireProtection/Submodel/1/HazardLevel",
                                 ),
                             ),
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
@@ -391,7 +550,42 @@ class RailwayFireProtection(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = ()
+                            qualifier = (
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                                aas.Qualifier(
+                                    type_=r"SMT/ExampleValue",
+                                    value_type=str,
+                                    value=r"Compliant: Hazard Level 3",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -452,7 +646,42 @@ class RailwayFireProtection(aas.Submodel):
                         ):
 
                             if qualifier is None:
-                                qualifier = ()
+                                qualifier = (
+                                    aas.Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"OneToMany",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                    aas.Qualifier(
+                                        type_=r"SMT/ExampleValue",
+                                        value_type=str,
+                                        value=r"file://report.pdf",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -472,8 +701,8 @@ class RailwayFireProtection(aas.Submodel):
 
                     def __init__(
                         self,
-                        reportreferences_items: Union[
-                            aas.Reference, Reportreferences_item
+                        reportreferences_items: Iterable[
+                            Union[aas.Reference, Reportreferences_item]
                         ],
                         id_short: Optional[str] = r"ReportReferences",
                         type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
@@ -511,18 +740,39 @@ class RailwayFireProtection(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = ()
+                            qualifier = (
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a submodel element if a raw value was passed in the argument
-                        if reportreferences_items and not isinstance(
-                            reportreferences_items, aas.SubmodelElement
-                        ):
-                            reportreferences_items = self.Reportreferences_item(
-                                reportreferences_items
-                            )
+                        # Build submodel elements from raw values passed in the argument
+                        if reportreferences_items:
+                            reportreferences_items = [
+                                (
+                                    i
+                                    if isinstance(i, aas.SubmodelElement)
+                                    else self.Reportreferences_item(i)
+                                )
+                                for i in reportreferences_items
+                            ]
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -665,7 +915,42 @@ class RailwayFireProtection(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = ()
+                            qualifier = (
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                                aas.Qualifier(
+                                    type_=r"SMT/ExampleValue",
+                                    value_type=str,
+                                    value=r"R1 requirement for hazard level HL3 according to EN 45545-2",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -720,7 +1005,25 @@ class RailwayFireProtection(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = ()
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"OneToMany",
+                                value_id=None,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -764,7 +1067,7 @@ class RailwayFireProtection(aas.Submodel):
 
             def __init__(
                 self,
-                requirementssets_items: Requirementssets_item,
+                requirementssets_items: Iterable[Requirementssets_item],
                 id_short: Optional[str] = r"RequirementsSets",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -772,7 +1075,7 @@ class RailwayFireProtection(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[
                     aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Reqirements sets"}),
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"Requirements sets"}),
                 category: Optional[str] = None,
                 description: Optional[
                     aas.MultiLanguageTextType
@@ -799,7 +1102,25 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -946,7 +1267,42 @@ class RailwayFireProtection(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = ()
+                            qualifier = (
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                                aas.Qualifier(
+                                    type_=r"SMT/ExampleValue",
+                                    value_type=str,
+                                    value=r"/aasx/files/datasheet_en.pdf",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1010,7 +1366,42 @@ class RailwayFireProtection(aas.Submodel):
                             ):
 
                                 if qualifier is None:
-                                    qualifier = ()
+                                    qualifier = (
+                                        aas.Qualifier(
+                                            type_=r"SMT/Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                        aas.Qualifier(
+                                            type_=r"SMT/ExampleValue",
+                                            value_type=str,
+                                            value=r"cone calorimeter test according to EN ISO 5660-1",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1071,7 +1462,42 @@ class RailwayFireProtection(aas.Submodel):
                             ):
 
                                 if qualifier is None:
-                                    qualifier = ()
+                                    qualifier = (
+                                        aas.Qualifier(
+                                            type_=r"SMT/Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                        aas.Qualifier(
+                                            type_=r"SMT/ExampleValue",
+                                            value_type=str,
+                                            value=r"requirement R1 fulfilled for hazard level HL3",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1132,7 +1558,138 @@ class RailwayFireProtection(aas.Submodel):
                             ):
 
                                 if qualifier is None:
-                                    qualifier = ()
+                                    qualifier = (
+                                        aas.Qualifier(
+                                            type_=r"SMT/Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                        aas.Qualifier(
+                                            type_=r"SMT/ExampleValue",
+                                            value_type=xsd.Date,
+                                            value=xsd.from_xsd(r"2026-07-22", xsd.Date),
+                                            value_id=None,
+                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
+
+                                if embedded_data_specifications is None:
+                                    embedded_data_specifications = []
+
+                                super().__init__(
+                                    value=value,
+                                    id_short=id_short,
+                                    value_type=value_type,
+                                    value_id=value_id,
+                                    display_name=display_name,
+                                    category=category,
+                                    description=description,
+                                    semantic_id=semantic_id,
+                                    qualifier=qualifier,
+                                    extension=extension,
+                                    supplemental_semantic_id=supplemental_semantic_id,
+                                    embedded_data_specifications=embedded_data_specifications,
+                                )
+
+                        class TestComment(aas.Property):
+
+                            def __init__(
+                                self,
+                                value: str,
+                                id_short: Optional[str] = r"TestComment",
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Test comment"}
+                                ),
+                                category: Optional[str] = None,
+                                description: Optional[
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"additional remarks or observations related to the performed test"
+                                    }
+                                ),
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/idta/cds/TestComment/1",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                embedded_data_specifications: Iterable[
+                                    aas.EmbeddedDataSpecification
+                                ] = None,
+                            ):
+
+                                if qualifier is None:
+                                    qualifier = (
+                                        aas.Qualifier(
+                                            type_=r"SMT/Cardinality",
+                                            value_type=str,
+                                            value=r"ZeroToOne",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                        aas.Qualifier(
+                                            type_=r"SMT/ExampleValue",
+                                            value_type=str,
+                                            value=r"measured heat release rate and MARHE values within specified limits",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1193,7 +1750,42 @@ class RailwayFireProtection(aas.Submodel):
                             ):
 
                                 if qualifier is None:
-                                    qualifier = ()
+                                    qualifier = (
+                                        aas.Qualifier(
+                                            type_=r"SMT/Cardinality",
+                                            value_type=str,
+                                            value=r"One",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                        aas.Qualifier(
+                                            type_=r"SMT/ExampleValue",
+                                            value_type=str,
+                                            value=r"FR-TEST-2026-00123",
+                                            value_id=None,
+                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
+                                                key=(
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                    ),
+                                                ),
+                                                referred_semantic_id=None,
+                                            ),
+                                            supplemental_semantic_id=(),
+                                        ),
+                                    )
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1219,6 +1811,7 @@ class RailwayFireProtection(aas.Submodel):
                             testResult: Union[str, TestResult],
                             testDate: Union[xsd.Date, TestDate],
                             testReportNumber: Union[str, TestReportNumber],
+                            testComment: Optional[Union[str, TestComment]] = None,
                             id_short: Optional[str] = r"tests_item",
                             display_name: Optional[
                                 aas.MultiLanguageNameType
@@ -1249,7 +1842,25 @@ class RailwayFireProtection(aas.Submodel):
                         ):
 
                             if qualifier is None:
-                                qualifier = ()
+                                qualifier = (
+                                    aas.Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"OneToMany",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1273,6 +1884,12 @@ class RailwayFireProtection(aas.Submodel):
                                 testDate = self.TestDate(testDate)
 
                             # Build a submodel element if a raw value was passed in the argument
+                            if testComment and not isinstance(
+                                testComment, aas.SubmodelElement
+                            ):
+                                testComment = self.TestComment(testComment)
+
+                            # Build a submodel element if a raw value was passed in the argument
                             if testReportNumber and not isinstance(
                                 testReportNumber, aas.SubmodelElement
                             ):
@@ -1286,6 +1903,7 @@ class RailwayFireProtection(aas.Submodel):
                                 testProcedure,
                                 testResult,
                                 testDate,
+                                testComment,
                                 testReportNumber,
                             ]:
                                 if se_arg is None:
@@ -1316,7 +1934,7 @@ class RailwayFireProtection(aas.Submodel):
 
                     def __init__(
                         self,
-                        tests_items: Tests_item,
+                        tests_items: Iterable[Tests_item],
                         id_short: Optional[str] = r"Tests",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1351,7 +1969,25 @@ class RailwayFireProtection(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = ()
+                            qualifier = (
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1460,6 +2096,98 @@ class RailwayFireProtection(aas.Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
+                class ReportComment(aas.Property):
+
+                    def __init__(
+                        self,
+                        value: str,
+                        id_short: Optional[str] = r"ReportComment",
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Report comment"}),
+                        category: Optional[str] = None,
+                        description: Optional[
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"additional remarks or notes related to the report and its content"
+                            }
+                        ),
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/cds/ReportComment/1",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                        embedded_data_specifications: Iterable[
+                            aas.EmbeddedDataSpecification
+                        ] = None,
+                    ):
+
+                        if qualifier is None:
+                            qualifier = (
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToOne",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                                aas.Qualifier(
+                                    type_=r"SMT/ExampleValue",
+                                    value_type=str,
+                                    value=r"test results demonstrate compliance with EN 45545-2 requirements for the intended application",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
+
+                        if embedded_data_specifications is None:
+                            embedded_data_specifications = []
+
+                        super().__init__(
+                            value=value,
+                            id_short=id_short,
+                            value_type=value_type,
+                            value_id=value_id,
+                            display_name=display_name,
+                            category=category,
+                            description=description,
+                            semantic_id=semantic_id,
+                            qualifier=qualifier,
+                            extension=extension,
+                            supplemental_semantic_id=supplemental_semantic_id,
+                            embedded_data_specifications=embedded_data_specifications,
+                        )
+
                 class LabInformation(aas.SubmodelElementCollection):
 
                     class LabName(aas.Property):
@@ -1501,7 +2229,42 @@ class RailwayFireProtection(aas.Submodel):
                         ):
 
                             if qualifier is None:
-                                qualifier = ()
+                                qualifier = (
+                                    aas.Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"One",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                    aas.Qualifier(
+                                        type_=r"SMT/ExampleValue",
+                                        value_type=str,
+                                        value=r"Independent Fire Testing Laboratory Ltd.",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1523,704 +2286,8 @@ class RailwayFireProtection(aas.Submodel):
 
                     class LabAddress(aas.SubmodelElementCollection):
 
-                        class AddressOfAdditionalLink(aas.Property):
-
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"AddressOfAdditionalLink",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAQ326#002",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
-                        class NationalCode(aas.MultiLanguageProperty):
-
-                            def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"NationalCode",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r" Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                                    }
-                                ),
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO134#002",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
-                        class CityTown(aas.MultiLanguageProperty):
-
-                            def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"CityTown",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO132#002",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
-                        class Company(aas.MultiLanguageProperty):
-
-                            def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"Company",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAW001#001",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
-                        class Phone(aas.SubmodelElementCollection):
-
-                            class TelephoneNumber(aas.MultiLanguageProperty):
-
-                                def __init__(
-                                    self,
-                                    value: aas.LangStringSet,
-                                    id_short: Optional[str] = r"TelephoneNumber",
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                                        }
-                                    ),
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0173-1#02-AAO136#002",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Multiplicity",
-                                                value_type=str,
-                                                value=r"One",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
-
-                            def __init__(
-                                self,
-                                telephoneNumber: Union[
-                                    aas.LangStringSet, TelephoneNumber
-                                ],
-                                id_short: Optional[str] = r"Phone",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                # Build a submodel element if a raw value was passed in the argument
-                                if telephoneNumber and not isinstance(
-                                    telephoneNumber, aas.SubmodelElement
-                                ):
-                                    telephoneNumber = self.TelephoneNumber(
-                                        telephoneNumber
-                                    )
-
-                                # Add all passed/initialized submodel elements to a single list
-                                embedded_submodel_elements = []
-                                for se_arg in [telephoneNumber]:
-                                    if se_arg is None:
-                                        continue
-                                    elif isinstance(se_arg, aas.SubmodelElement):
-                                        embedded_submodel_elements.append(se_arg)
-                                    elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
-                                    else:
-                                        raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                        )
-
-                                super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
-                        class Email(aas.SubmodelElementCollection):
-
-                            class EmailAddress(aas.Property):
-
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"EmailAddress",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0173-1#02-AAO198#002",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Multiplicity",
-                                                value_type=str,
-                                                value=r"One",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
-
-                            def __init__(
-                                self,
-                                emailAddress: Union[str, EmailAddress],
-                                id_short: Optional[str] = r"Email",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAQ836#005",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                # Build a submodel element if a raw value was passed in the argument
-                                if emailAddress and not isinstance(
-                                    emailAddress, aas.SubmodelElement
-                                ):
-                                    emailAddress = self.EmailAddress(emailAddress)
-
-                                # Add all passed/initialized submodel elements to a single list
-                                embedded_submodel_elements = []
-                                for se_arg in [emailAddress]:
-                                    if se_arg is None:
-                                        continue
-                                    elif isinstance(se_arg, aas.SubmodelElement):
-                                        embedded_submodel_elements.append(se_arg)
-                                    elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
-                                    else:
-                                        raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                        )
-
-                                super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
-                        class Street(aas.MultiLanguageProperty):
-
-                            def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"Street",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO128#002",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
-                        class Zipcode(aas.MultiLanguageProperty):
-
-                            def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"Zipcode",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
-                                category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                                    }
-                                ),
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO129#002",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
-
                         def __init__(
                             self,
-                            addressOfAdditionalLink: Optional[
-                                Union[str, AddressOfAdditionalLink]
-                            ] = None,
-                            nationalCode: Optional[
-                                Union[aas.LangStringSet, NationalCode]
-                            ] = None,
-                            cityTown: Optional[
-                                Union[aas.LangStringSet, CityTown]
-                            ] = None,
-                            company: Optional[Union[aas.LangStringSet, Company]] = None,
-                            phone: Optional[Phone] = None,
-                            email: Optional[Email] = None,
-                            street: Optional[Union[aas.LangStringSet, Street]] = None,
-                            zipcode: Optional[Union[aas.LangStringSet, Zipcode]] = None,
                             id_short: Optional[str] = r"LabAddress",
                             display_name: Optional[
                                 aas.MultiLanguageNameType
@@ -2241,7 +2308,7 @@ class RailwayFireProtection(aas.Submodel):
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation",
+                                        value=r"https://admin-shell.io/idta/cds/LabAddress/1",
                                     ),
                                 ),
                                 referred_semantic_id=None,
@@ -2265,55 +2332,32 @@ class RailwayFireProtection(aas.Submodel):
                         ):
 
                             if qualifier is None:
-                                qualifier = ()
+                                qualifier = (
+                                    aas.Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"One",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a submodel element if a raw value was passed in the argument
-                            if addressOfAdditionalLink and not isinstance(
-                                addressOfAdditionalLink, aas.SubmodelElement
-                            ):
-                                addressOfAdditionalLink = self.AddressOfAdditionalLink(
-                                    addressOfAdditionalLink
-                                )
-
-                            # Build a submodel element if a raw value was passed in the argument
-                            if nationalCode and not isinstance(
-                                nationalCode, aas.SubmodelElement
-                            ):
-                                nationalCode = self.NationalCode(nationalCode)
-
-                            # Build a submodel element if a raw value was passed in the argument
-                            if cityTown and not isinstance(
-                                cityTown, aas.SubmodelElement
-                            ):
-                                cityTown = self.CityTown(cityTown)
-
-                            # Build a submodel element if a raw value was passed in the argument
-                            if company and not isinstance(company, aas.SubmodelElement):
-                                company = self.Company(company)
-
-                            # Build a submodel element if a raw value was passed in the argument
-                            if street and not isinstance(street, aas.SubmodelElement):
-                                street = self.Street(street)
-
-                            # Build a submodel element if a raw value was passed in the argument
-                            if zipcode and not isinstance(zipcode, aas.SubmodelElement):
-                                zipcode = self.Zipcode(zipcode)
-
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                addressOfAdditionalLink,
-                                nationalCode,
-                                cityTown,
-                                company,
-                                phone,
-                                email,
-                                street,
-                                zipcode,
-                            ]:
+                            for se_arg in []:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -2381,7 +2425,42 @@ class RailwayFireProtection(aas.Submodel):
                         ):
 
                             if qualifier is None:
-                                qualifier = ()
+                                qualifier = (
+                                    aas.Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                    aas.Qualifier(
+                                        type_=r"SMT/ExampleValue",
+                                        value_type=str,
+                                        value=r"accredited according to ISO/IEC 17025 for fire testing methods (EN ISO 5660-1, EN ISO 5659-2)",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2442,7 +2521,42 @@ class RailwayFireProtection(aas.Submodel):
                         ):
 
                             if qualifier is None:
-                                qualifier = ()
+                                qualifier = (
+                                    aas.Qualifier(
+                                        type_=r"SMT/Cardinality",
+                                        value_type=str,
+                                        value=r"ZeroToOne",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                    aas.Qualifier(
+                                        type_=r"SMT/ExampleValue",
+                                        value_type=str,
+                                        value=r"Fire Testing Laboratory Certification Body",
+                                        value_id=None,
+                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                                ),
+                                            ),
+                                            referred_semantic_id=None,
+                                        ),
+                                        supplemental_semantic_id=(),
+                                    ),
+                                )
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2466,8 +2580,8 @@ class RailwayFireProtection(aas.Submodel):
                         self,
                         labName: Union[str, LabName],
                         labAddress: LabAddress,
-                        labAccreditation: Union[str, LabAccreditation],
-                        reportAuthor: Union[str, ReportAuthor],
+                        labAccreditation: Optional[Union[str, LabAccreditation]] = None,
+                        reportAuthor: Optional[Union[str, ReportAuthor]] = None,
                         id_short: Optional[str] = r"LabInformation",
                         display_name: Optional[
                             aas.MultiLanguageNameType
@@ -2486,7 +2600,7 @@ class RailwayFireProtection(aas.Submodel):
                             key=(
                                 aas.Key(
                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/cds/ReportComment/1",
+                                    value=r"https://admin-shell.io/idta/cds/LabInformation/1",
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -2500,7 +2614,25 @@ class RailwayFireProtection(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = ()
+                            qualifier = (
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            )
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2560,6 +2692,7 @@ class RailwayFireProtection(aas.Submodel):
                     reportFile: ReportFile,
                     tests: Tests,
                     labInformation: LabInformation,
+                    reportComment: Optional[Union[str, ReportComment]] = None,
                     id_short: Optional[str] = r"reports_item",
                     display_name: Optional[
                         aas.MultiLanguageNameType
@@ -2590,14 +2723,38 @@ class RailwayFireProtection(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = ()
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"OneToMany",
+                                value_id=None,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # Build a submodel element if a raw value was passed in the argument
+                    if reportComment and not isinstance(
+                        reportComment, aas.SubmodelElement
+                    ):
+                        reportComment = self.ReportComment(reportComment)
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [reportFile, tests, labInformation]:
+                    for se_arg in [reportFile, tests, reportComment, labInformation]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -2626,7 +2783,7 @@ class RailwayFireProtection(aas.Submodel):
 
             def __init__(
                 self,
-                reports_items: Reports_item,
+                reports_items: Iterable[Reports_item],
                 id_short: Optional[str] = r"Reports",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2661,7 +2818,25 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2804,7 +2979,25 @@ class RailwayFireProtection(aas.Submodel):
         ):
 
             if qualifier is None:
-                qualifier = ()
+                qualifier = (
+                    aas.Qualifier(
+                        type_=r"SMT/Cardinality",
+                        value_type=str,
+                        value=r"One",
+                        value_id=None,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        supplemental_semantic_id=(),
+                    ),
+                )
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -2840,22 +3033,19 @@ class RailwayFireProtection(aas.Submodel):
 
     class Material(aas.SubmodelElementCollection):
 
-        class MaterialName(aas.Property):
+        class MaterialName(aas.MultiLanguageProperty):
 
             def __init__(
                 self,
-                value: str,
+                value: aas.LangStringSet,
                 id_short: Optional[str] = r"MaterialName",
-                value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Material name"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
                     aas.MultiLanguageTextType
                 ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"name of the material used "}
+                    dict_={r"en": r"name of the material used"}
                 ),
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
@@ -2875,7 +3065,42 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToOne",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                        aas.Qualifier(
+                            type_=r"SMT/ExampleValue",
+                            value_type=str,
+                            value=r"flame-retardant polymer composite",
+                            value_id=None,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2883,7 +3108,6 @@ class RailwayFireProtection(aas.Submodel):
                 super().__init__(
                     value=value,
                     id_short=id_short,
-                    value_type=value_type,
                     value_id=value_id,
                     display_name=display_name,
                     category=category,
@@ -2895,32 +3119,27 @@ class RailwayFireProtection(aas.Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MaterialCharacteristics(aas.Range):
+        class MaterialManufacturer(aas.MultiLanguageProperty):
 
             def __init__(
                 self,
-                min: xsd.Int,
-                max: xsd.Int,
-                id_short: Optional[str] = r"MaterialCharacteristics",
-                value_type: aas.DataTypeDefXsd = xsd.Int,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Material characteristics"}
-                ),
+                value: aas.LangStringSet,
+                id_short: Optional[str] = r"MaterialManufacturer",
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
                     aas.MultiLanguageTextType
                 ] = aas.MultiLanguageTextType(
                     dict_={
-                        r"en": r"normalized index (0–100) derived from fire performance parameters according to EN 45545‑2"
+                        r"en": r"name of the organization responsible for producing the"
                     }
                 ),
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/MaterialCharacteristics/1",
+                            value=r"https://admin-shell.io/idta/cds/MaterialManufacturer/1",
                         ),
                     ),
                     referred_semantic_id=None,
@@ -2934,16 +3153,50 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToOne",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                        aas.Qualifier(
+                            type_=r"SMT/ExampleValue",
+                            value_type=str,
+                            value=r"Advanced Materials Solutions Ltd.",
+                            value_id=None,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
                 super().__init__(
-                    min=min,
-                    max=max,
+                    value=value,
                     id_short=id_short,
-                    value_type=value_type,
+                    value_id=value_id,
                     display_name=display_name,
                     category=category,
                     description=description,
@@ -2991,7 +3244,42 @@ class RailwayFireProtection(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = ()
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                            aas.Qualifier(
+                                type_=r"SMT/ExampleValue",
+                                value_type=xsd.Float,
+                                value=xsd.from_xsd(r"12.324", xsd.Float),
+                                value_id=None,
+                                kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3046,7 +3334,42 @@ class RailwayFireProtection(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = ()
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                            aas.Qualifier(
+                                type_=r"SMT/ExampleValue",
+                                value_type=xsd.Float,
+                                value=xsd.from_xsd(r"1.543", xsd.Float),
+                                value_id=None,
+                                kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3076,7 +3399,13 @@ class RailwayFireProtection(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
+                    description: Optional[
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"unit of measure for the stated masses; should be one of kg, kg/m, kg/m² or kg/m³"
+                        }
+                    ),
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3095,7 +3424,42 @@ class RailwayFireProtection(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = ()
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"SMT/Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                            aas.Qualifier(
+                                type_=r"SMT/ExampleValue",
+                                value_type=str,
+                                value=r"kg/m²",
+                                value_id=None,
+                                kind=aas.QualifierKind.VALUE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3123,7 +3487,13 @@ class RailwayFireProtection(aas.Submodel):
                 id_short: Optional[str] = r"Masses",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"mass-related characteristics of the material, used for fire behavior assessment"
+                    }
+                ),
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3142,7 +3512,25 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3194,6 +3582,83 @@ class RailwayFireProtection(aas.Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
+        class MaterialCharacteristics(aas.Range):
+
+            def __init__(
+                self,
+                min: xsd.Int,
+                max: xsd.Int,
+                id_short: Optional[str] = r"MaterialCharacteristics",
+                value_type: aas.DataTypeDefXsd = xsd.Int,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Material characteristics"}
+                ),
+                category: Optional[str] = None,
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"normalized index (0–100) derived from fire performance parameters according to EN 45545‑2"
+                    }
+                ),
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                    key=(
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                            value=r"https://admin-shell.io/idta/cds/MaterialCharacteristics/1",
+                        ),
+                    ),
+                    referred_semantic_id=None,
+                ),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
+                embedded_data_specifications: Iterable[
+                    aas.EmbeddedDataSpecification
+                ] = None,
+            ):
+
+                if qualifier is None:
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"One",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
+
+                if embedded_data_specifications is None:
+                    embedded_data_specifications = []
+
+                super().__init__(
+                    min=min,
+                    max=max,
+                    id_short=id_short,
+                    value_type=value_type,
+                    display_name=display_name,
+                    category=category,
+                    description=description,
+                    semantic_id=semantic_id,
+                    qualifier=qualifier,
+                    extension=extension,
+                    supplemental_semantic_id=supplemental_semantic_id,
+                    embedded_data_specifications=embedded_data_specifications,
+                )
+
         class TestedMaterialCombinationDescription(aas.Property):
 
             def __init__(
@@ -3233,7 +3698,42 @@ class RailwayFireProtection(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = ()
+                    qualifier = (
+                        aas.Qualifier(
+                            type_=r"SMT/Cardinality",
+                            value_type=str,
+                            value=r"ZeroToOne",
+                            value_id=None,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                        aas.Qualifier(
+                            type_=r"SMT/ExampleValue",
+                            value_type=str,
+                            value=r"multi-layer assembly consisting of polymer composite panel with surface coating and insulation substrate",
+                            value_id=None,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            supplemental_semantic_id=(),
+                        ),
+                    )
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3255,14 +3755,17 @@ class RailwayFireProtection(aas.Submodel):
 
         def __init__(
             self,
-            materialName: Union[str, MaterialName],
+            masses: Masses,
             materialCharacteristics: Union[
                 Tuple[xsd.Int, xsd.Int], MaterialCharacteristics
             ],
-            masses: Masses,
-            testedMaterialCombinationDescription: Union[
-                str, TestedMaterialCombinationDescription
-            ],
+            materialName: Optional[Union[aas.LangStringSet, MaterialName]] = None,
+            materialManufacturer: Optional[
+                Union[aas.LangStringSet, MaterialManufacturer]
+            ] = None,
+            testedMaterialCombinationDescription: Optional[
+                Union[str, TestedMaterialCombinationDescription]
+            ] = None,
             id_short: Optional[str] = r"Material",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -3293,7 +3796,25 @@ class RailwayFireProtection(aas.Submodel):
         ):
 
             if qualifier is None:
-                qualifier = ()
+                qualifier = (
+                    aas.Qualifier(
+                        type_=r"SMT/Cardinality",
+                        value_type=str,
+                        value=r"One",
+                        value_id=None,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        supplemental_semantic_id=(),
+                    ),
+                )
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -3301,6 +3822,12 @@ class RailwayFireProtection(aas.Submodel):
             # Build a submodel element if a raw value was passed in the argument
             if materialName and not isinstance(materialName, aas.SubmodelElement):
                 materialName = self.MaterialName(materialName)
+
+            # Build a submodel element if a raw value was passed in the argument
+            if materialManufacturer and not isinstance(
+                materialManufacturer, aas.SubmodelElement
+            ):
+                materialManufacturer = self.MaterialManufacturer(materialManufacturer)
 
             # Build a submodel element if a raw value was passed in the argument
             if materialCharacteristics and not isinstance(
@@ -3324,8 +3851,9 @@ class RailwayFireProtection(aas.Submodel):
             embedded_submodel_elements = []
             for se_arg in [
                 materialName,
-                materialCharacteristics,
+                materialManufacturer,
                 masses,
+                materialCharacteristics,
                 testedMaterialCombinationDescription,
             ]:
                 if se_arg is None:
@@ -3389,7 +3917,7 @@ class RailwayFireProtection(aas.Submodel):
             referred_semantic_id=None,
         ),
         qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,

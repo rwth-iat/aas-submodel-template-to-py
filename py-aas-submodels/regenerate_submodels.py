@@ -30,23 +30,72 @@ def slugify(value: str) -> str:
     return slug.lower() or "submodel"
 
 
-def find_version_parts(parts: Iterable[str]) -> list[str]:
-    return [part for part in parts if re.fullmatch(r"\d+", part)]
+def is_version_part(part: str) -> bool:
+    return re.fullmatch(r"\d+", part) is not None
+
+
+# Markers in file names of variants of a template, and the suffix of their module names
+VARIANT_MARKERS = (
+    (re.compile(r"withOperations", re.IGNORECASE), "with_operations"),
+    (re.compile(r"(?:^|[_\s])Example(?:[_\s]|$)"), "example"),
+    (re.compile(r"without_?example_?values", re.IGNORECASE), "without_example_values"),
+    (re.compile(r"GenericForm", re.IGNORECASE), "generic_form"),
+    (re.compile(r"forAASMetamodelV(\d+)\.(\d+)", re.IGNORECASE), "metamodel_{0}_{1}"),
+)
+
+
+def variant_suffixes(file_stem: str) -> list[str]:
+    suffixes = []
+    for pattern, suffix in VARIANT_MARKERS:
+        match = pattern.search(file_stem)
+        if match:
+            suffixes.append(suffix.format(*match.groups()))
+    return suffixes
 
 
 def output_file_name(template_file: Path, published_dir: Path) -> str:
-    rel_parts = template_file.relative_to(published_dir).parts
-    top_level_name = rel_parts[0] if rel_parts else template_file.stem
-    version_parts = find_version_parts(rel_parts[1:-1])
+    """Module name of a template file below published/<template>/[<part>/]<version>/
 
+    e.g. "Digital Battery Passport/1_Digital Nameplate/1/0/..._forAASMetamodelV3.1.json"
+    -> "digital_battery_passport_1_digital_nameplate_1_0_metamodel_3_1.py"
+    """
+    rel_parts = template_file.relative_to(published_dir).parts
+    folders = rel_parts[1:-1]
+    version_parts = [part for part in folders if is_version_part(part)]
+
+    if not version_parts:
+        stem = slugify(template_file.stem)
+        parent = slugify("_".join(rel_parts[:-1]))
+        return f"{parent}_{stem}.py"
+
+    template_name = slugify(rel_parts[0])
+    name_parts = [template_name]
+    for part in folders:
+        if not is_version_part(part):
+            # e.g. "Digital Product Passport Part-1" of "Digital Product Passport" -> "part_1"
+            name_parts.append(slugify(part).removeprefix(f"{template_name}_"))
     # Join version parts with underscores so module names stay importable
     # (e.g. "digital_nameplate_3_0_1" instead of "digital_nameplate_3-0-1")
-    if version_parts:
-        return f"{slugify(top_level_name)}_{'_'.join(version_parts)}.py"
+    name_parts.extend(version_parts)
+    name_parts.extend(variant_suffixes(template_file.stem))
+    return f"{'_'.join(name_parts)}.py"
 
-    stem = slugify(template_file.stem)
-    parent = slugify("_".join(rel_parts[:-1]))
-    return f"{parent}_{stem}.py"
+
+def assign_output_names(json_files: Iterable[Path], published_dir: Path) -> dict[Path, str]:
+    """Assign module names to template files; names that still collide get a counter suffix"""
+    names: dict[Path, str] = {}
+    collisions: dict[str, int] = {}
+    for json_file in json_files:
+        name = output_file_name(json_file, published_dir)
+        if name in collisions:
+            collisions[name] += 1
+            # Double underscore keeps the counter distinguishable from a
+            # version part (e.g. "x_1_0__1" vs. "x_1_0_1")
+            names[json_file] = name.replace(".py", f"__{collisions[name]}.py")
+        else:
+            collisions[name] = 0
+            names[json_file] = name
+    return names
 
 
 def clone_templates_repo(repo_url: str, ref: str, destination: Path) -> None:
@@ -97,23 +146,15 @@ def regenerate_submodels(
         staged_output_dir = temp_path / "generated"
         staged_output_dir.mkdir(parents=True, exist_ok=True)
 
-        name_collisions: dict[str, int] = {}
+        templates: list[Path] = []
         for json_file in json_files:
             rel_path = str(json_file.relative_to(published_dir))
             if rel_path in skip_list:
                 print(f"[SKIP] {rel_path}")
-                continue
-
-            output_name = output_file_name(json_file, published_dir)
-            if output_name in name_collisions:
-                name_collisions[output_name] += 1
-                suffix = name_collisions[output_name]
-                # Double underscore keeps the suffix distinguishable from a
-                # version part (e.g. "x_1_0__1" vs. "x_1_0_1")
-                output_name = output_name.replace(".py", f"__{suffix}.py")
             else:
-                name_collisions[output_name] = 0
+                templates.append(json_file)
 
+        for json_file, output_name in assign_output_names(templates, published_dir).items():
             output_file = staged_output_dir / output_name
 
             try:
