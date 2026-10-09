@@ -171,7 +171,7 @@ class SubmodelCodegen:
         referable_kwargs = util.get_kwargs_for_init(referable, exceptions=exceptions)
 
         if remove_numeric_ending_from_id_short and hasattr(referable, "id_short"):
-            referable_kwargs["id_short"] = util.StringHandler.remove_iteration_ending(referable_kwargs["id_short"])
+            referable_kwargs["id_short"] = NamingGenerator.create_id_short_stem(referable)
 
         # Find and save args with mutable defaults to kwargs_with_mutable_defaults
         # Set defaults of these args to None

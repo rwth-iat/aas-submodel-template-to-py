@@ -3182,7 +3182,7 @@ class DEXPI(aas.Submodel):
 
         class MappingDirectory(aas.SubmodelElementCollection):
 
-            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
+            class ProcessInstrumentationFunction_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -3476,7 +3476,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     processInstrumentationFunction_1_rel: ProcessInstrumentationFunction_1_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction",
+                    id_short: Optional[str] = r"ProcessInstrumentationFunction_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -3567,7 +3567,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
+            class ProcessInstrumentationFunction_2(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -3861,7 +3861,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     processInstrumentationFunction_2_rel: ProcessInstrumentationFunction_2_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction",
+                    id_short: Optional[str] = r"ProcessInstrumentationFunction_2",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -3952,7 +3952,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
+            class ProcessInstrumentationFunction_3(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -4246,7 +4246,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     processInstrumentationFunction_3_rel: ProcessInstrumentationFunction_3_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction",
+                    id_short: Optional[str] = r"ProcessInstrumentationFunction_3",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -4337,7 +4337,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
+            class ProcessInstrumentationFunction_4(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -4631,7 +4631,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     processInstrumentationFunction_4_rel: ProcessInstrumentationFunction_4_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction",
+                    id_short: Optional[str] = r"ProcessInstrumentationFunction_4",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -4722,7 +4722,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ActuatingFunction(aas.SubmodelElementCollection):
+            class ActuatingFunction_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -5014,7 +5014,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     actuatingFunction_1_rel: ActuatingFunction_1_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ActuatingFunction",
+                    id_short: Optional[str] = r"ActuatingFunction_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -5100,7 +5100,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ActuatingFunction(aas.SubmodelElementCollection):
+            class ActuatingFunction_2(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -5392,7 +5392,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     actuatingFunction_2_rel: ActuatingFunction_2_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ActuatingFunction",
+                    id_short: Optional[str] = r"ActuatingFunction_2",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -5478,7 +5478,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ActuatingFunction(aas.SubmodelElementCollection):
+            class ActuatingFunction_3(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -5770,7 +5770,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     actuatingFunction_3_rel: ActuatingFunction_3_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ActuatingFunction",
+                    id_short: Optional[str] = r"ActuatingFunction_3",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -7751,7 +7751,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ControlledActuator(aas.SubmodelElementCollection):
+            class ControlledActuator_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -8111,7 +8111,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     controlledActuator_1_rel: ControlledActuator_1_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ControlledActuator",
+                    id_short: Optional[str] = r"ControlledActuator_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -8209,7 +8209,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OperatedValveReference(aas.SubmodelElementCollection):
+            class OperatedValveReference_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -8569,7 +8569,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     operatedValveReference_1_rel: OperatedValveReference_1_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"OperatedValveReference",
+                    id_short: Optional[str] = r"OperatedValveReference_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -8667,7 +8667,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ControlledActuator(aas.SubmodelElementCollection):
+            class ControlledActuator_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -9027,7 +9027,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     controlledActuator_2_rel: ControlledActuator_2_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ControlledActuator",
+                    id_short: Optional[str] = r"ControlledActuator_2",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -9125,7 +9125,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OperatedValveReference(aas.SubmodelElementCollection):
+            class OperatedValveReference_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -9485,7 +9485,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     operatedValveReference_2_rel: OperatedValveReference_2_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"OperatedValveReference",
+                    id_short: Optional[str] = r"OperatedValveReference_2",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -9583,7 +9583,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ControlledActuator(aas.SubmodelElementCollection):
+            class ControlledActuator_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -9943,7 +9943,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     controlledActuator_3_rel: ControlledActuator_3_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ControlledActuator",
+                    id_short: Optional[str] = r"ControlledActuator_3",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -10041,7 +10041,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OperatedValveReference(aas.SubmodelElementCollection):
+            class OperatedValveReference_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -10401,7 +10401,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     operatedValveReference_3_rel: OperatedValveReference_3_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"OperatedValveReference",
+                    id_short: Optional[str] = r"OperatedValveReference_3",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -10499,7 +10499,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -10859,7 +10859,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_3_rel: Nozzle_3_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_3",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -10957,7 +10957,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_4(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -11317,7 +11317,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_4_rel: Nozzle_4_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_4",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -11415,7 +11415,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_13(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -11775,7 +11775,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_13_rel: Nozzle_13_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_13",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -11873,7 +11873,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_14(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -12233,7 +12233,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_14_rel: Nozzle_14_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_14",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -12331,7 +12331,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(aas.SubmodelElementCollection):
+            class Chamber_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -12691,7 +12691,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     chamber_1_rel: Chamber_1_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber",
+                    id_short: Optional[str] = r"Chamber_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -12789,7 +12789,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(aas.SubmodelElementCollection):
+            class Chamber_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -13149,7 +13149,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     chamber_2_rel: Chamber_2_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber",
+                    id_short: Optional[str] = r"Chamber_2",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -13247,7 +13247,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_10(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -13607,7 +13607,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_10_rel: Nozzle_10_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_10",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -13705,7 +13705,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_11(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -14065,7 +14065,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_11_rel: Nozzle_11_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_11",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -14163,7 +14163,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_16(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -14523,7 +14523,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_16_rel: Nozzle_16_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_16",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -14621,7 +14621,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_15(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -14981,7 +14981,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_15_rel: Nozzle_15_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_15",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -15079,7 +15079,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(aas.SubmodelElementCollection):
+            class Chamber_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -15439,7 +15439,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     chamber_3_rel: Chamber_3_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber",
+                    id_short: Optional[str] = r"Chamber_3",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -15537,7 +15537,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(aas.SubmodelElementCollection):
+            class Chamber_4(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -15897,7 +15897,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     chamber_4_rel: Chamber_4_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber",
+                    id_short: Optional[str] = r"Chamber_4",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -15995,7 +15995,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -16355,7 +16355,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_1_rel: Nozzle_1_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -16453,7 +16453,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -16813,7 +16813,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_2_rel: Nozzle_2_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_2",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -16911,7 +16911,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_7(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -17271,7 +17271,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_7_rel: Nozzle_7_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_7",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -17369,7 +17369,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_9(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -17729,7 +17729,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_9_rel: Nozzle_9_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_9",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -17827,7 +17827,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_5(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -18187,7 +18187,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_5_rel: Nozzle_5_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_5",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -18285,7 +18285,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_6(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -18645,7 +18645,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_6_rel: Nozzle_6_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_6",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -18743,7 +18743,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_18(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -19103,7 +19103,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_18_rel: Nozzle_18_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_18",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -19201,7 +19201,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_8(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -19561,7 +19561,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_8_rel: Nozzle_8_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_8",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -19659,7 +19659,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_12(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -20019,7 +20019,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_12_rel: Nozzle_12_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_12",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -20117,7 +20117,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_17(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -20477,7 +20477,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_17_rel: Nozzle_17_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_17",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -20575,7 +20575,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(aas.SubmodelElementCollection):
+            class Nozzle_19(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -20935,7 +20935,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     nozzle_19_rel: Nozzle_19_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle",
+                    id_short: Optional[str] = r"Nozzle_19",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -21033,7 +21033,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(aas.SubmodelElementCollection):
+            class Chamber_7(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -21393,7 +21393,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     chamber_7_rel: Chamber_7_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber",
+                    id_short: Optional[str] = r"Chamber_7",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -21491,7 +21491,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(aas.SubmodelElementCollection):
+            class Chamber_8(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
@@ -21851,7 +21851,7 @@ class DEXPI(aas.Submodel):
                     localId: Union[str, LocalId],
                     chamber_8_rel: Chamber_8_rel,
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber",
+                    id_short: Optional[str] = r"Chamber_8",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -21951,57 +21951,57 @@ class DEXPI(aas.Submodel):
 
             def __init__(
                 self,
-                processInstrumentationFunction: Optional[
-                    ProcessInstrumentationFunction
+                processInstrumentationFunction_1: Optional[
+                    ProcessInstrumentationFunction_1
                 ] = None,
-                processInstrumentationFunction: Optional[
-                    ProcessInstrumentationFunction
+                processInstrumentationFunction_2: Optional[
+                    ProcessInstrumentationFunction_2
                 ] = None,
-                processInstrumentationFunction: Optional[
-                    ProcessInstrumentationFunction
+                processInstrumentationFunction_3: Optional[
+                    ProcessInstrumentationFunction_3
                 ] = None,
-                processInstrumentationFunction: Optional[
-                    ProcessInstrumentationFunction
+                processInstrumentationFunction_4: Optional[
+                    ProcessInstrumentationFunction_4
                 ] = None,
-                actuatingFunction: Optional[ActuatingFunction] = None,
-                actuatingFunction: Optional[ActuatingFunction] = None,
-                actuatingFunction: Optional[ActuatingFunction] = None,
+                actuatingFunction_1: Optional[ActuatingFunction_1] = None,
+                actuatingFunction_2: Optional[ActuatingFunction_2] = None,
+                actuatingFunction_3: Optional[ActuatingFunction_3] = None,
                 plateHeatExchanger: Optional[PlateHeatExchanger] = None,
                 tubularHeatExchanger: Optional[TubularHeatExchanger] = None,
                 centrifugalPump: Optional[CentrifugalPump] = None,
                 reciprocatingPump: Optional[ReciprocatingPump] = None,
                 tank: Optional[Tank] = None,
-                controlledActuator: Optional[ControlledActuator] = None,
-                operatedValveReference: Optional[OperatedValveReference] = None,
-                controlledActuator: Optional[ControlledActuator] = None,
-                operatedValveReference: Optional[OperatedValveReference] = None,
-                controlledActuator: Optional[ControlledActuator] = None,
-                operatedValveReference: Optional[OperatedValveReference] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                chamber: Optional[Chamber] = None,
-                chamber: Optional[Chamber] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                chamber: Optional[Chamber] = None,
-                chamber: Optional[Chamber] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                nozzle: Optional[Nozzle] = None,
-                chamber: Optional[Chamber] = None,
-                chamber: Optional[Chamber] = None,
+                controlledActuator_1: Optional[ControlledActuator_1] = None,
+                operatedValveReference_1: Optional[OperatedValveReference_1] = None,
+                controlledActuator_2: Optional[ControlledActuator_2] = None,
+                operatedValveReference_2: Optional[OperatedValveReference_2] = None,
+                controlledActuator_3: Optional[ControlledActuator_3] = None,
+                operatedValveReference_3: Optional[OperatedValveReference_3] = None,
+                nozzle_3: Optional[Nozzle_3] = None,
+                nozzle_4: Optional[Nozzle_4] = None,
+                nozzle_13: Optional[Nozzle_13] = None,
+                nozzle_14: Optional[Nozzle_14] = None,
+                chamber_1: Optional[Chamber_1] = None,
+                chamber_2: Optional[Chamber_2] = None,
+                nozzle_10: Optional[Nozzle_10] = None,
+                nozzle_11: Optional[Nozzle_11] = None,
+                nozzle_16: Optional[Nozzle_16] = None,
+                nozzle_15: Optional[Nozzle_15] = None,
+                chamber_3: Optional[Chamber_3] = None,
+                chamber_4: Optional[Chamber_4] = None,
+                nozzle_1: Optional[Nozzle_1] = None,
+                nozzle_2: Optional[Nozzle_2] = None,
+                nozzle_7: Optional[Nozzle_7] = None,
+                nozzle_9: Optional[Nozzle_9] = None,
+                nozzle_5: Optional[Nozzle_5] = None,
+                nozzle_6: Optional[Nozzle_6] = None,
+                nozzle_18: Optional[Nozzle_18] = None,
+                nozzle_8: Optional[Nozzle_8] = None,
+                nozzle_12: Optional[Nozzle_12] = None,
+                nozzle_17: Optional[Nozzle_17] = None,
+                nozzle_19: Optional[Nozzle_19] = None,
+                chamber_7: Optional[Chamber_7] = None,
+                chamber_8: Optional[Chamber_8] = None,
                 id_short: Optional[str] = r"MappingDirectory",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -22050,49 +22050,49 @@ class DEXPI(aas.Submodel):
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
-                    processInstrumentationFunction,
-                    processInstrumentationFunction,
-                    processInstrumentationFunction,
-                    processInstrumentationFunction,
-                    actuatingFunction,
-                    actuatingFunction,
-                    actuatingFunction,
+                    processInstrumentationFunction_1,
+                    processInstrumentationFunction_2,
+                    processInstrumentationFunction_3,
+                    processInstrumentationFunction_4,
+                    actuatingFunction_1,
+                    actuatingFunction_2,
+                    actuatingFunction_3,
                     plateHeatExchanger,
                     tubularHeatExchanger,
                     centrifugalPump,
                     reciprocatingPump,
                     tank,
-                    controlledActuator,
-                    operatedValveReference,
-                    controlledActuator,
-                    operatedValveReference,
-                    controlledActuator,
-                    operatedValveReference,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    chamber,
-                    chamber,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    chamber,
-                    chamber,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    nozzle,
-                    chamber,
-                    chamber,
+                    controlledActuator_1,
+                    operatedValveReference_1,
+                    controlledActuator_2,
+                    operatedValveReference_2,
+                    controlledActuator_3,
+                    operatedValveReference_3,
+                    nozzle_3,
+                    nozzle_4,
+                    nozzle_13,
+                    nozzle_14,
+                    chamber_1,
+                    chamber_2,
+                    nozzle_10,
+                    nozzle_11,
+                    nozzle_16,
+                    nozzle_15,
+                    chamber_3,
+                    chamber_4,
+                    nozzle_1,
+                    nozzle_2,
+                    nozzle_7,
+                    nozzle_9,
+                    nozzle_5,
+                    nozzle_6,
+                    nozzle_18,
+                    nozzle_8,
+                    nozzle_12,
+                    nozzle_17,
+                    nozzle_19,
+                    chamber_7,
+                    chamber_8,
                 ]:
                     if se_arg is None:
                         continue

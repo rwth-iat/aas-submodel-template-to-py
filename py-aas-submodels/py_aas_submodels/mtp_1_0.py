@@ -1480,7 +1480,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
 
 class Documentation(aas.Submodel):
 
-    class Document(aas.SubmodelElementCollection):
+    class Document01(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -2397,7 +2397,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document01",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -2488,7 +2488,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document02(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -3405,7 +3405,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document02",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -3496,7 +3496,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document03(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -4413,7 +4413,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document03",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -4504,7 +4504,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document04(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -5421,7 +5421,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document04",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -5512,7 +5512,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document05(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -6429,7 +6429,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document05",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -6520,7 +6520,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document06(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -7437,7 +7437,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document06",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -7528,7 +7528,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document07(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -7777,12 +7777,12 @@ class Documentation(aas.Submodel):
 
         class DocumentVersion(aas.SubmodelElementCollection):
 
-            class Language(aas.Property):
+            class Language01(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"Language",
+                    id_short: Optional[str] = r"Language01",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -7826,12 +7826,12 @@ class Documentation(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Language(aas.Property):
+            class Language02(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"Language",
+                    id_short: Optional[str] = r"Language02",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8359,8 +8359,8 @@ class Documentation(aas.Submodel):
 
             def __init__(
                 self,
-                language: Union[str, Language],
-                language: Union[str, Language],
+                language01: Union[str, Language01],
+                language02: Union[str, Language02],
                 documentVersionId: Union[str, DocumentVersionId],
                 title: Union[aas.LangStringSet, Title],
                 summary: Union[aas.LangStringSet, Summary],
@@ -8399,12 +8399,12 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
-                    language = self.Language(language)
+                if language01 and not isinstance(language01, aas.SubmodelElement):
+                    language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
-                    language = self.Language(language)
+                if language02 and not isinstance(language02, aas.SubmodelElement):
+                    language02 = self.Language02(language02)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if documentVersionId and not isinstance(
@@ -8453,8 +8453,8 @@ class Documentation(aas.Submodel):
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
-                    language,
-                    language,
+                    language01,
+                    language02,
                     documentVersionId,
                     title,
                     summary,
@@ -8500,7 +8500,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document07",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -8591,7 +8591,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document08(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -9508,7 +9508,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document08",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -9599,7 +9599,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document09(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -10516,7 +10516,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document09",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -10610,15 +10610,15 @@ class Documentation(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
+        document01: Document01,
+        document02: Document02,
+        document03: Document03,
+        document04: Document04,
+        document05: Document05,
+        document06: Document06,
+        document07: Document07,
+        document08: Document08,
+        document09: Document09,
         id_short: Optional[str] = r"Documentation",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -10650,15 +10650,15 @@ class Documentation(aas.Submodel):
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
         for se_arg in [
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
+            document01,
+            document02,
+            document03,
+            document04,
+            document05,
+            document06,
+            document07,
+            document08,
+            document09,
         ]:
             if se_arg is None:
                 continue
@@ -10692,7 +10692,7 @@ class Documentation(aas.Submodel):
 
 class Documentation(aas.Submodel):
 
-    class Document(aas.SubmodelElementCollection):
+    class Document01(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -11609,7 +11609,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document01",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -11700,7 +11700,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document02(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -12617,7 +12617,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document02",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -12708,7 +12708,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document03(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -13625,7 +13625,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document03",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -13716,7 +13716,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document04(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -14633,7 +14633,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document04",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -14724,7 +14724,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document05(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -15641,7 +15641,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document05",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -15732,7 +15732,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document06(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -16649,7 +16649,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document06",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -16740,7 +16740,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document07(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -16989,12 +16989,12 @@ class Documentation(aas.Submodel):
 
         class DocumentVersion(aas.SubmodelElementCollection):
 
-            class Language(aas.Property):
+            class Language01(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"Language",
+                    id_short: Optional[str] = r"Language01",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -17038,12 +17038,12 @@ class Documentation(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Language(aas.Property):
+            class Language02(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"Language",
+                    id_short: Optional[str] = r"Language02",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -17571,8 +17571,8 @@ class Documentation(aas.Submodel):
 
             def __init__(
                 self,
-                language: Union[str, Language],
-                language: Union[str, Language],
+                language01: Union[str, Language01],
+                language02: Union[str, Language02],
                 documentVersionId: Union[str, DocumentVersionId],
                 title: Union[aas.LangStringSet, Title],
                 summary: Union[aas.LangStringSet, Summary],
@@ -17611,12 +17611,12 @@ class Documentation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
-                    language = self.Language(language)
+                if language01 and not isinstance(language01, aas.SubmodelElement):
+                    language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if language and not isinstance(language, aas.SubmodelElement):
-                    language = self.Language(language)
+                if language02 and not isinstance(language02, aas.SubmodelElement):
+                    language02 = self.Language02(language02)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if documentVersionId and not isinstance(
@@ -17665,8 +17665,8 @@ class Documentation(aas.Submodel):
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
-                    language,
-                    language,
+                    language01,
+                    language02,
                     documentVersionId,
                     title,
                     summary,
@@ -17712,7 +17712,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document07",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -17803,7 +17803,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document08(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -18720,7 +18720,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document08",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -18811,7 +18811,7 @@ class Documentation(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Document(aas.SubmodelElementCollection):
+    class Document09(aas.SubmodelElementCollection):
 
         class DocumentId(aas.Property):
 
@@ -19728,7 +19728,7 @@ class Documentation(aas.Submodel):
             documentClassName: Union[str, DocumentClassName],
             documentClassificationSystem: Union[str, DocumentClassificationSystem],
             documentVersion: DocumentVersion,
-            id_short: Optional[str] = r"Document",
+            id_short: Optional[str] = r"Document09",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
@@ -19822,15 +19822,15 @@ class Documentation(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
-        document: Document,
+        document01: Document01,
+        document02: Document02,
+        document03: Document03,
+        document04: Document04,
+        document05: Document05,
+        document06: Document06,
+        document07: Document07,
+        document08: Document08,
+        document09: Document09,
         id_short: Optional[str] = r"Documentation",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -19862,15 +19862,15 @@ class Documentation(aas.Submodel):
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
         for se_arg in [
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
-            document,
+            document01,
+            document02,
+            document03,
+            document04,
+            document05,
+            document06,
+            document07,
+            document08,
+            document09,
         ]:
             if se_arg is None:
                 continue

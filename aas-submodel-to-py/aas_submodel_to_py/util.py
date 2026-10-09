@@ -49,17 +49,42 @@ def qualified_name(typ: type) -> str:
 
 class NamingGenerator:
     @classmethod
+    def create_id_short_stem(cls, obj: Referable) -> Optional[str]:
+        """Return the idShort without its iteration ending (e.g. "Document01" -> "Document"),
+        unless siblings would get the same name (e.g. "AddressLine1", "AddressLine2")"""
+        id_short = obj.id_short
+        if id_short is None:
+            return None
+        stem = StringHandler.remove_iteration_ending(id_short)
+        if stem != id_short and any(
+                cls._name_key(StringHandler.remove_iteration_ending(sibling.id_short)) == cls._name_key(stem)
+                for sibling in cls._siblings(obj)):
+            return id_short
+        return stem
+
+    @staticmethod
+    def _name_key(name: str) -> str:
+        # Class and argument names only differ in the case of the first letter
+        return StringHandler.lower_first(name)
+
+    @staticmethod
+    def _siblings(obj: Referable) -> List[Referable]:
+        parent = obj.parent
+        if not isinstance(parent, UniqueIdShortNamespace):
+            return []
+        return [element for namespace_set in parent.namespace_element_sets for element in namespace_set
+                if element is not obj and isinstance(element, Referable) and element.id_short is not None]
+
+    @classmethod
     def create_specific_referable_cls_name(cls, obj: Referable) -> str:
-        cls_name = StringHandler.upper_first(obj.id_short)
-        cls_name = StringHandler.remove_iteration_ending(cls_name)
+        cls_name = StringHandler.upper_first(cls.create_id_short_stem(obj))
         if cls_name in RESERVED_CLS_NAMES:
             return f"{cls_name}_"
         return cls_name
 
     @classmethod
     def create_arg_name_for_referable(cls, obj: Referable) -> str:
-        arg_name = StringHandler.lower_first(obj.id_short)
-        arg_name = StringHandler.remove_iteration_ending(arg_name)
+        arg_name = StringHandler.lower_first(cls.create_id_short_stem(obj))
         # check if arg_name is reserved or is already used in the class as an attribute
         if arg_name in RESERVED_ARG_NAMES or hasattr(obj, arg_name):
             return f"{arg_name}_"

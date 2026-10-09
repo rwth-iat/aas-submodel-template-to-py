@@ -183,11 +183,11 @@ class ProductChangeNotifications(aas.Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class PhysicalAddress(aas.SubmodelElementCollection):
+                class PhysicalAddress__0__(aas.SubmodelElementCollection):
 
                     def __init__(
                         self,
-                        id_short: Optional[str] = r"PhysicalAddress",
+                        id_short: Optional[str] = r"PhysicalAddress__0__",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -286,11 +286,11 @@ class ProductChangeNotifications(aas.Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class PhysicalAddress(aas.SubmodelElementCollection):
+                class PhysicalAddress__1__(aas.SubmodelElementCollection):
 
                     def __init__(
                         self,
-                        id_short: Optional[str] = r"PhysicalAddress",
+                        id_short: Optional[str] = r"PhysicalAddress__1__",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -392,8 +392,8 @@ class ProductChangeNotifications(aas.Submodel):
                 def __init__(
                     self,
                     manufacturerName: Union[aas.LangStringSet, ManufacturerName],
-                    physicalAddress: PhysicalAddress,
-                    physicalAddress: PhysicalAddress,
+                    physicalAddress__0__: PhysicalAddress__0__,
+                    physicalAddress__1__: PhysicalAddress__1__,
                     id_short: Optional[str] = r"Manufacturer",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -447,7 +447,11 @@ class ProductChangeNotifications(aas.Submodel):
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [manufacturerName, physicalAddress, physicalAddress]:
+                    for se_arg in [
+                        manufacturerName,
+                        physicalAddress__0__,
+                        physicalAddress__1__,
+                    ]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):

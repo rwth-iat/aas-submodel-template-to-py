@@ -9,12 +9,12 @@ class AssetLocation(aas.Submodel):
 
         class Addresses_item(aas.SubmodelElementCollection):
 
-            class AddressLine(aas.Property):
+            class AddressLine1(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"AddressLine",
+                    id_short: Optional[str] = r"AddressLine1",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -84,12 +84,12 @@ class AssetLocation(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressLine(aas.Property):
+            class AddressLine2(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"AddressLine",
+                    id_short: Optional[str] = r"AddressLine2",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -159,12 +159,12 @@ class AssetLocation(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressLine(aas.Property):
+            class AddressLine3(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"AddressLine",
+                    id_short: Optional[str] = r"AddressLine3",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -773,9 +773,9 @@ class AssetLocation(aas.Submodel):
 
             def __init__(
                 self,
-                addressLine: Optional[Union[str, AddressLine]] = None,
-                addressLine: Optional[Union[str, AddressLine]] = None,
-                addressLine: Optional[Union[str, AddressLine]] = None,
+                addressLine1: Optional[Union[str, AddressLine1]] = None,
+                addressLine2: Optional[Union[str, AddressLine2]] = None,
+                addressLine3: Optional[Union[str, AddressLine3]] = None,
                 addressOfAdditionalLink: Optional[
                     Union[str, AddressOfAdditionalLink]
                 ] = None,
@@ -820,16 +820,16 @@ class AssetLocation(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine and not isinstance(addressLine, aas.SubmodelElement):
-                    addressLine = self.AddressLine(addressLine)
+                if addressLine1 and not isinstance(addressLine1, aas.SubmodelElement):
+                    addressLine1 = self.AddressLine1(addressLine1)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine and not isinstance(addressLine, aas.SubmodelElement):
-                    addressLine = self.AddressLine(addressLine)
+                if addressLine2 and not isinstance(addressLine2, aas.SubmodelElement):
+                    addressLine2 = self.AddressLine2(addressLine2)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine and not isinstance(addressLine, aas.SubmodelElement):
-                    addressLine = self.AddressLine(addressLine)
+                if addressLine3 and not isinstance(addressLine3, aas.SubmodelElement):
+                    addressLine3 = self.AddressLine3(addressLine3)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if addressOfAdditionalLink and not isinstance(
@@ -868,9 +868,9 @@ class AssetLocation(aas.Submodel):
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
-                    addressLine,
-                    addressLine,
-                    addressLine,
+                    addressLine1,
+                    addressLine2,
+                    addressLine3,
                     addressOfAdditionalLink,
                     addressRemarks,
                     nationalCode,

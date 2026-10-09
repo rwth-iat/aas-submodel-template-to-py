@@ -5041,12 +5041,12 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class WidthExtendTolerance(aas.Property):
+                    class WidthExtendTolerance1(aas.Property):
 
                         def __init__(
                             self,
                             value: float,
-                            id_short: Optional[str] = r"WidthExtendTolerance",
+                            id_short: Optional[str] = r"WidthExtendTolerance1",
                             value_type: aas.DataTypeDefXsd = float,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5117,12 +5117,12 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class WidthExtendSign(aas.Property):
+                    class WidthExtendSign1(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"WidthExtendSign",
+                            id_short: Optional[str] = r"WidthExtendSign1",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5193,12 +5193,12 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class WidthExtendTolerance(aas.Property):
+                    class WidthExtendTolerance2(aas.Property):
 
                         def __init__(
                             self,
                             value: float,
-                            id_short: Optional[str] = r"WidthExtendTolerance",
+                            id_short: Optional[str] = r"WidthExtendTolerance2",
                             value_type: aas.DataTypeDefXsd = float,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5269,12 +5269,12 @@ class QualityControlForMachining(aas.Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class WidthExtendSign(aas.Property):
+                    class WidthExtendSign2(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"WidthExtendSign",
+                            id_short: Optional[str] = r"WidthExtendSign2",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5424,6 +5424,8 @@ class QualityControlForMachining(aas.Submodel):
                     def __init__(
                         self,
                         shape: Union[str, Shape],
+                        widthExtendTolerance1: Union[float, WidthExtendTolerance1],
+                        widthExtendSign1: Union[str, WidthExtendSign1],
                         engineeringUnit: Union[str, EngineeringUnit],
                         toleranceZoneDescription: Optional[
                             Union[str, ToleranceZoneDescription]
@@ -5434,14 +5436,10 @@ class QualityControlForMachining(aas.Submodel):
                         widthExtendValue: Optional[
                             Iterable[Union[float, WidthExtendValue]]
                         ] = None,
-                        widthExtendTolerance: Optional[
-                            Union[float, WidthExtendTolerance]
+                        widthExtendTolerance2: Optional[
+                            Union[float, WidthExtendTolerance2]
                         ] = None,
-                        widthExtendSign: Optional[Union[str, WidthExtendSign]] = None,
-                        widthExtendTolerance: Optional[
-                            Union[float, WidthExtendTolerance]
-                        ] = None,
-                        widthExtendSign: Optional[Union[str, WidthExtendSign]] = None,
+                        widthExtendSign2: Optional[Union[str, WidthExtendSign2]] = None,
                         id_short: Optional[str] = r"GPS_ToleranceZone",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -5529,32 +5527,32 @@ class QualityControlForMachining(aas.Submodel):
                             ]
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendTolerance and not isinstance(
-                            widthExtendTolerance, aas.SubmodelElement
+                        if widthExtendTolerance1 and not isinstance(
+                            widthExtendTolerance1, aas.SubmodelElement
                         ):
-                            widthExtendTolerance = self.WidthExtendTolerance(
-                                widthExtendTolerance
+                            widthExtendTolerance1 = self.WidthExtendTolerance1(
+                                widthExtendTolerance1
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendSign and not isinstance(
-                            widthExtendSign, aas.SubmodelElement
+                        if widthExtendSign1 and not isinstance(
+                            widthExtendSign1, aas.SubmodelElement
                         ):
-                            widthExtendSign = self.WidthExtendSign(widthExtendSign)
+                            widthExtendSign1 = self.WidthExtendSign1(widthExtendSign1)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendTolerance and not isinstance(
-                            widthExtendTolerance, aas.SubmodelElement
+                        if widthExtendTolerance2 and not isinstance(
+                            widthExtendTolerance2, aas.SubmodelElement
                         ):
-                            widthExtendTolerance = self.WidthExtendTolerance(
-                                widthExtendTolerance
+                            widthExtendTolerance2 = self.WidthExtendTolerance2(
+                                widthExtendTolerance2
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if widthExtendSign and not isinstance(
-                            widthExtendSign, aas.SubmodelElement
+                        if widthExtendSign2 and not isinstance(
+                            widthExtendSign2, aas.SubmodelElement
                         ):
-                            widthExtendSign = self.WidthExtendSign(widthExtendSign)
+                            widthExtendSign2 = self.WidthExtendSign2(widthExtendSign2)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if engineeringUnit and not isinstance(
@@ -5569,10 +5567,10 @@ class QualityControlForMachining(aas.Submodel):
                             toleranceZoneDescription,
                             specificationModificator,
                             widthExtendValue,
-                            widthExtendTolerance,
-                            widthExtendSign,
-                            widthExtendTolerance,
-                            widthExtendSign,
+                            widthExtendTolerance1,
+                            widthExtendSign1,
+                            widthExtendTolerance2,
+                            widthExtendSign2,
                             engineeringUnit,
                         ]:
                             if se_arg is None:
@@ -6527,12 +6525,12 @@ class QualityControlForMachining(aas.Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class DatumField(aas.Property):
+                class DatumField1(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"DatumField",
+                        id_short: Optional[str] = r"DatumField1",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6601,12 +6599,12 @@ class QualityControlForMachining(aas.Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class DatumField(aas.Property):
+                class DatumField2(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"DatumField",
+                        id_short: Optional[str] = r"DatumField2",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6675,12 +6673,12 @@ class QualityControlForMachining(aas.Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class DatumField(aas.Property):
+                class DatumField3(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"DatumField",
+                        id_short: Optional[str] = r"DatumField3",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -7198,9 +7196,9 @@ class QualityControlForMachining(aas.Submodel):
                     geometryReferenceList: Optional[GeometryReferenceList] = None,
                     iDList3DModel: Optional[Union[Iterable[str], IDList3DModel]] = None,
                     reference2DList: Optional[Reference2DList] = None,
-                    datumField: Optional[Union[str, DatumField]] = None,
-                    datumField: Optional[Union[str, DatumField]] = None,
-                    datumField: Optional[Union[str, DatumField]] = None,
+                    datumField1: Optional[Union[str, DatumField1]] = None,
+                    datumField2: Optional[Union[str, DatumField2]] = None,
+                    datumField3: Optional[Union[str, DatumField3]] = None,
                     additionalInformationList: Optional[
                         Iterable[AdditionalInformationList]
                     ] = None,
@@ -7312,16 +7310,16 @@ class QualityControlForMachining(aas.Submodel):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if datumField and not isinstance(datumField, aas.SubmodelElement):
-                        datumField = self.DatumField(datumField)
+                    if datumField1 and not isinstance(datumField1, aas.SubmodelElement):
+                        datumField1 = self.DatumField1(datumField1)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if datumField and not isinstance(datumField, aas.SubmodelElement):
-                        datumField = self.DatumField(datumField)
+                    if datumField2 and not isinstance(datumField2, aas.SubmodelElement):
+                        datumField2 = self.DatumField2(datumField2)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if datumField and not isinstance(datumField, aas.SubmodelElement):
-                        datumField = self.DatumField(datumField)
+                    if datumField3 and not isinstance(datumField3, aas.SubmodelElement):
+                        datumField3 = self.DatumField3(datumField3)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -7337,9 +7335,9 @@ class QualityControlForMachining(aas.Submodel):
                         geometryReferenceList,
                         iDList3DModel,
                         reference2DList,
-                        datumField,
-                        datumField,
-                        datumField,
+                        datumField1,
+                        datumField2,
+                        datumField3,
                         additionalInformationList,
                     ]:
                         if se_arg is None:

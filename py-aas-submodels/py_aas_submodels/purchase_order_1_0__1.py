@@ -8537,12 +8537,12 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Location(aas.Property):
+            class Location1(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"Location",
+                    id_short: Optional[str] = r"Location1",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8611,12 +8611,12 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Location(aas.Property):
+            class Location2(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"Location",
+                    id_short: Optional[str] = r"Location2",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8685,12 +8685,12 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Location(aas.Property):
+            class Location3(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"Location",
+                    id_short: Optional[str] = r"Location3",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8910,9 +8910,9 @@ class PurchaseOrder(aas.Submodel):
             def __init__(
                 self,
                 incoterm: Union[str, Incoterm],
-                location: Optional[Union[str, Location]] = None,
-                location: Optional[Union[str, Location]] = None,
-                location: Optional[Union[str, Location]] = None,
+                location1: Optional[Union[str, Location1]] = None,
+                location2: Optional[Union[str, Location2]] = None,
+                location3: Optional[Union[str, Location3]] = None,
                 transferLocation: Optional[Union[str, TransferLocation]] = None,
                 transportRemark: Optional[Union[str, TransportRemark]] = None,
                 id_short: Optional[str] = r"incotermslist_item",
@@ -8972,16 +8972,16 @@ class PurchaseOrder(aas.Submodel):
                     incoterm = self.Incoterm(incoterm)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if location and not isinstance(location, aas.SubmodelElement):
-                    location = self.Location(location)
+                if location1 and not isinstance(location1, aas.SubmodelElement):
+                    location1 = self.Location1(location1)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if location and not isinstance(location, aas.SubmodelElement):
-                    location = self.Location(location)
+                if location2 and not isinstance(location2, aas.SubmodelElement):
+                    location2 = self.Location2(location2)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if location and not isinstance(location, aas.SubmodelElement):
-                    location = self.Location(location)
+                if location3 and not isinstance(location3, aas.SubmodelElement):
+                    location3 = self.Location3(location3)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if transferLocation and not isinstance(
@@ -8999,9 +8999,9 @@ class PurchaseOrder(aas.Submodel):
                 embedded_submodel_elements = []
                 for se_arg in [
                     incoterm,
-                    location,
-                    location,
-                    location,
+                    location1,
+                    location2,
+                    location3,
                     transferLocation,
                     transportRemark,
                 ]:
