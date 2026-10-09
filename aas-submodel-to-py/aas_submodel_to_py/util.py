@@ -109,9 +109,10 @@ class StringHandler:
         elif isinstance(val, typing._GenericAlias):
             return cls.remove_parent_modules_in_typehint(repr(val))
         elif type(val) is str:
-            if "'" in val:
-                val = val.replace("'", r"\'")
-                return f"'{val}'"
+            # Prefer raw string literals, which keep backslashes (e.g. in regex patterns)
+            # readable. They can't contain the quote or line breaks, nor end with a backslash
+            if any(char in val for char in "'\n\r\0") or val.endswith("\\"):
+                return repr(val)
             return f"r'{val}'"
         elif type(val) in (bool, int, float):
             return str(val)
