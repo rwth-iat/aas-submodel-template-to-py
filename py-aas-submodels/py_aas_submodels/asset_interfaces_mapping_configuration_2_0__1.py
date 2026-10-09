@@ -1,65 +1,64 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class AssetInterfacesMappingConfiguration(Submodel):
+class AssetInterfacesMappingConfiguration(aas.Submodel):
 
-    class MappingConfigurations(SubmodelElementList):
+    class MappingConfigurations(aas.SubmodelElementList):
 
-        class Mappingconfigurations_item(SubmodelElementCollection):
+        class Mappingconfigurations_item(aas.SubmodelElementCollection):
 
-            class DefaultPollingInterval(Property):
+            class DefaultPollingInterval(aas.Property):
 
                 def __init__(
                     self,
                     value: float,
                     id_short: Optional[str] = r"DefaultPollingInterval",
-                    value_type: DataTypeDefXsd = float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Default polling interval"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"The DefaultPollingInterval defines the default time interval in seconds for fetching new data from the synchronous data sources defined in this MappingConfiguration. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT)."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -87,7 +86,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Transformation(Blob):
+            class Transformation(aas.Blob):
 
                 def __init__(
                     self,
@@ -95,45 +94,45 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     content_type: Optional[str] = r"text/plain",
                     value: Optional[bytes] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Transformation"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Transformation"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r'The transformation allows for transforming incoming data before writing it to the sinks. The transformation must contain an "aimc_main(sources)" entrypoint function in Lua.'
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -160,56 +159,58 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Sources(SubmodelElementList):
+            class Sources(aas.SubmodelElementList):
 
-                class Sources_item(SubmodelElementCollection):
+                class Sources_item(aas.SubmodelElementCollection):
 
-                    class Source(ReferenceElement):
+                    class Source(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"Source",
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"Source"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Source"}),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"This holds a reference to the respective SubmodelElement used as data source. A data source can be any SubmodelElement including those defined in the InteractionMetadata of AID Submodels for fetching live-data from assets."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -235,56 +236,58 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class PollingInterval(Property):
+                    class PollingInterval(aas.Property):
 
                         def __init__(
                             self,
                             value: float,
                             id_short: Optional[str] = r"PollingInterval",
-                            value_type: DataTypeDefXsd = float,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = float,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Polling interval"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"The PollingInterval defines the time interval in seconds for fetching new data from the given synchronous data source. It must be greater than zero for synchronous protocols (e.g. HTTP) that need polling and is ignored for asynchronous protocols (e.g. MQTT). It overwrites the DefaultPollingInterval of the respective MappingConfiguration of this source."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/PollingInterval",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -312,54 +315,56 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class SourceId(Property):
+                    class SourceId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"SourceId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"Source ID"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Source ID"}),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"This is a unique and non-empty identifier that facilitates data access in the Lua transformation or establishes a relationship to a corresponding sink when no transformation is given. It must only be unique with respect to the Sources-list of the parent MappingConfiguration and not globally."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -389,50 +394,50 @@ class AssetInterfacesMappingConfiguration(Submodel):
 
                     def __init__(
                         self,
-                        source: Union[Reference, Source],
+                        source: Union[aas.Reference, Source],
                         sourceId: Union[str, SourceId],
                         pollingInterval: Optional[Union[float, PollingInterval]] = None,
                         id_short: Optional[str] = r"sources_item",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"Source"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Source"}),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"A data source is defined by a Source reference, PollingInterval and SourceId."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -446,17 +451,17 @@ class AssetInterfacesMappingConfiguration(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if source and not isinstance(source, SubmodelElement):
+                        if source and not isinstance(source, aas.SubmodelElement):
                             source = self.Source(source)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if pollingInterval and not isinstance(
-                            pollingInterval, SubmodelElement
+                            pollingInterval, aas.SubmodelElement
                         ):
                             pollingInterval = self.PollingInterval(pollingInterval)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sourceId and not isinstance(sourceId, SubmodelElement):
+                        if sourceId and not isinstance(sourceId, aas.SubmodelElement):
                             sourceId = self.SourceId(sourceId)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -464,7 +469,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         for se_arg in [source, pollingInterval, sourceId]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -472,7 +477,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -492,58 +497,60 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     self,
                     sources_items: Iterable[Sources_item],
                     id_short: Optional[str] = r"Sources",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = False,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Sources"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Sources"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"This list includes all data sources that are used in this MappingConfiguration."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -561,7 +568,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     for se_arg in [sources_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -569,7 +576,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -597,7 +604,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -613,7 +620,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -624,11 +631,11 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -647,7 +654,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -658,56 +665,58 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class Sinks(SubmodelElementList):
+            class Sinks(aas.SubmodelElementList):
 
-                class Sinks_item(SubmodelElementCollection):
+                class Sinks_item(aas.SubmodelElementCollection):
 
-                    class Sink(ReferenceElement):
+                    class Sink(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"Sink",
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"Sink"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Sink"}),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"This holds a reference to the respective SubmodelElement used as data sink for live-data."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -733,54 +742,56 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class SinkId(Property):
+                    class SinkId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"SinkId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"Sink ID"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Sink ID"}),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"This is a unique and non-empty identifier that facilitates data writing in the Lua transformation or establishes a relationship to a corresponding source when no transformation is given. It must only be unique with respect to the Sinks-list of the containing MappingConfiguration and not globally."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -810,49 +821,49 @@ class AssetInterfacesMappingConfiguration(Submodel):
 
                     def __init__(
                         self,
-                        sink: Union[Reference, Sink],
+                        sink: Union[aas.Reference, Sink],
                         sinkId: Union[str, SinkId],
                         id_short: Optional[str] = r"sinks_item",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"Sink"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Sink"}),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"A data sink is defined by a Sink reference and SinkId."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -866,11 +877,11 @@ class AssetInterfacesMappingConfiguration(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sink and not isinstance(sink, SubmodelElement):
+                        if sink and not isinstance(sink, aas.SubmodelElement):
                             sink = self.Sink(sink)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if sinkId and not isinstance(sinkId, SubmodelElement):
+                        if sinkId and not isinstance(sinkId, aas.SubmodelElement):
                             sinkId = self.SinkId(sinkId)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -878,7 +889,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         for se_arg in [sink, sinkId]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -886,7 +897,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -906,58 +917,60 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     self,
                     sinks_items: Iterable[Sinks_item],
                     id_short: Optional[str] = r"Sinks",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Sinks"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Sinks"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"This list includes all data sinks that are used in this MappingConfiguration."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -975,7 +988,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     for se_arg in [sinks_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -983,7 +996,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1011,7 +1024,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1027,7 +1040,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -1038,11 +1051,11 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -1061,7 +1074,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -1081,44 +1094,46 @@ class AssetInterfacesMappingConfiguration(Submodel):
                 ] = None,
                 transformation: Optional[Transformation] = None,
                 id_short: Optional[str] = r"mappingconfigurations_item",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"Mapping configuration"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"Mapping configuration"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"A MappingConfiguration defines one logical unit of sources (inputs) and sinks (outputs) that are in relation to one another. The relation can be expressed via a transformation."
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1133,7 +1148,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if defaultPollingInterval and not isinstance(
-                    defaultPollingInterval, SubmodelElement
+                    defaultPollingInterval, aas.SubmodelElement
                 ):
                     defaultPollingInterval = self.DefaultPollingInterval(
                         defaultPollingInterval
@@ -1144,7 +1159,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                 for se_arg in [defaultPollingInterval, transformation, sources, sinks]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -1152,7 +1167,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -1174,54 +1189,58 @@ class AssetInterfacesMappingConfiguration(Submodel):
                 Iterable[Mappingconfigurations_item]
             ] = None,
             id_short: Optional[str] = r"MappingConfigurations",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = ExternalReference(
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Mapping configurations"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Mapping configurations"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"List of MappingConfigurations that each map and transform data from their sources to their sinks."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/1/0/MappingConfigurations",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1239,7 +1258,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
             for se_arg in [mappingconfigurations_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1247,7 +1266,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1275,7 +1294,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1291,7 +1310,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -1302,11 +1321,11 @@ class AssetInterfacesMappingConfiguration(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -1322,7 +1341,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -1338,36 +1357,38 @@ class AssetInterfacesMappingConfiguration(Submodel):
         id_: str,
         mappingConfigurations: MappingConfigurations,
         id_short: Optional[str] = r"AssetInterfacesMappingConfiguration",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"Asset interfaces mapping configuration"}
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": r"The AIMC 2.0 is used to describe how data is mapped from asset to AAS or from AAS to AAS."
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"2",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/IDTA 02027-2-0",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ExternalReference(
+        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
-                Key(
-                    type_=KeyTypes.GLOBAL_REFERENCE,
+                aas.Key(
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                     value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/Submodel",
                 ),
             ),
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -1381,7 +1402,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
         for se_arg in [mappingConfigurations]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -1389,7 +1410,7 @@ class AssetInterfacesMappingConfiguration(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

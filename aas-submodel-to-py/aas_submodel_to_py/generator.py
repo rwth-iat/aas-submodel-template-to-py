@@ -14,7 +14,7 @@ from jinja2 import Environment, FileSystemLoader
 
 from aas_submodel_to_py import util
 from aas_submodel_to_py.util import StringHandler, ReferableHandler, NamingGenerator, \
-    get_typehints_for_args
+    get_typehints_for_args, MODEL_ALIAS, TYPING_IMPORTS
 
 CODE_TEMPLATES = os.path.join(os.path.dirname(__file__), 'code_templates')
 
@@ -62,7 +62,7 @@ class SubmodelCodegen:
 
     def generate_imports(self) -> str:
         template = self.env.get_template("imports.pyi")
-        imports = template.render()
+        imports = template.render(typing_imports=TYPING_IMPORTS)
         return imports
 
     def get_raw_value_typehint(self, se: SubmodelElement) -> Optional[str]:
@@ -73,9 +73,9 @@ class SubmodelCodegen:
         elif isinstance(se, Range):
             return f"Tuple[{StringHandler.reprify(se.value_type)}, {StringHandler.reprify(se.value_type)}]"
         elif isinstance(se, MultiLanguageProperty):
-            return "LangStringSet"
+            return f"{MODEL_ALIAS}.LangStringSet"
         elif isinstance(se, ReferenceElement):
-            return "Reference"
+            return f"{MODEL_ALIAS}.Reference"
         elif isinstance(se, SubmodelElementList) \
                 and se.type_value_list_element is Property \
                 and se.value_type_list_element is not None:
@@ -253,13 +253,13 @@ class SubmodelCodegen:
     def gen_cls_for_multilang_property(self, se: MultiLanguageProperty,
                              template: str = 'base_class.pyi') -> str:
         render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
-        render_kwargs["typehints"]["value"] = "LangStringSet"
+        render_kwargs["typehints"]["value"] = f"{MODEL_ALIAS}.LangStringSet"
         return self.render_cls_with_template(template, **render_kwargs)
 
     def gen_cls_for_reference_element(self, se: ReferenceElement,
                              template: str = 'base_class.pyi') -> str:
         render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
-        render_kwargs["typehints"]["value"] = "Reference"
+        render_kwargs["typehints"]["value"] = f"{MODEL_ALIAS}.Reference"
         return self.render_cls_with_template(template, **render_kwargs)
 
     def gen_cls_for_range(self, se: Range,

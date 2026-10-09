@@ -1,57 +1,60 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class Models3D(Submodel):
+class Models3D(aas.Submodel):
 
-    class Model3D(SubmodelElementList):
+    class Model3D(aas.SubmodelElementList):
 
-        class Model3d_item(SubmodelElementCollection):
+        class Model3d_item(aas.SubmodelElementCollection):
 
-            class File(SubmodelElementCollection):
+            class File(aas.SubmodelElementCollection):
 
-                class FileId(SubmodelElementList):
+                class FileId(aas.SubmodelElementList):
 
-                    class Fileid_item(SubmodelElementCollection):
+                    class Fileid_item(aas.SubmodelElementCollection):
 
-                        class FileDomainId(Property):
+                        class FileDomainId(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"FileDomainId",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/FileDomaniId/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -75,42 +78,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ValueId(Property):
+                        class ValueId(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ValueId",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/ValueId/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -134,42 +141,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class IsPrimary(Property):
+                        class IsPrimary(aas.Property):
 
                             def __init__(
                                 self,
                                 value: bool,
                                 id_short: Optional[str] = r"IsPrimary",
-                                value_type: DataTypeDefXsd = bool,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = bool,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/IsPrimary/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToMany",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -201,34 +212,36 @@ class Models3D(Submodel):
                                 Iterable[Union[bool, IsPrimary]]
                             ] = None,
                             id_short: Optional[str] = r"fileid_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -239,12 +252,12 @@ class Models3D(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if fileDomainId and not isinstance(
-                                fileDomainId, SubmodelElement
+                                fileDomainId, aas.SubmodelElement
                             ):
                                 fileDomainId = self.FileDomainId(fileDomainId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if valueId and not isinstance(valueId, SubmodelElement):
+                            if valueId and not isinstance(valueId, aas.SubmodelElement):
                                 valueId = self.ValueId(valueId)
 
                             # Build submodel elements from raw values passed in the argument
@@ -252,7 +265,7 @@ class Models3D(Submodel):
                                 isPrimary = [
                                     (
                                         i
-                                        if isinstance(i, SubmodelElement)
+                                        if isinstance(i, aas.SubmodelElement)
                                         else self.IsPrimary(i)
                                     )
                                     for i in isPrimary
@@ -263,7 +276,7 @@ class Models3D(Submodel):
                             for se_arg in [fileDomainId, valueId, isPrimary]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -271,7 +284,7 @@ class Models3D(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -291,38 +304,38 @@ class Models3D(Submodel):
                         self,
                         fileid_items: Optional[Iterable[Fileid_item]] = None,
                         id_short: Optional[str] = r"FileId",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -336,7 +349,7 @@ class Models3D(Submodel):
                         for se_arg in [fileid_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -344,7 +357,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -372,7 +385,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -388,7 +401,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -399,13 +412,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -424,7 +437,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -435,45 +448,49 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class FileVersion(SubmodelElementList):
+                class FileVersion(aas.SubmodelElementList):
 
-                    class Fileversion_item(SubmodelElementCollection):
+                    class Fileversion_item(aas.SubmodelElementCollection):
 
-                        class Title(MultiLanguageProperty):
+                        class Title(aas.MultiLanguageProperty):
 
                             def __init__(
                                 self,
-                                value: LangStringSet,
+                                value: aas.LangStringSet,
                                 id_short: Optional[str] = r"Title",
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/Title/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -496,42 +513,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class FileName(Property):
+                        class FileName(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"FileName",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileName/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -555,42 +576,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class FileVersionId(Property):
+                        class FileVersionId(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"FileVersionId",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileVersionID/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -614,42 +639,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class StatusValue(Property):
+                        class StatusValue(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"StatusValue",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/StatusValue/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -673,42 +702,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class SetDate(Property):
+                        class SetDate(aas.Property):
 
                             def __init__(
                                 self,
-                                value: Date,
+                                value: xsd.Date,
                                 id_short: Optional[str] = r"SetDate",
-                                value_type: DataTypeDefXsd = Date,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = xsd.Date,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SetDate/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -732,46 +765,50 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class BasedOn(SubmodelElementList):
+                        class BasedOn(aas.SubmodelElementList):
 
-                            class Basedon_item(ReferenceElement):
+                            class Basedon_item(aas.ReferenceElement):
 
                                 def __init__(
                                     self,
-                                    value: Reference,
+                                    value: aas.Reference,
                                     id_short: Optional[str] = r"basedon_item",
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"ZeroToMany",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -796,43 +833,49 @@ class Models3D(Submodel):
                             def __init__(
                                 self,
                                 basedon_items: Optional[
-                                    Iterable[Union[Reference, Basedon_item]]
+                                    Iterable[Union[aas.Reference, Basedon_item]]
                                 ] = None,
                                 id_short: Optional[str] = r"BasedOn",
-                                type_value_list_element: SubmodelElement = ReferenceElement,
-                                semantic_id_list_element: Optional[Reference] = None,
+                                type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    aas.Reference
+                                ] = None,
                                 value_type_list_element: Optional[
-                                    DataTypeDefXsd
+                                    aas.DataTypeDefXsd
                                 ] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -846,7 +889,7 @@ class Models3D(Submodel):
                                     basedon_items = [
                                         (
                                             i
-                                            if isinstance(i, SubmodelElement)
+                                            if isinstance(i, aas.SubmodelElement)
                                             else self.Basedon_item(i)
                                         )
                                         for i in basedon_items
@@ -857,7 +900,7 @@ class Models3D(Submodel):
                                 for se_arg in [basedon_items]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -865,7 +908,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -893,7 +936,7 @@ class Models3D(Submodel):
 
                                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                                 if not isinstance(new, self.type_value_list_element):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         108,
                                         "All first level elements must be of the type specified in "
                                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -909,7 +952,7 @@ class Models3D(Submodel):
                                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                     # Not really a constraint...
                                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         107,
                                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                         "is specified all first level children must have the same "
@@ -920,13 +963,17 @@ class Models3D(Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    isinstance(self.type_value_list_element, Property)
-                                    or isinstance(self.type_value_list_element, Range)
+                                    isinstance(
+                                        self.type_value_list_element, aas.Property
+                                    )
+                                    or isinstance(
+                                        self.type_value_list_element, aas.Range
+                                    )
                                     and not isinstance(
                                         new.value_type, self.value_type_list_element
                                     )
                                 ):  # type: ignore
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         109,
                                         "All first level elements must have the value_type "  # type: ignore
                                         "specified by value_type_list_element="
@@ -945,7 +992,7 @@ class Models3D(Submodel):
                                             item.semantic_id is not None
                                             and new.semantic_id != item.semantic_id
                                         ):
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
                                                 f"{new.semantic_id!r}, while already contained element "
@@ -956,46 +1003,50 @@ class Models3D(Submodel):
                                 # Re-assign id_short
                                 new.id_short = saved_id_short
 
-                        class RefersTo(SubmodelElementList):
+                        class RefersTo(aas.SubmodelElementList):
 
-                            class Refersto_item(ReferenceElement):
+                            class Refersto_item(aas.ReferenceElement):
 
                                 def __init__(
                                     self,
-                                    value: Reference,
+                                    value: aas.Reference,
                                     id_short: Optional[str] = r"refersto_item",
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"ZeroToMany",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -1020,43 +1071,49 @@ class Models3D(Submodel):
                             def __init__(
                                 self,
                                 refersto_items: Optional[
-                                    Iterable[Union[Reference, Refersto_item]]
+                                    Iterable[Union[aas.Reference, Refersto_item]]
                                 ] = None,
                                 id_short: Optional[str] = r"RefersTo",
-                                type_value_list_element: SubmodelElement = ReferenceElement,
-                                semantic_id_list_element: Optional[Reference] = None,
+                                type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
+                                semantic_id_list_element: Optional[
+                                    aas.Reference
+                                ] = None,
                                 value_type_list_element: Optional[
-                                    DataTypeDefXsd
+                                    aas.DataTypeDefXsd
                                 ] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -1070,7 +1127,7 @@ class Models3D(Submodel):
                                     refersto_items = [
                                         (
                                             i
-                                            if isinstance(i, SubmodelElement)
+                                            if isinstance(i, aas.SubmodelElement)
                                             else self.Refersto_item(i)
                                         )
                                         for i in refersto_items
@@ -1081,7 +1138,7 @@ class Models3D(Submodel):
                                 for se_arg in [refersto_items]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -1089,7 +1146,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -1117,7 +1174,7 @@ class Models3D(Submodel):
 
                                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                                 if not isinstance(new, self.type_value_list_element):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         108,
                                         "All first level elements must be of the type specified in "
                                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1133,7 +1190,7 @@ class Models3D(Submodel):
                                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                     # Not really a constraint...
                                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         107,
                                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                         "is specified all first level children must have the same "
@@ -1144,13 +1201,17 @@ class Models3D(Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    isinstance(self.type_value_list_element, Property)
-                                    or isinstance(self.type_value_list_element, Range)
+                                    isinstance(
+                                        self.type_value_list_element, aas.Property
+                                    )
+                                    or isinstance(
+                                        self.type_value_list_element, aas.Range
+                                    )
                                     and not isinstance(
                                         new.value_type, self.value_type_list_element
                                     )
                                 ):  # type: ignore
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         109,
                                         "All first level elements must have the value_type "  # type: ignore
                                         "specified by value_type_list_element="
@@ -1169,7 +1230,7 @@ class Models3D(Submodel):
                                             item.semantic_id is not None
                                             and new.semantic_id != item.semantic_id
                                         ):
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
                                                 f"{new.semantic_id!r}, while already contained element "
@@ -1180,41 +1241,45 @@ class Models3D(Submodel):
                                 # Re-assign id_short
                                 new.id_short = saved_id_short
 
-                        class PreviewFile(File):
+                        class PreviewFile(aas.File):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"PreviewFile",
                                 content_type: Optional[str] = r"image/png",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/PreviewFile/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -1237,41 +1302,45 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class DigitalFile(File):
+                        class DigitalFile(aas.File):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"DigitalFile",
                                 content_type: Optional[str] = r"image/png",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/DigitalFile/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -1294,54 +1363,54 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ExternalFile(SubmodelElementList):
+                        class ExternalFile(aas.SubmodelElementList):
 
-                            class Externalfile_item(SubmodelElementCollection):
+                            class Externalfile_item(aas.SubmodelElementCollection):
 
-                                class ExternalUrl(Property):
+                                class ExternalUrl(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"ExternalUrl",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/ExternalUrl/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -1365,50 +1434,50 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class FileIdentifier(Property):
+                                class FileIdentifier(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"FileIdentifier",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/FileIdentifier/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -1432,9 +1501,9 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class HostOrganization(SubmodelElementCollection):
+                                class HostOrganization(aas.SubmodelElementCollection):
 
-                                    class OrganizationName(Property):
+                                    class OrganizationName(aas.Property):
 
                                         def __init__(
                                             self,
@@ -1442,44 +1511,44 @@ class Models3D(Submodel):
                                             id_short: Optional[
                                                 str
                                             ] = r"OrganizationName",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationName/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"One",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -1503,7 +1572,7 @@ class Models3D(Submodel):
                                                 embedded_data_specifications=embedded_data_specifications,
                                             )
 
-                                    class OrganizationOfficialName(Property):
+                                    class OrganizationOfficialName(aas.Property):
 
                                         def __init__(
                                             self,
@@ -1511,44 +1580,44 @@ class Models3D(Submodel):
                                             id_short: Optional[
                                                 str
                                             ] = r"OrganizationOfficialName",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationOfficialName/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"One",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -1580,41 +1649,41 @@ class Models3D(Submodel):
                                         ],
                                         id_short: Optional[str] = r"HostOrganization",
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -1625,7 +1694,7 @@ class Models3D(Submodel):
 
                                         # Build a submodel element if a raw value was passed in the argument
                                         if organizationName and not isinstance(
-                                            organizationName, SubmodelElement
+                                            organizationName, aas.SubmodelElement
                                         ):
                                             organizationName = self.OrganizationName(
                                                 organizationName
@@ -1633,7 +1702,8 @@ class Models3D(Submodel):
 
                                         # Build a submodel element if a raw value was passed in the argument
                                         if organizationOfficialName and not isinstance(
-                                            organizationOfficialName, SubmodelElement
+                                            organizationOfficialName,
+                                            aas.SubmodelElement,
                                         ):
                                             organizationOfficialName = (
                                                 self.OrganizationOfficialName(
@@ -1649,7 +1719,9 @@ class Models3D(Submodel):
                                         ]:
                                             if se_arg is None:
                                                 continue
-                                            elif isinstance(se_arg, SubmodelElement):
+                                            elif isinstance(
+                                                se_arg, aas.SubmodelElement
+                                            ):
                                                 embedded_submodel_elements.append(
                                                     se_arg
                                                 )
@@ -1663,7 +1735,7 @@ class Models3D(Submodel):
                                                     )
                                             else:
                                                 raise TypeError(
-                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                                 )
 
                                         super().__init__(
@@ -1679,54 +1751,58 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class Api(SubmodelElementList):
+                                class Api(aas.SubmodelElementList):
 
-                                    class Api_item(SubmodelElementCollection):
+                                    class Api_item(aas.SubmodelElementCollection):
 
-                                        class ApiVersion(Property):
+                                        class ApiVersion(aas.Property):
 
                                             def __init__(
                                                 self,
                                                 value: str,
                                                 id_short: Optional[str] = r"ApiVersion",
-                                                value_type: DataTypeDefXsd = str,
-                                                value_id: Optional[Reference] = None,
+                                                value_type: aas.DataTypeDefXsd = str,
+                                                value_id: Optional[
+                                                    aas.Reference
+                                                ] = None,
                                                 display_name: Optional[
-                                                    MultiLanguageNameType
+                                                    aas.MultiLanguageNameType
                                                 ] = None,
                                                 category: Optional[str] = None,
                                                 description: Optional[
-                                                    MultiLanguageTextType
+                                                    aas.MultiLanguageTextType
                                                 ] = None,
                                                 semantic_id: Optional[
-                                                    Reference
-                                                ] = ExternalReference(
+                                                    aas.Reference
+                                                ] = aas.ExternalReference(
                                                     key=(
-                                                        Key(
-                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        aas.Key(
+                                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiVersion/1/0",
                                                         ),
                                                     ),
                                                     referred_semantic_id=None,
                                                 ),
-                                                qualifier: Iterable[Qualifier] = None,
-                                                extension: Iterable[Extension] = (),
+                                                qualifier: Iterable[
+                                                    aas.Qualifier
+                                                ] = None,
+                                                extension: Iterable[aas.Extension] = (),
                                                 supplemental_semantic_id: Iterable[
-                                                    Reference
+                                                    aas.Reference
                                                 ] = (),
                                                 embedded_data_specifications: Iterable[
-                                                    EmbeddedDataSpecification
+                                                    aas.EmbeddedDataSpecification
                                                 ] = None,
                                             ):
 
                                                 if qualifier is None:
                                                     qualifier = (
-                                                        Qualifier(
+                                                        aas.Qualifier(
                                                             type_=r"SMT/Cardinality",
                                                             value_type=str,
                                                             value=r"One",
                                                             value_id=None,
-                                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                             semantic_id=None,
                                                             supplemental_semantic_id=(),
                                                         ),
@@ -1750,7 +1826,7 @@ class Models3D(Submodel):
                                                     embedded_data_specifications=embedded_data_specifications,
                                                 )
 
-                                        class ApiDocumentationUrl(Property):
+                                        class ApiDocumentationUrl(aas.Property):
 
                                             def __init__(
                                                 self,
@@ -1758,44 +1834,48 @@ class Models3D(Submodel):
                                                 id_short: Optional[
                                                     str
                                                 ] = r"ApiDocumentationUrl",
-                                                value_type: DataTypeDefXsd = str,
-                                                value_id: Optional[Reference] = None,
+                                                value_type: aas.DataTypeDefXsd = str,
+                                                value_id: Optional[
+                                                    aas.Reference
+                                                ] = None,
                                                 display_name: Optional[
-                                                    MultiLanguageNameType
+                                                    aas.MultiLanguageNameType
                                                 ] = None,
                                                 category: Optional[str] = None,
                                                 description: Optional[
-                                                    MultiLanguageTextType
+                                                    aas.MultiLanguageTextType
                                                 ] = None,
                                                 semantic_id: Optional[
-                                                    Reference
-                                                ] = ExternalReference(
+                                                    aas.Reference
+                                                ] = aas.ExternalReference(
                                                     key=(
-                                                        Key(
-                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        aas.Key(
+                                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiDocumentationUrl/1/0",
                                                         ),
                                                     ),
                                                     referred_semantic_id=None,
                                                 ),
-                                                qualifier: Iterable[Qualifier] = None,
-                                                extension: Iterable[Extension] = (),
+                                                qualifier: Iterable[
+                                                    aas.Qualifier
+                                                ] = None,
+                                                extension: Iterable[aas.Extension] = (),
                                                 supplemental_semantic_id: Iterable[
-                                                    Reference
+                                                    aas.Reference
                                                 ] = (),
                                                 embedded_data_specifications: Iterable[
-                                                    EmbeddedDataSpecification
+                                                    aas.EmbeddedDataSpecification
                                                 ] = None,
                                             ):
 
                                                 if qualifier is None:
                                                     qualifier = (
-                                                        Qualifier(
+                                                        aas.Qualifier(
                                                             type_=r"SMT/Cardinality",
                                                             value_type=str,
                                                             value=r"ZeroToOne",
                                                             value_id=None,
-                                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                             semantic_id=None,
                                                             supplemental_semantic_id=(),
                                                         ),
@@ -1819,7 +1899,7 @@ class Models3D(Submodel):
                                                     embedded_data_specifications=embedded_data_specifications,
                                                 )
 
-                                        class ApiSpecificationUrl(Property):
+                                        class ApiSpecificationUrl(aas.Property):
 
                                             def __init__(
                                                 self,
@@ -1827,44 +1907,48 @@ class Models3D(Submodel):
                                                 id_short: Optional[
                                                     str
                                                 ] = r"ApiSpecificationUrl",
-                                                value_type: DataTypeDefXsd = str,
-                                                value_id: Optional[Reference] = None,
+                                                value_type: aas.DataTypeDefXsd = str,
+                                                value_id: Optional[
+                                                    aas.Reference
+                                                ] = None,
                                                 display_name: Optional[
-                                                    MultiLanguageNameType
+                                                    aas.MultiLanguageNameType
                                                 ] = None,
                                                 category: Optional[str] = None,
                                                 description: Optional[
-                                                    MultiLanguageTextType
+                                                    aas.MultiLanguageTextType
                                                 ] = None,
                                                 semantic_id: Optional[
-                                                    Reference
-                                                ] = ExternalReference(
+                                                    aas.Reference
+                                                ] = aas.ExternalReference(
                                                     key=(
-                                                        Key(
-                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        aas.Key(
+                                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiSpecificationUrl/1/0",
                                                         ),
                                                     ),
                                                     referred_semantic_id=None,
                                                 ),
-                                                qualifier: Iterable[Qualifier] = None,
-                                                extension: Iterable[Extension] = (),
+                                                qualifier: Iterable[
+                                                    aas.Qualifier
+                                                ] = None,
+                                                extension: Iterable[aas.Extension] = (),
                                                 supplemental_semantic_id: Iterable[
-                                                    Reference
+                                                    aas.Reference
                                                 ] = (),
                                                 embedded_data_specifications: Iterable[
-                                                    EmbeddedDataSpecification
+                                                    aas.EmbeddedDataSpecification
                                                 ] = None,
                                             ):
 
                                                 if qualifier is None:
                                                     qualifier = (
-                                                        Qualifier(
+                                                        aas.Qualifier(
                                                             type_=r"SMT/Cardinality",
                                                             value_type=str,
                                                             value=r"ZeroToOne",
                                                             value_id=None,
-                                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                             semantic_id=None,
                                                             supplemental_semantic_id=(),
                                                         ),
@@ -1899,41 +1983,41 @@ class Models3D(Submodel):
                                             ] = None,
                                             id_short: Optional[str] = r"api_item",
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"ZeroToMany",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -1944,13 +2028,13 @@ class Models3D(Submodel):
 
                                             # Build a submodel element if a raw value was passed in the argument
                                             if apiVersion and not isinstance(
-                                                apiVersion, SubmodelElement
+                                                apiVersion, aas.SubmodelElement
                                             ):
                                                 apiVersion = self.ApiVersion(apiVersion)
 
                                             # Build a submodel element if a raw value was passed in the argument
                                             if apiDocumentationUrl and not isinstance(
-                                                apiDocumentationUrl, SubmodelElement
+                                                apiDocumentationUrl, aas.SubmodelElement
                                             ):
                                                 apiDocumentationUrl = (
                                                     self.ApiDocumentationUrl(
@@ -1960,7 +2044,7 @@ class Models3D(Submodel):
 
                                             # Build a submodel element if a raw value was passed in the argument
                                             if apiSpecificationUrl and not isinstance(
-                                                apiSpecificationUrl, SubmodelElement
+                                                apiSpecificationUrl, aas.SubmodelElement
                                             ):
                                                 apiSpecificationUrl = (
                                                     self.ApiSpecificationUrl(
@@ -1978,7 +2062,7 @@ class Models3D(Submodel):
                                                 if se_arg is None:
                                                     continue
                                                 elif isinstance(
-                                                    se_arg, SubmodelElement
+                                                    se_arg, aas.SubmodelElement
                                                 ):
                                                     embedded_submodel_elements.append(
                                                         se_arg
@@ -1993,7 +2077,7 @@ class Models3D(Submodel):
                                                         )
                                                 else:
                                                     raise TypeError(
-                                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                                     )
 
                                             super().__init__(
@@ -2013,50 +2097,50 @@ class Models3D(Submodel):
                                         self,
                                         api_items: Optional[Iterable[Api_item]] = None,
                                         id_short: Optional[str] = r"Api",
-                                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                         semantic_id_list_element: Optional[
-                                            Reference
+                                            aas.Reference
                                         ] = None,
                                         value_type_list_element: Optional[
-                                            DataTypeDefXsd
+                                            aas.DataTypeDefXsd
                                         ] = None,
                                         order_relevant: bool = True,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"ZeroToOne",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -2070,7 +2154,9 @@ class Models3D(Submodel):
                                         for se_arg in [api_items]:
                                             if se_arg is None:
                                                 continue
-                                            elif isinstance(se_arg, SubmodelElement):
+                                            elif isinstance(
+                                                se_arg, aas.SubmodelElement
+                                            ):
                                                 embedded_submodel_elements.append(
                                                     se_arg
                                                 )
@@ -2084,7 +2170,7 @@ class Models3D(Submodel):
                                                     )
                                             else:
                                                 raise TypeError(
-                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                                 )
 
                                         super().__init__(
@@ -2114,7 +2200,7 @@ class Models3D(Submodel):
                                         if not isinstance(
                                             new, self.type_value_list_element
                                         ):
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 108,
                                                 "All first level elements must be of the type specified in "
                                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2131,7 +2217,7 @@ class Models3D(Submodel):
                                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                             # Not really a constraint...
                                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 107,
                                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                                 "is specified all first level children must have the same "
@@ -2143,17 +2229,18 @@ class Models3D(Submodel):
                                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                         if (
                                             isinstance(
-                                                self.type_value_list_element, Property
+                                                self.type_value_list_element,
+                                                aas.Property,
                                             )
                                             or isinstance(
-                                                self.type_value_list_element, Range
+                                                self.type_value_list_element, aas.Range
                                             )
                                             and not isinstance(
                                                 new.value_type,
                                                 self.value_type_list_element,
                                             )
                                         ):  # type: ignore
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 109,
                                                 "All first level elements must have the value_type "  # type: ignore
                                                 "specified by value_type_list_element="
@@ -2173,7 +2260,7 @@ class Models3D(Submodel):
                                                     and new.semantic_id
                                                     != item.semantic_id
                                                 ):
-                                                    raise base.AASConstraintViolation(
+                                                    raise aas.AASConstraintViolation(
                                                         114,
                                                         f"Element to be added {new!r} has semantic_id "
                                                         f"{new.semantic_id!r}, while already contained element "
@@ -2192,37 +2279,41 @@ class Models3D(Submodel):
                                     api: Optional[Api] = None,
                                     id_short: Optional[str] = r"externalfile_item",
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"ZeroToMany",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2233,13 +2324,13 @@ class Models3D(Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if externalUrl and not isinstance(
-                                        externalUrl, SubmodelElement
+                                        externalUrl, aas.SubmodelElement
                                     ):
                                         externalUrl = self.ExternalUrl(externalUrl)
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if fileIdentifier and not isinstance(
-                                        fileIdentifier, SubmodelElement
+                                        fileIdentifier, aas.SubmodelElement
                                     ):
                                         fileIdentifier = self.FileIdentifier(
                                             fileIdentifier
@@ -2255,7 +2346,7 @@ class Models3D(Submodel):
                                     ]:
                                         if se_arg is None:
                                             continue
-                                        elif isinstance(se_arg, SubmodelElement):
+                                        elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
                                             for n, element in enumerate(se_arg):
@@ -2267,7 +2358,7 @@ class Models3D(Submodel):
                                                 )
                                         else:
                                             raise TypeError(
-                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                             )
 
                                     super().__init__(
@@ -2289,40 +2380,46 @@ class Models3D(Submodel):
                                     Iterable[Externalfile_item]
                                 ] = None,
                                 id_short: Optional[str] = r"ExternalFile",
-                                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                                semantic_id_list_element: Optional[Reference] = None,
+                                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                                semantic_id_list_element: Optional[
+                                    aas.Reference
+                                ] = None,
                                 value_type_list_element: Optional[
-                                    DataTypeDefXsd
+                                    aas.DataTypeDefXsd
                                 ] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -2336,7 +2433,7 @@ class Models3D(Submodel):
                                 for se_arg in [externalfile_items]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -2344,7 +2441,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -2372,7 +2469,7 @@ class Models3D(Submodel):
 
                                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                                 if not isinstance(new, self.type_value_list_element):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         108,
                                         "All first level elements must be of the type specified in "
                                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2388,7 +2485,7 @@ class Models3D(Submodel):
                                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                     # Not really a constraint...
                                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         107,
                                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                         "is specified all first level children must have the same "
@@ -2399,13 +2496,17 @@ class Models3D(Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    isinstance(self.type_value_list_element, Property)
-                                    or isinstance(self.type_value_list_element, Range)
+                                    isinstance(
+                                        self.type_value_list_element, aas.Property
+                                    )
+                                    or isinstance(
+                                        self.type_value_list_element, aas.Range
+                                    )
                                     and not isinstance(
                                         new.value_type, self.value_type_list_element
                                     )
                                 ):  # type: ignore
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         109,
                                         "All first level elements must have the value_type "  # type: ignore
                                         "specified by value_type_list_element="
@@ -2424,7 +2525,7 @@ class Models3D(Submodel):
                                             item.semantic_id is not None
                                             and new.semantic_id != item.semantic_id
                                         ):
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
                                                 f"{new.semantic_id!r}, while already contained element "
@@ -2435,48 +2536,52 @@ class Models3D(Submodel):
                                 # Re-assign id_short
                                 new.id_short = saved_id_short
 
-                        class FileFormat(SubmodelElementCollection):
+                        class FileFormat(aas.SubmodelElementCollection):
 
-                            class FormatName(Property):
+                            class FormatName(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"FormatName",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatName/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2500,46 +2605,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class FormatVersion(Property):
+                            class FormatVersion(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"FormatVersion",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatVersion/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2563,46 +2672,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class FormatQualifier(Property):
+                            class FormatQualifier(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"FormatQualifier",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatQualifier/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2632,34 +2745,38 @@ class Models3D(Submodel):
                                 formatVersion: Union[str, FormatVersion],
                                 formatQualifier: Union[str, FormatQualifier],
                                 id_short: Optional[str] = r"FileFormat",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -2670,19 +2787,19 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if formatName and not isinstance(
-                                    formatName, SubmodelElement
+                                    formatName, aas.SubmodelElement
                                 ):
                                     formatName = self.FormatName(formatName)
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if formatVersion and not isinstance(
-                                    formatVersion, SubmodelElement
+                                    formatVersion, aas.SubmodelElement
                                 ):
                                     formatVersion = self.FormatVersion(formatVersion)
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if formatQualifier and not isinstance(
-                                    formatQualifier, SubmodelElement
+                                    formatQualifier, aas.SubmodelElement
                                 ):
                                     formatQualifier = self.FormatQualifier(
                                         formatQualifier
@@ -2697,7 +2814,7 @@ class Models3D(Submodel):
                                 ]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -2705,7 +2822,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -2721,48 +2838,52 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class SourceApplication(SubmodelElementCollection):
+                        class SourceApplication(aas.SubmodelElementCollection):
 
-                            class ApplicationName(Property):
+                            class ApplicationName(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"ApplicationName",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationName/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2786,46 +2907,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class ApplicationVersion(Property):
+                            class ApplicationVersion(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"ApplicationVersion",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationVersion/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2849,46 +2974,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class ApplicationQualifier(Property):
+                            class ApplicationQualifier(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"ApplicationQualifier",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationQualifier/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2912,54 +3041,54 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class Api(SubmodelElementList):
+                            class Api(aas.SubmodelElementList):
 
-                                class Api_item(SubmodelElementCollection):
+                                class Api_item(aas.SubmodelElementCollection):
 
-                                    class ApiVersion(Property):
+                                    class ApiVersion(aas.Property):
 
                                         def __init__(
                                             self,
                                             value: str,
                                             id_short: Optional[str] = r"ApiVersion",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiVersion/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"One",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -2983,7 +3112,7 @@ class Models3D(Submodel):
                                                 embedded_data_specifications=embedded_data_specifications,
                                             )
 
-                                    class ApiDocumentationUrl(Property):
+                                    class ApiDocumentationUrl(aas.Property):
 
                                         def __init__(
                                             self,
@@ -2991,44 +3120,44 @@ class Models3D(Submodel):
                                             id_short: Optional[
                                                 str
                                             ] = r"ApiDocumentationUrl",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiDocumentationUrl/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"ZeroToOne",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -3052,7 +3181,7 @@ class Models3D(Submodel):
                                                 embedded_data_specifications=embedded_data_specifications,
                                             )
 
-                                    class ApiSpecificationUrl(Property):
+                                    class ApiSpecificationUrl(aas.Property):
 
                                         def __init__(
                                             self,
@@ -3060,44 +3189,44 @@ class Models3D(Submodel):
                                             id_short: Optional[
                                                 str
                                             ] = r"ApiSpecificationUrl",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiSpecificationUrl/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"ZeroToOne",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -3132,41 +3261,41 @@ class Models3D(Submodel):
                                         ] = None,
                                         id_short: Optional[str] = r"api_item",
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"ZeroToMany",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -3177,13 +3306,13 @@ class Models3D(Submodel):
 
                                         # Build a submodel element if a raw value was passed in the argument
                                         if apiVersion and not isinstance(
-                                            apiVersion, SubmodelElement
+                                            apiVersion, aas.SubmodelElement
                                         ):
                                             apiVersion = self.ApiVersion(apiVersion)
 
                                         # Build a submodel element if a raw value was passed in the argument
                                         if apiDocumentationUrl and not isinstance(
-                                            apiDocumentationUrl, SubmodelElement
+                                            apiDocumentationUrl, aas.SubmodelElement
                                         ):
                                             apiDocumentationUrl = (
                                                 self.ApiDocumentationUrl(
@@ -3193,7 +3322,7 @@ class Models3D(Submodel):
 
                                         # Build a submodel element if a raw value was passed in the argument
                                         if apiSpecificationUrl and not isinstance(
-                                            apiSpecificationUrl, SubmodelElement
+                                            apiSpecificationUrl, aas.SubmodelElement
                                         ):
                                             apiSpecificationUrl = (
                                                 self.ApiSpecificationUrl(
@@ -3210,7 +3339,9 @@ class Models3D(Submodel):
                                         ]:
                                             if se_arg is None:
                                                 continue
-                                            elif isinstance(se_arg, SubmodelElement):
+                                            elif isinstance(
+                                                se_arg, aas.SubmodelElement
+                                            ):
                                                 embedded_submodel_elements.append(
                                                     se_arg
                                                 )
@@ -3224,7 +3355,7 @@ class Models3D(Submodel):
                                                     )
                                             else:
                                                 raise TypeError(
-                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                                 )
 
                                         super().__init__(
@@ -3244,46 +3375,50 @@ class Models3D(Submodel):
                                     self,
                                     api_items: Optional[Iterable[Api_item]] = None,
                                     id_short: Optional[str] = r"Api",
-                                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
-                                        Reference
+                                        aas.Reference
                                     ] = None,
                                     value_type_list_element: Optional[
-                                        DataTypeDefXsd
+                                        aas.DataTypeDefXsd
                                     ] = None,
                                     order_relevant: bool = True,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"ZeroToOne",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -3297,7 +3432,7 @@ class Models3D(Submodel):
                                     for se_arg in [api_items]:
                                         if se_arg is None:
                                             continue
-                                        elif isinstance(se_arg, SubmodelElement):
+                                        elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
                                             for n, element in enumerate(se_arg):
@@ -3309,7 +3444,7 @@ class Models3D(Submodel):
                                                 )
                                         else:
                                             raise TypeError(
-                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                             )
 
                                     super().__init__(
@@ -3339,7 +3474,7 @@ class Models3D(Submodel):
                                     if not isinstance(
                                         new, self.type_value_list_element
                                     ):
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             108,
                                             "All first level elements must be of the type specified in "
                                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3356,7 +3491,7 @@ class Models3D(Submodel):
                                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                         # Not really a constraint...
                                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             107,
                                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                             "is specified all first level children must have the same "
@@ -3368,16 +3503,16 @@ class Models3D(Submodel):
                                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                     if (
                                         isinstance(
-                                            self.type_value_list_element, Property
+                                            self.type_value_list_element, aas.Property
                                         )
                                         or isinstance(
-                                            self.type_value_list_element, Range
+                                            self.type_value_list_element, aas.Range
                                         )
                                         and not isinstance(
                                             new.value_type, self.value_type_list_element
                                         )
                                     ):  # type: ignore
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             109,
                                             "All first level elements must have the value_type "  # type: ignore
                                             "specified by value_type_list_element="
@@ -3396,7 +3531,7 @@ class Models3D(Submodel):
                                                 item.semantic_id is not None
                                                 and new.semantic_id != item.semantic_id
                                             ):
-                                                raise base.AASConstraintViolation(
+                                                raise aas.AASConstraintViolation(
                                                     114,
                                                     f"Element to be added {new!r} has semantic_id "
                                                     f"{new.semantic_id!r}, while already contained element "
@@ -3407,52 +3542,52 @@ class Models3D(Submodel):
                                     # Re-assign id_short
                                     new.id_short = saved_id_short
 
-                            class VendorOrganization(SubmodelElementCollection):
+                            class VendorOrganization(aas.SubmodelElementCollection):
 
-                                class OrganizationName(Property):
+                                class OrganizationName(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"OrganizationName",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationName/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -3476,7 +3611,7 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class OrganizationOfficialName(Property):
+                                class OrganizationOfficialName(aas.Property):
 
                                     def __init__(
                                         self,
@@ -3484,44 +3619,44 @@ class Models3D(Submodel):
                                         id_short: Optional[
                                             str
                                         ] = r"OrganizationOfficialName",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationOfficialName/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -3553,37 +3688,41 @@ class Models3D(Submodel):
                                     ],
                                     id_short: Optional[str] = r"VendorOrganization",
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -3594,7 +3733,7 @@ class Models3D(Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if organizationName and not isinstance(
-                                        organizationName, SubmodelElement
+                                        organizationName, aas.SubmodelElement
                                     ):
                                         organizationName = self.OrganizationName(
                                             organizationName
@@ -3602,7 +3741,7 @@ class Models3D(Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if organizationOfficialName and not isinstance(
-                                        organizationOfficialName, SubmodelElement
+                                        organizationOfficialName, aas.SubmodelElement
                                     ):
                                         organizationOfficialName = (
                                             self.OrganizationOfficialName(
@@ -3618,7 +3757,7 @@ class Models3D(Submodel):
                                     ]:
                                         if se_arg is None:
                                             continue
-                                        elif isinstance(se_arg, SubmodelElement):
+                                        elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
                                             for n, element in enumerate(se_arg):
@@ -3630,7 +3769,7 @@ class Models3D(Submodel):
                                                 )
                                         else:
                                             raise TypeError(
-                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                             )
 
                                     super().__init__(
@@ -3654,34 +3793,38 @@ class Models3D(Submodel):
                                 vendorOrganization: VendorOrganization,
                                 api: Optional[Api] = None,
                                 id_short: Optional[str] = r"SourceApplication",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -3692,7 +3835,7 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if applicationName and not isinstance(
-                                    applicationName, SubmodelElement
+                                    applicationName, aas.SubmodelElement
                                 ):
                                     applicationName = self.ApplicationName(
                                         applicationName
@@ -3700,7 +3843,7 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if applicationVersion and not isinstance(
-                                    applicationVersion, SubmodelElement
+                                    applicationVersion, aas.SubmodelElement
                                 ):
                                     applicationVersion = self.ApplicationVersion(
                                         applicationVersion
@@ -3708,7 +3851,7 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if applicationQualifier and not isinstance(
-                                    applicationQualifier, SubmodelElement
+                                    applicationQualifier, aas.SubmodelElement
                                 ):
                                     applicationQualifier = self.ApplicationQualifier(
                                         applicationQualifier
@@ -3725,7 +3868,7 @@ class Models3D(Submodel):
                                 ]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -3733,7 +3876,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -3749,48 +3892,52 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ProvidingOrganization(SubmodelElementCollection):
+                        class ProvidingOrganization(aas.SubmodelElementCollection):
 
-                            class OrganizationName(Property):
+                            class OrganizationName(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"OrganizationName",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/OrganizationName/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -3814,7 +3961,7 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class OrganizationOfficialName(Property):
+                            class OrganizationOfficialName(aas.Property):
 
                                 def __init__(
                                     self,
@@ -3822,40 +3969,44 @@ class Models3D(Submodel):
                                     id_short: Optional[
                                         str
                                     ] = r"OrganizationOfficialName",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization//OrganizationOfficialName/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -3886,34 +4037,38 @@ class Models3D(Submodel):
                                     str, OrganizationOfficialName
                                 ],
                                 id_short: Optional[str] = r"ProvidingOrganization",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -3924,7 +4079,7 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if organizationName and not isinstance(
-                                    organizationName, SubmodelElement
+                                    organizationName, aas.SubmodelElement
                                 ):
                                     organizationName = self.OrganizationName(
                                         organizationName
@@ -3932,7 +4087,7 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if organizationOfficialName and not isinstance(
-                                    organizationOfficialName, SubmodelElement
+                                    organizationOfficialName, aas.SubmodelElement
                                 ):
                                     organizationOfficialName = (
                                         self.OrganizationOfficialName(
@@ -3948,7 +4103,7 @@ class Models3D(Submodel):
                                 ]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -3956,7 +4111,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -3974,11 +4129,11 @@ class Models3D(Submodel):
 
                         def __init__(
                             self,
-                            title: Union[LangStringSet, Title],
+                            title: Union[aas.LangStringSet, Title],
                             fileName: Union[str, FileName],
                             fileVersionId: Union[str, FileVersionId],
                             statusValue: Union[str, StatusValue],
-                            setDate: Union[Date, SetDate],
+                            setDate: Union[xsd.Date, SetDate],
                             previewFile: PreviewFile,
                             fileFormat: FileFormat,
                             providingOrganization: ProvidingOrganization,
@@ -3988,34 +4143,36 @@ class Models3D(Submodel):
                             externalFile: Optional[ExternalFile] = None,
                             sourceApplication: Optional[SourceApplication] = None,
                             id_short: Optional[str] = r"fileversion_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -4025,27 +4182,29 @@ class Models3D(Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if title and not isinstance(title, SubmodelElement):
+                            if title and not isinstance(title, aas.SubmodelElement):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if fileName and not isinstance(fileName, SubmodelElement):
+                            if fileName and not isinstance(
+                                fileName, aas.SubmodelElement
+                            ):
                                 fileName = self.FileName(fileName)
 
                             # Build a submodel element if a raw value was passed in the argument
                             if fileVersionId and not isinstance(
-                                fileVersionId, SubmodelElement
+                                fileVersionId, aas.SubmodelElement
                             ):
                                 fileVersionId = self.FileVersionId(fileVersionId)
 
                             # Build a submodel element if a raw value was passed in the argument
                             if statusValue and not isinstance(
-                                statusValue, SubmodelElement
+                                statusValue, aas.SubmodelElement
                             ):
                                 statusValue = self.StatusValue(statusValue)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if setDate and not isinstance(setDate, SubmodelElement):
+                            if setDate and not isinstance(setDate, aas.SubmodelElement):
                                 setDate = self.SetDate(setDate)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -4067,7 +4226,7 @@ class Models3D(Submodel):
                             ]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -4075,7 +4234,7 @@ class Models3D(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -4095,38 +4254,38 @@ class Models3D(Submodel):
                         self,
                         fileversion_items: Optional[Iterable[Fileversion_item]] = None,
                         id_short: Optional[str] = r"FileVersion",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4140,7 +4299,7 @@ class Models3D(Submodel):
                         for se_arg in [fileversion_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -4148,7 +4307,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -4176,7 +4335,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -4192,7 +4351,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -4203,13 +4362,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -4228,7 +4387,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -4239,46 +4398,50 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class ConsumingApplication(SubmodelElementList):
+                class ConsumingApplication(aas.SubmodelElementList):
 
-                    class Consumingapplication_item(SubmodelElementCollection):
+                    class Consumingapplication_item(aas.SubmodelElementCollection):
 
-                        class ApplicationName(Property):
+                        class ApplicationName(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ApplicationName",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationName/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -4302,42 +4465,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ApplicationVersion(Property):
+                        class ApplicationVersion(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ApplicationVersion",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationVersion/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -4361,42 +4528,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ApplicationQualifier(Property):
+                        class ApplicationQualifier(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ApplicationQualifier",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationQualifier1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -4420,48 +4591,52 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class VendorOrganization(SubmodelElementCollection):
+                        class VendorOrganization(aas.SubmodelElementCollection):
 
-                            class OrganizationName(Property):
+                            class OrganizationName(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"OrganizationName",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationName/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -4485,7 +4660,7 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class OrganizationOfficialName(Property):
+                            class OrganizationOfficialName(aas.Property):
 
                                 def __init__(
                                     self,
@@ -4493,40 +4668,44 @@ class Models3D(Submodel):
                                     id_short: Optional[
                                         str
                                     ] = r"OrganizationOfficialName",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationOfficialName/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -4557,34 +4736,38 @@ class Models3D(Submodel):
                                     str, OrganizationOfficialName
                                 ],
                                 id_short: Optional[str] = r"VendorOrganization",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -4595,7 +4778,7 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if organizationName and not isinstance(
-                                    organizationName, SubmodelElement
+                                    organizationName, aas.SubmodelElement
                                 ):
                                     organizationName = self.OrganizationName(
                                         organizationName
@@ -4603,7 +4786,7 @@ class Models3D(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if organizationOfficialName and not isinstance(
-                                    organizationOfficialName, SubmodelElement
+                                    organizationOfficialName, aas.SubmodelElement
                                 ):
                                     organizationOfficialName = (
                                         self.OrganizationOfficialName(
@@ -4619,7 +4802,7 @@ class Models3D(Submodel):
                                 ]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -4627,7 +4810,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -4643,54 +4826,54 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class Api(SubmodelElementList):
+                        class Api(aas.SubmodelElementList):
 
-                            class Api_item(SubmodelElementCollection):
+                            class Api_item(aas.SubmodelElementCollection):
 
-                                class ApiVersion(Property):
+                                class ApiVersion(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"ApiVersion",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiVersion/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -4714,7 +4897,7 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class ApiDocumentationUrl(Property):
+                                class ApiDocumentationUrl(aas.Property):
 
                                     def __init__(
                                         self,
@@ -4722,44 +4905,44 @@ class Models3D(Submodel):
                                         id_short: Optional[
                                             str
                                         ] = r"ApiDocumentationUrl",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiDocumentationUrl/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"ZeroToOne",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -4783,7 +4966,7 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class ApiSpecificationUrl(Property):
+                                class ApiSpecificationUrl(aas.Property):
 
                                     def __init__(
                                         self,
@@ -4791,44 +4974,44 @@ class Models3D(Submodel):
                                         id_short: Optional[
                                             str
                                         ] = r"ApiSpecificationUrl",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiSpecificationUrl/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"ZeroToOne",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -4863,37 +5046,41 @@ class Models3D(Submodel):
                                     ] = None,
                                     id_short: Optional[str] = r"api_item",
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"ZeroToMany",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -4904,13 +5091,13 @@ class Models3D(Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if apiVersion and not isinstance(
-                                        apiVersion, SubmodelElement
+                                        apiVersion, aas.SubmodelElement
                                     ):
                                         apiVersion = self.ApiVersion(apiVersion)
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if apiDocumentationUrl and not isinstance(
-                                        apiDocumentationUrl, SubmodelElement
+                                        apiDocumentationUrl, aas.SubmodelElement
                                     ):
                                         apiDocumentationUrl = self.ApiDocumentationUrl(
                                             apiDocumentationUrl
@@ -4918,7 +5105,7 @@ class Models3D(Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if apiSpecificationUrl and not isinstance(
-                                        apiSpecificationUrl, SubmodelElement
+                                        apiSpecificationUrl, aas.SubmodelElement
                                     ):
                                         apiSpecificationUrl = self.ApiSpecificationUrl(
                                             apiSpecificationUrl
@@ -4933,7 +5120,7 @@ class Models3D(Submodel):
                                     ]:
                                         if se_arg is None:
                                             continue
-                                        elif isinstance(se_arg, SubmodelElement):
+                                        elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
                                             for n, element in enumerate(se_arg):
@@ -4945,7 +5132,7 @@ class Models3D(Submodel):
                                                 )
                                         else:
                                             raise TypeError(
-                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                             )
 
                                     super().__init__(
@@ -4965,40 +5152,46 @@ class Models3D(Submodel):
                                 self,
                                 api_items: Optional[Iterable[Api_item]] = None,
                                 id_short: Optional[str] = r"Api",
-                                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                                semantic_id_list_element: Optional[Reference] = None,
+                                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                                semantic_id_list_element: Optional[
+                                    aas.Reference
+                                ] = None,
                                 value_type_list_element: Optional[
-                                    DataTypeDefXsd
+                                    aas.DataTypeDefXsd
                                 ] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -5012,7 +5205,7 @@ class Models3D(Submodel):
                                 for se_arg in [api_items]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -5020,7 +5213,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -5048,7 +5241,7 @@ class Models3D(Submodel):
 
                                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                                 if not isinstance(new, self.type_value_list_element):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         108,
                                         "All first level elements must be of the type specified in "
                                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -5064,7 +5257,7 @@ class Models3D(Submodel):
                                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                     # Not really a constraint...
                                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         107,
                                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                         "is specified all first level children must have the same "
@@ -5075,13 +5268,17 @@ class Models3D(Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    isinstance(self.type_value_list_element, Property)
-                                    or isinstance(self.type_value_list_element, Range)
+                                    isinstance(
+                                        self.type_value_list_element, aas.Property
+                                    )
+                                    or isinstance(
+                                        self.type_value_list_element, aas.Range
+                                    )
                                     and not isinstance(
                                         new.value_type, self.value_type_list_element
                                     )
                                 ):  # type: ignore
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         109,
                                         "All first level elements must have the value_type "  # type: ignore
                                         "specified by value_type_list_element="
@@ -5100,7 +5297,7 @@ class Models3D(Submodel):
                                             item.semantic_id is not None
                                             and new.semantic_id != item.semantic_id
                                         ):
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
                                                 f"{new.semantic_id!r}, while already contained element "
@@ -5119,34 +5316,36 @@ class Models3D(Submodel):
                             vendorOrganization: VendorOrganization,
                             api: Optional[Api] = None,
                             id_short: Optional[str] = r"consumingapplication_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -5157,13 +5356,13 @@ class Models3D(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if applicationName and not isinstance(
-                                applicationName, SubmodelElement
+                                applicationName, aas.SubmodelElement
                             ):
                                 applicationName = self.ApplicationName(applicationName)
 
                             # Build a submodel element if a raw value was passed in the argument
                             if applicationVersion and not isinstance(
-                                applicationVersion, SubmodelElement
+                                applicationVersion, aas.SubmodelElement
                             ):
                                 applicationVersion = self.ApplicationVersion(
                                     applicationVersion
@@ -5171,7 +5370,7 @@ class Models3D(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if applicationQualifier and not isinstance(
-                                applicationQualifier, SubmodelElement
+                                applicationQualifier, aas.SubmodelElement
                             ):
                                 applicationQualifier = self.ApplicationQualifier(
                                     applicationQualifier
@@ -5188,7 +5387,7 @@ class Models3D(Submodel):
                             ]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -5196,7 +5395,7 @@ class Models3D(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -5218,38 +5417,38 @@ class Models3D(Submodel):
                             Iterable[Consumingapplication_item]
                         ] = None,
                         id_short: Optional[str] = r"ConsumingApplication",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -5263,7 +5462,7 @@ class Models3D(Submodel):
                         for se_arg in [consumingapplication_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -5271,7 +5470,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -5299,7 +5498,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -5315,7 +5514,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -5326,13 +5525,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -5351,7 +5550,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -5362,46 +5561,50 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class FileClassification(SubmodelElementList):
+                class FileClassification(aas.SubmodelElementList):
 
-                    class Fileclassification_item(SubmodelElementCollection):
+                    class Fileclassification_item(aas.SubmodelElementCollection):
 
-                        class ClassId(Property):
+                        class ClassId(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ClassId",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassId/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -5425,41 +5628,45 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ClassName(MultiLanguageProperty):
+                        class ClassName(aas.MultiLanguageProperty):
 
                             def __init__(
                                 self,
-                                value: LangStringSet,
+                                value: aas.LangStringSet,
                                 id_short: Optional[str] = r"ClassName",
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassName/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -5482,42 +5689,46 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ClassificationSystem(Property):
+                        class ClassificationSystem(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ClassificationSystem",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ClassificationSystem/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -5544,37 +5755,39 @@ class Models3D(Submodel):
                         def __init__(
                             self,
                             classId: Union[str, ClassId],
-                            className: Union[LangStringSet, ClassName],
+                            className: Union[aas.LangStringSet, ClassName],
                             classificationSystem: Union[str, ClassificationSystem],
                             id_short: Optional[str] = r"fileclassification_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"OneToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -5584,16 +5797,18 @@ class Models3D(Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if classId and not isinstance(classId, SubmodelElement):
+                            if classId and not isinstance(classId, aas.SubmodelElement):
                                 classId = self.ClassId(classId)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if className and not isinstance(className, SubmodelElement):
+                            if className and not isinstance(
+                                className, aas.SubmodelElement
+                            ):
                                 className = self.ClassName(className)
 
                             # Build a submodel element if a raw value was passed in the argument
                             if classificationSystem and not isinstance(
-                                classificationSystem, SubmodelElement
+                                classificationSystem, aas.SubmodelElement
                             ):
                                 classificationSystem = self.ClassificationSystem(
                                     classificationSystem
@@ -5604,7 +5819,7 @@ class Models3D(Submodel):
                             for se_arg in [classId, className, classificationSystem]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -5612,7 +5827,7 @@ class Models3D(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -5632,38 +5847,38 @@ class Models3D(Submodel):
                         self,
                         fileclassification_items: Iterable[Fileclassification_item],
                         id_short: Optional[str] = r"FileClassification",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -5677,7 +5892,7 @@ class Models3D(Submodel):
                         for se_arg in [fileclassification_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -5685,7 +5900,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -5713,7 +5928,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -5729,7 +5944,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -5740,13 +5955,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -5765,7 +5980,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -5783,34 +5998,34 @@ class Models3D(Submodel):
                     fileVersion: Optional[FileVersion] = None,
                     consumingApplication: Optional[ConsumingApplication] = None,
                     id_short: Optional[str] = r"File",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/File/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -5829,7 +6044,7 @@ class Models3D(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -5837,7 +6052,7 @@ class Models3D(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -5853,46 +6068,48 @@ class Models3D(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Capability(SubmodelElementCollection):
+            class Capability(aas.SubmodelElementCollection):
 
-                class PosModelPurpose(SubmodelElementList):
+                class PosModelPurpose(aas.SubmodelElementList):
 
-                    class Posmodelpurpose_item(Property):
+                    class Posmodelpurpose_item(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"posmodelpurpose_item",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -5922,38 +6139,38 @@ class Models3D(Submodel):
                             Iterable[Union[str, Posmodelpurpose_item]]
                         ] = None,
                         id_short: Optional[str] = r"PosModelPurpose",
-                        type_value_list_element: SubmodelElement = Property,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = str,
+                        type_value_list_element: aas.SubmodelElement = aas.Property,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -5967,7 +6184,7 @@ class Models3D(Submodel):
                             posmodelpurpose_items = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.Posmodelpurpose_item(i)
                                 )
                                 for i in posmodelpurpose_items
@@ -5978,7 +6195,7 @@ class Models3D(Submodel):
                         for se_arg in [posmodelpurpose_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -5986,7 +6203,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -6014,7 +6231,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6030,7 +6247,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -6041,13 +6258,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -6066,7 +6283,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -6077,44 +6294,46 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class NegModelPurpose(SubmodelElementList):
+                class NegModelPurpose(aas.SubmodelElementList):
 
-                    class Negmodelpurpose_item(Property):
+                    class Negmodelpurpose_item(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"negmodelpurpose_item",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -6144,38 +6363,38 @@ class Models3D(Submodel):
                             Iterable[Union[str, Negmodelpurpose_item]]
                         ] = None,
                         id_short: Optional[str] = r"NegModelPurpose",
-                        type_value_list_element: SubmodelElement = Property,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = str,
+                        type_value_list_element: aas.SubmodelElement = aas.Property,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -6189,7 +6408,7 @@ class Models3D(Submodel):
                             negmodelpurpose_items = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.Negmodelpurpose_item(i)
                                 )
                                 for i in negmodelpurpose_items
@@ -6200,7 +6419,7 @@ class Models3D(Submodel):
                         for se_arg in [negmodelpurpose_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -6208,7 +6427,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -6236,7 +6455,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6252,7 +6471,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -6263,13 +6482,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -6288,7 +6507,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -6299,44 +6518,46 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class EmbeddedInfo(SubmodelElementList):
+                class EmbeddedInfo(aas.SubmodelElementList):
 
-                    class Embeddedinfo_item(Property):
+                    class Embeddedinfo_item(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"embeddedinfo_item",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -6366,38 +6587,38 @@ class Models3D(Submodel):
                             Iterable[Union[str, Embeddedinfo_item]]
                         ] = None,
                         id_short: Optional[str] = r"EmbeddedInfo",
-                        type_value_list_element: SubmodelElement = Property,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = str,
+                        type_value_list_element: aas.SubmodelElement = aas.Property,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -6411,7 +6632,7 @@ class Models3D(Submodel):
                             embeddedinfo_items = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.Embeddedinfo_item(i)
                                 )
                                 for i in embeddedinfo_items
@@ -6422,7 +6643,7 @@ class Models3D(Submodel):
                         for se_arg in [embeddedinfo_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -6430,7 +6651,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -6458,7 +6679,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6474,7 +6695,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -6485,13 +6706,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -6510,7 +6731,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -6521,44 +6742,46 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class State(SubmodelElementList):
+                class State(aas.SubmodelElementList):
 
-                    class State_item(Property):
+                    class State_item(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"state_item",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -6586,38 +6809,38 @@ class Models3D(Submodel):
                         self,
                         state_items: Optional[Iterable[Union[str, State_item]]] = None,
                         id_short: Optional[str] = r"State",
-                        type_value_list_element: SubmodelElement = Property,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = str,
+                        type_value_list_element: aas.SubmodelElement = aas.Property,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -6631,7 +6854,7 @@ class Models3D(Submodel):
                             state_items = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.State_item(i)
                                 )
                                 for i in state_items
@@ -6642,7 +6865,7 @@ class Models3D(Submodel):
                         for se_arg in [state_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -6650,7 +6873,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -6678,7 +6901,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6694,7 +6917,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -6705,13 +6928,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -6730,7 +6953,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -6741,42 +6964,42 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class ObjectType(Property):
+                class ObjectType(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ObjectType",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/ObjectType/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -6800,42 +7023,42 @@ class Models3D(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Origin(Property):
+                class Origin(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Origin",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Origin/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -6859,44 +7082,46 @@ class Models3D(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Simplification(SubmodelElementCollection):
+                class Simplification(aas.SubmodelElementCollection):
 
-                    class Description(Property):
+                    class Description(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"Description",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/LevelDescription/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -6920,44 +7145,48 @@ class Models3D(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReducedElements(SubmodelElementList):
+                    class ReducedElements(aas.SubmodelElementList):
 
-                        class Reducedelements_item(Property):
+                        class Reducedelements_item(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"reducedelements_item",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToMany",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -6987,38 +7216,40 @@ class Models3D(Submodel):
                                 Iterable[Union[str, Reducedelements_item]]
                             ] = None,
                             id_short: Optional[str] = r"ReducedElements",
-                            type_value_list_element: SubmodelElement = Property,
-                            semantic_id_list_element: Optional[Reference] = None,
-                            value_type_list_element: Optional[DataTypeDefXsd] = str,
+                            type_value_list_element: aas.SubmodelElement = aas.Property,
+                            semantic_id_list_element: Optional[aas.Reference] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                             order_relevant: bool = True,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -7032,7 +7263,7 @@ class Models3D(Submodel):
                                 reducedelements_items = [
                                     (
                                         i
-                                        if isinstance(i, SubmodelElement)
+                                        if isinstance(i, aas.SubmodelElement)
                                         else self.Reducedelements_item(i)
                                     )
                                     for i in reducedelements_items
@@ -7043,7 +7274,7 @@ class Models3D(Submodel):
                             for se_arg in [reducedelements_items]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -7051,7 +7282,7 @@ class Models3D(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -7079,7 +7310,7 @@ class Models3D(Submodel):
 
                             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                             if not isinstance(new, self.type_value_list_element):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     108,
                                     "All first level elements must be of the type specified in "
                                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -7095,7 +7326,7 @@ class Models3D(Submodel):
                                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                 # Not really a constraint...
                                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     107,
                                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                     "is specified all first level children must have the same "
@@ -7106,13 +7337,13 @@ class Models3D(Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                isinstance(self.type_value_list_element, Property)
-                                or isinstance(self.type_value_list_element, Range)
+                                isinstance(self.type_value_list_element, aas.Property)
+                                or isinstance(self.type_value_list_element, aas.Range)
                                 and not isinstance(
                                     new.value_type, self.value_type_list_element
                                 )
                             ):  # type: ignore
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     109,
                                     "All first level elements must have the value_type "  # type: ignore
                                     "specified by value_type_list_element="
@@ -7131,7 +7362,7 @@ class Models3D(Submodel):
                                         item.semantic_id is not None
                                         and new.semantic_id != item.semantic_id
                                     ):
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
                                             f"{new.semantic_id!r}, while already contained element "
@@ -7142,40 +7373,42 @@ class Models3D(Submodel):
                             # Re-assign id_short
                             new.id_short = saved_id_short
 
-                    class DerivedFrom(ReferenceElement):
+                    class DerivedFrom(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"DerivedFrom",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/DerivedFrom/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -7203,36 +7436,36 @@ class Models3D(Submodel):
                         reducedElements: Optional[
                             Union[Iterable[str], ReducedElements]
                         ] = None,
-                        derivedFrom: Optional[Union[Reference, DerivedFrom]] = None,
+                        derivedFrom: Optional[Union[aas.Reference, DerivedFrom]] = None,
                         id_short: Optional[str] = r"Simplification",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -7243,18 +7476,20 @@ class Models3D(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if description_ and not isinstance(
-                            description_, SubmodelElement
+                            description_, aas.SubmodelElement
                         ):
                             description_ = self.Description(description_)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if reducedElements and not isinstance(
-                            reducedElements, SubmodelElement
+                            reducedElements, aas.SubmodelElement
                         ):
                             reducedElements = self.ReducedElements(reducedElements)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if derivedFrom and not isinstance(derivedFrom, SubmodelElement):
+                        if derivedFrom and not isinstance(
+                            derivedFrom, aas.SubmodelElement
+                        ):
                             derivedFrom = self.DerivedFrom(derivedFrom)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -7262,7 +7497,7 @@ class Models3D(Submodel):
                         for se_arg in [description_, reducedElements, derivedFrom]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -7270,7 +7505,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -7298,34 +7533,34 @@ class Models3D(Submodel):
                     objectType: Optional[Union[str, ObjectType]] = None,
                     simplification: Optional[Simplification] = None,
                     id_short: Optional[str] = r"Capability",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7336,30 +7571,32 @@ class Models3D(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if posModelPurpose and not isinstance(
-                        posModelPurpose, SubmodelElement
+                        posModelPurpose, aas.SubmodelElement
                     ):
                         posModelPurpose = self.PosModelPurpose(posModelPurpose)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if negModelPurpose and not isinstance(
-                        negModelPurpose, SubmodelElement
+                        negModelPurpose, aas.SubmodelElement
                     ):
                         negModelPurpose = self.NegModelPurpose(negModelPurpose)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if embeddedInfo and not isinstance(embeddedInfo, SubmodelElement):
+                    if embeddedInfo and not isinstance(
+                        embeddedInfo, aas.SubmodelElement
+                    ):
                         embeddedInfo = self.EmbeddedInfo(embeddedInfo)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if state and not isinstance(state, SubmodelElement):
+                    if state and not isinstance(state, aas.SubmodelElement):
                         state = self.State(state)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if objectType and not isinstance(objectType, SubmodelElement):
+                    if objectType and not isinstance(objectType, aas.SubmodelElement):
                         objectType = self.ObjectType(objectType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if origin and not isinstance(origin, SubmodelElement):
+                    if origin and not isinstance(origin, aas.SubmodelElement):
                         origin = self.Origin(origin)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7375,7 +7612,7 @@ class Models3D(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -7383,7 +7620,7 @@ class Models3D(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -7399,44 +7636,44 @@ class Models3D(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Geometry(SubmodelElementCollection):
+            class Geometry(aas.SubmodelElementCollection):
 
-                class Representation(Property):
+                class Representation(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Representation",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/Representation/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -7460,42 +7697,42 @@ class Models3D(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LengthUnit(Property):
+                class LengthUnit(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LengthUnit",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/LengthUnit/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -7519,46 +7756,50 @@ class Models3D(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class CartBoundingBox(SubmodelElementList):
+                class CartBoundingBox(aas.SubmodelElementList):
 
-                    class Cartboundingbox_item(SubmodelElementCollection):
+                    class Cartboundingbox_item(aas.SubmodelElementCollection):
 
-                        class BoundingBoxKind(Property):
+                        class BoundingBoxKind(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"BoundingBoxKind",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/BoundingBoxKind/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -7582,54 +7823,54 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class CartRefSystem(SubmodelElementCollection):
+                        class CartRefSystem(aas.SubmodelElementCollection):
 
-                            class CartOffsetVector(SubmodelElementCollection):
+                            class CartOffsetVector(aas.SubmodelElementCollection):
 
-                                class X(Property):
+                                class X(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"X",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/X/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -7653,50 +7894,50 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class Y(Property):
+                                class Y(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"Y",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Y/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -7720,50 +7961,50 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class Z(Property):
+                                class Z(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"Z",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Z/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -7794,37 +8035,41 @@ class Models3D(Submodel):
                                     z: Union[str, Z],
                                     id_short: Optional[str] = r"CartOffsetVector",
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"ZeroToOne",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -7834,15 +8079,15 @@ class Models3D(Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if x and not isinstance(x, SubmodelElement):
+                                    if x and not isinstance(x, aas.SubmodelElement):
                                         x = self.X(x)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if y and not isinstance(y, SubmodelElement):
+                                    if y and not isinstance(y, aas.SubmodelElement):
                                         y = self.Y(y)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if z and not isinstance(z, SubmodelElement):
+                                    if z and not isinstance(z, aas.SubmodelElement):
                                         z = self.Z(z)
 
                                     # Add all passed/initialized submodel elements to a single list
@@ -7850,7 +8095,7 @@ class Models3D(Submodel):
                                     for se_arg in [x, y, z]:
                                         if se_arg is None:
                                             continue
-                                        elif isinstance(se_arg, SubmodelElement):
+                                        elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
                                             for n, element in enumerate(se_arg):
@@ -7862,7 +8107,7 @@ class Models3D(Submodel):
                                                 )
                                         else:
                                             raise TypeError(
-                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                             )
 
                                     super().__init__(
@@ -7878,56 +8123,56 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class NormOrientationVector(SubmodelElementList):
+                            class NormOrientationVector(aas.SubmodelElementList):
 
                                 class Normorientationvector_item(
-                                    SubmodelElementCollection
+                                    aas.SubmodelElementCollection
                                 ):
 
-                                    class X(Property):
+                                    class X(aas.Property):
 
                                         def __init__(
                                             self,
                                             value: str,
                                             id_short: Optional[str] = r"X",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/X/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"One",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -7951,50 +8196,50 @@ class Models3D(Submodel):
                                                 embedded_data_specifications=embedded_data_specifications,
                                             )
 
-                                    class Y(Property):
+                                    class Y(aas.Property):
 
                                         def __init__(
                                             self,
                                             value: str,
                                             id_short: Optional[str] = r"Y",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Y/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"One",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -8018,50 +8263,50 @@ class Models3D(Submodel):
                                                 embedded_data_specifications=embedded_data_specifications,
                                             )
 
-                                    class Z(Property):
+                                    class Z(aas.Property):
 
                                         def __init__(
                                             self,
                                             value: str,
                                             id_short: Optional[str] = r"Z",
-                                            value_type: DataTypeDefXsd = str,
-                                            value_id: Optional[Reference] = None,
+                                            value_type: aas.DataTypeDefXsd = str,
+                                            value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
-                                                MultiLanguageNameType
+                                                aas.MultiLanguageNameType
                                             ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
-                                                MultiLanguageTextType
+                                                aas.MultiLanguageTextType
                                             ] = None,
                                             semantic_id: Optional[
-                                                Reference
-                                            ] = ExternalReference(
+                                                aas.Reference
+                                            ] = aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Z/1/0",
                                                     ),
                                                 ),
                                                 referred_semantic_id=None,
                                             ),
-                                            qualifier: Iterable[Qualifier] = None,
-                                            extension: Iterable[Extension] = (),
+                                            qualifier: Iterable[aas.Qualifier] = None,
+                                            extension: Iterable[aas.Extension] = (),
                                             supplemental_semantic_id: Iterable[
-                                                Reference
+                                                aas.Reference
                                             ] = (),
                                             embedded_data_specifications: Iterable[
-                                                EmbeddedDataSpecification
+                                                aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if qualifier is None:
                                                 qualifier = (
-                                                    Qualifier(
+                                                    aas.Qualifier(
                                                         type_=r"SMT/Cardinality",
                                                         value_type=str,
                                                         value=r"One",
                                                         value_id=None,
-                                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                         semantic_id=None,
                                                         supplemental_semantic_id=(),
                                                     ),
@@ -8094,41 +8339,41 @@ class Models3D(Submodel):
                                             str
                                         ] = r"normorientationvector_item",
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"Three",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -8138,15 +8383,15 @@ class Models3D(Submodel):
                                             embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if x and not isinstance(x, SubmodelElement):
+                                        if x and not isinstance(x, aas.SubmodelElement):
                                             x = self.X(x)
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if y and not isinstance(y, SubmodelElement):
+                                        if y and not isinstance(y, aas.SubmodelElement):
                                             y = self.Y(y)
 
                                         # Build a submodel element if a raw value was passed in the argument
-                                        if z and not isinstance(z, SubmodelElement):
+                                        if z and not isinstance(z, aas.SubmodelElement):
                                             z = self.Z(z)
 
                                         # Add all passed/initialized submodel elements to a single list
@@ -8154,7 +8399,9 @@ class Models3D(Submodel):
                                         for se_arg in [x, y, z]:
                                             if se_arg is None:
                                                 continue
-                                            elif isinstance(se_arg, SubmodelElement):
+                                            elif isinstance(
+                                                se_arg, aas.SubmodelElement
+                                            ):
                                                 embedded_submodel_elements.append(
                                                     se_arg
                                                 )
@@ -8168,7 +8415,7 @@ class Models3D(Submodel):
                                                     )
                                             else:
                                                 raise TypeError(
-                                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                                 )
 
                                         super().__init__(
@@ -8188,46 +8435,50 @@ class Models3D(Submodel):
                                     self,
                                     normorientationvector_items: Normorientationvector_item,
                                     id_short: Optional[str] = r"NormOrientationVector",
-                                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
-                                        Reference
+                                        aas.Reference
                                     ] = None,
                                     value_type_list_element: Optional[
-                                        DataTypeDefXsd
+                                        aas.DataTypeDefXsd
                                     ] = None,
                                     order_relevant: bool = True,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"ZeroToOne",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -8241,7 +8492,7 @@ class Models3D(Submodel):
                                     for se_arg in [normorientationvector_items]:
                                         if se_arg is None:
                                             continue
-                                        elif isinstance(se_arg, SubmodelElement):
+                                        elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
                                             for n, element in enumerate(se_arg):
@@ -8253,7 +8504,7 @@ class Models3D(Submodel):
                                                 )
                                         else:
                                             raise TypeError(
-                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                             )
 
                                     super().__init__(
@@ -8283,7 +8534,7 @@ class Models3D(Submodel):
                                     if not isinstance(
                                         new, self.type_value_list_element
                                     ):
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             108,
                                             "All first level elements must be of the type specified in "
                                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -8300,7 +8551,7 @@ class Models3D(Submodel):
                                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                         # Not really a constraint...
                                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             107,
                                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                             "is specified all first level children must have the same "
@@ -8312,16 +8563,16 @@ class Models3D(Submodel):
                                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                     if (
                                         isinstance(
-                                            self.type_value_list_element, Property
+                                            self.type_value_list_element, aas.Property
                                         )
                                         or isinstance(
-                                            self.type_value_list_element, Range
+                                            self.type_value_list_element, aas.Range
                                         )
                                         and not isinstance(
                                             new.value_type, self.value_type_list_element
                                         )
                                     ):  # type: ignore
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             109,
                                             "All first level elements must have the value_type "  # type: ignore
                                             "specified by value_type_list_element="
@@ -8340,7 +8591,7 @@ class Models3D(Submodel):
                                                 item.semantic_id is not None
                                                 and new.semantic_id != item.semantic_id
                                             ):
-                                                raise base.AASConstraintViolation(
+                                                raise aas.AASConstraintViolation(
                                                     114,
                                                     f"Element to be added {new!r} has semantic_id "
                                                     f"{new.semantic_id!r}, while already contained element "
@@ -8358,34 +8609,38 @@ class Models3D(Submodel):
                                     NormOrientationVector
                                 ] = None,
                                 id_short: Optional[str] = r"CartRefSystem",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -8399,7 +8654,7 @@ class Models3D(Submodel):
                                 for se_arg in [cartOffsetVector, normOrientationVector]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -8407,7 +8662,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -8423,48 +8678,52 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class CartBoundingVector(SubmodelElementCollection):
+                        class CartBoundingVector(aas.SubmodelElementCollection):
 
-                            class X(Property):
+                            class X(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"X",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/X/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -8488,46 +8747,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class Y(Property):
+                            class Y(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"Y",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Y/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -8551,46 +8814,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class Z(Property):
+                            class Z(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"Z",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Z/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -8620,34 +8887,38 @@ class Models3D(Submodel):
                                 y: Union[str, Y],
                                 z: Union[str, Z],
                                 id_short: Optional[str] = r"CartBoundingVector",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -8657,15 +8928,15 @@ class Models3D(Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if x and not isinstance(x, SubmodelElement):
+                                if x and not isinstance(x, aas.SubmodelElement):
                                     x = self.X(x)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if y and not isinstance(y, SubmodelElement):
+                                if y and not isinstance(y, aas.SubmodelElement):
                                     y = self.Y(y)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if z and not isinstance(z, SubmodelElement):
+                                if z and not isinstance(z, aas.SubmodelElement):
                                     z = self.Z(z)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -8673,7 +8944,7 @@ class Models3D(Submodel):
                                 for se_arg in [x, y, z]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -8681,7 +8952,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -8703,34 +8974,36 @@ class Models3D(Submodel):
                             cartBoundingVector: CartBoundingVector,
                             cartRefSystem: Optional[CartRefSystem] = None,
                             id_short: Optional[str] = r"cartboundingbox_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -8741,7 +9014,7 @@ class Models3D(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if boundingBoxKind and not isinstance(
-                                boundingBoxKind, SubmodelElement
+                                boundingBoxKind, aas.SubmodelElement
                             ):
                                 boundingBoxKind = self.BoundingBoxKind(boundingBoxKind)
 
@@ -8754,7 +9027,7 @@ class Models3D(Submodel):
                             ]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -8762,7 +9035,7 @@ class Models3D(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -8784,38 +9057,38 @@ class Models3D(Submodel):
                             Iterable[Cartboundingbox_item]
                         ] = None,
                         id_short: Optional[str] = r"CartBoundingBox",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -8829,7 +9102,7 @@ class Models3D(Submodel):
                         for se_arg in [cartboundingbox_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -8837,7 +9110,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -8865,7 +9138,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -8881,7 +9154,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -8892,13 +9165,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -8917,7 +9190,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -8928,52 +9201,56 @@ class Models3D(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class CartRefSystem(SubmodelElementList):
+                class CartRefSystem(aas.SubmodelElementList):
 
-                    class Cartrefsystem_item(SubmodelElementCollection):
+                    class Cartrefsystem_item(aas.SubmodelElementCollection):
 
-                        class CartOffsetVector(SubmodelElementCollection):
+                        class CartOffsetVector(aas.SubmodelElementCollection):
 
-                            class X(Property):
+                            class X(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"X",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/X/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -8997,46 +9274,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class Y(Property):
+                            class Y(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"Y",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Y/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -9060,46 +9341,50 @@ class Models3D(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class Z(Property):
+                            class Z(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"Z",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Z/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"One",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -9129,34 +9414,38 @@ class Models3D(Submodel):
                                 y: Union[str, Y],
                                 z: Union[str, Z],
                                 id_short: Optional[str] = r"CartOffsetVector",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -9166,15 +9455,15 @@ class Models3D(Submodel):
                                     embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if x and not isinstance(x, SubmodelElement):
+                                if x and not isinstance(x, aas.SubmodelElement):
                                     x = self.X(x)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if y and not isinstance(y, SubmodelElement):
+                                if y and not isinstance(y, aas.SubmodelElement):
                                     y = self.Y(y)
 
                                 # Build a submodel element if a raw value was passed in the argument
-                                if z and not isinstance(z, SubmodelElement):
+                                if z and not isinstance(z, aas.SubmodelElement):
                                     z = self.Z(z)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -9182,7 +9471,7 @@ class Models3D(Submodel):
                                 for se_arg in [x, y, z]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -9190,7 +9479,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -9206,54 +9495,56 @@ class Models3D(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class NormOrientationVector(SubmodelElementList):
+                        class NormOrientationVector(aas.SubmodelElementList):
 
-                            class Normorientationvector_item(SubmodelElementCollection):
+                            class Normorientationvector_item(
+                                aas.SubmodelElementCollection
+                            ):
 
-                                class X(Property):
+                                class X(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"X",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/X/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -9277,50 +9568,50 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class Y(Property):
+                                class Y(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"Y",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Y/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -9344,50 +9635,50 @@ class Models3D(Submodel):
                                             embedded_data_specifications=embedded_data_specifications,
                                         )
 
-                                class Z(Property):
+                                class Z(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: str,
                                         id_short: Optional[str] = r"Z",
-                                        value_type: DataTypeDefXsd = str,
-                                        value_id: Optional[Reference] = None,
+                                        value_type: aas.DataTypeDefXsd = str,
+                                        value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
-                                            MultiLanguageNameType
+                                            aas.MultiLanguageNameType
                                         ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
-                                            MultiLanguageTextType
+                                            aas.MultiLanguageTextType
                                         ] = None,
                                         semantic_id: Optional[
-                                            Reference
-                                        ] = ExternalReference(
+                                            aas.Reference
+                                        ] = aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Z/1/0",
                                                 ),
                                             ),
                                             referred_semantic_id=None,
                                         ),
-                                        qualifier: Iterable[Qualifier] = None,
-                                        extension: Iterable[Extension] = (),
+                                        qualifier: Iterable[aas.Qualifier] = None,
+                                        extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[
-                                            Reference
+                                            aas.Reference
                                         ] = (),
                                         embedded_data_specifications: Iterable[
-                                            EmbeddedDataSpecification
+                                            aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                Qualifier(
+                                                aas.Qualifier(
                                                     type_=r"SMT/Cardinality",
                                                     value_type=str,
                                                     value=r"One",
                                                     value_id=None,
-                                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                     semantic_id=None,
                                                     supplemental_semantic_id=(),
                                                 ),
@@ -9420,37 +9711,41 @@ class Models3D(Submodel):
                                         str
                                     ] = r"normorientationvector_item",
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"Three",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -9460,15 +9755,15 @@ class Models3D(Submodel):
                                         embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if x and not isinstance(x, SubmodelElement):
+                                    if x and not isinstance(x, aas.SubmodelElement):
                                         x = self.X(x)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if y and not isinstance(y, SubmodelElement):
+                                    if y and not isinstance(y, aas.SubmodelElement):
                                         y = self.Y(y)
 
                                     # Build a submodel element if a raw value was passed in the argument
-                                    if z and not isinstance(z, SubmodelElement):
+                                    if z and not isinstance(z, aas.SubmodelElement):
                                         z = self.Z(z)
 
                                     # Add all passed/initialized submodel elements to a single list
@@ -9476,7 +9771,7 @@ class Models3D(Submodel):
                                     for se_arg in [x, y, z]:
                                         if se_arg is None:
                                             continue
-                                        elif isinstance(se_arg, SubmodelElement):
+                                        elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
                                             for n, element in enumerate(se_arg):
@@ -9488,7 +9783,7 @@ class Models3D(Submodel):
                                                 )
                                         else:
                                             raise TypeError(
-                                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                             )
 
                                     super().__init__(
@@ -9508,40 +9803,46 @@ class Models3D(Submodel):
                                 self,
                                 normorientationvector_items: Normorientationvector_item,
                                 id_short: Optional[str] = r"NormOrientationVector",
-                                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                                semantic_id_list_element: Optional[Reference] = None,
+                                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                                semantic_id_list_element: Optional[
+                                    aas.Reference
+                                ] = None,
                                 value_type_list_element: Optional[
-                                    DataTypeDefXsd
+                                    aas.DataTypeDefXsd
                                 ] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -9555,7 +9856,7 @@ class Models3D(Submodel):
                                 for se_arg in [normorientationvector_items]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -9563,7 +9864,7 @@ class Models3D(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -9591,7 +9892,7 @@ class Models3D(Submodel):
 
                                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                                 if not isinstance(new, self.type_value_list_element):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         108,
                                         "All first level elements must be of the type specified in "
                                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -9607,7 +9908,7 @@ class Models3D(Submodel):
                                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                     # Not really a constraint...
                                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         107,
                                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                         "is specified all first level children must have the same "
@@ -9618,13 +9919,17 @@ class Models3D(Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    isinstance(self.type_value_list_element, Property)
-                                    or isinstance(self.type_value_list_element, Range)
+                                    isinstance(
+                                        self.type_value_list_element, aas.Property
+                                    )
+                                    or isinstance(
+                                        self.type_value_list_element, aas.Range
+                                    )
                                     and not isinstance(
                                         new.value_type, self.value_type_list_element
                                     )
                                 ):  # type: ignore
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         109,
                                         "All first level elements must have the value_type "  # type: ignore
                                         "specified by value_type_list_element="
@@ -9643,7 +9948,7 @@ class Models3D(Submodel):
                                             item.semantic_id is not None
                                             and new.semantic_id != item.semantic_id
                                         ):
-                                            raise base.AASConstraintViolation(
+                                            raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
                                                 f"{new.semantic_id!r}, while already contained element "
@@ -9661,34 +9966,36 @@ class Models3D(Submodel):
                                 NormOrientationVector
                             ] = None,
                             id_short: Optional[str] = r"cartrefsystem_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -9702,7 +10009,7 @@ class Models3D(Submodel):
                             for se_arg in [cartOffsetVector, normOrientationVector]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -9710,7 +10017,7 @@ class Models3D(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -9732,38 +10039,38 @@ class Models3D(Submodel):
                             Iterable[Cartrefsystem_item]
                         ] = None,
                         id_short: Optional[str] = r"CartRefSystem",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                        semantic_id_list_element: Optional[Reference] = None,
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                        semantic_id_list_element: Optional[aas.Reference] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -9777,7 +10084,7 @@ class Models3D(Submodel):
                         for se_arg in [cartrefsystem_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -9785,7 +10092,7 @@ class Models3D(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -9813,7 +10120,7 @@ class Models3D(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -9829,7 +10136,7 @@ class Models3D(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -9840,13 +10147,13 @@ class Models3D(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -9865,7 +10172,7 @@ class Models3D(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -9883,34 +10190,34 @@ class Models3D(Submodel):
                     cartBoundingBox: Optional[CartBoundingBox] = None,
                     cartRefSystem: Optional[CartRefSystem] = None,
                     id_short: Optional[str] = r"Geometry",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -9921,12 +10228,12 @@ class Models3D(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if representation and not isinstance(
-                        representation, SubmodelElement
+                        representation, aas.SubmodelElement
                     ):
                         representation = self.Representation(representation)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if lengthUnit and not isinstance(lengthUnit, SubmodelElement):
+                    if lengthUnit and not isinstance(lengthUnit, aas.SubmodelElement):
                         lengthUnit = self.LengthUnit(lengthUnit)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9939,7 +10246,7 @@ class Models3D(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -9947,7 +10254,7 @@ class Models3D(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -9969,34 +10276,34 @@ class Models3D(Submodel):
                 capability: Optional[Capability] = None,
                 geometry: Optional[Geometry] = None,
                 id_short: Optional[str] = r"model3d_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/Models3D/Model3D/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -10010,7 +10317,7 @@ class Models3D(Submodel):
                 for se_arg in [file, capability, geometry]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -10018,7 +10325,7 @@ class Models3D(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -10038,36 +10345,38 @@ class Models3D(Submodel):
             self,
             model3d_items: Optional[Iterable[Model3d_item]] = None,
             id_short: Optional[str] = r"Model3D",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/Models3D/Model3D/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -10081,7 +10390,7 @@ class Models3D(Submodel):
             for se_arg in [model3d_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -10089,7 +10398,7 @@ class Models3D(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -10117,7 +10426,7 @@ class Models3D(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -10133,7 +10442,7 @@ class Models3D(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -10144,11 +10453,11 @@ class Models3D(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -10164,7 +10473,7 @@ class Models3D(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -10180,31 +10489,33 @@ class Models3D(Submodel):
         id_: str,
         model3D: Model3D,
         id_short: Optional[str] = r"Models3D",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = None,
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=None,
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/Models3D/1/0",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -10218,7 +10529,7 @@ class Models3D(Submodel):
         for se_arg in [model3D]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -10226,7 +10537,7 @@ class Models3D(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

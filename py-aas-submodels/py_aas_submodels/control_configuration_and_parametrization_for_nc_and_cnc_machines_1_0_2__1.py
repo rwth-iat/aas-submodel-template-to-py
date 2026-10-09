@@ -1,63 +1,66 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class ControlConfig(Submodel):
+class ControlConfig(aas.Submodel):
 
-    class DigitalNameplate(ReferenceElement):
+    class DigitalNameplate(aas.ReferenceElement):
 
         def __init__(
             self,
-            value: Reference,
+            value: aas.Reference,
             id_short: Optional[str] = r"DigitalNameplate",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Reference to the digital nameplate of the controller."}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/nameplate/3/0/Nameplate",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"DigitalNameplate",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Submodel Element reference to the digital nameplate of the control.",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -79,69 +82,73 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class ControllerType(Property):
+    class ControllerType(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"ControllerType",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"The Controller Type describes the type of controller"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/ControllerType/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"ControllerType",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"List of controller types.",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormChoices",
                         value_type=str,
                         value=r"Path controlled; Point controlled, Track controlled",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -165,60 +172,62 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class TimeUnit(Property):
+    class TimeUnit(aas.Property):
 
         def __init__(
             self,
-            value: Float,
+            value: xsd.Float,
             id_short: Optional[str] = r"TimeUnit",
-            value_type: DataTypeDefXsd = Float,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = xsd.Float,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
-                dict_={r"en": r"Time unit of the control"}
-            ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(dict_={r"en": r"Time unit of the control"}),
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/TimeUnit/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"TimeUnit",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Time unit (s, ms, us)",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -242,60 +251,62 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class LengthUnit(Property):
+    class LengthUnit(aas.Property):
 
         def __init__(
             self,
             value: float,
             id_short: Optional[str] = r"LengthUnit",
-            value_type: DataTypeDefXsd = float,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = float,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
-                dict_={r"en": r"Length Unit of the control"}
-            ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(dict_={r"en": r"Length Unit of the control"}),
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/LengthUnit/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"LengthType",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Length type of the CNC",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -319,60 +330,64 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class FieldbusType(Property):
+    class FieldbusType(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"FieldbusType",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Fieldbus Type of the control"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/FieldbusType/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"FieldbusType",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Fieldbus type of the CNC",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -396,60 +411,64 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class CNCCycleTime(Property):
+    class CNCCycleTime(aas.Property):
 
         def __init__(
             self,
             value: float,
             id_short: Optional[str] = r"CNCCycleTime",
-            value_type: DataTypeDefXsd = float,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = float,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Defines the cycle time of the CNC control"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/CNCCycleTime/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"CNCCycleTime",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Cycle time of the CNC",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -473,60 +492,64 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class PLCCycleTime(Property):
+    class PLCCycleTime(aas.Property):
 
         def __init__(
             self,
             value: float,
             id_short: Optional[str] = r"PLCCycleTime",
-            value_type: DataTypeDefXsd = float,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = float,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Defines the cycle time of the PLC control"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/PLCCycleTime/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"PLCCycleTime",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Cycle time of the PLC",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -550,60 +573,64 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class FieldbusCycleTime(Property):
+    class FieldbusCycleTime(aas.Property):
 
         def __init__(
             self,
             value: float,
             id_short: Optional[str] = r"FieldbusCycleTime",
-            value_type: DataTypeDefXsd = float,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = float,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Defines the cycle time of the fieldbus control"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/FieldbusCycleTime/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"FieldbusCycleTime",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Cycle time of the fieldbus",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -627,60 +654,64 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class VelocityUnit(Property):
+    class VelocityUnit(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"VelocityUnit",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Defines the velocity unit of the CNC control "}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/VelocityType/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"Velocity unit",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Velocity unit of the CNC",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -704,60 +735,64 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class AccelerationUnit(Property):
+    class AccelerationUnit(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"AccelerationUnit",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Defines the acceleration unit unit of the CNC control"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/AccelerationUnit/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"Acceleration unit",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Acceleration unit of the CNC",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -781,60 +816,64 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class JerkUnit(Property):
+    class JerkUnit(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"JerkUnit",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Defines the jerk unit of the CNC control "}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/JerkUnit/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"Jerk unit",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Jerk unit of the CNC",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -858,64 +897,66 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class ControlConfigData(SubmodelElementCollection):
+    class ControlConfigData(aas.SubmodelElementCollection):
 
-        class ControlConfigFileName(Property):
+        class ControlConfigFileName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ControlConfigFileName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"Name of the control configuration file"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/ControlConfigFileName/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"ControlConfigFileName",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Filename of the configuration file.",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -939,61 +980,63 @@ class ControlConfig(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ControlConfigFile(File):
+        class ControlConfigFile(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ControlConfigFile",
                 content_type: Optional[str] = r"application/json",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"File to configure the control"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/ControlConfigFile/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"ConfigurationFile",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Configuration file of the controler.",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -1021,55 +1064,59 @@ class ControlConfig(Submodel):
             controlConfigFileName: Union[str, ControlConfigFileName],
             controlConfigFile: ControlConfigFile,
             id_short: Optional[str] = r"ControlConfigData",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Control configuration data",
                     r"de": r"Steuerungskonfigurationsdaten",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/ControlConfigData/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"ControlerConfigData",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Provide the configuration data for the controler.",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToMany",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -1080,7 +1127,7 @@ class ControlConfig(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if controlConfigFileName and not isinstance(
-                controlConfigFileName, SubmodelElement
+                controlConfigFileName, aas.SubmodelElement
             ):
                 controlConfigFileName = self.ControlConfigFileName(
                     controlConfigFileName
@@ -1091,7 +1138,7 @@ class ControlConfig(Submodel):
             for se_arg in [controlConfigFileName, controlConfigFile]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1099,7 +1146,7 @@ class ControlConfig(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1115,70 +1162,70 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Channels(SubmodelElementCollection):
+    class Channels(aas.SubmodelElementCollection):
 
-        class Channel(SubmodelElementCollection):
+        class Channel(aas.SubmodelElementCollection):
 
-            class ChannelIdentification(Property):
+            class ChannelIdentification(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ChannelIdentification",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"VARIABLE",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"This describes the unique channel identification of the specific channel"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Channels/ChannelIdentification/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"ChannelIdentification",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Identification number of the channel",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -1202,68 +1249,70 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AxesReference(SubmodelElementCollection):
+            class AxesReference(aas.SubmodelElementCollection):
 
-                class AxisName(Property):
+                class AxisName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"AxisName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(dict_={r"en": r"Unique axis name"}),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Unique axis name"}
+                        ),
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormTitle",
                                     value_type=str,
                                     value=r"AxisName",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormInfo",
                                     value_type=str,
                                     value=r"Unique axis name",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1291,66 +1340,66 @@ class ControlConfig(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ReferenceToAxis(ReferenceElement):
+                class ReferenceToAxis(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"ReferenceToAxis",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Reference to the axis"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ControlConfig/Channels/ReferenceToAxis/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormTitle",
                                     value_type=str,
                                     value=r"ReferenceToAxis",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormInfo",
                                     value_type=str,
                                     value=r"Reference to the axis",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1379,64 +1428,64 @@ class ControlConfig(Submodel):
                 def __init__(
                     self,
                     axisName: Union[str, AxisName],
-                    referenceToAxis: Union[Reference, ReferenceToAxis],
+                    referenceToAxis: Union[aas.Reference, ReferenceToAxis],
                     id_short: Optional[str] = r"AxesReference",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"The SMC “AxesReference” is a collection of referenced axes for the specific channel."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"AxesReference",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Collection of referenced axes for the specific channel",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1450,12 +1499,12 @@ class ControlConfig(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if axisName and not isinstance(axisName, SubmodelElement):
+                    if axisName and not isinstance(axisName, aas.SubmodelElement):
                         axisName = self.AxisName(axisName)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if referenceToAxis and not isinstance(
-                        referenceToAxis, SubmodelElement
+                        referenceToAxis, aas.SubmodelElement
                     ):
                         referenceToAxis = self.ReferenceToAxis(referenceToAxis)
 
@@ -1464,7 +1513,7 @@ class ControlConfig(Submodel):
                     for se_arg in [axisName, referenceToAxis]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1472,7 +1521,7 @@ class ControlConfig(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1493,54 +1542,56 @@ class ControlConfig(Submodel):
                 channelIdentification: Union[str, ChannelIdentification],
                 axesReference: Optional[Iterable[AxesReference]] = None,
                 id_short: Optional[str] = r"Channel",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"Configuration information of a specific channel"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/Channel/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"Channel",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Channel",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -1551,7 +1602,7 @@ class ControlConfig(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if channelIdentification and not isinstance(
-                    channelIdentification, SubmodelElement
+                    channelIdentification, aas.SubmodelElement
                 ):
                     channelIdentification = self.ChannelIdentification(
                         channelIdentification
@@ -1562,7 +1613,7 @@ class ControlConfig(Submodel):
                 for se_arg in [channelIdentification, axesReference]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -1570,7 +1621,7 @@ class ControlConfig(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -1590,52 +1641,56 @@ class ControlConfig(Submodel):
             self,
             channel: Channel,
             id_short: Optional[str] = r"Channels",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Collection of channels of the control"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/Channels/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"Channels",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Provides access to the paramtization of the channels/axes/drives",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToMany",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -1649,7 +1704,7 @@ class ControlConfig(Submodel):
             for se_arg in [channel]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1657,7 +1712,7 @@ class ControlConfig(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1673,66 +1728,66 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Axes(SubmodelElementCollection):
+    class Axes(aas.SubmodelElementCollection):
 
-        class Axis(SubmodelElementCollection):
+        class Axis(aas.SubmodelElementCollection):
 
-            class AxisName(Property):
+            class AxisName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AxisName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(dict_={r"en": r"Name of the axis"}),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(dict_={r"en": r"Name of the axis"}),
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/AxisName/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"AxisName",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Name of the specific axis",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -1756,62 +1811,62 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AxisType(Property):
+            class AxisType(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AxisType",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(dict_={r"en": r"Type of the axis"}),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(dict_={r"en": r"Type of the axis"}),
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/AxisType/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"AxisType",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Type of the specific axis",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -1835,64 +1890,64 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SimulationAxis(Property):
+            class SimulationAxis(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"SimulationAxis",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Axis is a simulated or real one"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"SimulationAxis",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Axis is a simulated or real one",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -1916,64 +1971,64 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SwLimitSwitchNeg(Property):
+            class SwLimitSwitchNeg(aas.Property):
 
                 def __init__(
                     self,
                     value: float,
                     id_short: Optional[str] = r"SwLimitSwitchNeg",
-                    value_type: DataTypeDefXsd = float,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = float,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Positive software limit switch"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchNeg/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"SwLimitSwitchNeg",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Software limit switch negative",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -1997,64 +2052,64 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SwLimitSwitchPos(Property):
+            class SwLimitSwitchPos(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"SwLimitSwitchPos",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Negative software limit switch"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"SwLimitSwitchPos",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Software limit switch positive",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2078,64 +2133,64 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class VelocityLimit(Property):
+            class VelocityLimit(aas.Property):
 
                 def __init__(
                     self,
-                    value: Long,
+                    value: xsd.Long,
                     id_short: Optional[str] = r"VelocityLimit",
-                    value_type: DataTypeDefXsd = Long,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Velocity limit of the axis"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/VelocityLimit/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"VelocityLimit",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Velocity limit of the axis",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2159,64 +2214,64 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AccelerationLimit(Property):
+            class AccelerationLimit(aas.Property):
 
                 def __init__(
                     self,
-                    value: Long,
+                    value: xsd.Long,
                     id_short: Optional[str] = r"AccelerationLimit",
-                    value_type: DataTypeDefXsd = Long,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Accelerationlimit of the axis"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/AccelerationLimit/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"AccelerationLimit",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Acceleration limit of the axis",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2240,62 +2295,64 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class JerkLimit(Property):
+            class JerkLimit(aas.Property):
 
                 def __init__(
                     self,
-                    value: Long,
+                    value: xsd.Long,
                     id_short: Optional[str] = r"JerkLimit",
-                    value_type: DataTypeDefXsd = Long,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(dict_={r"en": r"Jerk limit of the axis"}),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Jerk limit of the axis"}
+                    ),
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/JerkLimit/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"JerkLimit",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Jerk limit of the axis",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2319,66 +2376,66 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AxisConfigData(SubmodelElementCollection):
+            class AxisConfigData(aas.SubmodelElementCollection):
 
-                class AxisConfigFileName(Property):
+                class AxisConfigFileName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"AxisConfigFileName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Axis configuration file name"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFileName/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormTitle",
                                     value_type=str,
                                     value=r"AxisConfigFilename",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormInfo",
                                     value_type=str,
                                     value=r"Configuration filename of the axis",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2402,63 +2459,63 @@ class ControlConfig(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class AxisConfigFile(File):
+                class AxisConfigFile(aas.File):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"AxisConfigFile",
                         content_type: Optional[str] = r"application/json",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Configuration file of the axis"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFile/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormTitle",
                                     value_type=str,
                                     value=r"AxisConfigFile",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormInfo",
                                     value_type=str,
                                     value=r"Axis configuration file",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2486,58 +2543,58 @@ class ControlConfig(Submodel):
                     axisConfigFileName: Optional[Union[str, AxisConfigFileName]] = None,
                     axisConfigFile: Optional[AxisConfigFile] = None,
                     id_short: Optional[str] = r"AxisConfigData",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"The SMC “AxisConfigData” is a collection of axis configuration data."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigData/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"AxisConfigData",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Collection of axis configuration data",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2548,7 +2605,7 @@ class ControlConfig(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if axisConfigFileName and not isinstance(
-                        axisConfigFileName, SubmodelElement
+                        axisConfigFileName, aas.SubmodelElement
                     ):
                         axisConfigFileName = self.AxisConfigFileName(axisConfigFileName)
 
@@ -2557,7 +2614,7 @@ class ControlConfig(Submodel):
                     for se_arg in [axisConfigFileName, axisConfigFile]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2565,7 +2622,7 @@ class ControlConfig(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2581,65 +2638,65 @@ class ControlConfig(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Drive(SubmodelElementCollection):
+            class Drive(aas.SubmodelElementCollection):
 
-                class Manual(File):
+                class Manual(aas.File):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Manual",
                         content_type: Optional[str] = r"application/json",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"The manual file of the drive "}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Manual/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormTitle",
                                     value_type=str,
                                     value=r"DriveManual",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormInfo",
                                     value_type=str,
                                     value=r"Manual file of the drive",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2662,64 +2719,64 @@ class ControlConfig(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class TechnicalData(ReferenceElement):
+                class TechnicalData(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"TechnicalData",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Reference to the Submodel Technical Specification of the axis to gather more information"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/IDTA/TechnicalData/Submodel/2/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormTitle",
                                     value_type=str,
                                     value=r"TechnicalData",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormInfo",
                                     value_type=str,
                                     value=r"Reference to the technical Data of the drive",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2741,68 +2798,70 @@ class ControlConfig(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class DriveConfigData(SubmodelElementCollection):
+                class DriveConfigData(aas.SubmodelElementCollection):
 
-                    class DriveConfigFileName(Property):
+                    class DriveConfigFileName(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"DriveConfigFileName",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Name of the configuration file of the drive "
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFileName/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"FormTitle",
                                         value_type=str,
                                         value=r"DriveConfigFileName",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"FormInfo",
                                         value_type=str,
                                         value=r"Filename of of the configuration file",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -2826,63 +2885,65 @@ class ControlConfig(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DriveConfigFile(File):
+                    class DriveConfigFile(aas.File):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"DriveConfigFile",
                             content_type: Optional[str] = r"application/json",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={r"en": r"Configuration File of the drive"}
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFile/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"FormTitle",
                                         value_type=str,
                                         value=r"DriveConfigFile",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"FormInfo",
                                         value_type=str,
                                         value=r"Drive configuration file",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -2912,58 +2973,58 @@ class ControlConfig(Submodel):
                         ] = None,
                         driveConfigFile: Optional[DriveConfigFile] = None,
                         id_short: Optional[str] = r"DriveConfigData",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"The SMC “DriveConfigData” is a collection of drive configuration data."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/DriveConfigData/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormTitle",
                                     value_type=str,
                                     value=r"DriveConfigData",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"FormInfo",
                                     value_type=str,
                                     value=r"Drive configuration data",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2974,7 +3035,7 @@ class ControlConfig(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if driveConfigFileName and not isinstance(
-                            driveConfigFileName, SubmodelElement
+                            driveConfigFileName, aas.SubmodelElement
                         ):
                             driveConfigFileName = self.DriveConfigFileName(
                                 driveConfigFileName
@@ -2985,7 +3046,7 @@ class ControlConfig(Submodel):
                         for se_arg in [driveConfigFileName, driveConfigFile]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -2993,7 +3054,7 @@ class ControlConfig(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -3012,61 +3073,61 @@ class ControlConfig(Submodel):
                 def __init__(
                     self,
                     manual: Optional[Manual] = None,
-                    technicalData: Optional[Union[Reference, TechnicalData]] = None,
+                    technicalData: Optional[Union[aas.Reference, TechnicalData]] = None,
                     driveConfigData: Optional[DriveConfigData] = None,
                     id_short: Optional[str] = r"Drive",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"The SMC “Drive” is a collection of drive configuration information."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"Drive",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"To be filled; longer explanation",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -3076,7 +3137,9 @@ class ControlConfig(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if technicalData and not isinstance(technicalData, SubmodelElement):
+                    if technicalData and not isinstance(
+                        technicalData, aas.SubmodelElement
+                    ):
                         technicalData = self.TechnicalData(technicalData)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3084,7 +3147,7 @@ class ControlConfig(Submodel):
                     for se_arg in [manual, technicalData, driveConfigData]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3092,7 +3155,7 @@ class ControlConfig(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3115,62 +3178,64 @@ class ControlConfig(Submodel):
                 simulationAxis: Optional[Union[str, SimulationAxis]] = None,
                 swLimitSwitchNeg: Optional[Union[float, SwLimitSwitchNeg]] = None,
                 swLimitSwitchPos: Optional[Union[str, SwLimitSwitchPos]] = None,
-                velocityLimit: Optional[Union[Long, VelocityLimit]] = None,
-                accelerationLimit: Optional[Union[Long, AccelerationLimit]] = None,
-                jerkLimit: Optional[Union[Long, JerkLimit]] = None,
+                velocityLimit: Optional[Union[xsd.Long, VelocityLimit]] = None,
+                accelerationLimit: Optional[Union[xsd.Long, AccelerationLimit]] = None,
+                jerkLimit: Optional[Union[xsd.Long, JerkLimit]] = None,
                 axisConfigData: Optional[AxisConfigData] = None,
                 drive: Optional[Drive] = None,
                 id_short: Optional[str] = r"Axis",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"The SMC “Axis” is a collection of axis configuration information."
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/Channel/Axis/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"Axis",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"List of axis specific configuration data",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3180,41 +3245,43 @@ class ControlConfig(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if axisName and not isinstance(axisName, SubmodelElement):
+                if axisName and not isinstance(axisName, aas.SubmodelElement):
                     axisName = self.AxisName(axisName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if axisType and not isinstance(axisType, SubmodelElement):
+                if axisType and not isinstance(axisType, aas.SubmodelElement):
                     axisType = self.AxisType(axisType)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if simulationAxis and not isinstance(simulationAxis, SubmodelElement):
+                if simulationAxis and not isinstance(
+                    simulationAxis, aas.SubmodelElement
+                ):
                     simulationAxis = self.SimulationAxis(simulationAxis)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if swLimitSwitchNeg and not isinstance(
-                    swLimitSwitchNeg, SubmodelElement
+                    swLimitSwitchNeg, aas.SubmodelElement
                 ):
                     swLimitSwitchNeg = self.SwLimitSwitchNeg(swLimitSwitchNeg)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if swLimitSwitchPos and not isinstance(
-                    swLimitSwitchPos, SubmodelElement
+                    swLimitSwitchPos, aas.SubmodelElement
                 ):
                     swLimitSwitchPos = self.SwLimitSwitchPos(swLimitSwitchPos)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if velocityLimit and not isinstance(velocityLimit, SubmodelElement):
+                if velocityLimit and not isinstance(velocityLimit, aas.SubmodelElement):
                     velocityLimit = self.VelocityLimit(velocityLimit)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if accelerationLimit and not isinstance(
-                    accelerationLimit, SubmodelElement
+                    accelerationLimit, aas.SubmodelElement
                 ):
                     accelerationLimit = self.AccelerationLimit(accelerationLimit)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if jerkLimit and not isinstance(jerkLimit, SubmodelElement):
+                if jerkLimit and not isinstance(jerkLimit, aas.SubmodelElement):
                     jerkLimit = self.JerkLimit(jerkLimit)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3233,7 +3300,7 @@ class ControlConfig(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3241,7 +3308,7 @@ class ControlConfig(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3261,54 +3328,58 @@ class ControlConfig(Submodel):
             self,
             axis: Optional[Axis] = None,
             id_short: Optional[str] = r"Axes",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"The SMC “Axes” is a collection of axes of the CNC controller."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/Axes/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"Axes",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"List of axes of the specific channel",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"OneToMany",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -3322,7 +3393,7 @@ class ControlConfig(Submodel):
             for se_arg in [axis]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3330,7 +3401,7 @@ class ControlConfig(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3346,66 +3417,68 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class NCProgramConfig(SubmodelElementCollection):
+    class NCProgramConfig(aas.SubmodelElementCollection):
 
-        class NCProgramFileType(Property):
+        class NCProgramFileType(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"NCProgramFileType",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"NC program file type, which the CNC control can work with"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/NCProgramFileType/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"NCProgramFileType",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"File type (extension) of the NC program file",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3429,62 +3502,62 @@ class ControlConfig(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class NCProgramSyntaxType(Property):
+        class NCProgramSyntaxType(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"NCProgramSyntaxType",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
-                    dict_={r"en": r"NC program syntax type"}
-                ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(dict_={r"en": r"NC program syntax type"}),
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxType/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"NCProgramSyntax",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Syntax of the NC program",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3508,61 +3581,63 @@ class ControlConfig(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class NCProgramSyntaxManual(File):
+        class NCProgramSyntaxManual(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"NCProgramSyntaxManual",
                 content_type: Optional[str] = r"application/json",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"Manual file of the syntax of the NC program"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxManual/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"Machine code syntax manual file",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"The description of the synatx of the machine code implementation of the cnc machine",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3591,54 +3666,58 @@ class ControlConfig(Submodel):
             nCProgramSyntaxType: Optional[Union[str, NCProgramSyntaxType]] = None,
             nCProgramSyntaxManual: Optional[Iterable[NCProgramSyntaxManual]] = None,
             id_short: Optional[str] = r"NCProgramConfig",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"The SMC “NCProgramConfig” is a collection of NC program configuration information."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/NCProgramConfig/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"NCProgramConfig",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Provides NC program informations",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -3648,12 +3727,14 @@ class ControlConfig(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if nCProgramFileType and not isinstance(nCProgramFileType, SubmodelElement):
+            if nCProgramFileType and not isinstance(
+                nCProgramFileType, aas.SubmodelElement
+            ):
                 nCProgramFileType = self.NCProgramFileType(nCProgramFileType)
 
             # Build a submodel element if a raw value was passed in the argument
             if nCProgramSyntaxType and not isinstance(
-                nCProgramSyntaxType, SubmodelElement
+                nCProgramSyntaxType, aas.SubmodelElement
             ):
                 nCProgramSyntaxType = self.NCProgramSyntaxType(nCProgramSyntaxType)
 
@@ -3666,7 +3747,7 @@ class ControlConfig(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3674,7 +3755,7 @@ class ControlConfig(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3690,64 +3771,66 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class CommunicationConfig(SubmodelElementCollection):
+    class CommunicationConfig(aas.SubmodelElementCollection):
 
-        class CommunicationType(Property):
+        class CommunicationType(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"CommunicationType",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"Type of communication to the control"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/CommunicationType/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"CommunicationType",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Type of the communication access to the CNC.",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3771,62 +3854,64 @@ class ControlConfig(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class CommunicationAdress(Property):
+        class CommunicationAdress(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"CommunicationAdress",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"Communication address into the control"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/CommunicationAdress/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"CommunicationAdress",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Type of the communication access to the CNC.",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3850,64 +3935,66 @@ class ControlConfig(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class CommunicationInformationModel(Property):
+        class CommunicationInformationModel(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"CommunicationInformationModel",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Communication information model if ones exist like OPCUA"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/CommunicationInformationModel/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"CommunicationInformationModel",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Information model of the communication configuration",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3931,64 +4018,66 @@ class ControlConfig(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class OPCUAServerDataSheet(ReferenceElement):
+        class OPCUAServerDataSheet(aas.ReferenceElement):
 
             def __init__(
                 self,
-                value: Reference,
+                value: aas.Reference,
                 id_short: Optional[str] = r"OPCUAServerDataSheet",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"Reference to the OPCUA server datasheet Submodel"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/opcua-server-datasheet/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"OPCUAServerDataSheet",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"Reference to the OPCUA server datasheet Submodel",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4022,57 +4111,61 @@ class ControlConfig(Submodel):
                 Union[str, CommunicationInformationModel]
             ] = None,
             oPCUAServerDataSheet: Optional[
-                Union[Reference, OPCUAServerDataSheet]
+                Union[aas.Reference, OPCUAServerDataSheet]
             ] = None,
             id_short: Optional[str] = r"CommunicationConfig",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"The SMC “CommunicationConfig” is a collection of communication configuration information."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/CommunicationConfig/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"CommunicationConfig",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"Provides the communication information to access the CNC.",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -4082,18 +4175,20 @@ class ControlConfig(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if communicationType and not isinstance(communicationType, SubmodelElement):
+            if communicationType and not isinstance(
+                communicationType, aas.SubmodelElement
+            ):
                 communicationType = self.CommunicationType(communicationType)
 
             # Build a submodel element if a raw value was passed in the argument
             if communicationAdress and not isinstance(
-                communicationAdress, SubmodelElement
+                communicationAdress, aas.SubmodelElement
             ):
                 communicationAdress = self.CommunicationAdress(communicationAdress)
 
             # Build a submodel element if a raw value was passed in the argument
             if communicationInformationModel and not isinstance(
-                communicationInformationModel, SubmodelElement
+                communicationInformationModel, aas.SubmodelElement
             ):
                 communicationInformationModel = self.CommunicationInformationModel(
                     communicationInformationModel
@@ -4101,7 +4196,7 @@ class ControlConfig(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if oPCUAServerDataSheet and not isinstance(
-                oPCUAServerDataSheet, SubmodelElement
+                oPCUAServerDataSheet, aas.SubmodelElement
             ):
                 oPCUAServerDataSheet = self.OPCUAServerDataSheet(oPCUAServerDataSheet)
 
@@ -4115,7 +4210,7 @@ class ControlConfig(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -4123,7 +4218,7 @@ class ControlConfig(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -4139,72 +4234,72 @@ class ControlConfig(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Tools(SubmodelElementCollection):
+    class Tools(aas.SubmodelElementCollection):
 
-        class Tool(SubmodelElementCollection):
+        class Tool(aas.SubmodelElementCollection):
 
-            class ToolDescription(ReferenceElement):
+            class ToolDescription(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ToolDescription",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Reference to the tool description Submodel of the specific tool."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ToolDescription/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormTitle",
                                 value_type=str,
                                 value=r"ToolDescription",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"FormInfo",
                                 value_type=str,
                                 value=r"Reference to the tool description Submodel of the specific tool.",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4232,58 +4327,60 @@ class ControlConfig(Submodel):
 
             def __init__(
                 self,
-                toolDescription: Optional[Union[Reference, ToolDescription]] = None,
+                toolDescription: Optional[Union[aas.Reference, ToolDescription]] = None,
                 id_short: Optional[str] = r"Tool",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"The SMC “Tool” is a collection of tool configuration information."
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ControlConfig/Tool/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormTitle",
                             value_type=str,
                             value=r"Tool",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"FormInfo",
                             value_type=str,
                             value=r"One tool of the CNC",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -4293,7 +4390,9 @@ class ControlConfig(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if toolDescription and not isinstance(toolDescription, SubmodelElement):
+                if toolDescription and not isinstance(
+                    toolDescription, aas.SubmodelElement
+                ):
                     toolDescription = self.ToolDescription(toolDescription)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4301,7 +4400,7 @@ class ControlConfig(Submodel):
                 for se_arg in [toolDescription]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -4309,7 +4408,7 @@ class ControlConfig(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -4329,54 +4428,58 @@ class ControlConfig(Submodel):
             self,
             tool: Optional[Iterable[Tool]] = None,
             id_short: Optional[str] = r"Tools",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Explanation: The SMC “Tools” is a collection of tools of the CNC controller."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/ControlConfig/Tools/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormTitle",
                         value_type=str,
                         value=r"Tools",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"FormInfo",
                         value_type=str,
                         value=r"List of tools",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"OneToMany",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -4390,7 +4493,7 @@ class ControlConfig(Submodel):
             for se_arg in [tool]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -4398,7 +4501,7 @@ class ControlConfig(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -4417,9 +4520,9 @@ class ControlConfig(Submodel):
     def __init__(
         self,
         id_: str,
-        digitalNameplate: Union[Reference, DigitalNameplate],
+        digitalNameplate: Union[aas.Reference, DigitalNameplate],
         controllerType: Union[str, ControllerType],
-        timeUnit: Union[Float, TimeUnit],
+        timeUnit: Union[xsd.Float, TimeUnit],
         axes: Iterable[Axes],
         tools: Iterable[Tools],
         lengthUnit: Optional[Union[float, LengthUnit]] = None,
@@ -4435,35 +4538,37 @@ class ControlConfig(Submodel):
         nCProgramConfig: Optional[NCProgramConfig] = None,
         communicationConfig: Optional[CommunicationConfig] = None,
         id_short: Optional[str] = r"ControlConfig",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": r"The Submodel “ControlConfig” is the collection for various parametrizations for the control of CNC machines "
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/idta-02053-1-0",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/ControlConfig/1/0",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -4473,47 +4578,47 @@ class ControlConfig(Submodel):
             embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
-        if digitalNameplate and not isinstance(digitalNameplate, SubmodelElement):
+        if digitalNameplate and not isinstance(digitalNameplate, aas.SubmodelElement):
             digitalNameplate = self.DigitalNameplate(digitalNameplate)
 
         # Build a submodel element if a raw value was passed in the argument
-        if controllerType and not isinstance(controllerType, SubmodelElement):
+        if controllerType and not isinstance(controllerType, aas.SubmodelElement):
             controllerType = self.ControllerType(controllerType)
 
         # Build a submodel element if a raw value was passed in the argument
-        if timeUnit and not isinstance(timeUnit, SubmodelElement):
+        if timeUnit and not isinstance(timeUnit, aas.SubmodelElement):
             timeUnit = self.TimeUnit(timeUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if lengthUnit and not isinstance(lengthUnit, SubmodelElement):
+        if lengthUnit and not isinstance(lengthUnit, aas.SubmodelElement):
             lengthUnit = self.LengthUnit(lengthUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if fieldbusType and not isinstance(fieldbusType, SubmodelElement):
+        if fieldbusType and not isinstance(fieldbusType, aas.SubmodelElement):
             fieldbusType = self.FieldbusType(fieldbusType)
 
         # Build a submodel element if a raw value was passed in the argument
-        if cNCCycleTime and not isinstance(cNCCycleTime, SubmodelElement):
+        if cNCCycleTime and not isinstance(cNCCycleTime, aas.SubmodelElement):
             cNCCycleTime = self.CNCCycleTime(cNCCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
-        if pLCCycleTime and not isinstance(pLCCycleTime, SubmodelElement):
+        if pLCCycleTime and not isinstance(pLCCycleTime, aas.SubmodelElement):
             pLCCycleTime = self.PLCCycleTime(pLCCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
-        if fieldbusCycleTime and not isinstance(fieldbusCycleTime, SubmodelElement):
+        if fieldbusCycleTime and not isinstance(fieldbusCycleTime, aas.SubmodelElement):
             fieldbusCycleTime = self.FieldbusCycleTime(fieldbusCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
-        if velocityUnit and not isinstance(velocityUnit, SubmodelElement):
+        if velocityUnit and not isinstance(velocityUnit, aas.SubmodelElement):
             velocityUnit = self.VelocityUnit(velocityUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if accelerationUnit and not isinstance(accelerationUnit, SubmodelElement):
+        if accelerationUnit and not isinstance(accelerationUnit, aas.SubmodelElement):
             accelerationUnit = self.AccelerationUnit(accelerationUnit)
 
         # Build a submodel element if a raw value was passed in the argument
-        if jerkUnit and not isinstance(jerkUnit, SubmodelElement):
+        if jerkUnit and not isinstance(jerkUnit, aas.SubmodelElement):
             jerkUnit = self.JerkUnit(jerkUnit)
 
         # Add all passed/initialized submodel elements to a single list
@@ -4539,7 +4644,7 @@ class ControlConfig(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -4547,7 +4652,7 @@ class ControlConfig(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

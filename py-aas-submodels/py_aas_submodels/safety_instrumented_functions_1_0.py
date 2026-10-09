@@ -1,57 +1,58 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class SafetyInstrumentedFunction(Submodel):
+class SafetyInstrumentedFunction(aas.Submodel):
 
-    class SIFSpecificationIndividualSIF(SubmodelElementCollection):
+    class SIFSpecificationIndividualSIF(aas.SubmodelElementCollection):
 
-        class SIFID(Property):
+        class SIFID(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SIFID",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"SIF ID"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"SIF ID"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SIFID/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -79,50 +80,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SIFName(Property):
+        class SIFName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SIFName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"SIF name"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"SIF name"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SIFName/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -150,50 +153,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SIFDescription(Property):
+        class SIFDescription(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SIFDescription",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"SIF description"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"SIF description"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SIFDescription/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -221,50 +226,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SafeStateOfProcess(Property):
+        class SafeStateOfProcess(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SafeStateOfProcess",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"safe state of process"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"safe state of process"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SafeStateOfProcess/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -292,59 +299,61 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SIFType(Property):
+        class SIFType(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SIFType",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"SIF type"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"SIF type"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SIFType/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"enumeration",
                             value_type=str,
                             value=r"local SIF, global SIF",
                             value_id=None,
-                            kind=QualifierKind.VALUE_QUALIFIER,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -372,59 +381,63 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ModeOfOperation(Property):
+        class ModeOfOperation(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ModeOfOperation",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"mode of operation (SIL)"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ModeOfOperation/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"enumeration",
                             value_type=str,
                             value=r"low demand, high demand, continuous demand",
                             value_id=None,
-                            kind=QualifierKind.VALUE_QUALIFIER,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -452,49 +465,51 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class Document(File):
+        class Document(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"Document",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"URL of document"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"URL of document"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about relevant document(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/Document/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -521,50 +536,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class Cause(Property):
+        class Cause(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"Cause",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"cause"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"cause"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/Cause/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -592,50 +609,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class Effect(Property):
+        class Effect(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"Effect",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"effect"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"effect"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/Effect/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -663,49 +682,53 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class CauseAndEffectMatrix(File):
+        class CauseAndEffectMatrix(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"CauseAndEffectMatrix",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"cause and effect matrix"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/CauseAndEffectMatrix/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -732,50 +755,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SILAllocationMethod(Property):
+        class SILAllocationMethod(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SILAllocationMethod",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"SIL allocation method"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"SIL allocation method"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SILAllocationMethod/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -803,50 +828,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class QuantificationMethodOrTool(Property):
+        class QuantificationMethodOrTool(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"QuantificationMethodOrTool",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"Quantification method or tool"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/QuantificationMethodOrTool/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -874,48 +903,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ReferenceToEquipmentUnderControl(ReferenceElement):
+        class ReferenceToEquipmentUnderControl(aas.ReferenceElement):
 
             def __init__(
                 self,
-                value: Reference,
+                value: aas.Reference,
                 id_short: Optional[str] = r"ReferenceToEquipmentUnderControl",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"reference to equipment under control"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ReferenceToEquipmentUnderControl/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -941,48 +974,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ReferenceToHazardousEvent(ReferenceElement):
+        class ReferenceToHazardousEvent(aas.ReferenceElement):
 
             def __init__(
                 self,
-                value: Reference,
+                value: aas.Reference,
                 id_short: Optional[str] = r"ReferenceToHazardousEvent",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"reference to hazardous event"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ReferenceToHazardousEvent/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1008,48 +1045,50 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ReferenceToSISType(ReferenceElement):
+        class ReferenceToSISType(aas.ReferenceElement):
 
             def __init__(
                 self,
-                value: Reference,
+                value: aas.Reference,
                 id_short: Optional[str] = r"ReferenceToSISType",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"reference to SIS type"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"reference to SIS type"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ReferenceToSISType/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1075,48 +1114,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ReferenceToIndependentSIF(ReferenceElement):
+        class ReferenceToIndependentSIF(aas.ReferenceElement):
 
             def __init__(
                 self,
-                value: Reference,
+                value: aas.Reference,
                 id_short: Optional[str] = r"ReferenceToIndependentSIF",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"reference to independent SIF"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ReferenceToIndependentSIF/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1142,54 +1185,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class RegulatoryReferenceForSIF(SubmodelElementCollection):
+        class RegulatoryReferenceForSIF(aas.SubmodelElementCollection):
 
-            class ReferenceName(Property):
+            class ReferenceName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ReferenceName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"reference name"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"reference name"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives relevant information about the SIF"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceName/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1217,52 +1260,52 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ReferenceVersion(Property):
+            class ReferenceVersion(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ReferenceVersion",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"document version"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"document version"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about relevant document(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceVersion/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1295,42 +1338,46 @@ class SafetyInstrumentedFunction(Submodel):
                 referenceName: Union[str, ReferenceName],
                 referenceVersion: Union[str, ReferenceVersion],
                 id_short: Optional[str] = r"RegulatoryReferenceForSIF",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"regulatory reference for SIF"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/RegulatoryReferenceForSIF/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1344,12 +1391,12 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if referenceName and not isinstance(referenceName, SubmodelElement):
+                if referenceName and not isinstance(referenceName, aas.SubmodelElement):
                     referenceName = self.ReferenceName(referenceName)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if referenceVersion and not isinstance(
-                    referenceVersion, SubmodelElement
+                    referenceVersion, aas.SubmodelElement
                 ):
                     referenceVersion = self.ReferenceVersion(referenceVersion)
 
@@ -1358,7 +1405,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [referenceName, referenceVersion]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -1366,7 +1413,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -1382,50 +1429,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ReferenceToBarrier(Property):
+        class ReferenceToBarrier(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ReferenceToBarrier",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"reference to barrier"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"reference to barrier"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ReferenceToBarrier/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1453,50 +1502,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SIFTypicalID(Property):
+        class SIFTypicalID(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SIFTypicalID",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"SIF typical ID"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"SIF typical ID"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SIFTypicalID/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1535,10 +1586,10 @@ class SafetyInstrumentedFunction(Submodel):
                 Union[str, QuantificationMethodOrTool]
             ],
             referenceToEquipmentUnderControl: Union[
-                Reference, ReferenceToEquipmentUnderControl
+                aas.Reference, ReferenceToEquipmentUnderControl
             ],
-            referenceToHazardousEvent: Union[Reference, ReferenceToHazardousEvent],
-            referenceToSISType: Iterable[Union[Reference, ReferenceToSISType]],
+            referenceToHazardousEvent: Union[aas.Reference, ReferenceToHazardousEvent],
+            referenceToSISType: Iterable[Union[aas.Reference, ReferenceToSISType]],
             sIFName: Optional[Union[str, SIFName]] = None,
             sIFType: Optional[Union[str, SIFType]] = None,
             document: Optional[Iterable[Document]] = None,
@@ -1546,7 +1597,7 @@ class SafetyInstrumentedFunction(Submodel):
             effect: Optional[Union[str, Effect]] = None,
             causeAndEffectMatrix: Optional[CauseAndEffectMatrix] = None,
             referenceToIndependentSIF: Optional[
-                Iterable[Union[Reference, ReferenceToIndependentSIF]]
+                Iterable[Union[aas.Reference, ReferenceToIndependentSIF]]
             ] = None,
             regulatoryReferenceForSIF: Optional[
                 Iterable[RegulatoryReferenceForSIF]
@@ -1556,40 +1607,46 @@ class SafetyInstrumentedFunction(Submodel):
             ] = None,
             sIFTypicalID: Optional[Union[str, SIFTypicalID]] = None,
             id_short: Optional[str] = r"SIFSpecificationIndividualSIF",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"SIF specification individual SIF"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"gives relevant information about the SIF"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/SIFSpecificationIndividualSIF/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1603,42 +1660,42 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFID and not isinstance(sIFID, SubmodelElement):
+            if sIFID and not isinstance(sIFID, aas.SubmodelElement):
                 sIFID = self.SIFID(sIFID)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFName and not isinstance(sIFName, SubmodelElement):
+            if sIFName and not isinstance(sIFName, aas.SubmodelElement):
                 sIFName = self.SIFName(sIFName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFDescription and not isinstance(sIFDescription, SubmodelElement):
+            if sIFDescription and not isinstance(sIFDescription, aas.SubmodelElement):
                 sIFDescription = self.SIFDescription(sIFDescription)
 
             # Build a submodel element if a raw value was passed in the argument
             if safeStateOfProcess and not isinstance(
-                safeStateOfProcess, SubmodelElement
+                safeStateOfProcess, aas.SubmodelElement
             ):
                 safeStateOfProcess = self.SafeStateOfProcess(safeStateOfProcess)
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFType and not isinstance(sIFType, SubmodelElement):
+            if sIFType and not isinstance(sIFType, aas.SubmodelElement):
                 sIFType = self.SIFType(sIFType)
 
             # Build a submodel element if a raw value was passed in the argument
-            if modeOfOperation and not isinstance(modeOfOperation, SubmodelElement):
+            if modeOfOperation and not isinstance(modeOfOperation, aas.SubmodelElement):
                 modeOfOperation = self.ModeOfOperation(modeOfOperation)
 
             # Build a submodel element if a raw value was passed in the argument
-            if cause and not isinstance(cause, SubmodelElement):
+            if cause and not isinstance(cause, aas.SubmodelElement):
                 cause = self.Cause(cause)
 
             # Build a submodel element if a raw value was passed in the argument
-            if effect and not isinstance(effect, SubmodelElement):
+            if effect and not isinstance(effect, aas.SubmodelElement):
                 effect = self.Effect(effect)
 
             # Build a submodel element if a raw value was passed in the argument
             if sILAllocationMethod and not isinstance(
-                sILAllocationMethod, SubmodelElement
+                sILAllocationMethod, aas.SubmodelElement
             ):
                 sILAllocationMethod = self.SILAllocationMethod(sILAllocationMethod)
 
@@ -1647,7 +1704,7 @@ class SafetyInstrumentedFunction(Submodel):
                 quantificationMethodOrTool = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.QuantificationMethodOrTool(i)
                     )
                     for i in quantificationMethodOrTool
@@ -1655,7 +1712,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if referenceToEquipmentUnderControl and not isinstance(
-                referenceToEquipmentUnderControl, SubmodelElement
+                referenceToEquipmentUnderControl, aas.SubmodelElement
             ):
                 referenceToEquipmentUnderControl = (
                     self.ReferenceToEquipmentUnderControl(
@@ -1665,7 +1722,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if referenceToHazardousEvent and not isinstance(
-                referenceToHazardousEvent, SubmodelElement
+                referenceToHazardousEvent, aas.SubmodelElement
             ):
                 referenceToHazardousEvent = self.ReferenceToHazardousEvent(
                     referenceToHazardousEvent
@@ -1674,7 +1731,11 @@ class SafetyInstrumentedFunction(Submodel):
             # Build submodel elements from raw values passed in the argument
             if referenceToSISType:
                 referenceToSISType = [
-                    i if isinstance(i, SubmodelElement) else self.ReferenceToSISType(i)
+                    (
+                        i
+                        if isinstance(i, aas.SubmodelElement)
+                        else self.ReferenceToSISType(i)
+                    )
                     for i in referenceToSISType
                 ]
 
@@ -1683,7 +1744,7 @@ class SafetyInstrumentedFunction(Submodel):
                 referenceToIndependentSIF = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.ReferenceToIndependentSIF(i)
                     )
                     for i in referenceToIndependentSIF
@@ -1692,12 +1753,16 @@ class SafetyInstrumentedFunction(Submodel):
             # Build submodel elements from raw values passed in the argument
             if referenceToBarrier:
                 referenceToBarrier = [
-                    i if isinstance(i, SubmodelElement) else self.ReferenceToBarrier(i)
+                    (
+                        i
+                        if isinstance(i, aas.SubmodelElement)
+                        else self.ReferenceToBarrier(i)
+                    )
                     for i in referenceToBarrier
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if sIFTypicalID and not isinstance(sIFTypicalID, SubmodelElement):
+            if sIFTypicalID and not isinstance(sIFTypicalID, aas.SubmodelElement):
                 sIFTypicalID = self.SIFTypicalID(sIFTypicalID)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1725,7 +1790,7 @@ class SafetyInstrumentedFunction(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1733,7 +1798,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1749,61 +1814,65 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class SRSRequirements(SubmodelElementCollection):
+    class SRSRequirements(aas.SubmodelElementCollection):
 
-        class SafetyIntegrityLevelRequirement(Property):
+        class SafetyIntegrityLevelRequirement(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SafetyIntegrityLevelRequirement",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"safety integrity level requirement"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SafetyIntegrityLevelRequirement/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"enumeration",
                             value_type=str,
                             value=r"SIL 0, SIL 1, SIL 2, SIL 3, SIL 4",
                             value_id=None,
-                            kind=QualifierKind.VALUE_QUALIFIER,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1831,59 +1900,63 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class EnvironmentalIntegrityLevelRequirement(Property):
+        class EnvironmentalIntegrityLevelRequirement(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"EnvironmentalIntegrityLevelRequirement",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"environmental integrity level requirement"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/EnvironmentalIntegrityLevelRequirement/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"enumeration",
                             value_type=str,
                             value=r"SIL 0, SIL 1, SIL 2, SIL 3, SIL 4",
                             value_id=None,
-                            kind=QualifierKind.VALUE_QUALIFIER,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1911,59 +1984,63 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class AssetIntegrityLevelRequirement(Property):
+        class AssetIntegrityLevelRequirement(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"AssetIntegrityLevelRequirement",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"asset integrity level requirement"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/AssetIntegrityLevelRequirement/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"enumeration",
                             value_type=str,
                             value=r"SIL 0, SIL 1, SIL 2, SIL 3, SIL 4",
                             value_id=None,
-                            kind=QualifierKind.VALUE_QUALIFIER,
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1991,50 +2068,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PlantOperatingMode(Property):
+        class PlantOperatingMode(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"PlantOperatingMode",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"plant operating mode"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"plant operating mode"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/PlantOperatingMode/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2062,50 +2141,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PFDRequirement(Property):
+        class PFDRequirement(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"PFDRequirement",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"PFD requirement"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"PFD requirement"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/PFDRequirement/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2133,59 +2214,61 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PFHRequirement(Property):
+        class PFHRequirement(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"PFHRequirement",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"PFH requirement"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"PFH requirement"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/PFHRequirement/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"unit",
                             value_type=str,
                             value=r"per hour",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2213,50 +2296,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class DemandSource(Property):
+        class DemandSource(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"DemandSource",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"demand source"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"demand source"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/DemandSource/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2284,59 +2369,63 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MaximumAllowableDemandRate(Property):
+        class MaximumAllowableDemandRate(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"MaximumAllowableDemandRate",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"maximum allowable demand rate"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/MaximumAllowableDemandRate/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"unit",
                             value_type=str,
                             value=r"per year",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2364,59 +2453,63 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MaximumAllowableSpuriousTripRate(Property):
+        class MaximumAllowableSpuriousTripRate(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"MaximumAllowableSpuriousTripRate",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"maximum allowable spurious trip rate"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/MaximumAllowableSpuriousTripRate/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"unit",
                             value_type=str,
                             value=r"per hour",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2444,59 +2537,63 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MaximumAllowableSIFResponseTime(Property):
+        class MaximumAllowableSIFResponseTime(aas.Property):
 
             def __init__(
                 self,
-                value: Decimal,
+                value: xsd.Decimal,
                 id_short: Optional[str] = r"MaximumAllowableSIFResponseTime",
-                value_type: DataTypeDefXsd = Decimal,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"maximum allowable SIF response time"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/MaximumAllowableSIFResponseTime/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"unit",
                             value_type=str,
                             value=r"seconds",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2524,50 +2621,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ManualActivatedShutdownRequirement(Property):
+        class ManualActivatedShutdownRequirement(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ManualActivatedShutdownRequirement",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"manual activated shutdown requirement"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ManualActivatedShutdownRequirement/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2595,50 +2696,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MeasureToAvoidCommonCauseFailure(Property):
+        class MeasureToAvoidCommonCauseFailure(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"MeasureToAvoidCommonCauseFailure",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"measure to avoid common cause failure"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/MeasureToAvoidCommonCauseFailure/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2666,49 +2771,51 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class BypassProcedure(File):
+        class BypassProcedure(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"BypassProcedure",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"bypass procedure"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"bypass procedure"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/BypassProcedure/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2735,49 +2842,53 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class TehnicalPhilosophyDocument(File):
+        class TehnicalPhilosophyDocument(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"TehnicalPhilosophyDocument",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"technical philosophy document"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/SafetyInstrumentedFunction/TechnicalPhilosophyDocument/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2804,49 +2915,53 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class BasisOfDesignDocument(File):
+        class BasisOfDesignDocument(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"BasisOfDesignDocument",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"basis of design document"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/BasisOfDesignDocument/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2873,54 +2988,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PlantAssumptions(SubmodelElementCollection):
+        class PlantAssumptions(aas.SubmodelElementCollection):
 
-            class Assumption(Property):
+            class Assumption(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"Assumption",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"assumption"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"assumption"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/Assumption/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2948,48 +3063,48 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ReferenceToAssumption(ReferenceElement):
+            class ReferenceToAssumption(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToAssumption",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"reference to assumption"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToAssumption/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -3014,44 +3129,46 @@ class SafetyInstrumentedFunction(Submodel):
             def __init__(
                 self,
                 assumption: Union[str, Assumption],
-                referenceToAssumption: Union[Reference, ReferenceToAssumption],
+                referenceToAssumption: Union[aas.Reference, ReferenceToAssumption],
                 id_short: Optional[str] = r"PlantAssumptions",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"plant assumptions"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"plant assumptions"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/PlantAssumptions/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3065,12 +3182,12 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if assumption and not isinstance(assumption, SubmodelElement):
+                if assumption and not isinstance(assumption, aas.SubmodelElement):
                     assumption = self.Assumption(assumption)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if referenceToAssumption and not isinstance(
-                    referenceToAssumption, SubmodelElement
+                    referenceToAssumption, aas.SubmodelElement
                 ):
                     referenceToAssumption = self.ReferenceToAssumption(
                         referenceToAssumption
@@ -3081,7 +3198,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [assumption, referenceToAssumption]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3089,7 +3206,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3105,56 +3222,56 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PlantRequirements(SubmodelElementCollection):
+        class PlantRequirements(aas.SubmodelElementCollection):
 
-            class Requirement(Property):
+            class Requirement(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"Requirement",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Requirement"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Requirement"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives information about relevant requirement(s)"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0112/2///61987#ABI478#001",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3182,50 +3299,50 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ReferenceToRequirement(Property):
+            class ReferenceToRequirement(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ReferenceToRequirement",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"reference to requirement"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToRequirement/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -3254,42 +3371,44 @@ class SafetyInstrumentedFunction(Submodel):
                 requirement: Union[str, Requirement],
                 referenceToRequirement: Union[str, ReferenceToRequirement],
                 id_short: Optional[str] = r"PlantRequirements",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"plant requirements"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"plant requirements"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/PlantRequirements/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3303,12 +3422,12 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if requirement and not isinstance(requirement, SubmodelElement):
+                if requirement and not isinstance(requirement, aas.SubmodelElement):
                     requirement = self.Requirement(requirement)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if referenceToRequirement and not isinstance(
-                    referenceToRequirement, SubmodelElement
+                    referenceToRequirement, aas.SubmodelElement
                 ):
                     referenceToRequirement = self.ReferenceToRequirement(
                         referenceToRequirement
@@ -3319,7 +3438,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [requirement, referenceToRequirement]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3327,7 +3446,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3343,49 +3462,53 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class AssociatedStandardOperatingProcedure(File):
+        class AssociatedStandardOperatingProcedure(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"AssociatedStandardOperatingProcedure",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"associated standard operating procedure"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/AssociatedStandardOperatingProcedure/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3418,12 +3541,12 @@ class SafetyInstrumentedFunction(Submodel):
                 str, SafetyIntegrityLevelRequirement
             ],
             demandSource: Union[str, DemandSource],
-            maximumAllowableDemandRate: Union[Float, MaximumAllowableDemandRate],
+            maximumAllowableDemandRate: Union[xsd.Float, MaximumAllowableDemandRate],
             maximumAllowableSpuriousTripRate: Union[
-                Float, MaximumAllowableSpuriousTripRate
+                xsd.Float, MaximumAllowableSpuriousTripRate
             ],
             maximumAllowableSIFResponseTime: Union[
-                Decimal, MaximumAllowableSIFResponseTime
+                xsd.Decimal, MaximumAllowableSIFResponseTime
             ],
             environmentalIntegrityLevelRequirement: Optional[
                 Union[str, EnvironmentalIntegrityLevelRequirement]
@@ -3434,8 +3557,8 @@ class SafetyInstrumentedFunction(Submodel):
             plantOperatingMode: Optional[
                 Iterable[Union[str, PlantOperatingMode]]
             ] = None,
-            pFDRequirement: Optional[Union[Float, PFDRequirement]] = None,
-            pFHRequirement: Optional[Union[Float, PFHRequirement]] = None,
+            pFDRequirement: Optional[Union[xsd.Float, PFDRequirement]] = None,
+            pFHRequirement: Optional[Union[xsd.Float, PFHRequirement]] = None,
             manualActivatedShutdownRequirement: Optional[
                 Union[str, ManualActivatedShutdownRequirement]
             ] = None,
@@ -3453,40 +3576,44 @@ class SafetyInstrumentedFunction(Submodel):
                 AssociatedStandardOperatingProcedure
             ] = None,
             id_short: Optional[str] = r"SRSRequirements",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"SRS requirements"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"SRS requirements"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/SRSRequirements/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3501,7 +3628,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if safetyIntegrityLevelRequirement and not isinstance(
-                safetyIntegrityLevelRequirement, SubmodelElement
+                safetyIntegrityLevelRequirement, aas.SubmodelElement
             ):
                 safetyIntegrityLevelRequirement = self.SafetyIntegrityLevelRequirement(
                     safetyIntegrityLevelRequirement
@@ -3509,7 +3636,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if environmentalIntegrityLevelRequirement and not isinstance(
-                environmentalIntegrityLevelRequirement, SubmodelElement
+                environmentalIntegrityLevelRequirement, aas.SubmodelElement
             ):
                 environmentalIntegrityLevelRequirement = (
                     self.EnvironmentalIntegrityLevelRequirement(
@@ -3519,7 +3646,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if assetIntegrityLevelRequirement and not isinstance(
-                assetIntegrityLevelRequirement, SubmodelElement
+                assetIntegrityLevelRequirement, aas.SubmodelElement
             ):
                 assetIntegrityLevelRequirement = self.AssetIntegrityLevelRequirement(
                     assetIntegrityLevelRequirement
@@ -3528,25 +3655,29 @@ class SafetyInstrumentedFunction(Submodel):
             # Build submodel elements from raw values passed in the argument
             if plantOperatingMode:
                 plantOperatingMode = [
-                    i if isinstance(i, SubmodelElement) else self.PlantOperatingMode(i)
+                    (
+                        i
+                        if isinstance(i, aas.SubmodelElement)
+                        else self.PlantOperatingMode(i)
+                    )
                     for i in plantOperatingMode
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFDRequirement and not isinstance(pFDRequirement, SubmodelElement):
+            if pFDRequirement and not isinstance(pFDRequirement, aas.SubmodelElement):
                 pFDRequirement = self.PFDRequirement(pFDRequirement)
 
             # Build a submodel element if a raw value was passed in the argument
-            if pFHRequirement and not isinstance(pFHRequirement, SubmodelElement):
+            if pFHRequirement and not isinstance(pFHRequirement, aas.SubmodelElement):
                 pFHRequirement = self.PFHRequirement(pFHRequirement)
 
             # Build a submodel element if a raw value was passed in the argument
-            if demandSource and not isinstance(demandSource, SubmodelElement):
+            if demandSource and not isinstance(demandSource, aas.SubmodelElement):
                 demandSource = self.DemandSource(demandSource)
 
             # Build a submodel element if a raw value was passed in the argument
             if maximumAllowableDemandRate and not isinstance(
-                maximumAllowableDemandRate, SubmodelElement
+                maximumAllowableDemandRate, aas.SubmodelElement
             ):
                 maximumAllowableDemandRate = self.MaximumAllowableDemandRate(
                     maximumAllowableDemandRate
@@ -3554,7 +3685,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if maximumAllowableSpuriousTripRate and not isinstance(
-                maximumAllowableSpuriousTripRate, SubmodelElement
+                maximumAllowableSpuriousTripRate, aas.SubmodelElement
             ):
                 maximumAllowableSpuriousTripRate = (
                     self.MaximumAllowableSpuriousTripRate(
@@ -3564,7 +3695,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if maximumAllowableSIFResponseTime and not isinstance(
-                maximumAllowableSIFResponseTime, SubmodelElement
+                maximumAllowableSIFResponseTime, aas.SubmodelElement
             ):
                 maximumAllowableSIFResponseTime = self.MaximumAllowableSIFResponseTime(
                     maximumAllowableSIFResponseTime
@@ -3572,7 +3703,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if manualActivatedShutdownRequirement and not isinstance(
-                manualActivatedShutdownRequirement, SubmodelElement
+                manualActivatedShutdownRequirement, aas.SubmodelElement
             ):
                 manualActivatedShutdownRequirement = (
                     self.ManualActivatedShutdownRequirement(
@@ -3585,7 +3716,7 @@ class SafetyInstrumentedFunction(Submodel):
                 measureToAvoidCommonCauseFailure = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.MeasureToAvoidCommonCauseFailure(i)
                     )
                     for i in measureToAvoidCommonCauseFailure
@@ -3615,7 +3746,7 @@ class SafetyInstrumentedFunction(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3623,7 +3754,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3639,54 +3770,56 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class EUCSpecification(SubmodelElementCollection):
+    class EUCSpecification(aas.SubmodelElementCollection):
 
-        class TagName(Property):
+        class TagName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"TagName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"tag name"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"tag name"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives information about the tag that the device represents"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/TagName/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3714,52 +3847,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class TagDescription(Property):
+        class TagDescription(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"TagDescription",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"tag description"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"tag description"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives relevant information about the tag that the device represents"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/TagDescription/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3787,61 +3922,63 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ProcessSafetyTime(Property):
+        class ProcessSafetyTime(aas.Property):
 
             def __init__(
                 self,
-                value: Decimal,
+                value: xsd.Decimal,
                 id_short: Optional[str] = r"ProcessSafetyTime",
-                value_type: DataTypeDefXsd = Decimal,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"process safety time"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"process safety time"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives information about the EUC that the SIF protects"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ProcessSafetyTime/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"unit",
                             value_type=str,
                             value=r"seconds",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3873,42 +4010,46 @@ class SafetyInstrumentedFunction(Submodel):
             self,
             tagName: Union[str, TagName],
             tagDescription: Union[str, TagDescription],
-            processSafetyTime: Union[Decimal, ProcessSafetyTime],
+            processSafetyTime: Union[xsd.Decimal, ProcessSafetyTime],
             id_short: Optional[str] = r"EUCSpecification",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"EUC specification"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"EUC specification"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"gives information about the EUC that the SIF protects"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/EUCSpecification/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3922,15 +4063,17 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagName and not isinstance(tagName, SubmodelElement):
+            if tagName and not isinstance(tagName, aas.SubmodelElement):
                 tagName = self.TagName(tagName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if tagDescription and not isinstance(tagDescription, SubmodelElement):
+            if tagDescription and not isinstance(tagDescription, aas.SubmodelElement):
                 tagDescription = self.TagDescription(tagDescription)
 
             # Build a submodel element if a raw value was passed in the argument
-            if processSafetyTime and not isinstance(processSafetyTime, SubmodelElement):
+            if processSafetyTime and not isinstance(
+                processSafetyTime, aas.SubmodelElement
+            ):
                 processSafetyTime = self.ProcessSafetyTime(processSafetyTime)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3938,7 +4081,7 @@ class SafetyInstrumentedFunction(Submodel):
             for se_arg in [tagName, tagDescription, processSafetyTime]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3946,7 +4089,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3962,54 +4105,58 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class HazardousEvent(SubmodelElementCollection):
+    class HazardousEvent(aas.SubmodelElementCollection):
 
-        class HazardousEventDescription(Property):
+        class HazardousEventDescription(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"HazardousEventDescription",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"hazardous event description"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives information about the hazardous event related to the SIF"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/HazardousEventDescription/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4037,52 +4184,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class HazardID(Property):
+        class HazardID(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"HazardID",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"hazard ID"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"hazard ID"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives information about the hazardous event related to the SIF"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/HazardID/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4110,52 +4259,56 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class HazardIsFromCombinedSafeProcessStates(Property):
+        class HazardIsFromCombinedSafeProcessStates(aas.Property):
 
             def __init__(
                 self,
                 value: bool,
                 id_short: Optional[str] = r"HazardIsFromCombinedSafeProcessStates",
-                value_type: DataTypeDefXsd = bool,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = bool,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"hazard from combined safe process states"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives information about the EUC that the SIF protects"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/SafetyInstrumentedFunctionSRSRequirements/HazardFromCombinedSafeProcessStates/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4183,7 +4336,7 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MeasureToAvoidHazardFromCombinedSafeProcessStates(Property):
+        class MeasureToAvoidHazardFromCombinedSafeProcessStates(aas.Property):
 
             def __init__(
                 self,
@@ -4191,48 +4344,52 @@ class SafetyInstrumentedFunction(Submodel):
                 id_short: Optional[
                     str
                 ] = r"MeasureToAvoidHazardFromCombinedSafeProcessStates",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"measure to avoid hazard from combined safe process states"
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives information about the hazardous event related to the SIF"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/MeasureToAvoidHazardFromCombinedSafeProcessStates/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4260,52 +4417,56 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class IndependentProtectionLayer(Property):
+        class IndependentProtectionLayer(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"IndependentProtectionLayer",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"independent protection layer"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives information about the hazardous event related to the SIF"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/IndependentProtectionLayer/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4333,49 +4494,51 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class HAZOP(File):
+        class HAZOP(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"HAZOP",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"HAZOP"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"HAZOP"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/HAZOP/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4402,49 +4565,51 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LOPA(File):
+        class LOPA(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"LOPA",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"LOPA"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"LOPA"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives relevant information about the SIF"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/LOPA/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4487,40 +4652,44 @@ class SafetyInstrumentedFunction(Submodel):
             hAZOP: Optional[Iterable[HAZOP]] = None,
             lOPA: Optional[Iterable[LOPA]] = None,
             id_short: Optional[str] = r"HazardousEvent",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"hazardous event"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"hazardous event"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"gives information about the EUC that the SIF protects"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/HazardousEvent/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"OneToMany",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -4535,19 +4704,19 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if hazardousEventDescription and not isinstance(
-                hazardousEventDescription, SubmodelElement
+                hazardousEventDescription, aas.SubmodelElement
             ):
                 hazardousEventDescription = self.HazardousEventDescription(
                     hazardousEventDescription
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if hazardID and not isinstance(hazardID, SubmodelElement):
+            if hazardID and not isinstance(hazardID, aas.SubmodelElement):
                 hazardID = self.HazardID(hazardID)
 
             # Build a submodel element if a raw value was passed in the argument
             if hazardIsFromCombinedSafeProcessStates and not isinstance(
-                hazardIsFromCombinedSafeProcessStates, SubmodelElement
+                hazardIsFromCombinedSafeProcessStates, aas.SubmodelElement
             ):
                 hazardIsFromCombinedSafeProcessStates = (
                     self.HazardIsFromCombinedSafeProcessStates(
@@ -4560,7 +4729,7 @@ class SafetyInstrumentedFunction(Submodel):
                 measureToAvoidHazardFromCombinedSafeProcessStates = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.MeasureToAvoidHazardFromCombinedSafeProcessStates(i)
                     )
                     for i in measureToAvoidHazardFromCombinedSafeProcessStates
@@ -4571,7 +4740,7 @@ class SafetyInstrumentedFunction(Submodel):
                 independentProtectionLayer = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.IndependentProtectionLayer(i)
                     )
                     for i in independentProtectionLayer
@@ -4590,7 +4759,7 @@ class SafetyInstrumentedFunction(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -4598,7 +4767,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -4614,56 +4783,56 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class SIFConfiguration(SubmodelElementCollection):
+    class SIFConfiguration(aas.SubmodelElementCollection):
 
-        class InputDeviceGroup(SubmodelElementCollection):
+        class InputDeviceGroup(aas.SubmodelElementCollection):
 
-            class ReferenceToTag(ReferenceElement):
+            class ReferenceToTag(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToTag",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"reference to tag"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"reference to tag"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives information about the instance of the device"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToTag/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4689,58 +4858,58 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class VotingWithinGroup(SubmodelElementCollection):
+            class VotingWithinGroup(aas.SubmodelElementCollection):
 
-                class NumberOfDevicesWithinGroup(Property):
+                class NumberOfDevicesWithinGroup(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"NumberOfDevicesWithinGroup",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"number of devices within group"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"gives input to the description of the SIF configuration"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/cds/NumberOfDevicesWithinGroup/1",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4768,54 +4937,56 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class MInVotingMooN(Property):
+                class MInVotingMooN(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"MInVotingMooN",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"M in voting MooN"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
+                            dict_={r"en": r"M in voting MooN"}
+                        ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"gives input to the description of the SIF configuration"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/cds/MInVotingMooN/1",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4849,45 +5020,47 @@ class SafetyInstrumentedFunction(Submodel):
                     mInVotingMooN: Union[int, MInVotingMooN],
                     id_short: Optional[str] = r"VotingWithinGroup",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Voting within group"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Voting within group"}
+                    ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/VotingWithinGroup/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4902,14 +5075,16 @@ class SafetyInstrumentedFunction(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if numberOfDevicesWithinGroup and not isinstance(
-                        numberOfDevicesWithinGroup, SubmodelElement
+                        numberOfDevicesWithinGroup, aas.SubmodelElement
                     ):
                         numberOfDevicesWithinGroup = self.NumberOfDevicesWithinGroup(
                             numberOfDevicesWithinGroup
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mInVotingMooN and not isinstance(mInVotingMooN, SubmodelElement):
+                    if mInVotingMooN and not isinstance(
+                        mInVotingMooN, aas.SubmodelElement
+                    ):
                         mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4917,7 +5092,7 @@ class SafetyInstrumentedFunction(Submodel):
                     for se_arg in [numberOfDevicesWithinGroup, mInVotingMooN]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -4925,7 +5100,7 @@ class SafetyInstrumentedFunction(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -4943,47 +5118,49 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                referenceToTag: Iterable[Union[Reference, ReferenceToTag]],
+                referenceToTag: Iterable[Union[aas.Reference, ReferenceToTag]],
                 votingWithinGroup: VotingWithinGroup,
                 id_short: Optional[str] = r"InputDeviceGroup",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"input device group"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"input device group"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives input to the description of the SIF configuration"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/InputDeviceGroup/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4999,7 +5176,11 @@ class SafetyInstrumentedFunction(Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if referenceToTag:
                     referenceToTag = [
-                        i if isinstance(i, SubmodelElement) else self.ReferenceToTag(i)
+                        (
+                            i
+                            if isinstance(i, aas.SubmodelElement)
+                            else self.ReferenceToTag(i)
+                        )
                         for i in referenceToTag
                     ]
 
@@ -5008,7 +5189,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [referenceToTag, votingWithinGroup]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -5016,7 +5197,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -5032,54 +5213,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LogicSolverGroup(SubmodelElementCollection):
+        class LogicSolverGroup(aas.SubmodelElementCollection):
 
-            class ReferenceToTag(ReferenceElement):
+            class ReferenceToTag(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToTag",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"reference to tag"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"reference to tag"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives information about the instance of the device"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToTag/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5105,58 +5286,58 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class VotingWithinGroup(SubmodelElementCollection):
+            class VotingWithinGroup(aas.SubmodelElementCollection):
 
-                class NumberOfDevicesWithinGroup(Property):
+                class NumberOfDevicesWithinGroup(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"NumberOfDevicesWithinGroup",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"number of devices within group"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"gives input to the description of the SIF configuration"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/cds/NumberOfDevicesWithinGroup/1",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5184,54 +5365,56 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class MInVotingMooN(Property):
+                class MInVotingMooN(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"MInVotingMooN",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"M in voting MooN"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
+                            dict_={r"en": r"M in voting MooN"}
+                        ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"gives input to the description of the SIF configuration"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/cds/MInVotingMooN/1",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5265,45 +5448,47 @@ class SafetyInstrumentedFunction(Submodel):
                     mInVotingMooN: Union[int, MInVotingMooN],
                     id_short: Optional[str] = r"VotingWithinGroup",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Voting within group"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Voting within group"}
+                    ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/VotingWithinGroup/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5318,14 +5503,16 @@ class SafetyInstrumentedFunction(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if numberOfDevicesWithinGroup and not isinstance(
-                        numberOfDevicesWithinGroup, SubmodelElement
+                        numberOfDevicesWithinGroup, aas.SubmodelElement
                     ):
                         numberOfDevicesWithinGroup = self.NumberOfDevicesWithinGroup(
                             numberOfDevicesWithinGroup
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mInVotingMooN and not isinstance(mInVotingMooN, SubmodelElement):
+                    if mInVotingMooN and not isinstance(
+                        mInVotingMooN, aas.SubmodelElement
+                    ):
                         mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5333,7 +5520,7 @@ class SafetyInstrumentedFunction(Submodel):
                     for se_arg in [numberOfDevicesWithinGroup, mInVotingMooN]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -5341,7 +5528,7 @@ class SafetyInstrumentedFunction(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -5359,47 +5546,49 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                referenceToTag: Iterable[Union[Reference, ReferenceToTag]],
+                referenceToTag: Iterable[Union[aas.Reference, ReferenceToTag]],
                 votingWithinGroup: VotingWithinGroup,
                 id_short: Optional[str] = r"LogicSolverGroup",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"logic solver group"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"logic solver group"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives input to the description of the SIF configuration"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/LogicSolverGroup/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -5415,7 +5604,11 @@ class SafetyInstrumentedFunction(Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if referenceToTag:
                     referenceToTag = [
-                        i if isinstance(i, SubmodelElement) else self.ReferenceToTag(i)
+                        (
+                            i
+                            if isinstance(i, aas.SubmodelElement)
+                            else self.ReferenceToTag(i)
+                        )
                         for i in referenceToTag
                     ]
 
@@ -5424,7 +5617,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [referenceToTag, votingWithinGroup]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -5432,7 +5625,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -5448,54 +5641,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class FinalElementGroup(SubmodelElementCollection):
+        class FinalElementGroup(aas.SubmodelElementCollection):
 
-            class ReferenceToTag(ReferenceElement):
+            class ReferenceToTag(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToTag",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"reference to tag"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"reference to tag"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives information about the instance of the device"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToTag/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5521,58 +5714,58 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class VotingWithinGroup(SubmodelElementCollection):
+            class VotingWithinGroup(aas.SubmodelElementCollection):
 
-                class NumberOfDevicesWithinGroup(Property):
+                class NumberOfDevicesWithinGroup(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"NumberOfDevicesWithinGroup",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"number of devices within group"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"gives input to the description of the SIF configuration"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/cds/NumberOfDevicesWithinGroup/1",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5600,54 +5793,56 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class MInVotingMooN(Property):
+                class MInVotingMooN(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"MInVotingMooN",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"M in voting MooN"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
+                            dict_={r"en": r"M in voting MooN"}
+                        ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"gives input to the description of the SIF configuration"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/cds/MInVotingMooN/1",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5681,45 +5876,47 @@ class SafetyInstrumentedFunction(Submodel):
                     mInVotingMooN: Union[int, MInVotingMooN],
                     id_short: Optional[str] = r"VotingWithinGroup",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Voting within group"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Voting within group"}
+                    ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/VotingWithinGroup/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5734,14 +5931,16 @@ class SafetyInstrumentedFunction(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if numberOfDevicesWithinGroup and not isinstance(
-                        numberOfDevicesWithinGroup, SubmodelElement
+                        numberOfDevicesWithinGroup, aas.SubmodelElement
                     ):
                         numberOfDevicesWithinGroup = self.NumberOfDevicesWithinGroup(
                             numberOfDevicesWithinGroup
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if mInVotingMooN and not isinstance(mInVotingMooN, SubmodelElement):
+                    if mInVotingMooN and not isinstance(
+                        mInVotingMooN, aas.SubmodelElement
+                    ):
                         mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5749,7 +5948,7 @@ class SafetyInstrumentedFunction(Submodel):
                     for se_arg in [numberOfDevicesWithinGroup, mInVotingMooN]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -5757,7 +5956,7 @@ class SafetyInstrumentedFunction(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -5775,47 +5974,49 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                referenceToTag: Iterable[Union[Reference, ReferenceToTag]],
+                referenceToTag: Iterable[Union[aas.Reference, ReferenceToTag]],
                 votingWithinGroup: VotingWithinGroup,
                 id_short: Optional[str] = r"FinalElementGroup",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"final element group"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"final element group"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives input to the description of the SIF configuration"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/FinalElementGroup/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -5831,7 +6032,11 @@ class SafetyInstrumentedFunction(Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if referenceToTag:
                     referenceToTag = [
-                        i if isinstance(i, SubmodelElement) else self.ReferenceToTag(i)
+                        (
+                            i
+                            if isinstance(i, aas.SubmodelElement)
+                            else self.ReferenceToTag(i)
+                        )
                         for i in referenceToTag
                     ]
 
@@ -5840,7 +6045,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [referenceToTag, votingWithinGroup]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -5848,7 +6053,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -5864,54 +6069,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class VotingBetweenGroups(SubmodelElementCollection):
+        class VotingBetweenGroups(aas.SubmodelElementCollection):
 
-            class ReferenceToGroup(ReferenceElement):
+            class ReferenceToGroup(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToGroup",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"reference to group"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"reference to group"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToGroup/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5937,54 +6142,54 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class NumberOfGroups(Property):
+            class NumberOfGroups(aas.Property):
 
                 def __init__(
                     self,
                     value: int,
                     id_short: Optional[str] = r"NumberOfGroups",
-                    value_type: DataTypeDefXsd = int,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = int,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"number of groups"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"number of groups"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/NumberOfGroups/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6012,54 +6217,54 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class MInVotingMooN(Property):
+            class MInVotingMooN(aas.Property):
 
                 def __init__(
                     self,
                     value: int,
                     id_short: Optional[str] = r"MInVotingMooN",
-                    value_type: DataTypeDefXsd = int,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = int,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"M in voting MooN"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"M in voting MooN"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/MInVotingMooN/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6089,48 +6294,50 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                referenceToGroup: Iterable[Union[Reference, ReferenceToGroup]],
+                referenceToGroup: Iterable[Union[aas.Reference, ReferenceToGroup]],
                 numberOfGroups: Union[int, NumberOfGroups],
                 mInVotingMooN: Union[int, MInVotingMooN],
                 id_short: Optional[str] = r"VotingBetweenGroups",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"Voting between groups"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"Voting between groups"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives input to the description of the SIF configuration"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/VotingBetweenGroups/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6148,18 +6355,20 @@ class SafetyInstrumentedFunction(Submodel):
                     referenceToGroup = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.ReferenceToGroup(i)
                         )
                         for i in referenceToGroup
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
-                if numberOfGroups and not isinstance(numberOfGroups, SubmodelElement):
+                if numberOfGroups and not isinstance(
+                    numberOfGroups, aas.SubmodelElement
+                ):
                     numberOfGroups = self.NumberOfGroups(numberOfGroups)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if mInVotingMooN and not isinstance(mInVotingMooN, SubmodelElement):
+                if mInVotingMooN and not isinstance(mInVotingMooN, aas.SubmodelElement):
                     mInVotingMooN = self.MInVotingMooN(mInVotingMooN)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6167,7 +6376,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [referenceToGroup, numberOfGroups, mInVotingMooN]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -6175,7 +6384,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -6191,56 +6400,56 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ReliabilityBlockDiagram(SubmodelElementCollection):
+        class ReliabilityBlockDiagram(aas.SubmodelElementCollection):
 
-            class RBDFormula(Property):
+            class RBDFormula(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"RBDFormula",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"RBD formula"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"RBD formula"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/RBDFormula/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6268,7 +6477,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class RBDDrawing(File):
+            class RBDDrawing(aas.File):
 
                 def __init__(
                     self,
@@ -6276,45 +6485,45 @@ class SafetyInstrumentedFunction(Submodel):
                     id_short: Optional[str] = r"RBDDrawing",
                     content_type: Optional[str] = r"application/octet-stream",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"RBD drawing"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"RBD drawing"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives input to the description of the SIF configuration"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/RBDDrawing/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6346,44 +6555,48 @@ class SafetyInstrumentedFunction(Submodel):
                 rBDFormula: Optional[Union[str, RBDFormula]] = None,
                 rBDDrawing: Optional[RBDDrawing] = None,
                 id_short: Optional[str] = r"ReliabilityBlockDiagram",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"reliability block diagram"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"gives input to the description of the SIF configuration"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/ReliabilityBlockDiagram/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6397,7 +6610,7 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if rBDFormula and not isinstance(rBDFormula, SubmodelElement):
+                if rBDFormula and not isinstance(rBDFormula, aas.SubmodelElement):
                     rBDFormula = self.RBDFormula(rBDFormula)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6405,7 +6618,7 @@ class SafetyInstrumentedFunction(Submodel):
                 for se_arg in [rBDFormula, rBDDrawing]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -6413,7 +6626,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -6437,40 +6650,44 @@ class SafetyInstrumentedFunction(Submodel):
             votingBetweenGroups: Optional[Iterable[VotingBetweenGroups]] = None,
             reliabilityBlockDiagram: Optional[ReliabilityBlockDiagram] = None,
             id_short: Optional[str] = r"SIFConfiguration",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"SIF configuration"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"SIF configuration"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"description of the SIF configuration"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/SIFConfiguration/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -6494,7 +6711,7 @@ class SafetyInstrumentedFunction(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -6502,7 +6719,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -6518,52 +6735,56 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class DemandData(SubmodelElementCollection):
+    class DemandData(aas.SubmodelElementCollection):
 
-        class OperationalDemandRate(Property):
+        class OperationalDemandRate(aas.Property):
 
             def __init__(
                 self,
-                value: Decimal,
+                value: xsd.Decimal,
                 id_short: Optional[str] = r"OperationalDemandRate",
-                value_type: DataTypeDefXsd = Decimal,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"operational demand rate"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about occurred demand(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/OperationalDemandRate/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6591,50 +6812,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class NumberOfDemands(Property):
+        class NumberOfDemands(aas.Property):
 
             def __init__(
                 self,
                 value: int,
                 id_short: Optional[str] = r"NumberOfDemands",
-                value_type: DataTypeDefXsd = int,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"number of demands"}
-                ),
+                value_type: aas.DataTypeDefXsd = int,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"number of demands"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about occurred demand(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/NumberOfDemands/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6662,50 +6885,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class OperationalSpuriousTripRate(Property):
+        class OperationalSpuriousTripRate(aas.Property):
 
             def __init__(
                 self,
-                value: Decimal,
+                value: xsd.Decimal,
                 id_short: Optional[str] = r"OperationalSpuriousTripRate",
-                value_type: DataTypeDefXsd = Decimal,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"spurious trip rate operational"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about occurred demand(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/SafetyInstrumentedFunction/SpuriousTripRateOperational/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6733,50 +6960,54 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class NumberOfSpuriousTrips(Property):
+        class NumberOfSpuriousTrips(aas.Property):
 
             def __init__(
                 self,
                 value: int,
                 id_short: Optional[str] = r"NumberOfSpuriousTrips",
-                value_type: DataTypeDefXsd = int,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = int,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"number of spurious trips"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about occurred failure(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/NumberOfSpuriousTrips/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6804,56 +7035,56 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SIFDemandEvent(SubmodelElementCollection):
+        class SIFDemandEvent(aas.SubmodelElementCollection):
 
-            class TimeStampDateAndTime(Property):
+            class TimeStampDateAndTime(aas.Property):
 
                 def __init__(
                     self,
-                    value: Time,
+                    value: xsd.Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = Time,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Time,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"time stamp (date and time)"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"date of the event given within the current SMC"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0112/2///61987#ABN627#001",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6881,52 +7112,52 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class DemandDescription(Property):
+            class DemandDescription(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"DemandDescription",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"demand description"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"demand description"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about occurred demand(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/DemandDescription/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6954,52 +7185,52 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ReferenceToDeviceDemandEvent(ReferenceElement):
+            class ReferenceToDeviceDemandEvent(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToDeviceDemandEvent",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"reference to device demand event"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about occurred demand(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToDeviceDemandEvent/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7025,63 +7256,63 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SIFResponseTimeActual(Property):
+            class SIFResponseTimeActual(aas.Property):
 
                 def __init__(
                     self,
-                    value: Decimal,
+                    value: xsd.Decimal,
                     id_short: Optional[str] = r"SIFResponseTimeActual",
-                    value_type: DataTypeDefXsd = Decimal,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"SIF response time actual"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about occurred demand(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/SIFResponseTimeActual/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"unit",
                                 value_type=str,
                                 value=r"seconds",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7111,51 +7342,53 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[xsd.Time, TimeStampDateAndTime],
                 demandDescription: Optional[Union[str, DemandDescription]] = None,
                 referenceToDeviceDemandEvent: Optional[
-                    Iterable[Union[Reference, ReferenceToDeviceDemandEvent]]
+                    Iterable[Union[aas.Reference, ReferenceToDeviceDemandEvent]]
                 ] = None,
                 sIFResponseTimeActual: Optional[
-                    Union[Decimal, SIFResponseTimeActual]
+                    Union[xsd.Decimal, SIFResponseTimeActual]
                 ] = None,
                 id_short: Optional[str] = r"SIFDemandEvent",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"SIF demand event"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"SIF demand event"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about occurred demand(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SIFDemandEvent/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -7170,7 +7403,7 @@ class SafetyInstrumentedFunction(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if timeStampDateAndTime and not isinstance(
-                    timeStampDateAndTime, SubmodelElement
+                    timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
                         timeStampDateAndTime
@@ -7178,7 +7411,7 @@ class SafetyInstrumentedFunction(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if demandDescription and not isinstance(
-                    demandDescription, SubmodelElement
+                    demandDescription, aas.SubmodelElement
                 ):
                     demandDescription = self.DemandDescription(demandDescription)
 
@@ -7187,7 +7420,7 @@ class SafetyInstrumentedFunction(Submodel):
                     referenceToDeviceDemandEvent = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.ReferenceToDeviceDemandEvent(i)
                         )
                         for i in referenceToDeviceDemandEvent
@@ -7195,7 +7428,7 @@ class SafetyInstrumentedFunction(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if sIFResponseTimeActual and not isinstance(
-                    sIFResponseTimeActual, SubmodelElement
+                    sIFResponseTimeActual, aas.SubmodelElement
                 ):
                     sIFResponseTimeActual = self.SIFResponseTimeActual(
                         sIFResponseTimeActual
@@ -7211,7 +7444,7 @@ class SafetyInstrumentedFunction(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -7219,7 +7452,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -7237,46 +7470,52 @@ class SafetyInstrumentedFunction(Submodel):
 
         def __init__(
             self,
-            operationalDemandRate: Union[Decimal, OperationalDemandRate],
+            operationalDemandRate: Union[xsd.Decimal, OperationalDemandRate],
             numberOfDemands: Union[int, NumberOfDemands],
-            operationalSpuriousTripRate: Union[Decimal, OperationalSpuriousTripRate],
+            operationalSpuriousTripRate: Union[
+                xsd.Decimal, OperationalSpuriousTripRate
+            ],
             numberOfSpuriousTrips: Union[int, NumberOfSpuriousTrips],
             sIFDemandEvent: Optional[Iterable[SIFDemandEvent]] = None,
             id_short: Optional[str] = r"DemandData",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"demand data"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"demand data"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"gives information about occurred demand(s)"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/DemandData/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -7291,19 +7530,19 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if operationalDemandRate and not isinstance(
-                operationalDemandRate, SubmodelElement
+                operationalDemandRate, aas.SubmodelElement
             ):
                 operationalDemandRate = self.OperationalDemandRate(
                     operationalDemandRate
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if numberOfDemands and not isinstance(numberOfDemands, SubmodelElement):
+            if numberOfDemands and not isinstance(numberOfDemands, aas.SubmodelElement):
                 numberOfDemands = self.NumberOfDemands(numberOfDemands)
 
             # Build a submodel element if a raw value was passed in the argument
             if operationalSpuriousTripRate and not isinstance(
-                operationalSpuriousTripRate, SubmodelElement
+                operationalSpuriousTripRate, aas.SubmodelElement
             ):
                 operationalSpuriousTripRate = self.OperationalSpuriousTripRate(
                     operationalSpuriousTripRate
@@ -7311,7 +7550,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if numberOfSpuriousTrips and not isinstance(
-                numberOfSpuriousTrips, SubmodelElement
+                numberOfSpuriousTrips, aas.SubmodelElement
             ):
                 numberOfSpuriousTrips = self.NumberOfSpuriousTrips(
                     numberOfSpuriousTrips
@@ -7328,7 +7567,7 @@ class SafetyInstrumentedFunction(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -7336,7 +7575,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -7352,52 +7591,56 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class LoopTestData(SubmodelElementCollection):
+    class LoopTestData(aas.SubmodelElementCollection):
 
-        class NumberOfPerformedTests(Property):
+        class NumberOfPerformedTests(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"NumberOfPerformedTests",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"number of performed tests"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about test(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/NumberOfPerformedTests/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -7425,50 +7668,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class NumberOfFailedTests(Property):
+        class NumberOfFailedTests(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"NumberOfFailedTests",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"number of failed tests"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"number of failed tests"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about test(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/NumberOfFailedTests/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -7496,56 +7741,56 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LoopTestEvent(SubmodelElementCollection):
+        class LoopTestEvent(aas.SubmodelElementCollection):
 
-            class TimeStampDateAndTime(Property):
+            class TimeStampDateAndTime(aas.Property):
 
                 def __init__(
                     self,
-                    value: Time,
+                    value: xsd.Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = Time,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Time,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"time stamp (date and time)"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"date of the event given within the current SMC"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0112/2///61987#ABN627#001",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7573,61 +7818,61 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class TestLocation(Property):
+            class TestLocation(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"TestLocation",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"test location"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"test location"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about test(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/TestLocation/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"enumeration",
                                 value_type=str,
                                 value=r"in field, workshop, other",
                                 value_id=None,
-                                kind=QualifierKind.VALUE_QUALIFIER,
+                                kind=aas.QualifierKind.VALUE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7655,63 +7900,63 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class TestResultFailedOrPassed(Property):
+            class TestResultFailedOrPassed(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"TestResultFailedOrPassed",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"test result failed or passed"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about test(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/TestResultFailedOrPassed/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"enumeration",
                                 value_type=str,
                                 value=r"failed, passed",
                                 value_id=None,
-                                kind=QualifierKind.VALUE_QUALIFIER,
+                                kind=aas.QualifierKind.VALUE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7739,52 +7984,54 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class TestResultNumeric(Property):
+            class TestResultNumeric(aas.Property):
 
                 def __init__(
                     self,
-                    value: Float,
+                    value: xsd.Float,
                     id_short: Optional[str] = r"TestResultNumeric",
-                    value_type: DataTypeDefXsd = Float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"test result numeric"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"test result numeric"}
+                    ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about test(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/TestResultNumeric/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7812,52 +8059,52 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class TestResultText(Property):
+            class TestResultText(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"TestResultText",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"test result text"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"test result text"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about test(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/TestResultText/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7885,52 +8132,54 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CommentToTestResult(Property):
+            class CommentToTestResult(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"CommentToTestResult",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"comment to test result"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"comment to test result"}
+                    ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"gives information about test(s)"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/CommentToTestResult/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7958,54 +8207,54 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ReferenceToFailureEvent(ReferenceElement):
+            class ReferenceToFailureEvent(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToFailureEvent",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"reference to failure event"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"gives information about occurred test(s) or alarm(s)"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/cds/ReferenceToFailureEvent/1",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -8033,52 +8282,54 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[xsd.Time, TimeStampDateAndTime],
                 testResultFailedOrPassed: Union[str, TestResultFailedOrPassed],
                 testLocation: Optional[Union[str, TestLocation]] = None,
-                testResultNumeric: Optional[Union[Float, TestResultNumeric]] = None,
+                testResultNumeric: Optional[Union[xsd.Float, TestResultNumeric]] = None,
                 testResultText: Optional[Union[str, TestResultText]] = None,
                 commentToTestResult: Optional[Union[str, CommentToTestResult]] = None,
                 referenceToFailureEvent: Optional[
-                    Iterable[Union[Reference, ReferenceToFailureEvent]]
+                    Iterable[Union[aas.Reference, ReferenceToFailureEvent]]
                 ] = None,
                 id_short: Optional[str] = r"LoopTestEvent",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"loop test event"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"loop test event"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"gives information about test(s)"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/LoopTestEvent/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -8093,19 +8344,19 @@ class SafetyInstrumentedFunction(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if timeStampDateAndTime and not isinstance(
-                    timeStampDateAndTime, SubmodelElement
+                    timeStampDateAndTime, aas.SubmodelElement
                 ):
                     timeStampDateAndTime = self.TimeStampDateAndTime(
                         timeStampDateAndTime
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testLocation and not isinstance(testLocation, SubmodelElement):
+                if testLocation and not isinstance(testLocation, aas.SubmodelElement):
                     testLocation = self.TestLocation(testLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if testResultFailedOrPassed and not isinstance(
-                    testResultFailedOrPassed, SubmodelElement
+                    testResultFailedOrPassed, aas.SubmodelElement
                 ):
                     testResultFailedOrPassed = self.TestResultFailedOrPassed(
                         testResultFailedOrPassed
@@ -8113,17 +8364,19 @@ class SafetyInstrumentedFunction(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if testResultNumeric and not isinstance(
-                    testResultNumeric, SubmodelElement
+                    testResultNumeric, aas.SubmodelElement
                 ):
                     testResultNumeric = self.TestResultNumeric(testResultNumeric)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if testResultText and not isinstance(testResultText, SubmodelElement):
+                if testResultText and not isinstance(
+                    testResultText, aas.SubmodelElement
+                ):
                     testResultText = self.TestResultText(testResultText)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if commentToTestResult and not isinstance(
-                    commentToTestResult, SubmodelElement
+                    commentToTestResult, aas.SubmodelElement
                 ):
                     commentToTestResult = self.CommentToTestResult(commentToTestResult)
 
@@ -8132,7 +8385,7 @@ class SafetyInstrumentedFunction(Submodel):
                     referenceToFailureEvent = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.ReferenceToFailureEvent(i)
                         )
                         for i in referenceToFailureEvent
@@ -8151,7 +8404,7 @@ class SafetyInstrumentedFunction(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -8159,7 +8412,7 @@ class SafetyInstrumentedFunction(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -8181,40 +8434,44 @@ class SafetyInstrumentedFunction(Submodel):
             numberOfFailedTests: Union[str, NumberOfFailedTests],
             loopTestEvent: Optional[Iterable[LoopTestEvent]] = None,
             id_short: Optional[str] = r"LoopTestData",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"loop test data"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"loop test data"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"gives information about test(s)"}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/LoopTestData/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -8229,7 +8486,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if numberOfPerformedTests and not isinstance(
-                numberOfPerformedTests, SubmodelElement
+                numberOfPerformedTests, aas.SubmodelElement
             ):
                 numberOfPerformedTests = self.NumberOfPerformedTests(
                     numberOfPerformedTests
@@ -8237,7 +8494,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if numberOfFailedTests and not isinstance(
-                numberOfFailedTests, SubmodelElement
+                numberOfFailedTests, aas.SubmodelElement
             ):
                 numberOfFailedTests = self.NumberOfFailedTests(numberOfFailedTests)
 
@@ -8246,7 +8503,7 @@ class SafetyInstrumentedFunction(Submodel):
             for se_arg in [numberOfPerformedTests, numberOfFailedTests, loopTestEvent]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -8254,7 +8511,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -8270,54 +8527,58 @@ class SafetyInstrumentedFunction(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class PerformanceMeasures(SubmodelElementCollection):
+    class PerformanceMeasures(aas.SubmodelElementCollection):
 
-        class PFDAverageBasedOnOperationalData(Property):
+        class PFDAverageBasedOnOperationalData(aas.Property):
 
             def __init__(
                 self,
-                value: Decimal,
+                value: xsd.Decimal,
                 id_short: Optional[str] = r"PFDAverageBasedOnOperationalData",
-                value_type: DataTypeDefXsd = Decimal,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"PFD average based on operational data"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"reliability data parameter(s) with operational data value(s)"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/PFDAverageBasedOnOperationalData/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -8345,59 +8606,61 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PFHAverageBasedOnOperationalData(Property):
+        class PFHAverageBasedOnOperationalData(aas.Property):
 
             def __init__(
                 self,
                 value: float,
                 id_short: Optional[str] = r"PFHAverageBasedOnOperationalData",
-                value_type: DataTypeDefXsd = float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"PFH average based on operational data"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
-                    dict_={r"en": r"performance measure(s)"}
-                ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(dict_={r"en": r"performance measure(s)"}),
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/PFHAverageBasedOnOperationalData/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"unit",
                             value_type=str,
                             value=r"per hour",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -8425,50 +8688,52 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SafetyIntegrityLevelAchieved(Property):
+        class SafetyIntegrityLevelAchieved(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SafetyIntegrityLevelAchieved",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"safety integrity level achieved"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
-                    dict_={r"en": r"performance measure(s)"}
-                ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(dict_={r"en": r"performance measure(s)"}),
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/SafetyIntegrityLevelAchieved/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -8500,46 +8765,48 @@ class SafetyInstrumentedFunction(Submodel):
             self,
             safetyIntegrityLevelAchieved: Union[str, SafetyIntegrityLevelAchieved],
             pFDAverageBasedOnOperationalData: Optional[
-                Union[Decimal, PFDAverageBasedOnOperationalData]
+                Union[xsd.Decimal, PFDAverageBasedOnOperationalData]
             ] = None,
             pFHAverageBasedOnOperationalData: Optional[
                 Union[float, PFHAverageBasedOnOperationalData]
             ] = None,
             id_short: Optional[str] = r"PerformanceMeasures",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"performance measure"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"performance measure"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
-                dict_={r"en": r"performance measure(s)"}
-            ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(dict_={r"en": r"performance measure(s)"}),
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/PerformanceMeasures/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -8554,7 +8821,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if pFDAverageBasedOnOperationalData and not isinstance(
-                pFDAverageBasedOnOperationalData, SubmodelElement
+                pFDAverageBasedOnOperationalData, aas.SubmodelElement
             ):
                 pFDAverageBasedOnOperationalData = (
                     self.PFDAverageBasedOnOperationalData(
@@ -8564,7 +8831,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if pFHAverageBasedOnOperationalData and not isinstance(
-                pFHAverageBasedOnOperationalData, SubmodelElement
+                pFHAverageBasedOnOperationalData, aas.SubmodelElement
             ):
                 pFHAverageBasedOnOperationalData = (
                     self.PFHAverageBasedOnOperationalData(
@@ -8574,7 +8841,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if safetyIntegrityLevelAchieved and not isinstance(
-                safetyIntegrityLevelAchieved, SubmodelElement
+                safetyIntegrityLevelAchieved, aas.SubmodelElement
             ):
                 safetyIntegrityLevelAchieved = self.SafetyIntegrityLevelAchieved(
                     safetyIntegrityLevelAchieved
@@ -8589,7 +8856,7 @@ class SafetyInstrumentedFunction(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -8597,7 +8864,7 @@ class SafetyInstrumentedFunction(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -8625,34 +8892,36 @@ class SafetyInstrumentedFunction(Submodel):
         loopTestData: Optional[LoopTestData] = None,
         performanceMeasures: Optional[PerformanceMeasures] = None,
         id_short: Optional[str] = r"SafetyInstrumentedFunction",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": r"The submodel Safety Instrumented Function is a collection of properties about the functional safety requirements and information for the lifecycle of the safety instrumented function."
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/idta-02064-1-0",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ExternalReference(
+        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
-                Key(
-                    type_=KeyTypes.GLOBAL_REFERENCE,
+                aas.Key(
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                     value=r"https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedFunction/1/0",
                 ),
             ),
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -8675,7 +8944,7 @@ class SafetyInstrumentedFunction(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -8683,7 +8952,7 @@ class SafetyInstrumentedFunction(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

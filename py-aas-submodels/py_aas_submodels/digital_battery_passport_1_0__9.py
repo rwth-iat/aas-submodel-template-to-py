@@ -1,55 +1,54 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class MaterialComposition(Submodel):
+class MaterialComposition(aas.Submodel):
 
-    class BatteryChemistry(SubmodelElementCollection):
+    class BatteryChemistry(aas.SubmodelElementCollection):
 
-        class ShortName(Property):
+        class ShortName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ShortName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"short name"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"short name"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#shortName",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -77,48 +76,48 @@ class MaterialComposition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ClearName(Property):
+        class ClearName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ClearName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"clear name"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"clear name"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#clearName",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -151,38 +150,40 @@ class MaterialComposition(Submodel):
             shortName: Union[str, ShortName],
             clearName: Union[str, ClearName],
             id_short: Optional[str] = r"BatteryChemistry",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"battery chemistry"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"battery chemistry"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryChemistry",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -196,11 +197,11 @@ class MaterialComposition(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if shortName and not isinstance(shortName, SubmodelElement):
+            if shortName and not isinstance(shortName, aas.SubmodelElement):
                 shortName = self.ShortName(shortName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if clearName and not isinstance(clearName, SubmodelElement):
+            if clearName and not isinstance(clearName, aas.SubmodelElement):
                 clearName = self.ClearName(clearName)
 
             # Add all passed/initialized submodel elements to a single list
@@ -208,7 +209,7 @@ class MaterialComposition(Submodel):
             for se_arg in [shortName, clearName]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -216,7 +217,7 @@ class MaterialComposition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -232,54 +233,54 @@ class MaterialComposition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class BatteryMaterials(SubmodelElementList):
+    class BatteryMaterials(aas.SubmodelElementList):
 
-        class Batterymaterials_item(SubmodelElementCollection):
+        class Batterymaterials_item(aas.SubmodelElementCollection):
 
-            class BatteryMaterialLocation(SubmodelElementCollection):
+            class BatteryMaterialLocation(aas.SubmodelElementCollection):
 
-                class ComponentName(Property):
+                class ComponentName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ComponentName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"component name"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component name"}),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -307,48 +308,48 @@ class MaterialComposition(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ComponentId(Property):
+                class ComponentId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ComponentId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"component ID"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component ID"}),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -382,41 +383,41 @@ class MaterialComposition(Submodel):
                     componentId: Optional[Union[str, ComponentId]] = None,
                     id_short: Optional[str] = r"BatteryMaterialLocation",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"battery material location"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialLocation",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -430,11 +431,13 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentName and not isinstance(componentName, SubmodelElement):
+                    if componentName and not isinstance(
+                        componentName, aas.SubmodelElement
+                    ):
                         componentName = self.ComponentName(componentName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentId and not isinstance(componentId, SubmodelElement):
+                    if componentId and not isinstance(componentId, aas.SubmodelElement):
                         componentId = self.ComponentId(componentId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -442,7 +445,7 @@ class MaterialComposition(Submodel):
                     for se_arg in [componentName, componentId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -450,7 +453,7 @@ class MaterialComposition(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -466,46 +469,46 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class BatteryMaterialIdentifier(Property):
+            class BatteryMaterialIdentifier(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"BatteryMaterialIdentifier",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"battery material identifier"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialIdentifier",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://www.cas.org/cas-data/cas-registry",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        ExternalReference(
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:irdi:0173-1#02-ABH034#003",
                                 ),
                             ),
@@ -513,22 +516,22 @@ class MaterialComposition(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -556,35 +559,37 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class BatteryMaterialName(Property):
+            class BatteryMaterialName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"BatteryMaterialName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"battery material name"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"battery material name"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialName",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:irdi:0173-1#02-AAN920#003",
                                 ),
                             ),
@@ -592,22 +597,22 @@ class MaterialComposition(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -635,48 +640,50 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class BatteryMaterialMass(Property):
+            class BatteryMaterialMass(aas.Property):
 
                 def __init__(
                     self,
-                    value: Float,
+                    value: xsd.Float,
                     id_short: Optional[str] = r"BatteryMaterialMass",
-                    value_type: DataTypeDefXsd = Float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"battery material mass"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"battery material mass"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialMass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -704,50 +711,50 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class IsCriticalRawMaterial(Property):
+            class IsCriticalRawMaterial(aas.Property):
 
                 def __init__(
                     self,
                     value: bool,
                     id_short: Optional[str] = r"IsCriticalRawMaterial",
-                    value_type: DataTypeDefXsd = bool,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = bool,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"is critical raw material"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#isCriticalRawMaterial",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -780,43 +787,43 @@ class MaterialComposition(Submodel):
                 batteryMaterialLocation: BatteryMaterialLocation,
                 batteryMaterialIdentifier: Union[str, BatteryMaterialIdentifier],
                 batteryMaterialName: Union[str, BatteryMaterialName],
-                batteryMaterialMass: Union[Float, BatteryMaterialMass],
+                batteryMaterialMass: Union[xsd.Float, BatteryMaterialMass],
                 isCriticalRawMaterial: Union[bool, IsCriticalRawMaterial],
                 id_short: Optional[str] = r"batterymaterials_item",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"battery material"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"battery material"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#BatteryMaterial",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -831,7 +838,7 @@ class MaterialComposition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if batteryMaterialIdentifier and not isinstance(
-                    batteryMaterialIdentifier, SubmodelElement
+                    batteryMaterialIdentifier, aas.SubmodelElement
                 ):
                     batteryMaterialIdentifier = self.BatteryMaterialIdentifier(
                         batteryMaterialIdentifier
@@ -839,19 +846,19 @@ class MaterialComposition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if batteryMaterialName and not isinstance(
-                    batteryMaterialName, SubmodelElement
+                    batteryMaterialName, aas.SubmodelElement
                 ):
                     batteryMaterialName = self.BatteryMaterialName(batteryMaterialName)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if batteryMaterialMass and not isinstance(
-                    batteryMaterialMass, SubmodelElement
+                    batteryMaterialMass, aas.SubmodelElement
                 ):
                     batteryMaterialMass = self.BatteryMaterialMass(batteryMaterialMass)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if isCriticalRawMaterial and not isinstance(
-                    isCriticalRawMaterial, SubmodelElement
+                    isCriticalRawMaterial, aas.SubmodelElement
                 ):
                     isCriticalRawMaterial = self.IsCriticalRawMaterial(
                         isCriticalRawMaterial
@@ -868,7 +875,7 @@ class MaterialComposition(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -876,7 +883,7 @@ class MaterialComposition(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -896,42 +903,44 @@ class MaterialComposition(Submodel):
             self,
             batterymaterials_items: Iterable[Batterymaterials_item],
             id_short: Optional[str] = r"BatteryMaterials",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"battery materials"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"battery materials"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterials",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -949,7 +958,7 @@ class MaterialComposition(Submodel):
             for se_arg in [batterymaterials_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -957,7 +966,7 @@ class MaterialComposition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -985,7 +994,7 @@ class MaterialComposition(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1001,7 +1010,7 @@ class MaterialComposition(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -1012,11 +1021,11 @@ class MaterialComposition(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -1032,7 +1041,7 @@ class MaterialComposition(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -1043,54 +1052,54 @@ class MaterialComposition(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class HazardousSubstances(SubmodelElementList):
+    class HazardousSubstances(aas.SubmodelElementList):
 
-        class Hazardoussubstances_item(SubmodelElementCollection):
+        class Hazardoussubstances_item(aas.SubmodelElementCollection):
 
-            class HazardousSubstanceClass(Property):
+            class HazardousSubstanceClass(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"HazardousSubstanceClass",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"hazardous substance class"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1118,50 +1127,50 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class HazardousSubstanceName(Property):
+            class HazardousSubstanceName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"HazardousSubstanceName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"hazardous substance name"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceName",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1189,50 +1198,50 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class HazardousSubstanceConcentration(Property):
+            class HazardousSubstanceConcentration(aas.Property):
 
                 def __init__(
                     self,
                     value: float,
                     id_short: Optional[str] = r"HazardousSubstanceConcentration",
-                    value_type: DataTypeDefXsd = float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"hazardous substance concentration"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceConcentration",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1260,50 +1269,50 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class HazardousSubstanceImpact(SubmodelElementList):
+            class HazardousSubstanceImpact(aas.SubmodelElementList):
 
-                class Hazardoussubstanceimpact_item(Property):
+                class Hazardoussubstanceimpact_item(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"hazardoussubstanceimpact_item",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"impact"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"impact"}),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#Impact",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1337,46 +1346,46 @@ class MaterialComposition(Submodel):
                         Iterable[Union[str, Hazardoussubstanceimpact_item]]
                     ] = None,
                     id_short: Optional[str] = r"HazardousSubstanceImpact",
-                    type_value_list_element: SubmodelElement = Property,
-                    semantic_id_list_element: Optional[Reference] = None,
-                    value_type_list_element: Optional[DataTypeDefXsd] = str,
+                    type_value_list_element: aas.SubmodelElement = aas.Property,
+                    semantic_id_list_element: Optional[aas.Reference] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = False,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"hazardous substance impact"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceImpact",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1394,7 +1403,7 @@ class MaterialComposition(Submodel):
                         hazardoussubstanceimpact_items = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.Hazardoussubstanceimpact_item(i)
                             )
                             for i in hazardoussubstanceimpact_items
@@ -1405,7 +1414,7 @@ class MaterialComposition(Submodel):
                     for se_arg in [hazardoussubstanceimpact_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1413,7 +1422,7 @@ class MaterialComposition(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1441,7 +1450,7 @@ class MaterialComposition(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1457,7 +1466,7 @@ class MaterialComposition(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -1468,11 +1477,11 @@ class MaterialComposition(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -1491,7 +1500,7 @@ class MaterialComposition(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -1502,50 +1511,50 @@ class MaterialComposition(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class HazardousSubstanceLocation(SubmodelElementCollection):
+            class HazardousSubstanceLocation(aas.SubmodelElementCollection):
 
-                class ComponentName(Property):
+                class ComponentName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ComponentName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"component name"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component name"}),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1573,48 +1582,48 @@ class MaterialComposition(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ComponentId(Property):
+                class ComponentId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ComponentId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"component ID"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component ID"}),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1648,41 +1657,41 @@ class MaterialComposition(Submodel):
                     componentId: Optional[Union[str, ComponentId]] = None,
                     id_short: Optional[str] = r"HazardousSubstanceLocation",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"hazardous substance location"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceLocation",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1696,11 +1705,13 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentName and not isinstance(componentName, SubmodelElement):
+                    if componentName and not isinstance(
+                        componentName, aas.SubmodelElement
+                    ):
                         componentName = self.ComponentName(componentName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if componentId and not isinstance(componentId, SubmodelElement):
+                    if componentId and not isinstance(componentId, aas.SubmodelElement):
                         componentId = self.ComponentId(componentId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1708,7 +1719,7 @@ class MaterialComposition(Submodel):
                     for se_arg in [componentName, componentId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1716,7 +1727,7 @@ class MaterialComposition(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1732,37 +1743,37 @@ class MaterialComposition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class HazardousSubstanceIdentifier(Property):
+            class HazardousSubstanceIdentifier(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"HazardousSubstanceIdentifier",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"hazardous substance identifier"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceIdentifier",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://www.cas.org/cas-data/cas-registry",
                                 ),
                             ),
@@ -1770,22 +1781,22 @@ class MaterialComposition(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1826,40 +1837,40 @@ class MaterialComposition(Submodel):
                 hazardousSubstanceLocation: HazardousSubstanceLocation,
                 hazardousSubstanceIdentifier: Union[str, HazardousSubstanceIdentifier],
                 id_short: Optional[str] = r"hazardoussubstances_item",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"hazardous substance"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#HazardousSubstance",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1874,7 +1885,7 @@ class MaterialComposition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceClass and not isinstance(
-                    hazardousSubstanceClass, SubmodelElement
+                    hazardousSubstanceClass, aas.SubmodelElement
                 ):
                     hazardousSubstanceClass = self.HazardousSubstanceClass(
                         hazardousSubstanceClass
@@ -1882,7 +1893,7 @@ class MaterialComposition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceName and not isinstance(
-                    hazardousSubstanceName, SubmodelElement
+                    hazardousSubstanceName, aas.SubmodelElement
                 ):
                     hazardousSubstanceName = self.HazardousSubstanceName(
                         hazardousSubstanceName
@@ -1890,7 +1901,7 @@ class MaterialComposition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceConcentration and not isinstance(
-                    hazardousSubstanceConcentration, SubmodelElement
+                    hazardousSubstanceConcentration, aas.SubmodelElement
                 ):
                     hazardousSubstanceConcentration = (
                         self.HazardousSubstanceConcentration(
@@ -1900,7 +1911,7 @@ class MaterialComposition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceImpact and not isinstance(
-                    hazardousSubstanceImpact, SubmodelElement
+                    hazardousSubstanceImpact, aas.SubmodelElement
                 ):
                     hazardousSubstanceImpact = self.HazardousSubstanceImpact(
                         hazardousSubstanceImpact
@@ -1908,7 +1919,7 @@ class MaterialComposition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceIdentifier and not isinstance(
-                    hazardousSubstanceIdentifier, SubmodelElement
+                    hazardousSubstanceIdentifier, aas.SubmodelElement
                 ):
                     hazardousSubstanceIdentifier = self.HazardousSubstanceIdentifier(
                         hazardousSubstanceIdentifier
@@ -1926,7 +1937,7 @@ class MaterialComposition(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -1934,7 +1945,7 @@ class MaterialComposition(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -1956,42 +1967,44 @@ class MaterialComposition(Submodel):
                 Iterable[Hazardoussubstances_item]
             ] = None,
             id_short: Optional[str] = r"HazardousSubstances",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"hazardous substances"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substances"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstances",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2009,7 +2022,7 @@ class MaterialComposition(Submodel):
             for se_arg in [hazardoussubstances_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2017,7 +2030,7 @@ class MaterialComposition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2045,7 +2058,7 @@ class MaterialComposition(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2061,7 +2074,7 @@ class MaterialComposition(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -2072,11 +2085,11 @@ class MaterialComposition(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -2092,7 +2105,7 @@ class MaterialComposition(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -2110,36 +2123,38 @@ class MaterialComposition(Submodel):
         batteryMaterials: BatteryMaterials,
         hazardousSubstances: HazardousSubstances,
         id_short: Optional[str] = r"MaterialComposition",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"material composition"}
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": "Mandatory data: Battery chemistry; critical raw materials; materials used in the cathode, anode, and \nelectrolyte; hazardous substances; impact of substances on the environment and on human health or \nsafety."
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/idta-02035-6",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ExternalReference(
+        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
-                Key(
-                    type_=KeyTypes.GLOBAL_REFERENCE,
+                aas.Key(
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                     value=r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#MaterialComposition",
                 ),
             ),
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -2153,7 +2168,7 @@ class MaterialComposition(Submodel):
         for se_arg in [batteryChemistry, batteryMaterials, hazardousSubstances]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -2161,7 +2176,7 @@ class MaterialComposition(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

@@ -1,53 +1,52 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class DEXPI(Submodel):
+class DEXPI(aas.Submodel):
 
-    class PlantMetadata(SubmodelElementCollection):
+    class PlantMetadata(aas.SubmodelElementCollection):
 
-        class EnterpriseIdentificationCode(Property):
+        class EnterpriseIdentificationCode(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"EnterpriseIdentificationCode",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/EnterpriseIdentificationCodeAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -55,16 +54,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"oil-gas-inc",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -92,46 +91,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class EnterpriseName(Property):
+        class EnterpriseName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"EnterpriseName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/EnterpriseNameAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -139,16 +138,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"Oil & Gas, Inc.",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -176,46 +175,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class IndustrialComplexIdentificationCode(Property):
+        class IndustrialComplexIdentificationCode(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"IndustrialComplexIdentificationCode",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/IndustrialComplexIdentificationCodeAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -223,16 +222,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"I-Chain",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -260,46 +259,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class IndustrialComplexName(Property):
+        class IndustrialComplexName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"IndustrialComplexName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/IndustrialComplexNameAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -307,16 +306,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"Isophorone Chain",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -344,46 +343,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PlantSectionIdentificationCode(Property):
+        class PlantSectionIdentificationCode(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"PlantSectionIdentificationCode",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/PlantSectionIdentificationCodeAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -391,16 +390,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"10",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -428,46 +427,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class PlantSectionName(Property):
+        class PlantSectionName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"PlantSectionName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/PlantSectionNameAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -475,16 +474,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"Utilities",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -512,46 +511,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ProcessPlantIdentificationCode(Property):
+        class ProcessPlantIdentificationCode(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ProcessPlantIdentificationCode",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/ProcessPlantIdentificationCodeAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"ABC",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -559,16 +558,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -596,46 +595,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ProcessPlantName(Property):
+        class ProcessPlantName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ProcessPlantName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/ProcessPlantNameAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -643,16 +642,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"ABC Plant",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -680,46 +679,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ProjectName(Property):
+        class ProjectName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ProjectName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/ProjectNameAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -727,16 +726,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"a project",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -764,46 +763,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ProjectNumber(Property):
+        class ProjectNumber(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ProjectNumber",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/ProjectNumberAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -811,16 +810,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"P3.1415",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -848,46 +847,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SiteIdentificationCode(Property):
+        class SiteIdentificationCode(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SiteIdentificationCode",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/SiteIdentificationCodeAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -895,16 +894,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"DC",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -932,46 +931,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SiteName(Property):
+        class SiteName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SiteName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/SiteNameAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -979,16 +978,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"Dexpi City",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -1016,46 +1015,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SubProjectName(Property):
+        class SubProjectName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SubProjectName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/SubProjectNameAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1063,16 +1062,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"a sub-project",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -1100,46 +1099,46 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class SubProjectNumber(Property):
+        class SubProjectNumber(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"SubProjectNumber",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://sandbox.dexpi.org/rdl/SubProjectNumberAssignmentClass",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1147,16 +1146,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"P3.1415-SP2",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -1184,38 +1183,38 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ManufacturerName(Property):
+        class ManufacturerName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ManufacturerName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = None,
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = None,
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1223,16 +1222,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"Plant Vendor",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -1260,38 +1259,38 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class DateOfManufacture(Property):
+        class DateOfManufacture(aas.Property):
 
             def __init__(
                 self,
-                value: Date,
+                value: xsd.Date,
                 id_short: Optional[str] = r"DateOfManufacture",
-                value_type: DataTypeDefXsd = Date,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = xsd.Date,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = None,
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = None,
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1299,16 +1298,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"2022-11-10",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -1336,38 +1335,38 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class EndProductCASName(Property):
+        class EndProductCASName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"EndProductCASName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = None,
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = None,
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1375,16 +1374,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"7732-18-5",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -1412,38 +1411,38 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class EndProductName(Property):
+        class EndProductName(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"EndProductName",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = None,
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = None,
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1451,16 +1450,16 @@ class DEXPI(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"ExampleValue",
                             value_type=str,
                             value=r"Water",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -1513,40 +1512,42 @@ class DEXPI(Submodel):
             subProjectName: Optional[Union[str, SubProjectName]] = None,
             subProjectNumber: Optional[Union[str, SubProjectNumber]] = None,
             manufacturerName: Optional[Union[str, ManufacturerName]] = None,
-            dateOfManufacture: Optional[Union[Date, DateOfManufacture]] = None,
+            dateOfManufacture: Optional[Union[xsd.Date, DateOfManufacture]] = None,
             endProductCASName: Optional[Iterable[Union[str, EndProductCASName]]] = None,
             endProductName: Optional[Iterable[Union[str, EndProductName]]] = None,
             id_short: Optional[str] = r"PlantMetadata",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"http://admin-shell.io/dexpi/1/0/PlantMetadata",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1561,19 +1562,19 @@ class DEXPI(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if enterpriseIdentificationCode and not isinstance(
-                enterpriseIdentificationCode, SubmodelElement
+                enterpriseIdentificationCode, aas.SubmodelElement
             ):
                 enterpriseIdentificationCode = self.EnterpriseIdentificationCode(
                     enterpriseIdentificationCode
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if enterpriseName and not isinstance(enterpriseName, SubmodelElement):
+            if enterpriseName and not isinstance(enterpriseName, aas.SubmodelElement):
                 enterpriseName = self.EnterpriseName(enterpriseName)
 
             # Build a submodel element if a raw value was passed in the argument
             if industrialComplexIdentificationCode and not isinstance(
-                industrialComplexIdentificationCode, SubmodelElement
+                industrialComplexIdentificationCode, aas.SubmodelElement
             ):
                 industrialComplexIdentificationCode = (
                     self.IndustrialComplexIdentificationCode(
@@ -1583,7 +1584,7 @@ class DEXPI(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if industrialComplexName and not isinstance(
-                industrialComplexName, SubmodelElement
+                industrialComplexName, aas.SubmodelElement
             ):
                 industrialComplexName = self.IndustrialComplexName(
                     industrialComplexName
@@ -1591,75 +1592,89 @@ class DEXPI(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if plantSectionIdentificationCode and not isinstance(
-                plantSectionIdentificationCode, SubmodelElement
+                plantSectionIdentificationCode, aas.SubmodelElement
             ):
                 plantSectionIdentificationCode = self.PlantSectionIdentificationCode(
                     plantSectionIdentificationCode
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if plantSectionName and not isinstance(plantSectionName, SubmodelElement):
+            if plantSectionName and not isinstance(
+                plantSectionName, aas.SubmodelElement
+            ):
                 plantSectionName = self.PlantSectionName(plantSectionName)
 
             # Build a submodel element if a raw value was passed in the argument
             if processPlantIdentificationCode and not isinstance(
-                processPlantIdentificationCode, SubmodelElement
+                processPlantIdentificationCode, aas.SubmodelElement
             ):
                 processPlantIdentificationCode = self.ProcessPlantIdentificationCode(
                     processPlantIdentificationCode
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if processPlantName and not isinstance(processPlantName, SubmodelElement):
+            if processPlantName and not isinstance(
+                processPlantName, aas.SubmodelElement
+            ):
                 processPlantName = self.ProcessPlantName(processPlantName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if projectName and not isinstance(projectName, SubmodelElement):
+            if projectName and not isinstance(projectName, aas.SubmodelElement):
                 projectName = self.ProjectName(projectName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if projectNumber and not isinstance(projectNumber, SubmodelElement):
+            if projectNumber and not isinstance(projectNumber, aas.SubmodelElement):
                 projectNumber = self.ProjectNumber(projectNumber)
 
             # Build a submodel element if a raw value was passed in the argument
             if siteIdentificationCode and not isinstance(
-                siteIdentificationCode, SubmodelElement
+                siteIdentificationCode, aas.SubmodelElement
             ):
                 siteIdentificationCode = self.SiteIdentificationCode(
                     siteIdentificationCode
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if siteName and not isinstance(siteName, SubmodelElement):
+            if siteName and not isinstance(siteName, aas.SubmodelElement):
                 siteName = self.SiteName(siteName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if subProjectName and not isinstance(subProjectName, SubmodelElement):
+            if subProjectName and not isinstance(subProjectName, aas.SubmodelElement):
                 subProjectName = self.SubProjectName(subProjectName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if subProjectNumber and not isinstance(subProjectNumber, SubmodelElement):
+            if subProjectNumber and not isinstance(
+                subProjectNumber, aas.SubmodelElement
+            ):
                 subProjectNumber = self.SubProjectNumber(subProjectNumber)
 
             # Build a submodel element if a raw value was passed in the argument
-            if manufacturerName and not isinstance(manufacturerName, SubmodelElement):
+            if manufacturerName and not isinstance(
+                manufacturerName, aas.SubmodelElement
+            ):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
-            if dateOfManufacture and not isinstance(dateOfManufacture, SubmodelElement):
+            if dateOfManufacture and not isinstance(
+                dateOfManufacture, aas.SubmodelElement
+            ):
                 dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
 
             # Build submodel elements from raw values passed in the argument
             if endProductCASName:
                 endProductCASName = [
-                    i if isinstance(i, SubmodelElement) else self.EndProductCASName(i)
+                    (
+                        i
+                        if isinstance(i, aas.SubmodelElement)
+                        else self.EndProductCASName(i)
+                    )
                     for i in endProductCASName
                 ]
 
             # Build submodel elements from raw values passed in the argument
             if endProductName:
                 endProductName = [
-                    i if isinstance(i, SubmodelElement) else self.EndProductName(i)
+                    i if isinstance(i, aas.SubmodelElement) else self.EndProductName(i)
                     for i in endProductName
                 ]
 
@@ -1687,7 +1702,7 @@ class DEXPI(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1695,7 +1710,7 @@ class DEXPI(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1711,50 +1726,50 @@ class DEXPI(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Model(SubmodelElementCollection):
+    class Model(aas.SubmodelElementCollection):
 
-        class ModelMetadata(SubmodelElementCollection):
+        class ModelMetadata(aas.SubmodelElementCollection):
 
-            class ApprovalDate(Property):
+            class ApprovalDate(aas.Property):
 
                 def __init__(
                     self,
-                    value: Date,
+                    value: xsd.Date,
                     id_short: Optional[str] = r"ApprovalDate",
-                    value_type: DataTypeDefXsd = Date,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Date,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/ApprovalDateRepresentationAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1762,16 +1777,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"2016-04-01",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -1799,45 +1814,45 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ApprovalDescription(MultiLanguageProperty):
+            class ApprovalDescription(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"ApprovalDescription",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/ApprovalDescriptionAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1864,46 +1879,46 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ArchiveNumber(Property):
+            class ArchiveNumber(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ArchiveNumber",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/ArchiveNumberAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1911,16 +1926,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"XY923-463",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -1948,46 +1963,46 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CheckerName(Property):
+            class CheckerName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"CheckerName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/CheckerNameAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1995,16 +2010,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"C. Hecker",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -2032,46 +2047,46 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CreationDate(Property):
+            class CreationDate(aas.Property):
 
                 def __init__(
                     self,
-                    value: Date,
+                    value: xsd.Date,
                     id_short: Optional[str] = r"CreationDate",
-                    value_type: DataTypeDefXsd = Date,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Date,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/CreationDateRepresentationAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2079,16 +2094,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"2016-04-01",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -2116,46 +2131,46 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CreatorName(Property):
+            class CreatorName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"CreatorName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/CreatorNameAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2163,16 +2178,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"A. Creator",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -2200,46 +2215,46 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class DesignerName(Property):
+            class DesignerName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"DesignerName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/DesignerNameAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2247,16 +2262,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"D. E. Signer",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -2284,46 +2299,46 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class DrawingNumber(Property):
+            class DrawingNumber(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"DrawingNumber",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/DrawingNumberAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2331,16 +2346,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"123/A93",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -2368,45 +2383,45 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class DrawingSubTitle(MultiLanguageProperty):
+            class DrawingSubTitle(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"DrawingSubTitle",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/DrawingSubTitleAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2433,46 +2448,46 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class LastModificationDate(Property):
+            class LastModificationDate(aas.Property):
 
                 def __init__(
                     self,
-                    value: Date,
+                    value: xsd.Date,
                     id_short: Optional[str] = r"LastModificationDate",
-                    value_type: DataTypeDefXsd = Date,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Date,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://sandbox.dexpi.org/rdl/LastModificationDateRepresentationAssignmentClass",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2480,16 +2495,16 @@ class DEXPI(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"ExampleValue",
                                 value_type=str,
                                 value=r"2016-04-02",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                         ),
                                     ),
@@ -2519,53 +2534,55 @@ class DEXPI(Submodel):
 
             def __init__(
                 self,
-                approvalDate: Optional[Union[Date, ApprovalDate]] = None,
+                approvalDate: Optional[Union[xsd.Date, ApprovalDate]] = None,
                 approvalDescription: Optional[
-                    Union[LangStringSet, ApprovalDescription]
+                    Union[aas.LangStringSet, ApprovalDescription]
                 ] = None,
                 archiveNumber: Optional[Union[str, ArchiveNumber]] = None,
                 checkerName: Optional[Union[str, CheckerName]] = None,
-                creationDate: Optional[Union[Date, CreationDate]] = None,
+                creationDate: Optional[Union[xsd.Date, CreationDate]] = None,
                 creatorName: Optional[Union[str, CreatorName]] = None,
                 designerName: Optional[Union[str, DesignerName]] = None,
                 drawingNumber: Optional[Union[str, DrawingNumber]] = None,
-                drawingSubTitle: Optional[Union[LangStringSet, DrawingSubTitle]] = None,
+                drawingSubTitle: Optional[
+                    Union[aas.LangStringSet, DrawingSubTitle]
+                ] = None,
                 lastModificationDate: Optional[
-                    Union[Date, LastModificationDate]
+                    Union[xsd.Date, LastModificationDate]
                 ] = None,
                 id_short: Optional[str] = r"ModelMetadata",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://admin-shell.io/dexpi/1/0/ModelMetadata",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2579,46 +2596,48 @@ class DEXPI(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if approvalDate and not isinstance(approvalDate, SubmodelElement):
+                if approvalDate and not isinstance(approvalDate, aas.SubmodelElement):
                     approvalDate = self.ApprovalDate(approvalDate)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if approvalDescription and not isinstance(
-                    approvalDescription, SubmodelElement
+                    approvalDescription, aas.SubmodelElement
                 ):
                     approvalDescription = self.ApprovalDescription(approvalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if archiveNumber and not isinstance(archiveNumber, SubmodelElement):
+                if archiveNumber and not isinstance(archiveNumber, aas.SubmodelElement):
                     archiveNumber = self.ArchiveNumber(archiveNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if checkerName and not isinstance(checkerName, SubmodelElement):
+                if checkerName and not isinstance(checkerName, aas.SubmodelElement):
                     checkerName = self.CheckerName(checkerName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if creationDate and not isinstance(creationDate, SubmodelElement):
+                if creationDate and not isinstance(creationDate, aas.SubmodelElement):
                     creationDate = self.CreationDate(creationDate)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if creatorName and not isinstance(creatorName, SubmodelElement):
+                if creatorName and not isinstance(creatorName, aas.SubmodelElement):
                     creatorName = self.CreatorName(creatorName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if designerName and not isinstance(designerName, SubmodelElement):
+                if designerName and not isinstance(designerName, aas.SubmodelElement):
                     designerName = self.DesignerName(designerName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if drawingNumber and not isinstance(drawingNumber, SubmodelElement):
+                if drawingNumber and not isinstance(drawingNumber, aas.SubmodelElement):
                     drawingNumber = self.DrawingNumber(drawingNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if drawingSubTitle and not isinstance(drawingSubTitle, SubmodelElement):
+                if drawingSubTitle and not isinstance(
+                    drawingSubTitle, aas.SubmodelElement
+                ):
                     drawingSubTitle = self.DrawingSubTitle(drawingSubTitle)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if lastModificationDate and not isinstance(
-                    lastModificationDate, SubmodelElement
+                    lastModificationDate, aas.SubmodelElement
                 ):
                     lastModificationDate = self.LastModificationDate(
                         lastModificationDate
@@ -2640,7 +2659,7 @@ class DEXPI(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2648,7 +2667,7 @@ class DEXPI(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2664,45 +2683,45 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ModelFile(File):
+        class ModelFile(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ModelFile",
                 content_type: Optional[str] = r"application/xml",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/DEXPI/1/0/ModelFile",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2729,45 +2748,45 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ModelRepresentation(File):
+        class ModelRepresentation(aas.File):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"ModelRepresentation",
                 content_type: Optional[str] = r"application/pdf",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/DEXPI/1/0/ModelRepresentation",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2794,50 +2813,50 @@ class DEXPI(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MappingDirectory(SubmodelElementCollection):
+        class MappingDirectory(aas.SubmodelElementCollection):
 
-            class ProcessInstrumentationFunction(SubmodelElementCollection):
+            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2865,46 +2884,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2932,46 +2951,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3005,38 +3024,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ProcessInstrumentationFunction",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3050,15 +3069,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3066,7 +3085,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3074,7 +3093,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3090,48 +3109,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ProcessInstrumentationFunction(SubmodelElementCollection):
+            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3159,46 +3178,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3226,46 +3245,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3299,38 +3318,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ProcessInstrumentationFunction",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3344,15 +3363,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3360,7 +3379,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3368,7 +3387,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3384,48 +3403,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ProcessInstrumentationFunction(SubmodelElementCollection):
+            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3453,46 +3472,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3520,46 +3539,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3593,38 +3612,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ProcessInstrumentationFunction",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3638,15 +3657,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3654,7 +3673,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3662,7 +3681,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3678,48 +3697,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ProcessInstrumentationFunction(SubmodelElementCollection):
+            class ProcessInstrumentationFunction(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3747,46 +3766,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3814,46 +3833,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3887,38 +3906,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ProcessInstrumentationFunction",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3932,15 +3951,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3948,7 +3967,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3956,7 +3975,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3972,48 +3991,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ActuatingFunction(SubmodelElementCollection):
+            class ActuatingFunction(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4041,46 +4060,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4108,46 +4127,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4181,38 +4200,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ActuatingFunction",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4226,15 +4245,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4242,7 +4261,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -4250,7 +4269,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -4266,48 +4285,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ActuatingFunction(SubmodelElementCollection):
+            class ActuatingFunction(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4335,46 +4354,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4402,46 +4421,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4475,38 +4494,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ActuatingFunction",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4520,15 +4539,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4536,7 +4555,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -4544,7 +4563,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -4560,48 +4579,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ActuatingFunction(SubmodelElementCollection):
+            class ActuatingFunction(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4629,46 +4648,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4696,46 +4715,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4769,38 +4788,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ActuatingFunction",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4814,15 +4833,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4830,7 +4849,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -4838,7 +4857,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -4854,48 +4873,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PlateHeatExchanger(SubmodelElementCollection):
+            class PlateHeatExchanger(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4923,46 +4942,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4990,46 +5009,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5063,38 +5082,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"PlateHeatExchanger",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5108,15 +5127,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5124,7 +5143,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -5132,7 +5151,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -5148,48 +5167,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class TubularHeatExchanger(SubmodelElementCollection):
+            class TubularHeatExchanger(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5217,46 +5236,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5284,46 +5303,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5357,38 +5376,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"TubularHeatExchanger",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5402,15 +5421,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5418,7 +5437,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -5426,7 +5445,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -5442,48 +5461,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CentrifugalPump(SubmodelElementCollection):
+            class CentrifugalPump(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5511,46 +5530,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5578,46 +5597,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5651,38 +5670,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"CentrifugalPump",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5696,15 +5715,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5712,7 +5731,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -5720,7 +5739,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -5736,48 +5755,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ReciprocatingPump(SubmodelElementCollection):
+            class ReciprocatingPump(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5805,46 +5824,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5872,46 +5891,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5945,38 +5964,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ReciprocatingPump",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5990,15 +6009,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6006,7 +6025,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -6014,7 +6033,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -6030,48 +6049,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Tank(SubmodelElementCollection):
+            class Tank(aas.SubmodelElementCollection):
 
-                class TagName(Property):
+                class TagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/TagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6099,46 +6118,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6166,46 +6185,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6239,38 +6258,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Tank",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/DEXPI/1/0/TagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6284,15 +6303,15 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if tagName and not isinstance(tagName, SubmodelElement):
+                    if tagName and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6300,7 +6319,7 @@ class DEXPI(Submodel):
                     for se_arg in [tagName, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -6308,7 +6327,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -6324,48 +6343,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ControlledActuator(SubmodelElementCollection):
+            class ControlledActuator(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6393,46 +6412,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6460,46 +6479,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6527,46 +6546,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6601,38 +6620,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ControlledActuator",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6646,19 +6665,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6666,7 +6687,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -6674,7 +6695,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -6690,48 +6711,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OperatedValveReference(SubmodelElementCollection):
+            class OperatedValveReference(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6759,46 +6780,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6826,46 +6847,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6893,46 +6914,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6967,38 +6988,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"OperatedValveReference",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7012,19 +7033,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7032,7 +7055,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -7040,7 +7063,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -7056,48 +7079,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ControlledActuator(SubmodelElementCollection):
+            class ControlledActuator(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7125,46 +7148,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7192,46 +7215,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7259,46 +7282,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7333,38 +7356,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ControlledActuator",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7378,19 +7401,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7398,7 +7423,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -7406,7 +7431,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -7422,48 +7447,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OperatedValveReference(SubmodelElementCollection):
+            class OperatedValveReference(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7491,46 +7516,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7558,46 +7583,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7625,46 +7650,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7699,38 +7724,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"OperatedValveReference",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -7744,19 +7769,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7764,7 +7791,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -7772,7 +7799,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -7788,48 +7815,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ControlledActuator(SubmodelElementCollection):
+            class ControlledActuator(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7857,46 +7884,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7924,46 +7951,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -7991,46 +8018,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8065,38 +8092,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"ControlledActuator",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -8110,19 +8137,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8130,7 +8159,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -8138,7 +8167,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -8154,48 +8183,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OperatedValveReference(SubmodelElementCollection):
+            class OperatedValveReference(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8223,46 +8252,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8290,46 +8319,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8357,46 +8386,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8431,38 +8460,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"OperatedValveReference",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -8476,19 +8505,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8496,7 +8527,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -8504,7 +8535,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -8520,48 +8551,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8589,46 +8620,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8656,46 +8687,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8723,46 +8754,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8797,38 +8828,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -8842,19 +8873,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8862,7 +8895,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -8870,7 +8903,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -8886,48 +8919,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -8955,46 +8988,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9022,46 +9055,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9089,46 +9122,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9163,38 +9196,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -9208,19 +9241,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9228,7 +9263,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -9236,7 +9271,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -9252,48 +9287,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9321,46 +9356,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9388,46 +9423,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9455,46 +9490,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9529,38 +9564,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -9574,19 +9609,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9594,7 +9631,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -9602,7 +9639,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -9618,48 +9655,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9687,46 +9724,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9754,46 +9791,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9821,46 +9858,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -9895,38 +9932,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -9940,19 +9977,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9960,7 +9999,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -9968,7 +10007,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -9984,48 +10023,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(SubmodelElementCollection):
+            class Chamber(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10053,46 +10092,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10120,46 +10159,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10187,46 +10226,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10261,38 +10300,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Chamber",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -10306,19 +10345,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -10326,7 +10367,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -10334,7 +10375,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -10350,48 +10391,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(SubmodelElementCollection):
+            class Chamber(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10419,46 +10460,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10486,46 +10527,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10553,46 +10594,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10627,38 +10668,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Chamber",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -10672,19 +10713,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -10692,7 +10735,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -10700,7 +10743,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -10716,48 +10759,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10785,46 +10828,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10852,46 +10895,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10919,46 +10962,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -10993,38 +11036,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -11038,19 +11081,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -11058,7 +11103,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -11066,7 +11111,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -11082,48 +11127,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11151,46 +11196,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11218,46 +11263,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11285,46 +11330,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11359,38 +11404,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -11404,19 +11449,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -11424,7 +11471,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -11432,7 +11479,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -11448,48 +11495,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11517,46 +11564,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11584,46 +11631,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11651,46 +11698,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11725,38 +11772,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -11770,19 +11817,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -11790,7 +11839,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -11798,7 +11847,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -11814,48 +11863,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11883,46 +11932,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -11950,46 +11999,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12017,46 +12066,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12091,38 +12140,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -12136,19 +12185,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -12156,7 +12207,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -12164,7 +12215,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -12180,48 +12231,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(SubmodelElementCollection):
+            class Chamber(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12249,46 +12300,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12316,46 +12367,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12383,46 +12434,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12457,38 +12508,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Chamber",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -12502,19 +12553,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -12522,7 +12575,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -12530,7 +12583,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -12546,48 +12599,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(SubmodelElementCollection):
+            class Chamber(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12615,46 +12668,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12682,46 +12735,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12749,46 +12802,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12823,38 +12876,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Chamber",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -12868,19 +12921,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -12888,7 +12943,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -12896,7 +12951,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -12912,48 +12967,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -12981,46 +13036,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13048,46 +13103,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13115,46 +13170,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13189,38 +13244,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -13234,19 +13289,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -13254,7 +13311,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -13262,7 +13319,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -13278,48 +13335,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13347,46 +13404,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13414,46 +13471,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13481,46 +13538,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13555,38 +13612,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -13600,19 +13657,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -13620,7 +13679,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -13628,7 +13687,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -13644,48 +13703,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13713,46 +13772,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13780,46 +13839,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13847,46 +13906,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -13921,38 +13980,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -13966,19 +14025,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -13986,7 +14047,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -13994,7 +14055,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -14010,48 +14071,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14079,46 +14140,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14146,46 +14207,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14213,46 +14274,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14287,38 +14348,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -14332,19 +14393,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -14352,7 +14415,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -14360,7 +14423,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -14376,48 +14439,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14445,46 +14508,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14512,46 +14575,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14579,46 +14642,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14653,38 +14716,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -14698,19 +14761,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -14718,7 +14783,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -14726,7 +14791,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -14742,48 +14807,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14811,46 +14876,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14878,46 +14943,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -14945,46 +15010,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15019,38 +15084,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -15064,19 +15129,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -15084,7 +15151,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -15092,7 +15159,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -15108,48 +15175,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15177,46 +15244,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15244,46 +15311,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15311,46 +15378,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15385,38 +15452,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -15430,19 +15497,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -15450,7 +15519,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -15458,7 +15527,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -15474,48 +15543,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15543,46 +15612,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15610,46 +15679,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15677,46 +15746,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15751,38 +15820,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -15796,19 +15865,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -15816,7 +15887,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -15824,7 +15895,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -15840,48 +15911,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15909,46 +15980,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -15976,46 +16047,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16043,46 +16114,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16117,38 +16188,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -16162,19 +16233,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16182,7 +16255,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -16190,7 +16263,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -16206,48 +16279,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16275,46 +16348,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16342,46 +16415,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16409,46 +16482,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16483,38 +16556,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -16528,19 +16601,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16548,7 +16623,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -16556,7 +16631,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -16572,48 +16647,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Nozzle(SubmodelElementCollection):
+            class Nozzle(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16641,46 +16716,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16708,46 +16783,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16775,46 +16850,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -16849,38 +16924,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Nozzle",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -16894,19 +16969,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16914,7 +16991,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -16922,7 +16999,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -16938,48 +17015,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(SubmodelElementCollection):
+            class Chamber(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17007,46 +17084,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17074,46 +17151,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17141,46 +17218,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17215,38 +17292,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Chamber",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -17260,19 +17337,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -17280,7 +17359,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -17288,7 +17367,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -17304,48 +17383,48 @@ class DEXPI(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Chamber(SubmodelElementCollection):
+            class Chamber(aas.SubmodelElementCollection):
 
-                class SubTagName(Property):
+                class SubTagName(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SubTagName",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/SubTagName",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17373,46 +17452,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ParentLocalId(Property):
+                class ParentLocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ParentLocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17440,46 +17519,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Class(Property):
+                class Class(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"Class",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/Class",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17507,46 +17586,46 @@ class DEXPI(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalId(Property):
+                class LocalId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LocalId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/dexpi/1/0/LocalId",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -17581,38 +17660,38 @@ class DEXPI(Submodel):
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
                     id_short: Optional[str] = r"Chamber",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/dexpi/1/0/SubTagMapping",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -17626,19 +17705,21 @@ class DEXPI(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if subTagName and not isinstance(subTagName, SubmodelElement):
+                    if subTagName and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if parentLocalId and not isinstance(parentLocalId, SubmodelElement):
+                    if parentLocalId and not isinstance(
+                        parentLocalId, aas.SubmodelElement
+                    ):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if class_ and not isinstance(class_, SubmodelElement):
+                    if class_ and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if localId and not isinstance(localId, SubmodelElement):
+                    if localId and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -17646,7 +17727,7 @@ class DEXPI(Submodel):
                     for se_arg in [subTagName, parentLocalId, class_, localId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -17654,7 +17735,7 @@ class DEXPI(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -17724,38 +17805,38 @@ class DEXPI(Submodel):
                 chamber: Optional[Chamber] = None,
                 chamber: Optional[Chamber] = None,
                 id_short: Optional[str] = r"MappingDirectory",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"http://admin-shell.io/idta/DEXPI/1/0/MappingDirectory",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -17817,7 +17898,7 @@ class DEXPI(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -17825,7 +17906,7 @@ class DEXPI(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -17848,36 +17929,38 @@ class DEXPI(Submodel):
             modelRepresentation: Optional[ModelRepresentation] = None,
             mappingDirectory: Optional[MappingDirectory] = None,
             id_short: Optional[str] = r"Model",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"http://admin-shell.io/dexpi/1/0/Model",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"Cardinality",
                         value_type=str,
                         value=r"OneToMany",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -17900,7 +17983,7 @@ class DEXPI(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -17908,7 +17991,7 @@ class DEXPI(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -17930,24 +18013,24 @@ class DEXPI(Submodel):
         plantMetadata: PlantMetadata,
         model: Iterable[Model],
         id_short: Optional[str] = r"DEXPI",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = None,
-        administration: Optional[AdministrativeInformation] = None,
-        semantic_id: Optional[Reference] = ExternalReference(
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
+        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
-                Key(
-                    type_=KeyTypes.GLOBAL_REFERENCE,
+                aas.Key(
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                     value=r"https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0",
                 ),
             ),
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -17961,7 +18044,7 @@ class DEXPI(Submodel):
         for se_arg in [plantMetadata, model]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -17969,7 +18052,7 @@ class DEXPI(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

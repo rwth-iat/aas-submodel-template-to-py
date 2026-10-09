@@ -1,60 +1,59 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class CapabilityDescription(Submodel):
+class CapabilityDescription(aas.Submodel):
 
-    class CapabilitySet(SubmodelElementCollection):
+    class CapabilitySet(aas.SubmodelElementCollection):
 
-        class CapabilityContainer(SubmodelElementCollection):
+        class CapabilityContainer(aas.SubmodelElementCollection):
 
-            class Capability(Capability):
+            class Capability(aas.Capability):
 
                 def __init__(
                     self,
                     id_short: Optional[str] = r"Capability",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Capability"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"[A capability is a] implementation-independent specification of a function in industrial production to achieve an effect in the physical or virtual world. "
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/CapabilityDescription/Capability/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Required",
                                 value_type=str,
                                 value=r"[1, 0]",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRoleQualifier/Required/1/0",
                                         ),
                                     ),
@@ -62,16 +61,16 @@ class CapabilityDescription(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"Offered",
                                 value_type=str,
                                 value=r"[1, 0]",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRoleQualifier/Offered/1/0",
                                         ),
                                     ),
@@ -79,16 +78,16 @@ class CapabilityDescription(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"NotAssigned",
                                 value_type=str,
                                 value=r"[1, 0]",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRoleQualifier/NotAssigned/1/0",
                                         ),
                                     ),
@@ -96,16 +95,16 @@ class CapabilityDescription(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -113,12 +112,12 @@ class CapabilityDescription(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"EditIdShort",
                                 value_type=str,
                                 value=r"True",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -139,51 +138,51 @@ class CapabilityDescription(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CapabilityComment(MultiLanguageProperty):
+            class CapabilityComment(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"CapabilityComment",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Capability Comment"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability Comment"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Individual comment of the capability."}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityComment/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -210,73 +209,77 @@ class CapabilityDescription(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PropertySet(SubmodelElementCollection):
+            class PropertySet(aas.SubmodelElementCollection):
 
-                class PropertyContainer(SubmodelElementCollection):
+                class PropertyContainer(aas.SubmodelElementCollection):
 
-                    class SameProperty(RelationshipElement):
+                    class SameProperty(aas.RelationshipElement):
 
                         def __init__(
                             self,
                             id_short: Optional[str] = r"SameProperty",
-                            first: Optional[Reference] = ExternalReference(
+                            first: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:example:capability-description:same-property:first",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            second: Optional[Reference] = ExternalReference(
+                            second: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:example:capability-description:same-property:second",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"Same Property"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Same Property"}
+                            ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Relationship of the Property described in the Property container as first element and the identical property as second element in another Submodel or an external information source."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/SameProperty/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -303,54 +306,58 @@ class CapabilityDescription(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class PropertyRange(Range):
+                    class PropertyRange(aas.Range):
 
                         def __init__(
                             self,
                             min: str,
                             max: str,
                             id_short: Optional[str] = r"PropertyRange",
-                            value_type: DataTypeDefXsd = str,
+                            value_type: aas.DataTypeDefXsd = str,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"Property Range"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Property Range"}
+                            ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityPropertyEnumType/Range/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -358,12 +365,12 @@ class CapabilityDescription(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"EditIdShort",
                                         value_type=str,
                                         value=r"True",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -387,56 +394,58 @@ class CapabilityDescription(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class PropertyProperty(Property):
+                    class PropertyProperty(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"PropertyProperty",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Property Property"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityPropertyType/Property/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -444,12 +453,12 @@ class CapabilityDescription(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"EditIdShort",
                                         value_type=str,
                                         value=r"True",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -473,55 +482,57 @@ class CapabilityDescription(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class PropertyMultiLanguageProperty(MultiLanguageProperty):
+                    class PropertyMultiLanguageProperty(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"PropertyMultiLanguageProperty",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Property Multi Language Property"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityPropertyType/MultiLanguageProperty/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -529,12 +540,12 @@ class CapabilityDescription(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"EditIdShort",
                                         value_type=str,
                                         value=r"True",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -557,53 +568,55 @@ class CapabilityDescription(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class PropertyComment(MultiLanguageProperty):
+                    class PropertyComment(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"PropertyComment",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Property Comment"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={r"en": r"General description of the property."}
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyComment/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -641,53 +654,55 @@ class CapabilityDescription(Submodel):
                         ] = None,
                         propertyMultiLanguageProperty: Optional[
                             Iterable[
-                                Union[LangStringSet, PropertyMultiLanguageProperty]
+                                Union[aas.LangStringSet, PropertyMultiLanguageProperty]
                             ]
                         ] = None,
                         propertyComment: Optional[
-                            Union[LangStringSet, PropertyComment]
+                            Union[aas.LangStringSet, PropertyComment]
                         ] = None,
                         id_short: Optional[str] = r"PropertyContainer",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"Property Container"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Property Container"}
+                        ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -695,12 +710,12 @@ class CapabilityDescription(Submodel):
                                     ),
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"EditIdShort",
                                     value_type=str,
                                     value=r"True",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -714,7 +729,7 @@ class CapabilityDescription(Submodel):
                             propertyRange = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.PropertyRange(min=i[0], max=i[1])
                                 )
                                 for i in propertyRange
@@ -725,7 +740,7 @@ class CapabilityDescription(Submodel):
                             propertyProperty = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.PropertyProperty(i)
                                 )
                                 for i in propertyProperty
@@ -736,7 +751,7 @@ class CapabilityDescription(Submodel):
                             propertyMultiLanguageProperty = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.PropertyMultiLanguageProperty(i)
                                 )
                                 for i in propertyMultiLanguageProperty
@@ -744,7 +759,7 @@ class CapabilityDescription(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if propertyComment and not isinstance(
-                            propertyComment, SubmodelElement
+                            propertyComment, aas.SubmodelElement
                         ):
                             propertyComment = self.PropertyComment(propertyComment)
 
@@ -759,7 +774,7 @@ class CapabilityDescription(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -767,7 +782,7 @@ class CapabilityDescription(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -788,45 +803,45 @@ class CapabilityDescription(Submodel):
                     propertyContainer: Iterable[PropertyContainer],
                     id_short: Optional[str] = r"PropertySet",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Property Set"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Property Set"}),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Set of properties describing the capability in more detail, if existing."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -834,12 +849,12 @@ class CapabilityDescription(Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"EditIdShort",
                                 value_type=str,
                                 value=r"True",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -853,7 +868,7 @@ class CapabilityDescription(Submodel):
                     for se_arg in [propertyContainer]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -861,7 +876,7 @@ class CapabilityDescription(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -877,83 +892,85 @@ class CapabilityDescription(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CapabilityRelations(SubmodelElementCollection):
+            class CapabilityRelations(aas.SubmodelElementCollection):
 
-                class CapabilityRealizedBy(RelationshipElement):
+                class CapabilityRealizedBy(aas.RelationshipElement):
 
                     def __init__(
                         self,
                         id_short: Optional[str] = r"CapabilityRealizedBy",
-                        first: Optional[Reference] = ModelReference(
+                        first: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.SUBMODEL,
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                 ),
-                                Key(
-                                    type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                     value=r"CapabilitySet",
                                 ),
-                                Key(
-                                    type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                     value=r"CapabilityContainer",
                                 ),
-                                Key(type_=KeyTypes.CAPABILITY, value=r"Capability"),
+                                aas.Key(
+                                    type_=aas.KeyTypes.CAPABILITY, value=r"Capability"
+                                ),
                             ),
-                            type_=Capability,
+                            type_=aas.Capability,
                             referred_semantic_id=None,
                         ),
-                        second: Optional[Reference] = ExternalReference(
+                        second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:example:capability-description:capability-realized-by:skill",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"Capability Realized By"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Relationship between the Capability element in the CapabilityContainer as first element and a Skill implementation, not defined in this Submodel template, as second element."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRealizedBy/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -961,12 +978,12 @@ class CapabilityDescription(Submodel):
                                     ),
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"EditIdShort",
                                     value_type=str,
                                     value=r"True",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -989,101 +1006,103 @@ class CapabilityDescription(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ComposedOfSet(SubmodelElementCollection):
+                class ComposedOfSet(aas.SubmodelElementCollection):
 
-                    class ComposedOfContainer(SubmodelElementCollection):
+                    class ComposedOfContainer(aas.SubmodelElementCollection):
 
-                        class CapabilityComposedOf(RelationshipElement):
+                        class CapabilityComposedOf(aas.RelationshipElement):
 
                             def __init__(
                                 self,
                                 id_short: Optional[str] = r"CapabilityComposedOf",
-                                first: Optional[Reference] = ModelReference(
+                                first: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilitySet",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilityContainer",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.CAPABILITY,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.CAPABILITY,
                                             value=r"Capability",
                                         ),
                                     ),
-                                    type_=Capability,
+                                    type_=aas.Capability,
                                     referred_semantic_id=None,
                                 ),
-                                second: Optional[Reference] = ModelReference(
+                                second: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilitySet",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilityContainer",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.CAPABILITY,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.CAPABILITY,
                                             value=r"Capability",
                                         ),
                                     ),
-                                    type_=Capability,
+                                    type_=aas.Capability,
                                     referred_semantic_id=None,
                                 ),
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Capability Composed Of"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Relationship between a composed capability as first element and one of its minimum two subordinate capabilities as second element."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityComposedOf/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"TwoToMany",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1091,12 +1110,12 @@ class CapabilityDescription(Submodel):
                                             ),
                                             supplemental_semantic_id=(),
                                         ),
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"EditIdShort",
                                             value_type=str,
                                             value=r"True",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -1119,55 +1138,57 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ComposedOfComment(MultiLanguageProperty):
+                        class ComposedOfComment(aas.MultiLanguageProperty):
 
                             def __init__(
                                 self,
-                                value: LangStringSet,
+                                value: aas.LangStringSet,
                                 id_short: Optional[str] = r"ComposedOfComment",
-                                value_id: Optional[Reference] = None,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Composed Of Comment"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Comment to describe the composition in human readable form."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfComment/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1198,51 +1219,53 @@ class CapabilityDescription(Submodel):
                             self,
                             capabilityComposedOf: CapabilityComposedOf,
                             composedOfComment: Optional[
-                                Union[LangStringSet, ComposedOfComment]
+                                Union[aas.LangStringSet, ComposedOfComment]
                             ] = None,
                             id_short: Optional[str] = r"ComposedOfContainer",
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Composed Of Container"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Container corresponding to one composition for the Capability in the CapabilityContainer."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfContainer/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"OneToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1250,12 +1273,12 @@ class CapabilityDescription(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"EditIdShort",
                                         value_type=str,
                                         value=r"True",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1266,7 +1289,7 @@ class CapabilityDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if composedOfComment and not isinstance(
-                                composedOfComment, SubmodelElement
+                                composedOfComment, aas.SubmodelElement
                             ):
                                 composedOfComment = self.ComposedOfComment(
                                     composedOfComment
@@ -1277,7 +1300,7 @@ class CapabilityDescription(Submodel):
                             for se_arg in [capabilityComposedOf, composedOfComment]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -1285,7 +1308,7 @@ class CapabilityDescription(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -1306,45 +1329,47 @@ class CapabilityDescription(Submodel):
                         composedOfContainer: Iterable[ComposedOfContainer],
                         id_short: Optional[str] = r"ComposedOfSet",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"Composed Of Set"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Composed Of Set"}
+                        ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfSet/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1362,7 +1387,7 @@ class CapabilityDescription(Submodel):
                         for se_arg in [composedOfContainer]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1370,7 +1395,7 @@ class CapabilityDescription(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1386,93 +1411,101 @@ class CapabilityDescription(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class GeneralizedBySet(SubmodelElementCollection):
+                class GeneralizedBySet(aas.SubmodelElementCollection):
 
-                    class CapabilityGeneralizedBy(RelationshipElement):
+                    class CapabilityGeneralizedBy(aas.RelationshipElement):
 
                         def __init__(
                             self,
                             id_short: Optional[str] = r"CapabilityGeneralizedBy",
-                            first: Optional[Reference] = ModelReference(
+                            first: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.SUBMODEL,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                         value=r"CapabilitySet",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                         value=r"CapabilityContainer",
                                     ),
-                                    Key(type_=KeyTypes.CAPABILITY, value=r"Capability"),
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CAPABILITY,
+                                        value=r"Capability",
+                                    ),
                                 ),
-                                type_=Capability,
+                                type_=aas.Capability,
                                 referred_semantic_id=None,
                             ),
-                            second: Optional[Reference] = ModelReference(
+                            second: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.SUBMODEL,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                         value=r"CapabilitySet",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                         value=r"CapabilityContainer",
                                     ),
-                                    Key(type_=KeyTypes.CAPABILITY, value=r"Capability"),
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CAPABILITY,
+                                        value=r"Capability",
+                                    ),
                                 ),
-                                type_=Capability,
+                                type_=aas.Capability,
                                 referred_semantic_id=None,
                             ),
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Capability Generalized By"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Relationship between the Capability as first element, described in the CapabilityContainer, and a more general Capability as second element."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityGeneralizedBy/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"OneToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1480,12 +1513,12 @@ class CapabilityDescription(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"EditIdShort",
                                         value_type=str,
                                         value=r"True",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1513,45 +1546,47 @@ class CapabilityDescription(Submodel):
                         capabilityGeneralizedBy: Iterable[CapabilityGeneralizedBy],
                         id_short: Optional[str] = r"GeneralizedBySet",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"Generalized By Set"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Generalized By Set"}
+                        ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/CapabilityDescription/GeneralizedBySet/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1559,12 +1594,12 @@ class CapabilityDescription(Submodel):
                                     ),
                                     supplemental_semantic_id=(),
                                 ),
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"EditIdShort",
                                     value_type=str,
                                     value=r"True",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1578,7 +1613,7 @@ class CapabilityDescription(Submodel):
                         for se_arg in [capabilityGeneralizedBy]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1586,7 +1621,7 @@ class CapabilityDescription(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1602,60 +1637,62 @@ class CapabilityDescription(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ConstraintSet(SubmodelElementCollection):
+                class ConstraintSet(aas.SubmodelElementCollection):
 
-                    class PropertyConstraintContainer(SubmodelElementCollection):
+                    class PropertyConstraintContainer(aas.SubmodelElementCollection):
 
-                        class BasicConstraint(Property):
+                        class BasicConstraint(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"BasicConstraint",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Basic Constraint"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Property element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/BasicConstraint/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1663,12 +1700,12 @@ class CapabilityDescription(Submodel):
                                             ),
                                             supplemental_semantic_id=(),
                                         ),
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"PredicateRelationTemplate",
                                             value_type=str,
                                             value=r"ALL",
                                             value_id=None,
-                                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -1692,53 +1729,55 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class CustomConstraint(SubmodelElementCollection):
+                        class CustomConstraint(aas.SubmodelElementCollection):
 
                             def __init__(
                                 self,
                                 id_short: Optional[str] = r"CustomConstraint",
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Custom Constraint"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"SubmodelElement which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties. This can be freely defined for the purpose of constraining a property and is not specified in this Submodel Template."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/CustomConstraint/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1756,7 +1795,7 @@ class CapabilityDescription(Submodel):
                                 for se_arg in []:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -1764,7 +1803,7 @@ class CapabilityDescription(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -1780,7 +1819,7 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class OCLConstraint(File):
+                        class OCLConstraint(aas.File):
 
                             def __init__(
                                 self,
@@ -1790,47 +1829,49 @@ class CapabilityDescription(Submodel):
                                     str
                                 ] = r"application/octet-stream",
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"OCL Constraint"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OCLConstraint/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1857,54 +1898,56 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class OperationConstraint(ReferenceElement):
+                        class OperationConstraint(aas.ReferenceElement):
 
                             def __init__(
                                 self,
-                                value: Reference,
+                                value: aas.Reference,
                                 id_short: Optional[str] = r"OperationConstraint",
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Operation Constraint"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Reference to an (external) Operation element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OperationConstraint/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1930,56 +1973,58 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ConstraintType(Property):
+                        class ConstraintType(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ConstraintType",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Constraint Type"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Abstract Enum type of allowed SubmodelElements for these Properties constraints. Exactly one of the SubmodelElements below must be instanciated, e.g., similar to SubmodelElementList with exactly one element."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/ConstraintType/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1987,12 +2032,12 @@ class CapabilityDescription(Submodel):
                                             ),
                                             supplemental_semantic_id=(),
                                         ),
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"FormChoices",
                                             value_type=str,
                                             value=r"OperationConstraint;OCLConstraint;BasicConstraint;CustomConstraint",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
@@ -2016,56 +2061,58 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class PropertyConditionalType(Property):
+                        class PropertyConditionalType(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"PropertyConditionalType",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Property Conditional Type"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Defines the type of the property conditions as defined in the ConceptDescription with the same name (PropertyConditionalType)."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -2093,121 +2140,127 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ConstraintPropertyRelations(SubmodelElementCollection):
+                        class ConstraintPropertyRelations(
+                            aas.SubmodelElementCollection
+                        ):
 
-                            class ConstraintHasProperty(RelationshipElement):
+                            class ConstraintHasProperty(aas.RelationshipElement):
 
                                 def __init__(
                                     self,
                                     id_short: Optional[str] = r"ConstraintHasProperty",
-                                    first: Optional[Reference] = ModelReference(
+                                    first: Optional[aas.Reference] = aas.ModelReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL,
                                                 value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"CapabilitySet",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"CapabilityContainer",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"CapabilityRelations",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"ConstraintSet",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"PropertyConstraintContainer",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.PROPERTY,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.PROPERTY,
                                                 value=r"BasicConstraint",
                                             ),
                                         ),
-                                        type_=Property,
+                                        type_=aas.Property,
                                         referred_semantic_id=None,
                                     ),
-                                    second: Optional[Reference] = ModelReference(
+                                    second: Optional[
+                                        aas.Reference
+                                    ] = aas.ModelReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL,
                                                 value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"CapabilitySet",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"CapabilityContainer",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"PropertySet",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"PropertyContainer",
                                             ),
-                                            Key(
-                                                type_=KeyTypes.PROPERTY,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.PROPERTY,
                                                 value=r"PropertyProperty",
                                             ),
                                         ),
-                                        type_=Property,
+                                        type_=aas.Property,
                                         referred_semantic_id=None,
                                     ),
                                     display_name: Optional[
-                                        MultiLanguageNameType
-                                    ] = MultiLanguageNameType(
+                                        aas.MultiLanguageNameType
+                                    ] = aas.MultiLanguageNameType(
                                         dict_={r"en": r"Constraint Has Property"}
                                     ),
                                     category: Optional[str] = None,
                                     description: Optional[
-                                        MultiLanguageTextType
-                                    ] = MultiLanguageTextType(
+                                        aas.MultiLanguageTextType
+                                    ] = aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Relates the PropertyConstraint as first element to a Property from a PropertyContainer as second element."
                                         }
                                     ),
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/idta/CapabilityDescription/ConstraintHasProperty/1/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"SMT/Cardinality",
                                                 value_type=str,
                                                 value=r"OneToMany",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                                semantic_id=ExternalReference(
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                                semantic_id=aas.ExternalReference(
                                                     key=(
-                                                        Key(
-                                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                                        aas.Key(
+                                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                         ),
                                                     ),
@@ -2215,12 +2268,12 @@ class CapabilityDescription(Submodel):
                                                 ),
                                                 supplemental_semantic_id=(),
                                             ),
-                                            Qualifier(
+                                            aas.Qualifier(
                                                 type_=r"EditIdShort",
                                                 value_type=str,
                                                 value=r"True",
                                                 value_id=None,
-                                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                                 semantic_id=None,
                                                 supplemental_semantic_id=(),
                                             ),
@@ -2250,47 +2303,49 @@ class CapabilityDescription(Submodel):
                                     str
                                 ] = r"ConstraintPropertyRelations",
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Constraint Property Relations"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Contains all relationships for the constraint in the PropertyConstraintContainer."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/ConstraintPropertyRelations/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -2308,7 +2363,7 @@ class CapabilityDescription(Submodel):
                                 for se_arg in [constraintHasProperty]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -2316,7 +2371,7 @@ class CapabilityDescription(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -2337,7 +2392,9 @@ class CapabilityDescription(Submodel):
                             basicConstraint: Union[str, BasicConstraint],
                             customConstraint: CustomConstraint,
                             oCLConstraint: OCLConstraint,
-                            operationConstraint: Union[Reference, OperationConstraint],
+                            operationConstraint: Union[
+                                aas.Reference, OperationConstraint
+                            ],
                             constraintType: Union[str, ConstraintType],
                             propertyConditionalType: Union[
                                 str, PropertyConditionalType
@@ -2345,47 +2402,49 @@ class CapabilityDescription(Submodel):
                             constraintPropertyRelations: ConstraintPropertyRelations,
                             id_short: Optional[str] = r"PropertyConstraintContainer",
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Property Constraint Container"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -2393,12 +2452,12 @@ class CapabilityDescription(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"EditIdShort",
                                         value_type=str,
                                         value=r"True",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -2409,13 +2468,13 @@ class CapabilityDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if basicConstraint and not isinstance(
-                                basicConstraint, SubmodelElement
+                                basicConstraint, aas.SubmodelElement
                             ):
                                 basicConstraint = self.BasicConstraint(basicConstraint)
 
                             # Build a submodel element if a raw value was passed in the argument
                             if operationConstraint and not isinstance(
-                                operationConstraint, SubmodelElement
+                                operationConstraint, aas.SubmodelElement
                             ):
                                 operationConstraint = self.OperationConstraint(
                                     operationConstraint
@@ -2423,13 +2482,13 @@ class CapabilityDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if constraintType and not isinstance(
-                                constraintType, SubmodelElement
+                                constraintType, aas.SubmodelElement
                             ):
                                 constraintType = self.ConstraintType(constraintType)
 
                             # Build a submodel element if a raw value was passed in the argument
                             if propertyConditionalType and not isinstance(
-                                propertyConditionalType, SubmodelElement
+                                propertyConditionalType, aas.SubmodelElement
                             ):
                                 propertyConditionalType = self.PropertyConditionalType(
                                     propertyConditionalType
@@ -2448,7 +2507,7 @@ class CapabilityDescription(Submodel):
                             ]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -2456,7 +2515,7 @@ class CapabilityDescription(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -2472,99 +2531,101 @@ class CapabilityDescription(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TransitionConstraintContainer(SubmodelElementCollection):
+                    class TransitionConstraintContainer(aas.SubmodelElementCollection):
 
-                        class TransitionConstrainedBy(RelationshipElement):
+                        class TransitionConstrainedBy(aas.RelationshipElement):
 
                             def __init__(
                                 self,
                                 id_short: Optional[str] = r"TransitionConstrainedBy",
-                                first: Optional[Reference] = ModelReference(
+                                first: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilitySet",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilityContainer",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.CAPABILITY,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.CAPABILITY,
                                             value=r"Capability",
                                         ),
                                     ),
-                                    type_=Capability,
+                                    type_=aas.Capability,
                                     referred_semantic_id=None,
                                 ),
-                                second: Optional[Reference] = ModelReference(
+                                second: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilitySet",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                             value=r"CapabilityContainer",
                                         ),
-                                        Key(
-                                            type_=KeyTypes.CAPABILITY,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.CAPABILITY,
                                             value=r"Capability",
                                         ),
                                     ),
-                                    type_=Capability,
+                                    type_=aas.Capability,
                                     referred_semantic_id=None,
                                 ),
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Transition Constrained By"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Relates the constrained Capability as first element to a constraining Capability from another CapabilityContainer as second element."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/TransitionConstrainedBy/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -2591,56 +2652,58 @@ class CapabilityDescription(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class TransitionConditionalType(Property):
+                        class TransitionConditionalType(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"TransitionConditionalType",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"Transition Conditional Type"}
                                 ),
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Defines the element TransitionConstrainedBy of TransitionConstraintType."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -2676,47 +2739,49 @@ class CapabilityDescription(Submodel):
                             ],
                             id_short: Optional[str] = r"TransitionConstraintContainer",
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Transition Constraint Container"}
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/TransitionConstraintContainer/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -2724,12 +2789,12 @@ class CapabilityDescription(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"EditIdShort",
                                         value_type=str,
                                         value=r"True",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -2740,7 +2805,7 @@ class CapabilityDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if transitionConditionalType and not isinstance(
-                                transitionConditionalType, SubmodelElement
+                                transitionConditionalType, aas.SubmodelElement
                             ):
                                 transitionConditionalType = (
                                     self.TransitionConditionalType(
@@ -2756,7 +2821,7 @@ class CapabilityDescription(Submodel):
                             ]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -2764,7 +2829,7 @@ class CapabilityDescription(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -2790,45 +2855,45 @@ class CapabilityDescription(Submodel):
                         ] = None,
                         id_short: Optional[str] = r"ConstraintSet",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"Constraint Set"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Constraint Set"}),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2849,7 +2914,7 @@ class CapabilityDescription(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -2857,7 +2922,7 @@ class CapabilityDescription(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -2883,45 +2948,47 @@ class CapabilityDescription(Submodel):
                     constraintSet: Optional[Iterable[ConstraintSet]] = None,
                     id_short: Optional[str] = r"CapabilityRelations",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"Capability Relations"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Capability Relations"}
+                    ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Collection of relationships for the capability, if existing."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2944,7 +3011,7 @@ class CapabilityDescription(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2952,7 +3019,7 @@ class CapabilityDescription(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2972,49 +3039,51 @@ class CapabilityDescription(Submodel):
                 self,
                 capability: Capability,
                 capabilityComment: Optional[
-                    Union[LangStringSet, CapabilityComment]
+                    Union[aas.LangStringSet, CapabilityComment]
                 ] = None,
                 propertySet: Optional[Iterable[PropertySet]] = None,
                 capabilityRelations: Optional[CapabilityRelations] = None,
                 id_short: Optional[str] = r"CapabilityContainer",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"Capability Container"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability Container"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"A Container for one capability and all its additional descriptive elements."
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3022,12 +3091,12 @@ class CapabilityDescription(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"EditIdShort",
                             value_type=str,
                             value=r"True",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3038,7 +3107,7 @@ class CapabilityDescription(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if capabilityComment and not isinstance(
-                    capabilityComment, SubmodelElement
+                    capabilityComment, aas.SubmodelElement
                 ):
                     capabilityComment = self.CapabilityComment(capabilityComment)
 
@@ -3052,7 +3121,7 @@ class CapabilityDescription(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3060,7 +3129,7 @@ class CapabilityDescription(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3080,42 +3149,46 @@ class CapabilityDescription(Submodel):
             self,
             capabilityContainer: Iterable[CapabilityContainer],
             id_short: Optional[str] = r"CapabilitySet",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Capability Set"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability Set"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"A Set of CapabilityContainer for a Use Case for the asset."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"OneToMany",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3123,12 +3196,12 @@ class CapabilityDescription(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"EditIdShort",
                         value_type=str,
                         value=r"True",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -3142,7 +3215,7 @@ class CapabilityDescription(Submodel):
             for se_arg in [capabilityContainer]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3150,7 +3223,7 @@ class CapabilityDescription(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3171,31 +3244,31 @@ class CapabilityDescription(Submodel):
         id_: str,
         capabilitySet: Iterable[CapabilitySet],
         id_short: Optional[str] = r"CapabilityDescription",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"Submodel Template Capability Description"}
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": r"Definition of the Submodel CapabilityDescription identified by its semanticId. The Submodel idShort can be picked freely."
             }
         ),
-        administration: Optional[AdministrativeInformation] = None,
-        semantic_id: Optional[Reference] = ModelReference(
+        administration: Optional[aas.AdministrativeInformation] = None,
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -3209,7 +3282,7 @@ class CapabilityDescription(Submodel):
         for se_arg in [capabilitySet]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -3217,7 +3290,7 @@ class CapabilityDescription(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

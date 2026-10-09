@@ -41,10 +41,10 @@
     {% if builder and builder.iterable %}
 # Build submodel elements from raw values passed in the argument
 if {{ arg_for_se }}:
-    {{ arg_for_se }}=[i if isinstance(i, SubmodelElement) else {{ builder.code }} for i in {{ arg_for_se }}]
+    {{ arg_for_se }}=[i if isinstance(i, aas.SubmodelElement) else {{ builder.code }} for i in {{ arg_for_se }}]
     {% elif builder %}
 # Build a submodel element if a raw value was passed in the argument
-if {{ arg_for_se }} and not isinstance({{ arg_for_se }}, SubmodelElement):
+if {{ arg_for_se }} and not isinstance({{ arg_for_se }}, aas.SubmodelElement):
     {{ arg_for_se }}={{ builder.code }}
     {% endif %}
 {% endfor %}
@@ -54,12 +54,12 @@ embedded_submodel_elements = []
 for se_arg in [{% for se in args_for_submodel_elements -%} {{ se }}{% if not loop.last %},{% endif %}{%- endfor %}]:
     if se_arg is None:
         continue
-    elif isinstance(se_arg, SubmodelElement):
+    elif isinstance(se_arg, aas.SubmodelElement):
         embedded_submodel_elements.append(se_arg)
     elif isinstance(se_arg, Iterable):
         for n, element in enumerate(se_arg):
             element.id_short = f"{element.id_short}{n}"
             embedded_submodel_elements.append(element)
     else:
-        raise TypeError(f"Unknown type of value in submodel_element_args: {type(se_arg)}")
+        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 {% endblock %}

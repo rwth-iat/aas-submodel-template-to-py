@@ -1,75 +1,85 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class ProductChangeNotifications(Submodel):
+class ProductChangeNotifications(aas.Submodel):
 
-    class PcnEventsOutgoing(BasicEventElement):
+    class PcnEventsOutgoing(aas.BasicEventElement):
 
         def __init__(
             self,
             id_short: Optional[str] = r"PcnEventsOutgoing",
-            observed: ModelReference[
-                Union[ForwardRef("AssetAdministrationShell"), Submodel, SubmodelElement]
-            ] = ModelReference(
+            observed: aas.ModelReference[
+                Union[
+                    ForwardRef("aas.AssetAdministrationShell"),
+                    aas.Submodel,
+                    aas.SubmodelElement,
+                ]
+            ] = aas.ModelReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.SUBMODEL,
+                    aas.Key(
+                        type_=aas.KeyTypes.SUBMODEL,
                         value=r"www.example.com/ids/sm/3212_3160_4022_4516",
                     ),
                 ),
-                type_=Submodel,
+                type_=aas.Submodel,
                 referred_semantic_id=None,
             ),
-            direction: Direction = Direction.INPUT,
-            state: StateOfEvent = StateOfEvent.OFF,
+            direction: aas.Direction = aas.Direction.INPUT,
+            state: aas.StateOfEvent = aas.StateOfEvent.OFF,
             message_topic: Optional[str] = None,
             message_broker: Optional[
-                ModelReference[
+                aas.ModelReference[
                     Union[
-                        Submodel, SubmodelElementList, SubmodelElementCollection, Entity
+                        aas.Submodel,
+                        aas.SubmodelElementList,
+                        aas.SubmodelElementCollection,
+                        aas.Entity,
                     ]
                 ]
             ] = None,
-            last_update: Optional[DateTime] = None,
-            min_interval: Optional[Duration] = None,
-            max_interval: Optional[Duration] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            last_update: Optional[xsd.DateTime] = None,
+            min_interval: Optional[xsd.Duration] = None,
+            max_interval: Optional[xsd.Duration] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Note: Industrial users will subscribe to this event by different implementation technologies."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/EventsOutgoing/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -102,51 +112,51 @@ class ProductChangeNotifications(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Records(SubmodelElementList):
+    class Records(aas.SubmodelElementList):
 
-        class Records_item(SubmodelElementCollection):
+        class Records_item(aas.SubmodelElementCollection):
 
-            class Manufacturer(SubmodelElementCollection):
+            class Manufacturer(aas.SubmodelElementCollection):
 
-                class ManufacturerName(MultiLanguageProperty):
+                class ManufacturerName(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ManufacturerName",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO677#004",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -173,45 +183,45 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class PhysicalAddress(SubmodelElementCollection):
+                class PhysicalAddress(aas.SubmodelElementCollection):
 
                     def __init__(
                         self,
                         id_short: Optional[str] = r"PhysicalAddress",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r'Note: The idShort shall go without the index "__0__".'
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            ExternalReference(
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG791#003/0173-1#01-ADR442#008",
                                     ),
                                 ),
@@ -219,22 +229,22 @@ class ProductChangeNotifications(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -252,7 +262,7 @@ class ProductChangeNotifications(Submodel):
                         for se_arg in []:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -260,7 +270,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -276,45 +286,45 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class PhysicalAddress(SubmodelElementCollection):
+                class PhysicalAddress(aas.SubmodelElementCollection):
 
                     def __init__(
                         self,
                         id_short: Optional[str] = r"PhysicalAddress",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r'Note: The idShort shall go without the index "__1__".'
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0112/2///61360_7#AAS034",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            ExternalReference(
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG791#003/0173-1#01-ADR442#008",
                                     ),
                                 ),
@@ -322,22 +332,22 @@ class ProductChangeNotifications(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -355,7 +365,7 @@ class ProductChangeNotifications(Submodel):
                         for se_arg in []:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -363,7 +373,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -381,42 +391,42 @@ class ProductChangeNotifications(Submodel):
 
                 def __init__(
                     self,
-                    manufacturerName: Union[LangStringSet, ManufacturerName],
+                    manufacturerName: Union[aas.LangStringSet, ManufacturerName],
                     physicalAddress: PhysicalAddress,
                     physicalAddress: PhysicalAddress,
                     id_short: Optional[str] = r"Manufacturer",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI295#003/0173-1#01-AHE584#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -431,7 +441,7 @@ class ProductChangeNotifications(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if manufacturerName and not isinstance(
-                        manufacturerName, SubmodelElement
+                        manufacturerName, aas.SubmodelElement
                     ):
                         manufacturerName = self.ManufacturerName(manufacturerName)
 
@@ -440,7 +450,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [manufacturerName, physicalAddress, physicalAddress]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -448,7 +458,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -464,46 +474,46 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ManufacturerChangeID(Property):
+            class ManufacturerChangeID(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ManufacturerChangeID",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABG772#002",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -531,58 +541,61 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PcnType(Property):
+            class PcnType(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"PcnType",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = ModelReference(
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(type_=KeyTypes.SUBMODEL, value=r"0173-1#07-ABU000#003"),
+                            aas.Key(
+                                type_=aas.KeyTypes.SUBMODEL,
+                                value=r"0173-1#07-ABU000#003",
+                            ),
                         ),
-                        type_=Submodel,
+                        type_=aas.Submodel,
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Note: According this global flag, the PCN milestone (173-1#07-ABU000#003) communicates the effective date of the PCN and the EOP milestone (EOP milestone (0173-1#07-ABU003#003) communicates the end of production date for the PDN in the life-cycle data."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnType/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -610,65 +623,67 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class LifeCycleData(SubmodelElementList):
+            class LifeCycleData(aas.SubmodelElementList):
 
-                class Lifecycledata_item(SubmodelElementCollection):
+                class Lifecycledata_item(aas.SubmodelElementCollection):
 
-                    class MilestoneClassification(Property):
+                    class MilestoneClassification(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"MilestoneClassification",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = ModelReference(
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.SUBMODEL,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
                                         value=r"0173-1#07-ABU002#003",
                                     ),
                                 ),
-                                type_=Submodel,
+                                type_=aas.Submodel,
                                 referred_semantic_id=None,
                             ),
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: The PDN milestone is not to be used for this classification. Instead, the global flag PcnType is set with value=PCN and valueId=0173-1#07-ABU000#003."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG773#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -696,52 +711,54 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DateOfValidity(Property):
+                    class DateOfValidity(aas.Property):
 
                         def __init__(
                             self,
-                            value: DateTime,
+                            value: xsd.DateTime,
                             id_short: Optional[str] = r"DateOfValidity",
-                            value_type: DataTypeDefXsd = DateTime,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABF815#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -772,40 +789,40 @@ class ProductChangeNotifications(Submodel):
                     def __init__(
                         self,
                         milestoneClassification: Union[str, MilestoneClassification],
-                        dateOfValidity: Union[DateTime, DateOfValidity],
+                        dateOfValidity: Union[xsd.DateTime, DateOfValidity],
                         id_short: Optional[str] = r"lifecycledata_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/Milestone/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -820,7 +837,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if milestoneClassification and not isinstance(
-                            milestoneClassification, SubmodelElement
+                            milestoneClassification, aas.SubmodelElement
                         ):
                             milestoneClassification = self.MilestoneClassification(
                                 milestoneClassification
@@ -828,7 +845,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if dateOfValidity and not isinstance(
-                            dateOfValidity, SubmodelElement
+                            dateOfValidity, aas.SubmodelElement
                         ):
                             dateOfValidity = self.DateOfValidity(dateOfValidity)
 
@@ -837,7 +854,7 @@ class ProductChangeNotifications(Submodel):
                         for se_arg in [milestoneClassification, dateOfValidity]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -845,7 +862,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -865,50 +882,52 @@ class ProductChangeNotifications(Submodel):
                     self,
                     lifecycledata_items: Optional[Iterable[Lifecycledata_item]] = None,
                     id_short: Optional[str] = r"LifeCycleData",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/Milestone/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/List/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -926,7 +945,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [lifecycledata_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -934,7 +953,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -962,7 +981,7 @@ class ProductChangeNotifications(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -978,7 +997,7 @@ class ProductChangeNotifications(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -989,11 +1008,11 @@ class ProductChangeNotifications(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -1012,7 +1031,7 @@ class ProductChangeNotifications(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -1023,56 +1042,58 @@ class ProductChangeNotifications(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class ReasonsOfChange(SubmodelElementList):
+            class ReasonsOfChange(aas.SubmodelElementList):
 
-                class Reasonsofchange_item(SubmodelElementCollection):
+                class Reasonsofchange_item(aas.SubmodelElementCollection):
 
-                    class ReasonClassificationSystem(Property):
+                    class ReasonClassificationSystem(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ReasonClassificationSystem",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r'Note: Examples for common names for classification systems are "VDMA24903" or "ECLASS".'
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABF813#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1100,52 +1121,54 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class VersionOfClassificationSystem(Property):
+                    class VersionOfClassificationSystem(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"VersionOfClassificationSystem",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: 4 digit year of publication date of classifcation standard can serve as version."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAR710#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1173,52 +1196,54 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReasonId(Property):
+                    class ReasonId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ReasonId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG774#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1256,38 +1281,38 @@ class ProductChangeNotifications(Submodel):
                             Union[str, VersionOfClassificationSystem]
                         ] = None,
                         id_short: Optional[str] = r"reasonsofchange_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABI296#002/0173-1#01-AHE585#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1302,7 +1327,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if reasonClassificationSystem and not isinstance(
-                            reasonClassificationSystem, SubmodelElement
+                            reasonClassificationSystem, aas.SubmodelElement
                         ):
                             reasonClassificationSystem = (
                                 self.ReasonClassificationSystem(
@@ -1312,7 +1337,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if versionOfClassificationSystem and not isinstance(
-                            versionOfClassificationSystem, SubmodelElement
+                            versionOfClassificationSystem, aas.SubmodelElement
                         ):
                             versionOfClassificationSystem = (
                                 self.VersionOfClassificationSystem(
@@ -1321,7 +1346,7 @@ class ProductChangeNotifications(Submodel):
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if reasonId and not isinstance(reasonId, SubmodelElement):
+                        if reasonId and not isinstance(reasonId, aas.SubmodelElement):
                             reasonId = self.ReasonId(reasonId)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1333,7 +1358,7 @@ class ProductChangeNotifications(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1341,7 +1366,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1361,56 +1386,58 @@ class ProductChangeNotifications(Submodel):
                     self,
                     reasonsofchange_items: Iterable[Reasonsofchange_item],
                     id_short: Optional[str] = r"ReasonsOfChange",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI296#002/0173-1#01-AHE585#002",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Constraint: At least one reason according VDM24903 shall be given."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI296#002",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1428,7 +1455,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [reasonsofchange_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1436,7 +1463,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1464,7 +1491,7 @@ class ProductChangeNotifications(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1480,7 +1507,7 @@ class ProductChangeNotifications(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -1491,11 +1518,11 @@ class ProductChangeNotifications(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -1514,7 +1541,7 @@ class ProductChangeNotifications(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -1525,56 +1552,58 @@ class ProductChangeNotifications(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class ItemCategories(SubmodelElementList):
+            class ItemCategories(aas.SubmodelElementList):
 
-                class Itemcategories_item(SubmodelElementCollection):
+                class Itemcategories_item(aas.SubmodelElementCollection):
 
-                    class ItemClassificationSystem(Property):
+                    class ItemClassificationSystem(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ItemClassificationSystem",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r'Note: Examples for common names for classification systems are "VDMA24903".'
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/ItemClassificationSystem/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1602,52 +1631,54 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class VersionOfClassificationSystem(Property):
+                    class VersionOfClassificationSystem(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"VersionOfClassificationSystem",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: 4 digit year of publication data of classifcation standard can serve as version."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAR710#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1675,52 +1706,54 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ItemCategory(Property):
+                    class ItemCategory(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ItemCategory",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/ItemCategory/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1756,38 +1789,38 @@ class ProductChangeNotifications(Submodel):
                             Union[str, VersionOfClassificationSystem]
                         ] = None,
                         id_short: Optional[str] = r"itemcategories_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1802,7 +1835,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemClassificationSystem and not isinstance(
-                            itemClassificationSystem, SubmodelElement
+                            itemClassificationSystem, aas.SubmodelElement
                         ):
                             itemClassificationSystem = self.ItemClassificationSystem(
                                 itemClassificationSystem
@@ -1810,7 +1843,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if versionOfClassificationSystem and not isinstance(
-                            versionOfClassificationSystem, SubmodelElement
+                            versionOfClassificationSystem, aas.SubmodelElement
                         ):
                             versionOfClassificationSystem = (
                                 self.VersionOfClassificationSystem(
@@ -1820,7 +1853,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemCategory and not isinstance(
-                            itemCategory, SubmodelElement
+                            itemCategory, aas.SubmodelElement
                         ):
                             itemCategory = self.ItemCategory(itemCategory)
 
@@ -1833,7 +1866,7 @@ class ProductChangeNotifications(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1841,7 +1874,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1861,56 +1894,58 @@ class ProductChangeNotifications(Submodel):
                     self,
                     itemcategories_items: Iterable[Itemcategories_item],
                     id_short: Optional[str] = r"ItemCategories",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Constraint: At least one item category according VDM24903 shall be given."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/List/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1928,7 +1963,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [itemcategories_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1936,7 +1971,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1964,7 +1999,7 @@ class ProductChangeNotifications(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1980,7 +2015,7 @@ class ProductChangeNotifications(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -1991,11 +2026,11 @@ class ProductChangeNotifications(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -2014,7 +2049,7 @@ class ProductChangeNotifications(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -2025,54 +2060,54 @@ class ProductChangeNotifications(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class AffectedPartNumbers(SubmodelElementList):
+            class AffectedPartNumbers(aas.SubmodelElementList):
 
-                class Affectedpartnumbers_item(Property):
+                class Affectedpartnumbers_item(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"affectedpartnumbers_item",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "Note: This Property codes only part number (\"12345\"), a set of part numbers (\"12345;23456;34567\"), a range of part numbers(\"10000-19999\"). For each of these, wildcards like asterix (\"1*8\", all numbers starting with '1' and ending with '8') or question mark (\"1?3?8\", all 5 digit numbers starting with '1' and ending with '8' and middle as '5') are allowed."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2106,56 +2141,58 @@ class ProductChangeNotifications(Submodel):
                         Iterable[Union[str, Affectedpartnumbers_item]]
                     ] = None,
                     id_short: Optional[str] = r"AffectedPartNumbers",
-                    type_value_list_element: SubmodelElement = Property,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.Property,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = str,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Note: Multiple single part numbers with wildcards or ranges of part numbers are listed."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/List/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2173,7 +2210,7 @@ class ProductChangeNotifications(Submodel):
                         affectedpartnumbers_items = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.Affectedpartnumbers_item(i)
                             )
                             for i in affectedpartnumbers_items
@@ -2184,7 +2221,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [affectedpartnumbers_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2192,7 +2229,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2220,7 +2257,7 @@ class ProductChangeNotifications(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2236,7 +2273,7 @@ class ProductChangeNotifications(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -2247,11 +2284,11 @@ class ProductChangeNotifications(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -2270,7 +2307,7 @@ class ProductChangeNotifications(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -2281,51 +2318,51 @@ class ProductChangeNotifications(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class PcnReasonComment(MultiLanguageProperty):
+            class PcnReasonComment(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"PcnReasonComment",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Note: May be substituted by PcnChangeInformation"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABF814#002",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2352,47 +2389,47 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PcnChangeInformation(SubmodelElementCollection):
+            class PcnChangeInformation(aas.SubmodelElementCollection):
 
-                class ChangeTitle(MultiLanguageProperty):
+                class ChangeTitle(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ChangeTitle",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/ChangeTitle/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2419,45 +2456,45 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ChangeDetail(MultiLanguageProperty):
+                class ChangeDetail(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ChangeDetail",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/ChangeDetail/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2486,41 +2523,41 @@ class ProductChangeNotifications(Submodel):
 
                 def __init__(
                     self,
-                    changeTitle: Union[LangStringSet, ChangeTitle],
-                    changeDetail: Union[LangStringSet, ChangeDetail],
+                    changeTitle: Union[aas.LangStringSet, ChangeTitle],
+                    changeDetail: Union[aas.LangStringSet, ChangeDetail],
                     id_short: Optional[str] = r"PcnChangeInformation",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2534,11 +2571,13 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if changeTitle and not isinstance(changeTitle, SubmodelElement):
+                    if changeTitle and not isinstance(changeTitle, aas.SubmodelElement):
                         changeTitle = self.ChangeTitle(changeTitle)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if changeDetail and not isinstance(changeDetail, SubmodelElement):
+                    if changeDetail and not isinstance(
+                        changeDetail, aas.SubmodelElement
+                    ):
                         changeDetail = self.ChangeDetail(changeDetail)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2546,7 +2585,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [changeTitle, changeDetail]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2554,7 +2593,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2570,53 +2609,53 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AdditionalInformation(SubmodelElementList):
+            class AdditionalInformation(aas.SubmodelElementList):
 
-                class Additionalinformation_item(File):
+                class Additionalinformation_item(aas.File):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"additionalinformation_item",
                         content_type: Optional[str] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r'Note: This File element can be used to attach the conventional "product change information" already provided by many suppliers or e.g. some detail geometry information.'
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/AdditionalInformation/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2649,56 +2688,58 @@ class ProductChangeNotifications(Submodel):
                         Iterable[Additionalinformation_item]
                     ] = None,
                     id_short: Optional[str] = r"AdditionalInformation",
-                    type_value_list_element: SubmodelElement = File,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.File,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/AdditionalInformation/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r'Note: Suppliers are encouraged to add the conventional "product change information" documents and further details, e.g. photo-based or geometric change information to the PCN record.'
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/List/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2716,7 +2757,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [additionalinformation_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2724,7 +2765,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2752,7 +2793,7 @@ class ProductChangeNotifications(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2768,7 +2809,7 @@ class ProductChangeNotifications(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -2779,11 +2820,11 @@ class ProductChangeNotifications(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -2802,7 +2843,7 @@ class ProductChangeNotifications(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -2813,52 +2854,52 @@ class ProductChangeNotifications(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class DateOfRecord(Property):
+            class DateOfRecord(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"DateOfRecord",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABF816#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2886,53 +2927,53 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ItemOfChange(SubmodelElementCollection):
+            class ItemOfChange(aas.SubmodelElementCollection):
 
-                class ManufacturerProductFamily(MultiLanguageProperty):
+                class ManufacturerProductFamily(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ManufacturerProductFamily",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAU731#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2959,51 +3000,51 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ManufacturerProductDesignation(MultiLanguageProperty):
+                class ManufacturerProductDesignation(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ManufacturerProductDesignation",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAW338#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3030,51 +3071,51 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class OrderCodeOfManufacturer(MultiLanguageProperty):
+                class OrderCodeOfManufacturer(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"OrderCodeOfManufacturer",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: Optional, as it might not exist for long term used items."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO227#004",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3101,50 +3142,50 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ManufacturerAssetID(ReferenceElement):
+                class ManufacturerAssetID(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"ManufacturerAssetID",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: This can be used to easily retrieve further information on the described item, such as full technical data, documentation, MCAD or ECAD models."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABG775#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3170,50 +3211,54 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ProductClassifications(SubmodelElementList):
+                class ProductClassifications(aas.SubmodelElementList):
 
-                    class Productclassifications_item(SubmodelElementCollection):
+                    class Productclassifications_item(aas.SubmodelElementCollection):
 
-                        class ClassificationSystem(Property):
+                        class ClassificationSystem(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ClassificationSystem",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-AAR709#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -3241,7 +3286,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class VersionOfClassificationSystem(Property):
+                        class VersionOfClassificationSystem(aas.Property):
 
                             def __init__(
                                 self,
@@ -3249,46 +3294,50 @@ class ProductChangeNotifications(Submodel):
                                 id_short: Optional[
                                     str
                                 ] = r"VersionOfClassificationSystem",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r'Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-AAR710#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -3316,52 +3365,56 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ProductClassId(Property):
+                        class ProductClassId(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ProductClassId",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r'Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABG776#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -3397,38 +3450,40 @@ class ProductChangeNotifications(Submodel):
                                 Union[str, VersionOfClassificationSystem]
                             ] = None,
                             id_short: Optional[str] = r"productclassifications_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI298#002/0173-1#01-AHE587#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -3443,7 +3498,7 @@ class ProductChangeNotifications(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if classificationSystem and not isinstance(
-                                classificationSystem, SubmodelElement
+                                classificationSystem, aas.SubmodelElement
                             ):
                                 classificationSystem = self.ClassificationSystem(
                                     classificationSystem
@@ -3451,7 +3506,7 @@ class ProductChangeNotifications(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if versionOfClassificationSystem and not isinstance(
-                                versionOfClassificationSystem, SubmodelElement
+                                versionOfClassificationSystem, aas.SubmodelElement
                             ):
                                 versionOfClassificationSystem = (
                                     self.VersionOfClassificationSystem(
@@ -3461,7 +3516,7 @@ class ProductChangeNotifications(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if productClassId and not isinstance(
-                                productClassId, SubmodelElement
+                                productClassId, aas.SubmodelElement
                             ):
                                 productClassId = self.ProductClassId(productClassId)
 
@@ -3474,7 +3529,7 @@ class ProductChangeNotifications(Submodel):
                             ]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -3482,7 +3537,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -3504,58 +3559,58 @@ class ProductChangeNotifications(Submodel):
                             Iterable[Productclassifications_item]
                         ] = None,
                         id_short: Optional[str] = r"ProductClassifications",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[
-                            Reference
-                        ] = ExternalReference(
+                            aas.Reference
+                        ] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABI298#002/0173-1#01-AHE587#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: It is encouraged to provide the actual product classficiation, e.g. by ECLASS, in order to ease the identification of relevant items by the industrial user."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABI298#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3573,7 +3628,7 @@ class ProductChangeNotifications(Submodel):
                         for se_arg in [productclassifications_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -3581,7 +3636,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -3609,7 +3664,7 @@ class ProductChangeNotifications(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3625,7 +3680,7 @@ class ProductChangeNotifications(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -3636,13 +3691,13 @@ class ProductChangeNotifications(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -3661,7 +3716,7 @@ class ProductChangeNotifications(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -3672,46 +3727,46 @@ class ProductChangeNotifications(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class HardwareVersion(Property):
+                class HardwareVersion(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"HardwareVersion",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAN270#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3739,52 +3794,52 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class RemainingAmountAvailable(Property):
+                class RemainingAmountAvailable(aas.Property):
 
                     def __init__(
                         self,
-                        value: PositiveInteger,
+                        value: xsd.PositiveInteger,
                         id_short: Optional[str] = r"RemainingAmountAvailable",
-                        value_type: DataTypeDefXsd = PositiveInteger,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.PositiveInteger,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: This is an indicative figure; the manufacturer/ supplier may use a heuristical model to distribute available stock to a forecasted number of industrial users. Useful for industrial users to assess individual need of products against assumed availability."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-BAF551#004",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -3812,43 +3867,47 @@ class ProductChangeNotifications(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class TechnicalData_Changes(SubmodelElementList):
+                class TechnicalData_Changes(aas.SubmodelElementList):
 
-                    class Technicaldata_changes_item(SubmodelElementCollection):
+                    class Technicaldata_changes_item(aas.SubmodelElementCollection):
 
-                        class Arbitrary(Property):
+                        class Arbitrary(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"Arbitrary",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": "Note: An arbitrary Property, MLP, Range-element can be placed in this structure with arbitrary semanticId. It is marked by the supplementalSemanticId for 'new value'."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SMT/General/Arbitrary",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (
-                                    ExternalReference(
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (
+                                    aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/NewValue/1/0",
                                             ),
                                         ),
@@ -3856,22 +3915,22 @@ class ProductChangeNotifications(Submodel):
                                     ),
                                 ),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -3899,51 +3958,55 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class OriginOfChange(ReferenceElement):
+                        class OriginOfChange(aas.ReferenceElement):
 
                             def __init__(
                                 self,
-                                value: Reference,
+                                value: aas.Reference,
                                 id_short: Optional[str] = r"OriginOfChange",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: The set of technical data in the definition refers to the Submodel for technical data in the AAS."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ModelReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ModelReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                             value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/OriginOfChange/1/0",
                                         ),
                                     ),
-                                    type_=ConceptDescription,
+                                    type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -3969,52 +4032,56 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ReasonId(Property):
+                        class ReasonId(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"ReasonId",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABG774#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -4046,48 +4113,50 @@ class ProductChangeNotifications(Submodel):
                             self,
                             arbitrary: Optional[Union[str, Arbitrary]] = None,
                             originOfChange: Optional[
-                                Union[Reference, OriginOfChange]
+                                Union[aas.Reference, OriginOfChange]
                             ] = None,
                             reasonId: Optional[Union[str, ReasonId]] = None,
                             id_short: Optional[str] = r"technicaldata_changes_item",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: This SMC can be added to annotate changes in DataElements of existing Submodels (e.g. for technical data) and to provide more specific information to reason and items of a VDMA 24903 change."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/Change/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4101,17 +4170,21 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(arbitrary, SubmodelElement):
+                            if arbitrary and not isinstance(
+                                arbitrary, aas.SubmodelElement
+                            ):
                                 arbitrary = self.Arbitrary(arbitrary)
 
                             # Build a submodel element if a raw value was passed in the argument
                             if originOfChange and not isinstance(
-                                originOfChange, SubmodelElement
+                                originOfChange, aas.SubmodelElement
                             ):
                                 originOfChange = self.OriginOfChange(originOfChange)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if reasonId and not isinstance(reasonId, SubmodelElement):
+                            if reasonId and not isinstance(
+                                reasonId, aas.SubmodelElement
+                            ):
                                 reasonId = self.ReasonId(reasonId)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -4119,7 +4192,7 @@ class ProductChangeNotifications(Submodel):
                             for se_arg in [arbitrary, originOfChange, reasonId]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -4127,7 +4200,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -4149,52 +4222,52 @@ class ProductChangeNotifications(Submodel):
                             Iterable[Technicaldata_changes_item]
                         ] = None,
                         id_short: Optional[str] = r"TechnicalData_Changes",
-                        type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[
-                            Reference
-                        ] = ExternalReference(
+                            aas.Reference
+                        ] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/Change/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        value_type_list_element: Optional[DataTypeDefXsd] = None,
+                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/List/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4212,7 +4285,7 @@ class ProductChangeNotifications(Submodel):
                         for se_arg in [technicaldata_changes_items]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -4220,7 +4293,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -4248,7 +4321,7 @@ class ProductChangeNotifications(Submodel):
 
                         # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                         if not isinstance(new, self.type_value_list_element):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 108,
                                 "All first level elements must be of the type specified in "
                                 f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -4264,7 +4337,7 @@ class ProductChangeNotifications(Submodel):
                             # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                             # Not really a constraint...
                             # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 107,
                                 f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                 "is specified all first level children must have the same "
@@ -4275,13 +4348,13 @@ class ProductChangeNotifications(Submodel):
                         # is either Property or Range. Thus, `new` must have the value_type property.
                         # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                         if (
-                            isinstance(self.type_value_list_element, Property)
-                            or isinstance(self.type_value_list_element, Range)
+                            isinstance(self.type_value_list_element, aas.Property)
+                            or isinstance(self.type_value_list_element, aas.Range)
                             and not isinstance(
                                 new.value_type, self.value_type_list_element
                             )
                         ):  # type: ignore
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 109,
                                 "All first level elements must have the value_type "  # type: ignore
                                 "specified by value_type_list_element="
@@ -4300,7 +4373,7 @@ class ProductChangeNotifications(Submodel):
                                     item.semantic_id is not None
                                     and new.semantic_id != item.semantic_id
                                 ):
-                                    raise base.AASConstraintViolation(
+                                    raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
                                         f"{new.semantic_id!r}, while already contained element "
@@ -4311,54 +4384,56 @@ class ProductChangeNotifications(Submodel):
                         # Re-assign id_short
                         new.id_short = saved_id_short
 
-                class TechnicalData_CurrentState(SubmodelElementCollection):
+                class TechnicalData_CurrentState(aas.SubmodelElementCollection):
 
-                    class Arbitrary(Property):
+                    class Arbitrary(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"Arbitrary",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: Each DataElement represents a change of a technical data element. DataElements such as Property, MultiLanguageProperty and Range are applicable. To bring about the information, both idShort and semanticId can be set to the resepctive {arbitrary} attribute of the corresponding  technical data element."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SMT/General/Arbitrary",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToMany",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4390,45 +4465,45 @@ class ProductChangeNotifications(Submodel):
                         self,
                         arbitrary: Optional[Iterable[Union[str, Arbitrary]]] = None,
                         id_short: Optional[str] = r"TechnicalData_CurrentState",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: If possible, technical data elements in the recommended items should find its counterparts here (that is: DataElement with identical semanticId)."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ModelReference(
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_CurrentState/List/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4446,7 +4521,7 @@ class ProductChangeNotifications(Submodel):
                             arbitrary = [
                                 (
                                     i
-                                    if isinstance(i, SubmodelElement)
+                                    if isinstance(i, aas.SubmodelElement)
                                     else self.Arbitrary(i)
                                 )
                                 for i in arbitrary
@@ -4457,7 +4532,7 @@ class ProductChangeNotifications(Submodel):
                         for se_arg in [arbitrary]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -4465,7 +4540,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -4484,59 +4559,59 @@ class ProductChangeNotifications(Submodel):
                 def __init__(
                     self,
                     manufacturerProductFamily: Union[
-                        LangStringSet, ManufacturerProductFamily
+                        aas.LangStringSet, ManufacturerProductFamily
                     ],
                     manufacturerProductDesignation: Union[
-                        LangStringSet, ManufacturerProductDesignation
+                        aas.LangStringSet, ManufacturerProductDesignation
                     ],
                     orderCodeOfManufacturer: Optional[
-                        Union[LangStringSet, OrderCodeOfManufacturer]
+                        Union[aas.LangStringSet, OrderCodeOfManufacturer]
                     ] = None,
                     manufacturerAssetID: Optional[
-                        Union[Reference, ManufacturerAssetID]
+                        Union[aas.Reference, ManufacturerAssetID]
                     ] = None,
                     productClassifications: Optional[ProductClassifications] = None,
                     hardwareVersion: Optional[Union[str, HardwareVersion]] = None,
                     remainingAmountAvailable: Optional[
-                        Union[PositiveInteger, RemainingAmountAvailable]
+                        Union[xsd.PositiveInteger, RemainingAmountAvailable]
                     ] = None,
                     technicalData_Changes: Optional[TechnicalData_Changes] = None,
                     technicalData_CurrentState: Optional[
                         TechnicalData_CurrentState
                     ] = None,
                     id_short: Optional[str] = r"ItemOfChange",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI297#003/0173-1#01-AHE586#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4551,7 +4626,7 @@ class ProductChangeNotifications(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if manufacturerProductFamily and not isinstance(
-                        manufacturerProductFamily, SubmodelElement
+                        manufacturerProductFamily, aas.SubmodelElement
                     ):
                         manufacturerProductFamily = self.ManufacturerProductFamily(
                             manufacturerProductFamily
@@ -4559,7 +4634,7 @@ class ProductChangeNotifications(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if manufacturerProductDesignation and not isinstance(
-                        manufacturerProductDesignation, SubmodelElement
+                        manufacturerProductDesignation, aas.SubmodelElement
                     ):
                         manufacturerProductDesignation = (
                             self.ManufacturerProductDesignation(
@@ -4569,7 +4644,7 @@ class ProductChangeNotifications(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if orderCodeOfManufacturer and not isinstance(
-                        orderCodeOfManufacturer, SubmodelElement
+                        orderCodeOfManufacturer, aas.SubmodelElement
                     ):
                         orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
                             orderCodeOfManufacturer
@@ -4577,7 +4652,7 @@ class ProductChangeNotifications(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if manufacturerAssetID and not isinstance(
-                        manufacturerAssetID, SubmodelElement
+                        manufacturerAssetID, aas.SubmodelElement
                     ):
                         manufacturerAssetID = self.ManufacturerAssetID(
                             manufacturerAssetID
@@ -4585,13 +4660,13 @@ class ProductChangeNotifications(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if hardwareVersion and not isinstance(
-                        hardwareVersion, SubmodelElement
+                        hardwareVersion, aas.SubmodelElement
                     ):
                         hardwareVersion = self.HardwareVersion(hardwareVersion)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if remainingAmountAvailable and not isinstance(
-                        remainingAmountAvailable, SubmodelElement
+                        remainingAmountAvailable, aas.SubmodelElement
                     ):
                         remainingAmountAvailable = self.RemainingAmountAvailable(
                             remainingAmountAvailable
@@ -4612,7 +4687,7 @@ class ProductChangeNotifications(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -4620,7 +4695,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -4636,55 +4711,57 @@ class ProductChangeNotifications(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class RecommendedItems(SubmodelElementList):
+            class RecommendedItems(aas.SubmodelElementList):
 
-                class Recommendeditems_item(SubmodelElementCollection):
+                class Recommendeditems_item(aas.SubmodelElementCollection):
 
-                    class ManufacturerProductFamily(MultiLanguageProperty):
+                    class ManufacturerProductFamily(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"ManufacturerProductFamily",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAU731#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4711,51 +4788,53 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ManufacturerProductDesignation(MultiLanguageProperty):
+                    class ManufacturerProductDesignation(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"ManufacturerProductDesignation",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAW338#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4782,49 +4861,51 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class OrderCodeOfManufacturer(MultiLanguageProperty):
+                    class OrderCodeOfManufacturer(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"OrderCodeOfManufacturer",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={r"en": r"Note: Mandatory, as required to order."}
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO227#004",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4851,39 +4932,45 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ProductClassifications(SubmodelElementList):
+                    class ProductClassifications(aas.SubmodelElementList):
 
-                        class Productclassifications_item(SubmodelElementCollection):
+                        class Productclassifications_item(
+                            aas.SubmodelElementCollection
+                        ):
 
-                            class ClassificationSystem(Property):
+                            class ClassificationSystem(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"ClassificationSystem",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[MultiLanguageTextType] = None,
+                                    description: Optional[
+                                        aas.MultiLanguageTextType
+                                    ] = None,
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"0173-1#02-AAR709#002",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
@@ -4908,7 +4995,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class VersionOfClassificationSystem(Property):
+                            class VersionOfClassificationSystem(aas.Property):
 
                                 def __init__(
                                     self,
@@ -4916,35 +5003,37 @@ class ProductChangeNotifications(Submodel):
                                     id_short: Optional[
                                         str
                                     ] = r"VersionOfClassificationSystem",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
-                                        MultiLanguageTextType
-                                    ] = MultiLanguageTextType(
+                                        aas.MultiLanguageTextType
+                                    ] = aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r'Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
                                         }
                                     ),
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"0173-1#02-AAR710#002",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
@@ -4969,41 +5058,43 @@ class ProductChangeNotifications(Submodel):
                                         embedded_data_specifications=embedded_data_specifications,
                                     )
 
-                            class ProductClassId(Property):
+                            class ProductClassId(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: str,
                                     id_short: Optional[str] = r"ProductClassId",
-                                    value_type: DataTypeDefXsd = str,
-                                    value_id: Optional[Reference] = None,
+                                    value_type: aas.DataTypeDefXsd = str,
+                                    value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
-                                        MultiLanguageNameType
+                                        aas.MultiLanguageNameType
                                     ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
-                                        MultiLanguageTextType
-                                    ] = MultiLanguageTextType(
+                                        aas.MultiLanguageTextType
+                                    ] = aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r'Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
                                         }
                                     ),
                                     semantic_id: Optional[
-                                        Reference
-                                    ] = ExternalReference(
+                                        aas.Reference
+                                    ] = aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"0173-1#02-ABG776#002",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    qualifier: Iterable[Qualifier] = None,
-                                    extension: Iterable[Extension] = (),
-                                    supplemental_semantic_id: Iterable[Reference] = (),
+                                    qualifier: Iterable[aas.Qualifier] = None,
+                                    extension: Iterable[aas.Extension] = (),
+                                    supplemental_semantic_id: Iterable[
+                                        aas.Reference
+                                    ] = (),
                                     embedded_data_specifications: Iterable[
-                                        EmbeddedDataSpecification
+                                        aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
 
@@ -5038,38 +5129,42 @@ class ProductChangeNotifications(Submodel):
                                 id_short: Optional[
                                     str
                                 ] = r"productclassifications_item",
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABI298#002/0173-1#01-AHE587#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToMany",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -5084,7 +5179,7 @@ class ProductChangeNotifications(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if classificationSystem and not isinstance(
-                                    classificationSystem, SubmodelElement
+                                    classificationSystem, aas.SubmodelElement
                                 ):
                                     classificationSystem = self.ClassificationSystem(
                                         classificationSystem
@@ -5092,7 +5187,7 @@ class ProductChangeNotifications(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if versionOfClassificationSystem and not isinstance(
-                                    versionOfClassificationSystem, SubmodelElement
+                                    versionOfClassificationSystem, aas.SubmodelElement
                                 ):
                                     versionOfClassificationSystem = (
                                         self.VersionOfClassificationSystem(
@@ -5102,7 +5197,7 @@ class ProductChangeNotifications(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if productClassId and not isinstance(
-                                    productClassId, SubmodelElement
+                                    productClassId, aas.SubmodelElement
                                 ):
                                     productClassId = self.ProductClassId(productClassId)
 
@@ -5115,7 +5210,7 @@ class ProductChangeNotifications(Submodel):
                                 ]:
                                     if se_arg is None:
                                         continue
-                                    elif isinstance(se_arg, SubmodelElement):
+                                    elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
                                         for n, element in enumerate(se_arg):
@@ -5123,7 +5218,7 @@ class ProductChangeNotifications(Submodel):
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
-                                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                         )
 
                                 super().__init__(
@@ -5145,52 +5240,56 @@ class ProductChangeNotifications(Submodel):
                                 Iterable[Productclassifications_item]
                             ] = None,
                             id_short: Optional[str] = r"ProductClassifications",
-                            type_value_list_element: SubmodelElement = SubmodelElementCollection,
+                            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                             semantic_id_list_element: Optional[
-                                Reference
-                            ] = ExternalReference(
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI298#002/0173-1#01-AHE587#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            value_type_list_element: Optional[DataTypeDefXsd] = None,
+                            value_type_list_element: Optional[
+                                aas.DataTypeDefXsd
+                            ] = None,
                             order_relevant: bool = True,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI298#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5208,7 +5307,7 @@ class ProductChangeNotifications(Submodel):
                             for se_arg in [productclassifications_items]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -5216,7 +5315,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -5244,7 +5343,7 @@ class ProductChangeNotifications(Submodel):
 
                             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                             if not isinstance(new, self.type_value_list_element):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     108,
                                     "All first level elements must be of the type specified in "
                                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -5260,7 +5359,7 @@ class ProductChangeNotifications(Submodel):
                                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                 # Not really a constraint...
                                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     107,
                                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                     "is specified all first level children must have the same "
@@ -5271,13 +5370,13 @@ class ProductChangeNotifications(Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                isinstance(self.type_value_list_element, Property)
-                                or isinstance(self.type_value_list_element, Range)
+                                isinstance(self.type_value_list_element, aas.Property)
+                                or isinstance(self.type_value_list_element, aas.Range)
                                 and not isinstance(
                                     new.value_type, self.value_type_list_element
                                 )
                             ):  # type: ignore
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     109,
                                     "All first level elements must have the value_type "  # type: ignore
                                     "specified by value_type_list_element="
@@ -5296,7 +5395,7 @@ class ProductChangeNotifications(Submodel):
                                         item.semantic_id is not None
                                         and new.semantic_id != item.semantic_id
                                     ):
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
                                             f"{new.semantic_id!r}, while already contained element "
@@ -5307,54 +5406,58 @@ class ProductChangeNotifications(Submodel):
                             # Re-assign id_short
                             new.id_short = saved_id_short
 
-                    class TechnicalData_Fit(SubmodelElementCollection):
+                    class TechnicalData_Fit(aas.SubmodelElementCollection):
 
-                        class TargetEstimate(Property):
+                        class TargetEstimate(aas.Property):
 
                             def __init__(
                                 self,
-                                value: Float,
+                                value: xsd.Float,
                                 id_short: Optional[str] = r"TargetEstimate",
-                                value_type: DataTypeDefXsd = Float,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = xsd.Float,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABG777#003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -5382,37 +5485,41 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class Arbitrary(Property):
+                        class Arbitrary(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"Arbitrary",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SMT/General/Arbitrary",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
@@ -5441,47 +5548,49 @@ class ProductChangeNotifications(Submodel):
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[
-                                Union[Float, TargetEstimate]
+                                Union[xsd.Float, TargetEstimate]
                             ] = None,
                             id_short: Optional[str] = r"TechnicalData_Fit",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI299#003/0173-1#01-AHE588#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5496,12 +5605,14 @@ class ProductChangeNotifications(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if targetEstimate and not isinstance(
-                                targetEstimate, SubmodelElement
+                                targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(arbitrary, SubmodelElement):
+                            if arbitrary and not isinstance(
+                                arbitrary, aas.SubmodelElement
+                            ):
                                 arbitrary = self.Arbitrary(arbitrary)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -5509,7 +5620,7 @@ class ProductChangeNotifications(Submodel):
                             for se_arg in [targetEstimate, arbitrary]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -5517,7 +5628,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -5533,54 +5644,58 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TechnicalData_Form(SubmodelElementCollection):
+                    class TechnicalData_Form(aas.SubmodelElementCollection):
 
-                        class TargetEstimate(Property):
+                        class TargetEstimate(aas.Property):
 
                             def __init__(
                                 self,
-                                value: Float,
+                                value: xsd.Float,
                                 id_short: Optional[str] = r"TargetEstimate",
-                                value_type: DataTypeDefXsd = Float,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = xsd.Float,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABG777#003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -5608,37 +5723,41 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class Arbitrary(Property):
+                        class Arbitrary(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"Arbitrary",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SMT/General/Arbitrary",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
@@ -5667,47 +5786,49 @@ class ProductChangeNotifications(Submodel):
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[
-                                Union[Float, TargetEstimate]
+                                Union[xsd.Float, TargetEstimate]
                             ] = None,
                             id_short: Optional[str] = r"TechnicalData_Form",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI300#003/0173-1#01-AHE589#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5722,12 +5843,14 @@ class ProductChangeNotifications(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if targetEstimate and not isinstance(
-                                targetEstimate, SubmodelElement
+                                targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(arbitrary, SubmodelElement):
+                            if arbitrary and not isinstance(
+                                arbitrary, aas.SubmodelElement
+                            ):
                                 arbitrary = self.Arbitrary(arbitrary)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -5735,7 +5858,7 @@ class ProductChangeNotifications(Submodel):
                             for se_arg in [targetEstimate, arbitrary]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -5743,7 +5866,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -5759,54 +5882,58 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TechnicalData_Function(SubmodelElementCollection):
+                    class TechnicalData_Function(aas.SubmodelElementCollection):
 
-                        class TargetEstimate(Property):
+                        class TargetEstimate(aas.Property):
 
                             def __init__(
                                 self,
-                                value: Float,
+                                value: xsd.Float,
                                 id_short: Optional[str] = r"TargetEstimate",
-                                value_type: DataTypeDefXsd = Float,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = xsd.Float,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABG777#003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -5834,37 +5961,41 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class Arbitrary(Property):
+                        class Arbitrary(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"Arbitrary",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SMT/General/Arbitrary",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
@@ -5893,47 +6024,49 @@ class ProductChangeNotifications(Submodel):
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[
-                                Union[Float, TargetEstimate]
+                                Union[xsd.Float, TargetEstimate]
                             ] = None,
                             id_short: Optional[str] = r"TechnicalData_Function",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI301#003/0173-1#01-AHE590#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5948,12 +6081,14 @@ class ProductChangeNotifications(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if targetEstimate and not isinstance(
-                                targetEstimate, SubmodelElement
+                                targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(arbitrary, SubmodelElement):
+                            if arbitrary and not isinstance(
+                                arbitrary, aas.SubmodelElement
+                            ):
                                 arbitrary = self.Arbitrary(arbitrary)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -5961,7 +6096,7 @@ class ProductChangeNotifications(Submodel):
                             for se_arg in [targetEstimate, arbitrary]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -5969,7 +6104,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -5985,54 +6120,58 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TechnicalData_Other(SubmodelElementCollection):
+                    class TechnicalData_Other(aas.SubmodelElementCollection):
 
-                        class TargetEstimate(Property):
+                        class TargetEstimate(aas.Property):
 
                             def __init__(
                                 self,
-                                value: Float,
+                                value: xsd.Float,
                                 id_short: Optional[str] = r"TargetEstimate",
-                                value_type: DataTypeDefXsd = Float,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = xsd.Float,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABG777#003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"ZeroToOne",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -6060,37 +6199,41 @@ class ProductChangeNotifications(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class Arbitrary(Property):
+                        class Arbitrary(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"Arbitrary",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SMT/General/Arbitrary",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
@@ -6119,47 +6262,49 @@ class ProductChangeNotifications(Submodel):
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[
-                                Union[Float, TargetEstimate]
+                                Union[xsd.Float, TargetEstimate]
                             ] = None,
                             id_short: Optional[str] = r"TechnicalData_Other",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: the SMC TechnicalData_Other is supposed to comprise meaningful property instances, which do not fit into the categorries fit, form, function."
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI302#003/0173-1#01-AHE591#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -6174,12 +6319,14 @@ class ProductChangeNotifications(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if targetEstimate and not isinstance(
-                                targetEstimate, SubmodelElement
+                                targetEstimate, aas.SubmodelElement
                             ):
                                 targetEstimate = self.TargetEstimate(targetEstimate)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(arbitrary, SubmodelElement):
+                            if arbitrary and not isinstance(
+                                arbitrary, aas.SubmodelElement
+                            ):
                                 arbitrary = self.Arbitrary(arbitrary)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -6187,7 +6334,7 @@ class ProductChangeNotifications(Submodel):
                             for se_arg in [targetEstimate, arbitrary]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -6195,7 +6342,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -6211,52 +6358,54 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class IncotermCode(Property):
+                    class IncotermCode(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"IncotermCode",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: see https://en.wikipedia.org/wiki/Incoterms"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO280#004",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -6284,46 +6433,48 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DeliveryTimeClassOtherRegion(Property):
+                    class DeliveryTimeClassOtherRegion(aas.Property):
 
                         def __init__(
                             self,
-                            value: Int,
+                            value: xsd.Int,
                             id_short: Optional[str] = r"DeliveryTimeClassOtherRegion",
-                            value_type: DataTypeDefXsd = Int,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Int,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG779#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -6351,46 +6502,48 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DeliveryTimeClassSameRegion(Property):
+                    class DeliveryTimeClassSameRegion(aas.Property):
 
                         def __init__(
                             self,
-                            value: Int,
+                            value: xsd.Int,
                             id_short: Optional[str] = r"DeliveryTimeClassSameRegion",
-                            value_type: DataTypeDefXsd = Int,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Int,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG778#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -6418,39 +6571,43 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ConformityDeclarations(SubmodelElementCollection):
+                    class ConformityDeclarations(aas.SubmodelElementCollection):
 
-                        class Arbitrary(Property):
+                        class Arbitrary(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"Arbitrary",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = None,
-                                display_name: Optional[MultiLanguageNameType] = None,
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[aas.Reference] = None,
+                                display_name: Optional[
+                                    aas.MultiLanguageNameType
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[
-                                    MultiLanguageTextType
-                                ] = MultiLanguageTextType(
+                                    aas.MultiLanguageTextType
+                                ] = aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Arbitrary SubmodelElements with specific semanticIds might be added."
                                     }
                                 ),
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SMT/General/Arbitrary",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
@@ -6479,38 +6636,40 @@ class ProductChangeNotifications(Submodel):
                             self,
                             arbitrary: Union[str, Arbitrary],
                             id_short: Optional[str] = r"ConformityDeclarations",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI303#003/0173-1#01-AHE592#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -6524,7 +6683,9 @@ class ProductChangeNotifications(Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if arbitrary and not isinstance(arbitrary, SubmodelElement):
+                            if arbitrary and not isinstance(
+                                arbitrary, aas.SubmodelElement
+                            ):
                                 arbitrary = self.Arbitrary(arbitrary)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -6532,7 +6693,7 @@ class ProductChangeNotifications(Submodel):
                             for se_arg in [arbitrary]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -6540,7 +6701,7 @@ class ProductChangeNotifications(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -6559,13 +6720,13 @@ class ProductChangeNotifications(Submodel):
                     def __init__(
                         self,
                         manufacturerProductFamily: Union[
-                            LangStringSet, ManufacturerProductFamily
+                            aas.LangStringSet, ManufacturerProductFamily
                         ],
                         manufacturerProductDesignation: Union[
-                            LangStringSet, ManufacturerProductDesignation
+                            aas.LangStringSet, ManufacturerProductDesignation
                         ],
                         orderCodeOfManufacturer: Union[
-                            LangStringSet, OrderCodeOfManufacturer
+                            aas.LangStringSet, OrderCodeOfManufacturer
                         ],
                         productClassifications: Optional[ProductClassifications] = None,
                         technicalData_Fit: Optional[TechnicalData_Fit] = None,
@@ -6574,45 +6735,45 @@ class ProductChangeNotifications(Submodel):
                         technicalData_Other: Optional[TechnicalData_Other] = None,
                         incotermCode: Optional[Union[str, IncotermCode]] = None,
                         deliveryTimeClassOtherRegion: Optional[
-                            Union[Int, DeliveryTimeClassOtherRegion]
+                            Union[xsd.Int, DeliveryTimeClassOtherRegion]
                         ] = None,
                         deliveryTimeClassSameRegion: Optional[
-                            Union[Int, DeliveryTimeClassSameRegion]
+                            Union[xsd.Int, DeliveryTimeClassSameRegion]
                         ] = None,
                         conformityDeclarations: Optional[ConformityDeclarations] = None,
                         id_short: Optional[str] = r"recommendeditems_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -6627,7 +6788,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if manufacturerProductFamily and not isinstance(
-                            manufacturerProductFamily, SubmodelElement
+                            manufacturerProductFamily, aas.SubmodelElement
                         ):
                             manufacturerProductFamily = self.ManufacturerProductFamily(
                                 manufacturerProductFamily
@@ -6635,7 +6796,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if manufacturerProductDesignation and not isinstance(
-                            manufacturerProductDesignation, SubmodelElement
+                            manufacturerProductDesignation, aas.SubmodelElement
                         ):
                             manufacturerProductDesignation = (
                                 self.ManufacturerProductDesignation(
@@ -6645,7 +6806,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if orderCodeOfManufacturer and not isinstance(
-                            orderCodeOfManufacturer, SubmodelElement
+                            orderCodeOfManufacturer, aas.SubmodelElement
                         ):
                             orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
                                 orderCodeOfManufacturer
@@ -6653,13 +6814,13 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if incotermCode and not isinstance(
-                            incotermCode, SubmodelElement
+                            incotermCode, aas.SubmodelElement
                         ):
                             incotermCode = self.IncotermCode(incotermCode)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if deliveryTimeClassOtherRegion and not isinstance(
-                            deliveryTimeClassOtherRegion, SubmodelElement
+                            deliveryTimeClassOtherRegion, aas.SubmodelElement
                         ):
                             deliveryTimeClassOtherRegion = (
                                 self.DeliveryTimeClassOtherRegion(
@@ -6669,7 +6830,7 @@ class ProductChangeNotifications(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if deliveryTimeClassSameRegion and not isinstance(
-                            deliveryTimeClassSameRegion, SubmodelElement
+                            deliveryTimeClassSameRegion, aas.SubmodelElement
                         ):
                             deliveryTimeClassSameRegion = (
                                 self.DeliveryTimeClassSameRegion(
@@ -6695,7 +6856,7 @@ class ProductChangeNotifications(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -6703,7 +6864,7 @@ class ProductChangeNotifications(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -6725,56 +6886,58 @@ class ProductChangeNotifications(Submodel):
                         Iterable[Recommendeditems_item]
                     ] = None,
                     id_short: Optional[str] = r"RecommendedItems",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Note: The supplier is encoraged to provide recommended items."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/List/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -6792,7 +6955,7 @@ class ProductChangeNotifications(Submodel):
                     for se_arg in [recommendeditems_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -6800,7 +6963,7 @@ class ProductChangeNotifications(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -6828,7 +6991,7 @@ class ProductChangeNotifications(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6844,7 +7007,7 @@ class ProductChangeNotifications(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -6855,11 +7018,11 @@ class ProductChangeNotifications(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -6878,7 +7041,7 @@ class ProductChangeNotifications(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -6896,7 +7059,7 @@ class ProductChangeNotifications(Submodel):
                 reasonsOfChange: ReasonsOfChange,
                 itemCategories: ItemCategories,
                 pcnChangeInformation: PcnChangeInformation,
-                dateOfRecord: Union[DateTime, DateOfRecord],
+                dateOfRecord: Union[xsd.DateTime, DateOfRecord],
                 itemOfChange: ItemOfChange,
                 manufacturerChangeID: Optional[Union[str, ManufacturerChangeID]] = None,
                 lifeCycleData: Optional[LifeCycleData] = None,
@@ -6904,43 +7067,43 @@ class ProductChangeNotifications(Submodel):
                     Union[Iterable[str], AffectedPartNumbers]
                 ] = None,
                 pcnReasonComment: Optional[
-                    Union[LangStringSet, PcnReasonComment]
+                    Union[aas.LangStringSet, PcnReasonComment]
                 ] = None,
                 additionalInformation: Optional[AdditionalInformation] = None,
                 recommendedItems: Optional[RecommendedItems] = None,
                 id_short: Optional[str] = r"records_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0173-1#02-ABI294#003/0173-1#01-AHE583#003",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6955,30 +7118,30 @@ class ProductChangeNotifications(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if manufacturerChangeID and not isinstance(
-                    manufacturerChangeID, SubmodelElement
+                    manufacturerChangeID, aas.SubmodelElement
                 ):
                     manufacturerChangeID = self.ManufacturerChangeID(
                         manufacturerChangeID
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if pcnType and not isinstance(pcnType, SubmodelElement):
+                if pcnType and not isinstance(pcnType, aas.SubmodelElement):
                     pcnType = self.PcnType(pcnType)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if affectedPartNumbers and not isinstance(
-                    affectedPartNumbers, SubmodelElement
+                    affectedPartNumbers, aas.SubmodelElement
                 ):
                     affectedPartNumbers = self.AffectedPartNumbers(affectedPartNumbers)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if pcnReasonComment and not isinstance(
-                    pcnReasonComment, SubmodelElement
+                    pcnReasonComment, aas.SubmodelElement
                 ):
                     pcnReasonComment = self.PcnReasonComment(pcnReasonComment)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if dateOfRecord and not isinstance(dateOfRecord, SubmodelElement):
+                if dateOfRecord and not isinstance(dateOfRecord, aas.SubmodelElement):
                     dateOfRecord = self.DateOfRecord(dateOfRecord)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7000,7 +7163,7 @@ class ProductChangeNotifications(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -7008,7 +7171,7 @@ class ProductChangeNotifications(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -7028,49 +7191,56 @@ class ProductChangeNotifications(Submodel):
             self,
             records_items: Optional[Iterable[Records_item]] = None,
             id_short: Optional[str] = r"Records",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = ExternalReference(
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"0173-1#02-ABI294#003/0173-1#01-AHE583#003",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Note: Newer records shall be added by adding a new highest index to the list."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI294#003"),
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                        value=r"0173-1#02-ABI294#003",
+                    ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -7088,7 +7258,7 @@ class ProductChangeNotifications(Submodel):
             for se_arg in [records_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -7096,7 +7266,7 @@ class ProductChangeNotifications(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -7124,7 +7294,7 @@ class ProductChangeNotifications(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -7140,7 +7310,7 @@ class ProductChangeNotifications(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -7151,11 +7321,11 @@ class ProductChangeNotifications(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -7171,7 +7341,7 @@ class ProductChangeNotifications(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -7188,25 +7358,31 @@ class ProductChangeNotifications(Submodel):
         pcnEventsOutgoing: Optional[PcnEventsOutgoing] = None,
         records: Optional[Records] = None,
         id_short: Optional[str] = r"ProductChangeNotifications",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = None,
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/idta_02036",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ExternalReference(
-            key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AHE582#003"),),
+        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+            key=(
+                aas.Key(
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AHE582#003"
+                ),
+            ),
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -7220,7 +7396,7 @@ class ProductChangeNotifications(Submodel):
         for se_arg in [pcnEventsOutgoing, records]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -7228,7 +7404,7 @@ class ProductChangeNotifications(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

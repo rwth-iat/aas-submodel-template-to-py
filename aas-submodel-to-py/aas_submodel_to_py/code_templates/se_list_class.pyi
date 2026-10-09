@@ -10,7 +10,7 @@ def _check_constraints(self, new, existing) -> None:
 
     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
     if not isinstance(new, self.type_value_list_element):
-        raise base.AASConstraintViolation(108, "All first level elements must be of the type specified in "
+        raise aas.AASConstraintViolation(108, "All first level elements must be of the type specified in "
                                                f"type_value_list_element={self.type_value_list_element.__name__}, "
                                                f"got {new!r}")
 
@@ -20,16 +20,16 @@ def _check_constraints(self, new, existing) -> None:
         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
         # Not really a constraint...
         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-        raise base.AASConstraintViolation(107, f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+        raise aas.AASConstraintViolation(107, f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                                "is specified all first level children must have the same "
                                                f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}")
 
     # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
     # is either Property or Range. Thus, `new` must have the value_type property.
     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-    if isinstance(self.type_value_list_element, Property) or isinstance(self.type_value_list_element, Range) \
+    if isinstance(self.type_value_list_element, aas.Property) or isinstance(self.type_value_list_element, aas.Range) \
             and not isinstance(new.value_type, self.value_type_list_element):  # type: ignore
-        raise base.AASConstraintViolation(109, "All first level elements must have the value_type "  # type: ignore
+        raise aas.AASConstraintViolation(109, "All first level elements must have the value_type "  # type: ignore
                                                "specified by value_type_list_element="
                                                f"{self.value_type_list_element.__name__}, got "  # type: ignore
                                                f"{new!r} with value_type={new.value_type.__name__}")  # type: ignore
@@ -39,7 +39,7 @@ def _check_constraints(self, new, existing) -> None:
     if new.semantic_id is not None and self.semantic_id_list_element is None:
         for item in existing:
             if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                raise base.AASConstraintViolation(114, f"Element to be added {new!r} has semantic_id "
+                raise aas.AASConstraintViolation(114, f"Element to be added {new!r} has semantic_id "
                                                        f"{new.semantic_id!r}, while already contained element "
                                                        f"{item!r} has semantic_id {item.semantic_id!r}, which "
                                                        "aren't equal.")

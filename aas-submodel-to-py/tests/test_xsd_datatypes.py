@@ -116,10 +116,14 @@ def test_event_element_keeps_values(generated_module):
 
 
 @pytest.mark.parametrize("typehint, expected", [
-    ("typing.Optional[dateutil.relativedelta.relativedelta]", "Optional[Duration]"),
-    ("typing.Optional[datetime.datetime]", "Optional[DateTime]"),
-    ("typing.Union[datetime.time, basyx.aas.model.datatypes.Date]", "Union[Time, Date]"),
-    ("typing.Optional[datetime.timezone]", "Optional[timezone]"),
+    ("typing.Optional[dateutil.relativedelta.relativedelta]", "Optional[xsd.Duration]"),
+    ("typing.Optional[datetime.datetime]", "Optional[xsd.DateTime]"),
+    ("typing.Union[datetime.time, basyx.aas.model.datatypes.Date]", "Union[xsd.Time, xsd.Date]"),
+    ("typing.Optional[basyx.aas.model.base.Reference]", "Optional[aas.Reference]"),
+    ("typing.Iterable[typing.Tuple[str, decimal.Decimal]]", "Iterable[Tuple[str, xsd.Decimal]]"),
+    # Forward references in BaSyx refer to its own module alias
+    ("typing.Union[ForwardRef('aas.AssetAdministrationShell'), basyx.aas.model.submodel.Submodel]",
+     "Union[ForwardRef('aas.AssetAdministrationShell'), aas.Submodel]"),
 ])
 def test_typehint_uses_xsd_type_aliases(typehint, expected):
-    assert StringHandler.remove_parent_modules_in_typehint(typehint) == expected
+    assert StringHandler.qualify_names_in_typehint(typehint) == expected

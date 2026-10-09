@@ -1,42 +1,43 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class ProductCondition(Submodel):
+class ProductCondition(aas.Submodel):
 
-    class EnergyThroughput(SubmodelElementCollection):
+    class EnergyThroughput(aas.SubmodelElementCollection):
 
-        class EnergyThroughputValue(Property):
+        class EnergyThroughputValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"EnergyThroughputValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"energy throughput value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughputValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL850#001",
                             ),
                         ),
@@ -44,22 +45,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -87,35 +88,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -123,22 +124,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -168,51 +169,53 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            energyThroughputValue: Union[Float, EnergyThroughputValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            energyThroughputValue: Union[xsd.Float, EnergyThroughputValue],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"EnergyThroughput",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"energy throughput"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"energy throughput"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughput",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL850#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -227,14 +230,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if energyThroughputValue and not isinstance(
-                energyThroughputValue, SubmodelElement
+                energyThroughputValue, aas.SubmodelElement
             ):
                 energyThroughputValue = self.EnergyThroughputValue(
                     energyThroughputValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -242,7 +245,7 @@ class ProductCondition(Submodel):
             for se_arg in [energyThroughputValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -250,7 +253,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -266,37 +269,39 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class CapacityThroughput(SubmodelElementCollection):
+    class CapacityThroughput(aas.SubmodelElementCollection):
 
-        class CapacityThroughputValue(Property):
+        class CapacityThroughputValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"CapacityThroughputValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"capacity throughput value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughputValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL849#001",
                             ),
                         ),
@@ -304,22 +309,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -347,35 +352,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -383,22 +388,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -428,51 +433,53 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            capacityThroughputValue: Union[Float, CapacityThroughputValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            capacityThroughputValue: Union[xsd.Float, CapacityThroughputValue],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"CapacityThroughput",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"capacity throughput"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughput",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL849#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -487,14 +494,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if capacityThroughputValue and not isinstance(
-                capacityThroughputValue, SubmodelElement
+                capacityThroughputValue, aas.SubmodelElement
             ):
                 capacityThroughputValue = self.CapacityThroughputValue(
                     capacityThroughputValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -502,7 +509,7 @@ class ProductCondition(Submodel):
             for se_arg in [capacityThroughputValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -510,7 +517,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -526,37 +533,39 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class NumberOfFullCycles(SubmodelElementCollection):
+    class NumberOfFullCycles(aas.SubmodelElementCollection):
 
-        class NumberOfFullCyclesValue(Property):
+        class NumberOfFullCyclesValue(aas.Property):
 
             def __init__(
                 self,
-                value: UnsignedInt,
+                value: xsd.UnsignedInt,
                 id_short: Optional[str] = r"NumberOfFullCyclesValue",
-                value_type: DataTypeDefXsd = UnsignedInt,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.UnsignedInt,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"number of full cycles value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCyclesValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL868#001",
                             ),
                         ),
@@ -564,22 +573,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -607,35 +616,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -643,22 +652,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -688,51 +697,53 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            numberOfFullCyclesValue: Union[UnsignedInt, NumberOfFullCyclesValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            numberOfFullCyclesValue: Union[xsd.UnsignedInt, NumberOfFullCyclesValue],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"NumberOfFullCycles",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"number of full cycles"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCycles",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL868#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -747,14 +758,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if numberOfFullCyclesValue and not isinstance(
-                numberOfFullCyclesValue, SubmodelElement
+                numberOfFullCyclesValue, aas.SubmodelElement
             ):
                 numberOfFullCyclesValue = self.NumberOfFullCyclesValue(
                     numberOfFullCyclesValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -762,7 +773,7 @@ class ProductCondition(Submodel):
             for se_arg in [numberOfFullCyclesValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -770,7 +781,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -786,37 +797,39 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class StateOfCertifiedEnergy(SubmodelElementCollection):
+    class StateOfCertifiedEnergy(aas.SubmodelElementCollection):
 
-        class StateOfCertifiedEnergyValue(Property):
+        class StateOfCertifiedEnergyValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"StateOfCertifiedEnergyValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"state of certified energy value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergyValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL847#001",
                             ),
                         ),
@@ -824,22 +837,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -867,35 +880,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -903,22 +916,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -948,51 +961,53 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            stateOfCertifiedEnergyValue: Union[Float, StateOfCertifiedEnergyValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            stateOfCertifiedEnergyValue: Union[xsd.Float, StateOfCertifiedEnergyValue],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"StateOfCertifiedEnergy",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"state of certified energy"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergy",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL847#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1007,14 +1022,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if stateOfCertifiedEnergyValue and not isinstance(
-                stateOfCertifiedEnergyValue, SubmodelElement
+                stateOfCertifiedEnergyValue, aas.SubmodelElement
             ):
                 stateOfCertifiedEnergyValue = self.StateOfCertifiedEnergyValue(
                     stateOfCertifiedEnergyValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1022,7 +1037,7 @@ class ProductCondition(Submodel):
             for se_arg in [stateOfCertifiedEnergyValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1030,7 +1045,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1046,37 +1061,37 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class RemainingEnergy(SubmodelElementCollection):
+    class RemainingEnergy(aas.SubmodelElementCollection):
 
-        class RemainingEnergyValue(Property):
+        class RemainingEnergyValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"RemainingEnergyValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"remaining energy value"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy value"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergyValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL870#001",
                             ),
                         ),
@@ -1084,22 +1099,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1127,35 +1142,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -1163,22 +1178,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1208,51 +1223,53 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            remainingEnergyValue: Union[Float, RemainingEnergyValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            remainingEnergyValue: Union[xsd.Float, RemainingEnergyValue],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingEnergy",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"remaining energy"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergy",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL870#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1267,12 +1284,12 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if remainingEnergyValue and not isinstance(
-                remainingEnergyValue, SubmodelElement
+                remainingEnergyValue, aas.SubmodelElement
             ):
                 remainingEnergyValue = self.RemainingEnergyValue(remainingEnergyValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1280,7 +1297,7 @@ class ProductCondition(Submodel):
             for se_arg in [remainingEnergyValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1288,7 +1305,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1304,37 +1321,39 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class RemainingCapacity(SubmodelElementCollection):
+    class RemainingCapacity(aas.SubmodelElementCollection):
 
-        class RemainingCapacityValue(Property):
+        class RemainingCapacityValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"RemainingCapacityValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"remaining capacity value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacityValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL840#001",
                             ),
                         ),
@@ -1342,22 +1361,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1385,35 +1404,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -1421,22 +1440,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1466,51 +1485,53 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            remainingCapacityValue: Union[Float, RemainingCapacityValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            remainingCapacityValue: Union[xsd.Float, RemainingCapacityValue],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingCapacity",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"remaining capacity"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacity",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL840#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1525,14 +1546,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if remainingCapacityValue and not isinstance(
-                remainingCapacityValue, SubmodelElement
+                remainingCapacityValue, aas.SubmodelElement
             ):
                 remainingCapacityValue = self.RemainingCapacityValue(
                     remainingCapacityValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1540,7 +1561,7 @@ class ProductCondition(Submodel):
             for se_arg in [remainingCapacityValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1548,7 +1569,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1564,52 +1585,54 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class NegativeEvents(SubmodelElementList):
+    class NegativeEvents(aas.SubmodelElementList):
 
-        class Negativeevents_item(SubmodelElementCollection):
+        class Negativeevents_item(aas.SubmodelElementCollection):
 
-            class NegativeEventValue(Property):
+            class NegativeEventValue(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"NegativeEventValue",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"negative event value"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"negative event value"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEventValue",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1637,35 +1660,35 @@ class ProductCondition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class LastUpdate(Property):
+            class LastUpdate(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"LastUpdate",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"last update"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:irdi:0173-1#02-ABG740#003",
                                 ),
                             ),
@@ -1673,22 +1696,22 @@ class ProductCondition(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1719,46 +1742,48 @@ class ProductCondition(Submodel):
             def __init__(
                 self,
                 negativeEventValue: Union[str, NegativeEventValue],
-                lastUpdate: Union[DateTime, LastUpdate],
+                lastUpdate: Union[xsd.DateTime, LastUpdate],
                 id_short: Optional[str] = r"negativeevents_item",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"negative event"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"negative event"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#NegativeEvent",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1773,12 +1798,12 @@ class ProductCondition(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if negativeEventValue and not isinstance(
-                    negativeEventValue, SubmodelElement
+                    negativeEventValue, aas.SubmodelElement
                 ):
                     negativeEventValue = self.NegativeEventValue(negativeEventValue)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+                if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1786,7 +1811,7 @@ class ProductCondition(Submodel):
                 for se_arg in [negativeEventValue, lastUpdate]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -1794,7 +1819,7 @@ class ProductCondition(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -1814,42 +1839,44 @@ class ProductCondition(Submodel):
             self,
             negativeevents_items: Optional[Iterable[Negativeevents_item]] = None,
             id_short: Optional[str] = r"NegativeEvents",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"negative events"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"negative events"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEvents",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1867,7 +1894,7 @@ class ProductCondition(Submodel):
             for se_arg in [negativeevents_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1875,7 +1902,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1903,7 +1930,7 @@ class ProductCondition(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1919,7 +1946,7 @@ class ProductCondition(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -1930,11 +1957,11 @@ class ProductCondition(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -1950,7 +1977,7 @@ class ProductCondition(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -1961,50 +1988,50 @@ class ProductCondition(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class InformationOnAccidents(SubmodelElementList):
+    class InformationOnAccidents(aas.SubmodelElementList):
 
-        class Informationonaccidents_item(Property):
+        class Informationonaccidents_item(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"informationonaccidents_item",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"document identifier"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2038,61 +2065,63 @@ class ProductCondition(Submodel):
                 Iterable[Union[str, Informationonaccidents_item]]
             ] = None,
             id_short: Optional[str] = r"InformationOnAccidents",
-            type_value_list_element: SubmodelElement = Property,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = str,
+            type_value_list_element: aas.SubmodelElement = aas.Property,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"information on accidents"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"information on accidents"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#informationOnAccidents",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSet",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                ExternalReference(
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL848#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2110,7 +2139,7 @@ class ProductCondition(Submodel):
                 informationonaccidents_items = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.Informationonaccidents_item(i)
                     )
                     for i in informationonaccidents_items
@@ -2121,7 +2150,7 @@ class ProductCondition(Submodel):
             for se_arg in [informationonaccidents_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2129,7 +2158,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2157,7 +2186,7 @@ class ProductCondition(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2173,7 +2202,7 @@ class ProductCondition(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -2184,11 +2213,11 @@ class ProductCondition(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -2204,7 +2233,7 @@ class ProductCondition(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -2215,50 +2244,50 @@ class ProductCondition(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class TemperatureInformation(SubmodelElementCollection):
+    class TemperatureInformation(aas.SubmodelElementCollection):
 
-        class MeasuredTemp(Property):
+        class MeasuredTemp(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"MeasuredTemp",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"measured temp"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"measured temp"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#measuredTemp",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2286,35 +2315,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class TimeExtremeHighTemp(Property):
+        class TimeExtremeHighTemp(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"TimeExtremeHighTemp",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"time extreme high temp"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTemp",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL816#001",
                             ),
                         ),
@@ -2322,22 +2351,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2365,35 +2394,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class TimeExtremeLowTemp(Property):
+        class TimeExtremeLowTemp(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"TimeExtremeLowTemp",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"time extreme low temp"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTemp",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL817#001",
                             ),
                         ),
@@ -2401,22 +2430,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2444,35 +2473,37 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class TimeExtremeHighTempCharging(Property):
+        class TimeExtremeHighTempCharging(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"TimeExtremeHighTempCharging",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"time extreme high temp charging"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTempCharging",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL818#001",
                             ),
                         ),
@@ -2480,22 +2511,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2523,35 +2554,37 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class TimeExtremeLowTempCharging(Property):
+        class TimeExtremeLowTempCharging(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"TimeExtremeLowTempCharging",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"time extreme low temp charging"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTempCharging",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL819#001",
                             ),
                         ),
@@ -2559,22 +2592,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2602,35 +2635,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -2638,22 +2671,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2683,49 +2716,51 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            lastUpdate: Union[DateTime, LastUpdate],
-            measuredTemp: Optional[Union[Float, MeasuredTemp]] = None,
-            timeExtremeHighTemp: Optional[Union[Float, TimeExtremeHighTemp]] = None,
-            timeExtremeLowTemp: Optional[Union[Float, TimeExtremeLowTemp]] = None,
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
+            measuredTemp: Optional[Union[xsd.Float, MeasuredTemp]] = None,
+            timeExtremeHighTemp: Optional[Union[xsd.Float, TimeExtremeHighTemp]] = None,
+            timeExtremeLowTemp: Optional[Union[xsd.Float, TimeExtremeLowTemp]] = None,
             timeExtremeHighTempCharging: Optional[
-                Union[Float, TimeExtremeHighTempCharging]
+                Union[xsd.Float, TimeExtremeHighTempCharging]
             ] = None,
             timeExtremeLowTempCharging: Optional[
-                Union[Float, TimeExtremeLowTempCharging]
+                Union[xsd.Float, TimeExtremeLowTempCharging]
             ] = None,
             id_short: Optional[str] = r"TemperatureInformation",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"temperature information"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"temperature information"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#temperatureInformation",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2739,24 +2774,24 @@ class ProductCondition(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if measuredTemp and not isinstance(measuredTemp, SubmodelElement):
+            if measuredTemp and not isinstance(measuredTemp, aas.SubmodelElement):
                 measuredTemp = self.MeasuredTemp(measuredTemp)
 
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeHighTemp and not isinstance(
-                timeExtremeHighTemp, SubmodelElement
+                timeExtremeHighTemp, aas.SubmodelElement
             ):
                 timeExtremeHighTemp = self.TimeExtremeHighTemp(timeExtremeHighTemp)
 
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeLowTemp and not isinstance(
-                timeExtremeLowTemp, SubmodelElement
+                timeExtremeLowTemp, aas.SubmodelElement
             ):
                 timeExtremeLowTemp = self.TimeExtremeLowTemp(timeExtremeLowTemp)
 
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeHighTempCharging and not isinstance(
-                timeExtremeHighTempCharging, SubmodelElement
+                timeExtremeHighTempCharging, aas.SubmodelElement
             ):
                 timeExtremeHighTempCharging = self.TimeExtremeHighTempCharging(
                     timeExtremeHighTempCharging
@@ -2764,14 +2799,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeLowTempCharging and not isinstance(
-                timeExtremeLowTempCharging, SubmodelElement
+                timeExtremeLowTempCharging, aas.SubmodelElement
             ):
                 timeExtremeLowTempCharging = self.TimeExtremeLowTempCharging(
                     timeExtremeLowTempCharging
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2786,7 +2821,7 @@ class ProductCondition(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2794,7 +2829,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2810,52 +2845,52 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class RemainingPowerCapability(SubmodelElementCollection):
+    class RemainingPowerCapability(aas.SubmodelElementCollection):
 
-        class RemainingPowerCapabilityDynamicAt(SubmodelElementCollection):
+        class RemainingPowerCapabilityDynamicAt(aas.SubmodelElementCollection):
 
-            class RPCLastUpdated(Property):
+            class RPCLastUpdated(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"RPCLastUpdated",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"RPC last updated"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"RPC last updated"}),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#rPCLastUpdated",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2883,35 +2918,35 @@ class ProductCondition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AtSoC(Property):
+            class AtSoC(aas.Property):
 
                 def __init__(
                     self,
-                    value: Float,
+                    value: xsd.Float,
                     id_short: Optional[str] = r"AtSoC",
-                    value_type: DataTypeDefXsd = Float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"at so c"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"at so c"}),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#atSoC",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:irdi:0173-1#02-ABL821#001",
                                 ),
                             ),
@@ -2919,22 +2954,22 @@ class ProductCondition(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2962,48 +2997,50 @@ class ProductCondition(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PowerCapabilityAt(Property):
+            class PowerCapabilityAt(aas.Property):
 
                 def __init__(
                     self,
-                    value: Float,
+                    value: xsd.Float,
                     id_short: Optional[str] = r"PowerCapabilityAt",
-                    value_type: DataTypeDefXsd = Float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"power capability at"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"power capability at"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#powerCapabilityAt",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3033,31 +3070,33 @@ class ProductCondition(Submodel):
 
             def __init__(
                 self,
-                rPCLastUpdated: Union[DateTime, RPCLastUpdated],
-                atSoC: Union[Float, AtSoC],
-                powerCapabilityAt: Union[Float, PowerCapabilityAt],
+                rPCLastUpdated: Union[xsd.DateTime, RPCLastUpdated],
+                atSoC: Union[xsd.Float, AtSoC],
+                powerCapabilityAt: Union[xsd.Float, PowerCapabilityAt],
                 id_short: Optional[str] = r"RemainingPowerCapabilityDynamicAt",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"remaining power capability dynamic at"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapabilityDynamicAt",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL853#001",
                             ),
                         ),
@@ -3065,22 +3104,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3094,16 +3133,18 @@ class ProductCondition(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if rPCLastUpdated and not isinstance(rPCLastUpdated, SubmodelElement):
+                if rPCLastUpdated and not isinstance(
+                    rPCLastUpdated, aas.SubmodelElement
+                ):
                     rPCLastUpdated = self.RPCLastUpdated(rPCLastUpdated)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if atSoC and not isinstance(atSoC, SubmodelElement):
+                if atSoC and not isinstance(atSoC, aas.SubmodelElement):
                     atSoC = self.AtSoC(atSoC)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if powerCapabilityAt and not isinstance(
-                    powerCapabilityAt, SubmodelElement
+                    powerCapabilityAt, aas.SubmodelElement
                 ):
                     powerCapabilityAt = self.PowerCapabilityAt(powerCapabilityAt)
 
@@ -3112,7 +3153,7 @@ class ProductCondition(Submodel):
                 for se_arg in [rPCLastUpdated, atSoC, powerCapabilityAt]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3120,7 +3161,7 @@ class ProductCondition(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3136,35 +3177,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -3172,22 +3213,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3218,50 +3259,52 @@ class ProductCondition(Submodel):
         def __init__(
             self,
             remainingPowerCapabilityDynamicAt: RemainingPowerCapabilityDynamicAt,
-            lastUpdate: Union[DateTime, LastUpdate],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingPowerCapability",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"remaining power capability"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapability",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL820#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3275,7 +3318,7 @@ class ProductCondition(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3283,7 +3326,7 @@ class ProductCondition(Submodel):
             for se_arg in [remainingPowerCapabilityDynamicAt, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3291,7 +3334,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3307,37 +3350,39 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class EvolutionOfSelfDischarge(SubmodelElementCollection):
+    class EvolutionOfSelfDischarge(aas.SubmodelElementCollection):
 
-        class EvolutionOfSelfDischargeValue(Property):
+        class EvolutionOfSelfDischargeValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"EvolutionOfSelfDischargeValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"evolution of self discharge value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischargeValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL834#001",
                             ),
                         ),
@@ -3345,22 +3390,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3388,35 +3433,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -3424,22 +3469,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3469,41 +3514,47 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            evolutionOfSelfDischargeValue: Union[Float, EvolutionOfSelfDischargeValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            evolutionOfSelfDischargeValue: Union[
+                xsd.Float, EvolutionOfSelfDischargeValue
+            ],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"EvolutionOfSelfDischarge",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"evolution of self discharge"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischarge",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3518,14 +3569,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if evolutionOfSelfDischargeValue and not isinstance(
-                evolutionOfSelfDischargeValue, SubmodelElement
+                evolutionOfSelfDischargeValue, aas.SubmodelElement
             ):
                 evolutionOfSelfDischargeValue = self.EvolutionOfSelfDischargeValue(
                     evolutionOfSelfDischargeValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3533,7 +3584,7 @@ class ProductCondition(Submodel):
             for se_arg in [evolutionOfSelfDischargeValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3541,7 +3592,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3557,37 +3608,39 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class CurrentSelfDischargingRate(SubmodelElementCollection):
+    class CurrentSelfDischargingRate(aas.SubmodelElementCollection):
 
-        class CurrentSelfDischargingRateValue(Property):
+        class CurrentSelfDischargingRateValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"CurrentSelfDischargingRateValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"current self discharging rate value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRateValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL825#001",
                             ),
                         ),
@@ -3595,22 +3648,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3638,35 +3691,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -3674,22 +3727,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3720,42 +3773,46 @@ class ProductCondition(Submodel):
         def __init__(
             self,
             currentSelfDischargingRateValue: Union[
-                Float, CurrentSelfDischargingRateValue
+                xsd.Float, CurrentSelfDischargingRateValue
             ],
-            lastUpdate: Union[DateTime, LastUpdate],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"CurrentSelfDischargingRate",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"current self discharging rate"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRate",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3770,14 +3827,14 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if currentSelfDischargingRateValue and not isinstance(
-                currentSelfDischargingRateValue, SubmodelElement
+                currentSelfDischargingRateValue, aas.SubmodelElement
             ):
                 currentSelfDischargingRateValue = self.CurrentSelfDischargingRateValue(
                     currentSelfDischargingRateValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3785,7 +3842,7 @@ class ProductCondition(Submodel):
             for se_arg in [currentSelfDischargingRateValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3793,7 +3850,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3809,37 +3866,39 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class RemainingRoundTripEnergyEfficiency(SubmodelElementCollection):
+    class RemainingRoundTripEnergyEfficiency(aas.SubmodelElementCollection):
 
-        class RemainingRoundTripEnergyEfficiencyValue(Property):
+        class RemainingRoundTripEnergyEfficiencyValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"RemainingRoundTripEnergyEfficiencyValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"remaining round trip energy efficiency value"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiencyValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:iridi:0173-1#02-ABL851#001",
                             ),
                         ),
@@ -3847,22 +3906,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3890,35 +3949,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -3926,22 +3985,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3972,42 +4031,46 @@ class ProductCondition(Submodel):
         def __init__(
             self,
             remainingRoundTripEnergyEfficiencyValue: Union[
-                Float, RemainingRoundTripEnergyEfficiencyValue
+                xsd.Float, RemainingRoundTripEnergyEfficiencyValue
             ],
-            lastUpdate: Union[DateTime, LastUpdate],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingRoundTripEnergyEfficiency",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"remaining round trip energy efficiency"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiency",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -4022,7 +4085,7 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if remainingRoundTripEnergyEfficiencyValue and not isinstance(
-                remainingRoundTripEnergyEfficiencyValue, SubmodelElement
+                remainingRoundTripEnergyEfficiencyValue, aas.SubmodelElement
             ):
                 remainingRoundTripEnergyEfficiencyValue = (
                     self.RemainingRoundTripEnergyEfficiencyValue(
@@ -4031,7 +4094,7 @@ class ProductCondition(Submodel):
                 )
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4039,7 +4102,7 @@ class ProductCondition(Submodel):
             for se_arg in [remainingRoundTripEnergyEfficiencyValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -4047,7 +4110,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -4063,37 +4126,37 @@ class ProductCondition(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class StateOfCharge(SubmodelElementCollection):
+    class StateOfCharge(aas.SubmodelElementCollection):
 
-        class StateOfChargeValue(Property):
+        class StateOfChargeValue(aas.Property):
 
             def __init__(
                 self,
-                value: Float,
+                value: xsd.Float,
                 id_short: Optional[str] = r"StateOfChargeValue",
-                value_type: DataTypeDefXsd = Float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"state of charge value"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.Float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"state of charge value"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfChargeValue",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL821#001",
                             ),
                         ),
@@ -4101,22 +4164,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4144,35 +4207,35 @@ class ProductCondition(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LastUpdate(Property):
+        class LastUpdate(aas.Property):
 
             def __init__(
                 self,
-                value: DateTime,
+                value: xsd.DateTime,
                 id_short: Optional[str] = r"LastUpdate",
-                value_type: DataTypeDefXsd = DateTime,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"last update"}
-                ),
+                value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABG740#003",
                             ),
                         ),
@@ -4180,22 +4243,22 @@ class ProductCondition(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4225,41 +4288,43 @@ class ProductCondition(Submodel):
 
         def __init__(
             self,
-            stateOfChargeValue: Union[Float, StateOfChargeValue],
-            lastUpdate: Union[DateTime, LastUpdate],
+            stateOfChargeValue: Union[xsd.Float, StateOfChargeValue],
+            lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"StateOfCharge",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"state of charge"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"state of charge"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCharge",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -4274,12 +4339,12 @@ class ProductCondition(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if stateOfChargeValue and not isinstance(
-                stateOfChargeValue, SubmodelElement
+                stateOfChargeValue, aas.SubmodelElement
             ):
                 stateOfChargeValue = self.StateOfChargeValue(stateOfChargeValue)
 
             # Build a submodel element if a raw value was passed in the argument
-            if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+            if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -4287,7 +4352,7 @@ class ProductCondition(Submodel):
             for se_arg in [stateOfChargeValue, lastUpdate]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -4295,7 +4360,7 @@ class ProductCondition(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -4331,34 +4396,36 @@ class ProductCondition(Submodel):
             RemainingRoundTripEnergyEfficiency
         ] = None,
         id_short: Optional[str] = r"ProductCondition",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"product condition"}
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={r"en": r"Covers all battery lifetime relevant properties."}
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/idta-02035-5",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ExternalReference(
+        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
-                Key(
-                    type_=KeyTypes.GLOBAL_REFERENCE,
+                aas.Key(
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                     value=r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition",
                 ),
             ),
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -4369,7 +4436,7 @@ class ProductCondition(Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
         if informationOnAccidents and not isinstance(
-            informationOnAccidents, SubmodelElement
+            informationOnAccidents, aas.SubmodelElement
         ):
             informationOnAccidents = self.InformationOnAccidents(informationOnAccidents)
 
@@ -4393,7 +4460,7 @@ class ProductCondition(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -4401,7 +4468,7 @@ class ProductCondition(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

@@ -1,50 +1,53 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class Reliability(Submodel):
+class Reliability(aas.Submodel):
 
-    class NumberOfReliabilitySets(Property):
+    class NumberOfReliabilitySets(aas.Property):
 
         def __init__(
             self,
-            value: Int,
+            value: xsd.Int,
             id_short: Optional[str] = r"NumberOfReliabilitySets",
-            value_type: DataTypeDefXsd = Int,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = xsd.Int,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"number of reliability sets of characteristics",
                     r"fr": "nombre d'ensembles de caractéristiques de fiabilité",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"0112/2///62683#ACE006#001",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -68,66 +71,70 @@ class Reliability(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class OperatingConditionsOfReliabilityCharacteristics(SubmodelElementCollection):
+    class OperatingConditionsOfReliabilityCharacteristics(
+        aas.SubmodelElementCollection
+    ):
 
-        class TypeOfVoltage(Property):
+        class TypeOfVoltage(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"TypeOfVoltage",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = ExternalReference(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///61987#ABL837#001",
                         ),
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///61987#ABL838#001",
                         ),
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///61987#ABI407#004",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"type of voltage",
                         r"fr": r"type de tension",
                         r"de": r"Spannungsart",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///61987#ABA969#007",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -151,48 +158,50 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class RatedVoltage(Property):
+        class RatedVoltage(aas.Property):
 
             def __init__(
                 self,
                 value: float,
                 id_short: Optional[str] = r"RatedVoltage",
-                value_type: DataTypeDefXsd = float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"rated voltage",
                         r"fr": r"tension assignée",
                         r"de": r"Bemessungsspannung",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///61987#ABA588#004",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -216,48 +225,50 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MinimumRatedVoltage(Property):
+        class MinimumRatedVoltage(aas.Property):
 
             def __init__(
                 self,
                 value: float,
                 id_short: Optional[str] = r"MinimumRatedVoltage",
-                value_type: DataTypeDefXsd = float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"minimum rated voltage",
                         r"fr": r"tension assignée minimale",
                         r"de": r"minimale Bemessungsspannung",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///61987#ABD461#004",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -281,48 +292,50 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MaximumRatedVoltage(Property):
+        class MaximumRatedVoltage(aas.Property):
 
             def __init__(
                 self,
                 value: float,
                 id_short: Optional[str] = r"MaximumRatedVoltage",
-                value_type: DataTypeDefXsd = float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"maximum rated voltage",
                         r"fr": r"tension assignée maximale",
                         r"de": r"maximale Bemessungsspannung",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///61987#ABD462#004",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -346,44 +359,46 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class RatedOperationalCurrent(Property):
+        class RatedOperationalCurrent(aas.Property):
 
             def __init__(
                 self,
                 value: float,
                 id_short: Optional[str] = r"RatedOperationalCurrent",
-                value_type: DataTypeDefXsd = float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={r"en": r"rated operational current"}
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/FunctionalSafety/RatedOperationalCurrent/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -407,67 +422,69 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class TypeOfInterlockingDevice(Property):
+        class TypeOfInterlockingDevice(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"TypeOfInterlockingDevice",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = ExternalReference(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACH673#001",
                         ),
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACH674#001",
                         ),
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACH675#001",
                         ),
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACH676#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"type of interlocking device",
                         r"fr": r"type de dispositif de verrouillage",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACE053#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -491,47 +508,49 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class OtherOperatingConditions(Property):
+        class OtherOperatingConditions(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"OtherOperatingConditions",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"other operating conditions",
                         r"fr": r"autres conditions de fonctionnement",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACE070#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -555,47 +574,49 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class UsefulLifeInNumberOfOperations(Property):
+        class UsefulLifeInNumberOfOperations(aas.Property):
 
             def __init__(
                 self,
                 value: float,
                 id_short: Optional[str] = r"UsefulLifeInNumberOfOperations",
-                value_type: DataTypeDefXsd = float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"useful life in number of operations",
                         r"fr": r"durée de vie utile en cycle de fonctionnement",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACE055#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -619,47 +640,49 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class UsefulLifeInTimeInterval(Property):
+        class UsefulLifeInTimeInterval(aas.Property):
 
             def __init__(
                 self,
                 value: float,
                 id_short: Optional[str] = r"UsefulLifeInTimeInterval",
-                value_type: DataTypeDefXsd = float,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = float,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"useful life in time interval",
                         r"fr": r"durée de vie utile en intervalle de temps",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACE054#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -711,37 +734,41 @@ class Reliability(Submodel):
             id_short: Optional[
                 str
             ] = r"OperatingConditionsOfReliabilityCharacteristics",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"operating conditions of reliability characteristics",
                     r"fr": r"conditions de fonctionnement des caractéristiques de fiabilité et de sécurité fonctionnelle",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"0112/2///62683#ACG071#001",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToMany",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -753,28 +780,36 @@ class Reliability(Submodel):
             # Build submodel elements from raw values passed in the argument
             if typeOfVoltage:
                 typeOfVoltage = [
-                    i if isinstance(i, SubmodelElement) else self.TypeOfVoltage(i)
+                    i if isinstance(i, aas.SubmodelElement) else self.TypeOfVoltage(i)
                     for i in typeOfVoltage
                 ]
 
             # Build submodel elements from raw values passed in the argument
             if ratedVoltage:
                 ratedVoltage = [
-                    i if isinstance(i, SubmodelElement) else self.RatedVoltage(i)
+                    i if isinstance(i, aas.SubmodelElement) else self.RatedVoltage(i)
                     for i in ratedVoltage
                 ]
 
             # Build submodel elements from raw values passed in the argument
             if minimumRatedVoltage:
                 minimumRatedVoltage = [
-                    i if isinstance(i, SubmodelElement) else self.MinimumRatedVoltage(i)
+                    (
+                        i
+                        if isinstance(i, aas.SubmodelElement)
+                        else self.MinimumRatedVoltage(i)
+                    )
                     for i in minimumRatedVoltage
                 ]
 
             # Build submodel elements from raw values passed in the argument
             if maximumRatedVoltage:
                 maximumRatedVoltage = [
-                    i if isinstance(i, SubmodelElement) else self.MaximumRatedVoltage(i)
+                    (
+                        i
+                        if isinstance(i, aas.SubmodelElement)
+                        else self.MaximumRatedVoltage(i)
+                    )
                     for i in maximumRatedVoltage
                 ]
 
@@ -783,7 +818,7 @@ class Reliability(Submodel):
                 ratedOperationalCurrent = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.RatedOperationalCurrent(i)
                     )
                     for i in ratedOperationalCurrent
@@ -794,7 +829,7 @@ class Reliability(Submodel):
                 typeOfInterlockingDevice = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.TypeOfInterlockingDevice(i)
                     )
                     for i in typeOfInterlockingDevice
@@ -805,7 +840,7 @@ class Reliability(Submodel):
                 otherOperatingConditions = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.OtherOperatingConditions(i)
                     )
                     for i in otherOperatingConditions
@@ -816,7 +851,7 @@ class Reliability(Submodel):
                 usefulLifeInNumberOfOperations = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.UsefulLifeInNumberOfOperations(i)
                     )
                     for i in usefulLifeInNumberOfOperations
@@ -827,7 +862,7 @@ class Reliability(Submodel):
                 usefulLifeInTimeInterval = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.UsefulLifeInTimeInterval(i)
                     )
                     for i in usefulLifeInTimeInterval
@@ -848,7 +883,7 @@ class Reliability(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -856,7 +891,7 @@ class Reliability(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -872,19 +907,21 @@ class Reliability(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class ReliabilityCharacteristics(SubmodelElementCollection):
+    class ReliabilityCharacteristics(aas.SubmodelElementCollection):
 
-        class MTTF(Property):
+        class MTTF(aas.Property):
 
             def __init__(
                 self,
-                value: Int,
+                value: xsd.Int,
                 id_short: Optional[str] = r"MTTF",
-                value_type: DataTypeDefXsd = Int,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = xsd.Int,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"mean operating time to failure",
                         r"fr": r"durée moyenne de fonctionnement avant défaillance",
@@ -893,31 +930,31 @@ class Reliability(Submodel):
                         r"cn": r"平均失效前工作时间",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACE061#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -941,17 +978,19 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MTBF(Property):
+        class MTBF(aas.Property):
 
             def __init__(
                 self,
-                value: Int,
+                value: xsd.Int,
                 id_short: Optional[str] = r"MTBF",
-                value_type: DataTypeDefXsd = Int,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = xsd.Int,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"mean operating time between failure",
                         r"fr": r"moyenne des temps de bon fonctionnement",
@@ -959,31 +998,31 @@ class Reliability(Submodel):
                         r"cn": r"平均失效间隔工作时间",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0112/2///62683#ACE062#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -1007,44 +1046,44 @@ class Reliability(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class B(Property):
+        class B(aas.Property):
 
             def __init__(
                 self,
-                value: Int,
+                value: xsd.Int,
                 id_short: Optional[str] = r"B",
-                value_type: DataTypeDefXsd = Int,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = None,
+                value_type: aas.DataTypeDefXsd = xsd.Int,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
-                    dict_={r"en": r"B10"}
-                ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(dict_={r"en": r"B10"}),
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/Reliability/B10/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -1070,41 +1109,45 @@ class Reliability(Submodel):
 
         def __init__(
             self,
-            mTTF: Optional[Iterable[Union[Int, MTTF]]] = None,
-            mTBF: Optional[Iterable[Union[Int, MTBF]]] = None,
-            b: Optional[Iterable[Union[Int, B]]] = None,
+            mTTF: Optional[Iterable[Union[xsd.Int, MTTF]]] = None,
+            mTBF: Optional[Iterable[Union[xsd.Int, MTBF]]] = None,
+            b: Optional[Iterable[Union[xsd.Int, B]]] = None,
             id_short: Optional[str] = r"ReliabilityCharacteristics",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Reliability characteristics",
                     r"fr": r"Caractéristiques de fiabilité",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"0112/2///62683#ACG080#001",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToMany",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -1116,25 +1159,27 @@ class Reliability(Submodel):
             # Build submodel elements from raw values passed in the argument
             if mTTF:
                 mTTF = [
-                    i if isinstance(i, SubmodelElement) else self.MTTF(i) for i in mTTF
+                    i if isinstance(i, aas.SubmodelElement) else self.MTTF(i)
+                    for i in mTTF
                 ]
 
             # Build submodel elements from raw values passed in the argument
             if mTBF:
                 mTBF = [
-                    i if isinstance(i, SubmodelElement) else self.MTBF(i) for i in mTBF
+                    i if isinstance(i, aas.SubmodelElement) else self.MTBF(i)
+                    for i in mTBF
                 ]
 
             # Build submodel elements from raw values passed in the argument
             if b:
-                b = [i if isinstance(i, SubmodelElement) else self.B(i) for i in b]
+                b = [i if isinstance(i, aas.SubmodelElement) else self.B(i) for i in b]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [mTTF, mTBF, b]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1142,7 +1187,7 @@ class Reliability(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1161,7 +1206,7 @@ class Reliability(Submodel):
     def __init__(
         self,
         id_: str,
-        numberOfReliabilitySets: Union[Int, NumberOfReliabilitySets],
+        numberOfReliabilitySets: Union[xsd.Int, NumberOfReliabilitySets],
         operatingConditionsOfReliabilityCharacteristics: Optional[
             Iterable[OperatingConditionsOfReliabilityCharacteristics]
         ] = None,
@@ -1169,31 +1214,33 @@ class Reliability(Submodel):
             Iterable[ReliabilityCharacteristics]
         ] = None,
         id_short: Optional[str] = r"Reliability",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = None,
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=None,
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/iec62683/1/0/Reliability",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -1204,7 +1251,7 @@ class Reliability(Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
         if numberOfReliabilitySets and not isinstance(
-            numberOfReliabilitySets, SubmodelElement
+            numberOfReliabilitySets, aas.SubmodelElement
         ):
             numberOfReliabilitySets = self.NumberOfReliabilitySets(
                 numberOfReliabilitySets
@@ -1219,7 +1266,7 @@ class Reliability(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -1227,7 +1274,7 @@ class Reliability(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

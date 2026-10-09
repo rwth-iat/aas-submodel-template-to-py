@@ -1,55 +1,54 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class Circularity(Submodel):
+class Circularity(aas.Submodel):
 
-    class DismantlingAndRemovalInformation(SubmodelElementList):
+    class DismantlingAndRemovalInformation(aas.SubmodelElementList):
 
-        class Dismantlingandremovalinformation_item(Property):
+        class Dismantlingandremovalinformation_item(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"dismantlingandremovalinformation_item",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"document identifier"}
-                ),
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -83,42 +82,46 @@ class Circularity(Submodel):
                 Union[str, Dismantlingandremovalinformation_item]
             ],
             id_short: Optional[str] = r"DismantlingAndRemovalInformation",
-            type_value_list_element: SubmodelElement = Property,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = str,
+            type_value_list_element: aas.SubmodelElement = aas.Property,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"dismantling and removal information"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -136,7 +139,7 @@ class Circularity(Submodel):
                 dismantlingandremovalinformation_items = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.Dismantlingandremovalinformation_item(i)
                     )
                     for i in dismantlingandremovalinformation_items
@@ -147,7 +150,7 @@ class Circularity(Submodel):
             for se_arg in [dismantlingandremovalinformation_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -155,7 +158,7 @@ class Circularity(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -183,7 +186,7 @@ class Circularity(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -199,7 +202,7 @@ class Circularity(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -210,11 +213,11 @@ class Circularity(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -230,7 +233,7 @@ class Circularity(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -241,38 +244,38 @@ class Circularity(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class SparePartSources(SubmodelElementList):
+    class SparePartSources(aas.SubmodelElementList):
 
-        class Sparepartsources_item(SubmodelElementCollection):
+        class Sparepartsources_item(aas.SubmodelElementCollection):
 
-            class NameOfSupplier(MultiLanguageProperty):
+            class NameOfSupplier(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"NameOfSupplier",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"name of supplier"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"name of supplier"}),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#company",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:irdi:0173-1#02-AAW001#001",
                                 ),
                             ),
@@ -280,22 +283,22 @@ class Circularity(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -322,38 +325,38 @@ class Circularity(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressOfSupplier(SubmodelElementCollection):
+            class AddressOfSupplier(aas.SubmodelElementCollection):
 
-                class NationalCode(MultiLanguageProperty):
+                class NationalCode(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"NationalCode",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"de": r"Länderkürzel", r"en": r"national code"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#nationalCode",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:irdi:0173-1#02-AAO134#002",
                                     ),
                                 ),
@@ -361,22 +364,22 @@ class Circularity(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -403,43 +406,43 @@ class Circularity(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class PostalCode(MultiLanguageProperty):
+                class PostalCode(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"PostalCode",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"postal code"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"postal code"}),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#postalCode",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://schema.org/postalCode",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            ExternalReference(
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:irdi:0173-1#02-AAO129#002",
                                     ),
                                 ),
@@ -447,22 +450,22 @@ class Circularity(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -489,45 +492,45 @@ class Circularity(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Street(MultiLanguageProperty):
+                class Street(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"Street",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"street", r"de": r"Straße"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#street",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://schema.org/streetAddress",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            ExternalReference(
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:irdi:0173-1#02-AAO128#002",
                                     ),
                                 ),
@@ -535,22 +538,22 @@ class Circularity(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -579,31 +582,33 @@ class Circularity(Submodel):
 
                 def __init__(
                     self,
-                    nationalCode: Union[LangStringSet, NationalCode],
-                    postalCode: Union[LangStringSet, PostalCode],
-                    street: Union[LangStringSet, Street],
+                    nationalCode: Union[aas.LangStringSet, NationalCode],
+                    postalCode: Union[aas.LangStringSet, PostalCode],
+                    street: Union[aas.LangStringSet, Street],
                     id_short: Optional[str] = r"AddressOfSupplier",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"address of supplier"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"address of supplier"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://schema.org/PostalAddress",
                                 ),
                             ),
@@ -611,22 +616,22 @@ class Circularity(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -640,15 +645,17 @@ class Circularity(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if nationalCode and not isinstance(nationalCode, SubmodelElement):
+                    if nationalCode and not isinstance(
+                        nationalCode, aas.SubmodelElement
+                    ):
                         nationalCode = self.NationalCode(nationalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if postalCode and not isinstance(postalCode, SubmodelElement):
+                    if postalCode and not isinstance(postalCode, aas.SubmodelElement):
                         postalCode = self.PostalCode(postalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if street and not isinstance(street, SubmodelElement):
+                    if street and not isinstance(street, aas.SubmodelElement):
                         street = self.Street(street)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -656,7 +663,7 @@ class Circularity(Submodel):
                     for se_arg in [nationalCode, postalCode, street]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -664,7 +671,7 @@ class Circularity(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -680,37 +687,37 @@ class Circularity(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class EmailAddressOfSupplier(SubmodelElementCollection):
+            class EmailAddressOfSupplier(aas.SubmodelElementCollection):
 
-                class EmailAddress(Property):
+                class EmailAddress(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"EmailAddress",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"email address"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"email address"}),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#emailAddress",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:irdi:0173-1#02-AAO198#002",
                                     ),
                                 ),
@@ -718,22 +725,22 @@ class Circularity(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -761,40 +768,40 @@ class Circularity(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class PublicKey(MultiLanguageProperty):
+                class PublicKey(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"PublicKey",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"public key"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"public key"}),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Public part of an unsymmetrical key pair to sign or encrypt text or messages."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#publicKey",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:irdi:0173-1#02-AAO200#002",
                                     ),
                                 ),
@@ -802,22 +809,22 @@ class Circularity(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -844,37 +851,37 @@ class Circularity(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class TypeOfEmailAddress(Property):
+                class TypeOfEmailAddress(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"TypeOfEmailAddress",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"type of email address"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfEmailAddress",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:irdi:0173-1#02-AAO199#003",
                                     ),
                                 ),
@@ -882,22 +889,22 @@ class Circularity(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -925,34 +932,36 @@ class Circularity(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class TypeOfPublicKey(MultiLanguageProperty):
+                class TypeOfPublicKey(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"TypeOfPublicKey",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"type of public key"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
+                            dict_={r"en": r"type of public key"}
+                        ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfPublicKey",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:irdi:0173-1#02-AAO201#002",
                                     ),
                                 ),
@@ -960,22 +969,22 @@ class Circularity(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1005,35 +1014,35 @@ class Circularity(Submodel):
                 def __init__(
                     self,
                     emailAddress: Union[str, EmailAddress],
-                    publicKey: Optional[Union[LangStringSet, PublicKey]] = None,
+                    publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
                     typeOfEmailAddress: Optional[Union[str, TypeOfEmailAddress]] = None,
                     typeOfPublicKey: Optional[
-                        Union[LangStringSet, TypeOfPublicKey]
+                        Union[aas.LangStringSet, TypeOfPublicKey]
                     ] = None,
                     id_short: Optional[str] = r"EmailAddressOfSupplier",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"email address of supplier", r"de": r"Email"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#email",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:irdi:0173-1#02-AAQ836#005",
                                 ),
                             ),
@@ -1041,22 +1050,22 @@ class Circularity(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1070,22 +1079,24 @@ class Circularity(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if emailAddress and not isinstance(emailAddress, SubmodelElement):
+                    if emailAddress and not isinstance(
+                        emailAddress, aas.SubmodelElement
+                    ):
                         emailAddress = self.EmailAddress(emailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if publicKey and not isinstance(publicKey, SubmodelElement):
+                    if publicKey and not isinstance(publicKey, aas.SubmodelElement):
                         publicKey = self.PublicKey(publicKey)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if typeOfEmailAddress and not isinstance(
-                        typeOfEmailAddress, SubmodelElement
+                        typeOfEmailAddress, aas.SubmodelElement
                     ):
                         typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if typeOfPublicKey and not isinstance(
-                        typeOfPublicKey, SubmodelElement
+                        typeOfPublicKey, aas.SubmodelElement
                     ):
                         typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
@@ -1099,7 +1110,7 @@ class Circularity(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1107,7 +1118,7 @@ class Circularity(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1123,35 +1134,37 @@ class Circularity(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SupplierWebAddress(Property):
+            class SupplierWebAddress(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"SupplierWebAddress",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"supplier web address"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"supplier web address"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#addressOfAdditionalLink",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:irdi:0173-1#02-AAQ326#002",
                                 ),
                             ),
@@ -1159,22 +1172,22 @@ class Circularity(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1202,52 +1215,54 @@ class Circularity(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Components(SubmodelElementList):
+            class Components(aas.SubmodelElementList):
 
-                class Components_item(SubmodelElementCollection):
+                class Components_item(aas.SubmodelElementCollection):
 
-                    class PartName(Property):
+                    class PartName(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"PartName",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"part name"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(dict_={r"en": r"part name"}),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partName",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1275,48 +1290,52 @@ class Circularity(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class PartNumber(Property):
+                    class PartNumber(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"PartNumber",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(dict_={r"en": r"part number"}),
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
+                                dict_={r"en": r"part number"}
+                            ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1350,43 +1369,43 @@ class Circularity(Submodel):
                         partNumber: Union[str, PartNumber],
                         id_short: Optional[str] = r"components_item",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(dict_={r"en": r"Component"}),
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Component"}),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Components available at supplier"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1400,11 +1419,13 @@ class Circularity(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if partName and not isinstance(partName, SubmodelElement):
+                        if partName and not isinstance(partName, aas.SubmodelElement):
                             partName = self.PartName(partName)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if partNumber and not isinstance(partNumber, SubmodelElement):
+                        if partNumber and not isinstance(
+                            partNumber, aas.SubmodelElement
+                        ):
                             partNumber = self.PartNumber(partNumber)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1412,7 +1433,7 @@ class Circularity(Submodel):
                         for se_arg in [partName, partNumber]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1420,7 +1441,7 @@ class Circularity(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1440,44 +1461,44 @@ class Circularity(Submodel):
                     self,
                     components_items: Iterable[Components_item],
                     id_short: Optional[str] = r"Components",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = None,
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[aas.Reference] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = False,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"components"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"components"}),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1495,7 +1516,7 @@ class Circularity(Submodel):
                     for se_arg in [components_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1503,7 +1524,7 @@ class Circularity(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1531,7 +1552,7 @@ class Circularity(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1547,7 +1568,7 @@ class Circularity(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -1558,11 +1579,11 @@ class Circularity(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -1581,7 +1602,7 @@ class Circularity(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -1594,46 +1615,46 @@ class Circularity(Submodel):
 
             def __init__(
                 self,
-                nameOfSupplier: Union[LangStringSet, NameOfSupplier],
+                nameOfSupplier: Union[aas.LangStringSet, NameOfSupplier],
                 addressOfSupplier: AddressOfSupplier,
                 emailAddressOfSupplier: EmailAddressOfSupplier,
                 supplierWebAddress: Union[str, SupplierWebAddress],
                 components: Components,
                 id_short: Optional[str] = r"sparepartsources_item",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"spare part supplier"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"spare part supplier"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1647,12 +1668,14 @@ class Circularity(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nameOfSupplier and not isinstance(nameOfSupplier, SubmodelElement):
+                if nameOfSupplier and not isinstance(
+                    nameOfSupplier, aas.SubmodelElement
+                ):
                     nameOfSupplier = self.NameOfSupplier(nameOfSupplier)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if supplierWebAddress and not isinstance(
-                    supplierWebAddress, SubmodelElement
+                    supplierWebAddress, aas.SubmodelElement
                 ):
                     supplierWebAddress = self.SupplierWebAddress(supplierWebAddress)
 
@@ -1667,7 +1690,7 @@ class Circularity(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -1675,7 +1698,7 @@ class Circularity(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -1695,42 +1718,44 @@ class Circularity(Submodel):
             self,
             sparepartsources_items: Optional[Iterable[Sparepartsources_item]] = None,
             id_short: Optional[str] = r"SparePartSources",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"spare part sources"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"spare part sources"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -1748,7 +1773,7 @@ class Circularity(Submodel):
             for se_arg in [sparepartsources_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -1756,7 +1781,7 @@ class Circularity(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1784,7 +1809,7 @@ class Circularity(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1800,7 +1825,7 @@ class Circularity(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -1811,11 +1836,11 @@ class Circularity(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -1831,7 +1856,7 @@ class Circularity(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -1842,52 +1867,52 @@ class Circularity(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class RecycledContentInformation(SubmodelElementList):
+    class RecycledContentInformation(aas.SubmodelElementList):
 
-        class Recycledcontentinformation_item(SubmodelElementCollection):
+        class Recycledcontentinformation_item(aas.SubmodelElementCollection):
 
-            class PreConsumerShare(Property):
+            class PreConsumerShare(aas.Property):
 
                 def __init__(
                     self,
-                    value: Float,
+                    value: xsd.Float,
                     id_short: Optional[str] = r"PreConsumerShare",
-                    value_type: DataTypeDefXsd = Float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"pre consumer share"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"pre consumer share"}),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#preConsumerShare",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1915,48 +1940,48 @@ class Circularity(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class RecycledMaterial(Property):
+            class RecycledMaterial(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"RecycledMaterial",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"recycled material"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(dict_={r"en": r"recycled material"}),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledMaterial",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1984,48 +2009,50 @@ class Circularity(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PostConsumerShare(Property):
+            class PostConsumerShare(aas.Property):
 
                 def __init__(
                     self,
-                    value: Float,
+                    value: xsd.Float,
                     id_short: Optional[str] = r"PostConsumerShare",
-                    value_type: DataTypeDefXsd = Float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"post consumer share"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"post consumer share"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#postConsumerShare",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2056,43 +2083,43 @@ class Circularity(Submodel):
             def __init__(
                 self,
                 recycledMaterial: Union[str, RecycledMaterial],
-                preConsumerShare: Optional[Union[Float, PreConsumerShare]] = None,
-                postConsumerShare: Optional[Union[Float, PostConsumerShare]] = None,
+                preConsumerShare: Optional[Union[xsd.Float, PreConsumerShare]] = None,
+                postConsumerShare: Optional[Union[xsd.Float, PostConsumerShare]] = None,
                 id_short: Optional[str] = r"recycledcontentinformation_item",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"recycled content"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"recycled content"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2107,19 +2134,19 @@ class Circularity(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if preConsumerShare and not isinstance(
-                    preConsumerShare, SubmodelElement
+                    preConsumerShare, aas.SubmodelElement
                 ):
                     preConsumerShare = self.PreConsumerShare(preConsumerShare)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if recycledMaterial and not isinstance(
-                    recycledMaterial, SubmodelElement
+                    recycledMaterial, aas.SubmodelElement
                 ):
                     recycledMaterial = self.RecycledMaterial(recycledMaterial)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if postConsumerShare and not isinstance(
-                    postConsumerShare, SubmodelElement
+                    postConsumerShare, aas.SubmodelElement
                 ):
                     postConsumerShare = self.PostConsumerShare(postConsumerShare)
 
@@ -2128,7 +2155,7 @@ class Circularity(Submodel):
                 for se_arg in [preConsumerShare, recycledMaterial, postConsumerShare]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2136,7 +2163,7 @@ class Circularity(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2156,42 +2183,46 @@ class Circularity(Submodel):
             self,
             recycledcontentinformation_items: Iterable[Recycledcontentinformation_item],
             id_short: Optional[str] = r"RecycledContentInformation",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"recycled content information"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2209,7 +2240,7 @@ class Circularity(Submodel):
             for se_arg in [recycledcontentinformation_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2217,7 +2248,7 @@ class Circularity(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2245,7 +2276,7 @@ class Circularity(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2261,7 +2292,7 @@ class Circularity(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -2272,11 +2303,11 @@ class Circularity(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -2292,7 +2323,7 @@ class Circularity(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -2303,52 +2334,54 @@ class Circularity(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class SafetyMeasures(SubmodelElementCollection):
+    class SafetyMeasures(aas.SubmodelElementCollection):
 
-        class SafetyInstructions(SubmodelElementList):
+        class SafetyInstructions(aas.SubmodelElementList):
 
-            class Safetyinstructions_item(Property):
+            class Safetyinstructions_item(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"safetyinstructions_item",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"document identifier"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2380,44 +2413,44 @@ class Circularity(Submodel):
                 self,
                 safetyinstructions_items: Iterable[Union[str, Safetyinstructions_item]],
                 id_short: Optional[str] = r"SafetyInstructions",
-                type_value_list_element: SubmodelElement = Property,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = str,
+                type_value_list_element: aas.SubmodelElement = aas.Property,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"safety instructions"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"safety instructions"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyInstructions",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2435,7 +2468,7 @@ class Circularity(Submodel):
                     safetyinstructions_items = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.Safetyinstructions_item(i)
                         )
                         for i in safetyinstructions_items
@@ -2446,7 +2479,7 @@ class Circularity(Submodel):
                 for se_arg in [safetyinstructions_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2454,7 +2487,7 @@ class Circularity(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2482,7 +2515,7 @@ class Circularity(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2498,7 +2531,7 @@ class Circularity(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -2509,11 +2542,11 @@ class Circularity(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -2532,7 +2565,7 @@ class Circularity(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -2543,50 +2576,52 @@ class Circularity(Submodel):
                 # Re-assign id_short
                 new.id_short = saved_id_short
 
-        class ExtinguishingAgents(SubmodelElementList):
+        class ExtinguishingAgents(aas.SubmodelElementList):
 
-            class Extinguishingagents_item(Property):
+            class Extinguishingagents_item(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"extinguishingagents_item",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"extinguishing agent"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"extinguishing agent"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgent",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2620,44 +2655,44 @@ class Circularity(Submodel):
                     Union[str, Extinguishingagents_item]
                 ],
                 id_short: Optional[str] = r"ExtinguishingAgents",
-                type_value_list_element: SubmodelElement = Property,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = str,
+                type_value_list_element: aas.SubmodelElement = aas.Property,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"extinguishing agents"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"extinguishing agents"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2675,7 +2710,7 @@ class Circularity(Submodel):
                     extinguishingagents_items = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.Extinguishingagents_item(i)
                         )
                         for i in extinguishingagents_items
@@ -2686,7 +2721,7 @@ class Circularity(Submodel):
                 for se_arg in [extinguishingagents_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2694,7 +2729,7 @@ class Circularity(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2722,7 +2757,7 @@ class Circularity(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2738,7 +2773,7 @@ class Circularity(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -2749,11 +2784,11 @@ class Circularity(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -2772,7 +2807,7 @@ class Circularity(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -2788,38 +2823,40 @@ class Circularity(Submodel):
             safetyInstructions: Union[Iterable[str], SafetyInstructions],
             extinguishingAgents: Union[Iterable[str], ExtinguishingAgents],
             id_short: Optional[str] = r"SafetyMeasures",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"safety measures"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"safety measures"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2834,13 +2871,13 @@ class Circularity(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if safetyInstructions and not isinstance(
-                safetyInstructions, SubmodelElement
+                safetyInstructions, aas.SubmodelElement
             ):
                 safetyInstructions = self.SafetyInstructions(safetyInstructions)
 
             # Build a submodel element if a raw value was passed in the argument
             if extinguishingAgents and not isinstance(
-                extinguishingAgents, SubmodelElement
+                extinguishingAgents, aas.SubmodelElement
             ):
                 extinguishingAgents = self.ExtinguishingAgents(extinguishingAgents)
 
@@ -2849,7 +2886,7 @@ class Circularity(Submodel):
             for se_arg in [safetyInstructions, extinguishingAgents]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2857,7 +2894,7 @@ class Circularity(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2873,52 +2910,54 @@ class Circularity(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class EndOfLifeInformation(SubmodelElementCollection):
+    class EndOfLifeInformation(aas.SubmodelElementCollection):
 
-        class WastePrevention(SubmodelElementList):
+        class WastePrevention(aas.SubmodelElementList):
 
-            class Wasteprevention_item(Property):
+            class Wasteprevention_item(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"wasteprevention_item",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"document identifier"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2950,31 +2989,31 @@ class Circularity(Submodel):
                 self,
                 wasteprevention_items: Iterable[Union[str, Wasteprevention_item]],
                 id_short: Optional[str] = r"WastePrevention",
-                type_value_list_element: SubmodelElement = Property,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = str,
+                type_value_list_element: aas.SubmodelElement = aas.Property,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"waste prevention"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"waste prevention"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#wastePrevention",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL855#001",
                             ),
                         ),
@@ -2982,22 +3021,22 @@ class Circularity(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3015,7 +3054,7 @@ class Circularity(Submodel):
                     wasteprevention_items = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.Wasteprevention_item(i)
                         )
                         for i in wasteprevention_items
@@ -3026,7 +3065,7 @@ class Circularity(Submodel):
                 for se_arg in [wasteprevention_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3034,7 +3073,7 @@ class Circularity(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3062,7 +3101,7 @@ class Circularity(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3078,7 +3117,7 @@ class Circularity(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -3089,11 +3128,11 @@ class Circularity(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -3112,7 +3151,7 @@ class Circularity(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -3123,50 +3162,52 @@ class Circularity(Submodel):
                 # Re-assign id_short
                 new.id_short = saved_id_short
 
-        class SeparateCollection(SubmodelElementList):
+        class SeparateCollection(aas.SubmodelElementList):
 
-            class Separatecollection_item(Property):
+            class Separatecollection_item(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"separatecollection_item",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"document identifier"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3198,31 +3239,31 @@ class Circularity(Submodel):
                 self,
                 separatecollection_items: Iterable[Union[str, Separatecollection_item]],
                 id_short: Optional[str] = r"SeparateCollection",
-                type_value_list_element: SubmodelElement = Property,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = str,
+                type_value_list_element: aas.SubmodelElement = aas.Property,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"separate collection"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"separate collection"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:idi:0173-1#02-ABL854#001",
                             ),
                         ),
@@ -3230,22 +3271,22 @@ class Circularity(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3263,7 +3304,7 @@ class Circularity(Submodel):
                     separatecollection_items = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.Separatecollection_item(i)
                         )
                         for i in separatecollection_items
@@ -3274,7 +3315,7 @@ class Circularity(Submodel):
                 for se_arg in [separatecollection_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3282,7 +3323,7 @@ class Circularity(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3310,7 +3351,7 @@ class Circularity(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3326,7 +3367,7 @@ class Circularity(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -3337,11 +3378,11 @@ class Circularity(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -3360,7 +3401,7 @@ class Circularity(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -3371,50 +3412,52 @@ class Circularity(Submodel):
                 # Re-assign id_short
                 new.id_short = saved_id_short
 
-        class InformationOnCollection(SubmodelElementList):
+        class InformationOnCollection(aas.SubmodelElementList):
 
-            class Informationoncollection_item(Property):
+            class Informationoncollection_item(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"informationoncollection_item",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
+                        dict_={r"en": r"document identifier"}
+                    ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"OneToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3448,31 +3491,33 @@ class Circularity(Submodel):
                     Union[str, Informationoncollection_item]
                 ],
                 id_short: Optional[str] = r"InformationOnCollection",
-                type_value_list_element: SubmodelElement = Property,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = str,
+                type_value_list_element: aas.SubmodelElement = aas.Property,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"information on collection"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:irdi:0173-1#02-ABL856#001",
                             ),
                         ),
@@ -3480,22 +3525,22 @@ class Circularity(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3513,7 +3558,7 @@ class Circularity(Submodel):
                     informationoncollection_items = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.Informationoncollection_item(i)
                         )
                         for i in informationoncollection_items
@@ -3524,7 +3569,7 @@ class Circularity(Submodel):
                 for se_arg in [informationoncollection_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3532,7 +3577,7 @@ class Circularity(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3560,7 +3605,7 @@ class Circularity(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3576,7 +3621,7 @@ class Circularity(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -3587,11 +3632,11 @@ class Circularity(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -3610,7 +3655,7 @@ class Circularity(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -3627,38 +3672,40 @@ class Circularity(Submodel):
             separateCollection: Union[Iterable[str], SeparateCollection],
             informationOnCollection: Union[Iterable[str], InformationOnCollection],
             id_short: Optional[str] = r"EndOfLifeInformation",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"end of life information"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"end of life information"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3672,18 +3719,18 @@ class Circularity(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if wastePrevention and not isinstance(wastePrevention, SubmodelElement):
+            if wastePrevention and not isinstance(wastePrevention, aas.SubmodelElement):
                 wastePrevention = self.WastePrevention(wastePrevention)
 
             # Build a submodel element if a raw value was passed in the argument
             if separateCollection and not isinstance(
-                separateCollection, SubmodelElement
+                separateCollection, aas.SubmodelElement
             ):
                 separateCollection = self.SeparateCollection(separateCollection)
 
             # Build a submodel element if a raw value was passed in the argument
             if informationOnCollection and not isinstance(
-                informationOnCollection, SubmodelElement
+                informationOnCollection, aas.SubmodelElement
             ):
                 informationOnCollection = self.InformationOnCollection(
                     informationOnCollection
@@ -3698,7 +3745,7 @@ class Circularity(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3706,7 +3753,7 @@ class Circularity(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3722,56 +3769,58 @@ class Circularity(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class RenewableContent(Property):
+    class RenewableContent(aas.Property):
 
         def __init__(
             self,
-            value: Float,
+            value: xsd.Float,
             id_short: Optional[str] = r"RenewableContent",
-            value_type: DataTypeDefXsd = Float,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"renewable content"}
-            ),
+            value_type: aas.DataTypeDefXsd = xsd.Float,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"renewable content"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:irdi:0173-1#02-ABL867#001",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3809,38 +3858,40 @@ class Circularity(Submodel):
         recycledContentInformation: RecycledContentInformation,
         safetyMeasures: SafetyMeasures,
         endOfLifeInformation: EndOfLifeInformation,
-        renewableContent: Union[Float, RenewableContent],
+        renewableContent: Union[xsd.Float, RenewableContent],
         id_short: Optional[str] = r"Circularity",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"Circularity"}
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": "Dismantling information (including at least: exploded diagrams of the battery system/pack showing the location of battery cells; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists; amount of cells used and layout); part numbers for components and contact details of sources for replacement spares; safety measures \n   \n   (Annex XIII (2b-d)); usable extinguishing agent (Annex VI, Part A(9))."
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/idta-02035-7",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ExternalReference(
+        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
-                Key(
-                    type_=KeyTypes.GLOBAL_REFERENCE,
+                aas.Key(
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                     value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
                 ),
             ),
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -3851,14 +3902,14 @@ class Circularity(Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
         if dismantlingAndRemovalInformation and not isinstance(
-            dismantlingAndRemovalInformation, SubmodelElement
+            dismantlingAndRemovalInformation, aas.SubmodelElement
         ):
             dismantlingAndRemovalInformation = self.DismantlingAndRemovalInformation(
                 dismantlingAndRemovalInformation
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if renewableContent and not isinstance(renewableContent, SubmodelElement):
+        if renewableContent and not isinstance(renewableContent, aas.SubmodelElement):
             renewableContent = self.RenewableContent(renewableContent)
 
         # Add all passed/initialized submodel elements to a single list
@@ -3873,7 +3924,7 @@ class Circularity(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -3881,7 +3932,7 @@ class Circularity(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

@@ -1,50 +1,53 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class MaintenanceInstructions(Submodel):
+class MaintenanceInstructions(aas.Submodel):
 
-    class MaintenanceFreeAsset(Property):
+    class MaintenanceFreeAsset(aas.Property):
 
         def __init__(
             self,
             value: bool,
             id_short: Optional[str] = r"MaintenanceFreeAsset",
-            value_type: DataTypeDefXsd = bool,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = None,
+            value_type: aas.DataTypeDefXsd = bool,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"de": r"Festlegung, ob ein Asset wartungsfrei ist, oder eine Wartung benötigt. Bei einem wartungsfreien Asset Wert =True . Wird eine Wartung benötig Wert = False. Somit kann ausgeschlossen werden, dass ein Hersteller vergessen hat das SM Maintenance zu erstellen und der Anwender hat die Sicherheit, dass das Asset wartungsfrei ist. ",
                     r"en": r"Determines whether an asset is maintenance-free or requires maintenance. If an asset is maintenance-free, value = true. If maintenance is required, value = false. This excludes the possibility that a manufacturer has forgotten to create the SM Maintenance and the user has the certainty that the asset is maintenance-free. ",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancefreeasset/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -68,53 +71,53 @@ class MaintenanceInstructions(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class MaintenanceInstructionsForSpecificInterval(SubmodelElementCollection):
+    class MaintenanceInstructionsForSpecificInterval(aas.SubmodelElementCollection):
 
-        class BasicMaintenanceInformation(SubmodelElementCollection):
+        class BasicMaintenanceInformation(aas.SubmodelElementCollection):
 
-            class MaintenanceID(Property):
+            class MaintenanceID(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"MaintenanceID",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"ID für diese Wartung ",
                             r"en": r"ID for this maintenance",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceid/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -138,48 +141,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class NameOfMaintenance(MultiLanguageProperty):
+            class NameOfMaintenance(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"NameOfMaintenance",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Name für diesen Wartung",
                             r"en": r"Name for this maintenance ",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/nameofmaintenance/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -202,48 +205,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SourceOfMaintenanceInstructions(MultiLanguageProperty):
+            class SourceOfMaintenanceInstructions(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"SourceOfMaintenanceInstructions",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Herkunft der Wartungsinformationen - Beispiele: Komponentenhersteller, Maschinenbauer oder Anlagenbauer, Überwachungsbehörden",
                             r"en": r"Origin of maintenance information - examples: Component manufacturers, machine or plant manufacturers, monitoring authorities",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/sourceofmaintenanceinstructions/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -266,51 +269,51 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class IntervalSpecification(SubmodelElementCollection):
+            class IntervalSpecification(aas.SubmodelElementCollection):
 
-                class MaintenanceIntervalValue(Property):
+                class MaintenanceIntervalValue(aas.Property):
 
                     def __init__(
                         self,
-                        value: Decimal,
+                        value: xsd.Decimal,
                         id_short: Optional[str] = r"MaintenanceIntervalValue",
-                        value_type: DataTypeDefXsd = Decimal,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Wert des Wartungsintervalls",
                                 r"en": r"Value of the maintenance interval",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceintervalvalue/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -334,46 +337,46 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class MaintenanceIntervalUnit(Property):
+                class MaintenanceIntervalUnit(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"MaintenanceIntervalUnit",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"de": r"Interval Einheit", r"en": r"Interval Unit"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceintervalunit/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -400,47 +403,47 @@ class MaintenanceInstructions(Submodel):
                 def __init__(
                     self,
                     maintenanceIntervalValue: Optional[
-                        Union[Decimal, MaintenanceIntervalValue]
+                        Union[xsd.Decimal, MaintenanceIntervalValue]
                     ] = None,
                     maintenanceIntervalUnit: Optional[
                         Union[str, MaintenanceIntervalUnit]
                     ] = None,
                     id_short: Optional[str] = r"IntervalSpecification",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Spezifikation des Wartungsintervals",
                             r"en": r"Specification of the maintenance interval",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAN911#001",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -451,7 +454,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if maintenanceIntervalValue and not isinstance(
-                        maintenanceIntervalValue, SubmodelElement
+                        maintenanceIntervalValue, aas.SubmodelElement
                     ):
                         maintenanceIntervalValue = self.MaintenanceIntervalValue(
                             maintenanceIntervalValue
@@ -459,7 +462,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if maintenanceIntervalUnit and not isinstance(
-                        maintenanceIntervalUnit, SubmodelElement
+                        maintenanceIntervalUnit, aas.SubmodelElement
                     ):
                         maintenanceIntervalUnit = self.MaintenanceIntervalUnit(
                             maintenanceIntervalUnit
@@ -470,7 +473,7 @@ class MaintenanceInstructions(Submodel):
                     for se_arg in [maintenanceIntervalValue, maintenanceIntervalUnit]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -478,7 +481,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -494,52 +497,54 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AlarmValues(SubmodelElementCollection):
+            class AlarmValues(aas.SubmodelElementCollection):
 
-                class Alarm(SubmodelElementCollection):
+                class Alarm(aas.SubmodelElementCollection):
 
-                    class AlarmName(MultiLanguageProperty):
+                    class AlarmName(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"AlarmName",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Designation of the alarm.",
                                     r"de": r"Benennung des Alarms. ",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/alarmname/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -562,49 +567,51 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class WarningLimitRelativeValue(Property):
+                    class WarningLimitRelativeValue(aas.Property):
 
                         def __init__(
                             self,
-                            value: Decimal,
+                            value: xsd.Decimal,
                             id_short: Optional[str] = r"WarningLimitRelativeValue",
-                            value_type: DataTypeDefXsd = Decimal,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Zur eindeutigen Definition des Alarmwertes wird der Alarmwert in % des Wartungsintervalls angegeben. ",
                                     r"en": r"For a clear definition of the alarm value, the alarm value is entered as a % of the maintenance interval. ",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/warninglimitrelativevalue/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -628,49 +635,51 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class WarningLimitSeverity(Property):
+                    class WarningLimitSeverity(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"WarningLimitSeverity",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Definition (Schweregrad) dessen, was der Alarm bedeutet oder welche Auswirkungen er haben soll. Info, Warnung, Alarm, Abschaltung",
                                     r"en": r"Definition (severity) of what the alarm means or what effects it should have. Info, warning, alarm, shutdown",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/warninglimitseverity/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -696,49 +705,49 @@ class MaintenanceInstructions(Submodel):
 
                     def __init__(
                         self,
-                        alarmName: Optional[Union[LangStringSet, AlarmName]] = None,
+                        alarmName: Optional[Union[aas.LangStringSet, AlarmName]] = None,
                         warningLimitRelativeValue: Optional[
-                            Union[Decimal, WarningLimitRelativeValue]
+                            Union[xsd.Decimal, WarningLimitRelativeValue]
                         ] = None,
                         warningLimitSeverity: Optional[
                             Union[str, WarningLimitSeverity]
                         ] = None,
                         id_short: Optional[str] = r"Alarm",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Collection zur Definition eines Alarms",
                                 r"en": r"Collection for the definition of an alarm",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/alarm/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -748,12 +757,12 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if alarmName and not isinstance(alarmName, SubmodelElement):
+                        if alarmName and not isinstance(alarmName, aas.SubmodelElement):
                             alarmName = self.AlarmName(alarmName)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if warningLimitRelativeValue and not isinstance(
-                            warningLimitRelativeValue, SubmodelElement
+                            warningLimitRelativeValue, aas.SubmodelElement
                         ):
                             warningLimitRelativeValue = self.WarningLimitRelativeValue(
                                 warningLimitRelativeValue
@@ -761,7 +770,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if warningLimitSeverity and not isinstance(
-                            warningLimitSeverity, SubmodelElement
+                            warningLimitSeverity, aas.SubmodelElement
                         ):
                             warningLimitSeverity = self.WarningLimitSeverity(
                                 warningLimitSeverity
@@ -776,7 +785,7 @@ class MaintenanceInstructions(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -784,7 +793,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -804,41 +813,41 @@ class MaintenanceInstructions(Submodel):
                     self,
                     alarm: Optional[Iterable[Alarm]] = None,
                     id_short: Optional[str] = r"AlarmValues",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Definition von Alarmen bei Erreichen von Grenzwerten Maintenance Limits",
                             r"en": r"Alarm at reaching the maintenance limit",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/alarmvalues/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -852,7 +861,7 @@ class MaintenanceInstructions(Submodel):
                     for se_arg in [alarm]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -860,7 +869,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -876,48 +885,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class FlowChartOfMaintenanceSteps(File):
+            class FlowChartOfMaintenanceSteps(aas.File):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"FlowChartOfMaintenanceSteps",
                     content_type: Optional[str] = r"application/pdf",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Flowchart einer Wartung z.B. als PDF Datei",
                             r"en": r"Flowchart of a maintenance e.g. as a PDF file",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/flowchartofmaintenancesteps/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -940,48 +949,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class RelatedStandardsLawsRegulations(MultiLanguageProperty):
+            class RelatedStandardsLawsRegulations(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"RelatedStandardsLawsRegulations",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Normen, Gesetze und Verordnungen die bei der Wartung beachtet werden müssen",
                             r"en": r"Standards, laws and regulations that must be observed during maintenance",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/relatedstandardslawsregulations/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -1004,47 +1013,47 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ContactForMaintenanceAuthorization(SubmodelElementCollection):
+            class ContactForMaintenanceAuthorization(aas.SubmodelElementCollection):
 
-                class Company(MultiLanguageProperty):
+                class Company(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"Company",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"name of the company"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAW001#001",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1067,47 +1076,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Department(MultiLanguageProperty):
+                class Department(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"Department",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Administrative section within an organisation where a business partner is located"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO127#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1130,46 +1139,46 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class RoleOfContactPerson(Property):
+                class RoleOfContactPerson(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"RoleOfContactPerson",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"function of a contact person in a process"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO204#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1193,47 +1202,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Title(MultiLanguageProperty):
+                class Title(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"Title",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "common, formal, religious, or other title preceding a contact person's name"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO208#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1256,47 +1265,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class AcademicTitle(MultiLanguageProperty):
+                class AcademicTitle(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"AcademicTitle",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "academic title preceding a contact person's name"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO209#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1319,45 +1328,45 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class NameOfContact(MultiLanguageProperty):
+                class NameOfContact(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"NameOfContact",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"surname of a contact person"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO205#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1380,45 +1389,45 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class FirstName(MultiLanguageProperty):
+                class FirstName(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"FirstName",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"first name of a contact person"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO206#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1441,45 +1450,45 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class MiddleNames(MultiLanguageProperty):
+                class MiddleNames(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"MiddleNames",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"middle names of contact person"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO207#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1502,50 +1511,52 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Email(SubmodelElementCollection):
+                class Email(aas.SubmodelElementCollection):
 
-                    class EmailAddress(Property):
+                    class EmailAddress(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"EmailAddress",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"electronic mail address of a business partner"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO198#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1569,47 +1580,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class PublicKey(MultiLanguageProperty):
+                    class PublicKey(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"PublicKey",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"public part of an unsymmetrical key pair to sign or encrypt text or messages"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO200#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1632,48 +1645,50 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TypeOfEmailAddress(Property):
+                    class TypeOfEmailAddress(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"TypeOfEmailAddress",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"characterization of an e-mail address according to its location or usage"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO199#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1697,47 +1712,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TypeOfPublicKey(MultiLanguageProperty):
+                    class TypeOfPublicKey(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"TypeOfPublicKey",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"characterization of a public key according to its encryption process"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO201#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1763,46 +1780,46 @@ class MaintenanceInstructions(Submodel):
                     def __init__(
                         self,
                         emailAddress: Optional[Union[str, EmailAddress]] = None,
-                        publicKey: Optional[Union[LangStringSet, PublicKey]] = None,
+                        publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
                         typeOfEmailAddress: Optional[
                             Union[str, TypeOfEmailAddress]
                         ] = None,
                         typeOfPublicKey: Optional[
-                            Union[LangStringSet, TypeOfPublicKey]
+                            Union[aas.LangStringSet, TypeOfPublicKey]
                         ] = None,
                         id_short: Optional[str] = r"Email",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"E-mail address and encryption method"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAQ836#005",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -1813,17 +1830,17 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if emailAddress and not isinstance(
-                            emailAddress, SubmodelElement
+                            emailAddress, aas.SubmodelElement
                         ):
                             emailAddress = self.EmailAddress(emailAddress)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if publicKey and not isinstance(publicKey, SubmodelElement):
+                        if publicKey and not isinstance(publicKey, aas.SubmodelElement):
                             publicKey = self.PublicKey(publicKey)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if typeOfEmailAddress and not isinstance(
-                            typeOfEmailAddress, SubmodelElement
+                            typeOfEmailAddress, aas.SubmodelElement
                         ):
                             typeOfEmailAddress = self.TypeOfEmailAddress(
                                 typeOfEmailAddress
@@ -1831,7 +1848,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if typeOfPublicKey and not isinstance(
-                            typeOfPublicKey, SubmodelElement
+                            typeOfPublicKey, aas.SubmodelElement
                         ):
                             typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
@@ -1845,7 +1862,7 @@ class MaintenanceInstructions(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1853,7 +1870,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1869,49 +1886,51 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Phone(SubmodelElementCollection):
+                class Phone(aas.SubmodelElementCollection):
 
-                    class TelephoneNumber(MultiLanguageProperty):
+                    class TelephoneNumber(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"TelephoneNumber",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"complete telephone number to be called to reach a business partner"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO136#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1934,48 +1953,50 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TypeOfTelephone(Property):
+                    class TypeOfTelephone(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"TypeOfTelephone",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"characterization of a telephone according to its location or usage"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO137#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -1999,47 +2020,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class AvailableTime(MultiLanguageProperty):
+                    class AvailableTime(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"AvailableTime",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Specification of the available time window"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -2065,45 +2088,45 @@ class MaintenanceInstructions(Submodel):
                     def __init__(
                         self,
                         telephoneNumber: Optional[
-                            Union[LangStringSet, TelephoneNumber]
+                            Union[aas.LangStringSet, TelephoneNumber]
                         ] = None,
                         typeOfTelephone: Optional[Union[str, TypeOfTelephone]] = None,
                         availableTime: Optional[
-                            Union[LangStringSet, AvailableTime]
+                            Union[aas.LangStringSet, AvailableTime]
                         ] = None,
                         id_short: Optional[str] = r"Phone",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Phone number including type"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2114,19 +2137,19 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if telephoneNumber and not isinstance(
-                            telephoneNumber, SubmodelElement
+                            telephoneNumber, aas.SubmodelElement
                         ):
                             telephoneNumber = self.TelephoneNumber(telephoneNumber)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if typeOfTelephone and not isinstance(
-                            typeOfTelephone, SubmodelElement
+                            typeOfTelephone, aas.SubmodelElement
                         ):
                             typeOfTelephone = self.TypeOfTelephone(typeOfTelephone)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if availableTime and not isinstance(
-                            availableTime, SubmodelElement
+                            availableTime, aas.SubmodelElement
                         ):
                             availableTime = self.AvailableTime(availableTime)
 
@@ -2135,7 +2158,7 @@ class MaintenanceInstructions(Submodel):
                         for se_arg in [telephoneNumber, typeOfTelephone, availableTime]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -2143,7 +2166,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -2159,49 +2182,51 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Fax(SubmodelElementCollection):
+                class Fax(aas.SubmodelElementCollection):
 
-                    class FaxNumber(MultiLanguageProperty):
+                    class FaxNumber(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"FaxNumber",
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": "complete telephone number to be called to reach a business partner's fax machine"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO195#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -2224,48 +2249,50 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class TypeOfFaxNumber(Property):
+                    class TypeOfFaxNumber(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"TypeOfFaxNumber",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"characterization of the fax according its location or usage"
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO196#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -2291,41 +2318,41 @@ class MaintenanceInstructions(Submodel):
 
                     def __init__(
                         self,
-                        faxNumber: Optional[Union[LangStringSet, FaxNumber]] = None,
+                        faxNumber: Optional[Union[aas.LangStringSet, FaxNumber]] = None,
                         typeOfFaxNumber: Optional[Union[str, TypeOfFaxNumber]] = None,
                         id_short: Optional[str] = r"Fax",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Fax number including type"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAQ834#005",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2335,12 +2362,12 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if faxNumber and not isinstance(faxNumber, SubmodelElement):
+                        if faxNumber and not isinstance(faxNumber, aas.SubmodelElement):
                             faxNumber = self.FaxNumber(faxNumber)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if typeOfFaxNumber and not isinstance(
-                            typeOfFaxNumber, SubmodelElement
+                            typeOfFaxNumber, aas.SubmodelElement
                         ):
                             typeOfFaxNumber = self.TypeOfFaxNumber(typeOfFaxNumber)
 
@@ -2349,7 +2376,7 @@ class MaintenanceInstructions(Submodel):
                         for se_arg in [faxNumber, typeOfFaxNumber]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -2357,7 +2384,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -2373,45 +2400,45 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Street(MultiLanguageProperty):
+                class Street(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"Street",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"street name and house number"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO128#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2434,45 +2461,45 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Zipcode(MultiLanguageProperty):
+                class Zipcode(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"Zipcode",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"ZIP code of address"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO129#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2495,43 +2522,43 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class CityTown(MultiLanguageProperty):
+                class CityTown(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"CityTown",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(dict_={r"en": r"town or city"}),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(dict_={r"en": r"town or city"}),
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO132#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2554,47 +2581,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class NationalCode(MultiLanguageProperty):
+                class NationalCode(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"NationalCode",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r" Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO134#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2617,45 +2644,45 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class StateCounty(MultiLanguageProperty):
+                class StateCounty(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"StateCounty",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"federal state a part of a state"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO133#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2678,47 +2705,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class FurtherDetailsOfContact(MultiLanguageProperty):
+                class FurtherDetailsOfContact(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"FurtherDetailsOfContact",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"additional information of the contact person"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO210#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2743,63 +2770,69 @@ class MaintenanceInstructions(Submodel):
 
                 def __init__(
                     self,
-                    company: Optional[Union[LangStringSet, Company]] = None,
-                    department: Optional[Union[LangStringSet, Department]] = None,
+                    company: Optional[Union[aas.LangStringSet, Company]] = None,
+                    department: Optional[Union[aas.LangStringSet, Department]] = None,
                     roleOfContactPerson: Optional[
                         Union[str, RoleOfContactPerson]
                     ] = None,
-                    title: Optional[Union[LangStringSet, Title]] = None,
-                    academicTitle: Optional[Union[LangStringSet, AcademicTitle]] = None,
-                    nameOfContact: Optional[Union[LangStringSet, NameOfContact]] = None,
-                    firstName: Optional[Union[LangStringSet, FirstName]] = None,
-                    middleNames: Optional[Union[LangStringSet, MiddleNames]] = None,
+                    title: Optional[Union[aas.LangStringSet, Title]] = None,
+                    academicTitle: Optional[
+                        Union[aas.LangStringSet, AcademicTitle]
+                    ] = None,
+                    nameOfContact: Optional[
+                        Union[aas.LangStringSet, NameOfContact]
+                    ] = None,
+                    firstName: Optional[Union[aas.LangStringSet, FirstName]] = None,
+                    middleNames: Optional[Union[aas.LangStringSet, MiddleNames]] = None,
                     email: Optional[Email] = None,
                     phone: Optional[Phone] = None,
                     fax: Optional[Fax] = None,
-                    street: Optional[Union[LangStringSet, Street]] = None,
-                    zipcode: Optional[Union[LangStringSet, Zipcode]] = None,
-                    cityTown: Optional[Union[LangStringSet, CityTown]] = None,
-                    nationalCode: Optional[Union[LangStringSet, NationalCode]] = None,
-                    stateCounty: Optional[Union[LangStringSet, StateCounty]] = None,
+                    street: Optional[Union[aas.LangStringSet, Street]] = None,
+                    zipcode: Optional[Union[aas.LangStringSet, Zipcode]] = None,
+                    cityTown: Optional[Union[aas.LangStringSet, CityTown]] = None,
+                    nationalCode: Optional[
+                        Union[aas.LangStringSet, NationalCode]
+                    ] = None,
+                    stateCounty: Optional[Union[aas.LangStringSet, StateCounty]] = None,
                     furtherDetailsOfContact: Optional[
-                        Union[LangStringSet, FurtherDetailsOfContact]
+                        Union[aas.LangStringSet, FurtherDetailsOfContact]
                     ] = None,
                     id_short: Optional[str] = r"ContactForMaintenanceAuthorization",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Sammlung der Kontaktdaten, zwecks Freigabe welche vor einer Wartung  - Beispiel eine Leitwarte in einem Werk",
                             r"en": r"Collection of contact details for authorization before maintenance - example of a control room in a factory",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2809,64 +2842,70 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if company and not isinstance(company, SubmodelElement):
+                    if company and not isinstance(company, aas.SubmodelElement):
                         company = self.Company(company)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if department and not isinstance(department, SubmodelElement):
+                    if department and not isinstance(department, aas.SubmodelElement):
                         department = self.Department(department)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if roleOfContactPerson and not isinstance(
-                        roleOfContactPerson, SubmodelElement
+                        roleOfContactPerson, aas.SubmodelElement
                     ):
                         roleOfContactPerson = self.RoleOfContactPerson(
                             roleOfContactPerson
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if title and not isinstance(title, SubmodelElement):
+                    if title and not isinstance(title, aas.SubmodelElement):
                         title = self.Title(title)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if academicTitle and not isinstance(academicTitle, SubmodelElement):
+                    if academicTitle and not isinstance(
+                        academicTitle, aas.SubmodelElement
+                    ):
                         academicTitle = self.AcademicTitle(academicTitle)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if nameOfContact and not isinstance(nameOfContact, SubmodelElement):
+                    if nameOfContact and not isinstance(
+                        nameOfContact, aas.SubmodelElement
+                    ):
                         nameOfContact = self.NameOfContact(nameOfContact)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if firstName and not isinstance(firstName, SubmodelElement):
+                    if firstName and not isinstance(firstName, aas.SubmodelElement):
                         firstName = self.FirstName(firstName)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if middleNames and not isinstance(middleNames, SubmodelElement):
+                    if middleNames and not isinstance(middleNames, aas.SubmodelElement):
                         middleNames = self.MiddleNames(middleNames)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if street and not isinstance(street, SubmodelElement):
+                    if street and not isinstance(street, aas.SubmodelElement):
                         street = self.Street(street)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if zipcode and not isinstance(zipcode, SubmodelElement):
+                    if zipcode and not isinstance(zipcode, aas.SubmodelElement):
                         zipcode = self.Zipcode(zipcode)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if cityTown and not isinstance(cityTown, SubmodelElement):
+                    if cityTown and not isinstance(cityTown, aas.SubmodelElement):
                         cityTown = self.CityTown(cityTown)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if nationalCode and not isinstance(nationalCode, SubmodelElement):
+                    if nationalCode and not isinstance(
+                        nationalCode, aas.SubmodelElement
+                    ):
                         nationalCode = self.NationalCode(nationalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if stateCounty and not isinstance(stateCounty, SubmodelElement):
+                    if stateCounty and not isinstance(stateCounty, aas.SubmodelElement):
                         stateCounty = self.StateCounty(stateCounty)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if furtherDetailsOfContact and not isinstance(
-                        furtherDetailsOfContact, SubmodelElement
+                        furtherDetailsOfContact, aas.SubmodelElement
                     ):
                         furtherDetailsOfContact = self.FurtherDetailsOfContact(
                             furtherDetailsOfContact
@@ -2895,7 +2934,7 @@ class MaintenanceInstructions(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2903,7 +2942,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2919,48 +2958,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SafetyRegulationsToBeObserved(MultiLanguageProperty):
+            class SafetyRegulationsToBeObserved(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"SafetyRegulationsToBeObserved",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Sicherheitshinweise und Vorschriften, die bei der Wartung beachtet werden müssen",
                             r"en": r"Safety instructions and regulations that must be observed during maintenance",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/safetyregulationstobeobserved/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2987,10 +3026,10 @@ class MaintenanceInstructions(Submodel):
                 self,
                 maintenanceID: Optional[Union[str, MaintenanceID]] = None,
                 nameOfMaintenance: Optional[
-                    Union[LangStringSet, NameOfMaintenance]
+                    Union[aas.LangStringSet, NameOfMaintenance]
                 ] = None,
                 sourceOfMaintenanceInstructions: Optional[
-                    Union[LangStringSet, SourceOfMaintenanceInstructions]
+                    Union[aas.LangStringSet, SourceOfMaintenanceInstructions]
                 ] = None,
                 intervalSpecification: Optional[IntervalSpecification] = None,
                 alarmValues: Optional[AlarmValues] = None,
@@ -2998,48 +3037,50 @@ class MaintenanceInstructions(Submodel):
                     FlowChartOfMaintenanceSteps
                 ] = None,
                 relatedStandardsLawsRegulations: Optional[
-                    Iterable[Union[LangStringSet, RelatedStandardsLawsRegulations]]
+                    Iterable[Union[aas.LangStringSet, RelatedStandardsLawsRegulations]]
                 ] = None,
                 contactForMaintenanceAuthorization: Optional[
                     Iterable[ContactForMaintenanceAuthorization]
                 ] = None,
                 safetyRegulationsToBeObserved: Optional[
-                    Iterable[Union[LangStringSet, SafetyRegulationsToBeObserved]]
+                    Iterable[Union[aas.LangStringSet, SafetyRegulationsToBeObserved]]
                 ] = None,
                 id_short: Optional[str] = r"BasicMaintenanceInformation",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"de": r"Grundlegende Informationen für dieses Wartungsinterval",
                         r"en": r"Basic information for this maintenance interval",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/maintenanceinstructions/basicmaintenanceinformation/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3049,18 +3090,18 @@ class MaintenanceInstructions(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if maintenanceID and not isinstance(maintenanceID, SubmodelElement):
+                if maintenanceID and not isinstance(maintenanceID, aas.SubmodelElement):
                     maintenanceID = self.MaintenanceID(maintenanceID)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if nameOfMaintenance and not isinstance(
-                    nameOfMaintenance, SubmodelElement
+                    nameOfMaintenance, aas.SubmodelElement
                 ):
                     nameOfMaintenance = self.NameOfMaintenance(nameOfMaintenance)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if sourceOfMaintenanceInstructions and not isinstance(
-                    sourceOfMaintenanceInstructions, SubmodelElement
+                    sourceOfMaintenanceInstructions, aas.SubmodelElement
                 ):
                     sourceOfMaintenanceInstructions = (
                         self.SourceOfMaintenanceInstructions(
@@ -3073,7 +3114,7 @@ class MaintenanceInstructions(Submodel):
                     relatedStandardsLawsRegulations = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.RelatedStandardsLawsRegulations(i)
                         )
                         for i in relatedStandardsLawsRegulations
@@ -3084,7 +3125,7 @@ class MaintenanceInstructions(Submodel):
                     safetyRegulationsToBeObserved = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.SafetyRegulationsToBeObserved(i)
                         )
                         for i in safetyRegulationsToBeObserved
@@ -3105,7 +3146,7 @@ class MaintenanceInstructions(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3113,7 +3154,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3129,51 +3170,51 @@ class MaintenanceInstructions(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MaintenanceTechnicians(SubmodelElementCollection):
+        class MaintenanceTechnicians(aas.SubmodelElementCollection):
 
-            class NumberOfRequiredTechnicians(Property):
+            class NumberOfRequiredTechnicians(aas.Property):
 
                 def __init__(
                     self,
-                    value: Decimal,
+                    value: xsd.Decimal,
                     id_short: Optional[str] = r"NumberOfRequiredTechnicians",
-                    value_type: DataTypeDefXsd = Decimal,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Anzahl der für die Wartung benötigten Techniker",
                             r"en": r"Number of technicians needed for maintenance",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/numberofrequiredtechnicians/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -3197,48 +3238,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class RequiredQualification(MultiLanguageProperty):
+            class RequiredQualification(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"RequiredQualification",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Anforderung an die Mindestqualifikation der Techniker",
                             r"en": r"Requirement for the minimum qualification of technicians",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-BAF831#002",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -3261,51 +3302,51 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class EstimatedTotalWorkingTime(SubmodelElementCollection):
+            class EstimatedTotalWorkingTime(aas.SubmodelElementCollection):
 
-                class ValueTotalEstimatedWorkingTime(Property):
+                class ValueTotalEstimatedWorkingTime(aas.Property):
 
                     def __init__(
                         self,
-                        value: Decimal,
+                        value: xsd.Decimal,
                         id_short: Optional[str] = r"ValueTotalEstimatedWorkingTime",
-                        value_type: DataTypeDefXsd = Decimal,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Wert für die Dauer der gesamten Wartung",
                                 r"en": r"Value for the duration of the entire maintenance",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/valuetotalestimatedworkingtime/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3329,49 +3370,49 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class UnitValueTotalEstimatedWorkingTime(Property):
+                class UnitValueTotalEstimatedWorkingTime(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"UnitValueTotalEstimatedWorkingTime",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Einheit für die Dauer der gesamten Wartung - Beispiel Stunden, Tage, Wochen",
                                 r"en": r"Unit for the duration of the entire maintenance - example hours, days, weeks",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/unitvaluetotalestimatedworkingtime/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3398,47 +3439,47 @@ class MaintenanceInstructions(Submodel):
                 def __init__(
                     self,
                     valueTotalEstimatedWorkingTime: Union[
-                        Decimal, ValueTotalEstimatedWorkingTime
+                        xsd.Decimal, ValueTotalEstimatedWorkingTime
                     ],
                     unitValueTotalEstimatedWorkingTime: Union[
                         str, UnitValueTotalEstimatedWorkingTime
                     ],
                     id_short: Optional[str] = r"EstimatedTotalWorkingTime",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Sammlung, um den voraussichtlichen Zeitaufwand für die Durchführung der Wartung zu definieren",
                             r"en": r"Collection to define the expected time needed to perform the maintenance",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/estimatedtotalworkingtime/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -3449,7 +3490,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if valueTotalEstimatedWorkingTime and not isinstance(
-                        valueTotalEstimatedWorkingTime, SubmodelElement
+                        valueTotalEstimatedWorkingTime, aas.SubmodelElement
                     ):
                         valueTotalEstimatedWorkingTime = (
                             self.ValueTotalEstimatedWorkingTime(
@@ -3459,7 +3500,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if unitValueTotalEstimatedWorkingTime and not isinstance(
-                        unitValueTotalEstimatedWorkingTime, SubmodelElement
+                        unitValueTotalEstimatedWorkingTime, aas.SubmodelElement
                     ):
                         unitValueTotalEstimatedWorkingTime = (
                             self.UnitValueTotalEstimatedWorkingTime(
@@ -3475,7 +3516,7 @@ class MaintenanceInstructions(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3483,7 +3524,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3502,46 +3543,48 @@ class MaintenanceInstructions(Submodel):
             def __init__(
                 self,
                 numberOfRequiredTechnicians: Optional[
-                    Union[Decimal, NumberOfRequiredTechnicians]
+                    Union[xsd.Decimal, NumberOfRequiredTechnicians]
                 ] = None,
                 requiredQualification: Optional[
-                    Iterable[Union[LangStringSet, RequiredQualification]]
+                    Iterable[Union[aas.LangStringSet, RequiredQualification]]
                 ] = None,
                 estimatedTotalWorkingTime: Optional[EstimatedTotalWorkingTime] = None,
                 id_short: Optional[str] = r"MaintenanceTechnicians",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"de": r"Details zu den für die Wartung benötigten Technikern",
                         r"en": r"Details of the technicians required for maintenance",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancetechnicians/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3552,7 +3595,7 @@ class MaintenanceInstructions(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if numberOfRequiredTechnicians and not isinstance(
-                    numberOfRequiredTechnicians, SubmodelElement
+                    numberOfRequiredTechnicians, aas.SubmodelElement
                 ):
                     numberOfRequiredTechnicians = self.NumberOfRequiredTechnicians(
                         numberOfRequiredTechnicians
@@ -3563,7 +3606,7 @@ class MaintenanceInstructions(Submodel):
                     requiredQualification = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.RequiredQualification(i)
                         )
                         for i in requiredQualification
@@ -3578,7 +3621,7 @@ class MaintenanceInstructions(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3586,7 +3629,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3602,53 +3645,53 @@ class MaintenanceInstructions(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class ListMaintenanceSteps(SubmodelElementCollection):
+        class ListMaintenanceSteps(aas.SubmodelElementCollection):
 
-            class MaintenanceStep(SubmodelElementCollection):
+            class MaintenanceStep(aas.SubmodelElementCollection):
 
-                class MaintenanceStepID(Property):
+                class MaintenanceStepID(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"MaintenanceStepID",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"ID oder Nummer des Wartungsschritts für eine klare Strukturierung der Wartung",
                                 r"en": r"ID or number of the maintenance step for a clear structuring of the maintenance",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancestepid/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3672,48 +3715,48 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class MaintenanceStepName(MultiLanguageProperty):
+                class MaintenanceStepName(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"MaintenanceStepName",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Benennung des Wartungsschritt - Beispiel Wartungsstart",
                                 r"en": r"Naming of the maintenance step - example maintenance start",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancestepname/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3736,48 +3779,48 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocalizationDescription(MultiLanguageProperty):
+                class LocalizationDescription(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"LocalizationDescription",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Angabe zur Lokalisierung des Wartungsschritts",
                                 r"en": r"Indication of the localization of the maintenance.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/localizationdescription/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3800,49 +3843,49 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LinkSMMaintenanceComponentModuleMachine(ReferenceElement):
+                class LinkSMMaintenanceComponentModuleMachine(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[
                             str
                         ] = r"LinkSMMaintenanceComponentModuleMachine",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Link zu einem anderen SM Maintenance. Beispiel Link zum SM Maintenance eines Sensors in einer Maschine. Von hier kann somit in eine Wartungsinformation einer unterlagerten Komponente gesprungen werden.",
                                 r"en": r"Link to another SM Maintenance. Example Link to the SM Maintenance of a sensor in a machine. From here, it is possible to jump to the maintenance information of a subordinate component.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/linksmmaintenancecomponentmodulemachine/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3864,47 +3907,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LinkAASComponentModuleMachine(ReferenceElement):
+                class LinkAASComponentModuleMachine(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"LinkAASComponentModuleMachine",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Link zu einer unterlagerten AAS. Beispiel Link zur Sensors in einer Maschine. Von hier kann somit zu den Inforamtionen einer unterlagerten Komponente gesprungen werden.",
                                 r"en": r"Link to a subordinate AAS. Example Link to the sensors in a machine. From here you can jump to the information of a subordinate component.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/linkaascomponentmodulemachine/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3926,48 +3969,48 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class InstructionMaintenanceStep(MultiLanguageProperty):
+                class InstructionMaintenanceStep(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"InstructionMaintenanceStep",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Arbeitsanweisung/ Beschreibung eines Wartungsschritts als Alternative zu dem Sprung in eine Wartungsinformation von unterlagerten Komponenten.",
                                 r"en": r"Work instruction/ description of a maintenance step as an alternative to jumping to a maintenance information of subordinate components.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/instructionmaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3990,7 +4033,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class RelatedDocumentOrFileMaintenanceStep(File):
+                class RelatedDocumentOrFileMaintenanceStep(aas.File):
 
                     def __init__(
                         self,
@@ -3999,41 +4042,41 @@ class MaintenanceInstructions(Submodel):
                             str
                         ] = r"RelatedDocumentOrFileMaintenanceStep",
                         content_type: Optional[str] = r"application/pdf",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Verknüpfung von unterstützenden Dokumenten die zu diesem Wartungsschritt gehören",
                                 r"en": r"Linking of supporting documents that belong to this maintenance step.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/relateddocumentorfilemaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4056,47 +4099,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class SparePartForMaintenanceStep(ReferenceElement):
+                class SparePartForMaintenanceStep(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"SparePartForMaintenanceStep",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Link auf ein in diesem Wartungsschritt benötigtes Ersatzteils. Eine Liste aller benötigten Ersatzteile für eine Wartung befindet sich in der SMC SparePartList des SM Maintenance",
                                 r"en": r"Link to a spare part required in this maintenance step. A list of all the spare parts required for maintenance can be found in the SMC SparePartList of the SM Maintenance",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/sparepartformaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4118,51 +4161,51 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class QuantityOfSparePartForMaintenanceStep(Property):
+                class QuantityOfSparePartForMaintenanceStep(aas.Property):
 
                     def __init__(
                         self,
-                        value: Decimal,
+                        value: xsd.Decimal,
                         id_short: Optional[
                             str
                         ] = r"QuantityOfSparePartForMaintenanceStep",
-                        value_type: DataTypeDefXsd = Decimal,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Nummer des in diesem Wartungsschritt benötigten Ersatzteils.",
                                 r"en": r"Number of spare part required in this maintenance step.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityofsparepartformaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4186,47 +4229,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ConsumablesForMaintenanceStep(ReferenceElement):
+                class ConsumablesForMaintenanceStep(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"ConsumablesForMaintenanceStep",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Link auf ein benötigtes Verbrauchsmaterial.",
                                 r"en": r"Link to a required consumable.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/consumablesformaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4248,51 +4291,51 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class QuantityOfConsumablesForMaintenanceStep(Property):
+                class QuantityOfConsumablesForMaintenanceStep(aas.Property):
 
                     def __init__(
                         self,
-                        value: Decimal,
+                        value: xsd.Decimal,
                         id_short: Optional[
                             str
                         ] = r"QuantityOfConsumablesForMaintenanceStep",
-                        value_type: DataTypeDefXsd = Decimal,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Angabe zur benötigten Menge des unter ConsumablesForMaintenanceStep referenzierten Verbrauchmaterials für diesen Wartungsschritt",
                                 r"en": r"Indication of the required number of consumables referenced under ConsumablesForMaintenanceStep for this maintenance step.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityofconsumablesformaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4316,7 +4359,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class UnitForQuantityOfConsumablesForMaintenanceStep(Property):
+                class UnitForQuantityOfConsumablesForMaintenanceStep(aas.Property):
 
                     def __init__(
                         self,
@@ -4324,43 +4367,43 @@ class MaintenanceInstructions(Submodel):
                         id_short: Optional[
                             str
                         ] = r"UnitForQuantityOfConsumablesForMaintenanceStep",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Einheit der benötigten Anzahl des unter ConsumablesForMaintenanceStep referenzierten Verbrauchmaterials für diesen Wartungsschritt. Beispiele: Blatt, Gramm, Milliliter",
                                 r"en": r"Unit of the required number of consumables referenced under ConsumablesForMaintenanceStep for this maintenance step. Examples: Sheet, gram, millilitre",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/unitforquantityofconsumablesformaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4384,47 +4427,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ToolsForMaintenanceStep(ReferenceElement):
+                class ToolsForMaintenanceStep(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"ToolsForMaintenanceStep",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Verweis auf ein benötigtes Werkzeug. Eine Liste aller benötigten Ersatzteile für eine Wartung befindet sich in der SMC MaintenanceToolList des SM Maintenance",
                                 r"en": r"Reference to a required tool. A list of all required spare parts for a maintenance can be found in the SMC MaintenanceToolList of the SM Maintenance",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/toolsformaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4446,49 +4489,49 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class QuantityOfToolsForMaintenanceStep(Property):
+                class QuantityOfToolsForMaintenanceStep(aas.Property):
 
                     def __init__(
                         self,
-                        value: Decimal,
+                        value: xsd.Decimal,
                         id_short: Optional[str] = r"QuantityOfToolsForMaintenanceStep",
-                        value_type: DataTypeDefXsd = Decimal,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Angabe zur benötigten Anzahl des unter ToolsForMaintenanceStep referenzierten Werkzeugs für diesen Wartungsschritt",
                                 r"en": r"Indication of the required number of the tool referenced under ToolsForMaintenanceStep for this maintenance step.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityoftoolsformaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4512,49 +4555,49 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class DocumentationSignatureMandatory(Property):
+                class DocumentationSignatureMandatory(aas.Property):
 
                     def __init__(
                         self,
                         value: bool,
                         id_short: Optional[str] = r"DocumentationSignatureMandatory",
-                        value_type: DataTypeDefXsd = bool,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = bool,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Vorgabe, ob dieser Wartungsschritt dokumentiert werden muss. O entspricht keine Dokumentation notwendig, 1 entspricht Dokumentation notwendig",
                                 r"en": r"Specifies whether this maintenance step must be documented. O corresponds to no documentation necessary, 1 corresponds to documentation necessary",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/documentationsignaturemandatory/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4578,53 +4621,57 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class EstimatedDurationTimeMaintenanceStep(SubmodelElementCollection):
+                class EstimatedDurationTimeMaintenanceStep(
+                    aas.SubmodelElementCollection
+                ):
 
-                    class ValueEstimatedDurationTimeMaintenanceStep(Property):
+                    class ValueEstimatedDurationTimeMaintenanceStep(aas.Property):
 
                         def __init__(
                             self,
-                            value: Decimal,
+                            value: xsd.Decimal,
                             id_short: Optional[
                                 str
                             ] = r"ValueEstimatedDurationTimeMaintenanceStep",
-                            value_type: DataTypeDefXsd = Decimal,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Angabe der Dauer für diesen Wartungsschritt (Wert)",
                                     r"en": r"Indication of the duration for this maintenance step (value)",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/valueestimateddurationtimemaintenancestep/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -4648,7 +4695,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class UnitEstimatedDurationTimeMaintenanceStep(Property):
+                    class UnitEstimatedDurationTimeMaintenanceStep(aas.Property):
 
                         def __init__(
                             self,
@@ -4656,43 +4703,45 @@ class MaintenanceInstructions(Submodel):
                             id_short: Optional[
                                 str
                             ] = r"UnitEstimatedDurationTimeMaintenanceStep",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Zeiteinheit für den Wert der Dauer für diesen wArtungsschritt - Beispiel Stunden, Tage, Wochen",
                                     r"en": r"Time unit for the value of the duration for this wArting step - example hours, days, weeks",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/unitestimateddurationtimemaintenancestep/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -4719,7 +4768,9 @@ class MaintenanceInstructions(Submodel):
                     def __init__(
                         self,
                         valueEstimatedDurationTimeMaintenanceStep: Optional[
-                            Union[Decimal, ValueEstimatedDurationTimeMaintenanceStep]
+                            Union[
+                                xsd.Decimal, ValueEstimatedDurationTimeMaintenanceStep
+                            ]
                         ] = None,
                         unitEstimatedDurationTimeMaintenanceStep: Optional[
                             Union[str, UnitEstimatedDurationTimeMaintenanceStep]
@@ -4727,41 +4778,41 @@ class MaintenanceInstructions(Submodel):
                         id_short: Optional[
                             str
                         ] = r"EstimatedDurationTimeMaintenanceStep",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Geschätzte Dauer für diesen Wartungsschritt",
                                 r"en": r"Estimated duration for this maintenance step",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/estimateddurationtimemaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4775,7 +4826,7 @@ class MaintenanceInstructions(Submodel):
                             valueEstimatedDurationTimeMaintenanceStep
                             and not isinstance(
                                 valueEstimatedDurationTimeMaintenanceStep,
-                                SubmodelElement,
+                                aas.SubmodelElement,
                             )
                         ):
                             valueEstimatedDurationTimeMaintenanceStep = (
@@ -4786,7 +4837,8 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if unitEstimatedDurationTimeMaintenanceStep and not isinstance(
-                            unitEstimatedDurationTimeMaintenanceStep, SubmodelElement
+                            unitEstimatedDurationTimeMaintenanceStep,
+                            aas.SubmodelElement,
                         ):
                             unitEstimatedDurationTimeMaintenanceStep = (
                                 self.UnitEstimatedDurationTimeMaintenanceStep(
@@ -4802,7 +4854,7 @@ class MaintenanceInstructions(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -4810,7 +4862,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -4826,48 +4878,48 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ConditionForNextMaintenanceStep(MultiLanguageProperty):
+                class ConditionForNextMaintenanceStep(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ConditionForNextMaintenanceStep",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Bedinung für den nächsten Wartungsschritt ",
                                 r"en": r"Condition for the next maintenance step ",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/conditionfornextmaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4890,47 +4942,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class NextMaintenanceStep(ReferenceElement):
+                class NextMaintenanceStep(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"NextMaintenanceStep",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Referenz auf den folgenden Wartungsschritt, wenn die Bedingung erfüllt ist.",
                                 r"en": r"Reference to the following maintenance step if the condition is fulfilled.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/nextmaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -4952,48 +5004,48 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ConditionForAlternativeNextStep(MultiLanguageProperty):
+                class ConditionForAlternativeNextStep(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ConditionForAlternativeNextStep",
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Alternativer nächster Schritt, wenn die vorherige Bedingung nicht erfüllt ist. ",
                                 r"en": r"Alternative next step if the previous condition is not fulfilled. ",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/conditionforalternativenextstep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -5016,47 +5068,47 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class AlternativeNextMaintenanceStep(ReferenceElement):
+                class AlternativeNextMaintenanceStep(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"AlternativeNextMaintenanceStep",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Referenz auf den folgenden Wartungsschritt, wenn die Bedingung nicht erfüllt ist.",
                                 r"en": r"Reference to the following maintenance step if the condition is not fulfilled.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/alternativenextmaintenancestep/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToMany",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -5078,49 +5130,49 @@ class MaintenanceInstructions(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class EndOfMaintenance(Property):
+                class EndOfMaintenance(aas.Property):
 
                     def __init__(
                         self,
                         value: bool,
                         id_short: Optional[str] = r"EndOfMaintenance",
-                        value_type: DataTypeDefXsd = bool,
-                        value_id: Optional[Reference] = None,
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        value_type: aas.DataTypeDefXsd = bool,
+                        value_id: Optional[aas.Reference] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Beendigung der Wartung, wenn dies der letzte Wartungsschritt war. 1 = Ende der Wartung erreicht",
                                 r"en": r"End of maintenance if this was the last maintenance step. 1 = End of maintenance reached",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/endofmaintenance/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -5148,45 +5200,45 @@ class MaintenanceInstructions(Submodel):
                     self,
                     maintenanceStepID: Optional[Union[str, MaintenanceStepID]] = None,
                     maintenanceStepName: Optional[
-                        Union[LangStringSet, MaintenanceStepName]
+                        Union[aas.LangStringSet, MaintenanceStepName]
                     ] = None,
                     localizationDescription: Optional[
-                        Union[LangStringSet, LocalizationDescription]
+                        Union[aas.LangStringSet, LocalizationDescription]
                     ] = None,
                     linkSMMaintenanceComponentModuleMachine: Optional[
-                        Union[Reference, LinkSMMaintenanceComponentModuleMachine]
+                        Union[aas.Reference, LinkSMMaintenanceComponentModuleMachine]
                     ] = None,
                     linkAASComponentModuleMachine: Optional[
-                        Union[Reference, LinkAASComponentModuleMachine]
+                        Union[aas.Reference, LinkAASComponentModuleMachine]
                     ] = None,
                     instructionMaintenanceStep: Optional[
-                        Union[LangStringSet, InstructionMaintenanceStep]
+                        Union[aas.LangStringSet, InstructionMaintenanceStep]
                     ] = None,
                     relatedDocumentOrFileMaintenanceStep: Optional[
                         Iterable[RelatedDocumentOrFileMaintenanceStep]
                     ] = None,
                     sparePartForMaintenanceStep: Optional[
-                        Iterable[Union[Reference, SparePartForMaintenanceStep]]
+                        Iterable[Union[aas.Reference, SparePartForMaintenanceStep]]
                     ] = None,
                     quantityOfSparePartForMaintenanceStep: Optional[
-                        Union[Decimal, QuantityOfSparePartForMaintenanceStep]
+                        Union[xsd.Decimal, QuantityOfSparePartForMaintenanceStep]
                     ] = None,
                     consumablesForMaintenanceStep: Optional[
-                        Iterable[Union[Reference, ConsumablesForMaintenanceStep]]
+                        Iterable[Union[aas.Reference, ConsumablesForMaintenanceStep]]
                     ] = None,
                     quantityOfConsumablesForMaintenanceStep: Optional[
                         Iterable[
-                            Union[Decimal, QuantityOfConsumablesForMaintenanceStep]
+                            Union[xsd.Decimal, QuantityOfConsumablesForMaintenanceStep]
                         ]
                     ] = None,
                     unitForQuantityOfConsumablesForMaintenanceStep: Optional[
                         Union[str, UnitForQuantityOfConsumablesForMaintenanceStep]
                     ] = None,
                     toolsForMaintenanceStep: Optional[
-                        Iterable[Union[Reference, ToolsForMaintenanceStep]]
+                        Iterable[Union[aas.Reference, ToolsForMaintenanceStep]]
                     ] = None,
                     quantityOfToolsForMaintenanceStep: Optional[
-                        Union[Decimal, QuantityOfToolsForMaintenanceStep]
+                        Union[xsd.Decimal, QuantityOfToolsForMaintenanceStep]
                     ] = None,
                     documentationSignatureMandatory: Optional[
                         Union[bool, DocumentationSignatureMandatory]
@@ -5195,54 +5247,56 @@ class MaintenanceInstructions(Submodel):
                         EstimatedDurationTimeMaintenanceStep
                     ] = None,
                     conditionForNextMaintenanceStep: Optional[
-                        Union[LangStringSet, ConditionForNextMaintenanceStep]
+                        Union[aas.LangStringSet, ConditionForNextMaintenanceStep]
                     ] = None,
                     nextMaintenanceStep: Optional[
-                        Union[Reference, NextMaintenanceStep]
+                        Union[aas.Reference, NextMaintenanceStep]
                     ] = None,
                     conditionForAlternativeNextStep: Optional[
-                        Iterable[Union[LangStringSet, ConditionForAlternativeNextStep]]
+                        Iterable[
+                            Union[aas.LangStringSet, ConditionForAlternativeNextStep]
+                        ]
                     ] = None,
                     alternativeNextMaintenanceStep: Optional[
-                        Iterable[Union[Reference, AlternativeNextMaintenanceStep]]
+                        Iterable[Union[aas.Reference, AlternativeNextMaintenanceStep]]
                     ] = None,
                     endOfMaintenance: Optional[Union[bool, EndOfMaintenance]] = None,
                     id_short: Optional[str] = r"MaintenanceStep",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Sammlung aller Details und Informationen zu einem Wartungsschritt ",
                             r"en": r"Collection of all details and information about a maintenance site",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancestep/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -5253,13 +5307,13 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if maintenanceStepID and not isinstance(
-                        maintenanceStepID, SubmodelElement
+                        maintenanceStepID, aas.SubmodelElement
                     ):
                         maintenanceStepID = self.MaintenanceStepID(maintenanceStepID)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if maintenanceStepName and not isinstance(
-                        maintenanceStepName, SubmodelElement
+                        maintenanceStepName, aas.SubmodelElement
                     ):
                         maintenanceStepName = self.MaintenanceStepName(
                             maintenanceStepName
@@ -5267,7 +5321,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if localizationDescription and not isinstance(
-                        localizationDescription, SubmodelElement
+                        localizationDescription, aas.SubmodelElement
                     ):
                         localizationDescription = self.LocalizationDescription(
                             localizationDescription
@@ -5275,7 +5329,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if linkSMMaintenanceComponentModuleMachine and not isinstance(
-                        linkSMMaintenanceComponentModuleMachine, SubmodelElement
+                        linkSMMaintenanceComponentModuleMachine, aas.SubmodelElement
                     ):
                         linkSMMaintenanceComponentModuleMachine = (
                             self.LinkSMMaintenanceComponentModuleMachine(
@@ -5285,7 +5339,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if linkAASComponentModuleMachine and not isinstance(
-                        linkAASComponentModuleMachine, SubmodelElement
+                        linkAASComponentModuleMachine, aas.SubmodelElement
                     ):
                         linkAASComponentModuleMachine = (
                             self.LinkAASComponentModuleMachine(
@@ -5295,7 +5349,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if instructionMaintenanceStep and not isinstance(
-                        instructionMaintenanceStep, SubmodelElement
+                        instructionMaintenanceStep, aas.SubmodelElement
                     ):
                         instructionMaintenanceStep = self.InstructionMaintenanceStep(
                             instructionMaintenanceStep
@@ -5306,7 +5360,7 @@ class MaintenanceInstructions(Submodel):
                         sparePartForMaintenanceStep = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.SparePartForMaintenanceStep(i)
                             )
                             for i in sparePartForMaintenanceStep
@@ -5314,7 +5368,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if quantityOfSparePartForMaintenanceStep and not isinstance(
-                        quantityOfSparePartForMaintenanceStep, SubmodelElement
+                        quantityOfSparePartForMaintenanceStep, aas.SubmodelElement
                     ):
                         quantityOfSparePartForMaintenanceStep = (
                             self.QuantityOfSparePartForMaintenanceStep(
@@ -5327,7 +5381,7 @@ class MaintenanceInstructions(Submodel):
                         consumablesForMaintenanceStep = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.ConsumablesForMaintenanceStep(i)
                             )
                             for i in consumablesForMaintenanceStep
@@ -5338,7 +5392,7 @@ class MaintenanceInstructions(Submodel):
                         quantityOfConsumablesForMaintenanceStep = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.QuantityOfConsumablesForMaintenanceStep(i)
                             )
                             for i in quantityOfConsumablesForMaintenanceStep
@@ -5349,7 +5403,7 @@ class MaintenanceInstructions(Submodel):
                         unitForQuantityOfConsumablesForMaintenanceStep
                         and not isinstance(
                             unitForQuantityOfConsumablesForMaintenanceStep,
-                            SubmodelElement,
+                            aas.SubmodelElement,
                         )
                     ):
                         unitForQuantityOfConsumablesForMaintenanceStep = (
@@ -5363,7 +5417,7 @@ class MaintenanceInstructions(Submodel):
                         toolsForMaintenanceStep = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.ToolsForMaintenanceStep(i)
                             )
                             for i in toolsForMaintenanceStep
@@ -5371,7 +5425,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if quantityOfToolsForMaintenanceStep and not isinstance(
-                        quantityOfToolsForMaintenanceStep, SubmodelElement
+                        quantityOfToolsForMaintenanceStep, aas.SubmodelElement
                     ):
                         quantityOfToolsForMaintenanceStep = (
                             self.QuantityOfToolsForMaintenanceStep(
@@ -5381,7 +5435,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if documentationSignatureMandatory and not isinstance(
-                        documentationSignatureMandatory, SubmodelElement
+                        documentationSignatureMandatory, aas.SubmodelElement
                     ):
                         documentationSignatureMandatory = (
                             self.DocumentationSignatureMandatory(
@@ -5391,7 +5445,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if conditionForNextMaintenanceStep and not isinstance(
-                        conditionForNextMaintenanceStep, SubmodelElement
+                        conditionForNextMaintenanceStep, aas.SubmodelElement
                     ):
                         conditionForNextMaintenanceStep = (
                             self.ConditionForNextMaintenanceStep(
@@ -5401,7 +5455,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if nextMaintenanceStep and not isinstance(
-                        nextMaintenanceStep, SubmodelElement
+                        nextMaintenanceStep, aas.SubmodelElement
                     ):
                         nextMaintenanceStep = self.NextMaintenanceStep(
                             nextMaintenanceStep
@@ -5412,7 +5466,7 @@ class MaintenanceInstructions(Submodel):
                         conditionForAlternativeNextStep = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.ConditionForAlternativeNextStep(i)
                             )
                             for i in conditionForAlternativeNextStep
@@ -5423,7 +5477,7 @@ class MaintenanceInstructions(Submodel):
                         alternativeNextMaintenanceStep = [
                             (
                                 i
-                                if isinstance(i, SubmodelElement)
+                                if isinstance(i, aas.SubmodelElement)
                                 else self.AlternativeNextMaintenanceStep(i)
                             )
                             for i in alternativeNextMaintenanceStep
@@ -5431,7 +5485,7 @@ class MaintenanceInstructions(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if endOfMaintenance and not isinstance(
-                        endOfMaintenance, SubmodelElement
+                        endOfMaintenance, aas.SubmodelElement
                     ):
                         endOfMaintenance = self.EndOfMaintenance(endOfMaintenance)
 
@@ -5462,7 +5516,7 @@ class MaintenanceInstructions(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -5470,7 +5524,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -5490,39 +5544,41 @@ class MaintenanceInstructions(Submodel):
                 self,
                 maintenanceStep: Optional[Iterable[MaintenanceStep]] = None,
                 id_short: Optional[str] = r"ListMaintenanceSteps",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"de": r"Auflistung der einzelnen Wartungsschritte inkl. aller benötigten Details je Wartungsschritt",
                         r"en": r"Listing of the individual maintenance steps incl. all required details per maintenance step",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/maintenanceinstructions/listmaintenancesteps/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -5536,7 +5592,7 @@ class MaintenanceInstructions(Submodel):
                 for se_arg in [maintenanceStep]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -5544,7 +5600,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -5566,37 +5622,41 @@ class MaintenanceInstructions(Submodel):
             maintenanceTechnicians: Optional[MaintenanceTechnicians] = None,
             listMaintenanceSteps: Optional[ListMaintenanceSteps] = None,
             id_short: Optional[str] = r"MaintenanceInstructionsForSpecificInterval",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"de": r"Wartungsdetails für eine spezifischen Zeitinterval - Beispiel Wartung nach 6 Monaten",
                     r"en": r"Collection that includes all the details of a maintenance interval. ",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceinstructionsforspecificinterval/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToMany",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -5614,7 +5674,7 @@ class MaintenanceInstructions(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -5622,7 +5682,7 @@ class MaintenanceInstructions(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -5638,53 +5698,53 @@ class MaintenanceInstructions(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class MaintenanceToolList(SubmodelElementList):
+    class MaintenanceToolList(aas.SubmodelElementList):
 
-        class Maintenancetoollist_item(SubmodelElementCollection):
+        class Maintenancetoollist_item(aas.SubmodelElementCollection):
 
-            class ToolID(Property):
+            class ToolID(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ToolID",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"ID des Werkzeugs",
                             r"en": r"An ID can be assigned to uniquely identify a tool.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/toolid/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -5708,48 +5768,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ToolName(MultiLanguageProperty):
+            class ToolName(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"ToolName",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Ein Name für das Werkzeug kann gespeichert werden, um das Werkzeug für Menschen verständlicher zu machen.",
                             r"en": r"A name for the tool can be stored to make the tool more understandable for humans.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/toolname/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -5772,55 +5832,57 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CollectionMaxQuantityOfTool(SubmodelElementCollection):
+            class CollectionMaxQuantityOfTool(aas.SubmodelElementCollection):
 
                 class CollectionMaxQuantityOfToolForSpecificInterval(
-                    SubmodelElementCollection
+                    aas.SubmodelElementCollection
                 ):
 
-                    class MaxQuantityOfTool(Property):
+                    class MaxQuantityOfTool(aas.Property):
 
                         def __init__(
                             self,
-                            value: Decimal,
+                            value: xsd.Decimal,
                             id_short: Optional[str] = r"MaxQuantityOfTool",
-                            value_type: DataTypeDefXsd = Decimal,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Benötigte Gesamtanzahl des Werkzeugs für einen Wartungsinterval",
                                     r"en": r"Total number of tools required for specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/maxquantityoftool/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -5844,47 +5906,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReferenceToMaintenanceID(ReferenceElement):
+                    class ReferenceToMaintenanceID(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"ReferenceToMaintenanceID",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
                                     r"en": r"Reference to ID of specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/referencetomaintenanceid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -5906,47 +5970,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReferenceNameOfMaintenance(ReferenceElement):
+                    class ReferenceNameOfMaintenance(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"ReferenceNameOfMaintenance",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
                                     r"en": r"Reference to ID of specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/referencenameofmaintenance/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -5971,52 +6037,52 @@ class MaintenanceInstructions(Submodel):
                     def __init__(
                         self,
                         maxQuantityOfTool: Optional[
-                            Union[Decimal, MaxQuantityOfTool]
+                            Union[xsd.Decimal, MaxQuantityOfTool]
                         ] = None,
                         referenceToMaintenanceID: Optional[
-                            Union[Reference, ReferenceToMaintenanceID]
+                            Union[aas.Reference, ReferenceToMaintenanceID]
                         ] = None,
                         referenceNameOfMaintenance: Optional[
-                            Union[Reference, ReferenceNameOfMaintenance]
+                            Union[aas.Reference, ReferenceNameOfMaintenance]
                         ] = None,
                         id_short: Optional[
                             str
                         ] = r"CollectionMaxQuantityOfToolForSpecificInterval",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Kollektion Benötige Anzahl des Werkzeugs für ein spezifisches Wartungsintervall.",
                                 r"en": r"Collection Total quantity of tools required for one specific maintenance intervals.",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionmaxquantityoftoolforspecificinterval/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -6027,7 +6093,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if maxQuantityOfTool and not isinstance(
-                            maxQuantityOfTool, SubmodelElement
+                            maxQuantityOfTool, aas.SubmodelElement
                         ):
                             maxQuantityOfTool = self.MaxQuantityOfTool(
                                 maxQuantityOfTool
@@ -6035,7 +6101,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if referenceToMaintenanceID and not isinstance(
-                            referenceToMaintenanceID, SubmodelElement
+                            referenceToMaintenanceID, aas.SubmodelElement
                         ):
                             referenceToMaintenanceID = self.ReferenceToMaintenanceID(
                                 referenceToMaintenanceID
@@ -6043,7 +6109,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if referenceNameOfMaintenance and not isinstance(
-                            referenceNameOfMaintenance, SubmodelElement
+                            referenceNameOfMaintenance, aas.SubmodelElement
                         ):
                             referenceNameOfMaintenance = (
                                 self.ReferenceNameOfMaintenance(
@@ -6060,7 +6126,7 @@ class MaintenanceInstructions(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -6068,7 +6134,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -6090,41 +6156,41 @@ class MaintenanceInstructions(Submodel):
                         CollectionMaxQuantityOfToolForSpecificInterval
                     ] = None,
                     id_short: Optional[str] = r"CollectionMaxQuantityOfTool",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Liste der Werkzeuge, die für alle Wartungsintervalle einer Anlage benötigt werden. Die Menge richtet sich nach den verschiedenen Wartungsintervallen. Jede Menge pro Wartungsintervall wird in einer eigenen SMC beschrieben/definiert.",
                             r"en": r"List of tools required for all maintenance intervals of an asset. The quantity is devied by the different maintenance intervals. Each quantity per maintenance interval is described/ defined in an own SMC.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionmaxquantityoftool/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -6138,7 +6204,7 @@ class MaintenanceInstructions(Submodel):
                     for se_arg in [collectionMaxQuantityOfToolForSpecificInterval]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -6146,7 +6212,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -6162,48 +6228,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CompanyNameToolSupplier(MultiLanguageProperty):
+            class CompanyNameToolSupplier(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"CompanyNameToolSupplier",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Name des Werkzeugherstellers",
                             r"en": r"Name of the tool manufacturer",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/companynametoolsupplier/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -6226,40 +6292,40 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OrderCodeToolOfManufacturer(Property):
+            class OrderCodeToolOfManufacturer(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"OrderCodeToolOfManufacturer",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Eine vom Hersteller vergebene eindeutige Kombination aus Zahlen und Buchstaben, die zur Identifizierung des Werkzeugs bei der Bestellung verwendet wird",
                             r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the tool for ordering",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0112/2///61987#ABA950#008",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO227#004",
                                 ),
                             ),
@@ -6267,18 +6333,18 @@ class MaintenanceInstructions(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -6302,48 +6368,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ToolDescription(MultiLanguageProperty):
+            class ToolDescription(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"ToolDescription",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Detaillierte Beschreibung des Werkzeugs",
                             r"en": r"Detailed description of the tool",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/tooldescription/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -6366,48 +6432,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressOfAdditionalLinkTool(Property):
+            class AddressOfAdditionalLinkTool(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressOfAdditionalLinkTool",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Web site address where information about the tool is given, e.g. link to shop"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAQ326#004",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -6434,56 +6500,58 @@ class MaintenanceInstructions(Submodel):
             def __init__(
                 self,
                 toolID: Optional[Union[str, ToolID]] = None,
-                toolName: Optional[Union[LangStringSet, ToolName]] = None,
+                toolName: Optional[Union[aas.LangStringSet, ToolName]] = None,
                 collectionMaxQuantityOfTool: Optional[
                     CollectionMaxQuantityOfTool
                 ] = None,
                 companyNameToolSupplier: Optional[
-                    Union[LangStringSet, CompanyNameToolSupplier]
+                    Union[aas.LangStringSet, CompanyNameToolSupplier]
                 ] = None,
                 orderCodeToolOfManufacturer: Optional[
                     Union[str, OrderCodeToolOfManufacturer]
                 ] = None,
                 toolDescription: Optional[
-                    Iterable[Union[LangStringSet, ToolDescription]]
+                    Iterable[Union[aas.LangStringSet, ToolDescription]]
                 ] = None,
                 addressOfAdditionalLinkTool: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkTool]]
                 ] = None,
                 id_short: Optional[str] = r"maintenancetoollist_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Werkzeug, das für die Wartung benötigt wird. Dazu gehören der Name, die Bestellnummer, der Hersteller und eine Beschreibung.",
                         r"en": r"The collection contains all the information and details about a tool needed for maintenance. This includes the name, order number, manufacturer and a description.",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancetool/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -6493,16 +6561,16 @@ class MaintenanceInstructions(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if toolID and not isinstance(toolID, SubmodelElement):
+                if toolID and not isinstance(toolID, aas.SubmodelElement):
                     toolID = self.ToolID(toolID)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if toolName and not isinstance(toolName, SubmodelElement):
+                if toolName and not isinstance(toolName, aas.SubmodelElement):
                     toolName = self.ToolName(toolName)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if companyNameToolSupplier and not isinstance(
-                    companyNameToolSupplier, SubmodelElement
+                    companyNameToolSupplier, aas.SubmodelElement
                 ):
                     companyNameToolSupplier = self.CompanyNameToolSupplier(
                         companyNameToolSupplier
@@ -6510,7 +6578,7 @@ class MaintenanceInstructions(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if orderCodeToolOfManufacturer and not isinstance(
-                    orderCodeToolOfManufacturer, SubmodelElement
+                    orderCodeToolOfManufacturer, aas.SubmodelElement
                 ):
                     orderCodeToolOfManufacturer = self.OrderCodeToolOfManufacturer(
                         orderCodeToolOfManufacturer
@@ -6519,7 +6587,11 @@ class MaintenanceInstructions(Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if toolDescription:
                     toolDescription = [
-                        i if isinstance(i, SubmodelElement) else self.ToolDescription(i)
+                        (
+                            i
+                            if isinstance(i, aas.SubmodelElement)
+                            else self.ToolDescription(i)
+                        )
                         for i in toolDescription
                     ]
 
@@ -6528,7 +6600,7 @@ class MaintenanceInstructions(Submodel):
                     addressOfAdditionalLinkTool = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.AddressOfAdditionalLinkTool(i)
                         )
                         for i in addressOfAdditionalLinkTool
@@ -6547,7 +6619,7 @@ class MaintenanceInstructions(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -6555,7 +6627,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -6577,41 +6649,45 @@ class MaintenanceInstructions(Submodel):
                 Iterable[Maintenancetoollist_item]
             ] = None,
             id_short: Optional[str] = r"MaintenanceToolList",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"de": r"Gesamtliste der benötigten Werkzeuge für alle Wartungsintervalle eines Assets",
                     r"en": r"Total list of tools required for all maintenance intervals of an asset",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancetoollist/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -6625,7 +6701,7 @@ class MaintenanceInstructions(Submodel):
             for se_arg in [maintenancetoollist_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -6633,7 +6709,7 @@ class MaintenanceInstructions(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -6661,7 +6737,7 @@ class MaintenanceInstructions(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6677,7 +6753,7 @@ class MaintenanceInstructions(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -6688,11 +6764,11 @@ class MaintenanceInstructions(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -6708,7 +6784,7 @@ class MaintenanceInstructions(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -6719,52 +6795,52 @@ class MaintenanceInstructions(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class MaintenanceConsumablesList(SubmodelElementList):
+    class MaintenanceConsumablesList(aas.SubmodelElementList):
 
-        class Maintenanceconsumableslist_item(SubmodelElementCollection):
+        class Maintenanceconsumableslist_item(aas.SubmodelElementCollection):
 
-            class ConsumableID(Property):
+            class ConsumableID(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ConsumableID",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"An ID can be assigned to uniquely identify a consumable, e.g. the globalAssetId of the tool."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/consumableid/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -6788,47 +6864,47 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ConsumableName(MultiLanguageProperty):
+            class ConsumableName(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"ConsumableName",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"A name for the consumable can be stored to name the consumable more understandable for humans."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/consumablename/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -6851,55 +6927,57 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CollectionQuantityOfConsumable(SubmodelElementCollection):
+            class CollectionQuantityOfConsumable(aas.SubmodelElementCollection):
 
                 class QuantityOfConsumableForSpecificInterval(
-                    SubmodelElementCollection
+                    aas.SubmodelElementCollection
                 ):
 
-                    class QuantityOfConsumable(Property):
+                    class QuantityOfConsumable(aas.Property):
 
                         def __init__(
                             self,
-                            value: Decimal,
+                            value: xsd.Decimal,
                             id_short: Optional[str] = r"QuantityOfConsumable",
-                            value_type: DataTypeDefXsd = Decimal,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Benötigte Gesamtanzahl des Verbrauchsmaterials für einen Wartungsinterval",
                                     r"en": r"Total number of consumble required for specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityofconsumable/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -6923,47 +7001,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReferenceNameOfMaintenance(ReferenceElement):
+                    class ReferenceNameOfMaintenance(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"ReferenceNameOfMaintenance",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Referenz zu Namen eines spezifischen Wartungsintervals",
                                     r"en": r"Referenceto name of specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/referencenameofmanintainance/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -6985,47 +7065,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReferenceToMaintenanceID(ReferenceElement):
+                    class ReferenceToMaintenanceID(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"ReferenceToMaintenanceID",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
                                     r"en": r"Reference to ID of specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/referencetomaintenanceid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -7050,52 +7132,52 @@ class MaintenanceInstructions(Submodel):
                     def __init__(
                         self,
                         quantityOfConsumable: Optional[
-                            Union[Decimal, QuantityOfConsumable]
+                            Union[xsd.Decimal, QuantityOfConsumable]
                         ] = None,
                         referenceNameOfMaintenance: Optional[
-                            Union[Reference, ReferenceNameOfMaintenance]
+                            Union[aas.Reference, ReferenceNameOfMaintenance]
                         ] = None,
                         referenceToMaintenanceID: Optional[
-                            Union[Reference, ReferenceToMaintenanceID]
+                            Union[aas.Reference, ReferenceToMaintenanceID]
                         ] = None,
                         id_short: Optional[
                             str
                         ] = r"QuantityOfConsumableForSpecificInterval",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Kollektion benötige Anzahl des Verbrauchmaterials für ein spezifisches Wartungsintervall",
                                 r"en": r"Collection total quantity of consumable required for a specific maintenance intervals",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityofconsumableforspecificinterval/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -7106,7 +7188,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if quantityOfConsumable and not isinstance(
-                            quantityOfConsumable, SubmodelElement
+                            quantityOfConsumable, aas.SubmodelElement
                         ):
                             quantityOfConsumable = self.QuantityOfConsumable(
                                 quantityOfConsumable
@@ -7114,7 +7196,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if referenceNameOfMaintenance and not isinstance(
-                            referenceNameOfMaintenance, SubmodelElement
+                            referenceNameOfMaintenance, aas.SubmodelElement
                         ):
                             referenceNameOfMaintenance = (
                                 self.ReferenceNameOfMaintenance(
@@ -7124,7 +7206,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if referenceToMaintenanceID and not isinstance(
-                            referenceToMaintenanceID, SubmodelElement
+                            referenceToMaintenanceID, aas.SubmodelElement
                         ):
                             referenceToMaintenanceID = self.ReferenceToMaintenanceID(
                                 referenceToMaintenanceID
@@ -7139,7 +7221,7 @@ class MaintenanceInstructions(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -7147,7 +7229,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -7169,41 +7251,41 @@ class MaintenanceInstructions(Submodel):
                         QuantityOfConsumableForSpecificInterval
                     ] = None,
                     id_short: Optional[str] = r"CollectionQuantityOfConsumable",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Sammelmenge des für die Wartungsintervalle benötigten Verbrauchsmaterials.",
                             r"en": r"Collection quantity of consumable required for maintenance intervals.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionquantityofconsumables/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7217,7 +7299,7 @@ class MaintenanceInstructions(Submodel):
                     for se_arg in [quantityOfConsumableForSpecificInterval]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -7225,7 +7307,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -7241,49 +7323,49 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class UnitMaxQuantityOfConsumable(Property):
+            class UnitMaxQuantityOfConsumable(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"UnitMaxQuantityOfConsumable",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Einheit zur benötigten Gesamtmenge des Verbauchsmaterials. Beispiel: Blatt, Milliliter, Gramm, ...",
                             r"en": r"Unit for the total quantity of consumable material required. Example: sheet, millilitre, gram, ...",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/unitmaxquantityofconsumable/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7307,48 +7389,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CompanyNameSupplierConsumable(MultiLanguageProperty):
+            class CompanyNameSupplierConsumable(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"CompanyNameSupplierConsumable",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Name des Verbrauchsmaterialherstellers z.B. Max Mustermann GmbH",
                             r"en": r"Name of the consumables manufacturer e.g. Max Mustermann GmbH",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/companynamesupplierconsumable/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7371,39 +7453,39 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OrderCodeConsumableOfManufacturer(Property):
+            class OrderCodeConsumableOfManufacturer(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"OrderCodeConsumableOfManufacturer",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the consumable for ordering"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0112/2///61987#ABA950#008",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-AAO227#004",
                                 ),
                             ),
@@ -7411,18 +7493,18 @@ class MaintenanceInstructions(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7446,48 +7528,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ConsumableDescription(MultiLanguageProperty):
+            class ConsumableDescription(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"ConsumableDescription",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Beschreibung des Verbauchsmaterials. Beispiel: Reinigungspapier; Farbe blau; Blattgröße 380x 380 mm doppellagig.",
                             r"en": r"Description of the consumables. Example: Cleaning paper; colour blue; sheet size 380x 380 mm double-ply.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/consumabledescription/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7510,48 +7592,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class DisposalInstructionsForConsumable(MultiLanguageProperty):
+            class DisposalInstructionsForConsumable(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"DisposalInstructionsForConsumable",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Angabe zur fachgerechten Entsorgung des Verbauchsmaterials.",
                             r"en": r"Information on the proper disposal of the consumables.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/disposalinstructionsforconsumable/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7574,48 +7656,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressOfAdditionalLinkConsumable(Property):
+            class AddressOfAdditionalLinkConsumable(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressOfAdditionalLinkConsumable",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAQ326#004",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -7642,7 +7724,9 @@ class MaintenanceInstructions(Submodel):
             def __init__(
                 self,
                 consumableID: Optional[Union[str, ConsumableID]] = None,
-                consumableName: Optional[Union[LangStringSet, ConsumableName]] = None,
+                consumableName: Optional[
+                    Union[aas.LangStringSet, ConsumableName]
+                ] = None,
                 collectionQuantityOfConsumable: Optional[
                     CollectionQuantityOfConsumable
                 ] = None,
@@ -7650,54 +7734,58 @@ class MaintenanceInstructions(Submodel):
                     Union[str, UnitMaxQuantityOfConsumable]
                 ] = None,
                 companyNameSupplierConsumable: Optional[
-                    Union[LangStringSet, CompanyNameSupplierConsumable]
+                    Union[aas.LangStringSet, CompanyNameSupplierConsumable]
                 ] = None,
                 orderCodeConsumableOfManufacturer: Optional[
                     Union[str, OrderCodeConsumableOfManufacturer]
                 ] = None,
                 consumableDescription: Optional[
-                    Iterable[Union[LangStringSet, ConsumableDescription]]
+                    Iterable[Union[aas.LangStringSet, ConsumableDescription]]
                 ] = None,
                 disposalInstructionsForConsumable: Optional[
-                    Iterable[Union[LangStringSet, DisposalInstructionsForConsumable]]
+                    Iterable[
+                        Union[aas.LangStringSet, DisposalInstructionsForConsumable]
+                    ]
                 ] = None,
                 addressOfAdditionalLinkConsumable: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkConsumable]]
                 ] = None,
                 id_short: Optional[str] = r"maintenanceconsumableslist_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
                         r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceconsumable/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -7707,16 +7795,18 @@ class MaintenanceInstructions(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if consumableID and not isinstance(consumableID, SubmodelElement):
+                if consumableID and not isinstance(consumableID, aas.SubmodelElement):
                     consumableID = self.ConsumableID(consumableID)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if consumableName and not isinstance(consumableName, SubmodelElement):
+                if consumableName and not isinstance(
+                    consumableName, aas.SubmodelElement
+                ):
                     consumableName = self.ConsumableName(consumableName)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if unitMaxQuantityOfConsumable and not isinstance(
-                    unitMaxQuantityOfConsumable, SubmodelElement
+                    unitMaxQuantityOfConsumable, aas.SubmodelElement
                 ):
                     unitMaxQuantityOfConsumable = self.UnitMaxQuantityOfConsumable(
                         unitMaxQuantityOfConsumable
@@ -7724,7 +7814,7 @@ class MaintenanceInstructions(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if companyNameSupplierConsumable and not isinstance(
-                    companyNameSupplierConsumable, SubmodelElement
+                    companyNameSupplierConsumable, aas.SubmodelElement
                 ):
                     companyNameSupplierConsumable = self.CompanyNameSupplierConsumable(
                         companyNameSupplierConsumable
@@ -7732,7 +7822,7 @@ class MaintenanceInstructions(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if orderCodeConsumableOfManufacturer and not isinstance(
-                    orderCodeConsumableOfManufacturer, SubmodelElement
+                    orderCodeConsumableOfManufacturer, aas.SubmodelElement
                 ):
                     orderCodeConsumableOfManufacturer = (
                         self.OrderCodeConsumableOfManufacturer(
@@ -7745,7 +7835,7 @@ class MaintenanceInstructions(Submodel):
                     consumableDescription = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.ConsumableDescription(i)
                         )
                         for i in consumableDescription
@@ -7756,7 +7846,7 @@ class MaintenanceInstructions(Submodel):
                     disposalInstructionsForConsumable = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.DisposalInstructionsForConsumable(i)
                         )
                         for i in disposalInstructionsForConsumable
@@ -7767,7 +7857,7 @@ class MaintenanceInstructions(Submodel):
                     addressOfAdditionalLinkConsumable = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.AddressOfAdditionalLinkConsumable(i)
                         )
                         for i in addressOfAdditionalLinkConsumable
@@ -7788,7 +7878,7 @@ class MaintenanceInstructions(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -7796,7 +7886,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -7818,41 +7908,45 @@ class MaintenanceInstructions(Submodel):
                 Iterable[Maintenanceconsumableslist_item]
             ] = None,
             id_short: Optional[str] = r"MaintenanceConsumablesList",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"de": r"Gesamtliste der benötigten Verbrauchsmaterialien für alle Wartungsintervalle",
                     r"en": r"Total list of consumables required for all maintenance intervals of an asset. Each consumable is described/defined in its own SMC’s",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenanceconsumableslist/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -7866,7 +7960,7 @@ class MaintenanceInstructions(Submodel):
             for se_arg in [maintenanceconsumableslist_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -7874,7 +7968,7 @@ class MaintenanceInstructions(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -7902,7 +7996,7 @@ class MaintenanceInstructions(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -7918,7 +8012,7 @@ class MaintenanceInstructions(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -7929,11 +8023,11 @@ class MaintenanceInstructions(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -7949,7 +8043,7 @@ class MaintenanceInstructions(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -7960,52 +8054,52 @@ class MaintenanceInstructions(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class MaintenanceSparePartList(SubmodelElementList):
+    class MaintenanceSparePartList(aas.SubmodelElementList):
 
-        class Maintenancesparepartlist_item(SubmodelElementCollection):
+        class Maintenancesparepartlist_item(aas.SubmodelElementCollection):
 
-            class SparePartID(Property):
+            class SparePartID(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"SparePartID",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"An ID can be assigned to uniquely identify a spare part, e.g. the globalAssetId of the spare part."
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/sparepartid/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8029,48 +8123,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SparePartName(MultiLanguageProperty):
+            class SparePartName(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"SparePartName",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Eine Bezeichnung des Ersatzteils kann gespeichert werden, um das Ersatzteil für den Menschen verständlicher zu benennen.",
                             r"en": r"A designation of the spare part can be stored to name the spare part more understandable for people.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/sparepartname/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8093,55 +8187,57 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CollectionQuantityOfSparePart(SubmodelElementCollection):
+            class CollectionQuantityOfSparePart(aas.SubmodelElementCollection):
 
                 class CollectionQuantityOfSparepartForSpecificInterval(
-                    SubmodelElementCollection
+                    aas.SubmodelElementCollection
                 ):
 
-                    class QuantityOfSparePart(Property):
+                    class QuantityOfSparePart(aas.Property):
 
                         def __init__(
                             self,
-                            value: Decimal,
+                            value: xsd.Decimal,
                             id_short: Optional[str] = r"QuantityOfSparePart",
-                            value_type: DataTypeDefXsd = Decimal,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Decimal,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Benötigte Menge des Ersatzteils für einen spezifischen Wartungsintervall",
                                     r"en": r"Quantity of spare part required for specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/quantityofsparepart/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -8165,47 +8261,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReferenceNameOfMaintenance(ReferenceElement):
+                    class ReferenceNameOfMaintenance(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"ReferenceNameOfMaintenance",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Referenz zu Namen eines spezifischen Wartungsintervals",
                                     r"en": r"Referenceto name of specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/referencenameofmaintenance/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -8227,47 +8325,49 @@ class MaintenanceInstructions(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ReferenceToMaintenanceID(ReferenceElement):
+                    class ReferenceToMaintenanceID(aas.ReferenceElement):
 
                         def __init__(
                             self,
-                            value: Reference,
+                            value: aas.Reference,
                             id_short: Optional[str] = r"ReferenceToMaintenanceID",
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
                                     r"en": r"Reference to ID of specific maintenance interval",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/maintenanceinstructions/referencetomaintenanceid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
@@ -8292,52 +8392,52 @@ class MaintenanceInstructions(Submodel):
                     def __init__(
                         self,
                         quantityOfSparePart: Optional[
-                            Union[Decimal, QuantityOfSparePart]
+                            Union[xsd.Decimal, QuantityOfSparePart]
                         ] = None,
                         referenceNameOfMaintenance: Optional[
-                            Union[Reference, ReferenceNameOfMaintenance]
+                            Union[aas.Reference, ReferenceNameOfMaintenance]
                         ] = None,
                         referenceToMaintenanceID: Optional[
-                            Union[Reference, ReferenceToMaintenanceID]
+                            Union[aas.Reference, ReferenceToMaintenanceID]
                         ] = None,
                         id_short: Optional[
                             str
                         ] = r"CollectionQuantityOfSparepartForSpecificInterval",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Kollektion benötige Anzahl der Ersatzteile für ein spezifisches Wartungsintervall",
                                 r"en": r"Collection quantity of spare parts required for a specific maintenance interval",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionquantityofsparepartforspecificinterval/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -8348,7 +8448,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if quantityOfSparePart and not isinstance(
-                            quantityOfSparePart, SubmodelElement
+                            quantityOfSparePart, aas.SubmodelElement
                         ):
                             quantityOfSparePart = self.QuantityOfSparePart(
                                 quantityOfSparePart
@@ -8356,7 +8456,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if referenceNameOfMaintenance and not isinstance(
-                            referenceNameOfMaintenance, SubmodelElement
+                            referenceNameOfMaintenance, aas.SubmodelElement
                         ):
                             referenceNameOfMaintenance = (
                                 self.ReferenceNameOfMaintenance(
@@ -8366,7 +8466,7 @@ class MaintenanceInstructions(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if referenceToMaintenanceID and not isinstance(
-                            referenceToMaintenanceID, SubmodelElement
+                            referenceToMaintenanceID, aas.SubmodelElement
                         ):
                             referenceToMaintenanceID = self.ReferenceToMaintenanceID(
                                 referenceToMaintenanceID
@@ -8381,7 +8481,7 @@ class MaintenanceInstructions(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -8389,7 +8489,7 @@ class MaintenanceInstructions(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -8411,41 +8511,41 @@ class MaintenanceInstructions(Submodel):
                         CollectionQuantityOfSparepartForSpecificInterval
                     ] = None,
                     id_short: Optional[str] = r"CollectionQuantityOfSparePart",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Kollektion benötige Anzahl des Ersatzteils für die Wartungsintervalle.",
                             r"en": r"Collection quantity of spare part required for maintenance intervals.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/collectionquantityofsparepart/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8459,7 +8559,7 @@ class MaintenanceInstructions(Submodel):
                     for se_arg in [collectionQuantityOfSparepartForSpecificInterval]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -8467,7 +8567,7 @@ class MaintenanceInstructions(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -8483,48 +8583,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CompanyNameSupplierSparePart(MultiLanguageProperty):
+            class CompanyNameSupplierSparePart(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"CompanyNameSupplierSparePart",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Name des Ersatzteilherstellers z.B. Max Mustermann GmbH",
                             r"en": r"Name of the spare parts manufacturer e.g. Max Mustermann GmbH",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/companynamesuppliersparepart/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8547,48 +8647,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OrderCodeSparePartOfManufacturer(Property):
+            class OrderCodeSparePartOfManufacturer(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"OrderCodeSparePartOfManufacturer",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the spare part for ordering"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0112/2///61987#ABA950#008",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8612,48 +8712,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SparePartDescription(MultiLanguageProperty):
+            class SparePartDescription(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"SparePartDescription",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Beschreibung des Ersatzteils.",
                             r"en": r"Description of the spare part.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/sparepartdescription/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8676,48 +8776,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class DisposalInstructionsForSparePart(MultiLanguageProperty):
+            class DisposalInstructionsForSparePart(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"DisposalInstructionsForSparePart",
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"de": r"Angabe zur fachgerechten Entsorgung des Ersatzteils.",
                             r"en": r"Information on the proper disposal of the spare part.",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/maintenanceinstructions/disposalinstructionsforsparepart/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8740,48 +8840,48 @@ class MaintenanceInstructions(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressOfAdditionalLinkSparePart(Property):
+            class AddressOfAdditionalLinkSparePart(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressOfAdditionalLinkSparePart",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAQ326#004",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -8808,59 +8908,61 @@ class MaintenanceInstructions(Submodel):
             def __init__(
                 self,
                 sparePartID: Optional[Union[str, SparePartID]] = None,
-                sparePartName: Optional[Union[LangStringSet, SparePartName]] = None,
+                sparePartName: Optional[Union[aas.LangStringSet, SparePartName]] = None,
                 collectionQuantityOfSparePart: Optional[
                     CollectionQuantityOfSparePart
                 ] = None,
                 companyNameSupplierSparePart: Optional[
-                    Union[LangStringSet, CompanyNameSupplierSparePart]
+                    Union[aas.LangStringSet, CompanyNameSupplierSparePart]
                 ] = None,
                 orderCodeSparePartOfManufacturer: Optional[
                     Union[str, OrderCodeSparePartOfManufacturer]
                 ] = None,
                 sparePartDescription: Optional[
-                    Iterable[Union[LangStringSet, SparePartDescription]]
+                    Iterable[Union[aas.LangStringSet, SparePartDescription]]
                 ] = None,
                 disposalInstructionsForSparePart: Optional[
-                    Iterable[Union[LangStringSet, DisposalInstructionsForSparePart]]
+                    Iterable[Union[aas.LangStringSet, DisposalInstructionsForSparePart]]
                 ] = None,
                 addressOfAdditionalLinkSparePart: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkSparePart]]
                 ] = None,
                 id_short: Optional[str] = r"maintenancesparepartlist_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
                         r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"htthttps://admin-shell.io/idta/maintenanceinstructions/maintenancesparepart/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -8870,16 +8972,16 @@ class MaintenanceInstructions(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sparePartID and not isinstance(sparePartID, SubmodelElement):
+                if sparePartID and not isinstance(sparePartID, aas.SubmodelElement):
                     sparePartID = self.SparePartID(sparePartID)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if sparePartName and not isinstance(sparePartName, SubmodelElement):
+                if sparePartName and not isinstance(sparePartName, aas.SubmodelElement):
                     sparePartName = self.SparePartName(sparePartName)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if companyNameSupplierSparePart and not isinstance(
-                    companyNameSupplierSparePart, SubmodelElement
+                    companyNameSupplierSparePart, aas.SubmodelElement
                 ):
                     companyNameSupplierSparePart = self.CompanyNameSupplierSparePart(
                         companyNameSupplierSparePart
@@ -8887,7 +8989,7 @@ class MaintenanceInstructions(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if orderCodeSparePartOfManufacturer and not isinstance(
-                    orderCodeSparePartOfManufacturer, SubmodelElement
+                    orderCodeSparePartOfManufacturer, aas.SubmodelElement
                 ):
                     orderCodeSparePartOfManufacturer = (
                         self.OrderCodeSparePartOfManufacturer(
@@ -8900,7 +9002,7 @@ class MaintenanceInstructions(Submodel):
                     sparePartDescription = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.SparePartDescription(i)
                         )
                         for i in sparePartDescription
@@ -8911,7 +9013,7 @@ class MaintenanceInstructions(Submodel):
                     disposalInstructionsForSparePart = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.DisposalInstructionsForSparePart(i)
                         )
                         for i in disposalInstructionsForSparePart
@@ -8922,7 +9024,7 @@ class MaintenanceInstructions(Submodel):
                     addressOfAdditionalLinkSparePart = [
                         (
                             i
-                            if isinstance(i, SubmodelElement)
+                            if isinstance(i, aas.SubmodelElement)
                             else self.AddressOfAdditionalLinkSparePart(i)
                         )
                         for i in addressOfAdditionalLinkSparePart
@@ -8942,7 +9044,7 @@ class MaintenanceInstructions(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -8950,7 +9052,7 @@ class MaintenanceInstructions(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -8972,41 +9074,45 @@ class MaintenanceInstructions(Submodel):
                 Iterable[Maintenancesparepartlist_item]
             ] = None,
             id_short: Optional[str] = r"MaintenanceSparePartList",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"de": r"Gesamtliste der benötigten Ersatzteile für alle Wartungsintervalle",
                     r"en": r"Total list of required spare parts for all maintenance intervals of an asset. Each spare part is described/ defined in its own SMC.",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/maintenanceinstructions/maintenancesparepartlist/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -9020,7 +9126,7 @@ class MaintenanceInstructions(Submodel):
             for se_arg in [maintenancesparepartlist_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -9028,7 +9134,7 @@ class MaintenanceInstructions(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -9056,7 +9162,7 @@ class MaintenanceInstructions(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -9072,7 +9178,7 @@ class MaintenanceInstructions(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -9083,11 +9189,11 @@ class MaintenanceInstructions(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -9103,7 +9209,7 @@ class MaintenanceInstructions(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -9125,36 +9231,38 @@ class MaintenanceInstructions(Submodel):
         maintenanceConsumablesList: Optional[MaintenanceConsumablesList] = None,
         maintenanceSparePartList: Optional[MaintenanceSparePartList] = None,
         id_short: Optional[str] = r"MaintenanceInstructions",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"de": r"Submodell zur Übermittlung aller wartungsrelevanten Informatationen",
                 r"en": r"The Submodel defines a set of maintenance instructions and additional details, files or documents related to the maintenance of an asset",
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell-io/idta-02018",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/SubmodelTemplate/MaintenanceInstructions/1/0",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -9165,7 +9273,7 @@ class MaintenanceInstructions(Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
         if maintenanceFreeAsset and not isinstance(
-            maintenanceFreeAsset, SubmodelElement
+            maintenanceFreeAsset, aas.SubmodelElement
         ):
             maintenanceFreeAsset = self.MaintenanceFreeAsset(maintenanceFreeAsset)
 
@@ -9180,7 +9288,7 @@ class MaintenanceInstructions(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -9188,7 +9296,7 @@ class MaintenanceInstructions(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

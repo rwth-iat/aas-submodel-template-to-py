@@ -1,58 +1,59 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class HandoverDocumentation(Submodel):
+class HandoverDocumentation(aas.Submodel):
 
-    class Documents(SubmodelElementList):
+    class Documents(aas.SubmodelElementList):
 
-        class Documents_item(SubmodelElementCollection):
+        class Documents_item(aas.SubmodelElementCollection):
 
-            class DocumentClassifications(SubmodelElementList):
+            class DocumentClassifications(aas.SubmodelElementList):
 
-                class Documentclassifications_item(SubmodelElementCollection):
+                class Documentclassifications_item(aas.SubmodelElementCollection):
 
-                    class ClassName(MultiLanguageProperty):
+                    class ClassName(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"ClassName",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"class name", r"de": r"Klassenname"}
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABJ219#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABJ219-002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#className",
                                         ),
                                     ),
@@ -60,22 +61,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -83,16 +84,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Certificates, declarations",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -119,49 +120,51 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ClassId(Property):
+                    class ClassId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ClassId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"class ID",
                                     r"de": r"Klassenidentifikator",
                                 }
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABH996#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABH996-003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classId",
                                         ),
                                     ),
@@ -169,22 +172,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -192,16 +195,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"02-04",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -229,49 +232,51 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ClassificationSystem(Property):
+                    class ClassificationSystem(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ClassificationSystem",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"classification system",
                                     r"de": r"Klassifizierungssystem",
                                 }
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABH997#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABH997-003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classificationSystem",
                                         ),
                                     ),
@@ -279,22 +284,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -302,16 +307,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"VDI2770:2020",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -341,13 +346,13 @@ class HandoverDocumentation(Submodel):
 
                     def __init__(
                         self,
-                        className: Union[LangStringSet, ClassName],
+                        className: Union[aas.LangStringSet, ClassName],
                         classId: Union[str, ClassId],
                         classificationSystem: Union[str, ClassificationSystem],
                         id_short: Optional[str] = r"documentclassifications_item",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"document classification",
                                 r"de": r"Dokumentklassifikation",
@@ -355,41 +360,41 @@ class HandoverDocumentation(Submodel):
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Set of information for describing the classification of the Document according to a ClassificationSystem"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABI502#003/0173-1#01-AHF581#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI502#003~0/0173-1#01-AHF581#003",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://api.eclass-cdp.com/0173-1-02-ABI502-003/0173-1-01-AHF581-003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            ExternalReference(
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentClassification",
                                     ),
                                 ),
@@ -397,22 +402,22 @@ class HandoverDocumentation(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -426,16 +431,16 @@ class HandoverDocumentation(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if className and not isinstance(className, SubmodelElement):
+                        if className and not isinstance(className, aas.SubmodelElement):
                             className = self.ClassName(className)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if classId and not isinstance(classId, SubmodelElement):
+                        if classId and not isinstance(classId, aas.SubmodelElement):
                             classId = self.ClassId(classId)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if classificationSystem and not isinstance(
-                            classificationSystem, SubmodelElement
+                            classificationSystem, aas.SubmodelElement
                         ):
                             classificationSystem = self.ClassificationSystem(
                                 classificationSystem
@@ -446,7 +451,7 @@ class HandoverDocumentation(Submodel):
                         for se_arg in [className, classId, classificationSystem]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -454,7 +459,7 @@ class HandoverDocumentation(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -476,53 +481,55 @@ class HandoverDocumentation(Submodel):
                         Documentclassifications_item
                     ],
                     id_short: Optional[str] = r"DocumentClassifications",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI502#003/0173-1#01-AHF581#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"document classifications",
                             r"de": r"Dokumentklassifikationen",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI502#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://api.eclass-cdp.com/0173-1-02-ABI502-003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        ExternalReference(
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentClassifications",
                                 ),
                             ),
@@ -530,22 +537,22 @@ class HandoverDocumentation(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -563,7 +570,7 @@ class HandoverDocumentation(Submodel):
                     for se_arg in [documentclassifications_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -571,7 +578,7 @@ class HandoverDocumentation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -599,7 +606,7 @@ class HandoverDocumentation(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -615,7 +622,7 @@ class HandoverDocumentation(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -626,11 +633,11 @@ class HandoverDocumentation(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -649,7 +656,7 @@ class HandoverDocumentation(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -660,53 +667,55 @@ class HandoverDocumentation(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class DocumentIds(SubmodelElementList):
+            class DocumentIds(aas.SubmodelElementList):
 
-                class Documentids_item(SubmodelElementCollection):
+                class Documentids_item(aas.SubmodelElementCollection):
 
-                    class DocumentDomainId(Property):
+                    class DocumentDomainId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"DocumentDomainId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"document domain ID",
                                     r"de": r"Document Domain Identifikator",
                                 }
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABH994#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABH994-003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentDomainId",
                                         ),
                                     ),
@@ -714,22 +723,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -737,16 +746,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"https://domain.com/...",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -774,49 +783,51 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DocumentIdentifier(Property):
+                    class DocumentIdentifier(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"DocumentIdentifier",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"document identifier",
                                     r"de": r"Dokumentennummer",
                                 }
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAO099#004",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-AAO099-004",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier",
                                         ),
                                     ),
@@ -824,22 +835,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -847,16 +858,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"XF90-884",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -884,49 +895,51 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DocumentIsPrimary(Property):
+                    class DocumentIsPrimary(aas.Property):
 
                         def __init__(
                             self,
                             value: bool,
                             id_short: Optional[str] = r"DocumentIsPrimary",
-                            value_type: DataTypeDefXsd = bool,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = bool,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"document is primary",
                                     r"de": r"Dokument ist primär",
                                 }
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABH995#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABH995-003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIsPrimary",
                                         ),
                                     ),
@@ -934,22 +947,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -957,16 +970,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"true",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -1003,8 +1016,8 @@ class HandoverDocumentation(Submodel):
                         ] = None,
                         id_short: Optional[str] = r"documentids_item",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"document ID",
                                 r"de": r"Dokumentidentifikator",
@@ -1012,41 +1025,41 @@ class HandoverDocumentation(Submodel):
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABI501#003/0173-1#01-AHF580#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI501#003~0/0173-1#01-AHF580#003",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://api.eclass-cdp.com/0173-1-02-ABI501-003/0173-1-01-AHF580-003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            ExternalReference(
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId",
                                     ),
                                 ),
@@ -1054,22 +1067,22 @@ class HandoverDocumentation(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1084,13 +1097,13 @@ class HandoverDocumentation(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if documentDomainId and not isinstance(
-                            documentDomainId, SubmodelElement
+                            documentDomainId, aas.SubmodelElement
                         ):
                             documentDomainId = self.DocumentDomainId(documentDomainId)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if documentIdentifier and not isinstance(
-                            documentIdentifier, SubmodelElement
+                            documentIdentifier, aas.SubmodelElement
                         ):
                             documentIdentifier = self.DocumentIdentifier(
                                 documentIdentifier
@@ -1098,7 +1111,7 @@ class HandoverDocumentation(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if documentIsPrimary and not isinstance(
-                            documentIsPrimary, SubmodelElement
+                            documentIsPrimary, aas.SubmodelElement
                         ):
                             documentIsPrimary = self.DocumentIsPrimary(
                                 documentIsPrimary
@@ -1113,7 +1126,7 @@ class HandoverDocumentation(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1121,7 +1134,7 @@ class HandoverDocumentation(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1141,53 +1154,55 @@ class HandoverDocumentation(Submodel):
                     self,
                     documentids_items: Iterable[Documentids_item],
                     id_short: Optional[str] = r"DocumentIds",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI501#003/0173-1#01-AHF580#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"document IDs",
                             r"de": r"Dokumentidentifikatoren",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI501#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://api.eclass-cdp.com/0173-1-02-ABI501-003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        ExternalReference(
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIds",
                                 ),
                             ),
@@ -1195,22 +1210,22 @@ class HandoverDocumentation(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1228,7 +1243,7 @@ class HandoverDocumentation(Submodel):
                     for se_arg in [documentids_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1236,7 +1251,7 @@ class HandoverDocumentation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1264,7 +1279,7 @@ class HandoverDocumentation(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1280,7 +1295,7 @@ class HandoverDocumentation(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -1291,11 +1306,11 @@ class HandoverDocumentation(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -1314,7 +1329,7 @@ class HandoverDocumentation(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -1325,51 +1340,55 @@ class HandoverDocumentation(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class DocumentVersions(SubmodelElementList):
+            class DocumentVersions(aas.SubmodelElementList):
 
-                class Documentversions_item(SubmodelElementCollection):
+                class Documentversions_item(aas.SubmodelElementCollection):
 
-                    class Language(SubmodelElementList):
+                    class Language(aas.SubmodelElementList):
 
-                        class Language_item(Property):
+                        class Language_item(aas.Property):
 
                             def __init__(
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"language_item",
-                                value_type: DataTypeDefXsd = str,
-                                value_id: Optional[Reference] = ExternalReference(
+                                value_type: aas.DataTypeDefXsd = str,
+                                value_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#07-AAS045#003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"language", r"de": r"en (Englisch)"}
                                 ),
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-AAN468#008",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (
-                                    ExternalReference(
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (
+                                    aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Locale",
                                             ),
                                         ),
@@ -1377,22 +1396,22 @@ class HandoverDocumentation(Submodel):
                                     ),
                                 ),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"OneToMany",
                                             value_id=None,
-                                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1400,16 +1419,16 @@ class HandoverDocumentation(Submodel):
                                             ),
                                             supplemental_semantic_id=(),
                                         ),
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"ExampleValue",
                                             value_type=str,
                                             value=r"en",
                                             value_id=None,
-                                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                     ),
                                                 ),
@@ -1441,42 +1460,44 @@ class HandoverDocumentation(Submodel):
                             self,
                             language_items: Iterable[Union[str, Language_item]],
                             id_short: Optional[str] = r"Language",
-                            type_value_list_element: SubmodelElement = Property,
-                            semantic_id_list_element: Optional[Reference] = None,
-                            value_type_list_element: Optional[DataTypeDefXsd] = str,
+                            type_value_list_element: aas.SubmodelElement = aas.Property,
+                            semantic_id_list_element: Optional[aas.Reference] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                             order_relevant: bool = True,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Language", r"de": r"Sprache"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAN468#008",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-AAN468-008",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#languages",
                                         ),
                                     ),
@@ -1484,22 +1505,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1517,7 +1538,7 @@ class HandoverDocumentation(Submodel):
                                 language_items = [
                                     (
                                         i
-                                        if isinstance(i, SubmodelElement)
+                                        if isinstance(i, aas.SubmodelElement)
                                         else self.Language_item(i)
                                     )
                                     for i in language_items
@@ -1528,7 +1549,7 @@ class HandoverDocumentation(Submodel):
                             for se_arg in [language_items]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -1536,7 +1557,7 @@ class HandoverDocumentation(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -1564,7 +1585,7 @@ class HandoverDocumentation(Submodel):
 
                             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                             if not isinstance(new, self.type_value_list_element):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     108,
                                     "All first level elements must be of the type specified in "
                                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1580,7 +1601,7 @@ class HandoverDocumentation(Submodel):
                                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                 # Not really a constraint...
                                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     107,
                                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                     "is specified all first level children must have the same "
@@ -1591,13 +1612,13 @@ class HandoverDocumentation(Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                isinstance(self.type_value_list_element, Property)
-                                or isinstance(self.type_value_list_element, Range)
+                                isinstance(self.type_value_list_element, aas.Property)
+                                or isinstance(self.type_value_list_element, aas.Range)
                                 and not isinstance(
                                     new.value_type, self.value_type_list_element
                                 )
                             ):  # type: ignore
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     109,
                                     "All first level elements must have the value_type "  # type: ignore
                                     "specified by value_type_list_element="
@@ -1616,7 +1637,7 @@ class HandoverDocumentation(Submodel):
                                         item.semantic_id is not None
                                         and new.semantic_id != item.semantic_id
                                     ):
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
                                             f"{new.semantic_id!r}, while already contained element "
@@ -1627,46 +1648,48 @@ class HandoverDocumentation(Submodel):
                             # Re-assign id_short
                             new.id_short = saved_id_short
 
-                    class Version(Property):
+                    class Version(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"Version",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Version", r"de": r"Dokumentenversion"}
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAP003#005",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-AAP003-005",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#version",
                                         ),
                                     ),
@@ -1674,22 +1697,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1697,16 +1720,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"V1.2",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -1734,45 +1757,47 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class Title(MultiLanguageProperty):
+                    class Title(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"Title",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Title", r"de": r"Dokumententitel"}
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG940#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABG940-003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#title",
                                         ),
                                     ),
@@ -1780,22 +1805,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1803,16 +1828,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Examplary title@en",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -1839,45 +1864,47 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class Subtitle(MultiLanguageProperty):
+                    class Subtitle(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"Subtitle",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Subtitle", r"de": r"Untertitel"}
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABH998#003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABH998-003",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#subtitle",
                                         ),
                                     ),
@@ -1885,22 +1912,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1908,16 +1935,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Examplary subtitle@en",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -1944,48 +1971,50 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class Description(MultiLanguageProperty):
+                    class Description(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"Description",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Description",
                                     r"de": r"Dokumentenbeschreibung",
                                 }
                             ),
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-AAN466#004",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-AAN466-004",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#description",
                                         ),
                                     ),
@@ -1993,22 +2022,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -2016,16 +2045,16 @@ class HandoverDocumentation(Submodel):
                                         ),
                                         supplemental_semantic_id=(),
                                     ),
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Abstract@en",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -2052,9 +2081,9 @@ class HandoverDocumentation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DigitalFiles(SubmodelElementList):
+                    class DigitalFiles(aas.SubmodelElementList):
 
-                        class Digitalfiles_item(File):
+                        class Digitalfiles_item(aas.File):
 
                             def __init__(
                                 self,
@@ -2062,31 +2091,33 @@ class HandoverDocumentation(Submodel):
                                 id_short: Optional[str] = r"digitalfiles_item",
                                 content_type: Optional[str] = r"application/pdf",
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={
                                         r"en": r"digital files",
                                         r"de": r"Name der spezifischen digitalen Datei@de",
                                     }
                                 ),
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"0173-1#02-ABK126#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (
-                                    ExternalReference(
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (
+                                    aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType",
                                             ),
                                         ),
@@ -2094,22 +2125,22 @@ class HandoverDocumentation(Submodel):
                                     ),
                                 ),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"OneToMany",
                                             value_id=None,
-                                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -2117,16 +2148,16 @@ class HandoverDocumentation(Submodel):
                                             ),
                                             supplemental_semantic_id=(),
                                         ),
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"ExampleValue",
                                             value_type=str,
                                             value=r"docu_cecc_fullmanual_DE.PDF",
                                             value_id=None,
-                                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                     ),
                                                 ),
@@ -2134,16 +2165,16 @@ class HandoverDocumentation(Submodel):
                                             ),
                                             supplemental_semantic_id=(),
                                         ),
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"AllowedIdShort",
                                             value_type=str,
                                             value=r"DigitalFile[\d{2,3}]",
                                             value_id=None,
-                                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
                                                     ),
                                                 ),
@@ -2174,45 +2205,49 @@ class HandoverDocumentation(Submodel):
                             self,
                             digitalfiles_items: Iterable[Digitalfiles_item],
                             id_short: Optional[str] = r"DigitalFiles",
-                            type_value_list_element: SubmodelElement = File,
-                            semantic_id_list_element: Optional[Reference] = None,
-                            value_type_list_element: Optional[DataTypeDefXsd] = None,
+                            type_value_list_element: aas.SubmodelElement = aas.File,
+                            semantic_id_list_element: Optional[aas.Reference] = None,
+                            value_type_list_element: Optional[
+                                aas.DataTypeDefXsd
+                            ] = None,
                             order_relevant: bool = True,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"digital files",
                                     r"de": r"Digitale Dateien",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABK126#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (
-                                ExternalReference(
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://api.eclass-cdp.com/0173-1-02-ABK126-002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                ExternalReference(
+                                aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#digtialFiles",
                                         ),
                                     ),
@@ -2220,22 +2255,22 @@ class HandoverDocumentation(Submodel):
                                 ),
                             ),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                                 ),
                                             ),
@@ -2253,7 +2288,7 @@ class HandoverDocumentation(Submodel):
                             for se_arg in [digitalfiles_items]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -2261,7 +2296,7 @@ class HandoverDocumentation(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -2289,7 +2324,7 @@ class HandoverDocumentation(Submodel):
 
                             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                             if not isinstance(new, self.type_value_list_element):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     108,
                                     "All first level elements must be of the type specified in "
                                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2305,7 +2340,7 @@ class HandoverDocumentation(Submodel):
                                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                                 # Not really a constraint...
                                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     107,
                                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                                     "is specified all first level children must have the same "
@@ -2316,13 +2351,13 @@ class HandoverDocumentation(Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                isinstance(self.type_value_list_element, Property)
-                                or isinstance(self.type_value_list_element, Range)
+                                isinstance(self.type_value_list_element, aas.Property)
+                                or isinstance(self.type_value_list_element, aas.Range)
                                 and not isinstance(
                                     new.value_type, self.value_type_list_element
                                 )
                             ):  # type: ignore
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     109,
                                     "All first level elements must have the value_type "  # type: ignore
                                     "specified by value_type_list_element="
@@ -2341,7 +2376,7 @@ class HandoverDocumentation(Submodel):
                                         item.semantic_id is not None
                                         and new.semantic_id != item.semantic_id
                                     ):
-                                        raise base.AASConstraintViolation(
+                                        raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
                                             f"{new.semantic_id!r}, while already contained element "
@@ -2355,53 +2390,53 @@ class HandoverDocumentation(Submodel):
                     def __init__(
                         self,
                         language: Union[Iterable[str], Language],
-                        title: Union[LangStringSet, Title],
+                        title: Union[aas.LangStringSet, Title],
                         digitalFiles: DigitalFiles,
                         version: Optional[Union[str, Version]] = None,
-                        subtitle: Optional[Union[LangStringSet, Subtitle]] = None,
+                        subtitle: Optional[Union[aas.LangStringSet, Subtitle]] = None,
                         description_: Optional[
-                            Union[LangStringSet, Description]
+                            Union[aas.LangStringSet, Description]
                         ] = None,
                         id_short: Optional[str] = r"documentversions_item",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"document version",
                                 r"de": r"Document version",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABI503#003/0173-1#01-AHF582#003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (
-                            ExternalReference(
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABI503#003~0/0173-1#01-AHF582#003",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://api.eclass-cdp.com/0173-1-02-ABI503-003/0173-1-01-AHF582-003",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            ExternalReference(
+                            aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#DocumentVersion",
                                     ),
                                 ),
@@ -2409,22 +2444,22 @@ class HandoverDocumentation(Submodel):
                             ),
                         ),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"OneToMany",
                                     value_id=None,
-                                    kind=QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2438,24 +2473,24 @@ class HandoverDocumentation(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if language and not isinstance(language, SubmodelElement):
+                        if language and not isinstance(language, aas.SubmodelElement):
                             language = self.Language(language)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if version and not isinstance(version, SubmodelElement):
+                        if version and not isinstance(version, aas.SubmodelElement):
                             version = self.Version(version)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if title and not isinstance(title, SubmodelElement):
+                        if title and not isinstance(title, aas.SubmodelElement):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if subtitle and not isinstance(subtitle, SubmodelElement):
+                        if subtitle and not isinstance(subtitle, aas.SubmodelElement):
                             subtitle = self.Subtitle(subtitle)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if description_ and not isinstance(
-                            description_, SubmodelElement
+                            description_, aas.SubmodelElement
                         ):
                             description_ = self.Description(description_)
 
@@ -2471,7 +2506,7 @@ class HandoverDocumentation(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -2479,7 +2514,7 @@ class HandoverDocumentation(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -2499,53 +2534,55 @@ class HandoverDocumentation(Submodel):
                     self,
                     documentversions_items: Iterable[Documentversions_item],
                     id_short: Optional[str] = r"DocumentVersions",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI503#003/0173-1#01-AHF582#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"document versions",
                             r"de": r"Dokumentenversionen",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI503#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (
-                        ExternalReference(
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://api.eclass-cdp.com/0173-1-02-ABI503-003",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        ExternalReference(
+                        aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documentVersions",
                                 ),
                             ),
@@ -2553,22 +2590,22 @@ class HandoverDocumentation(Submodel):
                         ),
                     ),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2586,7 +2623,7 @@ class HandoverDocumentation(Submodel):
                     for se_arg in [documentversions_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2594,7 +2631,7 @@ class HandoverDocumentation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2622,7 +2659,7 @@ class HandoverDocumentation(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2638,7 +2675,7 @@ class HandoverDocumentation(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -2649,11 +2686,11 @@ class HandoverDocumentation(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -2672,7 +2709,7 @@ class HandoverDocumentation(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -2689,44 +2726,46 @@ class HandoverDocumentation(Submodel):
                 documentIds: DocumentIds,
                 documentVersions: DocumentVersions,
                 id_short: Optional[str] = r"documents_item",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                    dict_={r"en": r"document"}
-                ),
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(dict_={r"en": r"document"}),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0173-1#02-ABI500#003/0173-1#01-AHF579#003",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (
-                    ExternalReference(
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABI500#003~0/0173-1#01-AHF579#003",
                             ),
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://api.eclass-cdp.com/0173-1-02-ABI500-003/0173-1-01-AHF579-003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    ExternalReference(
+                    aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#Document",
                             ),
                         ),
@@ -2734,22 +2773,22 @@ class HandoverDocumentation(Submodel):
                     ),
                 ),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2767,7 +2806,7 @@ class HandoverDocumentation(Submodel):
                 for se_arg in [documentClassifications, documentIds, documentVersions]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2775,7 +2814,7 @@ class HandoverDocumentation(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2795,66 +2834,73 @@ class HandoverDocumentation(Submodel):
             self,
             documents_items: Iterable[Documents_item],
             id_short: Optional[str] = r"Documents",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = ExternalReference(
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"0173-1#02-ABI500#003/0173-1#01-AHF579#003",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"Documents", r"de": r"Dokumente (Übergabedokumentation)"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = None,
-            semantic_id: Optional[Reference] = ExternalReference(
+            description: Optional[aas.MultiLanguageTextType] = None,
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI500#003"),
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                        value=r"0173-1#02-ABI500#003",
+                    ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://api.eclass-cdp.com/0173-1-02-ABI500-003",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                ExternalReference(
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documents",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2872,7 +2918,7 @@ class HandoverDocumentation(Submodel):
             for se_arg in [documents_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2880,7 +2926,7 @@ class HandoverDocumentation(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2908,7 +2954,7 @@ class HandoverDocumentation(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2924,7 +2970,7 @@ class HandoverDocumentation(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -2935,11 +2981,11 @@ class HandoverDocumentation(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -2955,7 +3001,7 @@ class HandoverDocumentation(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -2971,51 +3017,53 @@ class HandoverDocumentation(Submodel):
         id_: str,
         documents: Documents,
         id_short: Optional[str] = r"HandoverDocumentation",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"handover documentation"}
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": r"The Submodel defines a set meta data for the handover of documentation from the manufacturer to the operator for industrial equipment"
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=r"https://admin-shell.io/idta-02035-2",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
-            key=(Key(type_=KeyTypes.SUBMODEL, value=r"0173-1#01-AHF578#003"),),
-            type_=Submodel,
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#01-AHF578#003"),),
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (
-            ExternalReference(
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (
+            aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://api.eclass-cdp.com/0173-1-01-AHF578-003",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            ExternalReference(
+            aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#HandoverDocumentation",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
         ),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -3029,7 +3077,7 @@ class HandoverDocumentation(Submodel):
         for se_arg in [documents]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -3037,7 +3085,7 @@ class HandoverDocumentation(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

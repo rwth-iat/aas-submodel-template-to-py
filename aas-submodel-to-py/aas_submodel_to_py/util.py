@@ -1,20 +1,50 @@
+import builtins
 import enum
 import keyword
+import pydoc
 import typing
+from basyx.aas import model as aas_model
 from basyx.aas.model import *
+from basyx.aas.model import datatypes as aas_datatypes
 from basyx.aas.model.datatypes import XSD_TYPE_NAMES, Duration, DateTime, Time, xsd_repr
 from basyx.aas.model.submodel import _SE
 
+# Generated modules refer to basyx.aas.model and basyx.aas.model.datatypes through
+# these module aliases (see code_templates/imports.pyi), so that generated classes
+# named like BaSyx classes (e.g. an element "Key") don't shadow them
+MODEL_ALIAS = "aas"
+DATATYPES_ALIAS = "xsd"
+# Names generated modules import from typing
+TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "Union")
+# Names generated code uses unqualified, which generated classes must not shadow
+RESERVED_CLS_NAMES = frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | frozenset(keyword.kwlist)
+# Init arguments must not shadow the module aliases used in the init body
+RESERVED_ARG_NAMES = frozenset((MODEL_ALIAS, DATATYPES_ALIAS)) | frozenset(keyword.kwlist)
+
 # XSD types defined as aliases in basyx.aas.model.datatypes: their class names
-# (relativedelta, datetime, time) are not available in generated modules
+# (relativedelta, datetime, time) don't exist in basyx.aas.model.datatypes
 XSD_TYPE_ALIASES = {
     Duration: "Duration",
     DateTime: "DateTime",
     Time: "Time",
 }
-XSD_TYPE_ALIASES_BY_QUALNAME = {
-    f"{typ.__module__}.{typ.__qualname__}": alias for typ, alias in XSD_TYPE_ALIASES.items()
-}
+
+
+def qualified_name(typ: type) -> str:
+    """Return the name, under which `typ` is available in generated modules"""
+    name = typ.__name__
+    if typ is type(None):
+        # NoneType isn't a builtin name, e.g. the referred type of ModelReferences to fragments
+        return "type(None)"
+    elif getattr(builtins, name, None) is typ:
+        return name
+    elif typ in XSD_TYPE_ALIASES:
+        return f"{DATATYPES_ALIAS}.{XSD_TYPE_ALIASES[typ]}"
+    elif getattr(aas_datatypes, name, None) is typ:
+        return f"{DATATYPES_ALIAS}.{name}"
+    elif getattr(aas_model, name, None) is typ:
+        return f"{MODEL_ALIAS}.{name}"
+    return name
 
 
 class NamingGenerator:
@@ -22,14 +52,16 @@ class NamingGenerator:
     def create_specific_referable_cls_name(cls, obj: Referable) -> str:
         cls_name = StringHandler.upper_first(obj.id_short)
         cls_name = StringHandler.remove_iteration_ending(cls_name)
+        if cls_name in RESERVED_CLS_NAMES:
+            return f"{cls_name}_"
         return cls_name
 
     @classmethod
     def create_arg_name_for_referable(cls, obj: Referable) -> str:
         arg_name = StringHandler.lower_first(obj.id_short)
         arg_name = StringHandler.remove_iteration_ending(arg_name)
-        # check if arg_name is one of python reserved keywords or is already used in the class as an attribute
-        if arg_name in keyword.kwlist or hasattr(obj, arg_name):
+        # check if arg_name is reserved or is already used in the class as an attribute
+        if arg_name in RESERVED_ARG_NAMES or hasattr(obj, arg_name):
             return f"{arg_name}_"
         return arg_name
 
@@ -80,25 +112,32 @@ class StringHandler:
         return val
 
     @classmethod
-    def remove_parent_modules_in_typehint(cls, typehint: str):
-        def short_name(match):
-            qualified_name = match.group(0)
-            return XSD_TYPE_ALIASES_BY_QUALNAME.get(qualified_name, qualified_name.split(".")[-1])
+    def qualify_names_in_typehint(cls, typehint: str):
+        """Replace the fully qualified names in the repr of a typehint (e.g.
+        "typing.Optional[basyx.aas.model.base.Reference]") by the names available in
+        generated modules (e.g. "Optional[aas.Reference]")"""
+        def name_in_generated_module(match):
+            full_name = match.group(0)
+            short_name = full_name.split(".")[-1]
+            if full_name.startswith("typing."):
+                return short_name
+            # Forward references in BaSyx use its own module aliases, e.g. "aas.AssetAdministrationShell"
+            obj = pydoc.locate(full_name) or getattr(aas_model, short_name, None)
+            return qualified_name(obj) if isinstance(obj, type) else short_name
 
-        return re.sub(r"\w+(\.\w+)+", short_name, typehint)
+        return re.sub(r"\w+(\.\w+)+", name_in_generated_module, typehint)
 
     @classmethod
     def reprify(cls, val):
         typehint_reprs = {
-            DataTypeDefXsd: "DataTypeDefXsd",
-            ValueDataType: "ValueDataType",
-            LangStringSet: "LangStringSet",
-            Optional[DataTypeDefXsd]: "Optional[DataTypeDefXsd]",
-            Optional[ValueDataType]: "Optional[ValueDataType]",
-            Optional[LangStringSet]: "Optional[LangStringSet]",
-            _SE: "SubmodelElement",
-            Type[_SE]: "SubmodelElement",
-            **XSD_TYPE_ALIASES,
+            DataTypeDefXsd: f"{MODEL_ALIAS}.DataTypeDefXsd",
+            ValueDataType: f"{MODEL_ALIAS}.ValueDataType",
+            LangStringSet: f"{MODEL_ALIAS}.LangStringSet",
+            Optional[DataTypeDefXsd]: f"Optional[{MODEL_ALIAS}.DataTypeDefXsd]",
+            Optional[ValueDataType]: f"Optional[{MODEL_ALIAS}.ValueDataType]",
+            Optional[LangStringSet]: f"Optional[{MODEL_ALIAS}.LangStringSet]",
+            _SE: f"{MODEL_ALIAS}.SubmodelElement",
+            Type[_SE]: f"{MODEL_ALIAS}.SubmodelElement",
         }
         for typehint in typehint_reprs:
             if val == typehint:
@@ -106,11 +145,8 @@ class StringHandler:
 
         if val is None:
             return "None"
-        elif val is type(None):
-            # e.g. the referred type of ModelReferences to fragments; NoneType isn't a builtin name
-            return "type(None)"
         elif isinstance(val, typing._GenericAlias):
-            return cls.remove_parent_modules_in_typehint(repr(val))
+            return cls.qualify_names_in_typehint(repr(val))
         elif type(val) is str:
             # Prefer raw string literals, which keep backslashes (e.g. in regex patterns)
             # readable. They can't contain the quote or line breaks, nor end with a backslash
@@ -122,7 +158,7 @@ class StringHandler:
         elif type(val) in XSD_TYPE_NAMES:
             # Values of other XSD types (e.g. Duration, DateTime, Long) are restored from
             # their XSD lexical representation, as their constructors differ widely
-            return f"from_xsd({cls.reprify(xsd_repr(val))}, {cls.reprify(type(val))})"
+            return f"{DATATYPES_ALIAS}.from_xsd({cls.reprify(xsd_repr(val))}, {cls.reprify(type(val))})"
         elif type(val) is dict:
             if val:
                 items_repr = [f"{cls.reprify(key)}: {cls.reprify(value)}" for key, value in val.items()]
@@ -135,9 +171,9 @@ class StringHandler:
                 return f"{{{res}}}"
             return "set()"
         elif isinstance(val, type):
-            return val.__name__  # .split('.')[-1],
+            return qualified_name(val)
         elif isinstance(val, enum.Enum):
-            return str(val)
+            return f"{qualified_name(type(val))}.{val.name}"
         elif isinstance(val, List):
             return f"[{', '.join([cls.reprify(i) for i in val])}]"
         elif isinstance(val, (tuple, NamespaceSet, ConstrainedList)):

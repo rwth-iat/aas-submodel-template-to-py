@@ -1,63 +1,62 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class AssetLocation(Submodel):
+class AssetLocation(aas.Submodel):
 
-    class Addresses(SubmodelElementList):
+    class Addresses(aas.SubmodelElementList):
 
-        class Addresses_item(SubmodelElementCollection):
+        class Addresses_item(aas.SubmodelElementCollection):
 
-            class AddressLine(Property):
+            class AddressLine(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressLine",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO124#004",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -85,54 +84,54 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressLine(Property):
+            class AddressLine(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressLine",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO125#004",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -160,54 +159,54 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressLine(Property):
+            class AddressLine(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressLine",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO126#004",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -235,17 +234,17 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressOfAdditionalLink(Property):
+            class AddressOfAdditionalLink(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressOfAdditionalLink",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"address of additional link",
                             r"de": r"zusätzlicher Online-Verweis",
@@ -253,42 +252,42 @@ class AssetLocation(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"address of additional link",
                             r"de": r"zusätzlicher Online-Verweis",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAQ326#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -316,17 +315,17 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressRemarks(Property):
+            class AddressRemarks(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AddressRemarks",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"address remarks",
                             r"de": r"Anmerkungen zur Adresse",
@@ -334,42 +333,42 @@ class AssetLocation(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"address remarks",
                             r"de": r"Anmerkungen zur Adresse",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO202#004",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -397,54 +396,54 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class NationalCode(Property):
+            class NationalCode(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"NationalCode",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"national code", r"de": r"Ländercode"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"national code", r"de": r"Ländercode"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO134#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -472,54 +471,54 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Statecounty(Property):
+            class Statecounty(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"Statecounty",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"state/county", r"de": r"Bundesland"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"state/county", r"de": r"Bundesland"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO133#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -547,54 +546,54 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Citytown(Property):
+            class Citytown(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"Citytown",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"city/town", r"de": r"Ort"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"city/town", r"de": r"Ort"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO132#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -622,54 +621,54 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Street(Property):
+            class Street(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"Street",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"street", r"de": r"Straße"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"street", r"de": r"Straße"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO128#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -697,54 +696,54 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ZipCode(Property):
+            class ZipCode(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ZipCode",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"zip code", r"de": r"Postleitzahl"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"zip code", r"de": r"Postleitzahl"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-AAO129#003",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -787,28 +786,30 @@ class AssetLocation(Submodel):
                 street: Optional[Union[str, Street]] = None,
                 zipCode: Optional[Union[str, ZipCode]] = None,
                 id_short: Optional[str] = r"addresses_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Postal addresses where an object has been located",
                         r"de": r"Postadresse an der ein Objekt lokalisiert wurde",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"0173-1#01-ADR442#007",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
@@ -819,47 +820,49 @@ class AssetLocation(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine and not isinstance(addressLine, SubmodelElement):
+                if addressLine and not isinstance(addressLine, aas.SubmodelElement):
                     addressLine = self.AddressLine(addressLine)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine and not isinstance(addressLine, SubmodelElement):
+                if addressLine and not isinstance(addressLine, aas.SubmodelElement):
                     addressLine = self.AddressLine(addressLine)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressLine and not isinstance(addressLine, SubmodelElement):
+                if addressLine and not isinstance(addressLine, aas.SubmodelElement):
                     addressLine = self.AddressLine(addressLine)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if addressOfAdditionalLink and not isinstance(
-                    addressOfAdditionalLink, SubmodelElement
+                    addressOfAdditionalLink, aas.SubmodelElement
                 ):
                     addressOfAdditionalLink = self.AddressOfAdditionalLink(
                         addressOfAdditionalLink
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if addressRemarks and not isinstance(addressRemarks, SubmodelElement):
+                if addressRemarks and not isinstance(
+                    addressRemarks, aas.SubmodelElement
+                ):
                     addressRemarks = self.AddressRemarks(addressRemarks)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if nationalCode and not isinstance(nationalCode, SubmodelElement):
+                if nationalCode and not isinstance(nationalCode, aas.SubmodelElement):
                     nationalCode = self.NationalCode(nationalCode)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if statecounty and not isinstance(statecounty, SubmodelElement):
+                if statecounty and not isinstance(statecounty, aas.SubmodelElement):
                     statecounty = self.Statecounty(statecounty)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if citytown and not isinstance(citytown, SubmodelElement):
+                if citytown and not isinstance(citytown, aas.SubmodelElement):
                     citytown = self.Citytown(citytown)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if street and not isinstance(street, SubmodelElement):
+                if street and not isinstance(street, aas.SubmodelElement):
                     street = self.Street(street)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if zipCode and not isinstance(zipCode, SubmodelElement):
+                if zipCode and not isinstance(zipCode, aas.SubmodelElement):
                     zipCode = self.ZipCode(zipCode)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -878,7 +881,7 @@ class AssetLocation(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -886,7 +889,7 @@ class AssetLocation(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -906,52 +909,61 @@ class AssetLocation(Submodel):
             self,
             addresses_items: Addresses_item,
             id_short: Optional[str] = r"Addresses",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = ExternalReference(
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-ADR442#007"),
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                        value=r"0173-1#01-ADR442#007",
+                    ),
                 ),
                 referred_semantic_id=None,
             ),
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"Addresses", r"de": r"Adressen"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"List with postal addresses where an object has been located",
                     r"de": r"Liste mit Postadressen, an denen sich ein Asset aufgehalten hat",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/sml/addresses/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -969,7 +981,7 @@ class AssetLocation(Submodel):
             for se_arg in [addresses_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -977,7 +989,7 @@ class AssetLocation(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -1005,7 +1017,7 @@ class AssetLocation(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1021,7 +1033,7 @@ class AssetLocation(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -1032,11 +1044,11 @@ class AssetLocation(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -1052,7 +1064,7 @@ class AssetLocation(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -1063,57 +1075,57 @@ class AssetLocation(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class CoordinateSystems(SubmodelElementList):
+    class CoordinateSystems(aas.SubmodelElementList):
 
-        class Coordinatesystems_item(SubmodelElementCollection):
+        class Coordinatesystems_item(aas.SubmodelElementCollection):
 
-            class CoordinateSystemName(Property):
+            class CoordinateSystemName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"CoordinateSystemName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"coordinate system name",
                             r"de": r"Koordinatensystenbezeichnung",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/coordinatesystemname/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1141,53 +1153,53 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CoordinateSystemId(Property):
+            class CoordinateSystemId(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"CoordinateSystemId",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"coordinate system (ID)",
                             r"de": r"Koordinatensystem (ID)",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/coordinatesystemid/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1215,53 +1227,53 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CoordinateSystemType(Property):
+            class CoordinateSystemType(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"CoordinateSystemType",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"coordinate system type",
                             r"de": r"Koordinatensystemtyp",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/coordinatesystemtype/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1289,53 +1301,53 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ElevationReference(Property):
+            class ElevationReference(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"ElevationReference",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"elevation reference",
                             r"de": r"Referenz der Höhenangabe",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/elevationreference/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1363,53 +1375,53 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SeaLevelOfBaseHeight(Property):
+            class SeaLevelOfBaseHeight(aas.Property):
 
                 def __init__(
                     self,
-                    value: Float,
+                    value: xsd.Float,
                     id_short: Optional[str] = r"SeaLevelOfBaseHeight",
-                    value_type: DataTypeDefXsd = Float,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.Float,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"sea level of base height",
                             r"de": r"Seehöhe der Basishöhe",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/sealevelofbaseheight/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1437,56 +1449,58 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class GroundControlPoints(SubmodelElementList):
+            class GroundControlPoints(aas.SubmodelElementList):
 
-                class Groundcontrolpoints_item(SubmodelElementCollection):
+                class Groundcontrolpoints_item(aas.SubmodelElementCollection):
 
-                    class GeographicCoordinates(SubmodelElementCollection):
+                    class GeographicCoordinates(aas.SubmodelElementCollection):
 
-                        class Longitude(Property):
+                        class Longitude(aas.Property):
 
                             def __init__(
                                 self,
                                 value: float,
                                 id_short: Optional[str] = r"Longitude",
-                                value_type: DataTypeDefXsd = float,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = float,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"longitude", r"de": r"Längengrad"}
                                 ),
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r" 0173-1#02-ABH961#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1514,50 +1528,52 @@ class AssetLocation(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class Latitude(Property):
+                        class Latitude(aas.Property):
 
                             def __init__(
                                 self,
                                 value: float,
                                 id_short: Optional[str] = r"Latitude",
-                                value_type: DataTypeDefXsd = float,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = float,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={r"en": r"latitude", r"de": r"Breitengrad"}
                                 ),
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r" 0173-1#02-ABH960#002",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1591,44 +1607,46 @@ class AssetLocation(Submodel):
                             latitude: Union[float, Latitude],
                             id_short: Optional[str] = r"GeographicCoordinates",
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"geographic coordinates",
                                     r"de": r"Geographische Koordinaten",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r" 0173-1#02-ABH934#002",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1642,11 +1660,15 @@ class AssetLocation(Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if longitude and not isinstance(longitude, SubmodelElement):
+                            if longitude and not isinstance(
+                                longitude, aas.SubmodelElement
+                            ):
                                 longitude = self.Longitude(longitude)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if latitude and not isinstance(latitude, SubmodelElement):
+                            if latitude and not isinstance(
+                                latitude, aas.SubmodelElement
+                            ):
                                 latitude = self.Latitude(latitude)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -1654,7 +1676,7 @@ class AssetLocation(Submodel):
                             for se_arg in [longitude, latitude]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -1662,7 +1684,7 @@ class AssetLocation(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -1678,55 +1700,57 @@ class AssetLocation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class RelativeCoordinates(SubmodelElementCollection):
+                    class RelativeCoordinates(aas.SubmodelElementCollection):
 
-                        class X(Property):
+                        class X(aas.Property):
 
                             def __init__(
                                 self,
-                                value: Float,
+                                value: xsd.Float,
                                 id_short: Optional[str] = r"X",
-                                value_type: DataTypeDefXsd = Float,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = xsd.Float,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={
                                         r"en": r"X-coordinate",
                                         r"de": r"X-Koordinate",
                                     }
                                 ),
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/prop/x/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1754,53 +1778,55 @@ class AssetLocation(Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class Y(Property):
+                        class Y(aas.Property):
 
                             def __init__(
                                 self,
-                                value: Float,
+                                value: xsd.Float,
                                 id_short: Optional[str] = r"Y",
-                                value_type: DataTypeDefXsd = Float,
-                                value_id: Optional[Reference] = None,
+                                value_type: aas.DataTypeDefXsd = xsd.Float,
+                                value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
-                                    MultiLanguageNameType
-                                ] = MultiLanguageNameType(
+                                    aas.MultiLanguageNameType
+                                ] = aas.MultiLanguageNameType(
                                     dict_={
                                         r"en": r"Y-coordinate",
                                         r"de": r"Y-Koordinate",
                                     }
                                 ),
                                 category: Optional[str] = None,
-                                description: Optional[MultiLanguageTextType] = None,
-                                semantic_id: Optional[Reference] = ExternalReference(
+                                description: Optional[aas.MultiLanguageTextType] = None,
+                                semantic_id: Optional[
+                                    aas.Reference
+                                ] = aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/idta/prop/y/1/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                qualifier: Iterable[Qualifier] = None,
-                                extension: Iterable[Extension] = (),
-                                supplemental_semantic_id: Iterable[Reference] = (),
+                                qualifier: Iterable[aas.Qualifier] = None,
+                                extension: Iterable[aas.Extension] = (),
+                                supplemental_semantic_id: Iterable[aas.Reference] = (),
                                 embedded_data_specifications: Iterable[
-                                    EmbeddedDataSpecification
+                                    aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        Qualifier(
+                                        aas.Qualifier(
                                             type_=r"SMT/Cardinality",
                                             value_type=str,
                                             value=r"One",
                                             value_id=None,
-                                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=ExternalReference(
+                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                            semantic_id=aas.ExternalReference(
                                                 key=(
-                                                    Key(
-                                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                                    aas.Key(
+                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                     ),
                                                 ),
@@ -1830,12 +1856,12 @@ class AssetLocation(Submodel):
 
                         def __init__(
                             self,
-                            x: Union[Float, X],
-                            y: Union[Float, Y],
+                            x: Union[xsd.Float, X],
+                            y: Union[xsd.Float, Y],
                             id_short: Optional[str] = r"RelativeCoordinates",
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"relative coordinates",
                                     r"de": r"relative Koordinaten",
@@ -1843,42 +1869,44 @@ class AssetLocation(Submodel):
                             ),
                             category: Optional[str] = None,
                             description: Optional[
-                                MultiLanguageTextType
-                            ] = MultiLanguageTextType(
+                                aas.MultiLanguageTextType
+                            ] = aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Coordinates within a cartisian coordinate system",
                                     r"de": r"Koordinaten in einem kartesischen Koordinatensystem",
                                 }
                             ),
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"0173-1#02-ABG741#001",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -1892,11 +1920,11 @@ class AssetLocation(Submodel):
                                 embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if x and not isinstance(x, SubmodelElement):
+                            if x and not isinstance(x, aas.SubmodelElement):
                                 x = self.X(x)
 
                             # Build a submodel element if a raw value was passed in the argument
-                            if y and not isinstance(y, SubmodelElement):
+                            if y and not isinstance(y, aas.SubmodelElement):
                                 y = self.Y(y)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -1904,7 +1932,7 @@ class AssetLocation(Submodel):
                             for se_arg in [x, y]:
                                 if se_arg is None:
                                     continue
-                                elif isinstance(se_arg, SubmodelElement):
+                                elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
                                     for n, element in enumerate(se_arg):
@@ -1912,7 +1940,7 @@ class AssetLocation(Submodel):
                                         embedded_submodel_elements.append(element)
                                 else:
                                     raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                     )
 
                             super().__init__(
@@ -1933,29 +1961,29 @@ class AssetLocation(Submodel):
                         geographicCoordinates: GeographicCoordinates,
                         relativeCoordinates: RelativeCoordinates,
                         id_short: Optional[str] = r"groundcontrolpoints_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
@@ -1970,7 +1998,7 @@ class AssetLocation(Submodel):
                         for se_arg in [geographicCoordinates, relativeCoordinates]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -1978,7 +2006,7 @@ class AssetLocation(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -1998,21 +2026,23 @@ class AssetLocation(Submodel):
                     self,
                     groundcontrolpoints_items: Groundcontrolpoints_item,
                     id_short: Optional[str] = r"GroundControlPoints",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"ground control points",
                             r"de": r"Bodenkontrollpunkte",
@@ -2020,42 +2050,42 @@ class AssetLocation(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Arrays containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)",
                             r"de": r"Arrays, die ein Mapping von geographischen Koordinaten (Längengrad, Breitengrad) nach WGS84 (EPSG:4326) in relative Koordinaten (x,y) enthalten",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/sml/groundcontrolpoints/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2073,7 +2103,7 @@ class AssetLocation(Submodel):
                     for se_arg in [groundcontrolpoints_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2081,7 +2111,7 @@ class AssetLocation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2109,7 +2139,7 @@ class AssetLocation(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2125,7 +2155,7 @@ class AssetLocation(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -2136,11 +2166,11 @@ class AssetLocation(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -2159,7 +2189,7 @@ class AssetLocation(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -2178,31 +2208,33 @@ class AssetLocation(Submodel):
                 groundControlPoints: GroundControlPoints,
                 coordinateSystemName: Optional[Union[str, CoordinateSystemName]] = None,
                 seaLevelOfBaseHeight: Optional[
-                    Union[Float, SeaLevelOfBaseHeight]
+                    Union[xsd.Float, SeaLevelOfBaseHeight]
                 ] = None,
                 id_short: Optional[str] = r"coordinatesystems_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Coordinate reference system (CRS) record",
                         r"de": r"Listeneintrag für ein Koordinatenreferenzsystem (CRS)",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
@@ -2214,7 +2246,7 @@ class AssetLocation(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if coordinateSystemName and not isinstance(
-                    coordinateSystemName, SubmodelElement
+                    coordinateSystemName, aas.SubmodelElement
                 ):
                     coordinateSystemName = self.CoordinateSystemName(
                         coordinateSystemName
@@ -2222,13 +2254,13 @@ class AssetLocation(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if coordinateSystemId and not isinstance(
-                    coordinateSystemId, SubmodelElement
+                    coordinateSystemId, aas.SubmodelElement
                 ):
                     coordinateSystemId = self.CoordinateSystemId(coordinateSystemId)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if coordinateSystemType and not isinstance(
-                    coordinateSystemType, SubmodelElement
+                    coordinateSystemType, aas.SubmodelElement
                 ):
                     coordinateSystemType = self.CoordinateSystemType(
                         coordinateSystemType
@@ -2236,13 +2268,13 @@ class AssetLocation(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if elevationReference and not isinstance(
-                    elevationReference, SubmodelElement
+                    elevationReference, aas.SubmodelElement
                 ):
                     elevationReference = self.ElevationReference(elevationReference)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if seaLevelOfBaseHeight and not isinstance(
-                    seaLevelOfBaseHeight, SubmodelElement
+                    seaLevelOfBaseHeight, aas.SubmodelElement
                 ):
                     seaLevelOfBaseHeight = self.SeaLevelOfBaseHeight(
                         seaLevelOfBaseHeight
@@ -2260,7 +2292,7 @@ class AssetLocation(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2268,7 +2300,7 @@ class AssetLocation(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2288,55 +2320,61 @@ class AssetLocation(Submodel):
             self,
             coordinatesystems_items: Coordinatesystems_item,
             id_short: Optional[str] = r"CoordinateSystems",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = ExternalReference(
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"coordinate systems", r"de": r"Koordinatensysteme"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"List with information about different coordinate systems that have been used to determine the location of an asset",
                     r"de": r"Liste mit Informationen zu Koordinatensystemen die verwendet wurden, um die Assetposition zu bestimmen",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/sml/coordinatesystems/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2354,7 +2392,7 @@ class AssetLocation(Submodel):
             for se_arg in [coordinatesystems_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2362,7 +2400,7 @@ class AssetLocation(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2390,7 +2428,7 @@ class AssetLocation(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2406,7 +2444,7 @@ class AssetLocation(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -2417,11 +2455,11 @@ class AssetLocation(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -2437,7 +2475,7 @@ class AssetLocation(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -2448,55 +2486,55 @@ class AssetLocation(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class VisitedAreas(SubmodelElementList):
+    class VisitedAreas(aas.SubmodelElementList):
 
-        class Visitedareas_item(SubmodelElementCollection):
+        class Visitedareas_item(aas.SubmodelElementCollection):
 
-            class CoordinateSystemOfArea(ReferenceElement):
+            class CoordinateSystemOfArea(aas.ReferenceElement):
 
                 def __init__(
                     self,
-                    value: Reference,
+                    value: aas.Reference,
                     id_short: Optional[str] = r"CoordinateSystemOfArea",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Reference to a local coordinate reference system for an area",
                             r"de": r"Referenz auf ein lokales Koordinatenreferenzsystem für ein Areal",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/ref/coordinatesystemreference/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2522,30 +2560,30 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AddressReferences(SubmodelElementList):
+            class AddressReferences(aas.SubmodelElementList):
 
-                class Addressreferences_item(ReferenceElement):
+                class Addressreferences_item(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"addressreferences_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Reference to an address",
                                 r"de": r"Referenz zu einer Adresse",
                             }
                         ),
-                        semantic_id: Optional[Reference] = None,
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        semantic_id: Optional[aas.Reference] = None,
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
@@ -2570,59 +2608,63 @@ class AssetLocation(Submodel):
 
                 def __init__(
                     self,
-                    addressreferences_items: Union[Reference, Addressreferences_item],
+                    addressreferences_items: Union[
+                        aas.Reference, Addressreferences_item
+                    ],
                     id_short: Optional[str] = r"AddressReferences",
-                    type_value_list_element: SubmodelElement = ReferenceElement,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/sml/addressreferences/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"List with references to addresses for the area (area addresses)",
                             r"de": r"Liste mit Referenzen zu Adressen für das Areal",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/sml/addressreferences/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2637,7 +2679,7 @@ class AssetLocation(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if addressreferences_items and not isinstance(
-                        addressreferences_items, SubmodelElement
+                        addressreferences_items, aas.SubmodelElement
                     ):
                         addressreferences_items = self.Addressreferences_item(
                             addressreferences_items
@@ -2648,7 +2690,7 @@ class AssetLocation(Submodel):
                     for se_arg in [addressreferences_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2656,7 +2698,7 @@ class AssetLocation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2684,7 +2726,7 @@ class AssetLocation(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2700,7 +2742,7 @@ class AssetLocation(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -2711,11 +2753,11 @@ class AssetLocation(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -2734,7 +2776,7 @@ class AssetLocation(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -2745,54 +2787,56 @@ class AssetLocation(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class AreaRegionCoordinates(SubmodelElementList):
+            class AreaRegionCoordinates(aas.SubmodelElementList):
 
-                class Arearegioncoordinates_item(SubmodelElementCollection):
+                class Arearegioncoordinates_item(aas.SubmodelElementCollection):
 
-                    class X(Property):
+                    class X(aas.Property):
 
                         def __init__(
                             self,
-                            value: Float,
+                            value: xsd.Float,
                             id_short: Optional[str] = r"X",
-                            value_type: DataTypeDefXsd = Float,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Float,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"X-coordinate", r"de": r"X-Koordinate"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/x/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -2820,50 +2864,52 @@ class AssetLocation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class Y(Property):
+                    class Y(aas.Property):
 
                         def __init__(
                             self,
-                            value: Float,
+                            value: xsd.Float,
                             id_short: Optional[str] = r"Y",
-                            value_type: DataTypeDefXsd = Float,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Float,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Y-coordinate", r"de": r"Y-Koordinate"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/y/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -2893,32 +2939,32 @@ class AssetLocation(Submodel):
 
                     def __init__(
                         self,
-                        x: Union[Float, X],
-                        y: Union[Float, Y],
+                        x: Union[xsd.Float, X],
+                        y: Union[xsd.Float, Y],
                         id_short: Optional[str] = r"arearegioncoordinates_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/smc/regioncoordinateentry/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
@@ -2929,11 +2975,11 @@ class AssetLocation(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if x and not isinstance(x, SubmodelElement):
+                        if x and not isinstance(x, aas.SubmodelElement):
                             x = self.X(x)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if y and not isinstance(y, SubmodelElement):
+                        if y and not isinstance(y, aas.SubmodelElement):
                             y = self.Y(y)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2941,7 +2987,7 @@ class AssetLocation(Submodel):
                         for se_arg in [x, y]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -2949,7 +2995,7 @@ class AssetLocation(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -2969,21 +3015,23 @@ class AssetLocation(Submodel):
                     self,
                     arearegioncoordinates_items: Arearegioncoordinates_item,
                     id_short: Optional[str] = r"AreaRegionCoordinates",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = ExternalReference(
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[
+                        aas.Reference
+                    ] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/smc/regioncoordinateentry/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"area region coordinates",
                             r"de": r"Arealgrenzkoordinaten",
@@ -2991,42 +3039,42 @@ class AssetLocation(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Coordinates forming a polygon that describes the area within the coordinate reference system of the area",
                             r"de": r"Koordinaten die ein Polygon formen, das die Grenzen eines Areals im Koordinatenrefernzsystem des Areals beschreibt",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/sml/regioncoordinates/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3044,7 +3092,7 @@ class AssetLocation(Submodel):
                     for se_arg in [arearegioncoordinates_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3052,7 +3100,7 @@ class AssetLocation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3080,7 +3128,7 @@ class AssetLocation(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3096,7 +3144,7 @@ class AssetLocation(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -3107,11 +3155,11 @@ class AssetLocation(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -3130,7 +3178,7 @@ class AssetLocation(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -3141,50 +3189,50 @@ class AssetLocation(Submodel):
                     # Re-assign id_short
                     new.id_short = saved_id_short
 
-            class KindOfArea(Property):
+            class KindOfArea(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"KindOfArea",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"kind of area", r"de": r"Arealart"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/kindofarea/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3212,57 +3260,57 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AreaName(Property):
+            class AreaName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AreaName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Area name", r"de": r"Arealname"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Name of the area or building",
                             r"de": r"Name des Areals oder Gebäudes",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/areaname/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3290,57 +3338,57 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AreaId(Property):
+            class AreaId(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"AreaId",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"area (ID)", r"de": r"Areal (ID)"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Identification of an area ",
                             r"de": r"Ident einer Area ",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/areaid/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3368,56 +3416,56 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AreaDesciption(MultiLanguageProperty):
+            class AreaDesciption(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"AreaDesciption",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"area description", r"de": r"Arealbeschreibung"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Description of an area",
                             r"de": r"Beschreibung eines Areals",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/mlp/areadescription/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3429,18 +3477,18 @@ class AssetLocation(Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = [
-                            EmbeddedDataSpecification(
-                                data_specification=ExternalReference(
+                            aas.EmbeddedDataSpecification(
+                                data_specification=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0",
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                data_specification_content=DataSpecificationIEC61360(
-                                    preferred_name=PreferredNameTypeIEC61360(
+                                data_specification_content=aas.DataSpecificationIEC61360(
+                                    preferred_name=aas.PreferredNameTypeIEC61360(
                                         dict_={r"en": r"Description of an area"}
                                     ),
                                     data_type=None,
@@ -3472,7 +3520,7 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AreaLayout(File):
+            class AreaLayout(aas.File):
 
                 def __init__(
                     self,
@@ -3480,48 +3528,48 @@ class AssetLocation(Submodel):
                     id_short: Optional[str] = r"AreaLayout",
                     content_type: Optional[str] = r"application/pdf",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"area layout", r"de": r"Areallayout"}
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"File with a layout (map) of the area (e.g., hall plan)",
                             r"de": r"Datei mit einem Areallayout (z.B. Hallenplan)",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/file/arealayout/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3548,50 +3596,50 @@ class AssetLocation(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class BuildingLevel(Property):
+            class BuildingLevel(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"BuildingLevel",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"building level", r"de": r"Stockwerk"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"0173-1#02-ABJ094#001",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3623,37 +3671,41 @@ class AssetLocation(Submodel):
                 self,
                 areaId: Union[str, AreaId],
                 coordinateSystemOfArea: Optional[
-                    Union[Reference, CoordinateSystemOfArea]
+                    Union[aas.Reference, CoordinateSystemOfArea]
                 ] = None,
                 addressReferences: Optional[AddressReferences] = None,
                 areaRegionCoordinates: Optional[AreaRegionCoordinates] = None,
                 kindOfArea: Optional[Union[str, KindOfArea]] = None,
                 areaName: Optional[Union[str, AreaName]] = None,
-                areaDesciption: Optional[Union[LangStringSet, AreaDesciption]] = None,
+                areaDesciption: Optional[
+                    Union[aas.LangStringSet, AreaDesciption]
+                ] = None,
                 areaLayout: Optional[AreaLayout] = None,
                 buildingLevel: Optional[Union[str, BuildingLevel]] = None,
                 id_short: Optional[str] = r"visitedareas_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Areas (e.g., site, building, field warehouse) where an asset has been located or is located"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/visitedareasrecord/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
@@ -3665,30 +3717,32 @@ class AssetLocation(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if coordinateSystemOfArea and not isinstance(
-                    coordinateSystemOfArea, SubmodelElement
+                    coordinateSystemOfArea, aas.SubmodelElement
                 ):
                     coordinateSystemOfArea = self.CoordinateSystemOfArea(
                         coordinateSystemOfArea
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
-                if kindOfArea and not isinstance(kindOfArea, SubmodelElement):
+                if kindOfArea and not isinstance(kindOfArea, aas.SubmodelElement):
                     kindOfArea = self.KindOfArea(kindOfArea)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if areaName and not isinstance(areaName, SubmodelElement):
+                if areaName and not isinstance(areaName, aas.SubmodelElement):
                     areaName = self.AreaName(areaName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if areaId and not isinstance(areaId, SubmodelElement):
+                if areaId and not isinstance(areaId, aas.SubmodelElement):
                     areaId = self.AreaId(areaId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if areaDesciption and not isinstance(areaDesciption, SubmodelElement):
+                if areaDesciption and not isinstance(
+                    areaDesciption, aas.SubmodelElement
+                ):
                     areaDesciption = self.AreaDesciption(areaDesciption)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if buildingLevel and not isinstance(buildingLevel, SubmodelElement):
+                if buildingLevel and not isinstance(buildingLevel, aas.SubmodelElement):
                     buildingLevel = self.BuildingLevel(buildingLevel)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3706,7 +3760,7 @@ class AssetLocation(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3714,7 +3768,7 @@ class AssetLocation(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3734,55 +3788,61 @@ class AssetLocation(Submodel):
             self,
             visitedareas_items: Visitedareas_item,
             id_short: Optional[str] = r"VisitedAreas",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = ExternalReference(
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/smc/visitedareasrecord/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"visited areas", r"de": r"besuchte Areale"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"List with areas (e.g., sites, buildings, field warehouses) where an asset has been located or is located",
                     r"de": r"Liste mit Arealen (z.B. Standort, Gebäude, Freilagerfläche) an denen sich ein Asset befunden hat oder sich befindet",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/sml/visitedareas/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3800,7 +3860,7 @@ class AssetLocation(Submodel):
             for se_arg in [visitedareas_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3808,7 +3868,7 @@ class AssetLocation(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3836,7 +3896,7 @@ class AssetLocation(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3852,7 +3912,7 @@ class AssetLocation(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -3863,11 +3923,11 @@ class AssetLocation(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -3883,7 +3943,7 @@ class AssetLocation(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -3894,51 +3954,53 @@ class AssetLocation(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class AssetTraces(SubmodelElementCollection):
+    class AssetTraces(aas.SubmodelElementCollection):
 
-        class AreaEventTimeSeriesData(ReferenceElement):
+        class AreaEventTimeSeriesData(aas.ReferenceElement):
 
             def __init__(
                 self,
-                value: Reference,
+                value: aas.Reference,
                 id_short: Optional[str] = r"AreaEventTimeSeriesData",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with AreaRecords",
                         r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für AreaRecords",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -3964,49 +4026,51 @@ class AssetLocation(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class LocationEventTimeSeriesData(ReferenceElement):
+        class LocationEventTimeSeriesData(aas.ReferenceElement):
 
             def __init__(
                 self,
-                value: Reference,
+                value: aas.Reference,
                 id_short: Optional[str] = r"LocationEventTimeSeriesData",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with LocationRecords",
                         r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für FenceRecords",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4032,55 +4096,55 @@ class AssetLocation(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class AreaRecords(SubmodelElementList):
+        class AreaRecords(aas.SubmodelElementList):
 
-            class Arearecords_item(SubmodelElementCollection):
+            class Arearecords_item(aas.SubmodelElementCollection):
 
-                class AreaRef(ReferenceElement):
+                class AreaRef(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"AreaRef",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Reference to the area where the event has been recorded for",
                                 r"de": r"Referenz auf das Areal, zu dem das Event erfasst wurde",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ref/areareference/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4106,57 +4170,57 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Time(Property):
+                class Time(aas.Property):
 
                     def __init__(
                         self,
-                        value: DateTime,
+                        value: xsd.DateTime,
                         id_short: Optional[str] = r"Time",
-                        value_type: DataTypeDefXsd = DateTime,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"Time ", r"de": r"Zeitpunkt"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Time when the event occurred",
                                 r"de": r"Zeitpunkt an dem das Ereignis aufgetreten ist",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r" 0173-1#02-ABF198#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4184,57 +4248,57 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class EventId(Property):
+                class EventId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"EventId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"event (ID)", r"de": r"Ereignis (ID)"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Identification of an event",
                                 r"de": r"Ident eines events",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/eventid/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4262,57 +4326,57 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ProviderId(Property):
+                class ProviderId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ProviderId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"provider (ID)", r"de": r"Lieferant (ID)"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Identifikation of the location provider which triggered the event ",
                                 r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/providerid/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4340,50 +4404,50 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class EventType(Property):
+                class EventType(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"EventType",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"event type", r"de": r"Eventtyp"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/eventtype/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4413,33 +4477,33 @@ class AssetLocation(Submodel):
 
                 def __init__(
                     self,
-                    areaRef: Union[Reference, AreaRef],
-                    time: Union[DateTime, Time],
+                    areaRef: Union[aas.Reference, AreaRef],
+                    time: Union[xsd.DateTime, Time],
                     eventType: Union[str, EventType],
                     eventId: Optional[Union[str, EventId]] = None,
                     providerId: Optional[Union[str, ProviderId]] = None,
                     id_short: Optional[str] = r"arearecords_item",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Record of an area localization event"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/smc/arearecordsrecord/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
@@ -4450,23 +4514,23 @@ class AssetLocation(Submodel):
                         embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if areaRef and not isinstance(areaRef, SubmodelElement):
+                    if areaRef and not isinstance(areaRef, aas.SubmodelElement):
                         areaRef = self.AreaRef(areaRef)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if time and not isinstance(time, SubmodelElement):
+                    if time and not isinstance(time, aas.SubmodelElement):
                         time = self.Time(time)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if eventId and not isinstance(eventId, SubmodelElement):
+                    if eventId and not isinstance(eventId, aas.SubmodelElement):
                         eventId = self.EventId(eventId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if providerId and not isinstance(providerId, SubmodelElement):
+                    if providerId and not isinstance(providerId, aas.SubmodelElement):
                         providerId = self.ProviderId(providerId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if eventType and not isinstance(eventType, SubmodelElement):
+                    if eventType and not isinstance(eventType, aas.SubmodelElement):
                         eventType = self.EventType(eventType)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4474,7 +4538,7 @@ class AssetLocation(Submodel):
                     for se_arg in [areaRef, time, eventId, providerId, eventType]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -4482,7 +4546,7 @@ class AssetLocation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -4502,55 +4566,59 @@ class AssetLocation(Submodel):
                 self,
                 arearecords_items: Arearecords_item,
                 id_short: Optional[str] = r"AreaRecords",
-                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                semantic_id_list_element: Optional[Reference] = ExternalReference(
+                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                semantic_id_list_element: Optional[
+                    aas.Reference
+                ] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/arearecordsrecord/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"List with records for area localization events",
                         r"de": r"Liste mit Datensätzen für Areallokalisierungsereignisse",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/sml/arearecords/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4568,7 +4636,7 @@ class AssetLocation(Submodel):
                 for se_arg in [arearecords_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -4576,7 +4644,7 @@ class AssetLocation(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -4604,7 +4672,7 @@ class AssetLocation(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -4620,7 +4688,7 @@ class AssetLocation(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -4631,11 +4699,11 @@ class AssetLocation(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -4654,7 +4722,7 @@ class AssetLocation(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -4665,55 +4733,55 @@ class AssetLocation(Submodel):
                 # Re-assign id_short
                 new.id_short = saved_id_short
 
-        class LocationRecords(SubmodelElementList):
+        class LocationRecords(aas.SubmodelElementList):
 
-            class Locationrecords_item(SubmodelElementCollection):
+            class Locationrecords_item(aas.SubmodelElementCollection):
 
-                class CoordinateSystemReference(ReferenceElement):
+                class CoordinateSystemReference(aas.ReferenceElement):
 
                     def __init__(
                         self,
-                        value: Reference,
+                        value: aas.Reference,
                         id_short: Optional[str] = r"CoordinateSystemReference",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Reference to a coordinate reference system for the position ",
                                 r"de": r"Referenz auf das Koordinatenreferenzsystem für die Position",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/ref/coordinatesystemreference/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -4739,48 +4807,50 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Position(SubmodelElementCollection):
+                class Position(aas.SubmodelElementCollection):
 
-                    class X(Property):
+                    class X(aas.Property):
 
                         def __init__(
                             self,
-                            value: Float,
+                            value: xsd.Float,
                             id_short: Optional[str] = r"X",
-                            value_type: DataTypeDefXsd = Float,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Float,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/x/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4808,46 +4878,48 @@ class AssetLocation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class Y(Property):
+                    class Y(aas.Property):
 
                         def __init__(
                             self,
-                            value: Float,
+                            value: xsd.Float,
                             id_short: Optional[str] = r"Y",
-                            value_type: DataTypeDefXsd = Float,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Float,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/y/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4875,46 +4947,48 @@ class AssetLocation(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class Z(Property):
+                    class Z(aas.Property):
 
                         def __init__(
                             self,
-                            value: Float,
+                            value: xsd.Float,
                             id_short: Optional[str] = r"Z",
-                            value_type: DataTypeDefXsd = Float,
-                            value_id: Optional[Reference] = None,
-                            display_name: Optional[MultiLanguageNameType] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.Float,
+                            value_id: Optional[aas.Reference] = None,
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/z/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4944,50 +5018,50 @@ class AssetLocation(Submodel):
 
                     def __init__(
                         self,
-                        x: Union[Float, X],
-                        y: Union[Float, Y],
-                        z: Union[Float, Z],
+                        x: Union[xsd.Float, X],
+                        y: Union[xsd.Float, Y],
+                        z: Union[xsd.Float, Z],
                         id_short: Optional[str] = r"Position",
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"position", r"de": r"Position"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Position of the asset"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABI783#001",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5001,15 +5075,15 @@ class AssetLocation(Submodel):
                             embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if x and not isinstance(x, SubmodelElement):
+                        if x and not isinstance(x, aas.SubmodelElement):
                             x = self.X(x)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if y and not isinstance(y, SubmodelElement):
+                        if y and not isinstance(y, aas.SubmodelElement):
                             y = self.Y(y)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if z and not isinstance(z, SubmodelElement):
+                        if z and not isinstance(z, aas.SubmodelElement):
                             z = self.Z(z)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -5017,7 +5091,7 @@ class AssetLocation(Submodel):
                         for se_arg in [x, y, z]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -5025,7 +5099,7 @@ class AssetLocation(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -5041,57 +5115,57 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ProviderId(Property):
+                class ProviderId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ProviderId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"provider (ID)", r"de": r"Lieferant (ID)"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Identifikation of the location provider which triggered the event ",
                                 r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/providerid/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5119,50 +5193,50 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ProviderType(Property):
+                class ProviderType(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ProviderType",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"provider type", r"de": r"Versorgertyp"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/providertype/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5190,50 +5264,50 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Accuracy(Property):
+                class Accuracy(aas.Property):
 
                     def __init__(
                         self,
                         value: float,
                         id_short: Optional[str] = r"Accuracy",
-                        value_type: DataTypeDefXsd = float,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = float,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"Accuracy", r"de": r"Genauigkeit"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/accuracy/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5261,53 +5335,53 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class MagneticHeading(Property):
+                class MagneticHeading(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"MagneticHeading",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"magnetic heading",
                                 r"de": r"magnetische Ausrichtung",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/magneticheading/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5335,50 +5409,50 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class TrueHeading(Property):
+                class TrueHeading(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"TrueHeading",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"heading", r"de": r"Ausrichtung"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/trueheading/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5406,53 +5480,53 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class HeadingAccuracy(Property):
+                class HeadingAccuracy(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"HeadingAccuracy",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"heading accuracy",
                                 r"de": r"Steuerkursgenauigkeit",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/headingaccuracy/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5480,57 +5554,57 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Time(Property):
+                class Time(aas.Property):
 
                     def __init__(
                         self,
-                        value: DateTime,
+                        value: xsd.DateTime,
                         id_short: Optional[str] = r"Time",
-                        value_type: DataTypeDefXsd = DateTime,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"time", r"de": r"Zeitpunkt"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"The time (timestamp) when the location data was generated (e.g., by a RTLS) ",
                                 r"de": r"Der Zeitpunkt (Zeitstempel) zu dem die Lokalisierung erfolgt ist (z.B. durch ein RTLS)",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"0173-1#02-ABF198#002",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5558,17 +5632,17 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class TransmissionTime(Property):
+                class TransmissionTime(aas.Property):
 
                     def __init__(
                         self,
-                        value: DateTime,
+                        value: xsd.DateTime,
                         id_short: Optional[str] = r"TransmissionTime",
-                        value_type: DataTypeDefXsd = DateTime,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"transmission time",
                                 r"de": r"Sendezeitpunkt",
@@ -5576,42 +5650,42 @@ class AssetLocation(Submodel):
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Time (timestemp) when the location information has been updated",
                                 r"de": r"Zeitpunkt (Zeitstempel) an dem die Lokalisierungsinformation zuletzt geändert wurde",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/transmissiontime/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5639,16 +5713,16 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class LocationDescription(MultiLanguageProperty):
+                class LocationDescription(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"LocationDescription",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"location description",
                                 r"de": r"Ortsbeschreibung",
@@ -5656,42 +5730,42 @@ class AssetLocation(Submodel):
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Location description (meta information for the position) , it is recommended to refer to the origin of the CRS",
                                 r"de": r"Beschreibung des Orts (Metainformationen zur Position); es wird empfohlen, auf den Ursprung des Koordinatenreferenzsystems Bezug zu nehmen",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/mlp/locationdescription/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5703,18 +5777,18 @@ class AssetLocation(Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = [
-                                EmbeddedDataSpecification(
-                                    data_specification=ExternalReference(
+                                aas.EmbeddedDataSpecification(
+                                    data_specification=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0",
                                             ),
                                         ),
                                         referred_semantic_id=None,
                                     ),
-                                    data_specification_content=DataSpecificationIEC61360(
-                                        preferred_name=PreferredNameTypeIEC61360(
+                                    data_specification_content=aas.DataSpecificationIEC61360(
+                                        preferred_name=aas.PreferredNameTypeIEC61360(
                                             dict_={r"en": r"locationdescription"}
                                         ),
                                         data_type=None,
@@ -5746,57 +5820,57 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Speed(Property):
+                class Speed(aas.Property):
 
                     def __init__(
                         self,
-                        value: Float,
+                        value: xsd.Float,
                         id_short: Optional[str] = r"Speed",
-                        value_type: DataTypeDefXsd = Float,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = xsd.Float,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"speed", r"de": r"Geschwindigkeit"}
                         ),
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Speed of the asset at the time where the position was determined",
                                 r"de": r"Geschwindigkeit des Assets zum Zeitpunkt an dem die Position bestimmt wurde",
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r" 0173-1#02-AAV544#004",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5824,50 +5898,50 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class Course(Property):
+                class Course(aas.Property):
 
                     def __init__(
                         self,
                         value: int,
                         id_short: Optional[str] = r"Course",
-                        value_type: DataTypeDefXsd = int,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = int,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"course", r"de": r"Kurs"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/course/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5895,53 +5969,53 @@ class AssetLocation(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ReferencePointId(Property):
+                class ReferencePointId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"ReferencePointId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"reference point (ID)",
                                 r"de": r"Referenzpunkt (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/referencepointid/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -5972,10 +6046,10 @@ class AssetLocation(Submodel):
                 def __init__(
                     self,
                     coordinateSystemReference: Union[
-                        Reference, CoordinateSystemReference
+                        aas.Reference, CoordinateSystemReference
                     ],
                     position: Position,
-                    time: Union[DateTime, Time],
+                    time: Union[xsd.DateTime, Time],
                     providerId: Optional[Union[str, ProviderId]] = None,
                     providerType: Optional[Union[str, ProviderType]] = None,
                     accuracy: Optional[Union[float, Accuracy]] = None,
@@ -5983,38 +6057,38 @@ class AssetLocation(Submodel):
                     trueHeading: Optional[Union[int, TrueHeading]] = None,
                     headingAccuracy: Optional[Union[int, HeadingAccuracy]] = None,
                     transmissionTime: Optional[
-                        Union[DateTime, TransmissionTime]
+                        Union[xsd.DateTime, TransmissionTime]
                     ] = None,
                     locationDescription: Optional[
-                        Union[LangStringSet, LocationDescription]
+                        Union[aas.LangStringSet, LocationDescription]
                     ] = None,
-                    speed: Optional[Union[Float, Speed]] = None,
+                    speed: Optional[Union[xsd.Float, Speed]] = None,
                     course: Optional[Union[int, Course]] = None,
                     referencePointId: Optional[Union[str, ReferencePointId]] = None,
                     id_short: Optional[str] = r"locationrecords_item",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Record of a location (position) localization event"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/smc/locationrecordsrecord/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
@@ -6026,69 +6100,71 @@ class AssetLocation(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if coordinateSystemReference and not isinstance(
-                        coordinateSystemReference, SubmodelElement
+                        coordinateSystemReference, aas.SubmodelElement
                     ):
                         coordinateSystemReference = self.CoordinateSystemReference(
                             coordinateSystemReference
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if providerId and not isinstance(providerId, SubmodelElement):
+                    if providerId and not isinstance(providerId, aas.SubmodelElement):
                         providerId = self.ProviderId(providerId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if providerType and not isinstance(providerType, SubmodelElement):
+                    if providerType and not isinstance(
+                        providerType, aas.SubmodelElement
+                    ):
                         providerType = self.ProviderType(providerType)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if accuracy and not isinstance(accuracy, SubmodelElement):
+                    if accuracy and not isinstance(accuracy, aas.SubmodelElement):
                         accuracy = self.Accuracy(accuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if magneticHeading and not isinstance(
-                        magneticHeading, SubmodelElement
+                        magneticHeading, aas.SubmodelElement
                     ):
                         magneticHeading = self.MagneticHeading(magneticHeading)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if trueHeading and not isinstance(trueHeading, SubmodelElement):
+                    if trueHeading and not isinstance(trueHeading, aas.SubmodelElement):
                         trueHeading = self.TrueHeading(trueHeading)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if headingAccuracy and not isinstance(
-                        headingAccuracy, SubmodelElement
+                        headingAccuracy, aas.SubmodelElement
                     ):
                         headingAccuracy = self.HeadingAccuracy(headingAccuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if time and not isinstance(time, SubmodelElement):
+                    if time and not isinstance(time, aas.SubmodelElement):
                         time = self.Time(time)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if transmissionTime and not isinstance(
-                        transmissionTime, SubmodelElement
+                        transmissionTime, aas.SubmodelElement
                     ):
                         transmissionTime = self.TransmissionTime(transmissionTime)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if locationDescription and not isinstance(
-                        locationDescription, SubmodelElement
+                        locationDescription, aas.SubmodelElement
                     ):
                         locationDescription = self.LocationDescription(
                             locationDescription
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if speed and not isinstance(speed, SubmodelElement):
+                    if speed and not isinstance(speed, aas.SubmodelElement):
                         speed = self.Speed(speed)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if course and not isinstance(course, SubmodelElement):
+                    if course and not isinstance(course, aas.SubmodelElement):
                         course = self.Course(course)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if referencePointId and not isinstance(
-                        referencePointId, SubmodelElement
+                        referencePointId, aas.SubmodelElement
                     ):
                         referencePointId = self.ReferencePointId(referencePointId)
 
@@ -6112,7 +6188,7 @@ class AssetLocation(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -6120,7 +6196,7 @@ class AssetLocation(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -6140,55 +6216,59 @@ class AssetLocation(Submodel):
                 self,
                 locationrecords_items: Locationrecords_item,
                 id_short: Optional[str] = r"LocationRecords",
-                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                semantic_id_list_element: Optional[Reference] = ExternalReference(
+                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                semantic_id_list_element: Optional[
+                    aas.Reference
+                ] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/locationrecordsrecord/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"List with records for location (position) localization events",
                         r"de": r"Liste mit Datensätzen für Ereignisse betreffend der Lokalisierung (Positionsbestimmung)",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/sml/locationrecords/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6206,7 +6286,7 @@ class AssetLocation(Submodel):
                 for se_arg in [locationrecords_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -6214,7 +6294,7 @@ class AssetLocation(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -6242,7 +6322,7 @@ class AssetLocation(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6258,7 +6338,7 @@ class AssetLocation(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -6269,11 +6349,11 @@ class AssetLocation(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -6292,7 +6372,7 @@ class AssetLocation(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -6306,51 +6386,57 @@ class AssetLocation(Submodel):
         def __init__(
             self,
             areaEventTimeSeriesData: Optional[
-                Union[Reference, AreaEventTimeSeriesData]
+                Union[aas.Reference, AreaEventTimeSeriesData]
             ] = None,
             locationEventTimeSeriesData: Optional[
-                Union[Reference, LocationEventTimeSeriesData]
+                Union[aas.Reference, LocationEventTimeSeriesData]
             ] = None,
             areaRecords: Optional[AreaRecords] = None,
             locationRecords: Optional[LocationRecords] = None,
             id_short: Optional[str] = r"AssetTraces",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"asset traces", r"de": r"Assetverfolgung"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Collection of localization event records for sites, areas, fences and locations",
                     r"de": r"Sammlung von Lokalisierungsevents für Standorte, Areale, Schranken und Positionen",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/smc/assettraces/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -6365,7 +6451,7 @@ class AssetLocation(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if areaEventTimeSeriesData and not isinstance(
-                areaEventTimeSeriesData, SubmodelElement
+                areaEventTimeSeriesData, aas.SubmodelElement
             ):
                 areaEventTimeSeriesData = self.AreaEventTimeSeriesData(
                     areaEventTimeSeriesData
@@ -6373,7 +6459,7 @@ class AssetLocation(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if locationEventTimeSeriesData and not isinstance(
-                locationEventTimeSeriesData, SubmodelElement
+                locationEventTimeSeriesData, aas.SubmodelElement
             ):
                 locationEventTimeSeriesData = self.LocationEventTimeSeriesData(
                     locationEventTimeSeriesData
@@ -6389,7 +6475,7 @@ class AssetLocation(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -6397,7 +6483,7 @@ class AssetLocation(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -6413,50 +6499,52 @@ class AssetLocation(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class AssetLocatingInformation(SubmodelElementCollection):
+    class AssetLocatingInformation(aas.SubmodelElementCollection):
 
-        class Localizable(Property):
+        class Localizable(aas.Property):
 
             def __init__(
                 self,
                 value: bool,
                 id_short: Optional[str] = r"Localizable",
-                value_type: DataTypeDefXsd = bool,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = bool,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"localizable", r"de": r"lokalisierbar"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/prop/localizable/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6484,55 +6572,59 @@ class AssetLocation(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class AssetLocationServiceRealTimeCapability(MultiLanguageProperty):
+        class AssetLocationServiceRealTimeCapability(aas.MultiLanguageProperty):
 
             def __init__(
                 self,
-                value: LangStringSet,
+                value: aas.LangStringSet,
                 id_short: Optional[str] = r"AssetLocationServiceRealTimeCapability",
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"Realtime capability description",
                         r"de": r"Beschreibung der Echtzeitfähigkeit",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Description of the extend and conditions for real time applications of the AAS",
                         r"de": r"Beschreibung, inwieweit und unter welchen Bedingungen eine Echtzeitfähigkeit der AAS besteht",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/mlp/realtimecapabilityofaas/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6544,18 +6636,18 @@ class AssetLocation(Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = [
-                        EmbeddedDataSpecification(
-                            data_specification=ExternalReference(
+                        aas.EmbeddedDataSpecification(
+                            data_specification=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            data_specification_content=DataSpecificationIEC61360(
-                                preferred_name=PreferredNameTypeIEC61360(
+                            data_specification_content=aas.DataSpecificationIEC61360(
+                                preferred_name=aas.PreferredNameTypeIEC61360(
                                     dict_={r"en": r"Realtime capability description"}
                                 ),
                                 data_type=None,
@@ -6587,51 +6679,53 @@ class AssetLocation(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class RealtimeLocationSourceType(Property):
+        class RealtimeLocationSourceType(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"RealtimeLocationSourceType",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"real time location source type",
                         r"de": r"Typ der Quelle für Echtzeitlokalisierung",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/prop/realtimelocationsourcetype/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6659,50 +6753,52 @@ class AssetLocation(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class RealtimeLocationSource(MultiLanguageProperty):
+        class RealtimeLocationSource(aas.MultiLanguageProperty):
 
             def __init__(
                 self,
-                value: LangStringSet,
+                value: aas.LangStringSet,
                 id_short: Optional[str] = r"RealtimeLocationSource",
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"Real time location source",
                         r"de": r"Quelle für Echtzeitlokalisierung",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/mlp/realtimelocationsource/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6714,18 +6810,18 @@ class AssetLocation(Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = [
-                        EmbeddedDataSpecification(
-                            data_specification=ExternalReference(
+                        aas.EmbeddedDataSpecification(
+                            data_specification=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            data_specification_content=DataSpecificationIEC61360(
-                                preferred_name=PreferredNameTypeIEC61360(
+                            data_specification_content=aas.DataSpecificationIEC61360(
+                                preferred_name=aas.PreferredNameTypeIEC61360(
                                     dict_={r"en": r"Course"}
                                 ),
                                 data_type=None,
@@ -6761,50 +6857,54 @@ class AssetLocation(Submodel):
             self,
             localizable: Optional[Union[bool, Localizable]] = None,
             assetLocationServiceRealTimeCapability: Optional[
-                Union[LangStringSet, AssetLocationServiceRealTimeCapability]
+                Union[aas.LangStringSet, AssetLocationServiceRealTimeCapability]
             ] = None,
             realtimeLocationSourceType: Optional[
                 Union[str, RealtimeLocationSourceType]
             ] = None,
             realtimeLocationSource: Optional[
-                Union[LangStringSet, RealtimeLocationSource]
+                Union[aas.LangStringSet, RealtimeLocationSource]
             ] = None,
             id_short: Optional[str] = r"AssetLocatingInformation",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Collection with additional information concerning the localization of an asset",
                     r"de": r"Sammlung mit zusätzlichen Informationen betreffend die Lokalisierung eines Assets",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/sml/assetlocatinginformation/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -6818,12 +6918,12 @@ class AssetLocation(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if localizable and not isinstance(localizable, SubmodelElement):
+            if localizable and not isinstance(localizable, aas.SubmodelElement):
                 localizable = self.Localizable(localizable)
 
             # Build a submodel element if a raw value was passed in the argument
             if assetLocationServiceRealTimeCapability and not isinstance(
-                assetLocationServiceRealTimeCapability, SubmodelElement
+                assetLocationServiceRealTimeCapability, aas.SubmodelElement
             ):
                 assetLocationServiceRealTimeCapability = (
                     self.AssetLocationServiceRealTimeCapability(
@@ -6833,7 +6933,7 @@ class AssetLocation(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if realtimeLocationSourceType and not isinstance(
-                realtimeLocationSourceType, SubmodelElement
+                realtimeLocationSourceType, aas.SubmodelElement
             ):
                 realtimeLocationSourceType = self.RealtimeLocationSourceType(
                     realtimeLocationSourceType
@@ -6841,7 +6941,7 @@ class AssetLocation(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if realtimeLocationSource and not isinstance(
-                realtimeLocationSource, SubmodelElement
+                realtimeLocationSource, aas.SubmodelElement
             ):
                 realtimeLocationSource = self.RealtimeLocationSource(
                     realtimeLocationSource
@@ -6857,7 +6957,7 @@ class AssetLocation(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -6865,7 +6965,7 @@ class AssetLocation(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -6890,50 +6990,52 @@ class AssetLocation(Submodel):
         assetTraces: Optional[AssetTraces] = None,
         assetLocatingInformation: Optional[AssetLocatingInformation] = None,
         id_short: Optional[str] = r"AssetLocation",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={
                 r"en": r"Submodel asset location",
                 r"de": r"Teilmodell Assetstandort",
             }
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": r"Submodel for tracking & tracing of the location of an assets",
                 r"de": r"Teilmodell für das Tracking & Tracing des Standortes eines Assets",
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
-            creator=ModelReference(
+            creator=aas.ModelReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.SUBMODEL,
+                    aas.Key(
+                        type_=aas.KeyTypes.SUBMODEL,
                         value=r"https://admin-shell.io/idta/smt/assetlocation/1/0",
                     ),
                 ),
-                type_=Submodel,
+                type_=aas.Submodel,
                 referred_semantic_id=None,
             ),
             template_id=r"AssetLocation",
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/smt/assetlocation/1/0",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -6953,7 +7055,7 @@ class AssetLocation(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -6961,7 +7063,7 @@ class AssetLocation(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

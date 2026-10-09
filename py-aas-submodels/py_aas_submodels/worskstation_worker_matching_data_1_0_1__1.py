@@ -1,26 +1,25 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class WorkstationWorkerMatchingData(Submodel):
+class WorkstationWorkerMatchingData(aas.Submodel):
 
-    class GeneralWorkstationData(SubmodelElementCollection):
+    class GeneralWorkstationData(aas.SubmodelElementCollection):
 
-        class WorkstationInformation(SubmodelElementCollection):
+        class WorkstationInformation(aas.SubmodelElementCollection):
 
-            class WorkstationName(Property):
+            class WorkstationName(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"WorkstationName",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Workstation name",
                             r"de": r"Name der Arbeitsstation",
@@ -28,37 +27,37 @@ class WorkstationWorkerMatchingData(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(dict_={r"en": r"Workstation name"}),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(dict_={r"en": r"Workstation name"}),
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/workstationname/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -86,51 +85,51 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class WorkstationId(Property):
+            class WorkstationId(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"WorkstationId",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Workstation ID", r"de": r"Arbeitsstation ID"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/prop/workstationid/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -158,53 +157,53 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class OrgName(MultiLanguageProperty):
+            class OrgName(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"OrgName",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Organizational name",
                             r"de": r"Organisationsname",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/orgname/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -231,50 +230,50 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class TypeOfWorkstation(MultiLanguageProperty):
+            class TypeOfWorkstation(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"TypeOfWorkstation",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Workstation type", r"de": r"Arbeitsstationsart"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/typeofworkstation/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -301,16 +300,16 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class WorkerAssistanceInformation(MultiLanguageProperty):
+            class WorkerAssistanceInformation(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"WorkerAssistanceInformation",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Worker assistance information",
                             r"de": r"Informationen zur Werkerassistenz",
@@ -318,39 +317,39 @@ class WorkstationWorkerMatchingData(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Worker assistance information"}
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/mlp/workerassistanceeinformation/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -377,16 +376,16 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class RequiredPersonalSafetyEquipment(MultiLanguageProperty):
+            class RequiredPersonalSafetyEquipment(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"RequiredPersonalSafetyEquipment",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Required personal safety equipment",
                             r"de": r"Erforderliche persönliche Schutzausrüstung",
@@ -394,40 +393,40 @@ class WorkstationWorkerMatchingData(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={r"en": r"Required personal safety equipment"}
                     ),
-                    semantic_id: Optional[Reference] = ModelReference(
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/requiredpersonalsafetyequipment/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -454,53 +453,53 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class NecessaryPersonalTools(MultiLanguageProperty):
+            class NecessaryPersonalTools(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"NecessaryPersonalTools",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Necessary personal tools",
                             r"de": r"Notwendige persönliche Werkzeuge",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/necessarypersonaltools/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -527,52 +526,52 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PersonalDataProcessing(MultiLanguageProperty):
+            class PersonalDataProcessing(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"PersonalDataProcessing",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Personal data processing ",
                             r"de": r"Verarbeitung persönlicher Daten",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/mlp/personaldataprocessing/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -599,53 +598,53 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class LocationDescription(MultiLanguageProperty):
+            class LocationDescription(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"LocationDescription",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Location description",
                             r"de": r"Ortsbeschreibung",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/locationdescription/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -672,50 +671,50 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Directions(MultiLanguageProperty):
+            class Directions(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"Directions",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Directions", r"de": r"Wegbeschreibung"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/directions/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -746,69 +745,73 @@ class WorkstationWorkerMatchingData(Submodel):
                 self,
                 workstationId: Union[str, WorkstationId],
                 workstationName: Optional[Union[str, WorkstationName]] = None,
-                orgName: Optional[Union[LangStringSet, OrgName]] = None,
+                orgName: Optional[Union[aas.LangStringSet, OrgName]] = None,
                 typeOfWorkstation: Optional[
-                    Union[LangStringSet, TypeOfWorkstation]
+                    Union[aas.LangStringSet, TypeOfWorkstation]
                 ] = None,
                 workerAssistanceInformation: Optional[
-                    Union[LangStringSet, WorkerAssistanceInformation]
+                    Union[aas.LangStringSet, WorkerAssistanceInformation]
                 ] = None,
                 requiredPersonalSafetyEquipment: Optional[
-                    Union[LangStringSet, RequiredPersonalSafetyEquipment]
+                    Union[aas.LangStringSet, RequiredPersonalSafetyEquipment]
                 ] = None,
                 necessaryPersonalTools: Optional[
-                    Union[LangStringSet, NecessaryPersonalTools]
+                    Union[aas.LangStringSet, NecessaryPersonalTools]
                 ] = None,
                 personalDataProcessing: Optional[
-                    Union[LangStringSet, PersonalDataProcessing]
+                    Union[aas.LangStringSet, PersonalDataProcessing]
                 ] = None,
                 locationDescription: Optional[
-                    Union[LangStringSet, LocationDescription]
+                    Union[aas.LangStringSet, LocationDescription]
                 ] = None,
-                directions: Optional[Union[LangStringSet, Directions]] = None,
+                directions: Optional[Union[aas.LangStringSet, Directions]] = None,
                 id_short: Optional[str] = r"WorkstationInformation",
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"General workstation information",
                         r"de": r"Allgemeine Arbeitsstationsinformationen",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"General information about the workstation in respect of worker deployment",
                         r"de": r"Allgemeine Informationen zur Arbeitsstation mit Relevanz für die Mitarbeitereinsatzplanung",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/workstationinformation/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"One",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -822,26 +825,28 @@ class WorkstationWorkerMatchingData(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workstationName and not isinstance(workstationName, SubmodelElement):
+                if workstationName and not isinstance(
+                    workstationName, aas.SubmodelElement
+                ):
                     workstationName = self.WorkstationName(workstationName)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workstationId and not isinstance(workstationId, SubmodelElement):
+                if workstationId and not isinstance(workstationId, aas.SubmodelElement):
                     workstationId = self.WorkstationId(workstationId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if orgName and not isinstance(orgName, SubmodelElement):
+                if orgName and not isinstance(orgName, aas.SubmodelElement):
                     orgName = self.OrgName(orgName)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if typeOfWorkstation and not isinstance(
-                    typeOfWorkstation, SubmodelElement
+                    typeOfWorkstation, aas.SubmodelElement
                 ):
                     typeOfWorkstation = self.TypeOfWorkstation(typeOfWorkstation)
 
                 # Build a submodel element if a raw value was passed in the argument
                 if workerAssistanceInformation and not isinstance(
-                    workerAssistanceInformation, SubmodelElement
+                    workerAssistanceInformation, aas.SubmodelElement
                 ):
                     workerAssistanceInformation = self.WorkerAssistanceInformation(
                         workerAssistanceInformation
@@ -849,7 +854,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if requiredPersonalSafetyEquipment and not isinstance(
-                    requiredPersonalSafetyEquipment, SubmodelElement
+                    requiredPersonalSafetyEquipment, aas.SubmodelElement
                 ):
                     requiredPersonalSafetyEquipment = (
                         self.RequiredPersonalSafetyEquipment(
@@ -859,7 +864,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if necessaryPersonalTools and not isinstance(
-                    necessaryPersonalTools, SubmodelElement
+                    necessaryPersonalTools, aas.SubmodelElement
                 ):
                     necessaryPersonalTools = self.NecessaryPersonalTools(
                         necessaryPersonalTools
@@ -867,7 +872,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if personalDataProcessing and not isinstance(
-                    personalDataProcessing, SubmodelElement
+                    personalDataProcessing, aas.SubmodelElement
                 ):
                     personalDataProcessing = self.PersonalDataProcessing(
                         personalDataProcessing
@@ -875,12 +880,12 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if locationDescription and not isinstance(
-                    locationDescription, SubmodelElement
+                    locationDescription, aas.SubmodelElement
                 ):
                     locationDescription = self.LocationDescription(locationDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if directions and not isinstance(directions, SubmodelElement):
+                if directions and not isinstance(directions, aas.SubmodelElement):
                     directions = self.Directions(directions)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -899,7 +904,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -907,7 +912,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -923,58 +928,58 @@ class WorkstationWorkerMatchingData(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class GeneralQualificationDemand(SubmodelElementList):
+        class GeneralQualificationDemand(aas.SubmodelElementList):
 
-            class Generalqualificationdemand_item(SubmodelElementCollection):
+            class Generalqualificationdemand_item(aas.SubmodelElementCollection):
 
-                class QualificationClassificationId(Property):
+                class QualificationClassificationId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"QualificationClassificationId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Qualification classification (ID)",
                                 r"de": r"Qualifikationsklassifizierung (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/prop/qualificationclassificationid/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1002,54 +1007,54 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class QualificationId(Property):
+                class QualificationId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"QualificationId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Qualification (ID)",
                                 r"de": r"Qualifikation (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/prop/qualificationid/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1077,53 +1082,53 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ExceptionRules(MultiLanguageProperty):
+                class ExceptionRules(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ExceptionRules",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Exception rules",
                                 r"de": r"Ausnahmeregelungen",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/mlp/exceptionrules/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1157,53 +1162,53 @@ class WorkstationWorkerMatchingData(Submodel):
                     ],
                     qualificationId: Union[str, QualificationId],
                     exceptionRules: Optional[
-                        Union[LangStringSet, ExceptionRules]
+                        Union[aas.LangStringSet, ExceptionRules]
                     ] = None,
                     id_short: Optional[str] = r"generalqualificationdemand_item",
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Worker qualification that is required to work at the workstation"
                         }
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Worker qualification that is required to work at the workstation"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/smc/generalqualificationdemandrecord/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1218,7 +1223,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if qualificationClassificationId and not isinstance(
-                        qualificationClassificationId, SubmodelElement
+                        qualificationClassificationId, aas.SubmodelElement
                     ):
                         qualificationClassificationId = (
                             self.QualificationClassificationId(
@@ -1228,13 +1233,13 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if qualificationId and not isinstance(
-                        qualificationId, SubmodelElement
+                        qualificationId, aas.SubmodelElement
                     ):
                         qualificationId = self.QualificationId(qualificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if exceptionRules and not isinstance(
-                        exceptionRules, SubmodelElement
+                        exceptionRules, aas.SubmodelElement
                     ):
                         exceptionRules = self.ExceptionRules(exceptionRules)
 
@@ -1247,7 +1252,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1255,7 +1260,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1277,52 +1282,56 @@ class WorkstationWorkerMatchingData(Submodel):
                     Iterable[Generalqualificationdemand_item]
                 ] = None,
                 id_short: Optional[str] = r"GeneralQualificationDemand",
-                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"General qualification demand",
                         r"de": r"Allgemeine Qualifikationsanforderungen",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Worker qualifications that are required in order to work at the workstation",
                         r"de": r"Mitarbeiterqualifikationen die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/sml/generalqualificationdemand/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -1340,7 +1349,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 for se_arg in [generalqualificationdemand_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -1348,7 +1357,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -1376,7 +1385,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -1392,7 +1401,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -1403,11 +1412,11 @@ class WorkstationWorkerMatchingData(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -1426,7 +1435,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -1437,58 +1446,58 @@ class WorkstationWorkerMatchingData(Submodel):
                 # Re-assign id_short
                 new.id_short = saved_id_short
 
-        class GeneralSkillDemand(SubmodelElementList):
+        class GeneralSkillDemand(aas.SubmodelElementList):
 
-            class Generalskilldemand_item(SubmodelElementCollection):
+            class Generalskilldemand_item(aas.SubmodelElementCollection):
 
-                class SkillClassificationId(Property):
+                class SkillClassificationId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SkillClassificationId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Skill classification (ID)",
                                 r"de": r"Fähigkeitenklassifizierung (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/prop/skillclassificationid/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1516,54 +1525,54 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class SkillLevelClassificationId(Property):
+                class SkillLevelClassificationId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SkillLevelClassificationId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Skill level classification (ID)",
                                 r"de": r"Fähigkeitenklassifizierung (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/prop/skilllevelclassificationid/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1591,54 +1600,54 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class SkillLevelId(Property):
+                class SkillLevelId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SkillLevelId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Skill level (ID)",
                                 r"de": r"Fähigkeitenstufe (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/prop/skilllevelid/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1666,51 +1675,51 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class SkillId(Property):
+                class SkillId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"SkillId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={r"en": r"Skill (ID)", r"de": r"Fähigkeit (ID)"}
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/prop/skillid/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1738,52 +1747,52 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class ExceptionRules(MultiLanguageProperty):
+                class ExceptionRules(aas.MultiLanguageProperty):
 
                     def __init__(
                         self,
-                        value: LangStringSet,
+                        value: aas.LangStringSet,
                         id_short: Optional[str] = r"ExceptionRules",
-                        value_id: Optional[Reference] = None,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Exception rules",
                                 r"de": r"Ausnahmeregelungen",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/mlp/exceptionrules/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"ZeroToOne",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -1819,47 +1828,47 @@ class WorkstationWorkerMatchingData(Submodel):
                     ] = None,
                     skillLevelId: Optional[Union[str, SkillLevelId]] = None,
                     exceptionRules: Optional[
-                        Union[LangStringSet, ExceptionRules]
+                        Union[aas.LangStringSet, ExceptionRules]
                     ] = None,
                     id_short: Optional[str] = r"generalskilldemand_item",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Worker skill that is required in order to work at the workstation"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/smc/generalskilldemandrecord/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToMany",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -1874,7 +1883,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if skillClassificationId and not isinstance(
-                        skillClassificationId, SubmodelElement
+                        skillClassificationId, aas.SubmodelElement
                     ):
                         skillClassificationId = self.SkillClassificationId(
                             skillClassificationId
@@ -1882,23 +1891,25 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if skillLevelClassificationId and not isinstance(
-                        skillLevelClassificationId, SubmodelElement
+                        skillLevelClassificationId, aas.SubmodelElement
                     ):
                         skillLevelClassificationId = self.SkillLevelClassificationId(
                             skillLevelClassificationId
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skillLevelId and not isinstance(skillLevelId, SubmodelElement):
+                    if skillLevelId and not isinstance(
+                        skillLevelId, aas.SubmodelElement
+                    ):
                         skillLevelId = self.SkillLevelId(skillLevelId)
 
                     # Build a submodel element if a raw value was passed in the argument
-                    if skillId and not isinstance(skillId, SubmodelElement):
+                    if skillId and not isinstance(skillId, aas.SubmodelElement):
                         skillId = self.SkillId(skillId)
 
                     # Build a submodel element if a raw value was passed in the argument
                     if exceptionRules and not isinstance(
-                        exceptionRules, SubmodelElement
+                        exceptionRules, aas.SubmodelElement
                     ):
                         exceptionRules = self.ExceptionRules(exceptionRules)
 
@@ -1913,7 +1924,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     ]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -1921,7 +1932,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -1943,52 +1954,56 @@ class WorkstationWorkerMatchingData(Submodel):
                     Iterable[Generalskilldemand_item]
                 ] = None,
                 id_short: Optional[str] = r"GeneralSkillDemand",
-                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"General skill demand",
                         r"de": r"Allgemeine Fähigkeitsanforderungen",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Worker skills that are required in order to work at the workstation",
                         r"de": r"Mitarbeiterfähigkeiten die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/sml/generalskilldemand/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2006,7 +2021,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 for se_arg in [generalskilldemand_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2014,7 +2029,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2042,7 +2057,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2058,7 +2073,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -2069,11 +2084,11 @@ class WorkstationWorkerMatchingData(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -2092,7 +2107,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -2109,41 +2124,45 @@ class WorkstationWorkerMatchingData(Submodel):
             generalQualificationDemand: Optional[GeneralQualificationDemand] = None,
             generalSkillDemand: Optional[GeneralSkillDemand] = None,
             id_short: Optional[str] = r"GeneralWorkstationData",
-            display_name: Optional[MultiLanguageNameType] = None,
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"General workstation data, which are relevant for worker deployment control and deployment planning",
                     r"de": r"Allgemeine Arbeitsstationsdaten, die für die Mitarbeitereinsatzsteuerung und -planung relevant sind",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/smc/generalworkstationdata/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2165,7 +2184,7 @@ class WorkstationWorkerMatchingData(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2173,7 +2192,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2189,51 +2208,53 @@ class WorkstationWorkerMatchingData(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class ErgonomicWorkstationProfile(SubmodelElementCollection):
+    class ErgonomicWorkstationProfile(aas.SubmodelElementCollection):
 
-        class MaxLiftingWeight(Property):
+        class MaxLiftingWeight(aas.Property):
 
             def __init__(
                 self,
                 value: int,
                 id_short: Optional[str] = r"MaxLiftingWeight",
-                value_type: DataTypeDefXsd = int,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = int,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"Max. lifting weight", r"de": r"Max. Hebegewicht"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ModelReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.CONCEPT_DESCRIPTION,
+                        aas.Key(
+                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                             value=r"https://admin-shell.io/idta/prop/maxliftingweight/1/0",
                         ),
                     ),
-                    type_=ConceptDescription,
+                    type_=aas.ConceptDescription,
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2261,52 +2282,54 @@ class WorkstationWorkerMatchingData(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class MinWorkerHeight(Property):
+        class MinWorkerHeight(aas.Property):
 
             def __init__(
                 self,
                 value: int,
                 id_short: Optional[str] = r"MinWorkerHeight",
-                value_type: DataTypeDefXsd = int,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = int,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"Minimum worker height ",
                         r"de": r"Minimale Mitarbeitergröße ",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ModelReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.CONCEPT_DESCRIPTION,
+                        aas.Key(
+                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                             value=r"https://admin-shell.io/idta/prop/minworkerheight/1/0",
                         ),
                     ),
-                    type_=ConceptDescription,
+                    type_=aas.ConceptDescription,
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2334,57 +2357,57 @@ class WorkstationWorkerMatchingData(Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class AllowedPersonalLimitations(SubmodelElementList):
+        class AllowedPersonalLimitations(aas.SubmodelElementList):
 
-            class Allowedpersonallimitations_item(SubmodelElementCollection):
+            class Allowedpersonallimitations_item(aas.SubmodelElementCollection):
 
-                class LimitationClassificationId(Property):
+                class LimitationClassificationId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"LimitationClassificationId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Limitation classification (ID)",
                                 r"de": r"Einschränkungsklassifizierung (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/prop/limitationclassificationid/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2412,54 +2435,54 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class PersonalLimitationId(Property):
+                class PersonalLimitationId(aas.Property):
 
                     def __init__(
                         self,
                         value: str,
                         id_short: Optional[str] = r"PersonalLimitationId",
-                        value_type: DataTypeDefXsd = str,
-                        value_id: Optional[Reference] = None,
+                        value_type: aas.DataTypeDefXsd = str,
+                        value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
-                            MultiLanguageNameType
-                        ] = MultiLanguageNameType(
+                            aas.MultiLanguageNameType
+                        ] = aas.MultiLanguageNameType(
                             dict_={
                                 r"en": r"Personal limitation (ID)",
                                 r"de": r"Persönliche Einschränkung (ID)",
                             }
                         ),
                         category: Optional[str] = None,
-                        description: Optional[MultiLanguageTextType] = None,
-                        semantic_id: Optional[Reference] = ModelReference(
+                        description: Optional[aas.MultiLanguageTextType] = None,
+                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                     value=r"https://admin-shell.io/idta/prop/personallimitationid/1/0",
                                 ),
                             ),
-                            type_=ConceptDescription,
+                            type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
                         if qualifier is None:
                             qualifier = (
-                                Qualifier(
+                                aas.Qualifier(
                                     type_=r"SMT/Cardinality",
                                     value_type=str,
                                     value=r"One",
                                     value_id=None,
-                                    kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=ExternalReference(
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
                                         key=(
-                                            Key(
-                                                type_=KeyTypes.GLOBAL_REFERENCE,
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                 value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                             ),
                                         ),
@@ -2492,29 +2515,29 @@ class WorkstationWorkerMatchingData(Submodel):
                     limitationClassificationId: Union[str, LimitationClassificationId],
                     personalLimitationId: Union[str, PersonalLimitationId],
                     id_short: Optional[str] = r"allowedpersonallimitations_item",
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Personal limitation that is accepted for working at the workstation, e.g., special measures have been implemented"
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/smc/allowedpersonallimitationsrecord/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
@@ -2526,7 +2549,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if limitationClassificationId and not isinstance(
-                        limitationClassificationId, SubmodelElement
+                        limitationClassificationId, aas.SubmodelElement
                     ):
                         limitationClassificationId = self.LimitationClassificationId(
                             limitationClassificationId
@@ -2534,7 +2557,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
                     if personalLimitationId and not isinstance(
-                        personalLimitationId, SubmodelElement
+                        personalLimitationId, aas.SubmodelElement
                     ):
                         personalLimitationId = self.PersonalLimitationId(
                             personalLimitationId
@@ -2545,7 +2568,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     for se_arg in [limitationClassificationId, personalLimitationId]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -2553,7 +2576,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -2573,52 +2596,56 @@ class WorkstationWorkerMatchingData(Submodel):
                 self,
                 allowedpersonallimitations_items: Allowedpersonallimitations_item,
                 id_short: Optional[str] = r"AllowedPersonalLimitations",
-                type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                semantic_id_list_element: Optional[Reference] = None,
-                value_type_list_element: Optional[DataTypeDefXsd] = None,
+                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                semantic_id_list_element: Optional[aas.Reference] = None,
+                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={
                         r"en": r"Allowed personal limitations",
                         r"de": r"Akzeptierte Mitarbeitereinschränkungen",
                     }
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"List of all personal limitations that are accepted for working at the workstation, e.g., special measures have been implemented",
                         r"de": r"Liste von persönlichen Einschränkungen, die an der Arbeitsstation zugelassen sind. Zum Beispiel weil bestimmte Arbeitsgestaltungsmaßnahmen getroffen wurden.",
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/sml/allowedpersonallimitations/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToOne",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -2636,7 +2663,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 for se_arg in [allowedpersonallimitations_items]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -2644,7 +2671,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -2672,7 +2699,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                 if not isinstance(new, self.type_value_list_element):
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         108,
                         "All first level elements must be of the type specified in "
                         f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -2688,7 +2715,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                     # Not really a constraint...
                     # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         107,
                         f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                         "is specified all first level children must have the same "
@@ -2699,11 +2726,11 @@ class WorkstationWorkerMatchingData(Submodel):
                 # is either Property or Range. Thus, `new` must have the value_type property.
                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                 if (
-                    isinstance(self.type_value_list_element, Property)
-                    or isinstance(self.type_value_list_element, Range)
+                    isinstance(self.type_value_list_element, aas.Property)
+                    or isinstance(self.type_value_list_element, aas.Range)
                     and not isinstance(new.value_type, self.value_type_list_element)
                 ):  # type: ignore
-                    raise base.AASConstraintViolation(
+                    raise aas.AASConstraintViolation(
                         109,
                         "All first level elements must have the value_type "  # type: ignore
                         "specified by value_type_list_element="
@@ -2722,7 +2749,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             item.semantic_id is not None
                             and new.semantic_id != item.semantic_id
                         ):
-                            raise base.AASConstraintViolation(
+                            raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
                                 f"{new.semantic_id!r}, while already contained element "
@@ -2739,46 +2766,52 @@ class WorkstationWorkerMatchingData(Submodel):
             minWorkerHeight: Optional[Union[int, MinWorkerHeight]] = None,
             allowedPersonalLimitations: Optional[AllowedPersonalLimitations] = None,
             id_short: Optional[str] = r"ErgonomicWorkstationProfile",
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={
                     r"en": r"Ergonomic workstation profile",
                     r"de": r"Ergonomisches Arbeitsplatzprofil",
                 }
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Ergonomic characteristics of the workstation which might influence the worker deployment",
                     r"de": r"Ergonomische Arbeitsplatzeigenschaften, die einen Einfluss auf den Mitarbeitereinsatz haben",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/smc/ergonomicworkstationprofile/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -2792,11 +2825,13 @@ class WorkstationWorkerMatchingData(Submodel):
                 embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
-            if maxLiftingWeight and not isinstance(maxLiftingWeight, SubmodelElement):
+            if maxLiftingWeight and not isinstance(
+                maxLiftingWeight, aas.SubmodelElement
+            ):
                 maxLiftingWeight = self.MaxLiftingWeight(maxLiftingWeight)
 
             # Build a submodel element if a raw value was passed in the argument
-            if minWorkerHeight and not isinstance(minWorkerHeight, SubmodelElement):
+            if minWorkerHeight and not isinstance(minWorkerHeight, aas.SubmodelElement):
                 minWorkerHeight = self.MinWorkerHeight(minWorkerHeight)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2808,7 +2843,7 @@ class WorkstationWorkerMatchingData(Submodel):
             ]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -2816,7 +2851,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -2832,55 +2867,55 @@ class WorkstationWorkerMatchingData(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class WorkstationConfigurationRecords(SubmodelElementList):
+    class WorkstationConfigurationRecords(aas.SubmodelElementList):
 
-        class Workstationconfigurationrecords_item(SubmodelElementCollection):
+        class Workstationconfigurationrecords_item(aas.SubmodelElementCollection):
 
-            class WorkerId(Property):
+            class WorkerId(aas.Property):
 
                 def __init__(
                     self,
                     value: str,
                     id_short: Optional[str] = r"WorkerId",
-                    value_type: DataTypeDefXsd = str,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Worker (ID)", r"de": r"Werker (ID)"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/prop/workerid/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"One",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2908,50 +2943,50 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AccessStart(Property):
+            class AccessStart(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"AccessStart",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Access start ", r"de": r"Zugriffsstart"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/accessstart/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -2979,51 +3014,51 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class AccessEnd(Property):
+            class AccessEnd(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"AccessEnd",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Access end", r"de": r"Zugriffsende"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/prop/accessend/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3051,50 +3086,50 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PreferredHeight(Property):
+            class PreferredHeight(aas.Property):
 
                 def __init__(
                     self,
                     value: int,
                     id_short: Optional[str] = r"PreferredHeight",
-                    value_type: DataTypeDefXsd = int,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = int,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Preferred height", r"de": r"Bevorzugte Höhe"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/prop/preferredheight/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3122,58 +3157,58 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ProprietaryConfigurations(SubmodelElementList):
+            class ProprietaryConfigurations(aas.SubmodelElementList):
 
-                class Proprietaryconfigurations_item(SubmodelElementCollection):
+                class Proprietaryconfigurations_item(aas.SubmodelElementCollection):
 
-                    class ConfigurationName(Property):
+                    class ConfigurationName(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ConfigurationName",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Configuation name",
                                     r"de": r"Konfigurationsname",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/configurationname/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -3201,54 +3236,54 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ConfigurationValue(Property):
+                    class ConfigurationValue(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"ConfigurationValue",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Configuration value",
                                     r"de": r"Konfigurationswert",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/configurationvalue/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -3281,27 +3316,27 @@ class WorkstationWorkerMatchingData(Submodel):
                         configurationName: Union[str, ConfigurationName],
                         configurationValue: Union[str, ConfigurationValue],
                         id_short: Optional[str] = r"proprietaryconfigurations_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={r"en": r"Proprietary worker-depending configuration"}
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/smc/proprietaryconfigurationsrecord/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
@@ -3313,7 +3348,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if configurationName and not isinstance(
-                            configurationName, SubmodelElement
+                            configurationName, aas.SubmodelElement
                         ):
                             configurationName = self.ConfigurationName(
                                 configurationName
@@ -3321,7 +3356,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if configurationValue and not isinstance(
-                            configurationValue, SubmodelElement
+                            configurationValue, aas.SubmodelElement
                         ):
                             configurationValue = self.ConfigurationValue(
                                 configurationValue
@@ -3332,7 +3367,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         for se_arg in [configurationName, configurationValue]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -3340,7 +3375,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -3360,13 +3395,13 @@ class WorkstationWorkerMatchingData(Submodel):
                     self,
                     proprietaryconfigurations_items: Proprietaryconfigurations_item,
                     id_short: Optional[str] = r"ProprietaryConfigurations",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = None,
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[aas.Reference] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Proprietary configurations",
                             r"de": r"Proprietäre Konfigurationen",
@@ -3374,42 +3409,42 @@ class WorkstationWorkerMatchingData(Submodel):
                     ),
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Proprietary worker-depending configurations ",
                             r"de": r"Proprietäre werkerindividuelle Konfigurationsmerkmale",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/sml/proprietaryconfigurations/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3427,7 +3462,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     for se_arg in [proprietaryconfigurations_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -3435,7 +3470,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -3463,7 +3498,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3479,7 +3514,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -3490,11 +3525,11 @@ class WorkstationWorkerMatchingData(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -3513,7 +3548,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -3527,32 +3562,34 @@ class WorkstationWorkerMatchingData(Submodel):
             def __init__(
                 self,
                 workerId: Union[str, WorkerId],
-                accessStart: Optional[Union[DateTime, AccessStart]] = None,
-                accessEnd: Optional[Union[DateTime, AccessEnd]] = None,
+                accessStart: Optional[Union[xsd.DateTime, AccessStart]] = None,
+                accessEnd: Optional[Union[xsd.DateTime, AccessEnd]] = None,
                 preferredHeight: Optional[Union[int, PreferredHeight]] = None,
                 proprietaryConfigurations: Optional[ProprietaryConfigurations] = None,
                 id_short: Optional[str] = r"workstationconfigurationrecords_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Worker specific configuration options of a workstation"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/workstationconfigurationrecord/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
@@ -3563,19 +3600,21 @@ class WorkstationWorkerMatchingData(Submodel):
                     embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
-                if workerId and not isinstance(workerId, SubmodelElement):
+                if workerId and not isinstance(workerId, aas.SubmodelElement):
                     workerId = self.WorkerId(workerId)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accessStart and not isinstance(accessStart, SubmodelElement):
+                if accessStart and not isinstance(accessStart, aas.SubmodelElement):
                     accessStart = self.AccessStart(accessStart)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if accessEnd and not isinstance(accessEnd, SubmodelElement):
+                if accessEnd and not isinstance(accessEnd, aas.SubmodelElement):
                     accessEnd = self.AccessEnd(accessEnd)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if preferredHeight and not isinstance(preferredHeight, SubmodelElement):
+                if preferredHeight and not isinstance(
+                    preferredHeight, aas.SubmodelElement
+                ):
                     preferredHeight = self.PreferredHeight(preferredHeight)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3589,7 +3628,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -3597,7 +3636,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -3617,50 +3656,56 @@ class WorkstationWorkerMatchingData(Submodel):
             self,
             workstationconfigurationrecords_items: Workstationconfigurationrecords_item,
             id_short: Optional[str] = r"WorkstationConfigurationRecords",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={
                     r"en": r"Workstation configuration records ",
                     r"de": r"Arbeitsstationskonfigurationseinträge",
                 }
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Worker specific configuration options of a workstation",
                     r"de": r"Arbeitsstationskonfigurationsoptionen für einen Mitarbeiter",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/sml/workstationconfigurationrecords/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -3678,7 +3723,7 @@ class WorkstationWorkerMatchingData(Submodel):
             for se_arg in [workstationconfigurationrecords_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -3686,7 +3731,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -3714,7 +3759,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -3730,7 +3775,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -3741,11 +3786,11 @@ class WorkstationWorkerMatchingData(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -3761,7 +3806,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -3772,57 +3817,57 @@ class WorkstationWorkerMatchingData(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class PlannedQualificationDemand(SubmodelElementList):
+    class PlannedQualificationDemand(aas.SubmodelElementList):
 
-        class Plannedqualificationdemand_item(SubmodelElementCollection):
+        class Plannedqualificationdemand_item(aas.SubmodelElementCollection):
 
-            class IntervalDescription(MultiLanguageProperty):
+            class IntervalDescription(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"IntervalDescription",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Interval description",
                             r"de": r"Intervallbeschreibung",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/intervaldescription/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3849,51 +3894,51 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class IntervalStart(Property):
+            class IntervalStart(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"IntervalStart",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Interval start", r"de": r"Intervallstart"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/prop/intervalstart/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3921,51 +3966,51 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class IntervalEnd(Property):
+            class IntervalEnd(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"IntervalEnd",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Interval end", r"de": r"Intervallende"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/prop/intervalend/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -3993,57 +4038,59 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class QualificationDemandRecords(SubmodelElementList):
+            class QualificationDemandRecords(aas.SubmodelElementList):
 
-                class Qualificationdemandrecords_item(SubmodelElementCollection):
+                class Qualificationdemandrecords_item(aas.SubmodelElementCollection):
 
-                    class QualificationClassificationId(Property):
+                    class QualificationClassificationId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"QualificationClassificationId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Qualification classification (ID)",
                                     r"de": r"Qualifikationsklassifizierung (ID)",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/qualificationclassificationid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4071,53 +4118,55 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class QualificationId(Property):
+                    class QualificationId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"QualificationId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Qualification (ID)",
                                     r"de": r"Qualifikation (ID)",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/qualificationid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4145,52 +4194,54 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ExceptionRules(MultiLanguageProperty):
+                    class ExceptionRules(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"ExceptionRules",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Exception rules",
                                     r"de": r"Ausnahmeregelungen",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/mlp/exceptionrules/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4217,66 +4268,68 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DemandKind(Property):
+                    class DemandKind(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"DemandKind",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = ExternalReference(
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/enum/adhocdemand",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/enum/generaldemand",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/enum/orderdependingdemand",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Demand kind", r"de": r"Bedarfsquelle"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/demandkind/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4304,51 +4357,51 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class StartTime(Property):
+                    class StartTime(aas.Property):
 
                         def __init__(
                             self,
-                            value: DateTime,
+                            value: xsd.DateTime,
                             id_short: Optional[str] = r"StartTime",
-                            value_type: DataTypeDefXsd = DateTime,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Start time", r"de": r"Startzeit"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/starttime/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4376,51 +4429,51 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class EndTime(Property):
+                    class EndTime(aas.Property):
 
                         def __init__(
                             self,
-                            value: DateTime,
+                            value: xsd.DateTime,
                             id_short: Optional[str] = r"EndTime",
-                            value_type: DataTypeDefXsd = DateTime,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"End time", r"de": r"Endzeit"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/endtime/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4448,51 +4501,51 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ProcessTime(Property):
+                    class ProcessTime(aas.Property):
 
                         def __init__(
                             self,
                             value: int,
                             id_short: Optional[str] = r"ProcessTime",
-                            value_type: DataTypeDefXsd = int,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = int,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Process time", r"de": r"Prozesszeit"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/processtime/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -4526,37 +4579,37 @@ class WorkstationWorkerMatchingData(Submodel):
                             str, QualificationClassificationId
                         ],
                         qualificationId: Union[str, QualificationId],
-                        startTime: Union[DateTime, StartTime],
-                        endTime: Union[DateTime, EndTime],
+                        startTime: Union[xsd.DateTime, StartTime],
+                        endTime: Union[xsd.DateTime, EndTime],
                         processTime: Union[int, ProcessTime],
                         exceptionRules: Optional[
-                            Union[LangStringSet, ExceptionRules]
+                            Union[aas.LangStringSet, ExceptionRules]
                         ] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
                         id_short: Optional[str] = r"qualificationdemandrecords_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Worker qualification that is required to work at the workstation"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/smc/qualificationdemandrecord/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
@@ -4568,7 +4621,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if qualificationClassificationId and not isinstance(
-                            qualificationClassificationId, SubmodelElement
+                            qualificationClassificationId, aas.SubmodelElement
                         ):
                             qualificationClassificationId = (
                                 self.QualificationClassificationId(
@@ -4578,30 +4631,34 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if qualificationId and not isinstance(
-                            qualificationId, SubmodelElement
+                            qualificationId, aas.SubmodelElement
                         ):
                             qualificationId = self.QualificationId(qualificationId)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if exceptionRules and not isinstance(
-                            exceptionRules, SubmodelElement
+                            exceptionRules, aas.SubmodelElement
                         ):
                             exceptionRules = self.ExceptionRules(exceptionRules)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if demandKind and not isinstance(demandKind, SubmodelElement):
+                        if demandKind and not isinstance(
+                            demandKind, aas.SubmodelElement
+                        ):
                             demandKind = self.DemandKind(demandKind)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if startTime and not isinstance(startTime, SubmodelElement):
+                        if startTime and not isinstance(startTime, aas.SubmodelElement):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if endTime and not isinstance(endTime, SubmodelElement):
+                        if endTime and not isinstance(endTime, aas.SubmodelElement):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if processTime and not isinstance(processTime, SubmodelElement):
+                        if processTime and not isinstance(
+                            processTime, aas.SubmodelElement
+                        ):
                             processTime = self.ProcessTime(processTime)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4617,7 +4674,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -4625,7 +4682,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -4645,49 +4702,49 @@ class WorkstationWorkerMatchingData(Submodel):
                     self,
                     qualificationdemandrecords_items: Qualificationdemandrecords_item,
                     id_short: Optional[str] = r"QualificationDemandRecords",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = None,
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[aas.Reference] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Worker qualifications that are required in order to work at the workstation",
                             r"de": r"Mitarbeiterqualifikationen die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/sml/qualificationdemandrecords/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -4705,7 +4762,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     for se_arg in [qualificationdemandrecords_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -4713,7 +4770,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -4741,7 +4798,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -4757,7 +4814,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -4768,11 +4825,11 @@ class WorkstationWorkerMatchingData(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -4791,7 +4848,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -4805,48 +4862,50 @@ class WorkstationWorkerMatchingData(Submodel):
             def __init__(
                 self,
                 intervalDescription: Optional[
-                    Union[LangStringSet, IntervalDescription]
+                    Union[aas.LangStringSet, IntervalDescription]
                 ] = None,
-                intervalStart: Optional[Union[DateTime, IntervalStart]] = None,
-                intervalEnd: Optional[Union[DateTime, IntervalEnd]] = None,
+                intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
+                intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
                 qualificationDemandRecords: Optional[QualificationDemandRecords] = None,
                 id_short: Optional[str] = r"plannedqualificationdemand_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Production plan depending planned qualification demand at a workstation"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/plannedqualificationdemandrecord/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -4861,16 +4920,16 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if intervalDescription and not isinstance(
-                    intervalDescription, SubmodelElement
+                    intervalDescription, aas.SubmodelElement
                 ):
                     intervalDescription = self.IntervalDescription(intervalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalStart and not isinstance(intervalStart, SubmodelElement):
+                if intervalStart and not isinstance(intervalStart, aas.SubmodelElement):
                     intervalStart = self.IntervalStart(intervalStart)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalEnd and not isinstance(intervalEnd, SubmodelElement):
+                if intervalEnd and not isinstance(intervalEnd, aas.SubmodelElement):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4883,7 +4942,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -4891,7 +4950,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -4913,50 +4972,56 @@ class WorkstationWorkerMatchingData(Submodel):
                 Iterable[Plannedqualificationdemand_item]
             ] = None,
             id_short: Optional[str] = r"PlannedQualificationDemand",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={
                     r"en": r"Planned qualification demand",
                     r"de": r"Geplanter Qualifikationsbedarf",
                 }
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Production plan depending planned qualification demand at a workstation",
                     r"de": r"Vom Produktionsplan abhängiger und geplanter Qualifikationsbedarf an einer Arbeitsstation",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/sml/plannedqualificationdemand/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -4974,7 +5039,7 @@ class WorkstationWorkerMatchingData(Submodel):
             for se_arg in [plannedqualificationdemand_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -4982,7 +5047,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -5010,7 +5075,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -5026,7 +5091,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -5037,11 +5102,11 @@ class WorkstationWorkerMatchingData(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -5057,7 +5122,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -5068,57 +5133,57 @@ class WorkstationWorkerMatchingData(Submodel):
             # Re-assign id_short
             new.id_short = saved_id_short
 
-    class PlannedSkillDemand(SubmodelElementList):
+    class PlannedSkillDemand(aas.SubmodelElementList):
 
-        class Plannedskilldemand_item(SubmodelElementCollection):
+        class Plannedskilldemand_item(aas.SubmodelElementCollection):
 
-            class IntervalDescription(MultiLanguageProperty):
+            class IntervalDescription(aas.MultiLanguageProperty):
 
                 def __init__(
                     self,
-                    value: LangStringSet,
+                    value: aas.LangStringSet,
                     id_short: Optional[str] = r"IntervalDescription",
-                    value_id: Optional[Reference] = None,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"Interval description",
                             r"de": r"Intervallbeschreibung",
                         }
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/mlp/intervaldescription/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5145,51 +5210,51 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class IntervalStart(Property):
+            class IntervalStart(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"IntervalStart",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Interval start", r"de": r"Intervallstart"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/prop/intervalstart/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5217,51 +5282,51 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class IntervalEnd(Property):
+            class IntervalEnd(aas.Property):
 
                 def __init__(
                     self,
-                    value: DateTime,
+                    value: xsd.DateTime,
                     id_short: Optional[str] = r"IntervalEnd",
-                    value_type: DataTypeDefXsd = DateTime,
-                    value_id: Optional[Reference] = None,
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
-                        MultiLanguageNameType
-                    ] = MultiLanguageNameType(
+                        aas.MultiLanguageNameType
+                    ] = aas.MultiLanguageNameType(
                         dict_={r"en": r"Interval end", r"de": r"Intervallende"}
                     ),
                     category: Optional[str] = None,
-                    description: Optional[MultiLanguageTextType] = None,
-                    semantic_id: Optional[Reference] = ModelReference(
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.CONCEPT_DESCRIPTION,
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                 value=r"https://admin-shell.io/idta/prop/intervalend/1/0",
                             ),
                         ),
-                        type_=ConceptDescription,
+                        type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
                     if qualifier is None:
                         qualifier = (
-                            Qualifier(
+                            aas.Qualifier(
                                 type_=r"SMT/Cardinality",
                                 value_type=str,
                                 value=r"ZeroToOne",
                                 value_id=None,
-                                kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=ExternalReference(
+                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
                                     key=(
-                                        Key(
-                                            type_=KeyTypes.GLOBAL_REFERENCE,
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                             value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                         ),
                                     ),
@@ -5289,57 +5354,59 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class SkillDemandRecords(SubmodelElementList):
+            class SkillDemandRecords(aas.SubmodelElementList):
 
-                class Skilldemandrecords_item(SubmodelElementCollection):
+                class Skilldemandrecords_item(aas.SubmodelElementCollection):
 
-                    class SkillClassificationId(Property):
+                    class SkillClassificationId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"SkillClassificationId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Skill classification (ID)",
                                     r"de": r"Fähigkeitenklassifizierung (ID)",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/skillclassificationid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5367,53 +5434,55 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class SkillLevelClassificationId(Property):
+                    class SkillLevelClassificationId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"SkillLevelClassificationId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Skill level classification (ID)",
                                     r"de": r"Fähigkeitenklassifizierung (ID)",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/skilllevelclassificationid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5441,53 +5510,55 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class SkillLevelId(Property):
+                    class SkillLevelId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"SkillLevelId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Skill level (ID)",
                                     r"de": r"Fähigkeitenstufe (ID)",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/skilllevelid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5515,50 +5586,52 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class SkillId(Property):
+                    class SkillId(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"SkillId",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Skill (ID)", r"de": r"Fähigkeit (ID)"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/skillid/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5586,52 +5659,54 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ExceptionRules(MultiLanguageProperty):
+                    class ExceptionRules(aas.MultiLanguageProperty):
 
                         def __init__(
                             self,
-                            value: LangStringSet,
+                            value: aas.LangStringSet,
                             id_short: Optional[str] = r"ExceptionRules",
-                            value_id: Optional[Reference] = None,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={
                                     r"en": r"Exception rules",
                                     r"de": r"Ausnahmeregelungen",
                                 }
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/mlp/exceptionrules/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5658,66 +5733,68 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class DemandKind(Property):
+                    class DemandKind(aas.Property):
 
                         def __init__(
                             self,
                             value: str,
                             id_short: Optional[str] = r"DemandKind",
-                            value_type: DataTypeDefXsd = str,
-                            value_id: Optional[Reference] = ExternalReference(
+                            value_type: aas.DataTypeDefXsd = str,
+                            value_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/enum/adhocdemand",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/enum/generaldemand",
                                     ),
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/enum/orderdependingdemand",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Demand kind", r"de": r"Bedarfsquelle"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ExternalReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[
+                                aas.Reference
+                            ] = aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/idta/prop/demandkind/1/0",
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"ZeroToOne",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5745,51 +5822,51 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class StartTime(Property):
+                    class StartTime(aas.Property):
 
                         def __init__(
                             self,
-                            value: DateTime,
+                            value: xsd.DateTime,
                             id_short: Optional[str] = r"StartTime",
-                            value_type: DataTypeDefXsd = DateTime,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Start time", r"de": r"Startzeit"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/starttime/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5817,51 +5894,51 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class EndTime(Property):
+                    class EndTime(aas.Property):
 
                         def __init__(
                             self,
-                            value: DateTime,
+                            value: xsd.DateTime,
                             id_short: Optional[str] = r"EndTime",
-                            value_type: DataTypeDefXsd = DateTime,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"End time", r"de": r"Endzeit"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/endtime/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5889,51 +5966,51 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_data_specifications=embedded_data_specifications,
                             )
 
-                    class ProcessTime(Property):
+                    class ProcessTime(aas.Property):
 
                         def __init__(
                             self,
                             value: int,
                             id_short: Optional[str] = r"ProcessTime",
-                            value_type: DataTypeDefXsd = int,
-                            value_id: Optional[Reference] = None,
+                            value_type: aas.DataTypeDefXsd = int,
+                            value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
-                                MultiLanguageNameType
-                            ] = MultiLanguageNameType(
+                                aas.MultiLanguageNameType
+                            ] = aas.MultiLanguageNameType(
                                 dict_={r"en": r"Process time", r"de": r"Prozesszeit"}
                             ),
                             category: Optional[str] = None,
-                            description: Optional[MultiLanguageTextType] = None,
-                            semantic_id: Optional[Reference] = ModelReference(
+                            description: Optional[aas.MultiLanguageTextType] = None,
+                            semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.CONCEPT_DESCRIPTION,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
                                         value=r"https://admin-shell.io/idta/prop/processtime/1/0",
                                     ),
                                 ),
-                                type_=ConceptDescription,
+                                type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
-                            qualifier: Iterable[Qualifier] = None,
-                            extension: Iterable[Extension] = (),
-                            supplemental_semantic_id: Iterable[Reference] = (),
+                            qualifier: Iterable[aas.Qualifier] = None,
+                            extension: Iterable[aas.Extension] = (),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                             embedded_data_specifications: Iterable[
-                                EmbeddedDataSpecification
+                                aas.EmbeddedDataSpecification
                             ] = None,
                         ):
 
                             if qualifier is None:
                                 qualifier = (
-                                    Qualifier(
+                                    aas.Qualifier(
                                         type_=r"SMT/Cardinality",
                                         value_type=str,
                                         value=r"One",
                                         value_id=None,
-                                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=ExternalReference(
+                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                        semantic_id=aas.ExternalReference(
                                             key=(
-                                                Key(
-                                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                                 ),
                                             ),
@@ -5965,41 +6042,41 @@ class WorkstationWorkerMatchingData(Submodel):
                         self,
                         skillClassificationId: Union[str, SkillClassificationId],
                         skillId: Union[str, SkillId],
-                        startTime: Union[DateTime, StartTime],
-                        endTime: Union[DateTime, EndTime],
+                        startTime: Union[xsd.DateTime, StartTime],
+                        endTime: Union[xsd.DateTime, EndTime],
                         processTime: Union[int, ProcessTime],
                         skillLevelClassificationId: Optional[
                             Union[str, SkillLevelClassificationId]
                         ] = None,
                         skillLevelId: Optional[Union[str, SkillLevelId]] = None,
                         exceptionRules: Optional[
-                            Union[LangStringSet, ExceptionRules]
+                            Union[aas.LangStringSet, ExceptionRules]
                         ] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
                         id_short: Optional[str] = r"skilldemandrecords_item",
-                        display_name: Optional[MultiLanguageNameType] = None,
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
-                            MultiLanguageTextType
-                        ] = MultiLanguageTextType(
+                            aas.MultiLanguageTextType
+                        ] = aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Worker skill that is required in order to work at the workstation"
                             }
                         ),
-                        semantic_id: Optional[Reference] = ExternalReference(
+                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/idta/smc/skilldemandrecord/1/0",
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
-                        qualifier: Iterable[Qualifier] = None,
-                        extension: Iterable[Extension] = (),
-                        supplemental_semantic_id: Iterable[Reference] = (),
+                        qualifier: Iterable[aas.Qualifier] = None,
+                        extension: Iterable[aas.Extension] = (),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (),
                         embedded_data_specifications: Iterable[
-                            EmbeddedDataSpecification
+                            aas.EmbeddedDataSpecification
                         ] = None,
                     ):
 
@@ -6011,7 +6088,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if skillClassificationId and not isinstance(
-                            skillClassificationId, SubmodelElement
+                            skillClassificationId, aas.SubmodelElement
                         ):
                             skillClassificationId = self.SkillClassificationId(
                                 skillClassificationId
@@ -6019,7 +6096,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if skillLevelClassificationId and not isinstance(
-                            skillLevelClassificationId, SubmodelElement
+                            skillLevelClassificationId, aas.SubmodelElement
                         ):
                             skillLevelClassificationId = (
                                 self.SkillLevelClassificationId(
@@ -6029,34 +6106,38 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if skillLevelId and not isinstance(
-                            skillLevelId, SubmodelElement
+                            skillLevelId, aas.SubmodelElement
                         ):
                             skillLevelId = self.SkillLevelId(skillLevelId)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if skillId and not isinstance(skillId, SubmodelElement):
+                        if skillId and not isinstance(skillId, aas.SubmodelElement):
                             skillId = self.SkillId(skillId)
 
                         # Build a submodel element if a raw value was passed in the argument
                         if exceptionRules and not isinstance(
-                            exceptionRules, SubmodelElement
+                            exceptionRules, aas.SubmodelElement
                         ):
                             exceptionRules = self.ExceptionRules(exceptionRules)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if demandKind and not isinstance(demandKind, SubmodelElement):
+                        if demandKind and not isinstance(
+                            demandKind, aas.SubmodelElement
+                        ):
                             demandKind = self.DemandKind(demandKind)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if startTime and not isinstance(startTime, SubmodelElement):
+                        if startTime and not isinstance(startTime, aas.SubmodelElement):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if endTime and not isinstance(endTime, SubmodelElement):
+                        if endTime and not isinstance(endTime, aas.SubmodelElement):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
-                        if processTime and not isinstance(processTime, SubmodelElement):
+                        if processTime and not isinstance(
+                            processTime, aas.SubmodelElement
+                        ):
                             processTime = self.ProcessTime(processTime)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -6074,7 +6155,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         ]:
                             if se_arg is None:
                                 continue
-                            elif isinstance(se_arg, SubmodelElement):
+                            elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
                                 for n, element in enumerate(se_arg):
@@ -6082,7 +6163,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                                 )
 
                         super().__init__(
@@ -6102,34 +6183,34 @@ class WorkstationWorkerMatchingData(Submodel):
                     self,
                     skilldemandrecords_items: Skilldemandrecords_item,
                     id_short: Optional[str] = r"SkillDemandRecords",
-                    type_value_list_element: SubmodelElement = SubmodelElementCollection,
-                    semantic_id_list_element: Optional[Reference] = None,
-                    value_type_list_element: Optional[DataTypeDefXsd] = None,
+                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+                    semantic_id_list_element: Optional[aas.Reference] = None,
+                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[MultiLanguageNameType] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
-                        MultiLanguageTextType
-                    ] = MultiLanguageTextType(
+                        aas.MultiLanguageTextType
+                    ] = aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Worker skills that are required in order to work at the workstation",
                             r"de": r"Mitarbeiterfähigkeiten die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
                         }
                     ),
-                    semantic_id: Optional[Reference] = ExternalReference(
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            Key(
-                                type_=KeyTypes.GLOBAL_REFERENCE,
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                 value=r"https://admin-shell.io/idta/sml/skilldemandrecords/1/0",
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
-                    qualifier: Iterable[Qualifier] = None,
-                    extension: Iterable[Extension] = (),
-                    supplemental_semantic_id: Iterable[Reference] = (),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
                     embedded_data_specifications: Iterable[
-                        EmbeddedDataSpecification
+                        aas.EmbeddedDataSpecification
                     ] = None,
                 ):
 
@@ -6144,7 +6225,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     for se_arg in [skilldemandrecords_items]:
                         if se_arg is None:
                             continue
-                        elif isinstance(se_arg, SubmodelElement):
+                        elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
                             for n, element in enumerate(se_arg):
@@ -6152,7 +6233,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 embedded_submodel_elements.append(element)
                         else:
                             raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                             )
 
                     super().__init__(
@@ -6180,7 +6261,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
                     if not isinstance(new, self.type_value_list_element):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             108,
                             "All first level elements must be of the type specified in "
                             f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6196,7 +6277,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                         # Not really a constraint...
                         # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             107,
                             f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                             "is specified all first level children must have the same "
@@ -6207,11 +6288,11 @@ class WorkstationWorkerMatchingData(Submodel):
                     # is either Property or Range. Thus, `new` must have the value_type property.
                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                     if (
-                        isinstance(self.type_value_list_element, Property)
-                        or isinstance(self.type_value_list_element, Range)
+                        isinstance(self.type_value_list_element, aas.Property)
+                        or isinstance(self.type_value_list_element, aas.Range)
                         and not isinstance(new.value_type, self.value_type_list_element)
                     ):  # type: ignore
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             109,
                             "All first level elements must have the value_type "  # type: ignore
                             "specified by value_type_list_element="
@@ -6230,7 +6311,7 @@ class WorkstationWorkerMatchingData(Submodel):
                                 item.semantic_id is not None
                                 and new.semantic_id != item.semantic_id
                             ):
-                                raise base.AASConstraintViolation(
+                                raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
                                     f"{new.semantic_id!r}, while already contained element "
@@ -6245,47 +6326,49 @@ class WorkstationWorkerMatchingData(Submodel):
                 self,
                 skillDemandRecords: SkillDemandRecords,
                 intervalDescription: Optional[
-                    Union[LangStringSet, IntervalDescription]
+                    Union[aas.LangStringSet, IntervalDescription]
                 ] = None,
-                intervalStart: Optional[Union[DateTime, IntervalStart]] = None,
-                intervalEnd: Optional[Union[DateTime, IntervalEnd]] = None,
+                intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
+                intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
                 id_short: Optional[str] = r"plannedskilldemand_item",
-                display_name: Optional[MultiLanguageNameType] = None,
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+                description: Optional[
+                    aas.MultiLanguageTextType
+                ] = aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Production plan depending planned skill demand at a workstation"
                     }
                 ),
-                semantic_id: Optional[Reference] = ExternalReference(
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/smc/plannedskilldemandrecord/1/0",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"ZeroToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -6300,16 +6383,16 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if intervalDescription and not isinstance(
-                    intervalDescription, SubmodelElement
+                    intervalDescription, aas.SubmodelElement
                 ):
                     intervalDescription = self.IntervalDescription(intervalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalStart and not isinstance(intervalStart, SubmodelElement):
+                if intervalStart and not isinstance(intervalStart, aas.SubmodelElement):
                     intervalStart = self.IntervalStart(intervalStart)
 
                 # Build a submodel element if a raw value was passed in the argument
-                if intervalEnd and not isinstance(intervalEnd, SubmodelElement):
+                if intervalEnd and not isinstance(intervalEnd, aas.SubmodelElement):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6322,7 +6405,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 ]:
                     if se_arg is None:
                         continue
-                    elif isinstance(se_arg, SubmodelElement):
+                    elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
                         for n, element in enumerate(se_arg):
@@ -6330,7 +6413,7 @@ class WorkstationWorkerMatchingData(Submodel):
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                         )
 
                 super().__init__(
@@ -6352,50 +6435,56 @@ class WorkstationWorkerMatchingData(Submodel):
                 Iterable[Plannedskilldemand_item]
             ] = None,
             id_short: Optional[str] = r"PlannedSkillDemand",
-            type_value_list_element: SubmodelElement = SubmodelElementCollection,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = None,
+            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={
                     r"en": r"Planned skill demand",
                     r"de": r"Geplanter Fähigkeitenbedarf",
                 }
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Production plan depending planned skill demand at a workstation",
                     r"de": r"Vom Produktionsplan abhängiger und geplanter Qualifikationsbedarf an einer Arbeitsstation",
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/sml/plannedskilldemand/1/0",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -6413,7 +6502,7 @@ class WorkstationWorkerMatchingData(Submodel):
             for se_arg in [plannedskilldemand_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -6421,7 +6510,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -6449,7 +6538,7 @@ class WorkstationWorkerMatchingData(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -6465,7 +6554,7 @@ class WorkstationWorkerMatchingData(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -6476,11 +6565,11 @@ class WorkstationWorkerMatchingData(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -6496,7 +6585,7 @@ class WorkstationWorkerMatchingData(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -6516,41 +6605,43 @@ class WorkstationWorkerMatchingData(Submodel):
         plannedQualificationDemand: Optional[PlannedQualificationDemand] = None,
         plannedSkillDemand: Optional[PlannedSkillDemand] = None,
         id_short: Optional[str] = r"WorkstationWorkerMatchingData",
-        display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={
                 r"en": r"Workstation Worker Matching Data",
                 r"de": r"Daten für die Mitarbeitereinsatzplanung",
             }
         ),
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": r"Submodel containing workstation data in order to match and deploy workers to workstations",
                 r"de": r"Teilmodell mit Arbeitsstationsdaten für die Mitarbeitereinsatzplanung",
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=None,
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/sm/workstationworkermatchingdata",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -6570,7 +6661,7 @@ class WorkstationWorkerMatchingData(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -6578,7 +6669,7 @@ class WorkstationWorkerMatchingData(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(

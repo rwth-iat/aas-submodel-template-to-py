@@ -1,55 +1,60 @@
-from typing import *
-import inspect
-from basyx.aas.model import *
-from basyx.aas.model.datatypes import *
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
 
 
-class DppMetadata(Submodel):
+class DppMetadata(aas.Submodel):
 
-    class DigitalProductPassportId(Property):
+    class DigitalProductPassportId(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"digitalProductPassportId",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(
                 dict_={r"en": r"Unique Product Passport Identifier (DPP ID)"}
             ),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Unique identifier of an instance of the digital product"
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/digitalProductPassportId/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -57,16 +62,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
                         value_type=str,
                         value=r"https://www.example.org/dpp/1234545",
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -94,50 +99,54 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class UniqueProductIdentifier(Property):
+    class UniqueProductIdentifier(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"uniqueProductIdentifier",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Unique Product Identifier"}
-            ),
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Unique Product Identifier"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Unique string of characters for the identification of a product, that also enables a web link to the digital product passport."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/uniqueProductIdentifier/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -145,16 +154,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
                         value_type=str,
                         value=r"https://www.example.org/1234545",
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -182,60 +191,64 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class Granularity(Property):
+    class Granularity(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"granularity",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Granularity"}
-            ),
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Granularity"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"The granularity of the Product. There are three values: ‘Model‘, ‘Item‘ and ‘Batch‘."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/granularity/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/aas/3/2/AssetKind",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -243,16 +256,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
                         value_type=str,
                         value=r"Item",
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -280,48 +293,52 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class DppSchemaVersion(Property):
+    class DppSchemaVersion(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"dppSchemaVersion",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"DPP Schema Version"}
-            ),
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"DPP Schema Version"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Reference standard the DPP instance schema refers to."}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/dppSchemaVersion/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -329,16 +346,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
                         value_type=str,
                         value=r"ENXXX:v1.0",
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -366,48 +383,52 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class DppStatus(Property):
+    class DppStatus(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"dppStatus",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"DPP Status"}
-            ),
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"DPP Status"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={r"en": r"Status of the DPP instance as digital resource."}
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/dppStatus/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -415,16 +436,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
                         value_type=str,
                         value=r"Active",
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -452,60 +473,64 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class LastUpdate(Property):
+    class LastUpdate(aas.Property):
 
         def __init__(
             self,
-            value: DateTime,
+            value: xsd.DateTime,
             id_short: Optional[str] = r"lastUpdate",
-            value_type: DataTypeDefXsd = DateTime,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Last Update"}
-            ),
+            value_type: aas.DataTypeDefXsd = xsd.DateTime,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Last Update"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Date and time of the latest update to the DPP instance."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/lastUpdate/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (
-                ExternalReference(
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (
+                aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"<https://admin-shell.io/aas/3/2/AdministrativeInformation/updatedAt",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -513,16 +538,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
-                        value_type=DateTime,
-                        value=from_xsd(r"2025-08-22T03:12:00+00:00", DateTime),
+                        value_type=xsd.DateTime,
+                        value=xsd.from_xsd(r"2025-08-22T03:12:00+00:00", xsd.DateTime),
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -550,50 +575,54 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class EconomicOperatorId(Property):
+    class EconomicOperatorId(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"economicOperatorId",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Economic Operator ID"}
-            ),
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Economic Operator ID"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Unique string of characters for the identification of an actor involved in a product’s life cycle."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/economicOperatorId/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"One",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -601,16 +630,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
                         value_type=str,
                         value=r"gxx:ppp456789",
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -638,50 +667,54 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class FacilityId(Property):
+    class FacilityId(aas.Property):
 
         def __init__(
             self,
             value: str,
             id_short: Optional[str] = r"facilityId",
-            value_type: DataTypeDefXsd = str,
-            value_id: Optional[Reference] = None,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Facility ID"}
-            ),
+            value_type: aas.DataTypeDefXsd = str,
+            value_id: Optional[aas.Reference] = None,
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Facility ID"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s life cycle."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/facilityId/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -689,16 +722,16 @@ class DppMetadata(Submodel):
                         ),
                         supplemental_semantic_id=(),
                     ),
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/ExampleValue",
                         value_type=str,
                         value=r"gxx:xxx987654",
                         value_id=None,
-                        kind=QualifierKind.VALUE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.VALUE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                 ),
                             ),
@@ -726,50 +759,52 @@ class DppMetadata(Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class ContentSpecificationIds(SubmodelElementList):
+    class ContentSpecificationIds(aas.SubmodelElementList):
 
-        class Contentspecificationids_item(Property):
+        class Contentspecificationids_item(aas.Property):
 
             def __init__(
                 self,
                 value: str,
                 id_short: Optional[str] = r"contentspecificationids_item",
-                value_type: DataTypeDefXsd = str,
-                value_id: Optional[Reference] = None,
-                display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
+                value_type: aas.DataTypeDefXsd = str,
+                value_id: Optional[aas.Reference] = None,
+                display_name: Optional[
+                    aas.MultiLanguageNameType
+                ] = aas.MultiLanguageNameType(
                     dict_={r"en": r"Content Specification ID"}
                 ),
                 category: Optional[str] = None,
-                description: Optional[MultiLanguageTextType] = None,
-                semantic_id: Optional[Reference] = ExternalReference(
+                description: Optional[aas.MultiLanguageTextType] = None,
+                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        Key(
-                            type_=KeyTypes.GLOBAL_REFERENCE,
+                        aas.Key(
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
                             value=r"https://admin-shell.io/idta/cds/contentSpecificationId/1",
                         ),
                     ),
                     referred_semantic_id=None,
                 ),
-                qualifier: Iterable[Qualifier] = None,
-                extension: Iterable[Extension] = (),
-                supplemental_semantic_id: Iterable[Reference] = (),
+                qualifier: Iterable[aas.Qualifier] = None,
+                extension: Iterable[aas.Extension] = (),
+                supplemental_semantic_id: Iterable[aas.Reference] = (),
                 embedded_data_specifications: Iterable[
-                    EmbeddedDataSpecification
+                    aas.EmbeddedDataSpecification
                 ] = None,
             ):
 
                 if qualifier is None:
                     qualifier = (
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/Cardinality",
                             value_type=str,
                             value=r"OneToMany",
                             value_id=None,
-                            kind=QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                     ),
                                 ),
@@ -777,16 +812,16 @@ class DppMetadata(Submodel):
                             ),
                             supplemental_semantic_id=(),
                         ),
-                        Qualifier(
+                        aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
                             value=r"https://admin-shell-io/idta/digitalproductpassport/Circularity/1",
                             value_id=None,
-                            kind=QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=ExternalReference(
+                            kind=aas.QualifierKind.VALUE_QUALIFIER,
+                            semantic_id=aas.ExternalReference(
                                 key=(
-                                    Key(
-                                        type_=KeyTypes.GLOBAL_REFERENCE,
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                         value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
                                     ),
                                 ),
@@ -820,46 +855,50 @@ class DppMetadata(Submodel):
                 Union[str, Contentspecificationids_item]
             ],
             id_short: Optional[str] = r"contentSpecificationIds",
-            type_value_list_element: SubmodelElement = Property,
-            semantic_id_list_element: Optional[Reference] = None,
-            value_type_list_element: Optional[DataTypeDefXsd] = str,
+            type_value_list_element: aas.SubmodelElement = aas.Property,
+            semantic_id_list_element: Optional[aas.Reference] = None,
+            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
             order_relevant: bool = False,
-            display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
-                dict_={r"en": r"Content Specification IDs"}
-            ),
+            display_name: Optional[
+                aas.MultiLanguageNameType
+            ] = aas.MultiLanguageNameType(dict_={r"en": r"Content Specification IDs"}),
             category: Optional[str] = None,
-            description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+            description: Optional[
+                aas.MultiLanguageTextType
+            ] = aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Reference to horizontal or product-type related content specifications for the DPP."
                 }
             ),
-            semantic_id: Optional[Reference] = ExternalReference(
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    Key(
-                        type_=KeyTypes.GLOBAL_REFERENCE,
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
                         value=r"https://admin-shell.io/idta/cds/contentSpecificationIds/1",
                     ),
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[Qualifier] = None,
-            extension: Iterable[Extension] = (),
-            supplemental_semantic_id: Iterable[Reference] = (),
-            embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+            qualifier: Iterable[aas.Qualifier] = None,
+            extension: Iterable[aas.Extension] = (),
+            supplemental_semantic_id: Iterable[aas.Reference] = (),
+            embedded_data_specifications: Iterable[
+                aas.EmbeddedDataSpecification
+            ] = None,
         ):
 
             if qualifier is None:
                 qualifier = (
-                    Qualifier(
+                    aas.Qualifier(
                         type_=r"SMT/Cardinality",
                         value_type=str,
                         value=r"ZeroToOne",
                         value_id=None,
-                        kind=QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=ExternalReference(
+                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                        semantic_id=aas.ExternalReference(
                             key=(
-                                Key(
-                                    type_=KeyTypes.GLOBAL_REFERENCE,
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
                                     value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
                                 ),
                             ),
@@ -877,7 +916,7 @@ class DppMetadata(Submodel):
                 contentspecificationids_items = [
                     (
                         i
-                        if isinstance(i, SubmodelElement)
+                        if isinstance(i, aas.SubmodelElement)
                         else self.Contentspecificationids_item(i)
                     )
                     for i in contentspecificationids_items
@@ -888,7 +927,7 @@ class DppMetadata(Submodel):
             for se_arg in [contentspecificationids_items]:
                 if se_arg is None:
                     continue
-                elif isinstance(se_arg, SubmodelElement):
+                elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
                     for n, element in enumerate(se_arg):
@@ -896,7 +935,7 @@ class DppMetadata(Submodel):
                         embedded_submodel_elements.append(element)
                 else:
                     raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                     )
 
             super().__init__(
@@ -924,7 +963,7 @@ class DppMetadata(Submodel):
 
             # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
             if not isinstance(new, self.type_value_list_element):
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     108,
                     "All first level elements must be of the type specified in "
                     f"type_value_list_element={self.type_value_list_element.__name__}, "
@@ -940,7 +979,7 @@ class DppMetadata(Submodel):
                 # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
                 # Not really a constraint...
                 # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     107,
                     f"If semantic_id_list_element={self.semantic_id_list_element!r} "
                     "is specified all first level children must have the same "
@@ -951,11 +990,11 @@ class DppMetadata(Submodel):
             # is either Property or Range. Thus, `new` must have the value_type property.
             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
             if (
-                isinstance(self.type_value_list_element, Property)
-                or isinstance(self.type_value_list_element, Range)
+                isinstance(self.type_value_list_element, aas.Property)
+                or isinstance(self.type_value_list_element, aas.Range)
                 and not isinstance(new.value_type, self.value_type_list_element)
             ):  # type: ignore
-                raise base.AASConstraintViolation(
+                raise aas.AASConstraintViolation(
                     109,
                     "All first level elements must have the value_type "  # type: ignore
                     "specified by value_type_list_element="
@@ -971,7 +1010,7 @@ class DppMetadata(Submodel):
                         item.semantic_id is not None
                         and new.semantic_id != item.semantic_id
                     ):
-                        raise base.AASConstraintViolation(
+                        raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
                             f"{new.semantic_id!r}, while already contained element "
@@ -990,42 +1029,44 @@ class DppMetadata(Submodel):
         granularity: Union[str, Granularity],
         dppSchemaVersion: Union[str, DppSchemaVersion],
         dppStatus: Union[str, DppStatus],
-        lastUpdate: Union[DateTime, LastUpdate],
+        lastUpdate: Union[xsd.DateTime, LastUpdate],
         economicOperatorId: Union[str, EconomicOperatorId],
         facilityId: Optional[Union[str, FacilityId]] = None,
         contentSpecificationIds: Optional[
             Union[Iterable[str], ContentSpecificationIds]
         ] = None,
         id_short: Optional[str] = r"DppMetadata",
-        display_name: Optional[MultiLanguageNameType] = None,
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
+        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
             dict_={
                 r"en": "\n   Digital record of product characteristics throughout its life cycle.\n   \n   SOURCE: FprEN 18223:2026(en)   \n   "
             }
         ),
-        administration: Optional[AdministrativeInformation] = AdministrativeInformation(
+        administration: Optional[
+            aas.AdministrativeInformation
+        ] = aas.AdministrativeInformation(
             version=r"1",
             revision=r"0",
             creator=None,
             template_id=None,
             embedded_data_specifications=[],
         ),
-        semantic_id: Optional[Reference] = ModelReference(
+        semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
-                Key(
-                    type_=KeyTypes.SUBMODEL,
+                aas.Key(
+                    type_=aas.KeyTypes.SUBMODEL,
                     value=r"https://admin-shell.io/idta/cds/dppMetadata/1",
                 ),
             ),
-            type_=Submodel,
+            type_=aas.Submodel,
             referred_semantic_id=None,
         ),
-        qualifier: Iterable[Qualifier] = None,
-        kind: ModellingKind = ModellingKind.TEMPLATE,
-        extension: Iterable[Extension] = (),
-        supplemental_semantic_id: Iterable[Reference] = (),
-        embedded_data_specifications: Iterable[EmbeddedDataSpecification] = None,
+        qualifier: Iterable[aas.Qualifier] = None,
+        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        extension: Iterable[aas.Extension] = (),
+        supplemental_semantic_id: Iterable[aas.Reference] = (),
+        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
 
         if qualifier is None:
@@ -1036,7 +1077,7 @@ class DppMetadata(Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
         if digitalProductPassportId and not isinstance(
-            digitalProductPassportId, SubmodelElement
+            digitalProductPassportId, aas.SubmodelElement
         ):
             digitalProductPassportId = self.DigitalProductPassportId(
                 digitalProductPassportId
@@ -1044,39 +1085,41 @@ class DppMetadata(Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
         if uniqueProductIdentifier and not isinstance(
-            uniqueProductIdentifier, SubmodelElement
+            uniqueProductIdentifier, aas.SubmodelElement
         ):
             uniqueProductIdentifier = self.UniqueProductIdentifier(
                 uniqueProductIdentifier
             )
 
         # Build a submodel element if a raw value was passed in the argument
-        if granularity and not isinstance(granularity, SubmodelElement):
+        if granularity and not isinstance(granularity, aas.SubmodelElement):
             granularity = self.Granularity(granularity)
 
         # Build a submodel element if a raw value was passed in the argument
-        if dppSchemaVersion and not isinstance(dppSchemaVersion, SubmodelElement):
+        if dppSchemaVersion and not isinstance(dppSchemaVersion, aas.SubmodelElement):
             dppSchemaVersion = self.DppSchemaVersion(dppSchemaVersion)
 
         # Build a submodel element if a raw value was passed in the argument
-        if dppStatus and not isinstance(dppStatus, SubmodelElement):
+        if dppStatus and not isinstance(dppStatus, aas.SubmodelElement):
             dppStatus = self.DppStatus(dppStatus)
 
         # Build a submodel element if a raw value was passed in the argument
-        if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
+        if lastUpdate and not isinstance(lastUpdate, aas.SubmodelElement):
             lastUpdate = self.LastUpdate(lastUpdate)
 
         # Build a submodel element if a raw value was passed in the argument
-        if economicOperatorId and not isinstance(economicOperatorId, SubmodelElement):
+        if economicOperatorId and not isinstance(
+            economicOperatorId, aas.SubmodelElement
+        ):
             economicOperatorId = self.EconomicOperatorId(economicOperatorId)
 
         # Build a submodel element if a raw value was passed in the argument
-        if facilityId and not isinstance(facilityId, SubmodelElement):
+        if facilityId and not isinstance(facilityId, aas.SubmodelElement):
             facilityId = self.FacilityId(facilityId)
 
         # Build a submodel element if a raw value was passed in the argument
         if contentSpecificationIds and not isinstance(
-            contentSpecificationIds, SubmodelElement
+            contentSpecificationIds, aas.SubmodelElement
         ):
             contentSpecificationIds = self.ContentSpecificationIds(
                 contentSpecificationIds
@@ -1097,7 +1140,7 @@ class DppMetadata(Submodel):
         ]:
             if se_arg is None:
                 continue
-            elif isinstance(se_arg, SubmodelElement):
+            elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
                 for n, element in enumerate(se_arg):
@@ -1105,7 +1148,7 @@ class DppMetadata(Submodel):
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {type(se_arg)}"
+                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
                 )
 
         super().__init__(
