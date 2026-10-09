@@ -9528,7 +9528,7 @@ class ModuleTypePackage(Submodel):
                             value=r"CAEX@ModuleTypePackage/BPXX_Freelance/CommunicationSet/InstanceList/M0013",
                         ),
                     ),
-                    type_=NoneType,
+                    type_=type(None),
                     referred_semantic_id=None,
                 ),
                 second: Optional[Reference] = ModelReference(
@@ -10376,7 +10376,7 @@ class ProcessEquipmentAssembly(Submodel):
                             value=r"CAEX@ModuleTypePackage/BPXX_Freelance/CommunicationSet/InstanceList/M0013",
                         ),
                     ),
-                    type_=NoneType,
+                    type_=type(None),
                     referred_semantic_id=None,
                 ),
                 second: Optional[Reference] = ModelReference(

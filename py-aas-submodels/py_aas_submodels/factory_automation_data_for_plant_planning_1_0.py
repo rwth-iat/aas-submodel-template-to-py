@@ -309,7 +309,7 @@ class FactoryAutomationDataForPlant(Submodel):
                                 value=r"AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.onOff",
                             ),
                         ),
-                        type_=NoneType,
+                        type_=type(None),
                         referred_semantic_id=None,
                     ),
                     second: Optional[Reference] = ModelReference(

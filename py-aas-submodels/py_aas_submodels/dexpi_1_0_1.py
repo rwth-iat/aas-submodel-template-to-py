@@ -3387,7 +3387,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ProcessInstrumentationFunction-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -3772,7 +3772,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ProcessInstrumentationFunction-2",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -4157,7 +4157,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ProcessInstrumentationFunction-3",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -4542,7 +4542,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ProcessInstrumentationFunction-4",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -4925,7 +4925,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ActuatingFunction-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -5303,7 +5303,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ActuatingFunction-2",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -5681,7 +5681,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ActuatingFunction-3",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -6059,7 +6059,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=PlateHeatExchanger-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -6437,7 +6437,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=TubularHeatExchanger-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -6820,7 +6820,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=CentrifugalPump-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -7198,7 +7198,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ReciprocatingPump-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -7576,7 +7576,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Tank-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -8021,7 +8021,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ControlledActuator-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -8477,7 +8477,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=OperatedValveReference-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -8933,7 +8933,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ControlledActuator-2",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -9389,7 +9389,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=OperatedValveReference-2",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -9845,7 +9845,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=ControlledActuator-3",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -10301,7 +10301,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=OperatedValveReference-3",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -10757,7 +10757,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-3",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -11213,7 +11213,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-4",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -11669,7 +11669,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-13",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -12125,7 +12125,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-14",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -12581,7 +12581,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Chamber-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -13037,7 +13037,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Chamber-2",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -13493,7 +13493,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-10",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -13949,7 +13949,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-11",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -14405,7 +14405,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-16",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -14861,7 +14861,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-15",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -15317,7 +15317,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Chamber-3",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -15773,7 +15773,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Chamber-4",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -16229,7 +16229,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-1",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -16685,7 +16685,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-2",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -17141,7 +17141,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-7",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -17597,7 +17597,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-9",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -18053,7 +18053,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-5",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -18509,7 +18509,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-6",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -18965,7 +18965,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-18",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -19421,7 +19421,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-8",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -19877,7 +19877,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-12",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -20333,7 +20333,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-17",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -20789,7 +20789,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Nozzle-19",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -21245,7 +21245,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Chamber-7",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(
@@ -21701,7 +21701,7 @@ class DEXPI(Submodel):
                                     value=r"ProteusXML@ID=Chamber-8",
                                 ),
                             ),
-                            type_=NoneType,
+                            type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[Reference] = ExternalReference(

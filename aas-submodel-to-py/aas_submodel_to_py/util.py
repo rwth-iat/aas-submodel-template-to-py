@@ -106,6 +106,9 @@ class StringHandler:
 
         if val is None:
             return "None"
+        elif val is type(None):
+            # e.g. the referred type of ModelReferences to fragments; NoneType isn't a builtin name
+            return "type(None)"
         elif isinstance(val, typing._GenericAlias):
             return cls.remove_parent_modules_in_typehint(repr(val))
         elif type(val) is str:
