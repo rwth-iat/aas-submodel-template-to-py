@@ -39,8 +39,10 @@ def output_file_name(template_file: Path, published_dir: Path) -> str:
     top_level_name = rel_parts[0] if rel_parts else template_file.stem
     version_parts = find_version_parts(rel_parts[1:-1])
 
+    # Join version parts with underscores so module names stay importable
+    # (e.g. "digital_nameplate_3_0_1" instead of "digital_nameplate_3-0-1")
     if version_parts:
-        return f"{slugify(top_level_name)}_{'-'.join(version_parts)}.py"
+        return f"{slugify(top_level_name)}_{'_'.join(version_parts)}.py"
 
     stem = slugify(template_file.stem)
     parent = slugify("_".join(rel_parts[:-1]))
@@ -106,7 +108,9 @@ def regenerate_submodels(
             if output_name in name_collisions:
                 name_collisions[output_name] += 1
                 suffix = name_collisions[output_name]
-                output_name = output_name.replace(".py", f"_{suffix}.py")
+                # Double underscore keeps the suffix distinguishable from a
+                # version part (e.g. "x_1_0__1" vs. "x_1_0_1")
+                output_name = output_name.replace(".py", f"__{suffix}.py")
             else:
                 name_collisions[output_name] = 0
 

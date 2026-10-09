@@ -12,7 +12,7 @@ Shell (AAS) submodel templates.
 | Package | Description |
 |---|---|
 | [`aas-submodel-to-py`](aas-submodel-to-py/) | Code generator: reads `.aasx` / `.json` / `.xml` AAS files and emits typed Python classes |
-| [`py-aas-submodels`](py-aas-submodels/) | Pre-generated classes for 8 official IDTA submodel templates |
+| [`py-aas-submodels`](py-aas-submodels/) | Pre-generated classes for the official IDTA submodel templates |
 
 Both packages are built on top of the [BaSyx Python SDK](https://github.com/eclipse-basyx/basyx-python-sdk).
 
@@ -25,7 +25,7 @@ pip install py-aas-submodels
 ```
 
 ```python
-from py_aas_submodels.nameplate_02006_2_0 import Nameplate
+from py_aas_submodels.digital_nameplate_3_0_1 import Nameplate
 ```
 
 **Generate classes from your own template:**

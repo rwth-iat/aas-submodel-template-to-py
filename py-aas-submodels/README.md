@@ -14,36 +14,34 @@ pip install py-aas-submodels
 
 ## Available Submodels
 
-| Module | Class | IDTA Template |
-|---|---|---|
-| `nameplate_02006_2_0` | `Nameplate` | Digital Nameplate 2.0 |
-| `contact_information_02002_1_0` | `ContactInformations` | Contact Information 1.0 |
-| `control_component_instance_02016_1_0` | `ControlComponentInstance` | Control Component Instance 1.0 |
-| `control_component_type_02015_1_0` | `ControlComponentType` | Control Component Type 1.0 |
-| `functional_safety_02014_1_0` | `FunctionalSafety` | Functional Safety 1.0 |
-| `handover_documentation_02004_1_2` | `HandoverDocumentation` | Handover Documentation 1.2 |
-| `provision_of_simulation_models_02005_1_0` | `SimulationModels` | Provision of Simulation Models 1.0 |
-| `reliability_02013_1_0` | `Reliability` | Reliability 1.0 |
+Modules are generated from every `.json` template published in
+[`admin-shell-io/submodel-templates`](https://github.com/admin-shell-io/submodel-templates/tree/main/published).
+Each module is named after the template and its version, joined with underscores:
+
+| Template | Module |
+|---|---|
+| `Digital nameplate/3/0/1/...json` | `digital_nameplate_3_0_1` |
+| `Handover Documentation/2/0/1/...json` | `handover_documentation_2_0_1` |
+| `Contact Information/1/0/...json` | `contact_information_1_0` |
+
+If several templates share the same name and version (e.g. a template and its
+`_forAASMetamodelV3.1` variant), the additional modules get a double-underscore
+suffix: `contact_information_1_0_1`, `contact_information_1_0_1__1`.
 
 ## Usage
 
 ```python
-from basyx.aas.model import Identifier, IdentifierType
-from py_aas_submodels.nameplate_02006_2_0 import Nameplate
+from basyx.aas.model import MultiLanguageTextType
+from py_aas_submodels.digital_nameplate_3_0_1 import Nameplate
 
 nameplate = Nameplate(
-    identification=Identifier(id_="https://example.com/ids/sm/nameplate-001",
-                              id_type=IdentifierType.IRI),
+    id_="https://example.com/ids/sm/nameplate-001",
     uRIOfTheProduct="https://www.domain-abc.com/Model-Nr-1234",
-    manufacturerName={"de": "Muster AG"},
-    manufacturerProductDesignation={"en": "ABC-123"},
-    yearOfConstruction="2022",
-    contactInformation=Nameplate.ContactInformation(
-        nationalCode={"en": "DE"},
-        cityTown={"de": "Musterstadt"},
-        street={"de": "Musterstrasse 1"},
-        zipcode={"de": "12345"},
-    ),
+    manufacturerName=MultiLanguageTextType({"de": "Muster AG"}),
+    manufacturerProductDesignation=MultiLanguageTextType({"en": "ABC-123"}),
+    addressInformation=Nameplate.AddressInformation(),
+    orderCodeOfManufacturer="ABC-123-XYZ",
+    companyLogo=Nameplate.CompanyLogo(value="/aasx/logo.png"),
 )
 ```
 

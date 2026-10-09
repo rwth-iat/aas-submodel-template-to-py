@@ -152,6 +152,15 @@ codegen.generate_from_obj_store(
 )
 ```
 
+## Running Tests
+
+From the repository root:
+
+```bash
+pip install -e "./aas-submodel-to-py[test]"
+python -m pytest aas-submodel-to-py/tests
+```
+
 ## Support and Contribution
 
 If you encounter any issues, or want to contribute to the project, feel free to open an issue or a pull request. Your

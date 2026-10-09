@@ -25,6 +25,9 @@ dependencies = [
   "black"
 ]
 
+[project.optional-dependencies]
+test = ["pytest"]
+
 [project.urls]
 Homepage = "https://github.com/rwth-iat/aas-submodel-template-to-py"
 
@@ -33,6 +36,7 @@ submodel_to_code = "aas_submodel_to_py.submodel_to_code:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
+exclude = ["tests*"]
 
 [tool.setuptools.package-data]
 aas_submodel_to_py = ["code_templates/*.pyi"]
