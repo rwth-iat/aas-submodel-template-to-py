@@ -19,6 +19,10 @@ from aas_submodel_to_py.util import StringHandler, ReferableHandler, NamingGener
 CODE_TEMPLATES = os.path.join(os.path.dirname(__file__), 'code_templates')
 
 
+class NoSubmodelError(ValueError):
+    """Raised if the input contains no submodel to generate classes for"""
+
+
 class SubmodelCodegen:
     def __init__(self, templates_dir=CODE_TEMPLATES):
         # Set the directory containing the Jinja templates
@@ -41,15 +45,26 @@ class SubmodelCodegen:
             raise ValueError(f"Unsupported file format: {input_file}. "
                              "Supported formats are .aasx, .json, and .xml.")
 
+        if not any(isinstance(obj, Submodel) for obj in obj_store):
+            hint = ""
+            if input_str.endswith((".aasx", ".xml")):
+                # The BaSyx Python SDK logs an error and reads such files as empty
+                hint = (" AASX and XML files of AAS metamodel 3.0 are not supported, as the BaSyx Python SDK "
+                        "only reads XML of metamodel 3.1. Use the JSON version of the template or its "
+                        "_forAASMetamodelV3.1 variant instead.")
+            raise NoSubmodelError(f"No submodel found in {input_file}.{hint}")
+
         self.generate_from_obj_store(obj_store, output_file)
 
     def generate_from_obj_store(self, obj_store: AbstractObjectStore,
                                 output_file: Union[str, pathlib.Path] = "output.py"):
-        result = f"\n{self.generate_imports()}"
+        submodels = [obj for obj in obj_store if isinstance(obj, Submodel)]
+        if not submodels:
+            raise NoSubmodelError("No submodel found in the object store.")
 
-        for obj in obj_store:
-            if isinstance(obj, Submodel):
-                result = f"{result}\n\n{self.gen_cls_for_submodel(obj)}"
+        result = f"\n{self.generate_imports()}"
+        for submodel in submodels:
+            result = f"{result}\n\n{self.gen_cls_for_submodel(submodel)}"
 
         try:
             # Format the rendered class using Black

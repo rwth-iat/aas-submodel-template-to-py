@@ -80,7 +80,7 @@ def regenerate_submodels(
     fail_on_errors: bool,
 ) -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
-    from aas_submodel_to_py.generator import SubmodelCodegen
+    from aas_submodel_to_py.generator import NoSubmodelError, SubmodelCodegen
 
     codegen = SubmodelCodegen()
     failures: list[tuple[Path, Exception]] = []
@@ -119,6 +119,9 @@ def regenerate_submodels(
             try:
                 codegen.generate_from(input_file=json_file, output_file=output_file)
                 print(f"[OK] {json_file.relative_to(published_dir)} -> {output_file.name}")
+            except NoSubmodelError:
+                # e.g. files containing only concept descriptions or a generic form
+                print(f"[SKIP] {json_file.relative_to(published_dir)}: no submodel")
             except Exception as ex:  # noqa: BLE001
                 failures.append((json_file, ex))
                 print(f"[FAIL] {json_file.relative_to(published_dir)}: {ex}")

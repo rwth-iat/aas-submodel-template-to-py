@@ -15,7 +15,8 @@ pip install py-aas-submodels
 ## Available Submodels
 
 Modules are generated from every `.json` template published in
-[`admin-shell-io/submodel-templates`](https://github.com/admin-shell-io/submodel-templates/tree/main/published).
+[`admin-shell-io/submodel-templates`](https://github.com/admin-shell-io/submodel-templates/tree/main/published)
+that contains a submodel (files containing only concept descriptions or a generic form are skipped).
 Each module is named after the template and its version, joined with underscores:
 
 | Template | Module |
@@ -72,6 +73,7 @@ The script:
 - Collects every `.json` template below `published/**`.
 - Generates Python classes via `aas-submodel-to-py`.
 - Applies file-name normalization/replacement for generated Python modules.
+- Skips files without a submodel.
 - Logs any conversion failures to `py-aas-submodels/generation_failures.log`.
 
 A GitHub Actions workflow (`.github/workflows/regenerate-submodels.yml`) runs this

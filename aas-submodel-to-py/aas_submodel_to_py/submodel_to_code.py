@@ -40,7 +40,10 @@ def main() -> None:
         raise FileExistsError("Output path already exists and --force was not specified: {}".format(out_path))
 
     codegen = generator.SubmodelCodegen()
-    codegen.generate_from(input_file=aas_path, output_file=out_path)
+    try:
+        codegen.generate_from(input_file=aas_path, output_file=out_path)
+    except generator.NoSubmodelError as e:
+        parser.exit(1, f"error: {e}\n")
 
     print("Generated python client code in: {}".format(out_path))
 

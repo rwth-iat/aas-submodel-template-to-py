@@ -109,8 +109,8 @@ read AASX and XML files of metamodel 3.0. Many templates on the IDTA website are
 For those, use the JSON version of the template, or its `_forAASMetamodelV3.1` variant; both are
 published in [admin-shell-io/submodel-templates](https://github.com/admin-shell-io/submodel-templates/tree/main/published).
 
-> **Note:** For a metamodel 3.0 AASX or XML file, the generator currently writes a module without
-> any classes instead of failing ([#29](https://github.com/rwth-iat/aas-submodel-template-to-py/issues/29)).
+For such files, as for any file without a submodel, the generator raises a `NoSubmodelError`
+(`submodel_to_code` exits with an error message) instead of writing a module.
 
 ## Usage
 
