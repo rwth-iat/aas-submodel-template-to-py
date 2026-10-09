@@ -8,7 +8,7 @@ These generated classes act as child classes of the BaSyx-Python-SDK classes and
 represent classes of the Asset Administration Shell Metamodel.
 The hierarchical structure of the generated submodel-specific class includes
 all the required submodel element-specific classes. Input files can be `.aasx`,
-`.json`, or `.xml` format.
+`.json`, or `.xml` format (see [Supported Input](#supported-input)).
 
 ## Examples
 
@@ -95,6 +95,22 @@ Or from the repository root:
 ```bash
 pip install -e ./aas-submodel-to-py
 ```
+
+## Supported Input
+
+| Format | AAS metamodel 3.1 | AAS metamodel 3.0 |
+|---|---|---|
+| `.json` | ✅ | ✅ |
+| `.aasx` | ✅ | ❌ |
+| `.xml` | ✅ | ❌ |
+
+Files are read with the BaSyx Python SDK (≥ 2.1.0), which implements AAS metamodel 3.1 and can't
+read AASX and XML files of metamodel 3.0. Many templates on the IDTA website are still such files.
+For those, use the JSON version of the template, or its `_forAASMetamodelV3.1` variant; both are
+published in [admin-shell-io/submodel-templates](https://github.com/admin-shell-io/submodel-templates/tree/main/published).
+
+> **Note:** For a metamodel 3.0 AASX or XML file, the generator currently writes a module without
+> any classes instead of failing ([#29](https://github.com/rwth-iat/aas-submodel-template-to-py/issues/29)).
 
 ## Usage
 

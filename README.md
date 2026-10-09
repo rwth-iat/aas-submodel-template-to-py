@@ -44,6 +44,9 @@ submodel_to_code -i /some/path/DigitalNameplate.aasx -d /some/other/path/
 submodel_to_code -i /some/path/DigitalNameplate.aasx -o /some/path/output.py
 ```
 
+> **Note:** AASX and XML files must use AAS metamodel 3.1. For templates of metamodel 3.0, use their
+> JSON version (see [Supported Input](aas-submodel-to-py/README.md#supported-input)).
+
 ## Repository Structure
 
 ```
