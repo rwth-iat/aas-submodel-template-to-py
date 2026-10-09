@@ -543,6 +543,12 @@ class HandoverDocumentation(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(documentids_items, str):
+                        raise TypeError(
+                            "documentids_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [documentids_items]:
@@ -1166,6 +1172,12 @@ class HandoverDocumentation(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(documentclassifications_items, str):
+                        raise TypeError(
+                            "documentclassifications_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [documentclassifications_items]:
@@ -1442,6 +1454,12 @@ class HandoverDocumentation(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(language_items, str):
+                                raise TypeError(
+                                    "language_items takes several elements, got a str"
+                                )
 
                             # Build submodel elements from raw values passed in the argument
                             if language_items:
@@ -2620,6 +2638,12 @@ class HandoverDocumentation(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(referstoentities_items, str):
+                                raise TypeError(
+                                    "referstoentities_items takes several elements, got a str"
+                                )
+
                             # Build submodel elements from raw values passed in the argument
                             if referstoentities_items:
                                 referstoentities_items = [
@@ -2893,6 +2917,12 @@ class HandoverDocumentation(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(basedonreferences_items, str):
+                                raise TypeError(
+                                    "basedonreferences_items takes several elements, got a str"
+                                )
 
                             # Build submodel elements from raw values passed in the argument
                             if basedonreferences_items:
@@ -3172,6 +3202,12 @@ class HandoverDocumentation(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(translationofentities_items, str):
+                                raise TypeError(
+                                    "translationofentities_items takes several elements, got a str"
+                                )
 
                             # Build submodel elements from raw values passed in the argument
                             if translationofentities_items:
@@ -3468,6 +3504,12 @@ class HandoverDocumentation(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(digitalfiles_items, str):
+                                raise TypeError(
+                                    "digitalfiles_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -3808,6 +3850,12 @@ class HandoverDocumentation(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(language, str):
+                            raise TypeError(
+                                "language takes several elements, got a str"
+                            )
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if language is not None and not isinstance(
@@ -3882,12 +3930,24 @@ class HandoverDocumentation(aas.Submodel):
                                 organizationOfficialName
                             )
 
+                        # A str would be split into its characters
+                        if isinstance(refersToEntities, str):
+                            raise TypeError(
+                                "refersToEntities takes several elements, got a str"
+                            )
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if refersToEntities is not None and not isinstance(
                             refersToEntities, aas.SubmodelElement
                         ):
                             refersToEntities = self.RefersToEntities(refersToEntities)
+
+                        # A str would be split into its characters
+                        if isinstance(basedOnReferences, str):
+                            raise TypeError(
+                                "basedOnReferences takes several elements, got a str"
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -3898,6 +3958,12 @@ class HandoverDocumentation(aas.Submodel):
                                 basedOnReferences
                             )
 
+                        # A str would be split into its characters
+                        if isinstance(translationOfEntities, str):
+                            raise TypeError(
+                                "translationOfEntities takes several elements, got a str"
+                            )
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if translationOfEntities is not None and not isinstance(
@@ -3905,6 +3971,12 @@ class HandoverDocumentation(aas.Submodel):
                         ):
                             translationOfEntities = self.TranslationOfEntities(
                                 translationOfEntities
+                            )
+
+                        # A str would be split into its characters
+                        if isinstance(digitalFiles, str):
+                            raise TypeError(
+                                "digitalFiles takes several elements, got a str"
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -4037,6 +4109,12 @@ class HandoverDocumentation(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(documentversions_items, str):
+                        raise TypeError(
+                            "documentversions_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -4257,6 +4335,12 @@ class HandoverDocumentation(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(documentedentities_items, str):
+                        raise TypeError(
+                            "documentedentities_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if documentedentities_items:
                         documentedentities_items = [
@@ -4459,12 +4543,22 @@ class HandoverDocumentation(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(documentIds, str):
+                    raise TypeError("documentIds takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if documentIds is not None and not isinstance(
                     documentIds, aas.SubmodelElement
                 ):
                     documentIds = self.DocumentIds(documentIds)
+
+                # A str would be split into its characters
+                if isinstance(documentClassifications, str):
+                    raise TypeError(
+                        "documentClassifications takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -4475,12 +4569,24 @@ class HandoverDocumentation(aas.Submodel):
                         documentClassifications
                     )
 
+                # A str would be split into its characters
+                if isinstance(documentVersions, str):
+                    raise TypeError(
+                        "documentVersions takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if documentVersions is not None and not isinstance(
                     documentVersions, aas.SubmodelElement
                 ):
                     documentVersions = self.DocumentVersions(documentVersions)
+
+                # A str would be split into its characters
+                if isinstance(documentedEntities, str):
+                    raise TypeError(
+                        "documentedEntities takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -4599,6 +4705,10 @@ class HandoverDocumentation(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(documents_items, str):
+                raise TypeError("documents_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4822,6 +4932,10 @@ class HandoverDocumentation(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(entities_items, str):
+                raise TypeError("entities_items takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [entities_items]:
@@ -4969,10 +5083,18 @@ class HandoverDocumentation(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(documents, str):
+            raise TypeError("documents takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if documents is not None and not isinstance(documents, aas.SubmodelElement):
             documents = self.Documents(documents)
+
+        # A str would be split into its characters
+        if isinstance(entities, str):
+            raise TypeError("entities takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

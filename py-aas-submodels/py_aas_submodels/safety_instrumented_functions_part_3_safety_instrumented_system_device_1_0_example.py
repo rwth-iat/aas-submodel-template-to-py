@@ -560,6 +560,10 @@ class SISDevice(aas.Submodel):
             ):
                 equipmentType = self.EquipmentType(equipmentType)
 
+            # A str would be split into its characters
+            if isinstance(referenceToTagGroup, str):
+                raise TypeError("referenceToTagGroup takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if referenceToTagGroup:
                 referenceToTagGroup = [
@@ -1996,6 +2000,12 @@ class SISDevice(aas.Submodel):
                             )
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(commentsToFailCriterion, str):
+                        raise TypeError(
+                            "commentsToFailCriterion takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if commentsToFailCriterion:
                         commentsToFailCriterion = [
@@ -2141,6 +2151,16 @@ class SISDevice(aas.Submodel):
                         )
                     )
 
+                # A str would be split into its characters
+                if isinstance(testProcedure, str):
+                    raise TypeError("testProcedure takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(requirementsForTesting, str):
+                    raise TypeError(
+                        "requirementsForTesting takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if requirementsForTesting:
                     requirementsForTesting = [
@@ -2151,6 +2171,10 @@ class SISDevice(aas.Submodel):
                         )
                         for i in requirementsForTesting
                     ]
+
+                # A str would be split into its characters
+                if isinstance(failCriterion, str):
+                    raise TypeError("failCriterion takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3185,6 +3209,12 @@ class SISDevice(aas.Submodel):
                             )
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(commentsToFailCriterion, str):
+                        raise TypeError(
+                            "commentsToFailCriterion takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if commentsToFailCriterion:
                         commentsToFailCriterion = [
@@ -3326,6 +3356,14 @@ class SISDevice(aas.Submodel):
                             maximumTestIntervalForSILCompliance
                         )
                     )
+
+                # A str would be split into its characters
+                if isinstance(testProcedure, str):
+                    raise TypeError("testProcedure takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(failCriterion, str):
+                    raise TypeError("failCriterion takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3933,6 +3971,12 @@ class SISDevice(aas.Submodel):
                         self.BypassAdministrativeControlIsRequired(
                             bypassAdministrativeControlIsRequired
                         )
+                    )
+
+                # A str would be split into its characters
+                if isinstance(referenceToBypassGroup, str):
+                    raise TypeError(
+                        "referenceToBypassGroup takes several elements, got a str"
                     )
 
                 # Build submodel elements from raw values passed in the argument
@@ -5899,6 +5943,12 @@ class SISDevice(aas.Submodel):
                         maximumAllowableHumidity
                     )
 
+                # A str would be split into its characters
+                if isinstance(contaminantRequirement, str):
+                    raise TypeError(
+                        "contaminantRequirement takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if contaminantRequirement:
                     contaminantRequirement = [
@@ -5909,6 +5959,12 @@ class SISDevice(aas.Submodel):
                         )
                         for i in contaminantRequirement
                     ]
+
+                # A str would be split into its characters
+                if isinstance(groundingRequirement, str):
+                    raise TypeError(
+                        "groundingRequirement takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if groundingRequirement:
@@ -5946,6 +6002,12 @@ class SISDevice(aas.Submodel):
                 ):
                     vibrationResistance = self.VibrationResistance(vibrationResistance)
 
+                # A str would be split into its characters
+                if isinstance(electrostaticDischargeProtection, str):
+                    raise TypeError(
+                        "electrostaticDischargeProtection takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if electrostaticDischargeProtection:
                     electrostaticDischargeProtection = [
@@ -5978,6 +6040,12 @@ class SISDevice(aas.Submodel):
                 ):
                     temperatureClass = self.TemperatureClass(temperatureClass)
 
+                # A str would be split into its characters
+                if isinstance(floodingRequirement, str):
+                    raise TypeError(
+                        "floodingRequirement takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if floodingRequirement:
                     floodingRequirement = [
@@ -5989,6 +6057,12 @@ class SISDevice(aas.Submodel):
                         for i in floodingRequirement
                     ]
 
+                # A str would be split into its characters
+                if isinstance(lightningExposureRequirement, str):
+                    raise TypeError(
+                        "lightningExposureRequirement takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if lightningExposureRequirement:
                     lightningExposureRequirement = [
@@ -5999,6 +6073,12 @@ class SISDevice(aas.Submodel):
                         )
                         for i in lightningExposureRequirement
                     ]
+
+                # A str would be split into its characters
+                if isinstance(otherEnvironmentalRequirement, str):
+                    raise TypeError(
+                        "otherEnvironmentalRequirement takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if otherEnvironmentalRequirement:
@@ -6430,6 +6510,12 @@ class SISDevice(aas.Submodel):
                     ):
                         failurePhilosophy = self.FailurePhilosophy(failurePhilosophy)
 
+                    # A str would be split into its characters
+                    if isinstance(referenceToAlarm, str):
+                        raise TypeError(
+                            "referenceToAlarm takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if referenceToAlarm:
                         referenceToAlarm = [
@@ -6689,6 +6775,10 @@ class SISDevice(aas.Submodel):
                                 manualResponseActionDescription
                             )
                         )
+
+                    # A str would be split into its characters
+                    if isinstance(document, str):
+                        raise TypeError("document takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -8301,6 +8391,10 @@ class SISDevice(aas.Submodel):
                     ):
                         alarmValue = self.AlarmValue(alarmValue)
 
+                    # A str would be split into its characters
+                    if isinstance(alarmType, str):
+                        raise TypeError("alarmType takes several elements, got a str")
+
                     # Build submodel elements from raw values passed in the argument
                     if alarmType:
                         alarmType = [
@@ -8311,6 +8405,12 @@ class SISDevice(aas.Submodel):
                             )
                             for i in alarmType
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(otherAlarmType, str):
+                        raise TypeError(
+                            "otherAlarmType takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if otherAlarmType:
@@ -8578,6 +8678,14 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(tripPoint, str):
+                    raise TypeError("tripPoint takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(diagnosticAlarm, str):
+                    raise TypeError("diagnosticAlarm takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -9727,6 +9835,12 @@ class SISDevice(aas.Submodel):
             ):
                 tripEnergyMode = self.TripEnergyMode(tripEnergyMode)
 
+            # A str would be split into its characters
+            if isinstance(requirementIfEnergizedToTrip, str):
+                raise TypeError(
+                    "requirementIfEnergizedToTrip takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if requirementIfEnergizedToTrip:
                 requirementIfEnergizedToTrip = [
@@ -9745,6 +9859,12 @@ class SISDevice(aas.Submodel):
             ):
                 tripAction = self.TripAction(tripAction)
 
+            # A str would be split into its characters
+            if isinstance(survivabilityRequirement, str):
+                raise TypeError(
+                    "survivabilityRequirement takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if survivabilityRequirement:
                 survivabilityRequirement = [
@@ -9755,6 +9875,10 @@ class SISDevice(aas.Submodel):
                     )
                     for i in survivabilityRequirement
                 ]
+
+            # A str would be split into its characters
+            if isinstance(diagnosticRequired, str):
+                raise TypeError("diagnosticRequired takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if diagnosticRequired:
@@ -9767,6 +9891,12 @@ class SISDevice(aas.Submodel):
                     for i in diagnosticRequired
                 ]
 
+            # A str would be split into its characters
+            if isinstance(additionalDiagnosticRequirementForImplementation, str):
+                raise TypeError(
+                    "additionalDiagnosticRequirementForImplementation takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if additionalDiagnosticRequirementForImplementation:
                 additionalDiagnosticRequirementForImplementation = [
@@ -9778,6 +9908,10 @@ class SISDevice(aas.Submodel):
                     for i in additionalDiagnosticRequirementForImplementation
                 ]
 
+            # A str would be split into its characters
+            if isinstance(timeDelayOfAction, str):
+                raise TypeError("timeDelayOfAction takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if timeDelayOfAction:
                 timeDelayOfAction = [
@@ -9788,6 +9922,12 @@ class SISDevice(aas.Submodel):
                     )
                     for i in timeDelayOfAction
                 ]
+
+            # A str would be split into its characters
+            if isinstance(failureModeResponses, str):
+                raise TypeError(
+                    "failureModeResponses takes several elements, got a str"
+                )
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -11602,6 +11742,10 @@ class SISDevice(aas.Submodel):
             ):
                 deviceBoundary = self.DeviceBoundary(deviceBoundary)
 
+            # A str would be split into its characters
+            if isinstance(maintainableItem, str):
+                raise TypeError("maintainableItem takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if maintainableItem:
                 maintainableItem = [
@@ -12599,6 +12743,10 @@ class SISDevice(aas.Submodel):
                 diagnosticCoverageDesign = self.DiagnosticCoverageDesign(
                     diagnosticCoverageDesign
                 )
+
+            # A str would be split into its characters
+            if isinstance(dataSource, str):
+                raise TypeError("dataSource takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if dataSource:
@@ -14839,6 +14987,10 @@ class SISDevice(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(application, str):
+                raise TypeError("application takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if application:
                 application = [
@@ -14865,6 +15017,10 @@ class SISDevice(aas.Submodel):
             if fluid is not None and not isinstance(fluid, aas.SubmodelElement):
                 fluid = self.Fluid(fluid)
 
+            # A str would be split into its characters
+            if isinstance(internalDiagnostic, str):
+                raise TypeError("internalDiagnostic takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if internalDiagnostic:
                 internalDiagnostic = [
@@ -14875,6 +15031,10 @@ class SISDevice(aas.Submodel):
                     )
                     for i in internalDiagnostic
                 ]
+
+            # A str would be split into its characters
+            if isinstance(externalDiagnostic, str):
+                raise TypeError("externalDiagnostic takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if externalDiagnostic:
@@ -15691,6 +15851,12 @@ class SISDevice(aas.Submodel):
             ):
                 physicalLocation = self.PhysicalLocation(physicalLocation)
 
+            # A str would be split into its characters
+            if isinstance(referenceToAssociatedDevice, str):
+                raise TypeError(
+                    "referenceToAssociatedDevice takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if referenceToAssociatedDevice:
                 referenceToAssociatedDevice = [
@@ -16323,6 +16489,10 @@ class SISDevice(aas.Submodel):
                 totalBypassDuration, aas.SubmodelElement
             ):
                 totalBypassDuration = self.TotalBypassDuration(totalBypassDuration)
+
+            # A str would be split into its characters
+            if isinstance(bypassEvent, str):
+                raise TypeError("bypassEvent takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -17210,6 +17380,16 @@ class SISDevice(aas.Submodel):
             ):
                 diagnosticFunction = self.DiagnosticFunction(diagnosticFunction)
 
+            # A str would be split into its characters
+            if isinstance(referenceToDiagnosticAlarm, str):
+                raise TypeError(
+                    "referenceToDiagnosticAlarm takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(alarmEventData, str):
+                raise TypeError("alarmEventData takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [
@@ -17941,6 +18121,12 @@ class SISDevice(aas.Submodel):
             ):
                 deviceOperationalStatus = self.DeviceOperationalStatus(
                     deviceOperationalStatus
+                )
+
+            # A str would be split into its characters
+            if isinstance(conditionMonitoringData, str):
+                raise TypeError(
+                    "conditionMonitoringData takes several elements, got a str"
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -18839,6 +19025,10 @@ class SISDevice(aas.Submodel):
                 numberOfDemands, aas.SubmodelElement
             ):
                 numberOfDemands = self.NumberOfDemands(numberOfDemands)
+
+            # A str would be split into its characters
+            if isinstance(deviceDemandEvent, str):
+                raise TypeError("deviceDemandEvent takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -20529,6 +20719,12 @@ class SISDevice(aas.Submodel):
                 ):
                     isSpuriousTrip = self.IsSpuriousTrip(isSpuriousTrip)
 
+                # A str would be split into its characters
+                if isinstance(failureMechanism, str):
+                    raise TypeError(
+                        "failureMechanism takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if failureMechanism:
                     failureMechanism = [
@@ -20549,6 +20745,12 @@ class SISDevice(aas.Submodel):
                         self.IsSystematicOrRandomHardwareFailure(
                             isSystematicOrRandomHardwareFailure
                         )
+                    )
+
+                # A str would be split into its characters
+                if isinstance(failureDescription, str):
+                    raise TypeError(
+                        "failureDescription takes several elements, got a str"
                     )
 
                 # Build submodel elements from raw values passed in the argument
@@ -20612,6 +20814,10 @@ class SISDevice(aas.Submodel):
                     workOrderNumber, aas.SubmodelElement
                 ):
                     workOrderNumber = self.WorkOrderNumber(workOrderNumber)
+
+                # A str would be split into its characters
+                if isinstance(measure, str):
+                    raise TypeError("measure takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if measure:
@@ -20748,6 +20954,10 @@ class SISDevice(aas.Submodel):
                 numberOfSpuriousTrips = self.NumberOfSpuriousTrips(
                     numberOfSpuriousTrips
                 )
+
+            # A str would be split into its characters
+            if isinstance(failureEvent, str):
+                raise TypeError("failureEvent takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -23357,6 +23567,12 @@ class SISDevice(aas.Submodel):
             ):
                 presentTestInterval = self.PresentTestInterval(presentTestInterval)
 
+            # A str would be split into its characters
+            if isinstance(sourceOfPresentTestInterval, str):
+                raise TypeError(
+                    "sourceOfPresentTestInterval takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if sourceOfPresentTestInterval:
                 sourceOfPresentTestInterval = [
@@ -23399,6 +23615,10 @@ class SISDevice(aas.Submodel):
                 referenceToFailCriterion = self.ReferenceToFailCriterion(
                     referenceToFailCriterion
                 )
+
+            # A str would be split into its characters
+            if isinstance(proofTestEvent, str):
+                raise TypeError("proofTestEvent takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -23498,6 +23718,18 @@ class SISDevice(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(sRSRequirements, str):
+            raise TypeError("sRSRequirements takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(diagnostics, str):
+            raise TypeError("diagnostics takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(proofTestData, str):
+            raise TypeError("proofTestData takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

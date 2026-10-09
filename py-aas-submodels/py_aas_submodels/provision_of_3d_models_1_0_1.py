@@ -264,6 +264,12 @@ class Models3D(aas.Submodel):
                             ):
                                 valueId = self.ValueId(valueId)
 
+                            # A str would be split into its characters
+                            if isinstance(isPrimary, str):
+                                raise TypeError(
+                                    "isPrimary takes several elements, got a str"
+                                )
+
                             # Build submodel elements from raw values passed in the argument
                             if isPrimary:
                                 isPrimary = [
@@ -347,6 +353,12 @@ class Models3D(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(fileid_items, str):
+                            raise TypeError(
+                                "fileid_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -886,6 +898,12 @@ class Models3D(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                # A str would be split into its characters
+                                if isinstance(basedon_items, str):
+                                    raise TypeError(
+                                        "basedon_items takes several elements, got a str"
+                                    )
+
                                 # Build submodel elements from raw values passed in the argument
                                 if basedon_items:
                                     basedon_items = [
@@ -1121,6 +1139,12 @@ class Models3D(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                # A str would be split into its characters
+                                if isinstance(refersto_items, str):
+                                    raise TypeError(
+                                        "refersto_items takes several elements, got a str"
+                                    )
 
                                 # Build submodel elements from raw values passed in the argument
                                 if refersto_items:
@@ -2169,6 +2193,12 @@ class Models3D(aas.Submodel):
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
 
+                                        # A str would be split into its characters
+                                        if isinstance(api_items, str):
+                                            raise TypeError(
+                                                "api_items takes several elements, got a str"
+                                            )
+
                                         # Add all passed/initialized submodel elements to a single list
                                         embedded_submodel_elements = []
                                         for se_arg in [api_items]:
@@ -2356,6 +2386,12 @@ class Models3D(aas.Submodel):
                                             fileIdentifier
                                         )
 
+                                    # A str would be split into its characters
+                                    if isinstance(api, str):
+                                        raise TypeError(
+                                            "api takes several elements, got a str"
+                                        )
+
                                     # Build a submodel element if a raw value was passed in the argument
 
                                     if api is not None and not isinstance(
@@ -2454,6 +2490,12 @@ class Models3D(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                # A str would be split into its characters
+                                if isinstance(externalfile_items, str):
+                                    raise TypeError(
+                                        "externalfile_items takes several elements, got a str"
+                                    )
 
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
@@ -3464,6 +3506,12 @@ class Models3D(aas.Submodel):
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
 
+                                    # A str would be split into its characters
+                                    if isinstance(api_items, str):
+                                        raise TypeError(
+                                            "api_items takes several elements, got a str"
+                                        )
+
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
                                     for se_arg in [api_items]:
@@ -3899,6 +3947,12 @@ class Models3D(aas.Submodel):
                                         applicationQualifier
                                     )
 
+                                # A str would be split into its characters
+                                if isinstance(api, str):
+                                    raise TypeError(
+                                        "api takes several elements, got a str"
+                                    )
+
                                 # Build a submodel element if a raw value was passed in the argument
 
                                 if api is not None and not isinstance(
@@ -4289,6 +4343,12 @@ class Models3D(aas.Submodel):
                             ):
                                 setDate = self.SetDate(setDate)
 
+                            # A str would be split into its characters
+                            if isinstance(basedOn, str):
+                                raise TypeError(
+                                    "basedOn takes several elements, got a str"
+                                )
+
                             # Build a submodel element if a raw value was passed in the argument
 
                             if basedOn is not None and not isinstance(
@@ -4296,12 +4356,24 @@ class Models3D(aas.Submodel):
                             ):
                                 basedOn = self.BasedOn(basedOn)
 
+                            # A str would be split into its characters
+                            if isinstance(refersTo, str):
+                                raise TypeError(
+                                    "refersTo takes several elements, got a str"
+                                )
+
                             # Build a submodel element if a raw value was passed in the argument
 
                             if refersTo is not None and not isinstance(
                                 refersTo, aas.SubmodelElement
                             ):
                                 refersTo = self.RefersTo(refersTo)
+
+                            # A str would be split into its characters
+                            if isinstance(externalFile, str):
+                                raise TypeError(
+                                    "externalFile takes several elements, got a str"
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -4396,6 +4468,12 @@ class Models3D(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(fileversion_items, str):
+                            raise TypeError(
+                                "fileversion_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -5315,6 +5393,12 @@ class Models3D(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                # A str would be split into its characters
+                                if isinstance(api_items, str):
+                                    raise TypeError(
+                                        "api_items takes several elements, got a str"
+                                    )
+
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
                                 for se_arg in [api_items]:
@@ -5492,6 +5576,10 @@ class Models3D(aas.Submodel):
                                     applicationQualifier
                                 )
 
+                            # A str would be split into its characters
+                            if isinstance(api, str):
+                                raise TypeError("api takes several elements, got a str")
+
                             # Build a submodel element if a raw value was passed in the argument
 
                             if api is not None and not isinstance(
@@ -5579,6 +5667,12 @@ class Models3D(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(consumingapplication_items, str):
+                            raise TypeError(
+                                "consumingapplication_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -6013,6 +6107,12 @@ class Models3D(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(fileclassification_items, str):
+                            raise TypeError(
+                                "fileclassification_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [fileclassification_items]:
@@ -6168,12 +6268,20 @@ class Models3D(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(fileId, str):
+                        raise TypeError("fileId takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if fileId is not None and not isinstance(
                         fileId, aas.SubmodelElement
                     ):
                         fileId = self.FileId(fileId)
+
+                    # A str would be split into its characters
+                    if isinstance(fileVersion, str):
+                        raise TypeError("fileVersion takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6182,6 +6290,12 @@ class Models3D(aas.Submodel):
                     ):
                         fileVersion = self.FileVersion(fileVersion)
 
+                    # A str would be split into its characters
+                    if isinstance(consumingApplication, str):
+                        raise TypeError(
+                            "consumingApplication takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if consumingApplication is not None and not isinstance(
@@ -6189,6 +6303,12 @@ class Models3D(aas.Submodel):
                     ):
                         consumingApplication = self.ConsumingApplication(
                             consumingApplication
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(fileClassification, str):
+                        raise TypeError(
+                            "fileClassification takes several elements, got a str"
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -6342,6 +6462,12 @@ class Models3D(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(posmodelpurpose_items, str):
+                            raise TypeError(
+                                "posmodelpurpose_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if posmodelpurpose_items:
@@ -6565,6 +6691,12 @@ class Models3D(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(negmodelpurpose_items, str):
+                            raise TypeError(
+                                "negmodelpurpose_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if negmodelpurpose_items:
                             negmodelpurpose_items = [
@@ -6787,6 +6919,12 @@ class Models3D(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(embeddedinfo_items, str):
+                            raise TypeError(
+                                "embeddedinfo_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if embeddedinfo_items:
                             embeddedinfo_items = [
@@ -7006,6 +7144,12 @@ class Models3D(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(state_items, str):
+                            raise TypeError(
+                                "state_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if state_items:
@@ -7414,6 +7558,12 @@ class Models3D(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(reducedelements_items, str):
+                                raise TypeError(
+                                    "reducedelements_items takes several elements, got a str"
+                                )
+
                             # Build submodel elements from raw values passed in the argument
                             if reducedelements_items:
                                 reducedelements_items = [
@@ -7640,6 +7790,12 @@ class Models3D(aas.Submodel):
                         ):
                             description_ = self.Description(description_)
 
+                        # A str would be split into its characters
+                        if isinstance(reducedElements, str):
+                            raise TypeError(
+                                "reducedElements takes several elements, got a str"
+                            )
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if reducedElements is not None and not isinstance(
@@ -7744,12 +7900,24 @@ class Models3D(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(posModelPurpose, str):
+                        raise TypeError(
+                            "posModelPurpose takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if posModelPurpose is not None and not isinstance(
                         posModelPurpose, aas.SubmodelElement
                     ):
                         posModelPurpose = self.PosModelPurpose(posModelPurpose)
+
+                    # A str would be split into its characters
+                    if isinstance(negModelPurpose, str):
+                        raise TypeError(
+                            "negModelPurpose takes several elements, got a str"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7758,12 +7926,22 @@ class Models3D(aas.Submodel):
                     ):
                         negModelPurpose = self.NegModelPurpose(negModelPurpose)
 
+                    # A str would be split into its characters
+                    if isinstance(embeddedInfo, str):
+                        raise TypeError(
+                            "embeddedInfo takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if embeddedInfo is not None and not isinstance(
                         embeddedInfo, aas.SubmodelElement
                     ):
                         embeddedInfo = self.EmbeddedInfo(embeddedInfo)
+
+                    # A str would be split into its characters
+                    if isinstance(state, str):
+                        raise TypeError("state takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -8690,6 +8868,12 @@ class Models3D(aas.Submodel):
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
 
+                                    # A str would be split into its characters
+                                    if isinstance(normorientationvector_items, str):
+                                        raise TypeError(
+                                            "normorientationvector_items takes several elements, got a str"
+                                        )
+
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
                                     for se_arg in [normorientationvector_items]:
@@ -8850,6 +9034,12 @@ class Models3D(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                # A str would be split into its characters
+                                if isinstance(normOrientationVector, str):
+                                    raise TypeError(
+                                        "normOrientationVector takes several elements, got a str"
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -9320,6 +9510,12 @@ class Models3D(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(cartboundingbox_items, str):
+                            raise TypeError(
+                                "cartboundingbox_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -10091,6 +10287,12 @@ class Models3D(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                # A str would be split into its characters
+                                if isinstance(normorientationvector_items, str):
+                                    raise TypeError(
+                                        "normorientationvector_items takes several elements, got a str"
+                                    )
+
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
                                 for se_arg in [normorientationvector_items]:
@@ -10247,6 +10449,12 @@ class Models3D(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(normOrientationVector, str):
+                                raise TypeError(
+                                    "normOrientationVector takes several elements, got a str"
+                                )
+
                             # Build a submodel element if a raw value was passed in the argument
 
                             if normOrientationVector is not None and not isinstance(
@@ -10330,6 +10538,12 @@ class Models3D(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(cartrefsystem_items, str):
+                            raise TypeError(
+                                "cartrefsystem_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -10497,12 +10711,24 @@ class Models3D(aas.Submodel):
                     ):
                         lengthUnit = self.LengthUnit(lengthUnit)
 
+                    # A str would be split into its characters
+                    if isinstance(cartBoundingBox, str):
+                        raise TypeError(
+                            "cartBoundingBox takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if cartBoundingBox is not None and not isinstance(
                         cartBoundingBox, aas.SubmodelElement
                     ):
                         cartBoundingBox = self.CartBoundingBox(cartBoundingBox)
+
+                    # A str would be split into its characters
+                    if isinstance(cartRefSystem, str):
+                        raise TypeError(
+                            "cartRefSystem takes several elements, got a str"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -10660,6 +10886,10 @@ class Models3D(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(model3d_items, str):
+                raise TypeError("model3d_items takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [model3d_items]:
@@ -10796,6 +11026,10 @@ class Models3D(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(model3D, str):
+            raise TypeError("model3D takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

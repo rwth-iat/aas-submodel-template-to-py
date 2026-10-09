@@ -2569,6 +2569,16 @@ class FunctionalSafety(aas.Submodel):
                 )
             )
 
+        # A str would be split into its characters
+        if isinstance(operatingConditionsOfFunctionalSafetyCharacteristics, str):
+            raise TypeError(
+                "operatingConditionsOfFunctionalSafetyCharacteristics takes several elements, got a str"
+            )
+
+        # A str would be split into its characters
+        if isinstance(safetyDeviceTypes, str):
+            raise TypeError("safetyDeviceTypes takes several elements, got a str")
+
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
         for se_arg in [

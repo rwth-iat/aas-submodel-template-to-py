@@ -404,6 +404,10 @@ class DigitalQualityDocuments(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(documentids_items, str):
+                raise TypeError("documentids_items takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [documentids_items]:
@@ -886,6 +890,12 @@ class DigitalQualityDocuments(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(documentclassifications_items, str):
+                raise TypeError(
+                    "documentclassifications_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [documentclassifications_items]:
@@ -1083,6 +1093,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(language_items, str):
+                        raise TypeError(
+                            "language_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if language_items:
@@ -1841,6 +1857,12 @@ class DigitalQualityDocuments(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(referstoentities_items, str):
+                        raise TypeError(
+                            "referstoentities_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if referstoentities_items:
                         referstoentities_items = [
@@ -2064,6 +2086,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(basedonreferences_items, str):
+                        raise TypeError(
+                            "basedonreferences_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if basedonreferences_items:
@@ -2304,6 +2332,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(digitalfiles_items, str):
+                        raise TypeError(
+                            "digitalfiles_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3076,6 +3110,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                 ):
                                     iD = self.ID(iD)
 
+                                # A str would be split into its characters
+                                if isinstance(refID, str):
+                                    raise TypeError(
+                                        "refID takes several elements, got a str"
+                                    )
+
                                 # Build submodel elements from raw values passed in the argument
                                 if refID:
                                     refID = [
@@ -3187,6 +3227,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(identifications_items, str):
+                                raise TypeError(
+                                    "identifications_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -3420,6 +3466,12 @@ class DigitalQualityDocuments(aas.Submodel):
                             uniqueIdentifier, aas.SubmodelElement
                         ):
                             uniqueIdentifier = self.UniqueIdentifier(uniqueIdentifier)
+
+                        # A str would be split into its characters
+                        if isinstance(identifications, str):
+                            raise TypeError(
+                                "identifications takes several elements, got a str"
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -3987,6 +4039,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                 ):
                                     iD = self.ID(iD)
 
+                                # A str would be split into its characters
+                                if isinstance(refID, str):
+                                    raise TypeError(
+                                        "refID takes several elements, got a str"
+                                    )
+
                                 # Build submodel elements from raw values passed in the argument
                                 if refID:
                                     refID = [
@@ -4086,6 +4144,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(identifications_items, str):
+                                raise TypeError(
+                                    "identifications_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -4746,6 +4810,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                         ):
                                             iD = self.ID(iD)
 
+                                        # A str would be split into its characters
+                                        if isinstance(refID, str):
+                                            raise TypeError(
+                                                "refID takes several elements, got a str"
+                                            )
+
                                         # Build submodel elements from raw values passed in the argument
                                         if refID:
                                             refID = [
@@ -4863,6 +4933,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
+
+                                    # A str would be split into its characters
+                                    if isinstance(identifications_items, str):
+                                        raise TypeError(
+                                            "identifications_items takes several elements, got a str"
+                                        )
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -5012,6 +5088,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                # A str would be split into its characters
+                                if isinstance(identifications, str):
+                                    raise TypeError(
+                                        "identifications takes several elements, got a str"
+                                    )
+
                                 # Build a submodel element if a raw value was passed in the argument
 
                                 if identifications is not None and not isinstance(
@@ -5105,6 +5187,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(item_items, str):
+                                raise TypeError(
+                                    "item_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -5214,7 +5302,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             Iterable[Identifications.Identifications_item],
                             Identifications,
                         ],
-                        item: Iterable[Union[Iterable[Item.Item_item], Item]],
+                        item: Union[Iterable[Item.Item_item], Item],
                         id_short: Optional[str] = r"Items",
                         display_name: Optional[
                             aas.MultiLanguageNameType
@@ -5260,6 +5348,12 @@ class DigitalQualityDocuments(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(identifications, str):
+                            raise TypeError(
+                                "identifications takes several elements, got a str"
+                            )
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if identifications is not None and not isinstance(
@@ -5267,16 +5361,16 @@ class DigitalQualityDocuments(aas.Submodel):
                         ):
                             identifications = self.Identifications(identifications)
 
-                        # Build submodel elements from raw values passed in the argument
-                        if item:
-                            item = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Item(i)
-                                )
-                                for i in item
-                            ]
+                        # A str would be split into its characters
+                        if isinstance(item, str):
+                            raise TypeError("item takes several elements, got a str")
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if item is not None and not isinstance(
+                            item, aas.SubmodelElement
+                        ):
+                            item = self.Item(item)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -5666,6 +5760,12 @@ class DigitalQualityDocuments(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(statements_items, str):
+                            raise TypeError(
+                                "statements_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [statements_items]:
@@ -5821,6 +5921,10 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(statements, str):
+                        raise TypeError("statements takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6389,6 +6493,12 @@ class DigitalQualityDocuments(aas.Submodel):
                         ):
                             signatureMethod = self.SignatureMethod(signatureMethod)
 
+                        # A str would be split into its characters
+                        if isinstance(signatureReference, str):
+                            raise TypeError(
+                                "signatureReference takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [
@@ -6730,6 +6840,10 @@ class DigitalQualityDocuments(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(language, str):
+                    raise TypeError("language takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if language is not None and not isinstance(
@@ -6786,12 +6900,24 @@ class DigitalQualityDocuments(aas.Submodel):
                         organizationOfficialName
                     )
 
+                # A str would be split into its characters
+                if isinstance(refersToEntities, str):
+                    raise TypeError(
+                        "refersToEntities takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if refersToEntities is not None and not isinstance(
                     refersToEntities, aas.SubmodelElement
                 ):
                     refersToEntities = self.RefersToEntities(refersToEntities)
+
+                # A str would be split into its characters
+                if isinstance(basedOnReferences, str):
+                    raise TypeError(
+                        "basedOnReferences takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6800,12 +6926,22 @@ class DigitalQualityDocuments(aas.Submodel):
                 ):
                     basedOnReferences = self.BasedOnReferences(basedOnReferences)
 
+                # A str would be split into its characters
+                if isinstance(digitalFiles, str):
+                    raise TypeError("digitalFiles takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if digitalFiles is not None and not isinstance(
                     digitalFiles, aas.SubmodelElement
                 ):
                     digitalFiles = self.DigitalFiles(digitalFiles)
+
+                # A str would be split into its characters
+                if isinstance(documentSignature, str):
+                    raise TypeError(
+                        "documentSignature takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6912,6 +7048,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(documentinstances_items, str):
+                raise TypeError(
+                    "documentinstances_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7052,10 +7194,18 @@ class DigitalQualityDocuments(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(documentIds, str):
+            raise TypeError("documentIds takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if documentIds is not None and not isinstance(documentIds, aas.SubmodelElement):
             documentIds = self.DocumentIds(documentIds)
+
+        # A str would be split into its characters
+        if isinstance(documentClassifications, str):
+            raise TypeError("documentClassifications takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -7065,6 +7215,10 @@ class DigitalQualityDocuments(aas.Submodel):
             documentClassifications = self.DocumentClassifications(
                 documentClassifications
             )
+
+        # A str would be split into its characters
+        if isinstance(documentInstances, str):
+            raise TypeError("documentInstances takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

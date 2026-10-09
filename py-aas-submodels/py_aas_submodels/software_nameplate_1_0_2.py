@@ -2062,6 +2062,10 @@ class SoftwareNameplate(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(installedModule, str):
+                    raise TypeError("installedModule takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if installedModule:
                     installedModule = [
@@ -2347,6 +2351,12 @@ class SoftwareNameplate(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(configurationPath, str):
+                    raise TypeError(
+                        "configurationPath takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -4782,6 +4792,10 @@ class SoftwareNameplate(aas.Submodel):
                 ):
                     nationalCode = self.NationalCode(nationalCode)
 
+                # A str would be split into its characters
+                if isinstance(language, str):
+                    raise TypeError("language takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if language:
                     language = [
@@ -4814,6 +4828,10 @@ class SoftwareNameplate(aas.Submodel):
                     department, aas.SubmodelElement
                 ):
                     department = self.Department(department)
+
+                # A str would be split into its characters
+                if isinstance(iPCommunication, str):
+                    raise TypeError("iPCommunication takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -5081,6 +5099,10 @@ class SoftwareNameplate(aas.Submodel):
                 sLAInformation, aas.SubmodelElement
             ):
                 sLAInformation = self.SLAInformation(sLAInformation)
+
+            # A str would be split into its characters
+            if isinstance(contact, str):
+                raise TypeError("contact takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

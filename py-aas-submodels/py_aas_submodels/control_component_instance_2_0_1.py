@@ -317,6 +317,10 @@ class ControlComponentInstance(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(endpoint, str):
+                raise TypeError("endpoint takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [endpoint]:
@@ -569,6 +573,10 @@ class ControlComponentInstance(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(mode, str):
+                        raise TypeError("mode takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if mode:
@@ -1035,6 +1043,10 @@ class ControlComponentInstance(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(parameter, str):
+                        raise TypeError("parameter takes several elements, got a str")
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [parameter]:
@@ -1211,6 +1223,12 @@ class ControlComponentInstance(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(errorReference, str):
+                        raise TypeError(
+                            "errorReference takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if errorReference:
@@ -1399,6 +1417,12 @@ class ControlComponentInstance(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(skillReference, str):
+                        raise TypeError(
+                            "skillReference takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if skillReference:
@@ -1612,6 +1636,10 @@ class ControlComponentInstance(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(skill, str):
+                raise TypeError("skill takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

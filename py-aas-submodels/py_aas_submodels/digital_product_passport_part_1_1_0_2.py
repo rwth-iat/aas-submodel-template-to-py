@@ -911,6 +911,12 @@ class DppMetadata(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(contentspecificationids_items, str):
+                raise TypeError(
+                    "contentspecificationids_items takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if contentspecificationids_items:
                 contentspecificationids_items = [
@@ -1129,6 +1135,10 @@ class DppMetadata(aas.Submodel):
 
         if facilityId is not None and not isinstance(facilityId, aas.SubmodelElement):
             facilityId = self.FacilityId(facilityId)
+
+        # A str would be split into its characters
+        if isinstance(contentSpecificationIds, str):
+            raise TypeError("contentSpecificationIds takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

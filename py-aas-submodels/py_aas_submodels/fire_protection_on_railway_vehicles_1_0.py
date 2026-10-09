@@ -767,6 +767,12 @@ class RailwayFireProtection(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(reportreferences_items, str):
+                            raise TypeError(
+                                "reportreferences_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if reportreferences_items:
                             reportreferences_items = [
@@ -1042,6 +1048,12 @@ class RailwayFireProtection(aas.Submodel):
                     ):
                         hazardLevel = self.HazardLevel(hazardLevel)
 
+                    # A str would be split into its characters
+                    if isinstance(reportReferences, str):
+                        raise TypeError(
+                            "reportReferences takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if reportReferences is not None and not isinstance(
@@ -1144,6 +1156,12 @@ class RailwayFireProtection(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(requirementssets_items, str):
+                    raise TypeError(
+                        "requirementssets_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2015,6 +2033,12 @@ class RailwayFireProtection(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(tests_items, str):
+                            raise TypeError(
+                                "tests_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [tests_items]:
@@ -2772,6 +2796,10 @@ class RailwayFireProtection(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(tests, str):
+                        raise TypeError("tests takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if tests is not None and not isinstance(tests, aas.SubmodelElement):
@@ -2872,6 +2900,10 @@ class RailwayFireProtection(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(reports_items, str):
+                    raise TypeError("reports_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3034,12 +3066,20 @@ class RailwayFireProtection(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(requirementsSets, str):
+                raise TypeError("requirementsSets takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if requirementsSets is not None and not isinstance(
                 requirementsSets, aas.SubmodelElement
             ):
                 requirementsSets = self.RequirementsSets(requirementsSets)
+
+            # A str would be split into its characters
+            if isinstance(reports, str):
+                raise TypeError("reports takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 

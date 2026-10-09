@@ -724,6 +724,18 @@ class CapabilityDescription(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(sameProperty, str):
+                            raise TypeError(
+                                "sameProperty takes several elements, got a str"
+                            )
+
+                        # A str would be split into its characters
+                        if isinstance(propertyRange, str):
+                            raise TypeError(
+                                "propertyRange takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if propertyRange:
                             propertyRange = [
@@ -735,6 +747,12 @@ class CapabilityDescription(aas.Submodel):
                                 for i in propertyRange
                             ]
 
+                        # A str would be split into its characters
+                        if isinstance(propertyProperty, str):
+                            raise TypeError(
+                                "propertyProperty takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if propertyProperty:
                             propertyProperty = [
@@ -745,6 +763,12 @@ class CapabilityDescription(aas.Submodel):
                                 )
                                 for i in propertyProperty
                             ]
+
+                        # A str would be split into its characters
+                        if isinstance(propertyMultiLanguageProperty, str):
+                            raise TypeError(
+                                "propertyMultiLanguageProperty takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if propertyMultiLanguageProperty:
@@ -863,6 +887,12 @@ class CapabilityDescription(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(propertyContainer, str):
+                        raise TypeError(
+                            "propertyContainer takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1384,6 +1414,12 @@ class CapabilityDescription(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(composedOfContainer, str):
+                            raise TypeError(
+                                "composedOfContainer takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [composedOfContainer]:
@@ -1609,6 +1645,12 @@ class CapabilityDescription(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(capabilityGeneralizedBy, str):
+                            raise TypeError(
+                                "capabilityGeneralizedBy takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -2360,6 +2402,12 @@ class CapabilityDescription(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                # A str would be split into its characters
+                                if isinstance(constraintHasProperty, str):
+                                    raise TypeError(
+                                        "constraintHasProperty takes several elements, got a str"
+                                    )
+
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
                                 for se_arg in [constraintHasProperty]:
@@ -2916,6 +2964,18 @@ class CapabilityDescription(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(propertyConstraintContainer, str):
+                            raise TypeError(
+                                "propertyConstraintContainer takes several elements, got a str"
+                            )
+
+                        # A str would be split into its characters
+                        if isinstance(transitionConstraintContainer, str):
+                            raise TypeError(
+                                "transitionConstraintContainer takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [
@@ -3010,6 +3070,24 @@ class CapabilityDescription(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(capabilityRealizedBy, str):
+                        raise TypeError(
+                            "capabilityRealizedBy takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(generalizedBySet, str):
+                        raise TypeError(
+                            "generalizedBySet takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(constraintSet, str):
+                        raise TypeError(
+                            "constraintSet takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3122,6 +3200,10 @@ class CapabilityDescription(aas.Submodel):
                 ):
                     capabilityComment = self.CapabilityComment(capabilityComment)
 
+                # A str would be split into its characters
+                if isinstance(propertySet, str):
+                    raise TypeError("propertySet takes several elements, got a str")
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -3221,6 +3303,10 @@ class CapabilityDescription(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(capabilityContainer, str):
+                raise TypeError("capabilityContainer takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [capabilityContainer]:
@@ -3287,6 +3373,10 @@ class CapabilityDescription(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(capabilitySet, str):
+            raise TypeError("capabilitySet takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

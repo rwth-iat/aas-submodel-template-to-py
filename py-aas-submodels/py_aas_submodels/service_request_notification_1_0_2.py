@@ -415,6 +415,12 @@ class ServiceRequestNotification(aas.Submodel):
                 ):
                     numberOfContacs = self.NumberOfContacs(numberOfContacs)
 
+                # A str would be split into its characters
+                if isinstance(contactInformation, str):
+                    raise TypeError(
+                        "contactInformation takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -1370,6 +1376,10 @@ class ServiceRequestNotification(aas.Submodel):
                     ):
                         numberOfMedias = self.NumberOfMedias(numberOfMedias)
 
+                    # A str would be split into its characters
+                    if isinstance(media, str):
+                        raise TypeError("media takes several elements, got a str")
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [numberOfMedias, media]:
@@ -1773,6 +1783,12 @@ class ServiceRequestNotification(aas.Submodel):
                 ):
                     numberOfContacts = self.NumberOfContacts(numberOfContacts)
 
+                # A str would be split into its characters
+                if isinstance(contactInformation, str):
+                    raise TypeError(
+                        "contactInformation takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [partnerNumber, numberOfContacts, contactInformation]:
@@ -1982,6 +1998,12 @@ class ServiceRequestNotification(aas.Submodel):
                 self.NumberOfServiceRequestNotifications(
                     numberOfServiceRequestNotifications
                 )
+            )
+
+        # A str would be split into its characters
+        if isinstance(serviceRequestNotification, str):
+            raise TypeError(
+                "serviceRequestNotification takes several elements, got a str"
             )
 
         # Add all passed/initialized submodel elements to a single list

@@ -998,6 +998,10 @@ class AssetLocation(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(addresses_items, str):
+                raise TypeError("addresses_items takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [addresses_items]:
@@ -2122,6 +2126,12 @@ class AssetLocation(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(groundcontrolpoints_items, str):
+                        raise TypeError(
+                            "groundcontrolpoints_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [groundcontrolpoints_items]:
@@ -2310,6 +2320,12 @@ class AssetLocation(aas.Submodel):
                         seaLevelOfBaseHeight
                     )
 
+                # A str would be split into its characters
+                if isinstance(groundControlPoints, str):
+                    raise TypeError(
+                        "groundControlPoints takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if groundControlPoints is not None and not isinstance(
@@ -2423,6 +2439,12 @@ class AssetLocation(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(coordinatesystems_items, str):
+                raise TypeError(
+                    "coordinatesystems_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2711,6 +2733,12 @@ class AssetLocation(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(addressreferences_items, str):
+                        raise TypeError(
+                            "addressreferences_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if addressreferences_items:
@@ -3124,6 +3152,12 @@ class AssetLocation(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(arearegioncoordinates_items, str):
+                        raise TypeError(
+                            "arearegioncoordinates_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3774,12 +3808,24 @@ class AssetLocation(aas.Submodel):
                         coordinateSystemOfArea
                     )
 
+                # A str would be split into its characters
+                if isinstance(addressReferences, str):
+                    raise TypeError(
+                        "addressReferences takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if addressReferences is not None and not isinstance(
                     addressReferences, aas.SubmodelElement
                 ):
                     addressReferences = self.AddressReferences(addressReferences)
+
+                # A str would be split into its characters
+                if isinstance(areaRegionCoordinates, str):
+                    raise TypeError(
+                        "areaRegionCoordinates takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3932,6 +3978,10 @@ class AssetLocation(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(visitedareas_items, str):
+                raise TypeError("visitedareas_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4719,6 +4769,12 @@ class AssetLocation(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(arearecords_items, str):
+                    raise TypeError(
+                        "arearecords_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6392,6 +6448,12 @@ class AssetLocation(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(locationrecords_items, str):
+                    raise TypeError(
+                        "locationrecords_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [locationrecords_items]:
@@ -6580,12 +6642,20 @@ class AssetLocation(aas.Submodel):
                     locationEventTimeSeriesData
                 )
 
+            # A str would be split into its characters
+            if isinstance(areaRecords, str):
+                raise TypeError("areaRecords takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if areaRecords is not None and not isinstance(
                 areaRecords, aas.SubmodelElement
             ):
                 areaRecords = self.AreaRecords(areaRecords)
+
+            # A str would be split into its characters
+            if isinstance(locationRecords, str):
+                raise TypeError("locationRecords takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -7185,10 +7255,18 @@ class AssetLocation(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(addresses, str):
+            raise TypeError("addresses takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if addresses is not None and not isinstance(addresses, aas.SubmodelElement):
             addresses = self.Addresses(addresses)
+
+        # A str would be split into its characters
+        if isinstance(coordinateSystems, str):
+            raise TypeError("coordinateSystems takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -7196,6 +7274,10 @@ class AssetLocation(aas.Submodel):
             coordinateSystems, aas.SubmodelElement
         ):
             coordinateSystems = self.CoordinateSystems(coordinateSystems)
+
+        # A str would be split into its characters
+        if isinstance(visitedAreas, str):
+            raise TypeError("visitedAreas takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

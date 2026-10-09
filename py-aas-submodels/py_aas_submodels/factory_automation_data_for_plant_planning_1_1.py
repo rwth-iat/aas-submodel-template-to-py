@@ -583,6 +583,12 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(automationmlattributeandinterfacelist_items, str):
+                raise TypeError(
+                    "automationmlattributeandinterfacelist_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [automationmlattributeandinterfacelist_items]:
@@ -746,6 +752,12 @@ class FactoryAutomationDataForPlant(aas.Submodel):
         ):
             automationMLElementReference = self.AutomationMLElementReference(
                 automationMLElementReference
+            )
+
+        # A str would be split into its characters
+        if isinstance(automationMLAttributeAndInterfaceList, str):
+            raise TypeError(
+                "automationMLAttributeAndInterfaceList takes several elements, got a str"
             )
 
         # Build a submodel element if a raw value was passed in the argument

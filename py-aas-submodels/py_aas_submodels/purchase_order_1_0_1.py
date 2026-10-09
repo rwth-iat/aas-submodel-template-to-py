@@ -3207,6 +3207,12 @@ class PurchaseOrder(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(buyertrackingcodelist_items, str):
+                    raise TypeError(
+                        "buyertrackingcodelist_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [buyertrackingcodelist_items]:
@@ -4133,6 +4139,12 @@ class PurchaseOrder(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(taxdetailstotallist_items, str):
+                    raise TypeError(
+                        "taxdetailstotallist_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5562,6 +5574,12 @@ class PurchaseOrder(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(deliverydatelist_items, str):
+                    raise TypeError(
+                        "deliverydatelist_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [deliverydatelist_items]:
@@ -5817,6 +5835,12 @@ class PurchaseOrder(aas.Submodel):
             ):
                 documentType = self.DocumentType(documentType)
 
+            # A str would be split into its characters
+            if isinstance(purchaseRequestResponseReference, str):
+                raise TypeError(
+                    "purchaseRequestResponseReference takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if purchaseRequestResponseReference:
                 purchaseRequestResponseReference = [
@@ -5827,6 +5851,12 @@ class PurchaseOrder(aas.Submodel):
                     )
                     for i in purchaseRequestResponseReference
                 ]
+
+            # A str would be split into its characters
+            if isinstance(purchaseRequestNotificationReference, str):
+                raise TypeError(
+                    "purchaseRequestNotificationReference takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if purchaseRequestNotificationReference:
@@ -5839,6 +5869,12 @@ class PurchaseOrder(aas.Submodel):
                     for i in purchaseRequestNotificationReference
                 ]
 
+            # A str would be split into its characters
+            if isinstance(buyerPurchaseRequestNumber, str):
+                raise TypeError(
+                    "buyerPurchaseRequestNumber takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if buyerPurchaseRequestNumber:
                 buyerPurchaseRequestNumber = [
@@ -5850,6 +5886,12 @@ class PurchaseOrder(aas.Submodel):
                     for i in buyerPurchaseRequestNumber
                 ]
 
+            # A str would be split into its characters
+            if isinstance(sellerPurchaseRequestNumber, str):
+                raise TypeError(
+                    "sellerPurchaseRequestNumber takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if sellerPurchaseRequestNumber:
                 sellerPurchaseRequestNumber = [
@@ -5860,6 +5902,12 @@ class PurchaseOrder(aas.Submodel):
                     )
                     for i in sellerPurchaseRequestNumber
                 ]
+
+            # A str would be split into its characters
+            if isinstance(agentPurchaseRequestNumber, str):
+                raise TypeError(
+                    "agentPurchaseRequestNumber takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if agentPurchaseRequestNumber:
@@ -6046,6 +6094,10 @@ class PurchaseOrder(aas.Submodel):
             ):
                 description_ = self.Description(description_)
 
+            # A str would be split into its characters
+            if isinstance(remark, str):
+                raise TypeError("remark takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if remark:
                 remark = [
@@ -6103,6 +6155,12 @@ class PurchaseOrder(aas.Submodel):
                     )
                 )
 
+            # A str would be split into its characters
+            if isinstance(buyerTrackingCodeList, str):
+                raise TypeError(
+                    "buyerTrackingCodeList takes several elements, got a str"
+                )
+
             # Build a submodel element if a raw value was passed in the argument
 
             if buyerTrackingCodeList is not None and not isinstance(
@@ -6112,12 +6170,22 @@ class PurchaseOrder(aas.Submodel):
                     buyerTrackingCodeList
                 )
 
+            # A str would be split into its characters
+            if isinstance(taxDetailsTotalList, str):
+                raise TypeError("taxDetailsTotalList takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if taxDetailsTotalList is not None and not isinstance(
                 taxDetailsTotalList, aas.SubmodelElement
             ):
                 taxDetailsTotalList = self.TaxDetailsTotalList(taxDetailsTotalList)
+
+            # A str would be split into its characters
+            if isinstance(referenceSubmodelTollDocuments, str):
+                raise TypeError(
+                    "referenceSubmodelTollDocuments takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if referenceSubmodelTollDocuments:
@@ -6144,6 +6212,10 @@ class PurchaseOrder(aas.Submodel):
             ):
                 deliveryDateRef = self.DeliveryDateRef(deliveryDateRef)
 
+            # A str would be split into its characters
+            if isinstance(businessPartyRef, str):
+                raise TypeError("businessPartyRef takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if businessPartyRef:
                 businessPartyRef = [
@@ -6162,6 +6234,12 @@ class PurchaseOrder(aas.Submodel):
             ):
                 incotermsRef = self.IncotermsRef(incotermsRef)
 
+            # A str would be split into its characters
+            if isinstance(internationalRestrictionsRef, str):
+                raise TypeError(
+                    "internationalRestrictionsRef takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if internationalRestrictionsRef:
                 internationalRestrictionsRef = [
@@ -6172,6 +6250,12 @@ class PurchaseOrder(aas.Submodel):
                     )
                     for i in internationalRestrictionsRef
                 ]
+
+            # A str would be split into its characters
+            if isinstance(specialTreatmentClassRef, str):
+                raise TypeError(
+                    "specialTreatmentClassRef takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if specialTreatmentClassRef:
@@ -6184,12 +6268,20 @@ class PurchaseOrder(aas.Submodel):
                     for i in specialTreatmentClassRef
                 ]
 
+            # A str would be split into its characters
+            if isinstance(mediaRef, str):
+                raise TypeError("mediaRef takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if mediaRef:
                 mediaRef = [
                     i if isinstance(i, aas.SubmodelElement) else self.MediaRef(i)
                     for i in mediaRef
                 ]
+
+            # A str would be split into its characters
+            if isinstance(deliveryDateList, str):
+                raise TypeError("deliveryDateList takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -6760,6 +6852,12 @@ class PurchaseOrder(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(cataloguereferencelist_items, str):
+                raise TypeError(
+                    "cataloguereferencelist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -8502,6 +8600,12 @@ class PurchaseOrder(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(modeofpaymentlist_items, str):
+                raise TypeError(
+                    "modeofpaymentlist_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [modeofpaymentlist_items]:
@@ -9254,6 +9358,10 @@ class PurchaseOrder(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(incotermslist_items, str):
+                raise TypeError("incotermslist_items takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [incotermslist_items]:
@@ -9819,6 +9927,12 @@ class PurchaseOrder(aas.Submodel):
                 ):
                     restrictionType = self.RestrictionType(restrictionType)
 
+                # A str would be split into its characters
+                if isinstance(countryCodeEmbargoImposing, str):
+                    raise TypeError(
+                        "countryCodeEmbargoImposing takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if countryCodeEmbargoImposing:
                     countryCodeEmbargoImposing = [
@@ -9829,6 +9943,12 @@ class PurchaseOrder(aas.Submodel):
                         )
                         for i in countryCodeEmbargoImposing
                     ]
+
+                # A str would be split into its characters
+                if isinstance(countryCodeEmbargoTarget, str):
+                    raise TypeError(
+                        "countryCodeEmbargoTarget takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if countryCodeEmbargoTarget:
@@ -9841,6 +9961,12 @@ class PurchaseOrder(aas.Submodel):
                         for i in countryCodeEmbargoTarget
                     ]
 
+                # A str would be split into its characters
+                if isinstance(regionCodeEmbargoImposing, str):
+                    raise TypeError(
+                        "regionCodeEmbargoImposing takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if regionCodeEmbargoImposing:
                     regionCodeEmbargoImposing = [
@@ -9851,6 +9977,12 @@ class PurchaseOrder(aas.Submodel):
                         )
                         for i in regionCodeEmbargoImposing
                     ]
+
+                # A str would be split into its characters
+                if isinstance(regionCodeEmbargoTarget, str):
+                    raise TypeError(
+                        "regionCodeEmbargoTarget takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if regionCodeEmbargoTarget:
@@ -9958,6 +10090,12 @@ class PurchaseOrder(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(internationalrestrictionlist_items, str):
+                raise TypeError(
+                    "internationalrestrictionlist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -10384,6 +10522,12 @@ class PurchaseOrder(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(requestedcertificationslist_items, str):
+                raise TypeError(
+                    "requestedcertificationslist_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [requestedcertificationslist_items]:
@@ -10648,6 +10792,12 @@ class PurchaseOrder(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(specialtreatmentclasslist_items, str):
+                raise TypeError(
+                    "specialtreatmentclasslist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -44205,6 +44355,12 @@ class PurchaseOrder(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(costcenterslist_items, str):
+                raise TypeError(
+                    "costcenterslist_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [costcenterslist_items]:
@@ -44811,6 +44967,12 @@ class PurchaseOrder(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(attachedmedialist_items, str):
+                raise TypeError(
+                    "attachedmedialist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -49957,6 +50119,12 @@ class PurchaseOrder(aas.Submodel):
                     ):
                         priceUnitFactor = self.PriceUnitFactor(priceUnitFactor)
 
+                    # A str would be split into its characters
+                    if isinstance(costsIncluded, str):
+                        raise TypeError(
+                            "costsIncluded takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if costsIncluded:
                         costsIncluded = [
@@ -49990,6 +50158,10 @@ class PurchaseOrder(aas.Submodel):
                         shippingTax, aas.SubmodelElement
                     ):
                         shippingTax = self.ShippingTax(shippingTax)
+
+                    # A str would be split into its characters
+                    if isinstance(taxDetails, str):
+                        raise TypeError("taxDetails takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -50275,6 +50447,12 @@ class PurchaseOrder(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(partialdeliverylist_items, str):
+                        raise TypeError(
+                            "partialdeliverylist_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -51171,6 +51349,12 @@ class PurchaseOrder(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(deliverydatelist_items, str):
+                        raise TypeError(
+                            "deliverydatelist_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [deliverydatelist_items]:
@@ -51585,6 +51769,12 @@ class PurchaseOrder(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(scancodeslist_items, str):
+                        raise TypeError(
+                            "scancodeslist_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [scancodeslist_items]:
@@ -51807,6 +51997,12 @@ class PurchaseOrder(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(qualityRequirement, str):
+                            raise TypeError(
+                                "qualityRequirement takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if qualityRequirement:
                             qualityRequirement = [
@@ -51907,6 +52103,12 @@ class PurchaseOrder(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(qualityrequirements_items, str):
+                        raise TypeError(
+                            "qualityrequirements_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -52420,6 +52622,12 @@ class PurchaseOrder(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(listproductidsbusinesspartners_items, str):
+                        raise TypeError(
+                            "listproductidsbusinesspartners_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [listproductidsbusinesspartners_items]:
@@ -52642,6 +52850,12 @@ class PurchaseOrder(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(excludedIngredient, str):
+                            raise TypeError(
+                                "excludedIngredient takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if excludedIngredient:
                             excludedIngredient = [
@@ -52742,6 +52956,12 @@ class PurchaseOrder(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(excludedingredientslist_items, str):
+                        raise TypeError(
+                            "excludedingredientslist_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -53117,6 +53337,10 @@ class PurchaseOrder(aas.Submodel):
                         capacityQuantityUnit
                     )
 
+                # A str would be split into its characters
+                if isinstance(packageCapacity, str):
+                    raise TypeError("packageCapacity takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if packageCapacity:
                     packageCapacity = [
@@ -53128,6 +53352,10 @@ class PurchaseOrder(aas.Submodel):
                         for i in packageCapacity
                     ]
 
+                # A str would be split into its characters
+                if isinstance(packageQuantity, str):
+                    raise TypeError("packageQuantity takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if packageQuantity:
                     packageQuantity = [
@@ -53138,6 +53366,12 @@ class PurchaseOrder(aas.Submodel):
                         )
                         for i in packageQuantity
                     ]
+
+                # A str would be split into its characters
+                if isinstance(packageQuantityUnit, str):
+                    raise TypeError(
+                        "packageQuantityUnit takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if packageQuantityUnit:
@@ -53197,6 +53431,12 @@ class PurchaseOrder(aas.Submodel):
                         tollDocumentsRequired
                     )
 
+                # A str would be split into its characters
+                if isinstance(referenceSubmodelTollDocuments, str):
+                    raise TypeError(
+                        "referenceSubmodelTollDocuments takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if referenceSubmodelTollDocuments:
                     referenceSubmodelTollDocuments = [
@@ -53247,6 +53487,10 @@ class PurchaseOrder(aas.Submodel):
                 ):
                     agreement = self.Agreement(agreement)
 
+                # A str would be split into its characters
+                if isinstance(remarks, str):
+                    raise TypeError("remarks takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if remarks:
                     remarks = [
@@ -53268,6 +53512,12 @@ class PurchaseOrder(aas.Submodel):
                 ):
                     incotermsRef = self.IncotermsRef(incotermsRef)
 
+                # A str would be split into its characters
+                if isinstance(businessPartyRef, str):
+                    raise TypeError(
+                        "businessPartyRef takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if businessPartyRef:
                     businessPartyRef = [
@@ -53278,6 +53528,12 @@ class PurchaseOrder(aas.Submodel):
                         )
                         for i in businessPartyRef
                     ]
+
+                # A str would be split into its characters
+                if isinstance(internationalRestrictionsRef, str):
+                    raise TypeError(
+                        "internationalRestrictionsRef takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if internationalRestrictionsRef:
@@ -53290,6 +53546,12 @@ class PurchaseOrder(aas.Submodel):
                         for i in internationalRestrictionsRef
                     ]
 
+                # A str would be split into its characters
+                if isinstance(specialTreatmentClassRef, str):
+                    raise TypeError(
+                        "specialTreatmentClassRef takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if specialTreatmentClassRef:
                     specialTreatmentClassRef = [
@@ -53301,12 +53563,20 @@ class PurchaseOrder(aas.Submodel):
                         for i in specialTreatmentClassRef
                     ]
 
+                # A str would be split into its characters
+                if isinstance(mediaRef, str):
+                    raise TypeError("mediaRef takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if mediaRef:
                     mediaRef = [
                         i if isinstance(i, aas.SubmodelElement) else self.MediaRef(i)
                         for i in mediaRef
                     ]
+
+                # A str would be split into its characters
+                if isinstance(costCenterRef, str):
+                    raise TypeError("costCenterRef takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if costCenterRef:
@@ -53356,12 +53626,24 @@ class PurchaseOrder(aas.Submodel):
                 ):
                     aASItemReference = self.AASItemReference(aASItemReference)
 
+                # A str would be split into its characters
+                if isinstance(partialDeliveryList, str):
+                    raise TypeError(
+                        "partialDeliveryList takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if partialDeliveryList is not None and not isinstance(
                     partialDeliveryList, aas.SubmodelElement
                 ):
                     partialDeliveryList = self.PartialDeliveryList(partialDeliveryList)
+
+                # A str would be split into its characters
+                if isinstance(deliveryDateList, str):
+                    raise TypeError(
+                        "deliveryDateList takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -53370,6 +53652,10 @@ class PurchaseOrder(aas.Submodel):
                 ):
                     deliveryDateList = self.DeliveryDateList(deliveryDateList)
 
+                # A str would be split into its characters
+                if isinstance(scanCodesList, str):
+                    raise TypeError("scanCodesList takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if scanCodesList is not None and not isinstance(
@@ -53377,12 +53663,24 @@ class PurchaseOrder(aas.Submodel):
                 ):
                     scanCodesList = self.ScanCodesList(scanCodesList)
 
+                # A str would be split into its characters
+                if isinstance(qualityRequirements, str):
+                    raise TypeError(
+                        "qualityRequirements takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if qualityRequirements is not None and not isinstance(
                     qualityRequirements, aas.SubmodelElement
                 ):
                     qualityRequirements = self.QualityRequirements(qualityRequirements)
+
+                # A str would be split into its characters
+                if isinstance(listProductIDsBusinessPartners, str):
+                    raise TypeError(
+                        "listProductIDsBusinessPartners takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -53393,6 +53691,12 @@ class PurchaseOrder(aas.Submodel):
                         self.ListProductIDsBusinessPartners(
                             listProductIDsBusinessPartners
                         )
+                    )
+
+                # A str would be split into its characters
+                if isinstance(excludedIngredientsList, str):
+                    raise TypeError(
+                        "excludedIngredientsList takes several elements, got a str"
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -53542,6 +53846,10 @@ class PurchaseOrder(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(itemlist_items, str):
+                raise TypeError("itemlist_items takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [itemlist_items]:
@@ -53658,13 +53966,11 @@ class PurchaseOrder(aas.Submodel):
             Union[Iterable[IncotermsList.Incotermslist_item], IncotermsList]
         ] = None,
         internationalRestrictionList: Optional[
-            Iterable[
-                Union[
-                    Iterable[
-                        InternationalRestrictionList.Internationalrestrictionlist_item
-                    ],
-                    InternationalRestrictionList,
-                ]
+            Union[
+                Iterable[
+                    InternationalRestrictionList.Internationalrestrictionlist_item
+                ],
+                InternationalRestrictionList,
             ]
         ] = None,
         requestedCertificationsList: Optional[
@@ -53717,12 +54023,20 @@ class PurchaseOrder(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(catalogueReferenceList, str):
+            raise TypeError("catalogueReferenceList takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if catalogueReferenceList is not None and not isinstance(
             catalogueReferenceList, aas.SubmodelElement
         ):
             catalogueReferenceList = self.CatalogueReferenceList(catalogueReferenceList)
+
+        # A str would be split into its characters
+        if isinstance(modeOfPaymentList, str):
+            raise TypeError("modeOfPaymentList takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -53731,6 +54045,10 @@ class PurchaseOrder(aas.Submodel):
         ):
             modeOfPaymentList = self.ModeOfPaymentList(modeOfPaymentList)
 
+        # A str would be split into its characters
+        if isinstance(incotermsList, str):
+            raise TypeError("incotermsList takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if incotermsList is not None and not isinstance(
@@ -53738,16 +54056,26 @@ class PurchaseOrder(aas.Submodel):
         ):
             incotermsList = self.IncotermsList(incotermsList)
 
-        # Build submodel elements from raw values passed in the argument
-        if internationalRestrictionList:
-            internationalRestrictionList = [
-                (
-                    i
-                    if isinstance(i, aas.SubmodelElement)
-                    else self.InternationalRestrictionList(i)
-                )
-                for i in internationalRestrictionList
-            ]
+        # A str would be split into its characters
+        if isinstance(internationalRestrictionList, str):
+            raise TypeError(
+                "internationalRestrictionList takes several elements, got a str"
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if internationalRestrictionList is not None and not isinstance(
+            internationalRestrictionList, aas.SubmodelElement
+        ):
+            internationalRestrictionList = self.InternationalRestrictionList(
+                internationalRestrictionList
+            )
+
+        # A str would be split into its characters
+        if isinstance(requestedCertificationsList, str):
+            raise TypeError(
+                "requestedCertificationsList takes several elements, got a str"
+            )
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -53756,6 +54084,12 @@ class PurchaseOrder(aas.Submodel):
         ):
             requestedCertificationsList = self.RequestedCertificationsList(
                 requestedCertificationsList
+            )
+
+        # A str would be split into its characters
+        if isinstance(specialTreatmentClassList, str):
+            raise TypeError(
+                "specialTreatmentClassList takes several elements, got a str"
             )
 
         # Build a submodel element if a raw value was passed in the argument
@@ -53767,6 +54101,10 @@ class PurchaseOrder(aas.Submodel):
                 specialTreatmentClassList
             )
 
+        # A str would be split into its characters
+        if isinstance(costCentersList, str):
+            raise TypeError("costCentersList takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if costCentersList is not None and not isinstance(
@@ -53774,12 +54112,20 @@ class PurchaseOrder(aas.Submodel):
         ):
             costCentersList = self.CostCentersList(costCentersList)
 
+        # A str would be split into its characters
+        if isinstance(attachedMediaList, str):
+            raise TypeError("attachedMediaList takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if attachedMediaList is not None and not isinstance(
             attachedMediaList, aas.SubmodelElement
         ):
             attachedMediaList = self.AttachedMediaList(attachedMediaList)
+
+        # A str would be split into its characters
+        if isinstance(itemList, str):
+            raise TypeError("itemList takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

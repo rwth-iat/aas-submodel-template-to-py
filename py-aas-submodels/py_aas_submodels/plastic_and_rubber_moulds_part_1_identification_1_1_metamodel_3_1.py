@@ -2936,6 +2936,10 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             ):
                 nationalCode = self.NationalCode(nationalCode)
 
+            # A str would be split into its characters
+            if isinstance(language, str):
+                raise TypeError("language takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if language:
                 language = [
@@ -2964,6 +2968,10 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 department, aas.SubmodelElement
             ):
                 department = self.Department(department)
+
+            # A str would be split into its characters
+            if isinstance(iPCommunication, str):
+                raise TypeError("iPCommunication takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3379,12 +3387,20 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
         ):
             controllerName = self.ControllerName(controllerName)
 
+        # A str would be split into its characters
+        if isinstance(articleID, str):
+            raise TypeError("articleID takes several elements, got a str")
+
         # Build submodel elements from raw values passed in the argument
         if articleID:
             articleID = [
                 i if isinstance(i, aas.SubmodelElement) else self.ArticleID(i)
                 for i in articleID
             ]
+
+        # A str would be split into its characters
+        if isinstance(articleName, str):
+            raise TypeError("articleName takes several elements, got a str")
 
         # Build submodel elements from raw values passed in the argument
         if articleName:
@@ -3399,6 +3415,10 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             componentName, aas.SubmodelElement
         ):
             componentName = self.ComponentName(componentName)
+
+        # A str would be split into its characters
+        if isinstance(comments, str):
+            raise TypeError("comments takes several elements, got a str")
 
         # Build submodel elements from raw values passed in the argument
         if comments:

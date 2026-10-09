@@ -1361,6 +1361,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(generalqualificationdemand_items, str):
+                    raise TypeError(
+                        "generalqualificationdemand_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [generalqualificationdemand_items]:
@@ -2038,6 +2044,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(generalskilldemand_items, str):
+                    raise TypeError(
+                        "generalskilldemand_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [generalskilldemand_items]:
@@ -2207,6 +2219,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(generalQualificationDemand, str):
+                raise TypeError(
+                    "generalQualificationDemand takes several elements, got a str"
+                )
+
             # Build a submodel element if a raw value was passed in the argument
 
             if generalQualificationDemand is not None and not isinstance(
@@ -2215,6 +2233,10 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 generalQualificationDemand = self.GeneralQualificationDemand(
                     generalQualificationDemand
                 )
+
+            # A str would be split into its characters
+            if isinstance(generalSkillDemand, str):
+                raise TypeError("generalSkillDemand takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2710,6 +2732,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(allowedpersonallimitations_items, str):
+                    raise TypeError(
+                        "allowedpersonallimitations_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [allowedpersonallimitations_items]:
@@ -2894,6 +2922,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 minWorkerHeight, aas.SubmodelElement
             ):
                 minWorkerHeight = self.MinWorkerHeight(minWorkerHeight)
+
+            # A str would be split into its characters
+            if isinstance(allowedPersonalLimitations, str):
+                raise TypeError(
+                    "allowedPersonalLimitations takes several elements, got a str"
+                )
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3531,6 +3565,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(proprietaryconfigurations_items, str):
+                        raise TypeError(
+                            "proprietaryconfigurations_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [proprietaryconfigurations_items]:
@@ -3706,6 +3746,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 ):
                     preferredHeight = self.PreferredHeight(preferredHeight)
 
+                # A str would be split into its characters
+                if isinstance(proprietaryConfigurations, str):
+                    raise TypeError(
+                        "proprietaryConfigurations takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if proprietaryConfigurations is not None and not isinstance(
@@ -3817,6 +3863,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(workstationconfigurationrecords_items, str):
+                raise TypeError(
+                    "workstationconfigurationrecords_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4871,6 +4923,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(qualificationdemandrecords_items, str):
+                        raise TypeError(
+                            "qualificationdemandrecords_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [qualificationdemandrecords_items]:
@@ -5058,6 +5116,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 ):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
+                # A str would be split into its characters
+                if isinstance(qualificationDemandRecords, str):
+                    raise TypeError(
+                        "qualificationDemandRecords takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if qualificationDemandRecords is not None and not isinstance(
@@ -5168,6 +5232,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(plannedqualificationdemand_items, str):
+                raise TypeError(
+                    "plannedqualificationdemand_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6368,6 +6438,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(skilldemandrecords_items, str):
+                        raise TypeError(
+                            "skilldemandrecords_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [skilldemandrecords_items]:
@@ -6551,6 +6627,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 ):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
+                # A str would be split into its characters
+                if isinstance(skillDemandRecords, str):
+                    raise TypeError(
+                        "skillDemandRecords takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if skillDemandRecords is not None and not isinstance(
@@ -6659,6 +6741,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(plannedskilldemand_items, str):
+                raise TypeError(
+                    "plannedskilldemand_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6825,6 +6913,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(workstationConfigurationRecords, str):
+            raise TypeError(
+                "workstationConfigurationRecords takes several elements, got a str"
+            )
+
         # Build a submodel element if a raw value was passed in the argument
 
         if workstationConfigurationRecords is not None and not isinstance(
@@ -6832,6 +6926,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
         ):
             workstationConfigurationRecords = self.WorkstationConfigurationRecords(
                 workstationConfigurationRecords
+            )
+
+        # A str would be split into its characters
+        if isinstance(plannedQualificationDemand, str):
+            raise TypeError(
+                "plannedQualificationDemand takes several elements, got a str"
             )
 
         # Build a submodel element if a raw value was passed in the argument
@@ -6842,6 +6942,10 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             plannedQualificationDemand = self.PlannedQualificationDemand(
                 plannedQualificationDemand
             )
+
+        # A str would be split into its characters
+        if isinstance(plannedSkillDemand, str):
+            raise TypeError("plannedSkillDemand takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

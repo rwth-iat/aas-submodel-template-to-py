@@ -2007,6 +2007,12 @@ class Nameplate(aas.Submodel):
                 ):
                     expiryDate = self.ExpiryDate(expiryDate)
 
+                # A str would be split into its characters
+                if isinstance(markingAdditionalText, str):
+                    raise TypeError(
+                        "markingAdditionalText takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if markingAdditionalText:
                     markingAdditionalText = [
@@ -2121,6 +2127,10 @@ class Nameplate(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(markings_items, str):
+                raise TypeError("markings_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2787,6 +2797,12 @@ class Nameplate(aas.Submodel):
                             )
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(arbitraryProperty, str):
+                        raise TypeError(
+                            "arbitraryProperty takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
                         arbitraryProperty = [
@@ -2797,6 +2813,18 @@ class Nameplate(aas.Submodel):
                             )
                             for i in arbitraryProperty
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryFile, str):
+                        raise TypeError(
+                            "arbitraryFile takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryMLP, str):
+                        raise TypeError(
+                            "arbitraryMLP takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
@@ -2896,6 +2924,12 @@ class Nameplate(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(guidelinespecificproperties_items, str):
+                    raise TypeError(
+                        "guidelinespecificproperties_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3057,6 +3091,10 @@ class Nameplate(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(arbitraryProperty, str):
+                raise TypeError("arbitraryProperty takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if arbitraryProperty:
                 arbitraryProperty = [
@@ -3068,12 +3106,26 @@ class Nameplate(aas.Submodel):
                     for i in arbitraryProperty
                 ]
 
+            # A str would be split into its characters
+            if isinstance(arbitraryMLP, str):
+                raise TypeError("arbitraryMLP takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if arbitraryMLP:
                 arbitraryMLP = [
                     i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i)
                     for i in arbitraryMLP
                 ]
+
+            # A str would be split into its characters
+            if isinstance(arbitraryFile, str):
+                raise TypeError("arbitraryFile takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(guidelineSpecificProperties, str):
+                raise TypeError(
+                    "guidelineSpecificProperties takes several elements, got a str"
+                )
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3313,6 +3365,10 @@ class Nameplate(aas.Submodel):
             uniqueFacilityIdentifier = self.UniqueFacilityIdentifier(
                 uniqueFacilityIdentifier
             )
+
+        # A str would be split into its characters
+        if isinstance(markings, str):
+            raise TypeError("markings takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

@@ -1515,6 +1515,12 @@ class ExecutedProcesses(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(processStage, str):
+                        raise TypeError(
+                            "processStage takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [processStage]:
@@ -1844,6 +1850,12 @@ class ExecutedProcesses(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(processError, str):
+                        raise TypeError(
+                            "processError takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [processError]:
@@ -2109,6 +2121,10 @@ class ExecutedProcesses(aas.Submodel):
             if runResult is not None and not isinstance(runResult, aas.SubmodelElement):
                 runResult = self.RunResult(runResult)
 
+            # A str would be split into its characters
+            if isinstance(process, str):
+                raise TypeError("process takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [runResult, process]:
@@ -2180,6 +2196,10 @@ class ExecutedProcesses(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(run, str):
+            raise TypeError("run takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

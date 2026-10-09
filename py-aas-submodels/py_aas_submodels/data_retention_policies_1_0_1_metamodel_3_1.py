@@ -290,6 +290,12 @@ class DataRetentionPolicies(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(semanticids_items, str):
+                        raise TypeError(
+                            "semanticids_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if semanticids_items:
                         semanticids_items = [
@@ -1880,6 +1886,12 @@ class DataRetentionPolicies(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(auditlog_items, str):
+                        raise TypeError(
+                            "auditlog_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [auditlog_items]:
@@ -2069,6 +2081,10 @@ class DataRetentionPolicies(aas.Submodel):
                 ):
                     retentionTime = self.RetentionTime(retentionTime)
 
+                # A str would be split into its characters
+                if isinstance(semanticIds, str):
+                    raise TypeError("semanticIds takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if semanticIds is not None and not isinstance(
@@ -2115,6 +2131,10 @@ class DataRetentionPolicies(aas.Submodel):
                     effectiveUntil, aas.SubmodelElement
                 ):
                     effectiveUntil = self.EffectiveUntil(effectiveUntil)
+
+                # A str would be split into its characters
+                if isinstance(auditLog, str):
+                    raise TypeError("auditLog takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2215,6 +2235,10 @@ class DataRetentionPolicies(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(policy, str):
+                raise TypeError("policy takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

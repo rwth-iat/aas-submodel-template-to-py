@@ -863,6 +863,10 @@ class MaintenanceInstructions(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(alarm, str):
+                        raise TypeError("alarm takes several elements, got a str")
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [alarm]:
@@ -3164,6 +3168,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
                     )
 
+                # A str would be split into its characters
+                if isinstance(relatedStandardsLawsRegulations, str):
+                    raise TypeError(
+                        "relatedStandardsLawsRegulations takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if relatedStandardsLawsRegulations:
                     relatedStandardsLawsRegulations = [
@@ -3174,6 +3184,18 @@ class MaintenanceInstructions(aas.Submodel):
                         )
                         for i in relatedStandardsLawsRegulations
                     ]
+
+                # A str would be split into its characters
+                if isinstance(contactForMaintenanceAuthorization, str):
+                    raise TypeError(
+                        "contactForMaintenanceAuthorization takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(safetyRegulationsToBeObserved, str):
+                    raise TypeError(
+                        "safetyRegulationsToBeObserved takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if safetyRegulationsToBeObserved:
@@ -3660,6 +3682,12 @@ class MaintenanceInstructions(aas.Submodel):
                 ):
                     numberOfRequiredTechnicians = self.NumberOfRequiredTechnicians(
                         numberOfRequiredTechnicians
+                    )
+
+                # A str would be split into its characters
+                if isinstance(requiredQualification, str):
+                    raise TypeError(
+                        "requiredQualification takes several elements, got a str"
                     )
 
                 # Build submodel elements from raw values passed in the argument
@@ -5430,6 +5458,18 @@ class MaintenanceInstructions(aas.Submodel):
                             instructionMaintenanceStep
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(relatedDocumentOrFileMaintenanceStep, str):
+                        raise TypeError(
+                            "relatedDocumentOrFileMaintenanceStep takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(sparePartForMaintenanceStep, str):
+                        raise TypeError(
+                            "sparePartForMaintenanceStep takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if sparePartForMaintenanceStep:
                         sparePartForMaintenanceStep = [
@@ -5455,6 +5495,12 @@ class MaintenanceInstructions(aas.Submodel):
                             )
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(consumablesForMaintenanceStep, str):
+                        raise TypeError(
+                            "consumablesForMaintenanceStep takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if consumablesForMaintenanceStep:
                         consumablesForMaintenanceStep = [
@@ -5465,6 +5511,12 @@ class MaintenanceInstructions(aas.Submodel):
                             )
                             for i in consumablesForMaintenanceStep
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(quantityOfConsumablesForMaintenanceStep, str):
+                        raise TypeError(
+                            "quantityOfConsumablesForMaintenanceStep takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if quantityOfConsumablesForMaintenanceStep:
@@ -5490,6 +5542,12 @@ class MaintenanceInstructions(aas.Submodel):
                             self.UnitForQuantityOfConsumablesForMaintenanceStep(
                                 unitForQuantityOfConsumablesForMaintenanceStep
                             )
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(toolsForMaintenanceStep, str):
+                        raise TypeError(
+                            "toolsForMaintenanceStep takes several elements, got a str"
                         )
 
                     # Build submodel elements from raw values passed in the argument
@@ -5548,6 +5606,12 @@ class MaintenanceInstructions(aas.Submodel):
                             nextMaintenanceStep
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(conditionForAlternativeNextStep, str):
+                        raise TypeError(
+                            "conditionForAlternativeNextStep takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if conditionForAlternativeNextStep:
                         conditionForAlternativeNextStep = [
@@ -5558,6 +5622,12 @@ class MaintenanceInstructions(aas.Submodel):
                             )
                             for i in conditionForAlternativeNextStep
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(alternativeNextMaintenanceStep, str):
+                        raise TypeError(
+                            "alternativeNextMaintenanceStep takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if alternativeNextMaintenanceStep:
@@ -5674,6 +5744,10 @@ class MaintenanceInstructions(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(maintenanceStep, str):
+                    raise TypeError("maintenanceStep takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6681,6 +6755,10 @@ class MaintenanceInstructions(aas.Submodel):
                         orderCodeToolOfManufacturer
                     )
 
+                # A str would be split into its characters
+                if isinstance(toolDescription, str):
+                    raise TypeError("toolDescription takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if toolDescription:
                     toolDescription = [
@@ -6691,6 +6769,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
                         for i in toolDescription
                     ]
+
+                # A str would be split into its characters
+                if isinstance(addressOfAdditionalLinkTool, str):
+                    raise TypeError(
+                        "addressOfAdditionalLinkTool takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if addressOfAdditionalLinkTool:
@@ -6792,6 +6876,12 @@ class MaintenanceInstructions(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(maintenancetoollist_items, str):
+                raise TypeError(
+                    "maintenancetoollist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7935,6 +8025,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
                     )
 
+                # A str would be split into its characters
+                if isinstance(consumableDescription, str):
+                    raise TypeError(
+                        "consumableDescription takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if consumableDescription:
                     consumableDescription = [
@@ -7946,6 +8042,12 @@ class MaintenanceInstructions(aas.Submodel):
                         for i in consumableDescription
                     ]
 
+                # A str would be split into its characters
+                if isinstance(disposalInstructionsForConsumable, str):
+                    raise TypeError(
+                        "disposalInstructionsForConsumable takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if disposalInstructionsForConsumable:
                     disposalInstructionsForConsumable = [
@@ -7956,6 +8058,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
                         for i in disposalInstructionsForConsumable
                     ]
+
+                # A str would be split into its characters
+                if isinstance(addressOfAdditionalLinkConsumable, str):
+                    raise TypeError(
+                        "addressOfAdditionalLinkConsumable takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if addressOfAdditionalLinkConsumable:
@@ -8059,6 +8167,12 @@ class MaintenanceInstructions(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(maintenanceconsumableslist_items, str):
+                raise TypeError(
+                    "maintenanceconsumableslist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -9111,6 +9225,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
                     )
 
+                # A str would be split into its characters
+                if isinstance(sparePartDescription, str):
+                    raise TypeError(
+                        "sparePartDescription takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if sparePartDescription:
                     sparePartDescription = [
@@ -9122,6 +9242,12 @@ class MaintenanceInstructions(aas.Submodel):
                         for i in sparePartDescription
                     ]
 
+                # A str would be split into its characters
+                if isinstance(disposalInstructionsForSparePart, str):
+                    raise TypeError(
+                        "disposalInstructionsForSparePart takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if disposalInstructionsForSparePart:
                     disposalInstructionsForSparePart = [
@@ -9132,6 +9258,12 @@ class MaintenanceInstructions(aas.Submodel):
                         )
                         for i in disposalInstructionsForSparePart
                     ]
+
+                # A str would be split into its characters
+                if isinstance(addressOfAdditionalLinkSparePart, str):
+                    raise TypeError(
+                        "addressOfAdditionalLinkSparePart takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if addressOfAdditionalLinkSparePart:
@@ -9234,6 +9366,12 @@ class MaintenanceInstructions(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(maintenancesparepartlist_items, str):
+                raise TypeError(
+                    "maintenancesparepartlist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -9405,12 +9543,28 @@ class MaintenanceInstructions(aas.Submodel):
         ):
             maintenanceFreeAsset = self.MaintenanceFreeAsset(maintenanceFreeAsset)
 
+        # A str would be split into its characters
+        if isinstance(maintenanceInstructionsForSpecificInterval, str):
+            raise TypeError(
+                "maintenanceInstructionsForSpecificInterval takes several elements, got a str"
+            )
+
+        # A str would be split into its characters
+        if isinstance(maintenanceToolList, str):
+            raise TypeError("maintenanceToolList takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if maintenanceToolList is not None and not isinstance(
             maintenanceToolList, aas.SubmodelElement
         ):
             maintenanceToolList = self.MaintenanceToolList(maintenanceToolList)
+
+        # A str would be split into its characters
+        if isinstance(maintenanceConsumablesList, str):
+            raise TypeError(
+                "maintenanceConsumablesList takes several elements, got a str"
+            )
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -9419,6 +9573,12 @@ class MaintenanceInstructions(aas.Submodel):
         ):
             maintenanceConsumablesList = self.MaintenanceConsumablesList(
                 maintenanceConsumablesList
+            )
+
+        # A str would be split into its characters
+        if isinstance(maintenanceSparePartList, str):
+            raise TypeError(
+                "maintenanceSparePartList takes several elements, got a str"
             )
 
         # Build a submodel element if a raw value was passed in the argument

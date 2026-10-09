@@ -570,6 +570,12 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(sources_items, str):
+                        raise TypeError(
+                            "sources_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [sources_items]:
@@ -994,6 +1000,10 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(sinks_items, str):
+                        raise TypeError("sinks_items takes several elements, got a str")
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [sinks_items]:
@@ -1164,10 +1174,18 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         defaultPollingInterval
                     )
 
+                # A str would be split into its characters
+                if isinstance(sources, str):
+                    raise TypeError("sources takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if sources is not None and not isinstance(sources, aas.SubmodelElement):
                     sources = self.Sources(sources)
+
+                # A str would be split into its characters
+                if isinstance(sinks, str):
+                    raise TypeError("sinks takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1272,6 +1290,12 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(mappingconfigurations_items, str):
+                raise TypeError(
+                    "mappingconfigurations_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1417,6 +1441,10 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(mappingConfigurations, str):
+            raise TypeError("mappingConfigurations takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

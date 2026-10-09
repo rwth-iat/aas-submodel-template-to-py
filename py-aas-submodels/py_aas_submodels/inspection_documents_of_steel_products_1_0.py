@@ -517,6 +517,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             ):
                 nationalCode = self.NationalCode(nationalCode)
 
+            # A str would be split into its characters
+            if isinstance(mailAddress, str):
+                raise TypeError("mailAddress takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if mailAddress:
                 mailAddress = [
@@ -1195,12 +1199,20 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             ):
                 companyName = self.CompanyName(companyName)
 
+            # A str would be split into its characters
+            if isinstance(customerRole, str):
+                raise TypeError("customerRole takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if customerRole:
                 customerRole = [
                     i if isinstance(i, aas.SubmodelElement) else self.CustomerRole(i)
                     for i in customerRole
                 ]
+
+            # A str would be split into its characters
+            if isinstance(street, str):
+                raise TypeError("street takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if street:
@@ -1225,6 +1237,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 nationalCode, aas.SubmodelElement
             ):
                 nationalCode = self.NationalCode(nationalCode)
+
+            # A str would be split into its characters
+            if isinstance(mailAddress, str):
+                raise TypeError("mailAddress takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if mailAddress:
@@ -2951,6 +2967,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ):
                         length = self.Length(length)
 
+                    # A str would be split into its characters
+                    if isinstance(standardReference, str):
+                        raise TypeError(
+                            "standardReference takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
@@ -3454,6 +3476,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ):
                         length = self.Length(length)
 
+                    # A str would be split into its characters
+                    if isinstance(standardReference, str):
+                        raise TypeError(
+                            "standardReference takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
@@ -3802,6 +3830,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ):
                         length = self.Length(length)
 
+                    # A str would be split into its characters
+                    if isinstance(standardReference, str):
+                        raise TypeError(
+                            "standardReference takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
@@ -4146,6 +4180,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         length, aas.SubmodelElement
                     ):
                         length = self.Length(length)
+
+                    # A str would be split into its characters
+                    if isinstance(standardReference, str):
+                        raise TypeError(
+                            "standardReference takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
@@ -4566,6 +4606,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ):
                         length = self.Length(length)
 
+                    # A str would be split into its characters
+                    if isinstance(standardReference, str):
+                        raise TypeError(
+                            "standardReference takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
@@ -4984,6 +5030,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         length, aas.SubmodelElement
                     ):
                         length = self.Length(length)
+
+                    # A str would be split into its characters
+                    if isinstance(standardReference, str):
+                        raise TypeError(
+                            "standardReference takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
@@ -5488,6 +5540,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ):
                         length = self.Length(length)
 
+                    # A str would be split into its characters
+                    if isinstance(standardReference, str):
+                        raise TypeError(
+                            "standardReference takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
@@ -5860,6 +5918,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             ):
                 actualMass = self.ActualMass(actualMass)
 
+            # A str would be split into its characters
+            if isinstance(drawing, str):
+                raise TypeError("drawing takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [
@@ -6202,6 +6264,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(yieldorproofstrengthindividualvalues_items, str):
+                        raise TypeError(
+                            "yieldorproofstrengthindividualvalues_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if yieldorproofstrengthindividualvalues_items:
                         yieldorproofstrengthindividualvalues_items = [
@@ -6385,6 +6453,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(tensilestrengthindividualvalues_items, str):
+                        raise TypeError(
+                            "tensilestrengthindividualvalues_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if tensilestrengthindividualvalues_items:
@@ -6571,6 +6645,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(elongationafterfractureindividualvalues_items, str):
+                        raise TypeError(
+                            "elongationafterfractureindividualvalues_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if elongationafterfractureindividualvalues_items:
@@ -7078,6 +7158,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         elongationAfterFractureMean
                     )
 
+                # A str would be split into its characters
+                if isinstance(yieldOrProofStrengthIndividualValues, str):
+                    raise TypeError(
+                        "yieldOrProofStrengthIndividualValues takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if yieldOrProofStrengthIndividualValues is not None and not isinstance(
@@ -7089,6 +7175,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         )
                     )
 
+                # A str would be split into its characters
+                if isinstance(tensileStrengthIndividualValues, str):
+                    raise TypeError(
+                        "tensileStrengthIndividualValues takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if tensileStrengthIndividualValues is not None and not isinstance(
@@ -7098,6 +7190,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         self.TensileStrengthIndividualValues(
                             tensileStrengthIndividualValues
                         )
+                    )
+
+                # A str would be split into its characters
+                if isinstance(elongationAfterFractureIndividualValues, str):
+                    raise TypeError(
+                        "elongationAfterFractureIndividualValues takes several elements, got a str"
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7128,6 +7226,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 ):
                     sampleShape = self.SampleShape(sampleShape)
 
+                # A str would be split into its characters
+                if isinstance(locationOfSample, str):
+                    raise TypeError(
+                        "locationOfSample takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if locationOfSample:
                     locationOfSample = [
@@ -7138,6 +7242,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         )
                         for i in locationOfSample
                     ]
+
+                # A str would be split into its characters
+                if isinstance(directionOfSample, str):
+                    raise TypeError(
+                        "directionOfSample takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if directionOfSample:
@@ -7409,6 +7519,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(hardnessindividualvalues_items, str):
+                        raise TypeError(
+                            "hardnessindividualvalues_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if hardnessindividualvalues_items:
@@ -7817,6 +7933,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 ):
                     hardnessMean = self.HardnessMean(hardnessMean)
 
+                # A str would be split into its characters
+                if isinstance(hardnessIndividualValues, str):
+                    raise TypeError(
+                        "hardnessIndividualValues takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if hardnessIndividualValues is not None and not isinstance(
@@ -7833,6 +7955,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 ):
                     testTemperature = self.TestTemperature(testTemperature)
 
+                # A str would be split into its characters
+                if isinstance(locationOfSample, str):
+                    raise TypeError(
+                        "locationOfSample takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if locationOfSample:
                     locationOfSample = [
@@ -7843,6 +7971,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         )
                         for i in locationOfSample
                     ]
+
+                # A str would be split into its characters
+                if isinstance(directionOfSample, str):
+                    raise TypeError(
+                        "directionOfSample takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if directionOfSample:
@@ -8039,6 +8173,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(notchimpactstrengthindividualvalues_items, str):
+                        raise TypeError(
+                            "notchimpactstrengthindividualvalues_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if notchimpactstrengthindividualvalues_items:
@@ -8297,6 +8437,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(notchimpactworkindividualvalues_items, str):
+                        raise TypeError(
+                            "notchimpactworkindividualvalues_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if notchimpactworkindividualvalues_items:
@@ -8858,6 +9004,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         notchImpactStrengthMean
                     )
 
+                # A str would be split into its characters
+                if isinstance(notchImpactStrengthIndividualValues, str):
+                    raise TypeError(
+                        "notchImpactStrengthIndividualValues takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if notchImpactStrengthIndividualValues is not None and not isinstance(
@@ -8875,6 +9027,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     notchImpactWorkMean, aas.SubmodelElement
                 ):
                     notchImpactWorkMean = self.NotchImpactWorkMean(notchImpactWorkMean)
+
+                # A str would be split into its characters
+                if isinstance(notchImpactWorkIndividualValues, str):
+                    raise TypeError(
+                        "notchImpactWorkIndividualValues takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8908,6 +9066,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 ):
                     testTemperature = self.TestTemperature(testTemperature)
 
+                # A str would be split into its characters
+                if isinstance(locationOfSample, str):
+                    raise TypeError(
+                        "locationOfSample takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if locationOfSample:
                     locationOfSample = [
@@ -8918,6 +9082,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         )
                         for i in locationOfSample
                     ]
+
+                # A str would be split into its characters
+                if isinstance(directionOfSample, str):
+                    raise TypeError(
+                        "directionOfSample takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if directionOfSample:
@@ -9022,6 +9192,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(tensileTest, str):
+                raise TypeError("tensileTest takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(hardnessTest, str):
+                raise TypeError("hardnessTest takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(notchImpactTest, str):
+                raise TypeError("notchImpactTest takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -11337,6 +11519,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 ):
                     issueDate = self.IssueDate(issueDate)
 
+                # A str would be split into its characters
+                if isinstance(markingAdditionalText, str):
+                    raise TypeError(
+                        "markingAdditionalText takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if markingAdditionalText:
                     markingAdditionalText = [
@@ -11544,6 +11732,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(customer, str):
+            raise TypeError("customer takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

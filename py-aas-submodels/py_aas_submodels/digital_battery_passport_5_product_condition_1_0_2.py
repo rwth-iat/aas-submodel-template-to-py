@@ -2171,6 +2171,12 @@ class ProductCondition(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(negativeevents_items, str):
+                raise TypeError(
+                    "negativeevents_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [negativeevents_items]:
@@ -2413,6 +2419,12 @@ class ProductCondition(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(informationonaccidents_items, str):
+                raise TypeError(
+                    "informationonaccidents_items takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if informationonaccidents_items:
@@ -4493,12 +4505,20 @@ class ProductCondition(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(negativeEvents, str):
+            raise TypeError("negativeEvents takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if negativeEvents is not None and not isinstance(
             negativeEvents, aas.SubmodelElement
         ):
             negativeEvents = self.NegativeEvents(negativeEvents)
+
+        # A str would be split into its characters
+        if isinstance(informationOnAccidents, str):
+            raise TypeError("informationOnAccidents takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

@@ -727,6 +727,12 @@ class TechnicalDataAGV(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(productimages_items, str):
+                    raise TypeError(
+                        "productimages_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [productimages_items]:
@@ -839,9 +845,7 @@ class TechnicalDataAGV(aas.Submodel):
             manufacturerOrderCode: Union[str, ManufacturerOrderCode],
             companyLogo: Optional[CompanyLogo] = None,
             productImages: Optional[
-                Iterable[
-                    Union[Iterable[ProductImages.Productimages_item], ProductImages]
-                ]
+                Union[Iterable[ProductImages.Productimages_item], ProductImages]
             ] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[
@@ -947,12 +951,16 @@ class TechnicalDataAGV(aas.Submodel):
                     manufacturerOrderCode
                 )
 
-            # Build submodel elements from raw values passed in the argument
-            if productImages:
-                productImages = [
-                    i if isinstance(i, aas.SubmodelElement) else self.ProductImages(i)
-                    for i in productImages
-                ]
+            # A str would be split into its characters
+            if isinstance(productImages, str):
+                raise TypeError("productImages takes several elements, got a str")
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if productImages is not None and not isinstance(
+                productImages, aas.SubmodelElement
+            ):
+                productImages = self.ProductImages(productImages)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -8107,6 +8115,12 @@ class TechnicalDataAGV(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(currentattachments_items, str):
+                            raise TypeError(
+                                "currentattachments_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if currentattachments_items:
                             currentattachments_items = [
@@ -8570,6 +8584,12 @@ class TechnicalDataAGV(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(proprietaryconfigurationoptions_items, str):
+                            raise TypeError(
+                                "proprietaryconfigurationoptions_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [proprietaryconfigurationoptions_items]:
@@ -8781,12 +8801,24 @@ class TechnicalDataAGV(aas.Submodel):
                             loadingRequirements
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(currentAttachments, str):
+                        raise TypeError(
+                            "currentAttachments takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if currentAttachments is not None and not isinstance(
                         currentAttachments, aas.SubmodelElement
                     ):
                         currentAttachments = self.CurrentAttachments(currentAttachments)
+
+                    # A str would be split into its characters
+                    if isinstance(proprietaryConfigurationOptions, str):
+                        raise TypeError(
+                            "proprietaryConfigurationOptions takes several elements, got a str"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -9027,6 +9059,12 @@ class TechnicalDataAGV(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(specificdescriptions_items, str):
+                raise TypeError(
+                    "specificdescriptions_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [specificdescriptions_items]:
@@ -9129,11 +9167,9 @@ class TechnicalDataAGV(aas.Submodel):
         id_: str,
         generalInformation: GeneralInformation,
         specificDescriptions: Optional[
-            Iterable[
-                Union[
-                    Iterable[SpecificDescriptions.Specificdescriptions_item],
-                    SpecificDescriptions,
-                ]
+            Union[
+                Iterable[SpecificDescriptions.Specificdescriptions_item],
+                SpecificDescriptions,
             ]
         ] = None,
         id_short: Optional[str] = r"TechnicalDataAGV",
@@ -9182,16 +9218,16 @@ class TechnicalDataAGV(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
-        # Build submodel elements from raw values passed in the argument
-        if specificDescriptions:
-            specificDescriptions = [
-                (
-                    i
-                    if isinstance(i, aas.SubmodelElement)
-                    else self.SpecificDescriptions(i)
-                )
-                for i in specificDescriptions
-            ]
+        # A str would be split into its characters
+        if isinstance(specificDescriptions, str):
+            raise TypeError("specificDescriptions takes several elements, got a str")
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if specificDescriptions is not None and not isinstance(
+            specificDescriptions, aas.SubmodelElement
+        ):
+            specificDescriptions = self.SpecificDescriptions(specificDescriptions)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

@@ -1614,6 +1614,10 @@ class ControlConfig(aas.Submodel):
                         channelIdentification
                     )
 
+                # A str would be split into its characters
+                if isinstance(axesReference, str):
+                    raise TypeError("axesReference takes several elements, got a str")
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [channelIdentification, axesReference]:
@@ -3765,6 +3769,12 @@ class ControlConfig(aas.Submodel):
             ):
                 nCProgramSyntaxType = self.NCProgramSyntaxType(nCProgramSyntaxType)
 
+            # A str would be split into its characters
+            if isinstance(nCProgramSyntaxManual, str):
+                raise TypeError(
+                    "nCProgramSyntaxManual takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [
@@ -4520,6 +4530,10 @@ class ControlConfig(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(tool, str):
+                raise TypeError("tool takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [tool]:
@@ -4679,6 +4693,22 @@ class ControlConfig(aas.Submodel):
 
         if jerkUnit is not None and not isinstance(jerkUnit, aas.SubmodelElement):
             jerkUnit = self.JerkUnit(jerkUnit)
+
+        # A str would be split into its characters
+        if isinstance(controlConfigData, str):
+            raise TypeError("controlConfigData takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(channels, str):
+            raise TypeError("channels takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(axes, str):
+            raise TypeError("axes takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(tools, str):
+            raise TypeError("tools takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

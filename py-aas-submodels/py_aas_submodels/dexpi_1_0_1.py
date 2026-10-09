@@ -2053,6 +2053,10 @@ class DEXPI(aas.Submodel):
             ):
                 dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
 
+            # A str would be split into its characters
+            if isinstance(endProductCASName, str):
+                raise TypeError("endProductCASName takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if endProductCASName:
                 endProductCASName = [
@@ -2063,6 +2067,10 @@ class DEXPI(aas.Submodel):
                     )
                     for i in endProductCASName
                 ]
+
+            # A str would be split into its characters
+            if isinstance(endProductName, str):
+                raise TypeError("endProductName takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if endProductName:
@@ -22709,6 +22717,10 @@ class DEXPI(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(model, str):
+            raise TypeError("model takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

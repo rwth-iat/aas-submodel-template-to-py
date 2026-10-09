@@ -708,6 +708,10 @@ class WirelessCommunication(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(communicationCycle, str):
+                raise TypeError("communicationCycle takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if communicationCycle:
                 communicationCycle = [
@@ -725,6 +729,14 @@ class WirelessCommunication(aas.Submodel):
                 technologyStandard, aas.SubmodelElement
             ):
                 technologyStandard = self.TechnologyStandard(technologyStandard)
+
+            # A str would be split into its characters
+            if isinstance(mediumAccess, str):
+                raise TypeError("mediumAccess takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(securityMechanism, str):
+                raise TypeError("securityMechanism takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if securityMechanism:
@@ -1148,6 +1160,10 @@ class WirelessCommunication(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(bandIDList, str):
+                    raise TypeError("bandIDList takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if bandIDList:
                     bandIDList = [
@@ -1455,6 +1471,12 @@ class WirelessCommunication(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(channelNumbering, str):
+                    raise TypeError(
+                        "channelNumbering takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if channelNumbering:
@@ -5956,6 +5978,14 @@ class WirelessCommunication(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(fixedStation, str):
+                raise TypeError("fixedStation takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(mobileStation, str):
+                raise TypeError("mobileStation takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [
@@ -6364,12 +6394,20 @@ class WirelessCommunication(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(antennaType, str):
+                raise TypeError("antennaType takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if antennaType:
                 antennaType = [
                     i if isinstance(i, aas.SubmodelElement) else self.AntennaType(i)
                     for i in antennaType
                 ]
+
+            # A str would be split into its characters
+            if isinstance(numberOfAntennas, str):
+                raise TypeError("numberOfAntennas takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if numberOfAntennas:
@@ -6382,6 +6420,10 @@ class WirelessCommunication(aas.Submodel):
                     for i in numberOfAntennas
                 ]
 
+            # A str would be split into its characters
+            if isinstance(connectorType, str):
+                raise TypeError("connectorType takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if connectorType:
                 connectorType = [
@@ -6389,12 +6431,20 @@ class WirelessCommunication(aas.Submodel):
                     for i in connectorType
                 ]
 
+            # A str would be split into its characters
+            if isinstance(antennaHeight, str):
+                raise TypeError("antennaHeight takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if antennaHeight:
                 antennaHeight = [
                     i if isinstance(i, aas.SubmodelElement) else self.AntennaHeight(i)
                     for i in antennaHeight
                 ]
+
+            # A str would be split into its characters
+            if isinstance(interfaces, str):
+                raise TypeError("interfaces takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if interfaces:
@@ -6713,12 +6763,34 @@ class WirelessCommunication(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(wirelessNetworkRole, str):
+            raise TypeError("wirelessNetworkRole takes several elements, got a str")
+
         # Build submodel elements from raw values passed in the argument
         if wirelessNetworkRole:
             wirelessNetworkRole = [
                 i if isinstance(i, aas.SubmodelElement) else self.WirelessNetworkRole(i)
                 for i in wirelessNetworkRole
             ]
+
+        # A str would be split into its characters
+        if isinstance(receptionQualityIndicator, str):
+            raise TypeError(
+                "receptionQualityIndicator takes several elements, got a str"
+            )
+
+        # A str would be split into its characters
+        if isinstance(outputPower, str):
+            raise TypeError("outputPower takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(hardware, str):
+            raise TypeError("hardware takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(authentication, str):
+            raise TypeError("authentication takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

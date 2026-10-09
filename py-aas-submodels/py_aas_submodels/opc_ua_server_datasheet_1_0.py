@@ -122,6 +122,10 @@ class UAServerDataSheet(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(nodesets_items, str):
+                    raise TypeError("nodesets_items takes several elements, got a str")
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [nodesets_items]:
@@ -601,6 +605,12 @@ class UAServerDataSheet(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(supportsecuritypolicyuris_items, str):
+                    raise TypeError(
+                        "supportsecuritypolicyuris_items takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if supportsecuritypolicyuris_items:
                     supportsecuritypolicyuris_items = [
@@ -847,6 +857,10 @@ class UAServerDataSheet(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(nodeSets, str):
+                raise TypeError("nodeSets takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if nodeSets is not None and not isinstance(nodeSets, aas.SubmodelElement):
@@ -884,6 +898,12 @@ class UAServerDataSheet(aas.Submodel):
             ):
                 supportSecurityModeSignEncrypt = self.SupportSecurityModeSignEncrypt(
                     supportSecurityModeSignEncrypt
+                )
+
+            # A str would be split into its characters
+            if isinstance(supportSecurityPolicyUris, str):
+                raise TypeError(
+                    "supportSecurityPolicyUris takes several elements, got a str"
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2034,6 +2054,12 @@ class UAServerDataSheet(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(discoveryurls_items, str):
+                            raise TypeError(
+                                "discoveryurls_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if discoveryurls_items:
                             discoveryurls_items = [
@@ -2250,6 +2276,12 @@ class UAServerDataSheet(aas.Submodel):
                     ):
                         discoveryProfileUri = self.DiscoveryProfileUri(
                             discoveryProfileUri
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(discoveryUrls, str):
+                        raise TypeError(
+                            "discoveryUrls takes several elements, got a str"
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3008,6 +3040,12 @@ class UAServerDataSheet(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(useridentitytokens_items, str):
+                        raise TypeError(
+                            "useridentitytokens_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [useridentitytokens_items]:
@@ -3317,6 +3355,12 @@ class UAServerDataSheet(aas.Submodel):
                 ):
                     securityPolicyUri = self.SecurityPolicyUri(securityPolicyUri)
 
+                # A str would be split into its characters
+                if isinstance(userIdentityTokens, str):
+                    raise TypeError(
+                        "userIdentityTokens takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if userIdentityTokens is not None and not isinstance(
@@ -3427,6 +3471,12 @@ class UAServerDataSheet(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(endpointdescriptions_items, str):
+                raise TypeError(
+                    "endpointdescriptions_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3644,6 +3694,10 @@ class UAServerDataSheet(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(discoveryurls_items, str):
+                raise TypeError("discoveryurls_items takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if discoveryurls_items:
                 discoveryurls_items = [
@@ -3806,12 +3860,20 @@ class UAServerDataSheet(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(endpointDescriptions, str):
+            raise TypeError("endpointDescriptions takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if endpointDescriptions is not None and not isinstance(
             endpointDescriptions, aas.SubmodelElement
         ):
             endpointDescriptions = self.EndpointDescriptions(endpointDescriptions)
+
+        # A str would be split into its characters
+        if isinstance(discoveryUrls, str):
+            raise TypeError("discoveryUrls takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

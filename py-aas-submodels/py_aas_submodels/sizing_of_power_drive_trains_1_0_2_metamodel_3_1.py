@@ -784,6 +784,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                     sizingProjectDescription
                 )
 
+            # A str would be split into its characters
+            if isinstance(sizingProjectLink, str):
+                raise TypeError("sizingProjectLink takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if sizingToolName is not None and not isinstance(
@@ -804,6 +808,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                 dateChanged, aas.SubmodelElement
             ):
                 dateChanged = self.DateChanged(dateChanged)
+
+            # A str would be split into its characters
+            if isinstance(contactInformation, str):
+                raise TypeError("contactInformation takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3848,6 +3856,18 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(rotativeSection, str):
+                        raise TypeError(
+                            "rotativeSection takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(linearSection, str):
+                        raise TypeError(
+                            "linearSection takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -12231,6 +12251,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(message, str):
+                    raise TypeError("message takes several elements, got a str")
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [message]:
@@ -12384,6 +12408,14 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(mainComponent, str):
+                raise TypeError("mainComponent takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(otherComponent, str):
+                raise TypeError("otherComponent takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 

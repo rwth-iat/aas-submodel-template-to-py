@@ -321,6 +321,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(applicationspecificstandards_items, str):
+                raise TypeError(
+                    "applicationspecificstandards_items takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if applicationspecificstandards_items:
                 applicationspecificstandards_items = [
@@ -1805,6 +1811,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(typesoffillers_items, str):
+                    raise TypeError(
+                        "typesoffillers_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [typesoffillers_items]:
@@ -2939,6 +2951,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(presenceofmodifyingadditives_items, str):
+                    raise TypeError(
+                        "presenceofmodifyingadditives_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [presenceofmodifyingadditives_items]:
@@ -3367,6 +3385,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             if source is not None and not isinstance(source, aas.SubmodelElement):
                 source = self.Source(source)
 
+            # A str would be split into its characters
+            if isinstance(typesOfFillers, str):
+                raise TypeError("typesOfFillers takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if typesOfFillers is not None and not isinstance(
@@ -3411,6 +3433,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     self.CoefficientOfVariationWRTCertificateOfAnalysis(
                         coefficientOfVariationWRTCertificateOfAnalysis
                     )
+                )
+
+            # A str would be split into its characters
+            if isinstance(presenceOfModifyingAdditives, str):
+                raise TypeError(
+                    "presenceOfModifyingAdditives takes several elements, got a str"
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -6985,6 +7013,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(measuredvalues_items, str):
+                        raise TypeError(
+                            "measuredvalues_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [measuredvalues_items]:
@@ -7235,6 +7269,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(measuredValues, str):
+                    raise TypeError("measuredValues takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7560,6 +7598,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(documentation, str):
+                        raise TypeError(
+                            "documentation takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [documentation]:
@@ -7849,6 +7893,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(applicationSpecificStandards, str):
+            raise TypeError(
+                "applicationSpecificStandards takes several elements, got a str"
+            )
 
         # Build a submodel element if a raw value was passed in the argument
 

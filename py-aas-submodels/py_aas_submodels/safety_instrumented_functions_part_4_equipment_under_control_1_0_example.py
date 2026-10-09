@@ -617,6 +617,10 @@ class EquipmentUnderControl(aas.Submodel):
             if boundary is not None and not isinstance(boundary, aas.SubmodelElement):
                 boundary = self.Boundary(boundary)
 
+            # A str would be split into its characters
+            if isinstance(eUCControlSystem, str):
+                raise TypeError("eUCControlSystem takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if eUCControlSystem:
                 eUCControlSystem = [
@@ -634,6 +638,10 @@ class EquipmentUnderControl(aas.Submodel):
                 processSafetyTime, aas.SubmodelElement
             ):
                 processSafetyTime = self.ProcessSafetyTime(processSafetyTime)
+
+            # A str would be split into its characters
+            if isinstance(linkedSIF, str):
+                raise TypeError("linkedSIF takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if linkedSIF:
@@ -981,6 +989,12 @@ class EquipmentUnderControl(aas.Submodel):
 
             if hazardID is not None and not isinstance(hazardID, aas.SubmodelElement):
                 hazardID = self.HazardID(hazardID)
+
+            # A str would be split into its characters
+            if isinstance(independentProtectionLayer, str):
+                raise TypeError(
+                    "independentProtectionLayer takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if independentProtectionLayer:
@@ -1481,6 +1495,12 @@ class EquipmentUnderControl(aas.Submodel):
             if hazardID is not None and not isinstance(hazardID, aas.SubmodelElement):
                 hazardID = self.HazardID(hazardID)
 
+            # A str would be split into its characters
+            if isinstance(measuresToAvoidHazardFromCombinedSafeProcessStates, str):
+                raise TypeError(
+                    "measuresToAvoidHazardFromCombinedSafeProcessStates takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if measuresToAvoidHazardFromCombinedSafeProcessStates:
                 measuresToAvoidHazardFromCombinedSafeProcessStates = [
@@ -1492,6 +1512,12 @@ class EquipmentUnderControl(aas.Submodel):
                     for i in measuresToAvoidHazardFromCombinedSafeProcessStates
                 ]
 
+            # A str would be split into its characters
+            if isinstance(referenceToHazardousEvent, str):
+                raise TypeError(
+                    "referenceToHazardousEvent takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if referenceToHazardousEvent:
                 referenceToHazardousEvent = [
@@ -1502,6 +1528,12 @@ class EquipmentUnderControl(aas.Submodel):
                     )
                     for i in referenceToHazardousEvent
                 ]
+
+            # A str would be split into its characters
+            if isinstance(independentProtectionLayer, str):
+                raise TypeError(
+                    "independentProtectionLayer takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if independentProtectionLayer:
@@ -1743,6 +1775,26 @@ class EquipmentUnderControl(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(hazardousEvent, str):
+            raise TypeError("hazardousEvent takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(hazardFromCombinedSafeProcessStates, str):
+            raise TypeError(
+                "hazardFromCombinedSafeProcessStates takes several elements, got a str"
+            )
+
+        # A str would be split into its characters
+        if isinstance(sILAllocationReport, str):
+            raise TypeError("sILAllocationReport takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(hazardAndRiskAssessmentReport, str):
+            raise TypeError(
+                "hazardAndRiskAssessmentReport takes several elements, got a str"
+            )
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

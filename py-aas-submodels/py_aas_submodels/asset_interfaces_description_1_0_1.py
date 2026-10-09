@@ -456,6 +456,12 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(security_items, str):
+                        raise TypeError(
+                            "security_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if security_items:
                         security_items = [
@@ -1383,6 +1389,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(oneof_items, str):
+                                raise TypeError(
+                                    "oneof_items takes several elements, got a str"
+                                )
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
                             for se_arg in [oneof_items]:
@@ -1544,6 +1556,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(allof_items, str):
+                                raise TypeError(
+                                    "allof_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -1758,12 +1776,20 @@ class AssetInterfacesDescription(aas.Submodel):
                         ):
                             scheme = self.Scheme(scheme)
 
+                        # A str would be split into its characters
+                        if isinstance(oneOf, str):
+                            raise TypeError("oneOf takes several elements, got a str")
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if oneOf is not None and not isinstance(
                             oneOf, aas.SubmodelElement
                         ):
                             oneOf = self.OneOf(oneOf)
+
+                        # A str would be split into its characters
+                        if isinstance(allOf, str):
+                            raise TypeError("allOf takes several elements, got a str")
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -4103,6 +4129,10 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # A str would be split into its characters
+                if isinstance(security, str):
+                    raise TypeError("security takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7740,6 +7770,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(property_name, str):
+                                raise TypeError(
+                                    "property_name takes several elements, got a str"
+                                )
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
                             for se_arg in [property_name]:
@@ -8060,6 +8096,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                # A str would be split into its characters
+                                if isinstance(security_items, str):
+                                    raise TypeError(
+                                        "security_items takes several elements, got a str"
+                                    )
 
                                 # Build submodel elements from raw values passed in the argument
                                 if security_items:
@@ -8557,6 +8599,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                # A str would be split into its characters
+                                if isinstance(htv_headers_items, str):
+                                    raise TypeError(
+                                        "htv_headers_items takes several elements, got a str"
+                                    )
+
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
                                 for se_arg in [htv_headers_items]:
@@ -8720,6 +8768,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             ):
                                 contentType = self.ContentType(contentType)
 
+                            # A str would be split into its characters
+                            if isinstance(security, str):
+                                raise TypeError(
+                                    "security takes several elements, got a str"
+                                )
+
                             # Build a submodel element if a raw value was passed in the argument
 
                             if security is not None and not isinstance(
@@ -8733,6 +8787,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 htv_methodName, aas.SubmodelElement
                             ):
                                 htv_methodName = self.Htv_methodName(htv_methodName)
+
+                            # A str would be split into its characters
+                            if isinstance(htv_headers, str):
+                                raise TypeError(
+                                    "htv_headers takes several elements, got a str"
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -9013,6 +9073,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(property_name, str):
+                        raise TypeError(
+                            "property_name takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -9955,6 +10021,12 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(security_items, str):
+                        raise TypeError(
+                            "security_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if security_items:
                         security_items = [
@@ -10882,6 +10954,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(oneof_items, str):
+                                raise TypeError(
+                                    "oneof_items takes several elements, got a str"
+                                )
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
                             for se_arg in [oneof_items]:
@@ -11043,6 +11121,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(allof_items, str):
+                                raise TypeError(
+                                    "allof_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -11257,12 +11341,20 @@ class AssetInterfacesDescription(aas.Submodel):
                         ):
                             scheme = self.Scheme(scheme)
 
+                        # A str would be split into its characters
+                        if isinstance(oneOf, str):
+                            raise TypeError("oneOf takes several elements, got a str")
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if oneOf is not None and not isinstance(
                             oneOf, aas.SubmodelElement
                         ):
                             oneOf = self.OneOf(oneOf)
+
+                        # A str would be split into its characters
+                        if isinstance(allOf, str):
+                            raise TypeError("allOf takes several elements, got a str")
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -13744,6 +13836,10 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # A str would be split into its characters
+                if isinstance(security, str):
+                    raise TypeError("security takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -17406,6 +17502,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(property_name, str):
+                                raise TypeError(
+                                    "property_name takes several elements, got a str"
+                                )
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
                             for se_arg in [property_name]:
@@ -17726,6 +17828,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                # A str would be split into its characters
+                                if isinstance(security_items, str):
+                                    raise TypeError(
+                                        "security_items takes several elements, got a str"
+                                    )
 
                                 # Build submodel elements from raw values passed in the argument
                                 if security_items:
@@ -18487,6 +18595,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             ):
                                 contentType = self.ContentType(contentType)
 
+                            # A str would be split into its characters
+                            if isinstance(security, str):
+                                raise TypeError(
+                                    "security takes several elements, got a str"
+                                )
+
                             # Build a submodel element if a raw value was passed in the argument
 
                             if security is not None and not isinstance(
@@ -18842,6 +18956,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(property_name, str):
+                        raise TypeError(
+                            "property_name takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -19784,6 +19904,12 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(security_items, str):
+                        raise TypeError(
+                            "security_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if security_items:
                         security_items = [
@@ -20711,6 +20837,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(oneof_items, str):
+                                raise TypeError(
+                                    "oneof_items takes several elements, got a str"
+                                )
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
                             for se_arg in [oneof_items]:
@@ -20872,6 +21004,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(allof_items, str):
+                                raise TypeError(
+                                    "allof_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -21086,12 +21224,20 @@ class AssetInterfacesDescription(aas.Submodel):
                         ):
                             scheme = self.Scheme(scheme)
 
+                        # A str would be split into its characters
+                        if isinstance(oneOf, str):
+                            raise TypeError("oneOf takes several elements, got a str")
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if oneOf is not None and not isinstance(
                             oneOf, aas.SubmodelElement
                         ):
                             oneOf = self.OneOf(oneOf)
+
+                        # A str would be split into its characters
+                        if isinstance(allOf, str):
+                            raise TypeError("allOf takes several elements, got a str")
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -23431,6 +23577,10 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # A str would be split into its characters
+                if isinstance(security, str):
+                    raise TypeError("security takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -27068,6 +27218,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(property_name, str):
+                                raise TypeError(
+                                    "property_name takes several elements, got a str"
+                                )
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
                             for se_arg in [property_name]:
@@ -27388,6 +27544,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                # A str would be split into its characters
+                                if isinstance(security_items, str):
+                                    raise TypeError(
+                                        "security_items takes several elements, got a str"
+                                    )
 
                                 # Build submodel elements from raw values passed in the argument
                                 if security_items:
@@ -27778,6 +27940,12 @@ class AssetInterfacesDescription(aas.Submodel):
                             ):
                                 contentType = self.ContentType(contentType)
 
+                            # A str would be split into its characters
+                            if isinstance(security, str):
+                                raise TypeError(
+                                    "security takes several elements, got a str"
+                                )
+
                             # Build a submodel element if a raw value was passed in the argument
 
                             if security is not None and not isinstance(
@@ -28081,6 +28249,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(property_name, str):
+                        raise TypeError(
+                            "property_name takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -28608,6 +28782,24 @@ class AssetInterfacesDescription(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(interfaceTemplateForHTTP, str):
+            raise TypeError(
+                "interfaceTemplateForHTTP takes several elements, got a str"
+            )
+
+        # A str would be split into its characters
+        if isinstance(interfaceTemplateForMODBUS, str):
+            raise TypeError(
+                "interfaceTemplateForMODBUS takes several elements, got a str"
+            )
+
+        # A str would be split into its characters
+        if isinstance(interfaceTemplateForMQTT, str):
+            raise TypeError(
+                "interfaceTemplateForMQTT takes several elements, got a str"
+            )
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

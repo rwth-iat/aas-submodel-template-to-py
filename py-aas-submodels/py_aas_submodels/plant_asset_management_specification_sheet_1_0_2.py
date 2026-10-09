@@ -2433,6 +2433,10 @@ class PAMSpecificationSheet(aas.Submodel):
             ):
                 criticalityCategory = self.CriticalityCategory(criticalityCategory)
 
+            # A str would be split into its characters
+            if isinstance(furtherInformation, str):
+                raise TypeError("furtherInformation takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if furtherInformation:
                 furtherInformation = [
@@ -2443,6 +2447,12 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
                     for i in furtherInformation
                 ]
+
+            # A str would be split into its characters
+            if isinstance(furtherInformationReference, str):
+                raise TypeError(
+                    "furtherInformationReference takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if furtherInformationReference:
@@ -3564,6 +3574,10 @@ class PAMSpecificationSheet(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(statusCondition, str):
+                raise TypeError("statusCondition takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -5283,6 +5297,10 @@ class PAMSpecificationSheet(aas.Submodel):
                 technicalLocation, aas.SubmodelElement
             ):
                 technicalLocation = self.TechnicalLocation(technicalLocation)
+
+            # A str would be split into its characters
+            if isinstance(statusCondition, str):
+                raise TypeError("statusCondition takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -8089,6 +8107,20 @@ class PAMSpecificationSheet(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(staticParameters, str):
+                raise TypeError("staticParameters takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(generatedSignals, str):
+                raise TypeError("generatedSignals takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(requiredInputSignals, str):
+                raise TypeError(
+                    "requiredInputSignals takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [staticParameters, generatedSignals, requiredInputSignals]:
@@ -8980,6 +9012,12 @@ class PAMSpecificationSheet(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(documentConfirmation, str):
+                raise TypeError(
+                    "documentConfirmation takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [documentConfirmation]:
@@ -9091,6 +9129,14 @@ class PAMSpecificationSheet(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(subSystem, str):
+            raise TypeError("subSystem takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(applicableMethod, str):
+            raise TypeError("applicableMethod takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

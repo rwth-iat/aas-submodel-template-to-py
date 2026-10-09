@@ -115,6 +115,13 @@ class ReferableHandler:
                     return False
         return None
 
+    @classmethod
+    def takes_several(cls, obj: Qualifiable) -> bool:
+        """Return if arguments taking `obj` take several elements like it. Lists never do: they
+        already hold several items, so a cardinality ZeroToMany/OneToMany of a list is meant for
+        its items and only tells if the list is optional"""
+        return not isinstance(obj, SubmodelElementList) and bool(cls.is_iterable(obj))
+
 
 class StringHandler:
     @classmethod

@@ -379,6 +379,10 @@ class SimulationModels(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(posSimPurpose, str):
+                    raise TypeError("posSimPurpose takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if posSimPurpose:
                     posSimPurpose = [
@@ -389,6 +393,10 @@ class SimulationModels(aas.Submodel):
                         )
                         for i in posSimPurpose
                     ]
+
+                # A str would be split into its characters
+                if isinstance(negSimPurpose, str):
+                    raise TypeError("negSimPurpose takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if negSimPurpose:
@@ -2485,6 +2493,12 @@ class SimulationModels(aas.Submodel):
                         ):
                             solverIncluded = self.SolverIncluded(solverIncluded)
 
+                        # A str would be split into its characters
+                        if isinstance(testedToolSolverAlgorithm, str):
+                            raise TypeError(
+                                "testedToolSolverAlgorithm takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [
@@ -2607,6 +2621,12 @@ class SimulationModels(aas.Submodel):
                     ):
                         simToolName = self.SimToolName(simToolName)
 
+                    # A str would be split into its characters
+                    if isinstance(dependencySimTool, str):
+                        raise TypeError(
+                            "dependencySimTool takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if dependencySimTool:
                         dependencySimTool = [
@@ -2617,6 +2637,10 @@ class SimulationModels(aas.Submodel):
                             )
                             for i in dependencySimTool
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(compiler, str):
+                        raise TypeError("compiler takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if compiler:
@@ -2753,6 +2777,10 @@ class SimulationModels(aas.Submodel):
                 ):
                     operatingSystem = self.OperatingSystem(operatingSystem)
 
+                # A str would be split into its characters
+                if isinstance(toolEnvironment, str):
+                    raise TypeError("toolEnvironment takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if toolEnvironment:
                     toolEnvironment = [
@@ -2781,6 +2809,10 @@ class SimulationModels(aas.Submodel):
                     visualizationInformation = self.VisualizationInformation(
                         visualizationInformation
                     )
+
+                # A str would be split into its characters
+                if isinstance(simulationTool, str):
+                    raise TypeError("simulationTool takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3687,6 +3719,12 @@ class SimulationModels(aas.Submodel):
                     modelFileType, aas.SubmodelElement
                 ):
                     modelFileType = self.ModelFileType(modelFileType)
+
+                # A str would be split into its characters
+                if isinstance(modelFileVersion, str):
+                    raise TypeError(
+                        "modelFileVersion takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5399,6 +5437,10 @@ class SimulationModels(aas.Submodel):
                 if company is not None and not isinstance(company, aas.SubmodelElement):
                     company = self.Company(company)
 
+                # A str would be split into its characters
+                if isinstance(language, str):
+                    raise TypeError("language takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if language:
                     language = [
@@ -6710,6 +6752,10 @@ class SimulationModels(aas.Submodel):
                     ):
                         portConDescription = self.PortConDescription(portConDescription)
 
+                    # A str would be split into its characters
+                    if isinstance(variable, str):
+                        raise TypeError("variable takes several elements, got a str")
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [portConnectorName, portConDescription, variable]:
@@ -7125,6 +7171,14 @@ class SimulationModels(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(portsConnector, str):
+                    raise TypeError("portsConnector takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(binaryConnector, str):
+                    raise TypeError("binaryConnector takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -7867,12 +7921,20 @@ class SimulationModels(aas.Submodel):
             if summary is not None and not isinstance(summary, aas.SubmodelElement):
                 summary = self.Summary(summary)
 
+            # A str would be split into its characters
+            if isinstance(typeOfModel, str):
+                raise TypeError("typeOfModel takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if typeOfModel:
                 typeOfModel = [
                     i if isinstance(i, aas.SubmodelElement) else self.TypeOfModel(i)
                     for i in typeOfModel
                 ]
+
+            # A str would be split into its characters
+            if isinstance(scopeOfModel, str):
+                raise TypeError("scopeOfModel takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if scopeOfModel:
@@ -7888,6 +7950,10 @@ class SimulationModels(aas.Submodel):
             ):
                 licenseModel = self.LicenseModel(licenseModel)
 
+            # A str would be split into its characters
+            if isinstance(engineeringDomain, str):
+                raise TypeError("engineeringDomain takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if engineeringDomain:
                 engineeringDomain = [
@@ -7898,6 +7964,14 @@ class SimulationModels(aas.Submodel):
                     )
                     for i in engineeringDomain
                 ]
+
+            # A str would be split into its characters
+            if isinstance(environment, str):
+                raise TypeError("environment takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(refSimDocumentation, str):
+                raise TypeError("refSimDocumentation takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -7919,6 +7993,16 @@ class SimulationModels(aas.Submodel):
                 defaultSimTime, aas.SubmodelElement
             ):
                 defaultSimTime = self.DefaultSimTime(defaultSimTime)
+
+            # A str would be split into its characters
+            if isinstance(simModManufacturerInformation, str):
+                raise TypeError(
+                    "simModManufacturerInformation takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(quality, str):
+                raise TypeError("quality takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -8021,6 +8105,10 @@ class SimulationModels(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(simulationModel, str):
+            raise TypeError("simulationModel takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

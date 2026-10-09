@@ -1647,6 +1647,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(loadchangeprofiles_items, str):
+                            raise TypeError(
+                                "loadchangeprofiles_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [loadchangeprofiles_items]:
@@ -1844,6 +1850,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         reward = self.Reward(reward)
 
+                    # A str would be split into its characters
+                    if isinstance(loadChangeProfiles, str):
+                        raise TypeError(
+                            "loadChangeProfiles takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if loadChangeProfiles is not None and not isinstance(
@@ -1945,6 +1957,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(flexibleloadmeasures_items, str):
+                    raise TypeError(
+                        "flexibleloadmeasures_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2107,6 +2125,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(flexibleLoadMeasures, str):
+                raise TypeError(
+                    "flexibleLoadMeasures takes several elements, got a str"
+                )
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -4666,6 +4690,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(powerstates_items, str):
+                            raise TypeError(
+                                "powerstates_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [powerstates_items]:
@@ -6746,6 +6776,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             min=reactionDuration[0], max=reactionDuration[1]
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(powerStates, str):
+                        raise TypeError("powerStates takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if powerStates is not None and not isinstance(
@@ -6879,6 +6913,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(flexibleloads_items, str):
+                    raise TypeError(
+                        "flexibleloads_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -8050,6 +8090,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(suppliers_items, str):
+                            raise TypeError(
+                                "suppliers_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [suppliers_items]:
@@ -8472,6 +8518,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(drains_items, str):
+                            raise TypeError(
+                                "drains_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [drains_items]:
@@ -8687,12 +8739,20 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         energyLoss = self.EnergyLoss(energyLoss)
 
+                    # A str would be split into its characters
+                    if isinstance(suppliers, str):
+                        raise TypeError("suppliers takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if suppliers is not None and not isinstance(
                         suppliers, aas.SubmodelElement
                     ):
                         suppliers = self.Suppliers(suppliers)
+
+                    # A str would be split into its characters
+                    if isinstance(drains, str):
+                        raise TypeError("drains takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -8799,6 +8859,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(storages_items, str):
+                    raise TypeError("storages_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -9470,6 +9534,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(applicabilityconditions_items, str):
+                            raise TypeError(
+                                "applicabilityconditions_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -10250,6 +10320,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             min=applicabilityDuration[0], max=applicabilityDuration[1]
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(applicabilityConditions, str):
+                        raise TypeError(
+                            "applicabilityConditions takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if applicabilityConditions is not None and not isinstance(
@@ -10362,6 +10438,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(dependencies_items, str):
+                    raise TypeError(
+                        "dependencies_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -10531,6 +10613,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(flexibleLoads, str):
+                raise TypeError("flexibleLoads takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if flexibleLoads is not None and not isinstance(
@@ -10538,10 +10624,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             ):
                 flexibleLoads = self.FlexibleLoads(flexibleLoads)
 
+            # A str would be split into its characters
+            if isinstance(storages, str):
+                raise TypeError("storages takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if storages is not None and not isinstance(storages, aas.SubmodelElement):
                 storages = self.Storages(storages)
+
+            # A str would be split into its characters
+            if isinstance(dependencies, str):
+                raise TypeError("dependencies takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -13109,6 +13203,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(powerstates_items, str):
+                            raise TypeError(
+                                "powerstates_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [powerstates_items]:
@@ -15189,6 +15289,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             min=reactionDuration[0], max=reactionDuration[1]
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(powerStates, str):
+                        raise TypeError("powerStates takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if powerStates is not None and not isinstance(
@@ -15322,6 +15426,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(flexibleloads_items, str):
+                    raise TypeError(
+                        "flexibleloads_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -16493,6 +16603,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(suppliers_items, str):
+                            raise TypeError(
+                                "suppliers_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [suppliers_items]:
@@ -16915,6 +17031,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(drains_items, str):
+                            raise TypeError(
+                                "drains_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [drains_items]:
@@ -17130,12 +17252,20 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         energyLoss = self.EnergyLoss(energyLoss)
 
+                    # A str would be split into its characters
+                    if isinstance(suppliers, str):
+                        raise TypeError("suppliers takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if suppliers is not None and not isinstance(
                         suppliers, aas.SubmodelElement
                     ):
                         suppliers = self.Suppliers(suppliers)
+
+                    # A str would be split into its characters
+                    if isinstance(drains, str):
+                        raise TypeError("drains takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -17242,6 +17372,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(storages_items, str):
+                    raise TypeError("storages_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -17913,6 +18047,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(applicabilityconditions_items, str):
+                            raise TypeError(
+                                "applicabilityconditions_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -18693,6 +18833,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             min=applicabilityDuration[0], max=applicabilityDuration[1]
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(applicabilityConditions, str):
+                        raise TypeError(
+                            "applicabilityConditions takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if applicabilityConditions is not None and not isinstance(
@@ -18805,6 +18951,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(dependencies_items, str):
+                    raise TypeError(
+                        "dependencies_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -18974,6 +19126,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(flexibleLoads, str):
+                raise TypeError("flexibleLoads takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if flexibleLoads is not None and not isinstance(
@@ -18981,10 +19137,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             ):
                 flexibleLoads = self.FlexibleLoads(flexibleLoads)
 
+            # A str would be split into its characters
+            if isinstance(storages, str):
+                raise TypeError("storages takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if storages is not None and not isinstance(storages, aas.SubmodelElement):
                 storages = self.Storages(storages)
+
+            # A str would be split into its characters
+            if isinstance(dependencies, str):
+                raise TypeError("dependencies takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -21212,6 +21376,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(powerstates_items, str):
+                            raise TypeError(
+                                "powerstates_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [powerstates_items]:
@@ -21419,6 +21589,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             min=modulationNumber[0], max=modulationNumber[1]
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(powerStates, str):
+                        raise TypeError("powerStates takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if powerStates is not None and not isinstance(
@@ -21519,6 +21693,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(flexibleloads_items, str):
+                    raise TypeError(
+                        "flexibleloads_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -22271,6 +22451,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(suppliers_items, str):
+                            raise TypeError(
+                                "suppliers_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [suppliers_items]:
@@ -22470,6 +22656,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         energyLoss = self.EnergyLoss(energyLoss)
 
+                    # A str would be split into its characters
+                    if isinstance(suppliers, str):
+                        raise TypeError("suppliers takes several elements, got a str")
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if suppliers is not None and not isinstance(
@@ -22572,6 +22762,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(storages_items, str):
+                    raise TypeError("storages_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -22738,12 +22932,20 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(flexibleLoads, str):
+                raise TypeError("flexibleLoads takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if flexibleLoads is not None and not isinstance(
                 flexibleLoads, aas.SubmodelElement
             ):
                 flexibleLoads = self.FlexibleLoads(flexibleLoads)
+
+            # A str would be split into its characters
+            if isinstance(storages, str):
+                raise TypeError("storages takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -24424,6 +24626,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(loadchangeprofiles_items, str):
+                            raise TypeError(
+                                "loadchangeprofiles_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [loadchangeprofiles_items]:
@@ -24595,6 +24803,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         exceptions = self.Exceptions(exceptions)
 
+                    # A str would be split into its characters
+                    if isinstance(loadChangeProfiles, str):
+                        raise TypeError(
+                            "loadChangeProfiles takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if loadChangeProfiles is not None and not isinstance(
@@ -24695,6 +24909,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(executionlogentries_items, str):
+                    raise TypeError(
+                        "executionlogentries_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -24857,6 +25077,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(executionLogEntries, str):
+                raise TypeError("executionLogEntries takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 

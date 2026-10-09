@@ -444,6 +444,12 @@ class ProductionCalendar(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(specificationextensionvariables_items, str):
+                raise TypeError(
+                    "specificationextensionvariables_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [specificationextensionvariables_items]:
@@ -598,6 +604,12 @@ class ProductionCalendar(aas.Submodel):
             inheritedFrom, aas.SubmodelElement
         ):
             inheritedFrom = self.InheritedFrom(inheritedFrom)
+
+        # A str would be split into its characters
+        if isinstance(specificationExtensionVariables, str):
+            raise TypeError(
+                "specificationExtensionVariables takes several elements, got a str"
+            )
 
         # Build a submodel element if a raw value was passed in the argument
 

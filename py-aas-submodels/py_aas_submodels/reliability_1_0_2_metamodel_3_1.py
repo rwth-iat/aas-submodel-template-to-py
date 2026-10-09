@@ -777,6 +777,10 @@ class Reliability(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(typeOfVoltage, str):
+                raise TypeError("typeOfVoltage takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if typeOfVoltage:
                 typeOfVoltage = [
@@ -784,12 +788,20 @@ class Reliability(aas.Submodel):
                     for i in typeOfVoltage
                 ]
 
+            # A str would be split into its characters
+            if isinstance(ratedVoltage, str):
+                raise TypeError("ratedVoltage takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if ratedVoltage:
                 ratedVoltage = [
                     i if isinstance(i, aas.SubmodelElement) else self.RatedVoltage(i)
                     for i in ratedVoltage
                 ]
+
+            # A str would be split into its characters
+            if isinstance(minimumRatedVoltage, str):
+                raise TypeError("minimumRatedVoltage takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if minimumRatedVoltage:
@@ -802,6 +814,10 @@ class Reliability(aas.Submodel):
                     for i in minimumRatedVoltage
                 ]
 
+            # A str would be split into its characters
+            if isinstance(maximumRatedVoltage, str):
+                raise TypeError("maximumRatedVoltage takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if maximumRatedVoltage:
                 maximumRatedVoltage = [
@@ -812,6 +828,12 @@ class Reliability(aas.Submodel):
                     )
                     for i in maximumRatedVoltage
                 ]
+
+            # A str would be split into its characters
+            if isinstance(ratedOperationalCurrent, str):
+                raise TypeError(
+                    "ratedOperationalCurrent takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if ratedOperationalCurrent:
@@ -824,6 +846,12 @@ class Reliability(aas.Submodel):
                     for i in ratedOperationalCurrent
                 ]
 
+            # A str would be split into its characters
+            if isinstance(typeOfInterlockingDevice, str):
+                raise TypeError(
+                    "typeOfInterlockingDevice takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if typeOfInterlockingDevice:
                 typeOfInterlockingDevice = [
@@ -834,6 +862,12 @@ class Reliability(aas.Submodel):
                     )
                     for i in typeOfInterlockingDevice
                 ]
+
+            # A str would be split into its characters
+            if isinstance(otherOperatingConditions, str):
+                raise TypeError(
+                    "otherOperatingConditions takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if otherOperatingConditions:
@@ -846,6 +880,12 @@ class Reliability(aas.Submodel):
                     for i in otherOperatingConditions
                 ]
 
+            # A str would be split into its characters
+            if isinstance(usefulLifeInNumberOfOperations, str):
+                raise TypeError(
+                    "usefulLifeInNumberOfOperations takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if usefulLifeInNumberOfOperations:
                 usefulLifeInNumberOfOperations = [
@@ -856,6 +896,12 @@ class Reliability(aas.Submodel):
                     )
                     for i in usefulLifeInNumberOfOperations
                 ]
+
+            # A str would be split into its characters
+            if isinstance(usefulLifeInTimeInterval, str):
+                raise TypeError(
+                    "usefulLifeInTimeInterval takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if usefulLifeInTimeInterval:
@@ -1156,6 +1202,10 @@ class Reliability(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(mTTF, str):
+                raise TypeError("mTTF takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if mTTF:
                 mTTF = [
@@ -1163,12 +1213,20 @@ class Reliability(aas.Submodel):
                     for i in mTTF
                 ]
 
+            # A str would be split into its characters
+            if isinstance(mTBF, str):
+                raise TypeError("mTBF takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if mTBF:
                 mTBF = [
                     i if isinstance(i, aas.SubmodelElement) else self.MTBF(i)
                     for i in mTBF
                 ]
+
+            # A str would be split into its characters
+            if isinstance(b, str):
+                raise TypeError("b takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if b:
@@ -1256,6 +1314,18 @@ class Reliability(aas.Submodel):
         ):
             numberOfReliabilitySets = self.NumberOfReliabilitySets(
                 numberOfReliabilitySets
+            )
+
+        # A str would be split into its characters
+        if isinstance(operatingConditionsOfReliabilityCharacteristics, str):
+            raise TypeError(
+                "operatingConditionsOfReliabilityCharacteristics takes several elements, got a str"
+            )
+
+        # A str would be split into its characters
+        if isinstance(reliabilityCharacteristics, str):
+            raise TypeError(
+                "reliabilityCharacteristics takes several elements, got a str"
             )
 
         # Add all passed/initialized submodel elements to a single list

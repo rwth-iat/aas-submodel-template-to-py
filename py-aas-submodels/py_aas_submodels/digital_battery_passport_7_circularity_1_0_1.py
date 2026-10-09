@@ -134,6 +134,12 @@ class Circularity(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(dismantlingandremovalinformation_items, str):
+                raise TypeError(
+                    "dismantlingandremovalinformation_items takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if dismantlingandremovalinformation_items:
                 dismantlingandremovalinformation_items = [
@@ -1526,6 +1532,12 @@ class Circularity(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(components_items, str):
+                        raise TypeError(
+                            "components_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [components_items]:
@@ -1694,6 +1706,10 @@ class Circularity(aas.Submodel):
                 ):
                     supplierWebAddress = self.SupplierWebAddress(supplierWebAddress)
 
+                # A str would be split into its characters
+                if isinstance(components, str):
+                    raise TypeError("components takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if components is not None and not isinstance(
@@ -1789,6 +1805,12 @@ class Circularity(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(sparepartsources_items, str):
+                raise TypeError(
+                    "sparepartsources_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2258,6 +2280,12 @@ class Circularity(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(recycledcontentinformation_items, str):
+                raise TypeError(
+                    "recycledcontentinformation_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [recycledcontentinformation_items]:
@@ -2483,6 +2511,12 @@ class Circularity(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(safetyinstructions_items, str):
+                    raise TypeError(
+                        "safetyinstructions_items takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if safetyinstructions_items:
@@ -2724,6 +2758,12 @@ class Circularity(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(extinguishingagents_items, str):
+                    raise TypeError(
+                        "extinguishingagents_items takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if extinguishingagents_items:
                     extinguishingagents_items = [
@@ -2892,12 +2932,20 @@ class Circularity(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(safetyInstructions, str):
+                raise TypeError("safetyInstructions takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if safetyInstructions is not None and not isinstance(
                 safetyInstructions, aas.SubmodelElement
             ):
                 safetyInstructions = self.SafetyInstructions(safetyInstructions)
+
+            # A str would be split into its characters
+            if isinstance(extinguishingAgents, str):
+                raise TypeError("extinguishingAgents takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3073,6 +3121,12 @@ class Circularity(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(wasteprevention_items, str):
+                    raise TypeError(
+                        "wasteprevention_items takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if wasteprevention_items:
@@ -3321,6 +3375,12 @@ class Circularity(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(separatecollection_items, str):
+                    raise TypeError(
+                        "separatecollection_items takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if separatecollection_items:
@@ -3574,6 +3634,12 @@ class Circularity(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(informationoncollection_items, str):
+                    raise TypeError(
+                        "informationoncollection_items takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if informationoncollection_items:
                     informationoncollection_items = [
@@ -3748,6 +3814,10 @@ class Circularity(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(wastePrevention, str):
+                raise TypeError("wastePrevention takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if wastePrevention is not None and not isinstance(
@@ -3755,12 +3825,22 @@ class Circularity(aas.Submodel):
             ):
                 wastePrevention = self.WastePrevention(wastePrevention)
 
+            # A str would be split into its characters
+            if isinstance(separateCollection, str):
+                raise TypeError("separateCollection takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if separateCollection is not None and not isinstance(
                 separateCollection, aas.SubmodelElement
             ):
                 separateCollection = self.SeparateCollection(separateCollection)
+
+            # A str would be split into its characters
+            if isinstance(informationOnCollection, str):
+                raise TypeError(
+                    "informationOnCollection takes several elements, got a str"
+                )
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3946,6 +4026,12 @@ class Circularity(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(dismantlingAndRemovalInformation, str):
+            raise TypeError(
+                "dismantlingAndRemovalInformation takes several elements, got a str"
+            )
+
         # Build a submodel element if a raw value was passed in the argument
 
         if dismantlingAndRemovalInformation is not None and not isinstance(
@@ -3955,12 +4041,22 @@ class Circularity(aas.Submodel):
                 dismantlingAndRemovalInformation
             )
 
+        # A str would be split into its characters
+        if isinstance(sparePartSources, str):
+            raise TypeError("sparePartSources takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if sparePartSources is not None and not isinstance(
             sparePartSources, aas.SubmodelElement
         ):
             sparePartSources = self.SparePartSources(sparePartSources)
+
+        # A str would be split into its characters
+        if isinstance(recycledContentInformation, str):
+            raise TypeError(
+                "recycledContentInformation takes several elements, got a str"
+            )
 
         # Build a submodel element if a raw value was passed in the argument
 

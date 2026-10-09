@@ -906,6 +906,12 @@ class QualityControlForMachining(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(geometryreferencelist_items, str):
+                            raise TypeError(
+                                "geometryreferencelist_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
                             geometryreferencelist_items = [
@@ -1157,6 +1163,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(idlist3dmodel_items, str):
+                            raise TypeError(
+                                "idlist3dmodel_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
@@ -1593,6 +1605,12 @@ class QualityControlForMachining(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(reference2dlist_items, str):
+                            raise TypeError(
+                                "reference2dlist_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [reference2dlist_items]:
@@ -1816,6 +1834,12 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
+                    # A str would be split into its characters
+                    if isinstance(toleranceNorm, str):
+                        raise TypeError(
+                            "toleranceNorm takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
@@ -1862,6 +1886,12 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         engineeringUnit = self.EngineeringUnit(engineeringUnit)
 
+                    # A str would be split into its characters
+                    if isinstance(geometryReferenceList, str):
+                        raise TypeError(
+                            "geometryReferenceList takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if geometryReferenceList is not None and not isinstance(
@@ -1871,12 +1901,24 @@ class QualityControlForMachining(aas.Submodel):
                             geometryReferenceList
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(iDList3DModel, str):
+                        raise TypeError(
+                            "iDList3DModel takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
+
+                    # A str would be split into its characters
+                    if isinstance(reference2DList, str):
+                        raise TypeError(
+                            "reference2DList takes several elements, got a str"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1988,6 +2030,12 @@ class QualityControlForMachining(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(linearfeatureslist_items, str):
+                    raise TypeError(
+                        "linearfeatureslist_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2608,6 +2656,12 @@ class QualityControlForMachining(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(geometryreferencelist_items, str):
+                            raise TypeError(
+                                "geometryreferencelist_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
                             geometryreferencelist_items = [
@@ -2859,6 +2913,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(idlist3dmodel_items, str):
+                            raise TypeError(
+                                "idlist3dmodel_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
@@ -3295,6 +3355,12 @@ class QualityControlForMachining(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(reference2dlist_items, str):
+                            raise TypeError(
+                                "reference2dlist_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [reference2dlist_items]:
@@ -3535,6 +3601,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(okattributeslist_items, str):
+                            raise TypeError(
+                                "okattributeslist_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if okattributeslist_items:
@@ -3788,6 +3860,12 @@ class QualityControlForMachining(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(nokattributeslist_items, str):
+                            raise TypeError(
+                                "nokattributeslist_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if nokattributeslist_items:
                             nokattributeslist_items = [
@@ -4022,6 +4100,12 @@ class QualityControlForMachining(aas.Submodel):
                             measurementProcedure
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(toleranceNorm, str):
+                        raise TypeError(
+                            "toleranceNorm takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
@@ -4040,6 +4124,12 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
+                    # A str would be split into its characters
+                    if isinstance(geometryReferenceList, str):
+                        raise TypeError(
+                            "geometryReferenceList takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if geometryReferenceList is not None and not isinstance(
@@ -4049,12 +4139,24 @@ class QualityControlForMachining(aas.Submodel):
                             geometryReferenceList
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(iDList3DModel, str):
+                        raise TypeError(
+                            "iDList3DModel takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
+
+                    # A str would be split into its characters
+                    if isinstance(reference2DList, str):
+                        raise TypeError(
+                            "reference2DList takes several elements, got a str"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4063,12 +4165,24 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         reference2DList = self.Reference2DList(reference2DList)
 
+                    # A str would be split into its characters
+                    if isinstance(oKAttributesList, str):
+                        raise TypeError(
+                            "oKAttributesList takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if oKAttributesList is not None and not isinstance(
                         oKAttributesList, aas.SubmodelElement
                     ):
                         oKAttributesList = self.OKAttributesList(oKAttributesList)
+
+                    # A str would be split into its characters
+                    if isinstance(nOKAttributesList, str):
+                        raise TypeError(
+                            "nOKAttributesList takes several elements, got a str"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4177,6 +4291,12 @@ class QualityControlForMachining(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(attributivefeatureslist_items, str):
+                    raise TypeError(
+                        "attributivefeatureslist_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5593,6 +5713,12 @@ class QualityControlForMachining(aas.Submodel):
                                 toleranceZoneDescription
                             )
 
+                        # A str would be split into its characters
+                        if isinstance(specificationModificator, str):
+                            raise TypeError(
+                                "specificationModificator takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if specificationModificator:
                             specificationModificator = [
@@ -5603,6 +5729,12 @@ class QualityControlForMachining(aas.Submodel):
                                 )
                                 for i in specificationModificator
                             ]
+
+                        # A str would be split into its characters
+                        if isinstance(widthExtendValue, str):
+                            raise TypeError(
+                                "widthExtendValue takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if widthExtendValue:
@@ -5827,6 +5959,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(geometryreferencelist_items, str):
+                            raise TypeError(
+                                "geometryreferencelist_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
@@ -6079,6 +6217,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(idlist3dmodel_items, str):
+                            raise TypeError(
+                                "idlist3dmodel_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
@@ -6514,6 +6658,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(reference2dlist_items, str):
+                            raise TypeError(
+                                "reference2dlist_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -7059,6 +7209,12 @@ class QualityControlForMachining(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(gPS_Identifier, str):
+                                raise TypeError(
+                                    "gPS_Identifier takes several elements, got a str"
+                                )
+
                             # Build submodel elements from raw values passed in the argument
                             if gPS_Identifier:
                                 gPS_Identifier = [
@@ -7069,6 +7225,12 @@ class QualityControlForMachining(aas.Submodel):
                                     )
                                     for i in gPS_Identifier
                                 ]
+
+                            # A str would be split into its characters
+                            if isinstance(gPS_Value, str):
+                                raise TypeError(
+                                    "gPS_Value takes several elements, got a str"
+                                )
 
                             # Build submodel elements from raw values passed in the argument
                             if gPS_Value:
@@ -7170,6 +7332,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(additionalinformationlist_items, str):
+                            raise TypeError(
+                                "additionalinformationlist_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -7310,13 +7478,11 @@ class QualityControlForMachining(aas.Submodel):
                     datumField2: Optional[Union[str, DatumField2]] = None,
                     datumField3: Optional[Union[str, DatumField3]] = None,
                     additionalInformationList: Optional[
-                        Iterable[
-                            Union[
-                                Iterable[
-                                    AdditionalInformationList.Additionalinformationlist_item
-                                ],
-                                AdditionalInformationList,
-                            ]
+                        Union[
+                            Iterable[
+                                AdditionalInformationList.Additionalinformationlist_item
+                            ],
+                            AdditionalInformationList,
                         ]
                     ] = None,
                     id_short: Optional[str] = None,
@@ -7394,6 +7560,12 @@ class QualityControlForMachining(aas.Submodel):
                             measurementProcedure
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(toleranceNorm, str):
+                        raise TypeError(
+                            "toleranceNorm takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
@@ -7428,6 +7600,18 @@ class QualityControlForMachining(aas.Submodel):
                             gPS_ReferenceRequired
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(gPS_ToleranceZone, str):
+                        raise TypeError(
+                            "gPS_ToleranceZone takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(geometryReferenceList, str):
+                        raise TypeError(
+                            "geometryReferenceList takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if geometryReferenceList is not None and not isinstance(
@@ -7437,12 +7621,24 @@ class QualityControlForMachining(aas.Submodel):
                             geometryReferenceList
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(iDList3DModel, str):
+                        raise TypeError(
+                            "iDList3DModel takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
+
+                    # A str would be split into its characters
+                    if isinstance(reference2DList, str):
+                        raise TypeError(
+                            "reference2DList takes several elements, got a str"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7472,16 +7668,20 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         datumField3 = self.DatumField3(datumField3)
 
-                    # Build submodel elements from raw values passed in the argument
-                    if additionalInformationList:
-                        additionalInformationList = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.AdditionalInformationList(i)
-                            )
-                            for i in additionalInformationList
-                        ]
+                    # A str would be split into its characters
+                    if isinstance(additionalInformationList, str):
+                        raise TypeError(
+                            "additionalInformationList takes several elements, got a str"
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if additionalInformationList is not None and not isinstance(
+                        additionalInformationList, aas.SubmodelElement
+                    ):
+                        additionalInformationList = self.AdditionalInformationList(
+                            additionalInformationList
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -7588,6 +7788,12 @@ class QualityControlForMachining(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(geometricfeatureslist_items, str):
+                    raise TypeError(
+                        "geometricfeatureslist_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -8282,6 +8488,12 @@ class QualityControlForMachining(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(geometryreferencelist_items, str):
+                            raise TypeError(
+                                "geometryreferencelist_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
                             geometryreferencelist_items = [
@@ -8533,6 +8745,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(idlist3dmodel_items, str):
+                            raise TypeError(
+                                "idlist3dmodel_items takes several elements, got a str"
+                            )
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
@@ -8968,6 +9186,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(reference2dlist_items, str):
+                            raise TypeError(
+                                "reference2dlist_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -11416,6 +11640,12 @@ class QualityControlForMachining(aas.Submodel):
                             measurementProcedure
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(toleranceNorm, str):
+                        raise TypeError(
+                            "toleranceNorm takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
@@ -11443,6 +11673,12 @@ class QualityControlForMachining(aas.Submodel):
                             arealSurfaceFeatureType
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(geometryReferenceList, str):
+                        raise TypeError(
+                            "geometryReferenceList takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if geometryReferenceList is not None and not isinstance(
@@ -11452,6 +11688,12 @@ class QualityControlForMachining(aas.Submodel):
                             geometryReferenceList
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(iDList3DModel, str):
+                        raise TypeError(
+                            "iDList3DModel takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if iDList3DModel is not None and not isinstance(
@@ -11459,12 +11701,30 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
+                    # A str would be split into its characters
+                    if isinstance(reference2DList, str):
+                        raise TypeError(
+                            "reference2DList takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if reference2DList is not None and not isinstance(
                         reference2DList, aas.SubmodelElement
                     ):
                         reference2DList = self.Reference2DList(reference2DList)
+
+                    # A str would be split into its characters
+                    if isinstance(sL_Parameters, str):
+                        raise TypeError(
+                            "sL_Parameters takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(sF_Parameters, str):
+                        raise TypeError(
+                            "sF_Parameters takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -11568,6 +11828,12 @@ class QualityControlForMachining(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(arealsurfacefeatureslist_items, str):
+                    raise TypeError(
+                        "arealsurfacefeatureslist_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -11747,12 +12013,22 @@ class QualityControlForMachining(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(linearFeaturesList, str):
+                raise TypeError("linearFeaturesList takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if linearFeaturesList is not None and not isinstance(
                 linearFeaturesList, aas.SubmodelElement
             ):
                 linearFeaturesList = self.LinearFeaturesList(linearFeaturesList)
+
+            # A str would be split into its characters
+            if isinstance(attributiveFeaturesList, str):
+                raise TypeError(
+                    "attributiveFeaturesList takes several elements, got a str"
+                )
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -11763,6 +12039,12 @@ class QualityControlForMachining(aas.Submodel):
                     attributiveFeaturesList
                 )
 
+            # A str would be split into its characters
+            if isinstance(geometricFeaturesList, str):
+                raise TypeError(
+                    "geometricFeaturesList takes several elements, got a str"
+                )
+
             # Build a submodel element if a raw value was passed in the argument
 
             if geometricFeaturesList is not None and not isinstance(
@@ -11770,6 +12052,12 @@ class QualityControlForMachining(aas.Submodel):
             ):
                 geometricFeaturesList = self.GeometricFeaturesList(
                     geometricFeaturesList
+                )
+
+            # A str would be split into its characters
+            if isinstance(arealSurfaceFeaturesList, str):
+                raise TypeError(
+                    "arealSurfaceFeaturesList takes several elements, got a str"
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -12581,6 +12869,10 @@ class QualityControlForMachining(aas.Submodel):
 
                 if jobName is not None and not isinstance(jobName, aas.SubmodelElement):
                     jobName = self.JobName(jobName)
+
+                # A str would be split into its characters
+                if isinstance(jobOrderNumber, str):
+                    raise TypeError("jobOrderNumber takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if jobOrderNumber:
@@ -13895,6 +14187,12 @@ class QualityControlForMachining(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(qualityresponsibilitylist_items, str):
+                raise TypeError(
+                    "qualityresponsibilitylist_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [qualityresponsibilitylist_items]:
@@ -14877,6 +15175,12 @@ class QualityControlForMachining(aas.Submodel):
                 if norm is not None and not isinstance(norm, aas.SubmodelElement):
                     norm = self.Norm(norm)
 
+                # A str would be split into its characters
+                if isinstance(calibrationCertificate, str):
+                    raise TypeError(
+                        "calibrationCertificate takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if calibrationCertificate:
                     calibrationCertificate = [
@@ -14986,6 +15290,12 @@ class QualityControlForMachining(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(testingdeviceslist_items, str):
+                raise TypeError(
+                    "testingdeviceslist_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -16845,6 +17155,12 @@ class QualityControlForMachining(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(measuredvalueslist_items, str):
+                            raise TypeError(
+                                "measuredvalueslist_items takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if measuredvalueslist_items:
                             measuredvalueslist_items = [
@@ -17361,6 +17677,12 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         engineeringUnit = self.EngineeringUnit(engineeringUnit)
 
+                    # A str would be split into its characters
+                    if isinstance(qualityActualValue, str):
+                        raise TypeError(
+                            "qualityActualValue takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if qualityActualValue:
                         qualityActualValue = [
@@ -17371,6 +17693,12 @@ class QualityControlForMachining(aas.Submodel):
                             )
                             for i in qualityActualValue
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(qualityActualAttribute, str):
+                        raise TypeError(
+                            "qualityActualAttribute takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if qualityActualAttribute:
@@ -17432,6 +17760,12 @@ class QualityControlForMachining(aas.Submodel):
                     ):
                         dataAggregatedFromSeries = self.DataAggregatedFromSeries(
                             dataAggregatedFromSeries
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(measuredValuesList, str):
+                        raise TypeError(
+                            "measuredValuesList takes several elements, got a str"
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -17546,6 +17880,12 @@ class QualityControlForMachining(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(metrologyresultslist_items, str):
+                    raise TypeError(
+                        "metrologyresultslist_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -17727,6 +18067,10 @@ class QualityControlForMachining(aas.Submodel):
             if jobName is not None and not isinstance(jobName, aas.SubmodelElement):
                 jobName = self.JobName(jobName)
 
+            # A str would be split into its characters
+            if isinstance(jobOrderNumber, str):
+                raise TypeError("jobOrderNumber takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if jobOrderNumber:
                 jobOrderNumber = [
@@ -17754,6 +18098,12 @@ class QualityControlForMachining(aas.Submodel):
                 jobFinished, aas.SubmodelElement
             ):
                 jobFinished = self.JobFinished(jobFinished)
+
+            # A str would be split into its characters
+            if isinstance(metrologyResultsList, str):
+                raise TypeError(
+                    "metrologyResultsList takes several elements, got a str"
+                )
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -17848,6 +18198,12 @@ class QualityControlForMachining(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(qualityResponsibilityList, str):
+            raise TypeError(
+                "qualityResponsibilityList takes several elements, got a str"
+            )
+
         # Build a submodel element if a raw value was passed in the argument
 
         if qualityResponsibilityList is not None and not isinstance(
@@ -17857,12 +18213,20 @@ class QualityControlForMachining(aas.Submodel):
                 qualityResponsibilityList
             )
 
+        # A str would be split into its characters
+        if isinstance(testingDevicesList, str):
+            raise TypeError("testingDevicesList takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if testingDevicesList is not None and not isinstance(
             testingDevicesList, aas.SubmodelElement
         ):
             testingDevicesList = self.TestingDevicesList(testingDevicesList)
+
+        # A str would be split into its characters
+        if isinstance(metrologyJobResults, str):
+            raise TypeError("metrologyJobResults takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

@@ -604,6 +604,12 @@ class TechnicalData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(productimages_items, str):
+                    raise TypeError(
+                        "productimages_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [productimages_items]:
@@ -958,6 +964,10 @@ class TechnicalData(aas.Submodel):
                 batteryMass, aas.SubmodelElement
             ):
                 batteryMass = self.BatteryMass(batteryMass)
+
+            # A str would be split into its characters
+            if isinstance(productImages, str):
+                raise TypeError("productImages takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3445,6 +3455,12 @@ class TechnicalData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(originalpowercapability_items, str):
+                        raise TypeError(
+                            "originalpowercapability_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [originalpowercapability_items]:
@@ -3647,6 +3663,12 @@ class TechnicalData(aas.Submodel):
                         self.RatioNorminalBatteryPowerAndBatteryEnergy(
                             ratioNorminalBatteryPowerAndBatteryEnergy
                         )
+                    )
+
+                # A str would be split into its characters
+                if isinstance(originalPowerCapability, str):
+                    raise TypeError(
+                        "originalPowerCapability takes several elements, got a str"
                     )
 
                 # Build a submodel element if a raw value was passed in the argument

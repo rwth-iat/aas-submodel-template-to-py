@@ -809,6 +809,10 @@ class AIModelNameplate(aas.Submodel):
             ):
                 kindOfInput = self.KindOfInput(kindOfInput)
 
+            # A str would be split into its characters
+            if isinstance(dimensionN, str):
+                raise TypeError("dimensionN takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [kindOfInput, dimensionN, preprocessing]:
@@ -1130,6 +1134,10 @@ class AIModelNameplate(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(dimensionN, str):
+                raise TypeError("dimensionN takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [dimensionN]:
@@ -1447,6 +1455,10 @@ class AIModelNameplate(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(examplePlot, str):
+                    raise TypeError("examplePlot takes several elements, got a str")
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [examplePlot]:
@@ -1601,6 +1613,12 @@ class AIModelNameplate(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(exampleStructurePlot, str):
+                    raise TypeError(
+                        "exampleStructurePlot takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [exampleStructurePlot]:
@@ -1754,6 +1772,10 @@ class AIModelNameplate(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(examplePlot, str):
+                    raise TypeError("examplePlot takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3284,6 +3306,10 @@ class AIModelNameplate(aas.Submodel):
             kindOfLearning, aas.SubmodelElement
         ):
             kindOfLearning = self.KindOfLearning(kindOfLearning)
+
+        # A str would be split into its characters
+        if isinstance(aIDataset, str):
+            raise TypeError("aIDataset takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

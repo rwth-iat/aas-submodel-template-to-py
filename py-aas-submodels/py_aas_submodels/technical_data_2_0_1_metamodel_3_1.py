@@ -733,6 +733,12 @@ class TechnicalData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(productimages_items, str):
+                    raise TypeError(
+                        "productimages_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [productimages_items]:
@@ -940,6 +946,10 @@ class TechnicalData(aas.Submodel):
                 manufacturerOrderCode = self.ManufacturerOrderCode(
                     manufacturerOrderCode
                 )
+
+            # A str would be split into its characters
+            if isinstance(productImages, str):
+                raise TypeError("productImages takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1913,6 +1923,12 @@ class TechnicalData(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(productclassifications_items, str):
+                raise TypeError(
+                    "productclassifications_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [productclassifications_items]:
@@ -2240,6 +2256,12 @@ class TechnicalData(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(arbitrarysml_items, str):
+                            raise TypeError(
+                                "arbitrarysml_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [arbitrarysml_items]:
@@ -2546,7 +2568,7 @@ class TechnicalData(aas.Submodel):
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[
-                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
                     ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
@@ -2606,16 +2628,34 @@ class TechnicalData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build submodel elements from raw values passed in the argument
-                    if arbitrarySML:
-                        arbitrarySML = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitrarySML(i)
-                            )
-                            for i in arbitrarySML
-                        ]
+                    # A str would be split into its characters
+                    if isinstance(section, str):
+                        raise TypeError("section takes several elements, got a str")
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySMC, str):
+                        raise TypeError(
+                            "arbitrarySMC takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySML, str):
+                        raise TypeError(
+                            "arbitrarySML takes several elements, got a str"
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if arbitrarySML is not None and not isinstance(
+                        arbitrarySML, aas.SubmodelElement
+                    ):
+                        arbitrarySML = self.ArbitrarySML(arbitrarySML)
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryProperty, str):
+                        raise TypeError(
+                            "arbitraryProperty takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -2628,6 +2668,12 @@ class TechnicalData(aas.Submodel):
                             for i in arbitraryProperty
                         ]
 
+                    # A str would be split into its characters
+                    if isinstance(arbitraryMLP, str):
+                        raise TypeError(
+                            "arbitraryMLP takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
@@ -2638,6 +2684,12 @@ class TechnicalData(aas.Submodel):
                             )
                             for i in arbitraryMLP
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryRange, str):
+                        raise TypeError(
+                            "arbitraryRange takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
@@ -2912,6 +2964,12 @@ class TechnicalData(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(arbitrarysml_items, str):
+                            raise TypeError(
+                                "arbitrarysml_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [arbitrarysml_items]:
@@ -3218,7 +3276,7 @@ class TechnicalData(aas.Submodel):
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[
-                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
                     ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
@@ -3278,16 +3336,34 @@ class TechnicalData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build submodel elements from raw values passed in the argument
-                    if arbitrarySML:
-                        arbitrarySML = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitrarySML(i)
-                            )
-                            for i in arbitrarySML
-                        ]
+                    # A str would be split into its characters
+                    if isinstance(section, str):
+                        raise TypeError("section takes several elements, got a str")
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySMC, str):
+                        raise TypeError(
+                            "arbitrarySMC takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySML, str):
+                        raise TypeError(
+                            "arbitrarySML takes several elements, got a str"
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if arbitrarySML is not None and not isinstance(
+                        arbitrarySML, aas.SubmodelElement
+                    ):
+                        arbitrarySML = self.ArbitrarySML(arbitrarySML)
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryProperty, str):
+                        raise TypeError(
+                            "arbitraryProperty takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -3300,6 +3376,12 @@ class TechnicalData(aas.Submodel):
                             for i in arbitraryProperty
                         ]
 
+                    # A str would be split into its characters
+                    if isinstance(arbitraryMLP, str):
+                        raise TypeError(
+                            "arbitraryMLP takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
@@ -3310,6 +3392,12 @@ class TechnicalData(aas.Submodel):
                             )
                             for i in arbitraryMLP
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryRange, str):
+                        raise TypeError(
+                            "arbitraryRange takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
@@ -3415,6 +3503,12 @@ class TechnicalData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarysml_items, str):
+                        raise TypeError(
+                            "arbitrarysml_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3732,7 +3826,7 @@ class TechnicalData(aas.Submodel):
                 section: Optional[Iterable[Section]] = None,
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                 arbitrarySML: Optional[
-                    Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                    Union[Iterable[aas.SubmodelElement], ArbitrarySML]
                 ] = None,
                 arbitraryProperty: Optional[
                     Iterable[Union[str, ArbitraryProperty]]
@@ -3791,16 +3885,30 @@ class TechnicalData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build submodel elements from raw values passed in the argument
-                if arbitrarySML:
-                    arbitrarySML = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitrarySML(i)
-                        )
-                        for i in arbitrarySML
-                    ]
+                # A str would be split into its characters
+                if isinstance(section, str):
+                    raise TypeError("section takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(arbitrarySMC, str):
+                    raise TypeError("arbitrarySMC takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(arbitrarySML, str):
+                    raise TypeError("arbitrarySML takes several elements, got a str")
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if arbitrarySML is not None and not isinstance(
+                    arbitrarySML, aas.SubmodelElement
+                ):
+                    arbitrarySML = self.ArbitrarySML(arbitrarySML)
+
+                # A str would be split into its characters
+                if isinstance(arbitraryProperty, str):
+                    raise TypeError(
+                        "arbitraryProperty takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryProperty:
@@ -3813,6 +3921,10 @@ class TechnicalData(aas.Submodel):
                         for i in arbitraryProperty
                     ]
 
+                # A str would be split into its characters
+                if isinstance(arbitraryMLP, str):
+                    raise TypeError("arbitraryMLP takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryMLP:
                     arbitraryMLP = [
@@ -3823,6 +3935,10 @@ class TechnicalData(aas.Submodel):
                         )
                         for i in arbitraryMLP
                     ]
+
+                # A str would be split into its characters
+                if isinstance(arbitraryRange, str):
+                    raise TypeError("arbitraryRange takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryRange:
@@ -3947,6 +4063,12 @@ class TechnicalData(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(technicalpropertyareas_items, str):
+                raise TypeError(
+                    "technicalpropertyareas_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4272,6 +4394,10 @@ class TechnicalData(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(textStatement, str):
+                raise TypeError("textStatement takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if textStatement:
                 textStatement = [
@@ -4548,6 +4674,12 @@ class TechnicalData(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # A str would be split into its characters
+                        if isinstance(arbitrarysml_items, str):
+                            raise TypeError(
+                                "arbitrarysml_items takes several elements, got a str"
+                            )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -4873,7 +5005,7 @@ class TechnicalData(aas.Submodel):
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[
-                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
                     ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
@@ -4933,16 +5065,34 @@ class TechnicalData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build submodel elements from raw values passed in the argument
-                    if arbitrarySML:
-                        arbitrarySML = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitrarySML(i)
-                            )
-                            for i in arbitrarySML
-                        ]
+                    # A str would be split into its characters
+                    if isinstance(section, str):
+                        raise TypeError("section takes several elements, got a str")
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySMC, str):
+                        raise TypeError(
+                            "arbitrarySMC takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySML, str):
+                        raise TypeError(
+                            "arbitrarySML takes several elements, got a str"
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if arbitrarySML is not None and not isinstance(
+                        arbitrarySML, aas.SubmodelElement
+                    ):
+                        arbitrarySML = self.ArbitrarySML(arbitrarySML)
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryProperty, str):
+                        raise TypeError(
+                            "arbitraryProperty takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -4955,6 +5105,12 @@ class TechnicalData(aas.Submodel):
                             for i in arbitraryProperty
                         ]
 
+                    # A str would be split into its characters
+                    if isinstance(arbitraryMLP, str):
+                        raise TypeError(
+                            "arbitraryMLP takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
@@ -4965,6 +5121,12 @@ class TechnicalData(aas.Submodel):
                             )
                             for i in arbitraryMLP
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryRange, str):
+                        raise TypeError(
+                            "arbitraryRange takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
@@ -5245,6 +5407,12 @@ class TechnicalData(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(arbitrarysml_items, str):
+                            raise TypeError(
+                                "arbitrarysml_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [arbitrarysml_items]:
@@ -5569,7 +5737,7 @@ class TechnicalData(aas.Submodel):
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[
-                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
                     ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
@@ -5629,16 +5797,34 @@ class TechnicalData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build submodel elements from raw values passed in the argument
-                    if arbitrarySML:
-                        arbitrarySML = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitrarySML(i)
-                            )
-                            for i in arbitrarySML
-                        ]
+                    # A str would be split into its characters
+                    if isinstance(section, str):
+                        raise TypeError("section takes several elements, got a str")
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySMC, str):
+                        raise TypeError(
+                            "arbitrarySMC takes several elements, got a str"
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarySML, str):
+                        raise TypeError(
+                            "arbitrarySML takes several elements, got a str"
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if arbitrarySML is not None and not isinstance(
+                        arbitrarySML, aas.SubmodelElement
+                    ):
+                        arbitrarySML = self.ArbitrarySML(arbitrarySML)
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryProperty, str):
+                        raise TypeError(
+                            "arbitraryProperty takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -5651,6 +5837,12 @@ class TechnicalData(aas.Submodel):
                             for i in arbitraryProperty
                         ]
 
+                    # A str would be split into its characters
+                    if isinstance(arbitraryMLP, str):
+                        raise TypeError(
+                            "arbitraryMLP takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
@@ -5661,6 +5853,12 @@ class TechnicalData(aas.Submodel):
                             )
                             for i in arbitraryMLP
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(arbitraryRange, str):
+                        raise TypeError(
+                            "arbitraryRange takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
@@ -5766,6 +5964,12 @@ class TechnicalData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(arbitrarysml_items, str):
+                        raise TypeError(
+                            "arbitrarysml_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6083,7 +6287,7 @@ class TechnicalData(aas.Submodel):
                 section: Optional[Iterable[Section]] = None,
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                 arbitrarySML: Optional[
-                    Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                    Union[Iterable[aas.SubmodelElement], ArbitrarySML]
                 ] = None,
                 arbitraryProperty: Optional[
                     Iterable[Union[str, ArbitraryProperty]]
@@ -6160,16 +6364,30 @@ class TechnicalData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build submodel elements from raw values passed in the argument
-                if arbitrarySML:
-                    arbitrarySML = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitrarySML(i)
-                        )
-                        for i in arbitrarySML
-                    ]
+                # A str would be split into its characters
+                if isinstance(section, str):
+                    raise TypeError("section takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(arbitrarySMC, str):
+                    raise TypeError("arbitrarySMC takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(arbitrarySML, str):
+                    raise TypeError("arbitrarySML takes several elements, got a str")
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if arbitrarySML is not None and not isinstance(
+                    arbitrarySML, aas.SubmodelElement
+                ):
+                    arbitrarySML = self.ArbitrarySML(arbitrarySML)
+
+                # A str would be split into its characters
+                if isinstance(arbitraryProperty, str):
+                    raise TypeError(
+                        "arbitraryProperty takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryProperty:
@@ -6182,6 +6400,10 @@ class TechnicalData(aas.Submodel):
                         for i in arbitraryProperty
                     ]
 
+                # A str would be split into its characters
+                if isinstance(arbitraryMLP, str):
+                    raise TypeError("arbitraryMLP takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryMLP:
                     arbitraryMLP = [
@@ -6192,6 +6414,10 @@ class TechnicalData(aas.Submodel):
                         )
                         for i in arbitraryMLP
                     ]
+
+                # A str would be split into its characters
+                if isinstance(arbitraryRange, str):
+                    raise TypeError("arbitraryRange takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryRange:
@@ -6316,6 +6542,12 @@ class TechnicalData(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(specificdescriptions_items, str):
+                raise TypeError(
+                    "specificdescriptions_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6483,6 +6715,10 @@ class TechnicalData(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(productClassifications, str):
+            raise TypeError("productClassifications takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if productClassifications is not None and not isinstance(
@@ -6490,12 +6726,20 @@ class TechnicalData(aas.Submodel):
         ):
             productClassifications = self.ProductClassifications(productClassifications)
 
+        # A str would be split into its characters
+        if isinstance(technicalPropertyAreas, str):
+            raise TypeError("technicalPropertyAreas takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if technicalPropertyAreas is not None and not isinstance(
             technicalPropertyAreas, aas.SubmodelElement
         ):
             technicalPropertyAreas = self.TechnicalPropertyAreas(technicalPropertyAreas)
+
+        # A str would be split into its characters
+        if isinstance(specificDescriptions, str):
+            raise TypeError("specificDescriptions takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

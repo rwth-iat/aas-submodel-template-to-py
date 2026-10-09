@@ -963,6 +963,12 @@ class MaterialComposition(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(batterymaterials_items, str):
+                raise TypeError(
+                    "batterymaterials_items takes several elements, got a str"
+                )
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [batterymaterials_items]:
@@ -1405,6 +1411,12 @@ class MaterialComposition(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(hazardoussubstanceimpact_items, str):
+                        raise TypeError(
+                            "hazardoussubstanceimpact_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if hazardoussubstanceimpact_items:
@@ -1927,6 +1939,12 @@ class MaterialComposition(aas.Submodel):
                         )
                     )
 
+                # A str would be split into its characters
+                if isinstance(hazardousSubstanceImpact, str):
+                    raise TypeError(
+                        "hazardousSubstanceImpact takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if hazardousSubstanceImpact is not None and not isinstance(
@@ -2036,6 +2054,12 @@ class MaterialComposition(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(hazardoussubstances_items, str):
+                raise TypeError(
+                    "hazardoussubstances_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2185,12 +2209,20 @@ class MaterialComposition(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(batteryMaterials, str):
+            raise TypeError("batteryMaterials takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if batteryMaterials is not None and not isinstance(
             batteryMaterials, aas.SubmodelElement
         ):
             batteryMaterials = self.BatteryMaterials(batteryMaterials)
+
+        # A str would be split into its characters
+        if isinstance(hazardousSubstances, str):
+            raise TypeError("hazardousSubstances takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

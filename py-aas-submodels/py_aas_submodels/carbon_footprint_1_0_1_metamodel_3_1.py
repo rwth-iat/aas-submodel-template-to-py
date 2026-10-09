@@ -154,6 +154,12 @@ class CarbonFootprint(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(pcfcalculationmethods_items, str):
+                        raise TypeError(
+                            "pcfcalculationmethods_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if pcfcalculationmethods_items:
                         pcfcalculationmethods_items = [
@@ -618,6 +624,12 @@ class CarbonFootprint(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(lifecyclephases_items, str):
+                        raise TypeError(
+                            "lifecyclephases_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if lifecyclephases_items:
@@ -1112,6 +1124,12 @@ class CarbonFootprint(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(pcfCalculationMethods, str):
+                    raise TypeError(
+                        "pcfCalculationMethods takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if pcfCalculationMethods is not None and not isinstance(
@@ -1149,6 +1167,10 @@ class CarbonFootprint(aas.Submodel):
                             quantityOfMeasureForCalculation
                         )
                     )
+
+                # A str would be split into its characters
+                if isinstance(lifeCyclePhases, str):
+                    raise TypeError("lifeCyclePhases takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1274,6 +1296,12 @@ class CarbonFootprint(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(productcarbonfootprints_items, str):
+                raise TypeError(
+                    "productcarbonfootprints_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1522,6 +1550,12 @@ class CarbonFootprint(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(pcfcalculationmethods_items, str):
+                        raise TypeError(
+                            "pcfcalculationmethods_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if pcfcalculationmethods_items:
@@ -2394,6 +2428,12 @@ class CarbonFootprint(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(arbitraryContent, str):
+                        raise TypeError(
+                            "arbitraryContent takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryContent:
                         arbitraryContent = [
@@ -2477,6 +2517,12 @@ class CarbonFootprint(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(pcfCalculationMethods, str):
+                    raise TypeError(
+                        "pcfCalculationMethods takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2584,6 +2630,12 @@ class CarbonFootprint(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(productorsectorspecificcarbonfootprints_items, str):
+                raise TypeError(
+                    "productorsectorspecificcarbonfootprints_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2738,6 +2790,10 @@ class CarbonFootprint(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(productCarbonFootprints, str):
+            raise TypeError("productCarbonFootprints takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if productCarbonFootprints is not None and not isinstance(
@@ -2745,6 +2801,12 @@ class CarbonFootprint(aas.Submodel):
         ):
             productCarbonFootprints = self.ProductCarbonFootprints(
                 productCarbonFootprints
+            )
+
+        # A str would be split into its characters
+        if isinstance(productOrSectorSpecificCarbonFootprints, str):
+            raise TypeError(
+                "productOrSectorSpecificCarbonFootprints takes several elements, got a str"
             )
 
         # Build a submodel element if a raw value was passed in the argument

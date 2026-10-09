@@ -947,6 +947,12 @@ class ProductChangeNotifications(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(lifecycledata_items, str):
+                        raise TypeError(
+                            "lifecycledata_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [lifecycledata_items]:
@@ -1464,6 +1470,12 @@ class ProductChangeNotifications(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(reasonsofchange_items, str):
+                        raise TypeError(
+                            "reasonsofchange_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [reasonsofchange_items]:
@@ -1977,6 +1989,12 @@ class ProductChangeNotifications(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(itemcategories_items, str):
+                        raise TypeError(
+                            "itemcategories_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [itemcategories_items]:
@@ -2221,6 +2239,12 @@ class ProductChangeNotifications(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(affectedpartnumbers_items, str):
+                        raise TypeError(
+                            "affectedpartnumbers_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if affectedpartnumbers_items:
@@ -2770,6 +2794,12 @@ class ProductChangeNotifications(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(additionalinformation_items, str):
+                        raise TypeError(
+                            "additionalinformation_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3646,6 +3676,12 @@ class ProductChangeNotifications(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(productclassifications_items, str):
+                            raise TypeError(
+                                "productclassifications_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [productclassifications_items]:
@@ -4304,6 +4340,12 @@ class ProductChangeNotifications(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(technicaldata_changes_items, str):
+                            raise TypeError(
+                                "technicaldata_changes_items takes several elements, got a str"
+                            )
+
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
                         for se_arg in [technicaldata_changes_items]:
@@ -4538,6 +4580,12 @@ class ProductChangeNotifications(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(arbitrary, str):
+                            raise TypeError(
+                                "arbitrary takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if arbitrary:
                             arbitrary = [
@@ -4696,6 +4744,12 @@ class ProductChangeNotifications(aas.Submodel):
                             manufacturerAssetID
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(productClassifications, str):
+                        raise TypeError(
+                            "productClassifications takes several elements, got a str"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if productClassifications is not None and not isinstance(
@@ -4719,6 +4773,12 @@ class ProductChangeNotifications(aas.Submodel):
                     ):
                         remainingAmountAvailable = self.RemainingAmountAvailable(
                             remainingAmountAvailable
+                        )
+
+                    # A str would be split into its characters
+                    if isinstance(technicalData_Changes, str):
+                        raise TypeError(
+                            "technicalData_Changes takes several elements, got a str"
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -5364,6 +5424,12 @@ class ProductChangeNotifications(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(productclassifications_items, str):
+                                raise TypeError(
+                                    "productclassifications_items takes several elements, got a str"
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -6895,6 +6961,12 @@ class ProductChangeNotifications(aas.Submodel):
                                 orderCodeOfManufacturer
                             )
 
+                        # A str would be split into its characters
+                        if isinstance(productClassifications, str):
+                            raise TypeError(
+                                "productClassifications takes several elements, got a str"
+                            )
+
                         # Build a submodel element if a raw value was passed in the argument
 
                         if productClassifications is not None and not isinstance(
@@ -7044,6 +7116,12 @@ class ProductChangeNotifications(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(recommendeditems_items, str):
+                        raise TypeError(
+                            "recommendeditems_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -7244,12 +7322,20 @@ class ProductChangeNotifications(aas.Submodel):
                 if pcnType is not None and not isinstance(pcnType, aas.SubmodelElement):
                     pcnType = self.PcnType(pcnType)
 
+                # A str would be split into its characters
+                if isinstance(lifeCycleData, str):
+                    raise TypeError("lifeCycleData takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if lifeCycleData is not None and not isinstance(
                     lifeCycleData, aas.SubmodelElement
                 ):
                     lifeCycleData = self.LifeCycleData(lifeCycleData)
+
+                # A str would be split into its characters
+                if isinstance(reasonsOfChange, str):
+                    raise TypeError("reasonsOfChange takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7258,12 +7344,22 @@ class ProductChangeNotifications(aas.Submodel):
                 ):
                     reasonsOfChange = self.ReasonsOfChange(reasonsOfChange)
 
+                # A str would be split into its characters
+                if isinstance(itemCategories, str):
+                    raise TypeError("itemCategories takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if itemCategories is not None and not isinstance(
                     itemCategories, aas.SubmodelElement
                 ):
                     itemCategories = self.ItemCategories(itemCategories)
+
+                # A str would be split into its characters
+                if isinstance(affectedPartNumbers, str):
+                    raise TypeError(
+                        "affectedPartNumbers takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7278,6 +7374,12 @@ class ProductChangeNotifications(aas.Submodel):
                     pcnReasonComment, aas.SubmodelElement
                 ):
                     pcnReasonComment = self.PcnReasonComment(pcnReasonComment)
+
+                # A str would be split into its characters
+                if isinstance(additionalInformation, str):
+                    raise TypeError(
+                        "additionalInformation takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7294,6 +7396,12 @@ class ProductChangeNotifications(aas.Submodel):
                     dateOfRecord, aas.SubmodelElement
                 ):
                     dateOfRecord = self.DateOfRecord(dateOfRecord)
+
+                # A str would be split into its characters
+                if isinstance(recommendedItems, str):
+                    raise TypeError(
+                        "recommendedItems takes several elements, got a str"
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7410,6 +7518,10 @@ class ProductChangeNotifications(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(records_items, str):
+                raise TypeError("records_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7546,6 +7658,10 @@ class ProductChangeNotifications(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(records, str):
+            raise TypeError("records takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

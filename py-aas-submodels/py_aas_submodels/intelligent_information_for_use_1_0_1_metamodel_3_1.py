@@ -2378,6 +2378,10 @@ class IntelligentInformationforUse(aas.Submodel):
                         dateOfLastModification
                     )
 
+                # A str would be split into its characters
+                if isinstance(language, str):
+                    raise TypeError("language takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if language:
                     language = [
@@ -2392,6 +2396,10 @@ class IntelligentInformationforUse(aas.Submodel):
                 ):
                     revision = self.Revision(revision)
 
+                # A str would be split into its characters
+                if isinstance(rights, str):
+                    raise TypeError("rights takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if rights:
                     rights = [
@@ -2399,12 +2407,84 @@ class IntelligentInformationforUse(aas.Submodel):
                         for i in rights
                     ]
 
+                # A str would be split into its characters
+                if isinstance(hasRendition, str):
+                    raise TypeError("hasRendition takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(hasContentLifecycleStatus, str):
+                    raise TypeError(
+                        "hasContentLifecycleStatus takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if isReplacementOf is not None and not isinstance(
                     isReplacementOf, aas.SubmodelElement
                 ):
                     isReplacementOf = self.IsReplacementOf(isReplacementOf)
+
+                # A str would be split into its characters
+                if isinstance(relatesToEvent, str):
+                    raise TypeError("relatesToEvent takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToSupply, str):
+                    raise TypeError("relatesToSupply takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToQualification, str):
+                    raise TypeError(
+                        "relatesToQualification takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(hasIdentity, str):
+                    raise TypeError("hasIdentity takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToParty, str):
+                    raise TypeError("relatesToParty takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(hasDocumentType, str):
+                    raise TypeError("hasDocumentType takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToComponent, str):
+                    raise TypeError(
+                        "relatesToComponent takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(hasSubject, str):
+                    raise TypeError("hasSubject takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToAction, str):
+                    raise TypeError("relatesToAction takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductFeature, str):
+                    raise TypeError(
+                        "relatesToProductFeature takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductLifecyclePhase, str):
+                    raise TypeError(
+                        "relatesToProductLifecyclePhase takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductVariant, str):
+                    raise TypeError(
+                        "relatesToProductVariant takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(hasPlanningTime, str):
+                    raise TypeError("hasPlanningTime takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -4702,6 +4782,22 @@ class IntelligentInformationforUse(aas.Submodel):
                 ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
+                # A str would be split into its characters
+                if isinstance(hasTopicType, str):
+                    raise TypeError("hasTopicType takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToQualification, str):
+                    raise TypeError(
+                        "relatesToQualification takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductVariant, str):
+                    raise TypeError(
+                        "relatesToProductVariant takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if title is not None and not isinstance(title, aas.SubmodelElement):
@@ -4723,6 +4819,10 @@ class IntelligentInformationforUse(aas.Submodel):
                         dateOfLastModification
                     )
 
+                # A str would be split into its characters
+                if isinstance(language, str):
+                    raise TypeError("language takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if language:
                     language = [
@@ -4737,6 +4837,10 @@ class IntelligentInformationforUse(aas.Submodel):
                 ):
                     revision = self.Revision(revision)
 
+                # A str would be split into its characters
+                if isinstance(rights, str):
+                    raise TypeError("rights takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if rights:
                     rights = [
@@ -4744,12 +4848,74 @@ class IntelligentInformationforUse(aas.Submodel):
                         for i in rights
                     ]
 
+                # A str would be split into its characters
+                if isinstance(hasRendition, str):
+                    raise TypeError("hasRendition takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(hasContentLifecycleStatus, str):
+                    raise TypeError(
+                        "hasContentLifecycleStatus takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if isReplacementOf is not None and not isinstance(
                     isReplacementOf, aas.SubmodelElement
                 ):
                     isReplacementOf = self.IsReplacementOf(isReplacementOf)
+
+                # A str would be split into its characters
+                if isinstance(relatesToEvent, str):
+                    raise TypeError("relatesToEvent takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToSupply, str):
+                    raise TypeError("relatesToSupply takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(hasIdentity, str):
+                    raise TypeError("hasIdentity takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToParty, str):
+                    raise TypeError("relatesToParty takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToComponent, str):
+                    raise TypeError(
+                        "relatesToComponent takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(hasSubject, str):
+                    raise TypeError("hasSubject takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToAction, str):
+                    raise TypeError("relatesToAction takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductFeature, str):
+                    raise TypeError(
+                        "relatesToProductFeature takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductLifecyclePhase, str):
+                    raise TypeError(
+                        "relatesToProductLifecyclePhase takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(isApplicableForDocumentType, str):
+                    raise TypeError(
+                        "isApplicableForDocumentType takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(hasPlanningTime, str):
+                    raise TypeError("hasPlanningTime takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6777,6 +6943,12 @@ class IntelligentInformationforUse(aas.Submodel):
                 ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
+                # A str would be split into its characters
+                if isinstance(relatesToProductVariant, str):
+                    raise TypeError(
+                        "relatesToProductVariant takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if title is not None and not isinstance(title, aas.SubmodelElement):
@@ -6798,6 +6970,10 @@ class IntelligentInformationforUse(aas.Submodel):
                         dateOfLastModification
                     )
 
+                # A str would be split into its characters
+                if isinstance(language, str):
+                    raise TypeError("language takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if language:
                     language = [
@@ -6812,6 +6988,10 @@ class IntelligentInformationforUse(aas.Submodel):
                 ):
                     revision = self.Revision(revision)
 
+                # A str would be split into its characters
+                if isinstance(rights, str):
+                    raise TypeError("rights takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if rights:
                     rights = [
@@ -6819,12 +6999,70 @@ class IntelligentInformationforUse(aas.Submodel):
                         for i in rights
                     ]
 
+                # A str would be split into its characters
+                if isinstance(hasRendition, str):
+                    raise TypeError("hasRendition takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(hasContentLifecycleStatus, str):
+                    raise TypeError(
+                        "hasContentLifecycleStatus takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if isReplacementOf is not None and not isinstance(
                     isReplacementOf, aas.SubmodelElement
                 ):
                     isReplacementOf = self.IsReplacementOf(isReplacementOf)
+
+                # A str would be split into its characters
+                if isinstance(relatesToEvent, str):
+                    raise TypeError("relatesToEvent takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToQualification, str):
+                    raise TypeError(
+                        "relatesToQualification takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(relatesToSupply, str):
+                    raise TypeError("relatesToSupply takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(hasIdentity, str):
+                    raise TypeError("hasIdentity takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToParty, str):
+                    raise TypeError("relatesToParty takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToComponent, str):
+                    raise TypeError(
+                        "relatesToComponent takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(hasSubject, str):
+                    raise TypeError("hasSubject takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToAction, str):
+                    raise TypeError("relatesToAction takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductFeature, str):
+                    raise TypeError(
+                        "relatesToProductFeature takes several elements, got a str"
+                    )
+
+                # A str would be split into its characters
+                if isinstance(relatesToProductLifecyclePhase, str):
+                    raise TypeError(
+                        "relatesToProductLifecyclePhase takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6925,6 +7163,18 @@ class IntelligentInformationforUse(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(document, str):
+                raise TypeError("document takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(topic, str):
+                raise TypeError("topic takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(fragment, str):
+                raise TypeError("fragment takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7149,6 +7399,10 @@ class IntelligentInformationforUse(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(informationObject, str):
+                raise TypeError("informationObject takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7792,6 +8046,10 @@ class IntelligentInformationforUse(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(directoryNode, str):
+                raise TypeError("directoryNode takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -8817,6 +9075,16 @@ class IntelligentInformationforUse(aas.Submodel):
                 if format is not None and not isinstance(format, aas.SubmodelElement):
                     format = self.Format(format)
 
+                # A str would be split into its characters
+                if isinstance(rangeSelector, str):
+                    raise TypeError("rangeSelector takes several elements, got a str")
+
+                # A str would be split into its characters
+                if isinstance(fragmentSelector, str):
+                    raise TypeError(
+                        "fragmentSelector takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -8896,6 +9164,10 @@ class IntelligentInformationforUse(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(rendition, str):
+                raise TypeError("rendition takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -9577,6 +9849,10 @@ class IntelligentInformationforUse(aas.Submodel):
                     dateOfStatus, aas.SubmodelElement
                 ):
                     dateOfStatus = self.DateOfStatus(dateOfStatus)
+
+                # A str would be split into its characters
+                if isinstance(statusComment, str):
+                    raise TypeError("statusComment takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if statusComment:
@@ -10530,6 +10806,10 @@ class IntelligentInformationforUse(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(relatesToParty, str):
+                    raise TypeError("relatesToParty takes several elements, got a str")
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [hasIdentityType, relatesToParty]:
@@ -10751,12 +11031,38 @@ class IntelligentInformationforUse(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(contentLifecycleStatus, str):
+                raise TypeError(
+                    "contentLifecycleStatus takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(identity, str):
+                raise TypeError("identity takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(party, str):
+                raise TypeError("party takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(identityDomain, str):
+                raise TypeError("identityDomain takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(identityType, str):
+                raise TypeError("identityType takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if identityType:
                 identityType = [
                     i if isinstance(i, aas.SubmodelElement) else self.IdentityType(i)
                     for i in identityType
                 ]
+
+            # A str would be split into its characters
+            if isinstance(vCard, str):
+                raise TypeError("vCard takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -13207,6 +13513,46 @@ class IntelligentInformationforUse(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(supply, str):
+                raise TypeError("supply takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(event, str):
+                raise TypeError("event takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(eventCode, str):
+                raise TypeError("eventCode takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(eventType, str):
+                raise TypeError("eventType takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(role, str):
+                raise TypeError("role takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(skillLevel, str):
+                raise TypeError("skillLevel takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(action, str):
+                raise TypeError("action takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(workingTime, str):
+                raise TypeError("workingTime takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(maintenanceInterval, str):
+                raise TypeError("maintenanceInterval takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(downTime, str):
+                raise TypeError("downTime takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [
@@ -13593,10 +13939,18 @@ class IntelligentInformationforUse(aas.Submodel):
                 ):
                     resourceIRI = self.ResourceIRI(resourceIRI)
 
+                # A str would be split into its characters
+                if isinstance(asset, str):
+                    raise TypeError("asset takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
+
+                # A str would be split into its characters
+                if isinstance(relatesToParty, str):
+                    raise TypeError("relatesToParty takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -14342,6 +14696,10 @@ class IntelligentInformationforUse(aas.Submodel):
                 if label is not None and not isinstance(label, aas.SubmodelElement):
                     label = self.Label(label)
 
+                # A str would be split into its characters
+                if isinstance(relatesToParty, str):
+                    raise TypeError("relatesToParty takes several elements, got a str")
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [resourceIRI, label, relatesToParty]:
@@ -14419,6 +14777,24 @@ class IntelligentInformationforUse(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(component, str):
+                raise TypeError("component takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(productFeature, str):
+                raise TypeError("productFeature takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(productLifeCyclePhase, str):
+                raise TypeError(
+                    "productLifeCyclePhase takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(productVariant, str):
+                raise TypeError("productVariant takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

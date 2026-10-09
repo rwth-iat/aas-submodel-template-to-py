@@ -154,6 +154,12 @@ class CarbonFootprint(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(pcfcalculationmethods_items, str):
+                        raise TypeError(
+                            "pcfcalculationmethods_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if pcfcalculationmethods_items:
                         pcfcalculationmethods_items = [
@@ -619,6 +625,12 @@ class CarbonFootprint(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(lifecyclephases_items, str):
+                        raise TypeError(
+                            "lifecyclephases_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if lifecyclephases_items:
                         lifecyclephases_items = [
@@ -1051,13 +1063,11 @@ class CarbonFootprint(aas.Submodel):
 
             def __init__(
                 self,
-                pcfCalculationMethods: Iterable[
-                    Union[
-                        Iterable[
-                            Union[str, PcfCalculationMethods.Pcfcalculationmethods_item]
-                        ],
-                        PcfCalculationMethods,
-                    ]
+                pcfCalculationMethods: Union[
+                    Iterable[
+                        Union[str, PcfCalculationMethods.Pcfcalculationmethods_item]
+                    ],
+                    PcfCalculationMethods,
                 ],
                 pcfCO2eq: Union[xsd.Decimal, PcfCO2eq],
                 referenceImpactUnitForCalculation: Union[
@@ -1066,11 +1076,9 @@ class CarbonFootprint(aas.Submodel):
                 quantityOfMeasureForCalculation: Union[
                     float, QuantityOfMeasureForCalculation
                 ],
-                lifeCyclePhases: Iterable[
-                    Union[
-                        Iterable[Union[str, LifeCyclePhases.Lifecyclephases_item]],
-                        LifeCyclePhases,
-                    ]
+                lifeCyclePhases: Union[
+                    Iterable[Union[str, LifeCyclePhases.Lifecyclephases_item]],
+                    LifeCyclePhases,
                 ],
                 publicationDate: Union[xsd.DateTime, PublicationDate],
                 explanatoryStatement: Optional[ExplanatoryStatement] = None,
@@ -1116,16 +1124,20 @@ class CarbonFootprint(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build submodel elements from raw values passed in the argument
-                if pcfCalculationMethods:
-                    pcfCalculationMethods = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.PcfCalculationMethods(i)
-                        )
-                        for i in pcfCalculationMethods
-                    ]
+                # A str would be split into its characters
+                if isinstance(pcfCalculationMethods, str):
+                    raise TypeError(
+                        "pcfCalculationMethods takes several elements, got a str"
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if pcfCalculationMethods is not None and not isinstance(
+                    pcfCalculationMethods, aas.SubmodelElement
+                ):
+                    pcfCalculationMethods = self.PcfCalculationMethods(
+                        pcfCalculationMethods
+                    )
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1156,16 +1168,16 @@ class CarbonFootprint(aas.Submodel):
                         )
                     )
 
-                # Build submodel elements from raw values passed in the argument
-                if lifeCyclePhases:
-                    lifeCyclePhases = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.LifeCyclePhases(i)
-                        )
-                        for i in lifeCyclePhases
-                    ]
+                # A str would be split into its characters
+                if isinstance(lifeCyclePhases, str):
+                    raise TypeError("lifeCyclePhases takes several elements, got a str")
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if lifeCyclePhases is not None and not isinstance(
+                    lifeCyclePhases, aas.SubmodelElement
+                ):
+                    lifeCyclePhases = self.LifeCyclePhases(lifeCyclePhases)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1284,6 +1296,12 @@ class CarbonFootprint(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(productcarbonfootprints_items, str):
+                raise TypeError(
+                    "productcarbonfootprints_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1532,6 +1550,12 @@ class CarbonFootprint(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(pcfcalculationmethods_items, str):
+                        raise TypeError(
+                            "pcfcalculationmethods_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if pcfcalculationmethods_items:
@@ -2404,6 +2428,12 @@ class CarbonFootprint(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(arbitraryContent, str):
+                        raise TypeError(
+                            "arbitraryContent takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryContent:
                         arbitraryContent = [
@@ -2446,13 +2476,11 @@ class CarbonFootprint(aas.Submodel):
 
             def __init__(
                 self,
-                pcfCalculationMethods: Iterable[
-                    Union[
-                        Iterable[
-                            Union[str, PcfCalculationMethods.Pcfcalculationmethods_item]
-                        ],
-                        PcfCalculationMethods,
-                    ]
+                pcfCalculationMethods: Union[
+                    Iterable[
+                        Union[str, PcfCalculationMethods.Pcfcalculationmethods_item]
+                    ],
+                    PcfCalculationMethods,
                 ],
                 productOrSectorSpecificRule: ProductOrSectorSpecificRule,
                 pcfInformation: PcfInformation,
@@ -2490,16 +2518,20 @@ class CarbonFootprint(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build submodel elements from raw values passed in the argument
-                if pcfCalculationMethods:
-                    pcfCalculationMethods = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.PcfCalculationMethods(i)
-                        )
-                        for i in pcfCalculationMethods
-                    ]
+                # A str would be split into its characters
+                if isinstance(pcfCalculationMethods, str):
+                    raise TypeError(
+                        "pcfCalculationMethods takes several elements, got a str"
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if pcfCalculationMethods is not None and not isinstance(
+                    pcfCalculationMethods, aas.SubmodelElement
+                ):
+                    pcfCalculationMethods = self.PcfCalculationMethods(
+                        pcfCalculationMethods
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2598,6 +2630,12 @@ class CarbonFootprint(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(productorsectorspecificcarbonfootprints_items, str):
+                raise TypeError(
+                    "productorsectorspecificcarbonfootprints_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2752,6 +2790,10 @@ class CarbonFootprint(aas.Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
+        # A str would be split into its characters
+        if isinstance(productCarbonFootprints, str):
+            raise TypeError("productCarbonFootprints takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if productCarbonFootprints is not None and not isinstance(
@@ -2759,6 +2801,12 @@ class CarbonFootprint(aas.Submodel):
         ):
             productCarbonFootprints = self.ProductCarbonFootprints(
                 productCarbonFootprints
+            )
+
+        # A str would be split into its characters
+        if isinstance(productOrSectorSpecificCarbonFootprints, str):
+            raise TypeError(
+                "productOrSectorSpecificCarbonFootprints takes several elements, got a str"
             )
 
         # Build a submodel element if a raw value was passed in the argument

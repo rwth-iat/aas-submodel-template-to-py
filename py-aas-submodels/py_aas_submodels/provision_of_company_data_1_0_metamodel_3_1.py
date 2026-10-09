@@ -725,6 +725,12 @@ class CompanyData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(mainproductgroups_items, str):
+                    raise TypeError(
+                        "mainproductgroups_items takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if mainproductgroups_items:
                     mainproductgroups_items = [
@@ -954,6 +960,12 @@ class CompanyData(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(industries_items, str):
+                    raise TypeError(
+                        "industries_items takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if industries_items:
@@ -1268,12 +1280,20 @@ class CompanyData(aas.Submodel):
             ):
                 orderCurrency = self.OrderCurrency(orderCurrency)
 
+            # A str would be split into its characters
+            if isinstance(mainProductGroups, str):
+                raise TypeError("mainProductGroups takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if mainProductGroups is not None and not isinstance(
                 mainProductGroups, aas.SubmodelElement
             ):
                 mainProductGroups = self.MainProductGroups(mainProductGroups)
+
+            # A str would be split into its characters
+            if isinstance(industries, str):
+                raise TypeError("industries takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1818,6 +1838,10 @@ class CompanyData(aas.Submodel):
                 mainAccount, aas.SubmodelElement
             ):
                 mainAccount = self.MainAccount(mainAccount)
+
+            # A str would be split into its characters
+            if isinstance(bankAccount, str):
+                raise TypeError("bankAccount takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2500,6 +2524,12 @@ class CompanyData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(cadtools_items, str):
+                        raise TypeError(
+                            "cadtools_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if cadtools_items:
                         cadtools_items = [
@@ -2662,6 +2692,10 @@ class CompanyData(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(cADTools, str):
+                    raise TypeError("cADTools takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3090,6 +3124,12 @@ class CompanyData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(cadformats_items, str):
+                        raise TypeError(
+                            "cadformats_items takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if cadformats_items:
                         cadformats_items = [
@@ -3286,6 +3326,10 @@ class CompanyData(aas.Submodel):
 
                 if webEDI is not None and not isinstance(webEDI, aas.SubmodelElement):
                     webEDI = self.WebEDI(webEDI)
+
+                # A str would be split into its characters
+                if isinstance(cADFormats, str):
+                    raise TypeError("cADFormats takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -4306,6 +4350,12 @@ class CompanyData(aas.Submodel):
                             totalNumberCustomers
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(referenceCustomer, str):
+                        raise TypeError(
+                            "referenceCustomer takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [totalNumberCustomers, referenceCustomer]:
@@ -4681,6 +4731,12 @@ class CompanyData(aas.Submodel):
                 lastReport, aas.SubmodelElement
             ):
                 lastReport = self.LastReport(lastReport)
+
+            # A str would be split into its characters
+            if isinstance(businessReportFigure, str):
+                raise TypeError(
+                    "businessReportFigure takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -5138,6 +5194,12 @@ class CompanyData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(memberships_items, str):
+                        raise TypeError(
+                            "memberships_items takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if memberships_items:
@@ -5834,6 +5896,12 @@ class CompanyData(aas.Submodel):
                         ):
                             expiryDate = self.ExpiryDate(expiryDate)
 
+                        # A str would be split into its characters
+                        if isinstance(certificationDocument, str):
+                            raise TypeError(
+                                "certificationDocument takes several elements, got a str"
+                            )
+
                         # Build submodel elements from raw values passed in the argument
                         if certificationDocument:
                             certificationDocument = [
@@ -5940,6 +6008,12 @@ class CompanyData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(certifications_items, str):
+                        raise TypeError(
+                            "certifications_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6096,12 +6170,20 @@ class CompanyData(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(memberships, str):
+                    raise TypeError("memberships takes several elements, got a str")
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if memberships is not None and not isinstance(
                     memberships, aas.SubmodelElement
                 ):
                     memberships = self.Memberships(memberships)
+
+                # A str would be split into its characters
+                if isinstance(certifications, str):
+                    raise TypeError("certifications takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6493,6 +6575,12 @@ class CompanyData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(employeetrainings_items, str):
+                        raise TypeError(
+                            "employeetrainings_items takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -8050,6 +8138,12 @@ class CompanyData(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(insurances_items, str):
+                        raise TypeError(
+                            "insurances_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [insurances_items]:
@@ -8219,12 +8313,22 @@ class CompanyData(aas.Submodel):
                         businessContinuityPlan
                     )
 
+                # A str would be split into its characters
+                if isinstance(employeeTrainings, str):
+                    raise TypeError(
+                        "employeeTrainings takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if employeeTrainings is not None and not isinstance(
                     employeeTrainings, aas.SubmodelElement
                 ):
                     employeeTrainings = self.EmployeeTrainings(employeeTrainings)
+
+                # A str would be split into its characters
+                if isinstance(insurances, str):
+                    raise TypeError("insurances takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8672,6 +8776,12 @@ class CompanyData(aas.Submodel):
                             complianceStatement
                         )
 
+                    # A str would be split into its characters
+                    if isinstance(documentationURI, str):
+                        raise TypeError(
+                            "documentationURI takes several elements, got a str"
+                        )
+
                     # Build submodel elements from raw values passed in the argument
                     if documentationURI:
                         documentationURI = [
@@ -8682,6 +8792,12 @@ class CompanyData(aas.Submodel):
                             )
                             for i in documentationURI
                         ]
+
+                    # A str would be split into its characters
+                    if isinstance(documentationReference, str):
+                        raise TypeError(
+                            "documentationReference takes several elements, got a str"
+                        )
 
                     # Build submodel elements from raw values passed in the argument
                     if documentationReference:
@@ -8787,6 +8903,12 @@ class CompanyData(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(legalcompliance_items, str):
+                    raise TypeError(
+                        "legalcompliance_items takes several elements, got a str"
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -8940,6 +9062,10 @@ class CompanyData(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(legalCompliance, str):
+                raise TypeError("legalCompliance takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 

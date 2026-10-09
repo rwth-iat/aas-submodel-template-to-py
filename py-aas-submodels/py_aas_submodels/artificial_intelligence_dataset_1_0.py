@@ -598,6 +598,12 @@ class AIDataset(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(exampleLabel, str):
+                        raise TypeError(
+                            "exampleLabel takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [exampleLabel]:
@@ -891,6 +897,12 @@ class AIDataset(aas.Submodel):
                                 numberLabels, aas.SubmodelElement
                             ):
                                 numberLabels = self.NumberLabels(numberLabels)
+
+                            # A str would be split into its characters
+                            if isinstance(label, str):
+                                raise TypeError(
+                                    "label takes several elements, got a str"
+                                )
 
                             # Build submodel elements from raw values passed in the argument
                             if label:
@@ -1365,6 +1377,12 @@ class AIDataset(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(exampleSingleFile, str):
+                        raise TypeError(
+                            "exampleSingleFile takes several elements, got a str"
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1930,6 +1948,12 @@ class AIDataset(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # A str would be split into its characters
+                            if isinstance(exampleDetails, str):
+                                raise TypeError(
+                                    "exampleDetails takes several elements, got a str"
+                                )
+
                             # Build submodel elements from raw values passed in the argument
                             if exampleDetails:
                                 exampleDetails = [
@@ -2092,6 +2116,12 @@ class AIDataset(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(exampleAnnotation, str):
+                        raise TypeError(
+                            "exampleAnnotation takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [exampleAnnotation]:
@@ -2247,6 +2277,14 @@ class AIDataset(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(classification, str):
+                raise TypeError("classification takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(regression, str):
+                raise TypeError("regression takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2886,6 +2924,10 @@ class AIDataset(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(exampleInfo, str):
+                    raise TypeError("exampleInfo takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if exampleInfo:
                     exampleInfo = [
@@ -2966,6 +3008,10 @@ class AIDataset(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(fileType, str):
+                raise TypeError("fileType takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if fileType:
@@ -3254,6 +3300,10 @@ class AIDataset(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(collector, str):
+                    raise TypeError("collector takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if collector:

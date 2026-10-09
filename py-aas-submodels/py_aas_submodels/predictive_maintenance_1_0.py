@@ -1416,6 +1416,12 @@ class PredictiveMaintenance(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(listrulboundaryconditions_items, str):
+                    raise TypeError(
+                        "listrulboundaryconditions_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [listrulboundaryconditions_items]:
@@ -2155,6 +2161,12 @@ class PredictiveMaintenance(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(listprealerts_items, str):
+                    raise TypeError(
+                        "listprealerts_items takes several elements, got a str"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [listprealerts_items]:
@@ -2592,6 +2604,12 @@ class PredictiveMaintenance(aas.Submodel):
                     min=confidenceInterval[0], max=confidenceInterval[1]
                 )
 
+            # A str would be split into its characters
+            if isinstance(listRULBoundaryConditions, str):
+                raise TypeError(
+                    "listRULBoundaryConditions takes several elements, got a str"
+                )
+
             # Build a submodel element if a raw value was passed in the argument
 
             if listRULBoundaryConditions is not None and not isinstance(
@@ -2600,6 +2618,10 @@ class PredictiveMaintenance(aas.Submodel):
                 listRULBoundaryConditions = self.ListRULBoundaryConditions(
                     listRULBoundaryConditions
                 )
+
+            # A str would be split into its characters
+            if isinstance(listPreAlerts, str):
+                raise TypeError("listPreAlerts takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 

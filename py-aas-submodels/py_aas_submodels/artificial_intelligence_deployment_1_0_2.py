@@ -577,6 +577,10 @@ class AIDeployment(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(exampleInput, str):
+                raise TypeError("exampleInput takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if exampleInput:
                 exampleInput = [
@@ -723,6 +727,10 @@ class AIDeployment(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(exampleOutput, str):
+                raise TypeError("exampleOutput takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if exampleOutput:
@@ -1573,6 +1581,10 @@ class AIDeployment(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(inferenceTime, str):
+                raise TypeError("inferenceTime takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

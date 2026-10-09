@@ -433,6 +433,10 @@ class TimeSeries(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(time, str):
+                    raise TypeError("time takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if time:
                     time = [
@@ -3224,6 +3228,10 @@ class TimeSeries(aas.Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
+                        # A str would be split into its characters
+                        if isinstance(time, str):
+                            raise TypeError("time takes several elements, got a str")
+
                         # Build submodel elements from raw values passed in the argument
                         if time:
                             time = [
@@ -3335,6 +3343,10 @@ class TimeSeries(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(record, str):
+                        raise TypeError("record takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3561,6 +3573,18 @@ class TimeSeries(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(externalSegment, str):
+                raise TypeError("externalSegment takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(linkedSegment, str):
+                raise TypeError("linkedSegment takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(internalSegment, str):
+                raise TypeError("internalSegment takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

@@ -38,6 +38,11 @@
 {% for arg_for_se in args_for_submodel_elements %}
     {% set builder = builders.get(arg_for_se) %}
 
+    {% if arg_for_se in args_taking_several | default([]) %}
+# A str would be split into its characters
+if isinstance({{ arg_for_se }}, str):
+    raise TypeError("{{ arg_for_se }} takes several elements, got a str")
+    {% endif %}
     {% if builder and builder.iterable %}
 # Build submodel elements from raw values passed in the argument
 if {{ arg_for_se }}:

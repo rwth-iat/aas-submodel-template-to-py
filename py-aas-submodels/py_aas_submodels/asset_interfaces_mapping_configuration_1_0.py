@@ -195,6 +195,12 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # A str would be split into its characters
+                    if isinstance(mappingsourcesinkrelations_items, str):
+                        raise TypeError(
+                            "mappingsourcesinkrelations_items takes several elements, got a str"
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [mappingsourcesinkrelations_items]:
@@ -348,6 +354,12 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                 ):
                     interfaceReference = self.InterfaceReference(interfaceReference)
 
+                # A str would be split into its characters
+                if isinstance(mappingSourceSinkRelations, str):
+                    raise TypeError(
+                        "mappingSourceSinkRelations takes several elements, got a str"
+                    )
+
                 # Build a submodel element if a raw value was passed in the argument
 
                 if mappingSourceSinkRelations is not None and not isinstance(
@@ -439,6 +451,12 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(mappingconfigurations_items, str):
+                raise TypeError(
+                    "mappingconfigurations_items takes several elements, got a str"
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -571,6 +589,10 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(mappingConfigurations, str):
+            raise TypeError("mappingConfigurations takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 

@@ -143,7 +143,7 @@ class SubmodelCodegen:
         if add_raw_val_type and raw_value_typehint is not None:
             typehint = f"Union[{raw_value_typehint}, {typehint}]"
 
-        if ReferableHandler.is_iterable(se):
+        if ReferableHandler.takes_several(se):
             typehint = f"Iterable[{typehint}]"
         if ReferableHandler.is_optional(se):
             typehint = f"Optional[{typehint}]"
@@ -153,7 +153,11 @@ class SubmodelCodegen:
         """Add typehint and raw value builder of the init argument `arg` taking `se`"""
         render_kwargs["typehints"][arg] = self.get_se_typehint(se)
 
-        iterable = bool(ReferableHandler.is_iterable(se))
+        iterable = ReferableHandler.takes_several(se)
+        if iterable or isinstance(se, SubmodelElementList):
+            # Lists can be built from several items, so a str is rejected here already,
+            # naming the argument it was passed to
+            render_kwargs.setdefault("args_taking_several", []).append(arg)
         builder = self.get_raw_value_builder(se, raw_value="i" if iterable else arg)
         if builder is not None:
             render_kwargs.setdefault("raw_value_builders", {})[arg] = {
@@ -265,7 +269,8 @@ class SubmodelCodegen:
         if list_item is not None:
             render_kwargs["before_init_content"] = self.gen_cls_for_se(list_item)
         # Don't append an index to idShorts of items: they are None by default, explicit ones are kept
-        render_kwargs.update(args_for_submodel_elements=[list_items_arg], index_id_shorts=False)
+        render_kwargs.update(args_for_submodel_elements=[list_items_arg], args_taking_several=[list_items_arg],
+                             index_id_shorts=False)
         return self.render_cls_with_template(template, **render_kwargs)
 
     def gen_cls_for_se_collection(self,

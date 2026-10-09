@@ -941,6 +941,12 @@ class SafetyInstrumentedSystem(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(survivabilityRequirement, str):
+                raise TypeError(
+                    "survivabilityRequirement takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if survivabilityRequirement:
                 survivabilityRequirement = [
@@ -952,6 +958,12 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     for i in survivabilityRequirement
                 ]
 
+            # A str would be split into its characters
+            if isinstance(requirementForStartingUpAndRestartingSIS, str):
+                raise TypeError(
+                    "requirementForStartingUpAndRestartingSIS takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if requirementForStartingUpAndRestartingSIS:
                 requirementForStartingUpAndRestartingSIS = [
@@ -962,6 +974,20 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     )
                     for i in requirementForStartingUpAndRestartingSIS
                 ]
+
+            # A str would be split into its characters
+            if isinstance(interfacingSystemSpecification, str):
+                raise TypeError(
+                    "interfacingSystemSpecification takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(performanceStandard, str):
+                raise TypeError("performanceStandard takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(document, str):
+                raise TypeError("document takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

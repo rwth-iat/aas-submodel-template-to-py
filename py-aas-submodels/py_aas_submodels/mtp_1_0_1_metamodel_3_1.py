@@ -9937,6 +9937,10 @@ class ModuleTypePackage(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # A str would be split into its characters
+            if isinstance(m0013_Datasheet, str):
+                raise TypeError("m0013_Datasheet takes several elements, got a str")
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [m0013_Datasheet]:
@@ -10085,6 +10089,14 @@ class ModuleTypePackage(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(documentationReferences, str):
+            raise TypeError("documentationReferences takes several elements, got a str")
+
+        # A str would be split into its characters
+        if isinstance(bOMReferences, str):
+            raise TypeError("bOMReferences takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
@@ -10407,6 +10419,10 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(discoveryUrl, str):
+                    raise TypeError("discoveryUrl takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if discoveryUrl:
                     discoveryUrl = [
@@ -10417,6 +10433,10 @@ class ProcessEquipmentAssembly(aas.Submodel):
                         )
                         for i in discoveryUrl
                     ]
+
+                # A str would be split into its characters
+                if isinstance(applicationUri, str):
+                    raise TypeError("applicationUri takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if applicationUri:
@@ -10505,6 +10525,10 @@ class ProcessEquipmentAssembly(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(freelanceOPCUA, str):
+                raise TypeError("freelanceOPCUA takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -10806,6 +10830,10 @@ class ProcessEquipmentAssembly(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(m0013_FAT_Protocol, str):
+                raise TypeError("m0013_FAT_Protocol takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

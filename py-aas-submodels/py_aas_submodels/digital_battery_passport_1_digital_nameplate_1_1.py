@@ -1562,6 +1562,12 @@ class BatteryNameplate(aas.Submodel):
                 ):
                     expiryDate = self.ExpiryDate(expiryDate)
 
+                # A str would be split into its characters
+                if isinstance(markingAdditionalText, str):
+                    raise TypeError(
+                        "markingAdditionalText takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if markingAdditionalText:
                     markingAdditionalText = [
@@ -1687,6 +1693,10 @@ class BatteryNameplate(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(markings_items, str):
+                raise TypeError("markings_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1935,6 +1945,12 @@ class BatteryNameplate(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(eudeclarationofconformity_items, str):
+                raise TypeError(
+                    "eudeclarationofconformity_items takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if eudeclarationofconformity_items:
@@ -2194,6 +2210,12 @@ class BatteryNameplate(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(resultsoftestreportsprovingcompliance_items, str):
+                raise TypeError(
+                    "resultsoftestreportsprovingcompliance_items takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if resultsoftestreportsprovingcompliance_items:
@@ -2470,10 +2492,20 @@ class BatteryNameplate(aas.Submodel):
         ):
             manufacturerIdentifier = self.ManufacturerIdentifier(manufacturerIdentifier)
 
+        # A str would be split into its characters
+        if isinstance(markings, str):
+            raise TypeError("markings takes several elements, got a str")
+
         # Build a submodel element if a raw value was passed in the argument
 
         if markings is not None and not isinstance(markings, aas.SubmodelElement):
             markings = self.Markings(markings)
+
+        # A str would be split into its characters
+        if isinstance(eUDeclarationOfConformity, str):
+            raise TypeError(
+                "eUDeclarationOfConformity takes several elements, got a str"
+            )
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -2482,6 +2514,12 @@ class BatteryNameplate(aas.Submodel):
         ):
             eUDeclarationOfConformity = self.EUDeclarationOfConformity(
                 eUDeclarationOfConformity
+            )
+
+        # A str would be split into its characters
+        if isinstance(resultsOfTestReportsProvingCompliance, str):
+            raise TypeError(
+                "resultsOfTestReportsProvingCompliance takes several elements, got a str"
             )
 
         # Build a submodel element if a raw value was passed in the argument

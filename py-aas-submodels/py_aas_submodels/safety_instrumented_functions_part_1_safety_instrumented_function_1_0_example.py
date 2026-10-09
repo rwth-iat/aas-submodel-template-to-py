@@ -1699,6 +1699,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
             ):
                 modeOfOperation = self.ModeOfOperation(modeOfOperation)
 
+            # A str would be split into its characters
+            if isinstance(document, str):
+                raise TypeError("document takes several elements, got a str")
+
             # Build a submodel element if a raw value was passed in the argument
 
             if cause is not None and not isinstance(cause, aas.SubmodelElement):
@@ -1715,6 +1719,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 sILAllocationMethod, aas.SubmodelElement
             ):
                 sILAllocationMethod = self.SILAllocationMethod(sILAllocationMethod)
+
+            # A str would be split into its characters
+            if isinstance(quantificationMethodOrTool, str):
+                raise TypeError(
+                    "quantificationMethodOrTool takes several elements, got a str"
+                )
 
             # Build submodel elements from raw values passed in the argument
             if quantificationMethodOrTool:
@@ -1747,6 +1757,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     referenceToHazardousEvent
                 )
 
+            # A str would be split into its characters
+            if isinstance(referenceToSISType, str):
+                raise TypeError("referenceToSISType takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if referenceToSISType:
                 referenceToSISType = [
@@ -1758,6 +1772,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     for i in referenceToSISType
                 ]
 
+            # A str would be split into its characters
+            if isinstance(referenceToIndependentSIF, str):
+                raise TypeError(
+                    "referenceToIndependentSIF takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if referenceToIndependentSIF:
                 referenceToIndependentSIF = [
@@ -1768,6 +1788,16 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
                     for i in referenceToIndependentSIF
                 ]
+
+            # A str would be split into its characters
+            if isinstance(regulatoryReferenceForSIF, str):
+                raise TypeError(
+                    "regulatoryReferenceForSIF takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(referenceToBarrier, str):
+                raise TypeError("referenceToBarrier takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if referenceToBarrier:
@@ -3685,6 +3715,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     assetIntegrityLevelRequirement
                 )
 
+            # A str would be split into its characters
+            if isinstance(plantOperatingMode, str):
+                raise TypeError("plantOperatingMode takes several elements, got a str")
+
             # Build submodel elements from raw values passed in the argument
             if plantOperatingMode:
                 plantOperatingMode = [
@@ -3757,6 +3791,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
                 )
 
+            # A str would be split into its characters
+            if isinstance(measureToAvoidCommonCauseFailure, str):
+                raise TypeError(
+                    "measureToAvoidCommonCauseFailure takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if measureToAvoidCommonCauseFailure:
                 measureToAvoidCommonCauseFailure = [
@@ -3767,6 +3807,30 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
                     for i in measureToAvoidCommonCauseFailure
                 ]
+
+            # A str would be split into its characters
+            if isinstance(bypassProcedure, str):
+                raise TypeError("bypassProcedure takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(tehnicalPhilosophyDocument, str):
+                raise TypeError(
+                    "tehnicalPhilosophyDocument takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(basisOfDesignDocument, str):
+                raise TypeError(
+                    "basisOfDesignDocument takes several elements, got a str"
+                )
+
+            # A str would be split into its characters
+            if isinstance(plantAssumptions, str):
+                raise TypeError("plantAssumptions takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(plantRequirements, str):
+                raise TypeError("plantRequirements takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4778,6 +4842,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
                 )
 
+            # A str would be split into its characters
+            if isinstance(measureToAvoidHazardFromCombinedSafeProcessStates, str):
+                raise TypeError(
+                    "measureToAvoidHazardFromCombinedSafeProcessStates takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if measureToAvoidHazardFromCombinedSafeProcessStates:
                 measureToAvoidHazardFromCombinedSafeProcessStates = [
@@ -4789,6 +4859,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     for i in measureToAvoidHazardFromCombinedSafeProcessStates
                 ]
 
+            # A str would be split into its characters
+            if isinstance(independentProtectionLayer, str):
+                raise TypeError(
+                    "independentProtectionLayer takes several elements, got a str"
+                )
+
             # Build submodel elements from raw values passed in the argument
             if independentProtectionLayer:
                 independentProtectionLayer = [
@@ -4799,6 +4875,14 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
                     for i in independentProtectionLayer
                 ]
+
+            # A str would be split into its characters
+            if isinstance(hAZOP, str):
+                raise TypeError("hAZOP takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(lOPA, str):
+                raise TypeError("lOPA takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -5228,6 +5312,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(referenceToTag, str):
+                    raise TypeError("referenceToTag takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if referenceToTag:
@@ -5659,6 +5747,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(referenceToTag, str):
+                    raise TypeError("referenceToTag takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if referenceToTag:
                     referenceToTag = [
@@ -6089,6 +6181,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(referenceToTag, str):
+                    raise TypeError("referenceToTag takes several elements, got a str")
+
                 # Build submodel elements from raw values passed in the argument
                 if referenceToTag:
                     referenceToTag = [
@@ -6409,6 +6505,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # A str would be split into its characters
+                if isinstance(referenceToGroup, str):
+                    raise TypeError(
+                        "referenceToGroup takes several elements, got a str"
+                    )
 
                 # Build submodel elements from raw values passed in the argument
                 if referenceToGroup:
@@ -6766,6 +6868,22 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(inputDeviceGroup, str):
+                raise TypeError("inputDeviceGroup takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(logicSolverGroup, str):
+                raise TypeError("logicSolverGroup takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(finalElementGroup, str):
+                raise TypeError("finalElementGroup takes several elements, got a str")
+
+            # A str would be split into its characters
+            if isinstance(votingBetweenGroups, str):
+                raise TypeError("votingBetweenGroups takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7484,6 +7602,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 ):
                     demandDescription = self.DemandDescription(demandDescription)
 
+                # A str would be split into its characters
+                if isinstance(referenceToDeviceDemandEvent, str):
+                    raise TypeError(
+                        "referenceToDeviceDemandEvent takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if referenceToDeviceDemandEvent:
                     referenceToDeviceDemandEvent = [
@@ -7631,6 +7755,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 numberOfSpuriousTrips = self.NumberOfSpuriousTrips(
                     numberOfSpuriousTrips
                 )
+
+            # A str would be split into its characters
+            if isinstance(sIFDemandEvent, str):
+                raise TypeError("sIFDemandEvent takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -8464,6 +8592,12 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 ):
                     commentToTestResult = self.CommentToTestResult(commentToTestResult)
 
+                # A str would be split into its characters
+                if isinstance(referenceToFailureEvent, str):
+                    raise TypeError(
+                        "referenceToFailureEvent takes several elements, got a str"
+                    )
+
                 # Build submodel elements from raw values passed in the argument
                 if referenceToFailureEvent:
                     referenceToFailureEvent = [
@@ -8583,6 +8717,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 numberOfFailedTests, aas.SubmodelElement
             ):
                 numberOfFailedTests = self.NumberOfFailedTests(numberOfFailedTests)
+
+            # A str would be split into its characters
+            if isinstance(loopTestEvent, str):
+                raise TypeError("loopTestEvent takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -9018,6 +9156,10 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # A str would be split into its characters
+        if isinstance(hazardousEvent, str):
+            raise TypeError("hazardousEvent takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
