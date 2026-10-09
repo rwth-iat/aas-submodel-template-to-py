@@ -453,7 +453,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"1", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -543,7 +543,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"1", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -633,7 +633,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"1", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -723,7 +723,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"1", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -811,7 +811,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"1", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -901,7 +901,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"1", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -1155,7 +1155,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -1275,7 +1275,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -1365,7 +1365,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -1724,7 +1724,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -1899,7 +1899,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -2136,7 +2136,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -2248,7 +2248,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"3", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -2355,7 +2355,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"3", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -2466,7 +2466,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"3", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -2833,7 +2833,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -3010,7 +3010,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"4", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -3100,7 +3100,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"4", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -3795,7 +3795,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"1", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -4297,7 +4297,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -4799,7 +4799,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -5301,7 +5301,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"2", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -5803,7 +5803,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"3", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -6305,7 +6305,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"4", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -6981,7 +6981,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"4", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(
@@ -7396,7 +7396,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(Submodel):
                         Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=PositiveInteger,
-                            value=PositiveInteger(),
+                            value=from_xsd(r"4", PositiveInteger),
                             value_id=None,
                             kind=QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=ExternalReference(

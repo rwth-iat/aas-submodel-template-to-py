@@ -905,9 +905,9 @@ class CarbonFootprint(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"PublicationDate",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -977,9 +977,9 @@ class CarbonFootprint(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"ExpirationDate",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -1055,10 +1055,10 @@ class CarbonFootprint(Submodel):
                     float, QuantityOfMeasureForCalculation
                 ],
                 lifeCyclePhases: Iterable[Union[Iterable[str], LifeCyclePhases]],
-                publicationDate: Union[datetime, PublicationDate],
+                publicationDate: Union[DateTime, PublicationDate],
                 explanatoryStatement: Optional[ExplanatoryStatement] = None,
                 goodsHandoverAddress: Optional[GoodsHandoverAddress] = None,
-                expirationDate: Optional[Union[datetime, ExpirationDate]] = None,
+                expirationDate: Optional[Union[DateTime, ExpirationDate]] = None,
                 id_short: Optional[str] = r"productcarbonfootprints_item",
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={

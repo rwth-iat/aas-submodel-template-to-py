@@ -33,9 +33,9 @@ class ProductChangeNotifications(Submodel):
                     ]
                 ]
             ] = None,
-            last_update: Optional[datetime] = None,
-            min_interval: Optional[relativedelta] = None,
-            max_interval: Optional[relativedelta] = None,
+            last_update: Optional[DateTime] = None,
+            min_interval: Optional[Duration] = None,
+            max_interval: Optional[Duration] = None,
             display_name: Optional[MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -700,9 +700,9 @@ class ProductChangeNotifications(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"DateOfValidity",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -772,7 +772,7 @@ class ProductChangeNotifications(Submodel):
                     def __init__(
                         self,
                         milestoneClassification: Union[str, MilestoneClassification],
-                        dateOfValidity: Union[datetime, DateOfValidity],
+                        dateOfValidity: Union[DateTime, DateOfValidity],
                         id_short: Optional[str] = r"lifecycledata_item",
                         display_name: Optional[MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -2817,9 +2817,9 @@ class ProductChangeNotifications(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"DateOfRecord",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -6889,7 +6889,7 @@ class ProductChangeNotifications(Submodel):
                 reasonsOfChange: ReasonsOfChange,
                 itemCategories: ItemCategories,
                 pcnChangeInformation: PcnChangeInformation,
-                dateOfRecord: Union[datetime, DateOfRecord],
+                dateOfRecord: Union[DateTime, DateOfRecord],
                 itemOfChange: ItemOfChange,
                 manufacturerChangeID: Optional[Union[str, ManufacturerChangeID]] = None,
                 lifeCycleData: Optional[LifeCycleData] = None,

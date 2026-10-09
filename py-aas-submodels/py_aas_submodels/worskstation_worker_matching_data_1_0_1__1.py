@@ -2912,9 +2912,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"AccessStart",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -2983,9 +2983,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"AccessEnd",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -3527,8 +3527,8 @@ class WorkstationWorkerMatchingData(Submodel):
             def __init__(
                 self,
                 workerId: Union[str, WorkerId],
-                accessStart: Optional[Union[datetime, AccessStart]] = None,
-                accessEnd: Optional[Union[datetime, AccessEnd]] = None,
+                accessStart: Optional[Union[DateTime, AccessStart]] = None,
+                accessEnd: Optional[Union[DateTime, AccessEnd]] = None,
                 preferredHeight: Optional[Union[int, PreferredHeight]] = None,
                 proprietaryConfigurations: Optional[ProprietaryConfigurations] = None,
                 id_short: Optional[str] = r"workstationconfigurationrecords_item",
@@ -3853,9 +3853,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"IntervalStart",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -3925,9 +3925,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"IntervalEnd",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -4308,9 +4308,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"StartTime",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -4380,9 +4380,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"EndTime",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -4526,8 +4526,8 @@ class WorkstationWorkerMatchingData(Submodel):
                             str, QualificationClassificationId
                         ],
                         qualificationId: Union[str, QualificationId],
-                        startTime: Union[datetime, StartTime],
-                        endTime: Union[datetime, EndTime],
+                        startTime: Union[DateTime, StartTime],
+                        endTime: Union[DateTime, EndTime],
                         processTime: Union[int, ProcessTime],
                         exceptionRules: Optional[
                             Union[LangStringSet, ExceptionRules]
@@ -4807,8 +4807,8 @@ class WorkstationWorkerMatchingData(Submodel):
                 intervalDescription: Optional[
                     Union[LangStringSet, IntervalDescription]
                 ] = None,
-                intervalStart: Optional[Union[datetime, IntervalStart]] = None,
-                intervalEnd: Optional[Union[datetime, IntervalEnd]] = None,
+                intervalStart: Optional[Union[DateTime, IntervalStart]] = None,
+                intervalEnd: Optional[Union[DateTime, IntervalEnd]] = None,
                 qualificationDemandRecords: Optional[QualificationDemandRecords] = None,
                 id_short: Optional[str] = r"plannedqualificationdemand_item",
                 display_name: Optional[MultiLanguageNameType] = None,
@@ -5149,9 +5149,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"IntervalStart",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -5221,9 +5221,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"IntervalEnd",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -5749,9 +5749,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"StartTime",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -5821,9 +5821,9 @@ class WorkstationWorkerMatchingData(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"EndTime",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -5965,8 +5965,8 @@ class WorkstationWorkerMatchingData(Submodel):
                         self,
                         skillClassificationId: Union[str, SkillClassificationId],
                         skillId: Union[str, SkillId],
-                        startTime: Union[datetime, StartTime],
-                        endTime: Union[datetime, EndTime],
+                        startTime: Union[DateTime, StartTime],
+                        endTime: Union[DateTime, EndTime],
                         processTime: Union[int, ProcessTime],
                         skillLevelClassificationId: Optional[
                             Union[str, SkillLevelClassificationId]
@@ -6247,8 +6247,8 @@ class WorkstationWorkerMatchingData(Submodel):
                 intervalDescription: Optional[
                     Union[LangStringSet, IntervalDescription]
                 ] = None,
-                intervalStart: Optional[Union[datetime, IntervalStart]] = None,
-                intervalEnd: Optional[Union[datetime, IntervalEnd]] = None,
+                intervalStart: Optional[Union[DateTime, IntervalStart]] = None,
+                intervalEnd: Optional[Union[DateTime, IntervalEnd]] = None,
                 id_short: Optional[str] = r"plannedskilldemand_item",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,

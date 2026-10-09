@@ -15333,9 +15333,9 @@ class SISDevice(Submodel):
 
                 def __init__(
                     self,
-                    value: time,
+                    value: Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = time,
+                    value_type: DataTypeDefXsd = Time,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -15561,7 +15561,7 @@ class SISDevice(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
                 bypassDuration: Union[int, BypassDuration],
                 bypassDescription: Optional[Union[str, BypassDescription]] = None,
                 id_short: Optional[str] = r"BypassEvent",
@@ -16004,9 +16004,9 @@ class SISDevice(Submodel):
 
                 def __init__(
                     self,
-                    value: time,
+                    value: Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = time,
+                    value_type: DataTypeDefXsd = Time,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -16396,7 +16396,7 @@ class SISDevice(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
                 alarmSource: Union[str, AlarmSource],
                 alarmDescription: Optional[Union[str, AlarmDescription]] = None,
                 alarmState: Optional[Union[str, AlarmState]] = None,
@@ -17493,9 +17493,9 @@ class SISDevice(Submodel):
 
                 def __init__(
                     self,
-                    value: time,
+                    value: Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = time,
+                    value_type: DataTypeDefXsd = Time,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -17951,7 +17951,7 @@ class SISDevice(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
                 isSIFDemand: Union[bool, IsSIFDemand],
                 demandDescription: Optional[Union[str, DemandDescription]] = None,
                 demandClass: Optional[Union[str, DemandClass]] = None,
@@ -18398,9 +18398,9 @@ class SISDevice(Submodel):
 
                 def __init__(
                     self,
-                    value: time,
+                    value: Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = time,
+                    value_type: DataTypeDefXsd = Time,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -19705,7 +19705,7 @@ class SISDevice(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
                 detectionMode: Union[str, DetectionMode],
                 failureClass: Union[str, FailureClass],
                 isSpuriousTrip: Union[bool, IsSpuriousTrip],
@@ -21724,9 +21724,9 @@ class SISDevice(Submodel):
 
                 def __init__(
                     self,
-                    value: time,
+                    value: Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = time,
+                    value_type: DataTypeDefXsd = Time,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -22255,7 +22255,7 @@ class SISDevice(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
                 testResultFailedOrPassed: Union[str, TestResultFailedOrPassed],
                 testLocation: Optional[Union[str, TestLocation]] = None,
                 testResultNumeric: Optional[Union[Float, TestResultNumeric]] = None,

@@ -99,12 +99,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -181,7 +181,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -379,12 +379,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -461,7 +461,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -659,12 +659,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -741,7 +741,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -939,12 +939,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -1021,7 +1021,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -1219,12 +1219,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -1301,7 +1301,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -1499,12 +1499,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -1581,7 +1581,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -1783,12 +1783,12 @@ class ProductCondition(Submodel):
                 def __init__(
                         self,
                         
-                                    value: datetime,
+                                    value: DateTime,
                                     
                                     
                                     id_short: Optional[str]=r'LastUpdate',
                                     
-                                    value_type: DataTypeDefXsd=datetime,
+                                    value_type: DataTypeDefXsd=DateTime,
                                     
                                     value_id: Optional[Reference]=None,
                                     
@@ -1865,7 +1865,7 @@ class ProductCondition(Submodel):
                         
 
                         
-                    lastUpdate: Union[datetime, LastUpdate],
+                    lastUpdate: Union[DateTime, LastUpdate],
                         
 
 
@@ -2783,12 +2783,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -2871,7 +2871,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -3048,12 +3048,12 @@ class ProductCondition(Submodel):
                 def __init__(
                         self,
                         
-                                    value: datetime,
+                                    value: DateTime,
                                     
                                     
                                     id_short: Optional[str]=r'RPCLastUpdated',
                                     
-                                    value_type: DataTypeDefXsd=datetime,
+                                    value_type: DataTypeDefXsd=DateTime,
                                     
                                     value_id: Optional[Reference]=None,
                                     
@@ -3284,7 +3284,7 @@ class ProductCondition(Submodel):
                                 
 
                         
-                    rPCLastUpdated: Union[datetime, RPCLastUpdated],
+                    rPCLastUpdated: Union[DateTime, RPCLastUpdated],
                         
 
                         
@@ -3418,12 +3418,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -3500,7 +3500,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -3693,12 +3693,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -3775,7 +3775,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -3973,12 +3973,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -4055,7 +4055,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -4253,12 +4253,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -4335,7 +4335,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 
@@ -4533,12 +4533,12 @@ class ProductCondition(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'LastUpdate',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -4615,7 +4615,7 @@ class ProductCondition(Submodel):
                     
 
                     
-                lastUpdate: Union[datetime, LastUpdate],
+                lastUpdate: Union[DateTime, LastUpdate],
                     
 
 

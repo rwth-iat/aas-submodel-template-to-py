@@ -1110,12 +1110,12 @@ class PurchaseOrder(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'DocumentUpdateDateTime',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -5196,12 +5196,12 @@ class PurchaseOrder(Submodel):
                     def __init__(
                             self,
                             
-                                        value: time,
+                                        value: Time,
                                         
                                         
                                         id_short: Optional[str]=r'OpeningHoursStart',
                                         
-                                        value_type: DataTypeDefXsd=time,
+                                        value_type: DataTypeDefXsd=Time,
                                         
                                         value_id: Optional[Reference]=None,
                                         
@@ -5275,12 +5275,12 @@ class PurchaseOrder(Submodel):
                     def __init__(
                             self,
                             
-                                        value: time,
+                                        value: Time,
                                         
                                         
                                         id_short: Optional[str]=r'OpeningHoursEnd',
                                         
-                                        value_type: DataTypeDefXsd=time,
+                                        value_type: DataTypeDefXsd=Time,
                                         
                                         value_id: Optional[Reference]=None,
                                         
@@ -5538,11 +5538,11 @@ class PurchaseOrder(Submodel):
                             
 
                             
-                        openingHoursStart: Optional[Union[time, OpeningHoursStart]] = None,
+                        openingHoursStart: Optional[Union[Time, OpeningHoursStart]] = None,
                             
 
                             
-                        openingHoursEnd: Optional[Union[time, OpeningHoursEnd]] = None,
+                        openingHoursEnd: Optional[Union[Time, OpeningHoursEnd]] = None,
                             
 
                             
@@ -5895,7 +5895,7 @@ class PurchaseOrder(Submodel):
                     
 
                     
-                documentUpdateDateTime: Union[datetime, DocumentUpdateDateTime],
+                documentUpdateDateTime: Union[DateTime, DocumentUpdateDateTime],
                     
 
                     
@@ -21105,12 +21105,12 @@ class PurchaseOrder(Submodel):
                         def __init__(
                                 self,
                                 
-                                            value: time,
+                                            value: Time,
                                             
                                             
                                             id_short: Optional[str]=r'OpeningHoursStart',
                                             
-                                            value_type: DataTypeDefXsd=time,
+                                            value_type: DataTypeDefXsd=Time,
                                             
                                             value_id: Optional[Reference]=None,
                                             
@@ -21184,12 +21184,12 @@ class PurchaseOrder(Submodel):
                         def __init__(
                                 self,
                                 
-                                            value: time,
+                                            value: Time,
                                             
                                             
                                             id_short: Optional[str]=r'OpeningHoursEnd',
                                             
-                                            value_type: DataTypeDefXsd=time,
+                                            value_type: DataTypeDefXsd=Time,
                                             
                                             value_id: Optional[Reference]=None,
                                             
@@ -21447,11 +21447,11 @@ class PurchaseOrder(Submodel):
                                 
 
                                 
-                            openingHoursStart: Optional[Union[time, OpeningHoursStart]] = None,
+                            openingHoursStart: Optional[Union[Time, OpeningHoursStart]] = None,
                                 
 
                                 
-                            openingHoursEnd: Optional[Union[time, OpeningHoursEnd]] = None,
+                            openingHoursEnd: Optional[Union[Time, OpeningHoursEnd]] = None,
                                 
 
                                 

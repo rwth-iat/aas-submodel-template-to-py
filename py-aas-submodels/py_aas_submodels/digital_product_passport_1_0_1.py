@@ -411,12 +411,12 @@ class DppMetadata(Submodel):
         def __init__(
                 self,
                 
-                            value: datetime,
+                            value: DateTime,
                             
                             
                             id_short: Optional[str]=r'lastUpdate',
                             
-                            value_type: DataTypeDefXsd=datetime,
+                            value_type: DataTypeDefXsd=DateTime,
                             
                             value_id: Optional[Reference]=None,
                             
@@ -441,7 +441,7 @@ class DppMetadata(Submodel):
         ):
             
             if qualifier is None:
-                qualifier = (Qualifier(type_=r'SMT/Cardinality', value_type=str, value=r'One', value_id=None, kind=QualifierKind.TEMPLATE_QUALIFIER, semantic_id=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'https://admin-shell.io/SubmodelTemplates/Cardinality/1/0'),), referred_semantic_id=None), supplemental_semantic_id=()), Qualifier(type_=r'SMT/ExampleValue', value_type=datetime, value=datetime(), value_id=None, kind=QualifierKind.VALUE_QUALIFIER, semantic_id=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0'),), referred_semantic_id=None), supplemental_semantic_id=()))
+                qualifier = (Qualifier(type_=r'SMT/Cardinality', value_type=str, value=r'One', value_id=None, kind=QualifierKind.TEMPLATE_QUALIFIER, semantic_id=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'https://admin-shell.io/SubmodelTemplates/Cardinality/1/0'),), referred_semantic_id=None), supplemental_semantic_id=()), Qualifier(type_=r'SMT/ExampleValue', value_type=DateTime, value=from_xsd(r'2025-08-22T03:12:00+00:00', DateTime), value_id=None, kind=QualifierKind.VALUE_QUALIFIER, semantic_id=ExternalReference(key=(Key(type_=KeyTypes.GLOBAL_REFERENCE, value=r'https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0'),), referred_semantic_id=None), supplemental_semantic_id=()))
             
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -914,7 +914,7 @@ class DppMetadata(Submodel):
                 
 
                 
-            lastUpdate: Union[datetime, LastUpdate],
+            lastUpdate: Union[DateTime, LastUpdate],
                 
 
                 

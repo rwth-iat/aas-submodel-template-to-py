@@ -480,9 +480,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -553,7 +553,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     originId: Union[str, OriginId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -725,9 +725,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -800,7 +800,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     modificationId: Union[str, ModificationId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -1380,9 +1380,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                             def __init__(
                                 self,
-                                value: datetime,
+                                value: DateTime,
                                 id_short: Optional[str] = r"timestamp",
-                                value_type: DataTypeDefXsd = datetime,
+                                value_type: DataTypeDefXsd = DateTime,
                                 value_id: Optional[Reference] = None,
                                 display_name: Optional[
                                     MultiLanguageNameType
@@ -1453,7 +1453,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         def __init__(
                             self,
                             power: Union[Float, Power],
-                            timestamp: Union[datetime, Timestamp],
+                            timestamp: Union[DateTime, Timestamp],
                             id_short: Optional[str] = r"loadchangeprofiles_item",
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -2545,9 +2545,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -2618,7 +2618,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     originId: Union[str, OriginId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -2790,9 +2790,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -2863,7 +2863,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     modificationId: Union[str, ModificationId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -3710,9 +3710,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"from",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -3785,9 +3785,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"until",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -3933,8 +3933,8 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        from_: Optional[Union[datetime, From]] = None,
-                        until: Optional[Union[datetime, Until]] = None,
+                        from_: Optional[Union[DateTime, From]] = None,
+                        until: Optional[Union[DateTime, Until]] = None,
                         temporalType: Optional[Union[str, TemporalType]] = None,
                         id_short: Optional[str] = r"validity",
                         display_name: Optional[
@@ -5561,11 +5561,11 @@ class EnergyFlexibilityDataModel(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[
                                 str
                             ] = r"orderConfirmationDeadlineAbsolute",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -5718,7 +5718,7 @@ class EnergyFlexibilityDataModel(Submodel):
                     def __init__(
                         self,
                         orderConfirmationDeadlineAbsolute: Optional[
-                            Union[datetime, OrderConfirmationDeadlineAbsolute]
+                            Union[DateTime, OrderConfirmationDeadlineAbsolute]
                         ] = None,
                         orderConfirmationDeadlineRelative: Optional[
                             Union[str, OrderConfirmationDeadlineRelative]
@@ -7990,9 +7990,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                             def __init__(
                                 self,
-                                value: datetime,
+                                value: DateTime,
                                 id_short: Optional[str] = r"timestamp",
-                                value_type: DataTypeDefXsd = datetime,
+                                value_type: DataTypeDefXsd = DateTime,
                                 value_id: Optional[Reference] = None,
                                 display_name: Optional[
                                     MultiLanguageNameType
@@ -8063,7 +8063,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         def __init__(
                             self,
                             power: Optional[Union[str, Power]] = None,
-                            timestamp: Optional[Union[datetime, Timestamp]] = None,
+                            timestamp: Optional[Union[DateTime, Timestamp]] = None,
                             id_short: Optional[str] = r"drains_item",
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -10699,9 +10699,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -10772,7 +10772,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     originId: Union[str, OriginId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -10944,9 +10944,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -11019,7 +11019,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     modificationId: Union[str, ModificationId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -11866,9 +11866,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"from",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -11941,9 +11941,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"until",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -12089,8 +12089,8 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        from_: Optional[Union[datetime, From]] = None,
-                        until: Optional[Union[datetime, Until]] = None,
+                        from_: Optional[Union[DateTime, From]] = None,
+                        until: Optional[Union[DateTime, Until]] = None,
                         temporalType: Optional[Union[str, TemporalType]] = None,
                         id_short: Optional[str] = r"validity",
                         display_name: Optional[
@@ -13717,11 +13717,11 @@ class EnergyFlexibilityDataModel(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[
                                 str
                             ] = r"orderConfirmationDeadlineAbsolute",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -13874,7 +13874,7 @@ class EnergyFlexibilityDataModel(Submodel):
                     def __init__(
                         self,
                         orderConfirmationDeadlineAbsolute: Optional[
-                            Union[datetime, OrderConfirmationDeadlineAbsolute]
+                            Union[DateTime, OrderConfirmationDeadlineAbsolute]
                         ] = None,
                         orderConfirmationDeadlineRelative: Optional[
                             Union[str, OrderConfirmationDeadlineRelative]
@@ -16146,9 +16146,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                             def __init__(
                                 self,
-                                value: datetime,
+                                value: DateTime,
                                 id_short: Optional[str] = r"timestamp",
-                                value_type: DataTypeDefXsd = datetime,
+                                value_type: DataTypeDefXsd = DateTime,
                                 value_id: Optional[Reference] = None,
                                 display_name: Optional[
                                     MultiLanguageNameType
@@ -16219,7 +16219,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         def __init__(
                             self,
                             power: Optional[Union[Float, Power]] = None,
-                            timestamp: Optional[Union[datetime, Timestamp]] = None,
+                            timestamp: Optional[Union[DateTime, Timestamp]] = None,
                             id_short: Optional[str] = r"drains_item",
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -18855,9 +18855,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -18928,7 +18928,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     originId: Union[str, OriginId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -19100,9 +19100,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -19173,7 +19173,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     modificationId: Union[str, ModificationId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -22492,9 +22492,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -22565,7 +22565,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     originId: Union[str, OriginId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -22737,9 +22737,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"timestamp",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -22810,7 +22810,7 @@ class EnergyFlexibilityDataModel(Submodel):
                 def __init__(
                     self,
                     modificationId: Union[str, ModificationId],
-                    timestamp: Union[datetime, Timestamp],
+                    timestamp: Union[DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
                     display_name: Optional[
                         MultiLanguageNameType
@@ -23314,9 +23314,9 @@ class EnergyFlexibilityDataModel(Submodel):
 
                             def __init__(
                                 self,
-                                value: datetime,
+                                value: DateTime,
                                 id_short: Optional[str] = r"timestamp",
-                                value_type: DataTypeDefXsd = datetime,
+                                value_type: DataTypeDefXsd = DateTime,
                                 value_id: Optional[Reference] = None,
                                 display_name: Optional[
                                     MultiLanguageNameType
@@ -23460,7 +23460,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         def __init__(
                             self,
                             power: Union[Float, Power],
-                            timestamp: Union[datetime, Timestamp],
+                            timestamp: Union[DateTime, Timestamp],
                             referencePoint: Union[Reference, ReferencePoint],
                             id_short: Optional[str] = r"loadchangeprofiles_item",
                             display_name: Optional[

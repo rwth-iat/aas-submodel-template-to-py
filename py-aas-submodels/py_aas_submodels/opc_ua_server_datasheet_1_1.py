@@ -1220,9 +1220,9 @@ class UAServerDataSheet(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"BuildDate",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1286,7 +1286,7 @@ class UAServerDataSheet(Submodel):
             productName: Optional[Union[str, ProductName]] = None,
             softwareVersion: Optional[Union[str, SoftwareVersion]] = None,
             buildNumber: Optional[Union[str, BuildNumber]] = None,
-            buildDate: Optional[Union[datetime, BuildDate]] = None,
+            buildDate: Optional[Union[DateTime, BuildDate]] = None,
             id_short: Optional[str] = r"Identification",
             display_name: Optional[MultiLanguageNameType] = None,
             category: Optional[str] = None,

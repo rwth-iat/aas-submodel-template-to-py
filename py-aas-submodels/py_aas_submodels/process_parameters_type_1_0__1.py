@@ -223,9 +223,9 @@ class ProcessParameters(Submodel):
 
                 def __init__(
                     self,
-                    value: relativedelta,
+                    value: Duration,
                     id_short: Optional[str] = r"PlannedProcessTime",
-                    value_type: DataTypeDefXsd = relativedelta,
+                    value_type: DataTypeDefXsd = Duration,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -633,7 +633,7 @@ class ProcessParameters(Submodel):
                 processId: Union[str, ProcessId],
                 processName: Union[str, ProcessName],
                 processDescription: Union[LangStringSet, ProcessDescription],
-                plannedProcessTime: Union[relativedelta, PlannedProcessTime],
+                plannedProcessTime: Union[Duration, PlannedProcessTime],
                 productParameters: ProductParameters,
                 processParameters: ProcessParameters,
                 resourceParameters: ResourceParameters,

@@ -79,9 +79,9 @@ class DataRetentionPolicies(Submodel):
 
                 def __init__(
                     self,
-                    value: relativedelta,
+                    value: Duration,
                     id_short: Optional[str] = r"RetentionTime",
-                    value_type: DataTypeDefXsd = relativedelta,
+                    value_type: DataTypeDefXsd = Duration,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -646,9 +646,9 @@ class DataRetentionPolicies(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"CreationTime",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1170,9 +1170,9 @@ class DataRetentionPolicies(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"EffectiveFrom",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1241,9 +1241,9 @@ class DataRetentionPolicies(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"EffectiveUntil",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1316,9 +1316,9 @@ class DataRetentionPolicies(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"Timestamp",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -1667,7 +1667,7 @@ class DataRetentionPolicies(Submodel):
 
                     def __init__(
                         self,
-                        timestamp: Union[datetime, Timestamp],
+                        timestamp: Union[DateTime, Timestamp],
                         identity: Union[LangStringSet, Identity],
                         operation: Union[LangStringSet, Operation],
                         reason: Union[LangStringSet, Reason],
@@ -1944,17 +1944,17 @@ class DataRetentionPolicies(Submodel):
 
             def __init__(
                 self,
-                retentionTime: Union[relativedelta, RetentionTime],
+                retentionTime: Union[Duration, RetentionTime],
                 semanticIds: SemanticIds,
                 immutable: Union[bool, Immutable],
                 createdBy: Union[str, CreatedBy],
-                creationTime: Union[datetime, CreationTime],
+                creationTime: Union[DateTime, CreationTime],
                 issuer: Union[str, Issuer],
                 source: Source,
-                effectiveFrom: Union[datetime, EffectiveFrom],
+                effectiveFrom: Union[DateTime, EffectiveFrom],
                 auditLog: AuditLog,
                 overrides: Optional[Overrides] = None,
-                effectiveUntil: Optional[Union[datetime, EffectiveUntil]] = None,
+                effectiveUntil: Optional[Union[DateTime, EffectiveUntil]] = None,
                 id_short: Optional[str] = r"Policy",
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,

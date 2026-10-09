@@ -77,9 +77,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"created",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Created"}
@@ -142,9 +142,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"modified",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Modified"}
@@ -9980,8 +9980,8 @@ class AssetInterfacesDescription(Submodel):
             title: Union[str, Title],
             endpointMetadata: EndpointMetadata,
             interactionMetadata: InteractionMetadata,
-            created: Optional[Union[datetime, Created]] = None,
-            modified: Optional[Union[datetime, Modified]] = None,
+            created: Optional[Union[DateTime, Created]] = None,
+            modified: Optional[Union[DateTime, Modified]] = None,
             support: Optional[Union[AnyURI, Support]] = None,
             externalDescriptor: Optional[ExternalDescriptor] = None,
             id_short: Optional[str] = r"InterfaceTemplateForHTTP",
@@ -10166,9 +10166,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"created",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Created"}
@@ -10231,9 +10231,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"modified",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Modified"}
@@ -16906,8 +16906,8 @@ class AssetInterfacesDescription(Submodel):
             title: Union[str, Title],
             endpointMetadata: EndpointMetadata,
             interactionMetadata: InteractionMetadata,
-            created: Optional[Union[datetime, Created]] = None,
-            modified: Optional[Union[datetime, Modified]] = None,
+            created: Optional[Union[DateTime, Created]] = None,
+            modified: Optional[Union[DateTime, Modified]] = None,
             support: Optional[Union[AnyURI, Support]] = None,
             externalDescriptor: Optional[ExternalDescriptor] = None,
             id_short: Optional[str] = r"InterfaceTemplateForMODBUS",
@@ -17092,9 +17092,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"created",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Created"}
@@ -17157,9 +17157,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"modified",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Modified"}
@@ -26725,8 +26725,8 @@ class AssetInterfacesDescription(Submodel):
             title: Union[str, Title],
             endpointMetadata: EndpointMetadata,
             interactionMetadata: InteractionMetadata,
-            created: Optional[Union[datetime, Created]] = None,
-            modified: Optional[Union[datetime, Modified]] = None,
+            created: Optional[Union[DateTime, Created]] = None,
+            modified: Optional[Union[DateTime, Modified]] = None,
             support: Optional[Union[AnyURI, Support]] = None,
             externalDescriptor: Optional[ExternalDescriptor] = None,
             id_short: Optional[str] = r"InterfaceTemplateForMQTT",
@@ -26911,9 +26911,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"created",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Created"}
@@ -26976,9 +26976,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"modified",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Modified"}
@@ -37131,8 +37131,8 @@ class AssetInterfacesDescription(Submodel):
             title: Union[str, Title],
             endpointMetadata: EndpointMetadata,
             interactionMetadata: InteractionMetadata,
-            created: Optional[Union[datetime, Created]] = None,
-            modified: Optional[Union[datetime, Modified]] = None,
+            created: Optional[Union[DateTime, Created]] = None,
+            modified: Optional[Union[DateTime, Modified]] = None,
             support: Optional[Union[AnyURI, Support]] = None,
             externalDescriptor: Optional[ExternalDescriptor] = None,
             id_short: Optional[str] = r"InterfaceTemplateForOPCUA",
@@ -37317,9 +37317,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"created",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Created"}
@@ -37382,9 +37382,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"modified",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Modified"}
@@ -53187,8 +53187,8 @@ class AssetInterfacesDescription(Submodel):
             title: Union[str, Title],
             endpointMetadata: EndpointMetadata,
             interactionMetadata: InteractionMetadata,
-            created: Optional[Union[datetime, Created]] = None,
-            modified: Optional[Union[datetime, Modified]] = None,
+            created: Optional[Union[DateTime, Created]] = None,
+            modified: Optional[Union[DateTime, Modified]] = None,
             support: Optional[Union[AnyURI, Support]] = None,
             externalDescriptor: Optional[ExternalDescriptor] = None,
             id_short: Optional[str] = r"InterfaceTemplateForBacnet",
@@ -53373,9 +53373,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"created",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Created"}
@@ -53438,9 +53438,9 @@ class AssetInterfacesDescription(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"modified",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Modified"}
@@ -64975,8 +64975,8 @@ class AssetInterfacesDescription(Submodel):
             title: Union[str, Title],
             endpointMetadata: EndpointMetadata,
             interactionMetadata: InteractionMetadata,
-            created: Optional[Union[datetime, Created]] = None,
-            modified: Optional[Union[datetime, Modified]] = None,
+            created: Optional[Union[DateTime, Created]] = None,
+            modified: Optional[Union[DateTime, Modified]] = None,
             support: Optional[Union[AnyURI, Support]] = None,
             externalDescriptor: Optional[ExternalDescriptor] = None,
             id_short: Optional[str] = r"InterfaceTemplateForIOLINK_OVER_PROFINET_REST",

@@ -3492,9 +3492,9 @@ class TimeSeries(Submodel):
             input_variable: Iterable[SubmodelElement] = (
                 Range(
                     id_short=r"Timespan",
-                    value_type=datetime,
-                    min=datetime(),
-                    max=datetime(),
+                    value_type=DateTime,
+                    min=from_xsd(r"0001-01-01T00:00:00+00:00", DateTime),
+                    max=from_xsd(r"9999-12-31T23:59:59+00:00", DateTime),
                     display_name=None,
                     category=None,
                     description=MultiLanguageTextType(
@@ -3641,9 +3641,9 @@ class TimeSeries(Submodel):
             input_variable: Iterable[SubmodelElement] = (
                 Range(
                     id_short=r"Timespan",
-                    value_type=datetime,
-                    min=datetime(),
-                    max=datetime(),
+                    value_type=DateTime,
+                    min=from_xsd(r"0001-01-01T00:00:00+00:00", DateTime),
+                    max=from_xsd(r"9999-12-31T23:59:59+00:00", DateTime),
                     display_name=None,
                     category=None,
                     description=MultiLanguageTextType(
@@ -3738,9 +3738,9 @@ class TimeSeries(Submodel):
             input_variable: Iterable[SubmodelElement] = (
                 Range(
                     id_short=r"Timespan",
-                    value_type=datetime,
-                    min=datetime(),
-                    max=datetime(),
+                    value_type=DateTime,
+                    min=from_xsd(r"0001-01-01T00:00:00+00:00", DateTime),
+                    max=from_xsd(r"9999-12-31T23:59:59+00:00", DateTime),
                     display_name=None,
                     category=None,
                     description=MultiLanguageTextType(

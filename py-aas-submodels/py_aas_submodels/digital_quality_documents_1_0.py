@@ -1388,9 +1388,9 @@ class DigitalQualityDocuments(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"StatusSetDate",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -3212,9 +3212,9 @@ class DigitalQualityDocuments(Submodel):
 
                         def __init__(
                             self,
-                            value: datetime,
+                            value: DateTime,
                             id_short: Optional[str] = r"IssueDate",
-                            value_type: DataTypeDefXsd = datetime,
+                            value_type: DataTypeDefXsd = DateTime,
                             value_id: Optional[Reference] = None,
                             display_name: Optional[
                                 MultiLanguageNameType
@@ -3279,7 +3279,7 @@ class DigitalQualityDocuments(Submodel):
                         self,
                         uniqueIdentifier: Union[str, UniqueIdentifier],
                         identifications: Optional[Identifications] = None,
-                        issueDate: Optional[Union[datetime, IssueDate]] = None,
+                        issueDate: Optional[Union[DateTime, IssueDate]] = None,
                         id_short: Optional[str] = r"CoreData",
                         display_name: Optional[
                             MultiLanguageNameType
@@ -5122,9 +5122,9 @@ class DigitalQualityDocuments(Submodel):
 
                             def __init__(
                                 self,
-                                value: datetime,
+                                value: DateTime,
                                 id_short: Optional[str] = r"DateOfStatement",
-                                value_type: DataTypeDefXsd = datetime,
+                                value_type: DataTypeDefXsd = DateTime,
                                 value_id: Optional[Reference] = None,
                                 display_name: Optional[
                                     MultiLanguageNameType
@@ -5324,7 +5324,7 @@ class DigitalQualityDocuments(Submodel):
                         def __init__(
                             self,
                             dateOfStatement: Optional[
-                                Union[datetime, DateOfStatement]
+                                Union[DateTime, DateOfStatement]
                             ] = None,
                             statementReference: Optional[
                                 Union[str, StatementReference]
@@ -6431,7 +6431,7 @@ class DigitalQualityDocuments(Submodel):
                 version: Union[str, Version],
                 title: Union[LangStringSet, Title],
                 description_: Union[LangStringSet, Description],
-                statusSetDate: Union[datetime, StatusSetDate],
+                statusSetDate: Union[DateTime, StatusSetDate],
                 statusValue: Union[str, StatusValue],
                 organizationShortName: Union[str, OrganizationShortName],
                 organizationOfficialName: Union[str, OrganizationOfficialName],

@@ -410,9 +410,9 @@ class PowerDriveTrainSizing(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"DateCreated",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
@@ -477,9 +477,9 @@ class PowerDriveTrainSizing(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"DateChanged",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
@@ -691,8 +691,8 @@ class PowerDriveTrainSizing(Submodel):
             sizingProjectName: Union[str, SizingProjectName],
             sizingProjectLink: Iterable[SizingProjectLink],
             sizingToolName: Union[str, SizingToolName],
-            dateCreated: Union[datetime, DateCreated],
-            dateChanged: Union[datetime, DateChanged],
+            dateCreated: Union[DateTime, DateCreated],
+            dateChanged: Union[DateTime, DateChanged],
             contactInformation: Iterable[ContactInformation],
             sizingProjectAxisReference: Optional[
                 Union[str, SizingProjectAxisReference]

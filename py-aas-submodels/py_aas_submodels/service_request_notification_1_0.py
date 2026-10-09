@@ -888,9 +888,9 @@ class ServiceRequestNotification(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"StartOfFault",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -1366,7 +1366,7 @@ class ServiceRequestNotification(Submodel):
             def __init__(
                 self,
                 longText: Optional[Union[LangStringSet, LongText]] = None,
-                startOfFault: Optional[Union[datetime, StartOfFault]] = None,
+                startOfFault: Optional[Union[DateTime, StartOfFault]] = None,
                 errorCode: Optional[Union[str, ErrorCode]] = None,
                 attachedMedia: Optional[AttachedMedia] = None,
                 id_short: Optional[str] = r"DetailedInformation",

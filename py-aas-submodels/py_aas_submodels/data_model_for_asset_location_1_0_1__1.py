@@ -4110,9 +4110,9 @@ class AssetLocation(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"Time",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -4414,7 +4414,7 @@ class AssetLocation(Submodel):
                 def __init__(
                     self,
                     areaRef: Union[Reference, AreaRef],
-                    time: Union[datetime, Time],
+                    time: Union[DateTime, Time],
                     eventType: Union[str, EventType],
                     eventId: Optional[Union[str, EventId]] = None,
                     providerId: Optional[Union[str, ProviderId]] = None,
@@ -5484,9 +5484,9 @@ class AssetLocation(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"Time",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -5562,9 +5562,9 @@ class AssetLocation(Submodel):
 
                     def __init__(
                         self,
-                        value: datetime,
+                        value: DateTime,
                         id_short: Optional[str] = r"TransmissionTime",
-                        value_type: DataTypeDefXsd = datetime,
+                        value_type: DataTypeDefXsd = DateTime,
                         value_id: Optional[Reference] = None,
                         display_name: Optional[
                             MultiLanguageNameType
@@ -5975,7 +5975,7 @@ class AssetLocation(Submodel):
                         Reference, CoordinateSystemReference
                     ],
                     position: Position,
-                    time: Union[datetime, Time],
+                    time: Union[DateTime, Time],
                     providerId: Optional[Union[str, ProviderId]] = None,
                     providerType: Optional[Union[str, ProviderType]] = None,
                     accuracy: Optional[Union[float, Accuracy]] = None,
@@ -5983,7 +5983,7 @@ class AssetLocation(Submodel):
                     trueHeading: Optional[Union[int, TrueHeading]] = None,
                     headingAccuracy: Optional[Union[int, HeadingAccuracy]] = None,
                     transmissionTime: Optional[
-                        Union[datetime, TransmissionTime]
+                        Union[DateTime, TransmissionTime]
                     ] = None,
                     locationDescription: Optional[
                         Union[LangStringSet, LocationDescription]

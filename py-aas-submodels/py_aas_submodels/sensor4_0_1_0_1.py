@@ -468,9 +468,9 @@ class MeasurementValue(Submodel):
 
         def __init__(
             self,
-            value: datetime,
+            value: DateTime,
             id_short: Optional[str] = r"MeasurementTimestamp",
-            value_type: DataTypeDefXsd = datetime,
+            value_type: DataTypeDefXsd = DateTime,
             value_id: Optional[Reference] = None,
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                 dict_={r"en": r"Measurement Timestamp"}
@@ -1224,7 +1224,7 @@ class MeasurementValue(Submodel):
         self,
         id_: str,
         measuredValue: MeasuredValue,
-        measurementTimestamp: Union[datetime, MeasurementTimestamp],
+        measurementTimestamp: Union[DateTime, MeasurementTimestamp],
         measurementQualifier: MeasurementQualifier,
         measuredValuePreDefined: Optional[MeasuredValuePreDefined] = None,
         concept: Optional[Concept] = None,

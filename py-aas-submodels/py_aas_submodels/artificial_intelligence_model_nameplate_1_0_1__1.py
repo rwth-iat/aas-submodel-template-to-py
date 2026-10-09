@@ -2242,10 +2242,10 @@ class AIModelNameplate(Submodel):
 
             def __init__(
                 self,
-                min: datetime,
-                max: datetime,
+                min: DateTime,
+                max: DateTime,
                 id_short: Optional[str] = r"TimeStamp",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[MultiLanguageTextType] = MultiLanguageTextType(
@@ -2312,7 +2312,7 @@ class AIModelNameplate(Submodel):
         def __init__(
             self,
             aIDatasetReference: Union[Reference, AIDatasetReference],
-            timeStamp: Optional[Union[Tuple[datetime, datetime], TimeStamp]] = None,
+            timeStamp: Optional[Union[Tuple[DateTime, DateTime], TimeStamp]] = None,
             id_short: Optional[str] = r"AIDataset",
             display_name: Optional[MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -2478,9 +2478,9 @@ class AIModelNameplate(Submodel):
 
                 def __init__(
                     self,
-                    value: datetime,
+                    value: DateTime,
                     id_short: Optional[str] = r"TimeStamp",
-                    value_type: DataTypeDefXsd = datetime,
+                    value_type: DataTypeDefXsd = DateTime,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
@@ -2688,7 +2688,7 @@ class AIModelNameplate(Submodel):
             def __init__(
                 self,
                 name: Optional[Union[str, Name]] = None,
-                timeStamp: Optional[Union[datetime, TimeStamp]] = None,
+                timeStamp: Optional[Union[DateTime, TimeStamp]] = None,
                 weights: Optional[Weights] = None,
                 aIModelNameplate: Optional[Union[Reference, AIModelNameplate]] = None,
                 id_short: Optional[str] = r"TransferLearning",

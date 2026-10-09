@@ -2,7 +2,19 @@ import enum
 import keyword
 import typing
 from basyx.aas.model import *
+from basyx.aas.model.datatypes import XSD_TYPE_NAMES, Duration, DateTime, Time, xsd_repr
 from basyx.aas.model.submodel import _SE
+
+# XSD types defined as aliases in basyx.aas.model.datatypes: their class names
+# (relativedelta, datetime, time) are not available in generated modules
+XSD_TYPE_ALIASES = {
+    Duration: "Duration",
+    DateTime: "DateTime",
+    Time: "Time",
+}
+XSD_TYPE_ALIASES_BY_QUALNAME = {
+    f"{typ.__module__}.{typ.__qualname__}": alias for typ, alias in XSD_TYPE_ALIASES.items()
+}
 
 
 class NamingGenerator:
@@ -69,12 +81,11 @@ class StringHandler:
 
     @classmethod
     def remove_parent_modules_in_typehint(cls, typehint: str):
-        pattern = r"(\w+(\.\w+)+)"
-        matches = re.findall(pattern, typehint)
-        for match in matches:
-            last_word = match[0].split(".")[-1]
-            typehint = typehint.replace(match[0], last_word)
-        return typehint
+        def short_name(match):
+            qualified_name = match.group(0)
+            return XSD_TYPE_ALIASES_BY_QUALNAME.get(qualified_name, qualified_name.split(".")[-1])
+
+        return re.sub(r"\w+(\.\w+)+", short_name, typehint)
 
     @classmethod
     def reprify(cls, val):
@@ -87,6 +98,7 @@ class StringHandler:
             Optional[LangStringSet]: "Optional[LangStringSet]",
             _SE: "SubmodelElement",
             Type[_SE]: "SubmodelElement",
+            **XSD_TYPE_ALIASES,
         }
         for typehint in typehint_reprs:
             if val == typehint:
@@ -103,6 +115,10 @@ class StringHandler:
             return f"r'{val}'"
         elif type(val) in (bool, int, float):
             return str(val)
+        elif type(val) in XSD_TYPE_NAMES:
+            # Values of other XSD types (e.g. Duration, DateTime, Long) are restored from
+            # their XSD lexical representation, as their constructors differ widely
+            return f"from_xsd({cls.reprify(xsd_repr(val))}, {cls.reprify(type(val))})"
         elif type(val) is dict:
             if val:
                 items_repr = [f"{cls.reprify(key)}: {cls.reprify(value)}" for key, value in val.items()]

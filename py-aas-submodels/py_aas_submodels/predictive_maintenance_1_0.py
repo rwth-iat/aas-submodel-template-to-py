@@ -197,7 +197,7 @@ class PredictiveMaintenance(Submodel):
                     ),
                     Property(
                         id_short=r"StartDateTime",
-                        value_type=datetime,
+                        value_type=DateTime,
                         value=None,
                         value_id=None,
                         display_name=None,
@@ -357,9 +357,9 @@ class PredictiveMaintenance(Submodel):
 
             def __init__(
                 self,
-                value: datetime,
+                value: DateTime,
                 id_short: Optional[str] = r"RemainingUsfulLifeDateTime",
-                value_type: DataTypeDefXsd = datetime,
+                value_type: DataTypeDefXsd = DateTime,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -2470,7 +2470,7 @@ class PredictiveMaintenance(Submodel):
             listRULBoundaryConditions: ListRULBoundaryConditions,
             predictionModelInformation: PredictionModelInformation,
             remainingUsfulLifeDateTime: Optional[
-                Union[datetime, RemainingUsfulLifeDateTime]
+                Union[DateTime, RemainingUsfulLifeDateTime]
             ] = None,
             listPreAlerts: Optional[ListPreAlerts] = None,
             alertAfterExceedingRemainingUsableLife: Optional[

@@ -6799,9 +6799,9 @@ class SafetyInstrumentedFunction(Submodel):
 
                 def __init__(
                     self,
-                    value: time,
+                    value: Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = time,
+                    value_type: DataTypeDefXsd = Time,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -7100,7 +7100,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
                 demandDescription: Optional[Union[str, DemandDescription]] = None,
                 referenceToDeviceDemandEvent: Optional[
                     Iterable[Union[Reference, ReferenceToDeviceDemandEvent]]
@@ -7489,9 +7489,9 @@ class SafetyInstrumentedFunction(Submodel):
 
                 def __init__(
                     self,
-                    value: time,
+                    value: Time,
                     id_short: Optional[str] = r"TimeStampDateAndTime",
-                    value_type: DataTypeDefXsd = time,
+                    value_type: DataTypeDefXsd = Time,
                     value_id: Optional[Reference] = None,
                     display_name: Optional[
                         MultiLanguageNameType
@@ -8020,7 +8020,7 @@ class SafetyInstrumentedFunction(Submodel):
 
             def __init__(
                 self,
-                timeStampDateAndTime: Union[time, TimeStampDateAndTime],
+                timeStampDateAndTime: Union[Time, TimeStampDateAndTime],
                 testResultFailedOrPassed: Union[str, TestResultFailedOrPassed],
                 testLocation: Optional[Union[str, TestLocation]] = None,
                 testResultNumeric: Optional[Union[Float, TestResultNumeric]] = None,

@@ -86,9 +86,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -239,7 +239,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualPersonnelWorkTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -411,9 +411,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -564,7 +564,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitProcessingTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -736,9 +736,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -889,7 +889,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitBusyTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -1061,9 +1061,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -1214,7 +1214,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualOrderExecutionTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -1386,9 +1386,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -1539,7 +1539,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualPersonnelAttendanceTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -1711,9 +1711,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -1864,7 +1864,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualProductionTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -2036,9 +2036,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -2189,7 +2189,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualQueuingTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -2361,9 +2361,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -2514,7 +2514,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitDownTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -2686,9 +2686,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -2839,7 +2839,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitDelayTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -3011,9 +3011,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -3164,7 +3164,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitSetupTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -3336,9 +3336,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -3489,7 +3489,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"ActualTransportTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -5599,9 +5599,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -5750,7 +5750,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"PlannedBusyTime",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
@@ -5922,9 +5922,9 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
 
             def __init__(
                 self,
-                value: relativedelta,
+                value: Duration,
                 id_short: Optional[str] = r"currentValue",
-                value_type: DataTypeDefXsd = relativedelta,
+                value_type: DataTypeDefXsd = Duration,
                 value_id: Optional[Reference] = None,
                 display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(
                     dict_={r"en": r"Current Value"}
@@ -6075,7 +6075,7 @@ class ProcessVariablesForManufacturingKPICalculation(Submodel):
         def __init__(
             self,
             key: Union[str, Key],
-            currentValue: Union[relativedelta, CurrentValue],
+            currentValue: Union[Duration, CurrentValue],
             comment: Union[LangStringSet, Comment],
             id_short: Optional[str] = r"PlannedRuntimePerItem",
             display_name: Optional[MultiLanguageNameType] = MultiLanguageNameType(

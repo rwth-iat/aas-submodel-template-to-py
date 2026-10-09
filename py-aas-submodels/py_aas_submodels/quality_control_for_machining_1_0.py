@@ -12378,12 +12378,12 @@ class QualityControlForMachining(Submodel):
                 def __init__(
                         self,
                         
-                                    value: datetime,
+                                    value: DateTime,
                                     
                                     
                                     id_short: Optional[str]=r'ProductionStart',
                                     
-                                    value_type: DataTypeDefXsd=datetime,
+                                    value_type: DataTypeDefXsd=DateTime,
                                     
                                     value_id: Optional[Reference]=None,
                                     
@@ -12457,12 +12457,12 @@ class QualityControlForMachining(Submodel):
                 def __init__(
                         self,
                         
-                                    value: datetime,
+                                    value: DateTime,
                                     
                                     
                                     id_short: Optional[str]=r'ProductionEnd',
                                     
-                                    value_type: DataTypeDefXsd=datetime,
+                                    value_type: DataTypeDefXsd=DateTime,
                                     
                                     value_id: Optional[Reference]=None,
                                     
@@ -13009,7 +13009,7 @@ class QualityControlForMachining(Submodel):
                                 
 
                         
-                    productionStart: Union[datetime, ProductionStart],
+                    productionStart: Union[DateTime, ProductionStart],
                         
 
                         
@@ -13034,7 +13034,7 @@ class QualityControlForMachining(Submodel):
                         
 
                         
-                    productionEnd: Optional[Union[datetime, ProductionEnd]] = None,
+                    productionEnd: Optional[Union[DateTime, ProductionEnd]] = None,
                         
 
                         
@@ -15859,12 +15859,12 @@ class QualityControlForMachining(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'JobStart',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -15938,12 +15938,12 @@ class QualityControlForMachining(Submodel):
             def __init__(
                     self,
                     
-                                value: datetime,
+                                value: DateTime,
                                 
                                 
                                 id_short: Optional[str]=r'JobEnd',
                                 
-                                value_type: DataTypeDefXsd=datetime,
+                                value_type: DataTypeDefXsd=DateTime,
                                 
                                 value_id: Optional[Reference]=None,
                                 
@@ -18600,7 +18600,7 @@ class QualityControlForMachining(Submodel):
                             
 
                     
-                jobStart: Union[datetime, JobStart],
+                jobStart: Union[DateTime, JobStart],
                     
 
                     
@@ -18625,7 +18625,7 @@ class QualityControlForMachining(Submodel):
                     
 
                     
-                jobEnd: Optional[Union[datetime, JobEnd]] = None,
+                jobEnd: Optional[Union[DateTime, JobEnd]] = None,
                     
 
                     
