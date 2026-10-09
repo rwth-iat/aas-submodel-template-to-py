@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "aas-submodel-to-py/**"
+      - "py-aas-submodels/regenerate_submodels.py"
       - ".github/workflows/regenerate-submodels.yml"
   schedule:
     - cron: "0 4 * * *"
@@ -34,25 +35,26 @@ jobs:
         Technical_Data/2/0/IDTA 02003_Sample_TechnicalData.json
 
     steps:
+      # Checked out first, as the cache key depends on the generator sources
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
       - name: Get upstream templates hash
         id: upstream
         run: |
           HASH=$(git ls-remote https://github.com/admin-shell-io/submodel-templates.git refs/heads/main | cut -f1)
           echo "hash=${HASH}" >> $GITHUB_OUTPUT
 
+      # Skip the regeneration only if neither the upstream templates nor the generator changed
       - name: Check upstream hash cache
         id: cache
         uses: actions/cache@v4
         with:
           path: /tmp/.upstream-hash-marker
-          key: upstream-hash-${{ steps.upstream.outputs.hash }}
-
-      - name: Checkout repository
-        if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ github.ref_name }}
+          key: upstream-hash-${{ steps.upstream.outputs.hash }}-${{ hashFiles('aas-submodel-to-py/aas_submodel_to_py/**', 'aas-submodel-to-py/pyproject.toml', 'py-aas-submodels/regenerate_submodels.py', '.github/workflows/regenerate-submodels.yml') }}
 
       - name: Set up Python
         if: steps.cache.outputs.cache-hit != 'true'
