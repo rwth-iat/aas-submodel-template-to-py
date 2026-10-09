@@ -2,7 +2,7 @@
 
 [![PyPI aas-submodel-to-py](https://img.shields.io/pypi/v/aas-submodel-to-py.svg?label=aas-submodel-to-py)](https://pypi.org/project/aas-submodel-to-py/)
 [![PyPI py-aas-submodels](https://img.shields.io/pypi/v/py-aas-submodels.svg?label=py-aas-submodels)](https://pypi.org/project/py-aas-submodels/)
-[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 
 **aas-submodel-template-to-py** is a project providing an automatic Python code generator for Asset Administration
 Shell (AAS) submodel templates.

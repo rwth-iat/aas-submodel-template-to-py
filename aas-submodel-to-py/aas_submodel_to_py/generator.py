@@ -7,7 +7,7 @@ from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
 from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import Property, Referable, Submodel, \
-    SubmodelElement, SubmodelElementCollection, DictObjectStore, MultiLanguageProperty, \
+    SubmodelElement, SubmodelElementCollection, DictIdentifiableStore, MultiLanguageProperty, \
     ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File
 
 from jinja2 import Environment, FileSystemLoader
@@ -28,7 +28,7 @@ class SubmodelCodegen:
                       output_file: Union[str, pathlib.Path] = "output.py"):
         input_str = str(input_file).lower()
         if input_str.endswith(".aasx"):
-            obj_store = DictObjectStore()
+            obj_store = DictIdentifiableStore()
             file_store = DictSupplementaryFileContainer()
             AASXReader(input_file).read_into(obj_store, file_store)
         elif input_str.endswith(".json"):

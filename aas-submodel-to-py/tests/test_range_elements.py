@@ -35,7 +35,7 @@ def generated_module(tmp_path_factory):
         ],
     )
     output_file = tmp_path_factory.mktemp("generated") / "range_test.py"
-    SubmodelCodegen().generate_from_obj_store(model.DictObjectStore([submodel]), output_file)
+    SubmodelCodegen().generate_from_obj_store(model.DictIdentifiableStore([submodel]), output_file)
 
     spec = importlib.util.spec_from_file_location("range_test", output_file)
     module = importlib.util.module_from_spec(spec)
