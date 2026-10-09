@@ -227,8 +227,12 @@ class ControlComponentType(aas.Submodel):
             def __init__(
                 self,
                 interfaceProfile: Union[str, InterfaceProfile],
-                interfaceProfileSupplement: Union[str, InterfaceProfileSupplement],
-                interfaceReference: Union[aas.Reference, InterfaceReference],
+                interfaceProfileSupplement: Optional[
+                    Union[str, InterfaceProfileSupplement]
+                ] = None,
+                interfaceReference: Optional[
+                    Union[aas.Reference, InterfaceReference]
+                ] = None,
                 id_short: Optional[str] = r"Interface",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -354,7 +358,7 @@ class ControlComponentType(aas.Submodel):
 
         def __init__(
             self,
-            interface: Interface,
+            interface: Optional[Iterable[Interface]] = None,
             id_short: Optional[str] = r"Interfaces",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -405,6 +409,10 @@ class ControlComponentType(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(interface, str):
+                raise TypeError("interface takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -625,7 +633,7 @@ class ControlComponentType(aas.Submodel):
 
         def __init__(
             self,
-            error: Error,
+            error: Optional[Iterable[Error]] = None,
             id_short: Optional[str] = r"Errors",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -676,6 +684,10 @@ class ControlComponentType(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(error, str):
+                raise TypeError("error takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -878,7 +890,7 @@ class ControlComponentType(aas.Submodel):
 
                 def __init__(
                     self,
-                    mode: Union[str, Mode],
+                    mode: Iterable[Union[str, Mode]],
                     id_short: Optional[str] = r"Modes",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -930,10 +942,16 @@ class ControlComponentType(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
+                    # A str would be split into its characters
+                    if isinstance(mode, str):
+                        raise TypeError("mode takes several elements, got a str")
 
-                    if mode is not None and not isinstance(mode, aas.SubmodelElement):
-                        mode = self.Mode(mode)
+                    # Build submodel elements from raw values passed in the argument
+                    if mode:
+                        mode = [
+                            i if isinstance(i, aas.SubmodelElement) else self.Mode(i)
+                            for i in mode
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1341,7 +1359,7 @@ class ControlComponentType(aas.Submodel):
 
                 def __init__(
                     self,
-                    parameter: Parameter,
+                    parameter: Optional[Iterable[Parameter]] = None,
                     id_short: Optional[str] = r"Parameters",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1392,6 +1410,10 @@ class ControlComponentType(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # A str would be split into its characters
+                    if isinstance(parameter, str):
+                        raise TypeError("parameter takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1522,7 +1544,9 @@ class ControlComponentType(aas.Submodel):
 
                 def __init__(
                     self,
-                    errorReference: Union[aas.Reference, ErrorReference],
+                    errorReference: Optional[
+                        Iterable[Union[aas.Reference, ErrorReference]]
+                    ] = None,
                     id_short: Optional[str] = r"Errors",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1574,12 +1598,22 @@ class ControlComponentType(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
+                    # A str would be split into its characters
+                    if isinstance(errorReference, str):
+                        raise TypeError(
+                            "errorReference takes several elements, got a str"
+                        )
 
-                    if errorReference is not None and not isinstance(
-                        errorReference, aas.SubmodelElement
-                    ):
-                        errorReference = self.ErrorReference(errorReference)
+                    # Build submodel elements from raw values passed in the argument
+                    if errorReference:
+                        errorReference = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.ErrorReference(i)
+                            )
+                            for i in errorReference
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1710,7 +1744,9 @@ class ControlComponentType(aas.Submodel):
 
                 def __init__(
                     self,
-                    skillReference: Union[aas.Reference, SkillReference],
+                    skillReference: Optional[
+                        Iterable[Union[aas.Reference, SkillReference]]
+                    ] = None,
                     id_short: Optional[str] = r"Uses",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1762,12 +1798,22 @@ class ControlComponentType(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
+                    # A str would be split into its characters
+                    if isinstance(skillReference, str):
+                        raise TypeError(
+                            "skillReference takes several elements, got a str"
+                        )
 
-                    if skillReference is not None and not isinstance(
-                        skillReference, aas.SubmodelElement
-                    ):
-                        skillReference = self.SkillReference(skillReference)
+                    # Build submodel elements from raw values passed in the argument
+                    if skillReference:
+                        skillReference = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.SkillReference(i)
+                            )
+                            for i in skillReference
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1921,7 +1967,7 @@ class ControlComponentType(aas.Submodel):
 
         def __init__(
             self,
-            skill: Skill,
+            skill: Optional[Iterable[Skill]] = None,
             id_short: Optional[str] = r"Skills",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -1970,6 +2016,10 @@ class ControlComponentType(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # A str would be split into its characters
+            if isinstance(skill, str):
+                raise TypeError("skill takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

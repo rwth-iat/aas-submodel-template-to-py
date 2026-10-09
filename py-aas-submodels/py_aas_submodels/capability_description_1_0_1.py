@@ -1248,7 +1248,7 @@ class CapabilityDescription(aas.Submodel):
 
                         def __init__(
                             self,
-                            capabilityComposedOf: CapabilityComposedOf,
+                            capabilityComposedOf: Iterable[CapabilityComposedOf],
                             composedOfComment: Optional[
                                 Union[aas.LangStringSet, ComposedOfComment]
                             ] = None,
@@ -1317,6 +1317,12 @@ class CapabilityDescription(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # A str would be split into its characters
+                            if isinstance(capabilityComposedOf, str):
+                                raise TypeError(
+                                    "capabilityComposedOf takes several elements, got a str"
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
 

@@ -54489,9 +54489,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     def __init__(
                                         self,
-                                        bacv_hasvaluemap_items: Iterable[
-                                            Bacv_hasvaluemap_item
-                                        ],
+                                        bacv_hasvaluemap_items: Optional[
+                                            Iterable[Bacv_hasvaluemap_item]
+                                        ] = None,
                                         id_short: Optional[str] = r"bacv_hasValueMap",
                                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                         semantic_id_list_element: Optional[
@@ -54683,12 +54683,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    bacv_hasValueMap: Union[
-                                        Iterable[
-                                            Bacv_hasValueMap.Bacv_hasvaluemap_item
-                                        ],
-                                        Bacv_hasValueMap,
-                                    ],
                                     bacv_isISO: Optional[
                                         Union[bool, Bacv_isISO]
                                     ] = None,
@@ -54702,6 +54696,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 Bacv_hasNamedMember.Bacv_hasnamedmember_item
                                             ],
                                             Bacv_hasNamedMember,
+                                        ]
+                                    ] = None,
+                                    bacv_hasValueMap: Optional[
+                                        Union[
+                                            Iterable[
+                                                Bacv_hasValueMap.Bacv_hasvaluemap_item
+                                            ],
+                                            Bacv_hasValueMap,
                                         ]
                                     ] = None,
                                     id_short: Optional[str] = r"bacv_hasMember",
@@ -55693,9 +55695,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    bacv_hasvaluemap_items: Iterable[
-                                        Bacv_hasvaluemap_item
-                                    ],
+                                    bacv_hasvaluemap_items: Optional[
+                                        Iterable[Bacv_hasvaluemap_item]
+                                    ] = None,
                                     id_short: Optional[str] = r"bacv_hasValueMap",
                                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
@@ -55878,10 +55880,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                bacv_hasValueMap: Union[
-                                    Iterable[Bacv_hasValueMap.Bacv_hasvaluemap_item],
-                                    Bacv_hasValueMap,
-                                ],
                                 bacv_isISO: Optional[Union[bool, Bacv_isISO]] = None,
                                 bacv_hasBinaryRepresentation: Optional[
                                     Union[str, Bacv_hasBinaryRepresentation]
@@ -55893,6 +55891,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                             Bacv_hasNamedMember.Bacv_hasnamedmember_item
                                         ],
                                         Bacv_hasNamedMember,
+                                    ]
+                                ] = None,
+                                bacv_hasValueMap: Optional[
+                                    Union[
+                                        Iterable[
+                                            Bacv_hasValueMap.Bacv_hasvaluemap_item
+                                        ],
+                                        Bacv_hasValueMap,
                                     ]
                                 ] = None,
                                 id_short: Optional[str] = r"bacv_hasDataType",

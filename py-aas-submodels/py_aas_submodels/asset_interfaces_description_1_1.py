@@ -51811,9 +51811,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         def __init__(
                                             self,
-                                            bacv_hasnamedmember_items: Iterable[
-                                                Bacv_hasnamedmember_item
-                                            ],
+                                            bacv_hasnamedmember_items: Optional[
+                                                Iterable[Bacv_hasnamedmember_item]
+                                            ] = None,
                                             id_short: Optional[
                                                 str
                                             ] = r"bacv_hasNamedMember",
@@ -52340,9 +52340,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         def __init__(
                                             self,
-                                            bacv_hasvaluemap_items: Iterable[
-                                                Bacv_hasvaluemap_item
-                                            ],
+                                            bacv_hasvaluemap_items: Optional[
+                                                Iterable[Bacv_hasvaluemap_item]
+                                            ] = None,
                                             id_short: Optional[
                                                 str
                                             ] = r"bacv_hasValueMap",
@@ -52549,12 +52549,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                             ],
                                             Bacv_hasNamedMember,
                                         ],
-                                        bacv_hasValueMap: Union[
-                                            Iterable[
-                                                Bacv_hasValueMap.Bacv_hasvaluemap_item
-                                            ],
-                                            Bacv_hasValueMap,
-                                        ],
                                         bacv_isISO: Optional[
                                             Union[bool, Bacv_isISO]
                                         ] = None,
@@ -52562,6 +52556,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                             Union[bool, Bacv_hasBinaryRepresentation]
                                         ] = None,
                                         bacv_hasMember: Optional[Bacv_hasMember] = None,
+                                        bacv_hasValueMap: Optional[
+                                            Union[
+                                                Iterable[
+                                                    Bacv_hasValueMap.Bacv_hasvaluemap_item
+                                                ],
+                                                Bacv_hasValueMap,
+                                            ]
+                                        ] = None,
                                         id_short: Optional[str] = r"bacv_hasMember",
                                         display_name: Optional[
                                             aas.MultiLanguageNameType
@@ -53119,9 +53121,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     def __init__(
                                         self,
-                                        bacv_hasnamedmember_items: Iterable[
-                                            Bacv_hasnamedmember_item
-                                        ],
+                                        bacv_hasnamedmember_items: Optional[
+                                            Iterable[Bacv_hasnamedmember_item]
+                                        ] = None,
                                         id_short: Optional[
                                             str
                                         ] = r"bacv_hasNamedMember",
@@ -53623,9 +53625,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     def __init__(
                                         self,
-                                        bacv_hasvaluemap_items: Iterable[
-                                            Bacv_hasvaluemap_item
-                                        ],
+                                        bacv_hasvaluemap_items: Optional[
+                                            Iterable[Bacv_hasvaluemap_item]
+                                        ] = None,
                                         id_short: Optional[str] = r"bacv_hasValueMap",
                                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                         semantic_id_list_element: Optional[
@@ -53825,12 +53827,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ],
                                         Bacv_hasNamedMember,
                                     ],
-                                    bacv_hasValueMap: Union[
-                                        Iterable[
-                                            Bacv_hasValueMap.Bacv_hasvaluemap_item
-                                        ],
-                                        Bacv_hasValueMap,
-                                    ],
                                     bacv_isISO: Optional[
                                         Union[bool, Bacv_isISO]
                                     ] = None,
@@ -53838,6 +53834,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         Union[bool, Bacv_hasBinaryRepresentation]
                                     ] = None,
                                     bacv_hasMember: Optional[Bacv_hasMember] = None,
+                                    bacv_hasValueMap: Optional[
+                                        Union[
+                                            Iterable[
+                                                Bacv_hasValueMap.Bacv_hasvaluemap_item
+                                            ],
+                                            Bacv_hasValueMap,
+                                        ]
+                                    ] = None,
                                     id_short: Optional[str] = r"bacv_hasMember",
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
@@ -54366,9 +54370,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    bacv_hasnamedmember_items: Iterable[
-                                        Bacv_hasnamedmember_item
-                                    ],
+                                    bacv_hasnamedmember_items: Optional[
+                                        Iterable[Bacv_hasnamedmember_item]
+                                    ] = None,
                                     id_short: Optional[str] = r"bacv_hasNamedMember",
                                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
@@ -54845,9 +54849,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    bacv_hasvaluemap_items: Iterable[
-                                        Bacv_hasvaluemap_item
-                                    ],
+                                    bacv_hasvaluemap_items: Optional[
+                                        Iterable[Bacv_hasvaluemap_item]
+                                    ] = None,
                                     id_short: Optional[str] = r"bacv_hasValueMap",
                                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
@@ -55038,15 +55042,19 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ],
                                     Bacv_hasNamedMember,
                                 ],
-                                bacv_hasValueMap: Union[
-                                    Iterable[Bacv_hasValueMap.Bacv_hasvaluemap_item],
-                                    Bacv_hasValueMap,
-                                ],
                                 bacv_isISO: Optional[Union[bool, Bacv_isISO]] = None,
                                 bacv_hasBinaryRepresentation: Optional[
                                     Union[bool, Bacv_hasBinaryRepresentation]
                                 ] = None,
                                 bacv_hasMember: Optional[Bacv_hasMember] = None,
+                                bacv_hasValueMap: Optional[
+                                    Union[
+                                        Iterable[
+                                            Bacv_hasValueMap.Bacv_hasvaluemap_item
+                                        ],
+                                        Bacv_hasValueMap,
+                                    ]
+                                ] = None,
                                 id_short: Optional[str] = r"bacv_hasDataType",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
@@ -66247,9 +66255,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                iolv_enumeratedvalues_items: Iterable[
-                                    Iolv_enumeratedvalues_item
-                                ],
+                                iolv_enumeratedvalues_items: Optional[
+                                    Iterable[Iolv_enumeratedvalues_item]
+                                ] = None,
                                 id_short: Optional[str] = r"iolv_enumeratedValues",
                                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                 semantic_id_list_element: Optional[
@@ -67172,9 +67180,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     def __init__(
                                         self,
-                                        iolv_enumeratedvalues_items: Iterable[
-                                            Iolv_enumeratedvalues_item
-                                        ],
+                                        iolv_enumeratedvalues_items: Optional[
+                                            Iterable[Iolv_enumeratedvalues_item]
+                                        ] = None,
                                         id_short: Optional[
                                             str
                                         ] = r"iolv_enumeratedValues",

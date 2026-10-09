@@ -96,24 +96,31 @@ class NamingGenerator:
 
 class ReferableHandler:
     @classmethod
-    def is_optional(cls, obj: Qualifiable):
+    def get_cardinality(cls, obj: Qualifiable) -> Optional[str]:
+        """Return the value of the cardinality qualifier of `obj` in lower case (e.g. "zerotomany"),
+        or None if it has none. Templates spell these qualifiers in several ways, e.g. the type
+        "SMT/Cardinality", "Multiplicity" or "SMT/SMT/Cardinality" and the value "ZerotoOne" or "ZeroToOne " """
         for q in obj.qualifier:
-            if q.type in ("Cardinality", "Multiplicity", "SMT/Multiplicity", "SMT/Cardinality"):
-                if q.value in ("ZeroToOne", "ZeroToMany"):
-                    return True
-                elif q.value in ("One", "OneToMany"):
-                    return False
+            if q.type.rsplit("/", 1)[-1].strip().lower() in ("cardinality", "multiplicity") \
+                    and isinstance(q.value, str):
+                return q.value.strip().lower()
         return None
 
     @classmethod
-    def is_iterable(cls, obj: Qualifiable):
-        for q in obj.qualifier:
-            if q.type in ("Cardinality", "Multiplicity", "SMT/Multiplicity", "SMT/Cardinality"):
-                if q.value in ("ZeroToMany", "OneToMany"):
-                    return True
-                elif q.value in ("ZeroToOne", "One"):
-                    return False
-        return None
+    def is_optional(cls, obj: Qualifiable) -> Optional[bool]:
+        cardinality = cls.get_cardinality(obj)
+        if cardinality is None:
+            return None
+        # ZeroToOne, ZeroToMany
+        return cardinality.startswith("zero")
+
+    @classmethod
+    def is_iterable(cls, obj: Qualifiable) -> Optional[bool]:
+        cardinality = cls.get_cardinality(obj)
+        if cardinality is None:
+            return None
+        # ZeroToMany, OneToMany, TwoToMany
+        return cardinality.endswith("tomany")
 
     @classmethod
     def takes_several(cls, obj: Qualifiable) -> bool:
