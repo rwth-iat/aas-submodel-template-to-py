@@ -552,6 +552,7 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
@@ -784,13 +785,13 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if warrantyPeriod and not isinstance(warrantyPeriod, SubmodelElement):
-                    warrantyPeriod=self. WarrantyPeriod(warrantyPeriod)
+                    warrantyPeriod=self.WarrantyPeriod(warrantyPeriod)
                     
 
 
@@ -923,13 +924,13 @@ class TechnicalData(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if manufacturerName and not isinstance(manufacturerName, SubmodelElement):
-                manufacturerName=self. ManufacturerName(manufacturerName)
+                manufacturerName=self.ManufacturerName(manufacturerName)
                 
 
                 
@@ -939,28 +940,25 @@ class TechnicalData(Submodel):
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if manufacturerIdentifier and not isinstance(manufacturerIdentifier, SubmodelElement):
-                manufacturerIdentifier=self. ManufacturerIdentifier(manufacturerIdentifier)
+                manufacturerIdentifier=self.ManufacturerIdentifier(manufacturerIdentifier)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if batteryCategory and not isinstance(batteryCategory, SubmodelElement):
-                batteryCategory=self. BatteryCategory(batteryCategory)
+                batteryCategory=self.BatteryCategory(batteryCategory)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if batteryMass and not isinstance(batteryMass, SubmodelElement):
-                batteryMass=self. BatteryMass(batteryMass)
+                batteryMass=self.BatteryMass(batteryMass)
                 
 
                 
@@ -1591,58 +1589,53 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if nominalVoltage and not isinstance(nominalVoltage, SubmodelElement):
-                    nominalVoltage=self. NominalVoltage(nominalVoltage)
+                    nominalVoltage=self.NominalVoltage(nominalVoltage)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if minVoltage and not isinstance(minVoltage, SubmodelElement):
-                    minVoltage=self. MinVoltage(minVoltage)
+                    minVoltage=self.MinVoltage(minVoltage)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if maxVoltage and not isinstance(maxVoltage, SubmodelElement):
-                    maxVoltage=self. MaxVoltage(maxVoltage)
+                    maxVoltage=self.MaxVoltage(maxVoltage)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if ratedCapacity and not isinstance(ratedCapacity, SubmodelElement):
-                    ratedCapacity=self. RatedCapacity(ratedCapacity)
+                    ratedCapacity=self.RatedCapacity(ratedCapacity)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if capacityFade and not isinstance(capacityFade, SubmodelElement):
-                    capacityFade=self. CapacityFade(capacityFade)
+                    capacityFade=self.CapacityFade(capacityFade)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if certifiedUsableBatteryEnergy and not isinstance(certifiedUsableBatteryEnergy, SubmodelElement):
-                    certifiedUsableBatteryEnergy=self. CertifiedUsableBatteryEnergy(certifiedUsableBatteryEnergy)
+                    certifiedUsableBatteryEnergy=self.CertifiedUsableBatteryEnergy(certifiedUsableBatteryEnergy)
                     
 
 
@@ -2087,40 +2080,37 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if initialRoundTripEnergyEfficiency and not isinstance(initialRoundTripEnergyEfficiency, SubmodelElement):
-                    initialRoundTripEnergyEfficiency=self. InitialRoundTripEnergyEfficiency(initialRoundTripEnergyEfficiency)
+                    initialRoundTripEnergyEfficiency=self.InitialRoundTripEnergyEfficiency(initialRoundTripEnergyEfficiency)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if roundTripEnergyEfficiencyAt50PercentOfCycleLife and not isinstance(roundTripEnergyEfficiencyAt50PercentOfCycleLife, SubmodelElement):
-                    roundTripEnergyEfficiencyAt50PercentOfCycleLife=self. RoundTripEnergyEfficiencyAt50PercentOfCycleLife(roundTripEnergyEfficiencyAt50PercentOfCycleLife)
+                    roundTripEnergyEfficiencyAt50PercentOfCycleLife=self.RoundTripEnergyEfficiencyAt50PercentOfCycleLife(roundTripEnergyEfficiencyAt50PercentOfCycleLife)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if energyRoundTripEfficiencyFade and not isinstance(energyRoundTripEfficiencyFade, SubmodelElement):
-                    energyRoundTripEfficiencyFade=self. EnergyRoundTripEfficiencyFade(energyRoundTripEfficiencyFade)
+                    energyRoundTripEfficiencyFade=self.EnergyRoundTripEfficiencyFade(energyRoundTripEfficiencyFade)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if initialSelfDischargingRate and not isinstance(initialSelfDischargingRate, SubmodelElement):
-                    initialSelfDischargingRate=self. InitialSelfDischargingRate(initialSelfDischargingRate)
+                    initialSelfDischargingRate=self.InitialSelfDischargingRate(initialSelfDischargingRate)
                     
 
 
@@ -2739,58 +2729,53 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if initialInternalResistanceOnBatteryCellLevel and not isinstance(initialInternalResistanceOnBatteryCellLevel, SubmodelElement):
-                    initialInternalResistanceOnBatteryCellLevel=self. InitialInternalResistanceOnBatteryCellLevel(initialInternalResistanceOnBatteryCellLevel)
+                    initialInternalResistanceOnBatteryCellLevel=self.InitialInternalResistanceOnBatteryCellLevel(initialInternalResistanceOnBatteryCellLevel)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if initialInternalResistanceOnBatteryPackLevel and not isinstance(initialInternalResistanceOnBatteryPackLevel, SubmodelElement):
-                    initialInternalResistanceOnBatteryPackLevel=self. InitialInternalResistanceOnBatteryPackLevel(initialInternalResistanceOnBatteryPackLevel)
+                    initialInternalResistanceOnBatteryPackLevel=self.InitialInternalResistanceOnBatteryPackLevel(initialInternalResistanceOnBatteryPackLevel)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if initialInternalResistanceOnBatteryModuleLevel and not isinstance(initialInternalResistanceOnBatteryModuleLevel, SubmodelElement):
-                    initialInternalResistanceOnBatteryModuleLevel=self. InitialInternalResistanceOnBatteryModuleLevel(initialInternalResistanceOnBatteryModuleLevel)
+                    initialInternalResistanceOnBatteryModuleLevel=self.InitialInternalResistanceOnBatteryModuleLevel(initialInternalResistanceOnBatteryModuleLevel)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if internalResistanceIncreaseOfBatteryCellLevel and not isinstance(internalResistanceIncreaseOfBatteryCellLevel, SubmodelElement):
-                    internalResistanceIncreaseOfBatteryCellLevel=self. InternalResistanceIncreaseOfBatteryCellLevel(internalResistanceIncreaseOfBatteryCellLevel)
+                    internalResistanceIncreaseOfBatteryCellLevel=self.InternalResistanceIncreaseOfBatteryCellLevel(internalResistanceIncreaseOfBatteryCellLevel)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if internalResistanceIncreaseOfBatteryPackLevel and not isinstance(internalResistanceIncreaseOfBatteryPackLevel, SubmodelElement):
-                    internalResistanceIncreaseOfBatteryPackLevel=self. InternalResistanceIncreaseOfBatteryPackLevel(internalResistanceIncreaseOfBatteryPackLevel)
+                    internalResistanceIncreaseOfBatteryPackLevel=self.InternalResistanceIncreaseOfBatteryPackLevel(internalResistanceIncreaseOfBatteryPackLevel)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if internalResistanceIncreaseOfBatteryModuleLevel and not isinstance(internalResistanceIncreaseOfBatteryModuleLevel, SubmodelElement):
-                    internalResistanceIncreaseOfBatteryModuleLevel=self. InternalResistanceIncreaseOfBatteryModuleLevel(internalResistanceIncreaseOfBatteryModuleLevel)
+                    internalResistanceIncreaseOfBatteryModuleLevel=self.InternalResistanceIncreaseOfBatteryModuleLevel(internalResistanceIncreaseOfBatteryModuleLevel)
                     
 
 
@@ -3306,22 +3291,21 @@ class TechnicalData(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if atSoc and not isinstance(atSoc, SubmodelElement):
-                            atSoc=self. AtSoc(atSoc)
+                            atSoc=self.AtSoc(atSoc)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if powerCapabilityAt and not isinstance(powerCapabilityAt, SubmodelElement):
-                            powerCapabilityAt=self. PowerCapabilityAt(powerCapabilityAt)
+                            powerCapabilityAt=self.PowerCapabilityAt(powerCapabilityAt)
                             
 
 
@@ -3422,6 +3406,7 @@ class TechnicalData(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -3595,31 +3580,29 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if maximumPermittedBatteryPower and not isinstance(maximumPermittedBatteryPower, SubmodelElement):
-                    maximumPermittedBatteryPower=self. MaximumPermittedBatteryPower(maximumPermittedBatteryPower)
+                    maximumPermittedBatteryPower=self.MaximumPermittedBatteryPower(maximumPermittedBatteryPower)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if powerFade and not isinstance(powerFade, SubmodelElement):
-                    powerFade=self. PowerFade(powerFade)
+                    powerFade=self.PowerFade(powerFade)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if ratioNorminalBatteryPowerAndBatteryEnergy and not isinstance(ratioNorminalBatteryPowerAndBatteryEnergy, SubmodelElement):
-                    ratioNorminalBatteryPowerAndBatteryEnergy=self. RatioNorminalBatteryPowerAndBatteryEnergy(ratioNorminalBatteryPowerAndBatteryEnergy)
+                    ratioNorminalBatteryPowerAndBatteryEnergy=self.RatioNorminalBatteryPowerAndBatteryEnergy(ratioNorminalBatteryPowerAndBatteryEnergy)
                     
 
                     
@@ -3894,22 +3877,21 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if temperatureRangeIdleState_LowerBoundary and not isinstance(temperatureRangeIdleState_LowerBoundary, SubmodelElement):
-                    temperatureRangeIdleState_LowerBoundary=self. TemperatureRangeIdleState_LowerBoundary(temperatureRangeIdleState_LowerBoundary)
+                    temperatureRangeIdleState_LowerBoundary=self.TemperatureRangeIdleState_LowerBoundary(temperatureRangeIdleState_LowerBoundary)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if temperatureRangeIdleState_UpperBoundary and not isinstance(temperatureRangeIdleState_UpperBoundary, SubmodelElement):
-                    temperatureRangeIdleState_UpperBoundary=self. TemperatureRangeIdleState_UpperBoundary(temperatureRangeIdleState_UpperBoundary)
+                    temperatureRangeIdleState_UpperBoundary=self.TemperatureRangeIdleState_UpperBoundary(temperatureRangeIdleState_UpperBoundary)
                     
 
 
@@ -4350,40 +4332,37 @@ class TechnicalData(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if expectedLifetimeInCalendarYears and not isinstance(expectedLifetimeInCalendarYears, SubmodelElement):
-                    expectedLifetimeInCalendarYears=self. ExpectedLifetimeInCalendarYears(expectedLifetimeInCalendarYears)
+                    expectedLifetimeInCalendarYears=self.ExpectedLifetimeInCalendarYears(expectedLifetimeInCalendarYears)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if expectedNumberOfCycles and not isinstance(expectedNumberOfCycles, SubmodelElement):
-                    expectedNumberOfCycles=self. ExpectedNumberOfCycles(expectedNumberOfCycles)
+                    expectedNumberOfCycles=self.ExpectedNumberOfCycles(expectedNumberOfCycles)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if capacityThresholdExhaustion and not isinstance(capacityThresholdExhaustion, SubmodelElement):
-                    capacityThresholdExhaustion=self. CapacityThresholdExhaustion(capacityThresholdExhaustion)
+                    capacityThresholdExhaustion=self.CapacityThresholdExhaustion(capacityThresholdExhaustion)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if cRateOfRelevantCycleLifeTest and not isinstance(cRateOfRelevantCycleLifeTest, SubmodelElement):
-                    cRateOfRelevantCycleLifeTest=self. CRateOfRelevantCycleLifeTest(cRateOfRelevantCycleLifeTest)
+                    cRateOfRelevantCycleLifeTest=self.CRateOfRelevantCycleLifeTest(cRateOfRelevantCycleLifeTest)
                     
 
 
@@ -4506,6 +4485,7 @@ class TechnicalData(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -4636,6 +4616,7 @@ class TechnicalData(Submodel):
             embedded_data_specifications = []
         
         
+
 
 
 

@@ -285,12 +285,15 @@ class DataRetentionPolicies(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if semanticids_items and all(
-                        [isinstance(i, Reference) for i in semanticids_items]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if semanticids_items:
                         semanticids_items = [
-                            self.Semanticids_item(i) for i in semanticids_items
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.Semanticids_item(i)
+                            )
+                            for i in semanticids_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list

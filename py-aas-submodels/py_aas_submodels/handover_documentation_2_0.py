@@ -1404,12 +1404,15 @@ class HandoverDocumentation(Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if language_items and all(
-                                [isinstance(i, str) for i in language_items]
-                            ):
+                            # Build submodel elements from raw values passed in the argument
+                            if language_items:
                                 language_items = [
-                                    self.Language_item(i) for i in language_items
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.Language_item(i)
+                                    )
+                                    for i in language_items
                                 ]
 
                             # Add all passed/initialized submodel elements to a single list
@@ -2554,15 +2557,14 @@ class HandoverDocumentation(Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if referstoentities_items and all(
-                                [
-                                    isinstance(i, Reference)
-                                    for i in referstoentities_items
-                                ]
-                            ):
+                            # Build submodel elements from raw values passed in the argument
+                            if referstoentities_items:
                                 referstoentities_items = [
-                                    self.Referstoentities_item(i)
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.Referstoentities_item(i)
+                                    )
                                     for i in referstoentities_items
                                 ]
 
@@ -2823,15 +2825,14 @@ class HandoverDocumentation(Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if basedonreferences_items and all(
-                                [
-                                    isinstance(i, Reference)
-                                    for i in basedonreferences_items
-                                ]
-                            ):
+                            # Build submodel elements from raw values passed in the argument
+                            if basedonreferences_items:
                                 basedonreferences_items = [
-                                    self.Basedonreferences_item(i)
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.Basedonreferences_item(i)
+                                    )
                                     for i in basedonreferences_items
                                 ]
 
@@ -3099,15 +3100,14 @@ class HandoverDocumentation(Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if translationofentities_items and all(
-                                [
-                                    isinstance(i, Reference)
-                                    for i in translationofentities_items
-                                ]
-                            ):
+                            # Build submodel elements from raw values passed in the argument
+                            if translationofentities_items:
                                 translationofentities_items = [
-                                    self.Translationofentities_item(i)
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.Translationofentities_item(i)
+                                    )
                                     for i in translationofentities_items
                                 ]
 
@@ -4087,12 +4087,14 @@ class HandoverDocumentation(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if documentedentities_items and all(
-                        [isinstance(i, Reference) for i in documentedentities_items]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if documentedentities_items:
                         documentedentities_items = [
-                            self.Documentedentities_item(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.Documentedentities_item(i)
+                            )
                             for i in documentedentities_items
                         ]
 

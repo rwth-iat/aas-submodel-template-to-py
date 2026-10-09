@@ -247,11 +247,16 @@ class Models3D(Submodel):
                             if valueId and not isinstance(valueId, SubmodelElement):
                                 valueId = self.ValueId(valueId)
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if isPrimary and all(
-                                [isinstance(i, bool) for i in isPrimary]
-                            ):
-                                isPrimary = [self.IsPrimary(i) for i in isPrimary]
+                            # Build submodel elements from raw values passed in the argument
+                            if isPrimary:
+                                isPrimary = [
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.IsPrimary(i)
+                                    )
+                                    for i in isPrimary
+                                ]
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -836,12 +841,15 @@ class Models3D(Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
-                                # Build a list of submodel elements if a raw values were passed in the argument
-                                if basedon_items and all(
-                                    [isinstance(i, Reference) for i in basedon_items]
-                                ):
+                                # Build submodel elements from raw values passed in the argument
+                                if basedon_items:
                                     basedon_items = [
-                                        self.Basedon_item(i) for i in basedon_items
+                                        (
+                                            i
+                                            if isinstance(i, SubmodelElement)
+                                            else self.Basedon_item(i)
+                                        )
+                                        for i in basedon_items
                                     ]
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -1057,12 +1065,15 @@ class Models3D(Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
-                                # Build a list of submodel elements if a raw values were passed in the argument
-                                if refersto_items and all(
-                                    [isinstance(i, Reference) for i in refersto_items]
-                                ):
+                                # Build submodel elements from raw values passed in the argument
+                                if refersto_items:
                                     refersto_items = [
-                                        self.Refersto_item(i) for i in refersto_items
+                                        (
+                                            i
+                                            if isinstance(i, SubmodelElement)
+                                            else self.Refersto_item(i)
+                                        )
+                                        for i in refersto_items
                                     ]
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -5951,12 +5962,14 @@ class Models3D(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if posmodelpurpose_items and all(
-                            [isinstance(i, str) for i in posmodelpurpose_items]
-                        ):
+                        # Build submodel elements from raw values passed in the argument
+                        if posmodelpurpose_items:
                             posmodelpurpose_items = [
-                                self.Posmodelpurpose_item(i)
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.Posmodelpurpose_item(i)
+                                )
                                 for i in posmodelpurpose_items
                             ]
 
@@ -6171,12 +6184,14 @@ class Models3D(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if negmodelpurpose_items and all(
-                            [isinstance(i, str) for i in negmodelpurpose_items]
-                        ):
+                        # Build submodel elements from raw values passed in the argument
+                        if negmodelpurpose_items:
                             negmodelpurpose_items = [
-                                self.Negmodelpurpose_item(i)
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.Negmodelpurpose_item(i)
+                                )
                                 for i in negmodelpurpose_items
                             ]
 
@@ -6391,12 +6406,15 @@ class Models3D(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if embeddedinfo_items and all(
-                            [isinstance(i, str) for i in embeddedinfo_items]
-                        ):
+                        # Build submodel elements from raw values passed in the argument
+                        if embeddedinfo_items:
                             embeddedinfo_items = [
-                                self.Embeddedinfo_item(i) for i in embeddedinfo_items
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.Embeddedinfo_item(i)
+                                )
+                                for i in embeddedinfo_items
                             ]
 
                         # Add all passed/initialized submodel elements to a single list
@@ -6608,11 +6626,16 @@ class Models3D(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if state_items and all(
-                            [isinstance(i, str) for i in state_items]
-                        ):
-                            state_items = [self.State_item(i) for i in state_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if state_items:
+                            state_items = [
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.State_item(i)
+                                )
+                                for i in state_items
+                            ]
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -7004,12 +7027,14 @@ class Models3D(Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if reducedelements_items and all(
-                                [isinstance(i, str) for i in reducedelements_items]
-                            ):
+                            # Build submodel elements from raw values passed in the argument
+                            if reducedelements_items:
                                 reducedelements_items = [
-                                    self.Reducedelements_item(i)
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.Reducedelements_item(i)
+                                    )
                                     for i in reducedelements_items
                                 ]
 

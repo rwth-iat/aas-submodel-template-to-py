@@ -693,12 +693,11 @@ class WirelessCommunication(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if communicationCycle and all(
-                [isinstance(i, str) for i in communicationCycle]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if communicationCycle:
                 communicationCycle = [
-                    self.CommunicationCycle(i) for i in communicationCycle
+                    i if isinstance(i, SubmodelElement) else self.CommunicationCycle(i)
+                    for i in communicationCycle
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
@@ -707,12 +706,11 @@ class WirelessCommunication(Submodel):
             ):
                 technologyStandard = self.TechnologyStandard(technologyStandard)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if securityMechanism and all(
-                [isinstance(i, str) for i in securityMechanism]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if securityMechanism:
                 securityMechanism = [
-                    self.SecurityMechanism(i) for i in securityMechanism
+                    i if isinstance(i, SubmodelElement) else self.SecurityMechanism(i)
+                    for i in securityMechanism
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -1120,9 +1118,12 @@ class WirelessCommunication(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if bandIDList and all([isinstance(i, str) for i in bandIDList]):
-                    bandIDList = [self.BandIDList(i) for i in bandIDList]
+                # Build submodel elements from raw values passed in the argument
+                if bandIDList:
+                    bandIDList = [
+                        i if isinstance(i, SubmodelElement) else self.BandIDList(i)
+                        for i in bandIDList
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if bandIDCurrent and not isinstance(bandIDCurrent, SubmodelElement):
@@ -1414,12 +1415,15 @@ class WirelessCommunication(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if channelNumbering and all(
-                    [isinstance(i, str) for i in channelNumbering]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if channelNumbering:
                     channelNumbering = [
-                        self.ChannelNumbering(i) for i in channelNumbering
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ChannelNumbering(i)
+                        )
+                        for i in channelNumbering
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1910,7 +1914,7 @@ class WirelessCommunication(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if range and not isinstance(range, SubmodelElement):
-                range = self.Range(range)
+                range = self.Range(min=range[0], max=range[1])
 
             # Build a submodel element if a raw value was passed in the argument
             if specifiedValue and not isinstance(specifiedValue, SubmodelElement):
@@ -2344,7 +2348,7 @@ class WirelessCommunication(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if range and not isinstance(range, SubmodelElement):
-                range = self.Range(range)
+                range = self.Range(min=range[0], max=range[1])
 
             # Build a submodel element if a raw value was passed in the argument
             if specifiedValue and not isinstance(specifiedValue, SubmodelElement):
@@ -3351,7 +3355,9 @@ class WirelessCommunication(Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
                 if frequencyRange and not isinstance(frequencyRange, SubmodelElement):
-                    frequencyRange = self.FrequencyRange(frequencyRange)
+                    frequencyRange = self.FrequencyRange(
+                        min=frequencyRange[0], max=frequencyRange[1]
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6131,27 +6137,40 @@ class WirelessCommunication(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if antennaType and all([isinstance(i, str) for i in antennaType]):
-                antennaType = [self.AntennaType(i) for i in antennaType]
+            # Build submodel elements from raw values passed in the argument
+            if antennaType:
+                antennaType = [
+                    i if isinstance(i, SubmodelElement) else self.AntennaType(i)
+                    for i in antennaType
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if numberOfAntennas and all(
-                [isinstance(i, Short) for i in numberOfAntennas]
-            ):
-                numberOfAntennas = [self.NumberOfAntennas(i) for i in numberOfAntennas]
+            # Build submodel elements from raw values passed in the argument
+            if numberOfAntennas:
+                numberOfAntennas = [
+                    i if isinstance(i, SubmodelElement) else self.NumberOfAntennas(i)
+                    for i in numberOfAntennas
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if connectorType and all([isinstance(i, str) for i in connectorType]):
-                connectorType = [self.ConnectorType(i) for i in connectorType]
+            # Build submodel elements from raw values passed in the argument
+            if connectorType:
+                connectorType = [
+                    i if isinstance(i, SubmodelElement) else self.ConnectorType(i)
+                    for i in connectorType
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if antennaHeight and all([isinstance(i, str) for i in antennaHeight]):
-                antennaHeight = [self.AntennaHeight(i) for i in antennaHeight]
+            # Build submodel elements from raw values passed in the argument
+            if antennaHeight:
+                antennaHeight = [
+                    i if isinstance(i, SubmodelElement) else self.AntennaHeight(i)
+                    for i in antennaHeight
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if interfaces and all([isinstance(i, str) for i in interfaces]):
-                interfaces = [self.Interfaces(i) for i in interfaces]
+            # Build submodel elements from raw values passed in the argument
+            if interfaces:
+                interfaces = [
+                    i if isinstance(i, SubmodelElement) else self.Interfaces(i)
+                    for i in interfaces
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6449,12 +6468,11 @@ class WirelessCommunication(Submodel):
         if embedded_data_specifications is None:
             embedded_data_specifications = []
 
-        # Build a list of submodel elements if a raw values were passed in the argument
-        if wirelessNetworkRole and all(
-            [isinstance(i, str) for i in wirelessNetworkRole]
-        ):
+        # Build submodel elements from raw values passed in the argument
+        if wirelessNetworkRole:
             wirelessNetworkRole = [
-                self.WirelessNetworkRole(i) for i in wirelessNetworkRole
+                i if isinstance(i, SubmodelElement) else self.WirelessNetworkRole(i)
+                for i in wirelessNetworkRole
             ]
 
         # Add all passed/initialized submodel elements to a single list

@@ -222,6 +222,7 @@ class BatteryNameplate(Submodel):
 
 
 
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in []:
@@ -1404,40 +1405,37 @@ class BatteryNameplate(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if markingName and not isinstance(markingName, SubmodelElement):
-                    markingName=self. MarkingName(markingName)
+                    markingName=self.MarkingName(markingName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if designationOfCertificateOrApproval and not isinstance(designationOfCertificateOrApproval, SubmodelElement):
-                    designationOfCertificateOrApproval=self. DesignationOfCertificateOrApproval(designationOfCertificateOrApproval)
+                    designationOfCertificateOrApproval=self.DesignationOfCertificateOrApproval(designationOfCertificateOrApproval)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if issueDate and not isinstance(issueDate, SubmodelElement):
-                    issueDate=self. IssueDate(issueDate)
+                    issueDate=self.IssueDate(issueDate)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if expiryDate and not isinstance(expiryDate, SubmodelElement):
-                    expiryDate=self. ExpiryDate(expiryDate)
+                    expiryDate=self.ExpiryDate(expiryDate)
                     
 
                     
@@ -1447,10 +1445,9 @@ class BatteryNameplate(Submodel):
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if markingAdditionalText and all([isinstance(i, str) for i in markingAdditionalText]):
-                    markingAdditionalText=[self. MarkingAdditionalText(i) for i in markingAdditionalText]
+                # Build submodel elements from raw values passed in the argument
+                if markingAdditionalText:
+                    markingAdditionalText=[i if isinstance(i, SubmodelElement) else self.MarkingAdditionalText(i) for i in markingAdditionalText]
                     
 
 
@@ -1567,6 +1564,7 @@ class BatteryNameplate(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -1815,13 +1813,13 @@ class BatteryNameplate(Submodel):
 
 
 
+
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if eudeclarationofconformity_items and all([isinstance(i, str) for i in eudeclarationofconformity_items]):
-                eudeclarationofconformity_items=[self. Eudeclarationofconformity_item(i) for i in eudeclarationofconformity_items]
+            # Build submodel elements from raw values passed in the argument
+            if eudeclarationofconformity_items:
+                eudeclarationofconformity_items=[i if isinstance(i, SubmodelElement) else self.Eudeclarationofconformity_item(i) for i in eudeclarationofconformity_items]
                 
 
 
@@ -2063,13 +2061,13 @@ class BatteryNameplate(Submodel):
 
 
 
+
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if resultsoftestreportsprovingcompliance_items and all([isinstance(i, str) for i in resultsoftestreportsprovingcompliance_items]):
-                resultsoftestreportsprovingcompliance_items=[self. Resultsoftestreportsprovingcompliance_item(i) for i in resultsoftestreportsprovingcompliance_items]
+            # Build submodel elements from raw values passed in the argument
+            if resultsoftestreportsprovingcompliance_items:
+                resultsoftestreportsprovingcompliance_items=[i if isinstance(i, SubmodelElement) else self.Resultsoftestreportsprovingcompliance_item(i) for i in resultsoftestreportsprovingcompliance_items]
                 
 
 
@@ -2295,22 +2293,21 @@ class BatteryNameplate(Submodel):
 
 
 
+
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if uRIOfTheProduct and not isinstance(uRIOfTheProduct, SubmodelElement):
-            uRIOfTheProduct=self. URIOfTheProduct(uRIOfTheProduct)
+            uRIOfTheProduct=self.URIOfTheProduct(uRIOfTheProduct)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if manufacturerName and not isinstance(manufacturerName, SubmodelElement):
-            manufacturerName=self. ManufacturerName(manufacturerName)
+            manufacturerName=self.ManufacturerName(manufacturerName)
             
 
             
@@ -2320,64 +2317,57 @@ class BatteryNameplate(Submodel):
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if serialNumber and not isinstance(serialNumber, SubmodelElement):
-            serialNumber=self. SerialNumber(serialNumber)
+            serialNumber=self.SerialNumber(serialNumber)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if dateOfManufacture and not isinstance(dateOfManufacture, SubmodelElement):
-            dateOfManufacture=self. DateOfManufacture(dateOfManufacture)
+            dateOfManufacture=self.DateOfManufacture(dateOfManufacture)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if dateOfPuttingIntoService and not isinstance(dateOfPuttingIntoService, SubmodelElement):
-            dateOfPuttingIntoService=self. DateOfPuttingIntoService(dateOfPuttingIntoService)
+            dateOfPuttingIntoService=self.DateOfPuttingIntoService(dateOfPuttingIntoService)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if uniqueFacilityIdentifier and not isinstance(uniqueFacilityIdentifier, SubmodelElement):
-            uniqueFacilityIdentifier=self. UniqueFacilityIdentifier(uniqueFacilityIdentifier)
+            uniqueFacilityIdentifier=self.UniqueFacilityIdentifier(uniqueFacilityIdentifier)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if lifeCycleStage and not isinstance(lifeCycleStage, SubmodelElement):
-            lifeCycleStage=self. LifeCycleStage(lifeCycleStage)
+            lifeCycleStage=self.LifeCycleStage(lifeCycleStage)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if operatorIdentifier and not isinstance(operatorIdentifier, SubmodelElement):
-            operatorIdentifier=self. OperatorIdentifier(operatorIdentifier)
+            operatorIdentifier=self.OperatorIdentifier(operatorIdentifier)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if manufacturerIdentifier and not isinstance(manufacturerIdentifier, SubmodelElement):
-            manufacturerIdentifier=self. ManufacturerIdentifier(manufacturerIdentifier)
+            manufacturerIdentifier=self.ManufacturerIdentifier(manufacturerIdentifier)
             
 
             
@@ -2387,19 +2377,17 @@ class BatteryNameplate(Submodel):
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if eUDeclarationOfConformity and not isinstance(eUDeclarationOfConformity, SubmodelElement):
-            eUDeclarationOfConformity=self. EUDeclarationOfConformity(eUDeclarationOfConformity)
+            eUDeclarationOfConformity=self.EUDeclarationOfConformity(eUDeclarationOfConformity)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if resultsOfTestReportsProvingCompliance and not isinstance(resultsOfTestReportsProvingCompliance, SubmodelElement):
-            resultsOfTestReportsProvingCompliance=self. ResultsOfTestReportsProvingCompliance(resultsOfTestReportsProvingCompliance)
+            resultsOfTestReportsProvingCompliance=self.ResultsOfTestReportsProvingCompliance(resultsOfTestReportsProvingCompliance)
             
 
 

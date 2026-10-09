@@ -224,22 +224,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if energyThroughputValue and not isinstance(energyThroughputValue, SubmodelElement):
-                energyThroughputValue=self. EnergyThroughputValue(energyThroughputValue)
+                energyThroughputValue=self.EnergyThroughputValue(energyThroughputValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -504,22 +503,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if capacityThroughputValue and not isinstance(capacityThroughputValue, SubmodelElement):
-                capacityThroughputValue=self. CapacityThroughputValue(capacityThroughputValue)
+                capacityThroughputValue=self.CapacityThroughputValue(capacityThroughputValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -784,22 +782,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if numberOfFullCyclesValue and not isinstance(numberOfFullCyclesValue, SubmodelElement):
-                numberOfFullCyclesValue=self. NumberOfFullCyclesValue(numberOfFullCyclesValue)
+                numberOfFullCyclesValue=self.NumberOfFullCyclesValue(numberOfFullCyclesValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -1064,22 +1061,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if stateOfCertifiedEnergyValue and not isinstance(stateOfCertifiedEnergyValue, SubmodelElement):
-                stateOfCertifiedEnergyValue=self. StateOfCertifiedEnergyValue(stateOfCertifiedEnergyValue)
+                stateOfCertifiedEnergyValue=self.StateOfCertifiedEnergyValue(stateOfCertifiedEnergyValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -1344,22 +1340,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if remainingEnergyValue and not isinstance(remainingEnergyValue, SubmodelElement):
-                remainingEnergyValue=self. RemainingEnergyValue(remainingEnergyValue)
+                remainingEnergyValue=self.RemainingEnergyValue(remainingEnergyValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -1624,22 +1619,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if remainingCapacityValue and not isinstance(remainingCapacityValue, SubmodelElement):
-                remainingCapacityValue=self. RemainingCapacityValue(remainingCapacityValue)
+                remainingCapacityValue=self.RemainingCapacityValue(remainingCapacityValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -1910,22 +1904,21 @@ class ProductCondition(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if negativeEventValue and not isinstance(negativeEventValue, SubmodelElement):
-                    negativeEventValue=self. NegativeEventValue(negativeEventValue)
+                    negativeEventValue=self.NegativeEventValue(negativeEventValue)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                    lastUpdate=self. LastUpdate(lastUpdate)
+                    lastUpdate=self.LastUpdate(lastUpdate)
                     
 
 
@@ -2026,6 +2019,7 @@ class ProductCondition(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -2270,13 +2264,13 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if informationonaccidents_items and all([isinstance(i, str) for i in informationonaccidents_items]):
-                informationonaccidents_items=[self. Informationonaccidents_item(i) for i in informationonaccidents_items]
+            # Build submodel elements from raw values passed in the argument
+            if informationonaccidents_items:
+                informationonaccidents_items=[i if isinstance(i, SubmodelElement) else self.Informationonaccidents_item(i) for i in informationonaccidents_items]
                 
 
 
@@ -2932,58 +2926,53 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if measuredTemp and not isinstance(measuredTemp, SubmodelElement):
-                measuredTemp=self. MeasuredTemp(measuredTemp)
+                measuredTemp=self.MeasuredTemp(measuredTemp)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeHighTemp and not isinstance(timeExtremeHighTemp, SubmodelElement):
-                timeExtremeHighTemp=self. TimeExtremeHighTemp(timeExtremeHighTemp)
+                timeExtremeHighTemp=self.TimeExtremeHighTemp(timeExtremeHighTemp)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeLowTemp and not isinstance(timeExtremeLowTemp, SubmodelElement):
-                timeExtremeLowTemp=self. TimeExtremeLowTemp(timeExtremeLowTemp)
+                timeExtremeLowTemp=self.TimeExtremeLowTemp(timeExtremeLowTemp)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeHighTempCharging and not isinstance(timeExtremeHighTempCharging, SubmodelElement):
-                timeExtremeHighTempCharging=self. TimeExtremeHighTempCharging(timeExtremeHighTempCharging)
+                timeExtremeHighTempCharging=self.TimeExtremeHighTempCharging(timeExtremeHighTempCharging)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if timeExtremeLowTempCharging and not isinstance(timeExtremeLowTempCharging, SubmodelElement):
-                timeExtremeLowTempCharging=self. TimeExtremeLowTempCharging(timeExtremeLowTempCharging)
+                timeExtremeLowTempCharging=self.TimeExtremeLowTempCharging(timeExtremeLowTempCharging)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -3337,31 +3326,29 @@ class ProductCondition(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if rPCLastUpdated and not isinstance(rPCLastUpdated, SubmodelElement):
-                    rPCLastUpdated=self. RPCLastUpdated(rPCLastUpdated)
+                    rPCLastUpdated=self.RPCLastUpdated(rPCLastUpdated)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if atSoC and not isinstance(atSoC, SubmodelElement):
-                    atSoC=self. AtSoC(atSoC)
+                    atSoC=self.AtSoC(atSoC)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if powerCapabilityAt and not isinstance(powerCapabilityAt, SubmodelElement):
-                    powerCapabilityAt=self. PowerCapabilityAt(powerCapabilityAt)
+                    powerCapabilityAt=self.PowerCapabilityAt(powerCapabilityAt)
                     
 
 
@@ -3543,17 +3530,17 @@ class ProductCondition(Submodel):
 
 
 
-                
 
                 
 
                 
 
                 
-                    
+
+                
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -3818,22 +3805,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if evolutionOfSelfDischargeValue and not isinstance(evolutionOfSelfDischargeValue, SubmodelElement):
-                evolutionOfSelfDischargeValue=self. EvolutionOfSelfDischargeValue(evolutionOfSelfDischargeValue)
+                evolutionOfSelfDischargeValue=self.EvolutionOfSelfDischargeValue(evolutionOfSelfDischargeValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -4098,22 +4084,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if currentSelfDischargingRateValue and not isinstance(currentSelfDischargingRateValue, SubmodelElement):
-                currentSelfDischargingRateValue=self. CurrentSelfDischargingRateValue(currentSelfDischargingRateValue)
+                currentSelfDischargingRateValue=self.CurrentSelfDischargingRateValue(currentSelfDischargingRateValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -4378,22 +4363,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if remainingRoundTripEnergyEfficiencyValue and not isinstance(remainingRoundTripEnergyEfficiencyValue, SubmodelElement):
-                remainingRoundTripEnergyEfficiencyValue=self. RemainingRoundTripEnergyEfficiencyValue(remainingRoundTripEnergyEfficiencyValue)
+                remainingRoundTripEnergyEfficiencyValue=self.RemainingRoundTripEnergyEfficiencyValue(remainingRoundTripEnergyEfficiencyValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -4658,22 +4642,21 @@ class ProductCondition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if stateOfChargeValue and not isinstance(stateOfChargeValue, SubmodelElement):
-                stateOfChargeValue=self. StateOfChargeValue(stateOfChargeValue)
+                stateOfChargeValue=self.StateOfChargeValue(stateOfChargeValue)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-                lastUpdate=self. LastUpdate(lastUpdate)
+                lastUpdate=self.LastUpdate(lastUpdate)
                 
 
 
@@ -4854,7 +4837,6 @@ class ProductCondition(Submodel):
 
 
 
-            
 
             
 
@@ -4885,10 +4867,11 @@ class ProductCondition(Submodel):
             
 
             
-                
+
+            
         # Build a submodel element if a raw value was passed in the argument
         if informationOnAccidents and not isinstance(informationOnAccidents, SubmodelElement):
-            informationOnAccidents=self. InformationOnAccidents(informationOnAccidents)
+            informationOnAccidents=self.InformationOnAccidents(informationOnAccidents)
             
 
             

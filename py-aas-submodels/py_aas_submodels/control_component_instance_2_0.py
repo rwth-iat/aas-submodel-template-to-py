@@ -563,9 +563,12 @@ class ControlComponentInstance(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if mode and all([isinstance(i, str) for i in mode]):
-                        mode = [self.Mode(i) for i in mode]
+                    # Build submodel elements from raw values passed in the argument
+                    if mode:
+                        mode = [
+                            i if isinstance(i, SubmodelElement) else self.Mode(i)
+                            for i in mode
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1190,12 +1193,15 @@ class ControlComponentInstance(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if errorReference and all(
-                        [isinstance(i, Reference) for i in errorReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if errorReference:
                         errorReference = [
-                            self.ErrorReference(i) for i in errorReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ErrorReference(i)
+                            )
+                            for i in errorReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1375,12 +1381,15 @@ class ControlComponentInstance(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if skillReference and all(
-                        [isinstance(i, Reference) for i in skillReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if skillReference:
                         skillReference = [
-                            self.SkillReference(i) for i in skillReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.SkillReference(i)
+                            )
+                            for i in skillReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list

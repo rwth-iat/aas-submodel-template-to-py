@@ -534,12 +534,11 @@ class SISDevice(Submodel):
             if equipmentType and not isinstance(equipmentType, SubmodelElement):
                 equipmentType = self.EquipmentType(equipmentType)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if referenceToTagGroup and all(
-                [isinstance(i, str) for i in referenceToTagGroup]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if referenceToTagGroup:
                 referenceToTagGroup = [
-                    self.ReferenceToTagGroup(i) for i in referenceToTagGroup
+                    i if isinstance(i, SubmodelElement) else self.ReferenceToTagGroup(i)
+                    for i in referenceToTagGroup
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -1941,12 +1940,14 @@ class SISDevice(Submodel):
                             )
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if commentsToFailCriterion and all(
-                        [isinstance(i, str) for i in commentsToFailCriterion]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if commentsToFailCriterion:
                         commentsToFailCriterion = [
-                            self.CommentsToFailCriterion(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.CommentsToFailCriterion(i)
+                            )
                             for i in commentsToFailCriterion
                         ]
 
@@ -2074,12 +2075,15 @@ class SISDevice(Submodel):
                         )
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if requirementsForTesting and all(
-                    [isinstance(i, str) for i in requirementsForTesting]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if requirementsForTesting:
                     requirementsForTesting = [
-                        self.RequirementsForTesting(i) for i in requirementsForTesting
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.RequirementsForTesting(i)
+                        )
+                        for i in requirementsForTesting
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3101,12 +3105,14 @@ class SISDevice(Submodel):
                             )
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if commentsToFailCriterion and all(
-                        [isinstance(i, str) for i in commentsToFailCriterion]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if commentsToFailCriterion:
                         commentsToFailCriterion = [
-                            self.CommentsToFailCriterion(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.CommentsToFailCriterion(i)
+                            )
                             for i in commentsToFailCriterion
                         ]
 
@@ -3818,12 +3824,15 @@ class SISDevice(Submodel):
                         )
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceToBypassGroup and all(
-                    [isinstance(i, str) for i in referenceToBypassGroup]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if referenceToBypassGroup:
                     referenceToBypassGroup = [
-                        self.ReferenceToBypassGroup(i) for i in referenceToBypassGroup
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ReferenceToBypassGroup(i)
+                        )
+                        for i in referenceToBypassGroup
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -5745,20 +5754,26 @@ class SISDevice(Submodel):
                         maximumAllowableHumidity
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if contaminantRequirement and all(
-                    [isinstance(i, str) for i in contaminantRequirement]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if contaminantRequirement:
                     contaminantRequirement = [
-                        self.ContaminantRequirement(i) for i in contaminantRequirement
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ContaminantRequirement(i)
+                        )
+                        for i in contaminantRequirement
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if groundingRequirement and all(
-                    [isinstance(i, str) for i in groundingRequirement]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if groundingRequirement:
                     groundingRequirement = [
-                        self.GroundingRequirement(i) for i in groundingRequirement
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.GroundingRequirement(i)
+                        )
+                        for i in groundingRequirement
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5781,12 +5796,14 @@ class SISDevice(Submodel):
                 ):
                     vibrationResistance = self.VibrationResistance(vibrationResistance)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if electrostaticDischargeProtection and all(
-                    [isinstance(i, str) for i in electrostaticDischargeProtection]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if electrostaticDischargeProtection:
                     electrostaticDischargeProtection = [
-                        self.ElectrostaticDischargeProtection(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ElectrostaticDischargeProtection(i)
+                        )
                         for i in electrostaticDischargeProtection
                     ]
 
@@ -5804,29 +5821,36 @@ class SISDevice(Submodel):
                 ):
                     temperatureClass = self.TemperatureClass(temperatureClass)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if floodingRequirement and all(
-                    [isinstance(i, str) for i in floodingRequirement]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if floodingRequirement:
                     floodingRequirement = [
-                        self.FloodingRequirement(i) for i in floodingRequirement
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.FloodingRequirement(i)
+                        )
+                        for i in floodingRequirement
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if lightningExposureRequirement and all(
-                    [isinstance(i, str) for i in lightningExposureRequirement]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if lightningExposureRequirement:
                     lightningExposureRequirement = [
-                        self.LightningExposureRequirement(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.LightningExposureRequirement(i)
+                        )
                         for i in lightningExposureRequirement
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if otherEnvironmentalRequirement and all(
-                    [isinstance(i, str) for i in otherEnvironmentalRequirement]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if otherEnvironmentalRequirement:
                     otherEnvironmentalRequirement = [
-                        self.OtherEnvironmentalRequirement(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.OtherEnvironmentalRequirement(i)
+                        )
                         for i in otherEnvironmentalRequirement
                     ]
 
@@ -6244,12 +6268,15 @@ class SISDevice(Submodel):
                     ):
                         failurePhilosophy = self.FailurePhilosophy(failurePhilosophy)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if referenceToAlarm and all(
-                        [isinstance(i, Reference) for i in referenceToAlarm]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if referenceToAlarm:
                         referenceToAlarm = [
-                            self.ReferenceToAlarm(i) for i in referenceToAlarm
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ReferenceToAlarm(i)
+                            )
+                            for i in referenceToAlarm
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8067,16 +8094,22 @@ class SISDevice(Submodel):
                     if alarmValue and not isinstance(alarmValue, SubmodelElement):
                         alarmValue = self.AlarmValue(alarmValue)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if alarmType and all([isinstance(i, str) for i in alarmType]):
-                        alarmType = [self.AlarmType(i) for i in alarmType]
+                    # Build submodel elements from raw values passed in the argument
+                    if alarmType:
+                        alarmType = [
+                            i if isinstance(i, SubmodelElement) else self.AlarmType(i)
+                            for i in alarmType
+                        ]
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if otherAlarmType and all(
-                        [isinstance(i, str) for i in otherAlarmType]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if otherAlarmType:
                         otherAlarmType = [
-                            self.OtherAlarmType(i) for i in otherAlarmType
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.OtherAlarmType(i)
+                            )
+                            for i in otherAlarmType
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -9441,12 +9474,14 @@ class SISDevice(Submodel):
             if tripEnergyMode and not isinstance(tripEnergyMode, SubmodelElement):
                 tripEnergyMode = self.TripEnergyMode(tripEnergyMode)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if requirementIfEnergizedToTrip and all(
-                [isinstance(i, str) for i in requirementIfEnergizedToTrip]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if requirementIfEnergizedToTrip:
                 requirementIfEnergizedToTrip = [
-                    self.RequirementIfEnergizedToTrip(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.RequirementIfEnergizedToTrip(i)
+                    )
                     for i in requirementIfEnergizedToTrip
                 ]
 
@@ -9454,40 +9489,40 @@ class SISDevice(Submodel):
             if tripAction and not isinstance(tripAction, SubmodelElement):
                 tripAction = self.TripAction(tripAction)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if survivabilityRequirement and all(
-                [isinstance(i, str) for i in survivabilityRequirement]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if survivabilityRequirement:
                 survivabilityRequirement = [
-                    self.SurvivabilityRequirement(i) for i in survivabilityRequirement
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.SurvivabilityRequirement(i)
+                    )
+                    for i in survivabilityRequirement
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if diagnosticRequired and all(
-                [isinstance(i, str) for i in diagnosticRequired]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if diagnosticRequired:
                 diagnosticRequired = [
-                    self.DiagnosticRequired(i) for i in diagnosticRequired
+                    i if isinstance(i, SubmodelElement) else self.DiagnosticRequired(i)
+                    for i in diagnosticRequired
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if additionalDiagnosticRequirementForImplementation and all(
-                [
-                    isinstance(i, str)
-                    for i in additionalDiagnosticRequirementForImplementation
-                ]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if additionalDiagnosticRequirementForImplementation:
                 additionalDiagnosticRequirementForImplementation = [
-                    self.AdditionalDiagnosticRequirementForImplementation(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.AdditionalDiagnosticRequirementForImplementation(i)
+                    )
                     for i in additionalDiagnosticRequirementForImplementation
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if timeDelayOfAction and all(
-                [isinstance(i, Decimal) for i in timeDelayOfAction]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if timeDelayOfAction:
                 timeDelayOfAction = [
-                    self.TimeDelayOfAction(i) for i in timeDelayOfAction
+                    i if isinstance(i, SubmodelElement) else self.TimeDelayOfAction(i)
+                    for i in timeDelayOfAction
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
@@ -11227,9 +11262,12 @@ class SISDevice(Submodel):
             if deviceBoundary and not isinstance(deviceBoundary, SubmodelElement):
                 deviceBoundary = self.DeviceBoundary(deviceBoundary)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if maintainableItem and all([isinstance(i, str) for i in maintainableItem]):
-                maintainableItem = [self.MaintainableItem(i) for i in maintainableItem]
+            # Build submodel elements from raw values passed in the argument
+            if maintainableItem:
+                maintainableItem = [
+                    i if isinstance(i, SubmodelElement) else self.MaintainableItem(i)
+                    for i in maintainableItem
+                ]
 
             # Build a submodel element if a raw value was passed in the argument
             if systematicCapabilitySpecified and not isinstance(
@@ -12158,9 +12196,12 @@ class SISDevice(Submodel):
                     diagnosticCoverageDesign
                 )
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if dataSource and all([isinstance(i, str) for i in dataSource]):
-                dataSource = [self.DataSource(i) for i in dataSource]
+            # Build submodel elements from raw values passed in the argument
+            if dataSource:
+                dataSource = [
+                    i if isinstance(i, SubmodelElement) else self.DataSource(i)
+                    for i in dataSource
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -14324,9 +14365,12 @@ class SISDevice(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if application and all([isinstance(i, str) for i in application]):
-                application = [self.Application(i) for i in application]
+            # Build submodel elements from raw values passed in the argument
+            if application:
+                application = [
+                    i if isinstance(i, SubmodelElement) else self.Application(i)
+                    for i in application
+                ]
 
             # Build a submodel element if a raw value was passed in the argument
             if externalExposure and not isinstance(externalExposure, SubmodelElement):
@@ -14340,20 +14384,18 @@ class SISDevice(Submodel):
             if fluid and not isinstance(fluid, SubmodelElement):
                 fluid = self.Fluid(fluid)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if internalDiagnostic and all(
-                [isinstance(i, str) for i in internalDiagnostic]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if internalDiagnostic:
                 internalDiagnostic = [
-                    self.InternalDiagnostic(i) for i in internalDiagnostic
+                    i if isinstance(i, SubmodelElement) else self.InternalDiagnostic(i)
+                    for i in internalDiagnostic
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if externalDiagnostic and all(
-                [isinstance(i, str) for i in externalDiagnostic]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if externalDiagnostic:
                 externalDiagnostic = [
-                    self.ExternalDiagnostic(i) for i in externalDiagnostic
+                    i if isinstance(i, SubmodelElement) else self.ExternalDiagnostic(i)
+                    for i in externalDiagnostic
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -15114,12 +15156,14 @@ class SISDevice(Submodel):
             if physicalLocation and not isinstance(physicalLocation, SubmodelElement):
                 physicalLocation = self.PhysicalLocation(physicalLocation)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if referenceToAssociatedDevice and all(
-                [isinstance(i, Reference) for i in referenceToAssociatedDevice]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if referenceToAssociatedDevice:
                 referenceToAssociatedDevice = [
-                    self.ReferenceToAssociatedDevice(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.ReferenceToAssociatedDevice(i)
+                    )
                     for i in referenceToAssociatedDevice
                 ]
 
@@ -19805,12 +19849,15 @@ class SISDevice(Submodel):
                 if isSpuriousTrip and not isinstance(isSpuriousTrip, SubmodelElement):
                     isSpuriousTrip = self.IsSpuriousTrip(isSpuriousTrip)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if failureMechanism and all(
-                    [isinstance(i, str) for i in failureMechanism]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if failureMechanism:
                     failureMechanism = [
-                        self.FailureMechanism(i) for i in failureMechanism
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.FailureMechanism(i)
+                        )
+                        for i in failureMechanism
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -19823,12 +19870,15 @@ class SISDevice(Submodel):
                         )
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if failureDescription and all(
-                    [isinstance(i, str) for i in failureDescription]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if failureDescription:
                     failureDescription = [
-                        self.FailureDescription(i) for i in failureDescription
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.FailureDescription(i)
+                        )
+                        for i in failureDescription
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -19869,9 +19919,12 @@ class SISDevice(Submodel):
                 if workOrderNumber and not isinstance(workOrderNumber, SubmodelElement):
                     workOrderNumber = self.WorkOrderNumber(workOrderNumber)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if measure and all([isinstance(i, str) for i in measure]):
-                    measure = [self.Measure(i) for i in measure]
+                # Build submodel elements from raw values passed in the argument
+                if measure:
+                    measure = [
+                        i if isinstance(i, SubmodelElement) else self.Measure(i)
+                        for i in measure
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -22495,12 +22548,14 @@ class SISDevice(Submodel):
             ):
                 presentTestInterval = self.PresentTestInterval(presentTestInterval)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if sourceOfPresentTestInterval and all(
-                [isinstance(i, str) for i in sourceOfPresentTestInterval]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if sourceOfPresentTestInterval:
                 sourceOfPresentTestInterval = [
-                    self.SourceOfPresentTestInterval(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.SourceOfPresentTestInterval(i)
+                    )
                     for i in sourceOfPresentTestInterval
                 ]
 

@@ -2318,20 +2318,21 @@ class PAMSpecificationSheet(Submodel):
             ):
                 criticalityCategory = self.CriticalityCategory(criticalityCategory)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if furtherInformation and all(
-                [isinstance(i, str) for i in furtherInformation]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if furtherInformation:
                 furtherInformation = [
-                    self.FurtherInformation(i) for i in furtherInformation
+                    i if isinstance(i, SubmodelElement) else self.FurtherInformation(i)
+                    for i in furtherInformation
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if furtherInformationReference and all(
-                [isinstance(i, str) for i in furtherInformationReference]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if furtherInformationReference:
                 furtherInformationReference = [
-                    self.FurtherInformationReference(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.FurtherInformationReference(i)
+                    )
                     for i in furtherInformationReference
                 ]
 

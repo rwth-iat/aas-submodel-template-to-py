@@ -386,40 +386,37 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if manufacturerName and not isinstance(manufacturerName, SubmodelElement):
-                manufacturerName=self. ManufacturerName(manufacturerName)
+                manufacturerName=self.ManufacturerName(manufacturerName)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if manufacturerProductDesignation and not isinstance(manufacturerProductDesignation, SubmodelElement):
-                manufacturerProductDesignation=self. ManufacturerProductDesignation(manufacturerProductDesignation)
+                manufacturerProductDesignation=self.ManufacturerProductDesignation(manufacturerProductDesignation)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if orderCodeOfManufacturer and not isinstance(orderCodeOfManufacturer, SubmodelElement):
-                orderCodeOfManufacturer=self. OrderCodeOfManufacturer(orderCodeOfManufacturer)
+                orderCodeOfManufacturer=self.OrderCodeOfManufacturer(orderCodeOfManufacturer)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if productArticleNumberOfManufacturer and not isinstance(productArticleNumberOfManufacturer, SubmodelElement):
-                productArticleNumberOfManufacturer=self. ProductArticleNumberOfManufacturer(productArticleNumberOfManufacturer)
+                productArticleNumberOfManufacturer=self.ProductArticleNumberOfManufacturer(productArticleNumberOfManufacturer)
                 
 
 
@@ -705,13 +702,13 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if reportreferences_items and not isinstance(reportreferences_items, SubmodelElement):
-                            reportreferences_items=self. Reportreferences_item(reportreferences_items)
+                            reportreferences_items=self.Reportreferences_item(reportreferences_items)
                             
 
 
@@ -950,13 +947,13 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if hazardLevel and not isinstance(hazardLevel, SubmodelElement):
-                        hazardLevel=self. HazardLevel(hazardLevel)
+                        hazardLevel=self.HazardLevel(hazardLevel)
                         
 
                         
@@ -966,10 +963,9 @@ class RailwayFireProtection(Submodel):
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if requirement and not isinstance(requirement, SubmodelElement):
-                        requirement=self. Requirement(requirement)
+                        requirement=self.Requirement(requirement)
                         
 
 
@@ -1070,6 +1066,7 @@ class RailwayFireProtection(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -1648,40 +1645,37 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if testProcedure and not isinstance(testProcedure, SubmodelElement):
-                                testProcedure=self. TestProcedure(testProcedure)
+                                testProcedure=self.TestProcedure(testProcedure)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if testResult and not isinstance(testResult, SubmodelElement):
-                                testResult=self. TestResult(testResult)
+                                testResult=self.TestResult(testResult)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if testDate and not isinstance(testDate, SubmodelElement):
-                                testDate=self. TestDate(testDate)
+                                testDate=self.TestDate(testDate)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if testReportNumber and not isinstance(testReportNumber, SubmodelElement):
-                                testReportNumber=self. TestReportNumber(testReportNumber)
+                                testReportNumber=self.TestReportNumber(testReportNumber)
                                 
 
 
@@ -1782,6 +1776,7 @@ class RailwayFireProtection(Submodel):
                             embedded_data_specifications = []
                         
                         
+
 
 
 
@@ -2405,13 +2400,13 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                                     
 
                                     
-                                        
                                 # Build a submodel element if a raw value was passed in the argument
                                 if telephoneNumber and not isinstance(telephoneNumber, SubmodelElement):
-                                    telephoneNumber=self. TelephoneNumber(telephoneNumber)
+                                    telephoneNumber=self.TelephoneNumber(telephoneNumber)
                                     
 
 
@@ -2591,13 +2586,13 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                                     
 
                                     
-                                        
                                 # Build a submodel element if a raw value was passed in the argument
                                 if emailAddress and not isinstance(emailAddress, SubmodelElement):
-                                    emailAddress=self. EmailAddress(emailAddress)
+                                    emailAddress=self.EmailAddress(emailAddress)
                                     
 
 
@@ -2889,40 +2884,37 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if addressOfAdditionalLink and not isinstance(addressOfAdditionalLink, SubmodelElement):
-                                addressOfAdditionalLink=self. AddressOfAdditionalLink(addressOfAdditionalLink)
+                                addressOfAdditionalLink=self.AddressOfAdditionalLink(addressOfAdditionalLink)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if nationalCode and not isinstance(nationalCode, SubmodelElement):
-                                nationalCode=self. NationalCode(nationalCode)
+                                nationalCode=self.NationalCode(nationalCode)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if cityTown and not isinstance(cityTown, SubmodelElement):
-                                cityTown=self. CityTown(cityTown)
+                                cityTown=self.CityTown(cityTown)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if company and not isinstance(company, SubmodelElement):
-                                company=self. Company(company)
+                                company=self.Company(company)
                                 
 
                                 
@@ -2936,19 +2928,17 @@ class RailwayFireProtection(Submodel):
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if street and not isinstance(street, SubmodelElement):
-                                street=self. Street(street)
+                                street=self.Street(street)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if zipcode and not isinstance(zipcode, SubmodelElement):
-                                zipcode=self. Zipcode(zipcode)
+                                zipcode=self.Zipcode(zipcode)
                                 
 
 
@@ -3221,13 +3211,13 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if labName and not isinstance(labName, SubmodelElement):
-                            labName=self. LabName(labName)
+                            labName=self.LabName(labName)
                             
 
                             
@@ -3237,19 +3227,17 @@ class RailwayFireProtection(Submodel):
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if labAccreditation and not isinstance(labAccreditation, SubmodelElement):
-                            labAccreditation=self. LabAccreditation(labAccreditation)
+                            labAccreditation=self.LabAccreditation(labAccreditation)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if reportAuthor and not isinstance(reportAuthor, SubmodelElement):
-                            reportAuthor=self. ReportAuthor(reportAuthor)
+                            reportAuthor=self.ReportAuthor(reportAuthor)
                             
 
 
@@ -3354,6 +3342,7 @@ class RailwayFireProtection(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -3468,6 +3457,7 @@ class RailwayFireProtection(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -3623,6 +3613,7 @@ class RailwayFireProtection(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -4144,31 +4135,29 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if totalMassPerUnit and not isinstance(totalMassPerUnit, SubmodelElement):
-                    totalMassPerUnit=self. TotalMassPerUnit(totalMassPerUnit)
+                    totalMassPerUnit=self.TotalMassPerUnit(totalMassPerUnit)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if combustibleMassPerUnit and not isinstance(combustibleMassPerUnit, SubmodelElement):
-                    combustibleMassPerUnit=self. CombustibleMassPerUnit(combustibleMassPerUnit)
+                    combustibleMassPerUnit=self.CombustibleMassPerUnit(combustibleMassPerUnit)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if unit and not isinstance(unit, SubmodelElement):
-                    unit=self. Unit(unit)
+                    unit=self.Unit(unit)
                     
 
 
@@ -4362,22 +4351,21 @@ class RailwayFireProtection(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if materialName and not isinstance(materialName, SubmodelElement):
-                materialName=self. MaterialName(materialName)
+                materialName=self.MaterialName(materialName)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if materialCharacteristics and not isinstance(materialCharacteristics, SubmodelElement):
-                materialCharacteristics=self. MaterialCharacteristics(materialCharacteristics)
+                materialCharacteristics=self.MaterialCharacteristics(min=materialCharacteristics[0], max=materialCharacteristics[1])
                 
 
                 
@@ -4387,10 +4375,9 @@ class RailwayFireProtection(Submodel):
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if testedMaterialCombinationDescription and not isinstance(testedMaterialCombinationDescription, SubmodelElement):
-                testedMaterialCombinationDescription=self. TestedMaterialCombinationDescription(testedMaterialCombinationDescription)
+                testedMaterialCombinationDescription=self.TestedMaterialCombinationDescription(testedMaterialCombinationDescription)
                 
 
 
@@ -4501,6 +4488,7 @@ class RailwayFireProtection(Submodel):
             embedded_data_specifications = []
         
         
+
 
 
 

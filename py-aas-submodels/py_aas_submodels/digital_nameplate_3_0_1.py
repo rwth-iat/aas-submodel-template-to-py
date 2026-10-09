@@ -1956,12 +1956,15 @@ class Nameplate(Submodel):
                 if expiryDate and not isinstance(expiryDate, SubmodelElement):
                     expiryDate = self.ExpiryDate(expiryDate)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if markingAdditionalText and all(
-                    [isinstance(i, str) for i in markingAdditionalText]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if markingAdditionalText:
                     markingAdditionalText = [
-                        self.MarkingAdditionalText(i) for i in markingAdditionalText
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.MarkingAdditionalText(i)
+                        )
+                        for i in markingAdditionalText
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2721,19 +2724,27 @@ class Nameplate(Submodel):
                             )
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if arbitraryProperty and all(
-                        [isinstance(i, str) for i in arbitraryProperty]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitraryProperty:
                         arbitraryProperty = [
-                            self.ArbitraryProperty(i) for i in arbitraryProperty
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ArbitraryProperty(i)
+                            )
+                            for i in arbitraryProperty
                         ]
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if arbitraryMLP and all(
-                        [isinstance(i, LangStringSet) for i in arbitraryMLP]
-                    ):
-                        arbitraryMLP = [self.ArbitraryMLP(i) for i in arbitraryMLP]
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitraryMLP:
+                        arbitraryMLP = [
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ArbitraryMLP(i)
+                            )
+                            for i in arbitraryMLP
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2974,19 +2985,19 @@ class Nameplate(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if arbitraryProperty and all(
-                [isinstance(i, str) for i in arbitraryProperty]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if arbitraryProperty:
                 arbitraryProperty = [
-                    self.ArbitraryProperty(i) for i in arbitraryProperty
+                    i if isinstance(i, SubmodelElement) else self.ArbitraryProperty(i)
+                    for i in arbitraryProperty
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if arbitraryMLP and all(
-                [isinstance(i, LangStringSet) for i in arbitraryMLP]
-            ):
-                arbitraryMLP = [self.ArbitraryMLP(i) for i in arbitraryMLP]
+            # Build submodel elements from raw values passed in the argument
+            if arbitraryMLP:
+                arbitraryMLP = [
+                    i if isinstance(i, SubmodelElement) else self.ArbitraryMLP(i)
+                    for i in arbitraryMLP
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

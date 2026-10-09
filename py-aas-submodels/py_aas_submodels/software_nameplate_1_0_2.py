@@ -2001,11 +2001,12 @@ class SoftwareNameplate(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if installedModule and all(
-                    [isinstance(i, str) for i in installedModule]
-                ):
-                    installedModule = [self.InstalledModule(i) for i in installedModule]
+                # Build submodel elements from raw values passed in the argument
+                if installedModule:
+                    installedModule = [
+                        i if isinstance(i, SubmodelElement) else self.InstalledModule(i)
+                        for i in installedModule
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -4680,9 +4681,12 @@ class SoftwareNameplate(Submodel):
                 if nationalCode and not isinstance(nationalCode, SubmodelElement):
                     nationalCode = self.NationalCode(nationalCode)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if language and all([isinstance(i, str) for i in language]):
-                    language = [self.Language(i) for i in language]
+                # Build submodel elements from raw values passed in the argument
+                if language:
+                    language = [
+                        i if isinstance(i, SubmodelElement) else self.Language(i)
+                        for i in language
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if timeZone and not isinstance(timeZone, SubmodelElement):

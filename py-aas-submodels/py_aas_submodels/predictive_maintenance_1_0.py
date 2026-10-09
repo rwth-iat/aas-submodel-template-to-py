@@ -1268,7 +1268,9 @@ class PredictiveMaintenance(Submodel):
                     if driftInfoAIModel and not isinstance(
                         driftInfoAIModel, SubmodelElement
                     ):
-                        driftInfoAIModel = self.DriftInfoAIModel(driftInfoAIModel)
+                        driftInfoAIModel = self.DriftInfoAIModel(
+                            min=driftInfoAIModel[0], max=driftInfoAIModel[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if meanValue and not isinstance(meanValue, SubmodelElement):
@@ -2536,7 +2538,9 @@ class PredictiveMaintenance(Submodel):
             if confidenceInterval and not isinstance(
                 confidenceInterval, SubmodelElement
             ):
-                confidenceInterval = self.ConfidenceInterval(confidenceInterval)
+                confidenceInterval = self.ConfidenceInterval(
+                    min=confidenceInterval[0], max=confidenceInterval[1]
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

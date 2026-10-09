@@ -147,13 +147,13 @@ class Circularity(Submodel):
 
 
 
+
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if dismantlingandremovalinformation_items and all([isinstance(i, str) for i in dismantlingandremovalinformation_items]):
-                dismantlingandremovalinformation_items=[self. Dismantlingandremovalinformation_item(i) for i in dismantlingandremovalinformation_items]
+            # Build submodel elements from raw values passed in the argument
+            if dismantlingandremovalinformation_items:
+                dismantlingandremovalinformation_items=[i if isinstance(i, SubmodelElement) else self.Dismantlingandremovalinformation_item(i) for i in dismantlingandremovalinformation_items]
                 
 
 
@@ -625,31 +625,29 @@ class Circularity(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if nationalCode and not isinstance(nationalCode, SubmodelElement):
-                        nationalCode=self. NationalCode(nationalCode)
+                        nationalCode=self.NationalCode(nationalCode)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if postalCode and not isinstance(postalCode, SubmodelElement):
-                        postalCode=self. PostalCode(postalCode)
+                        postalCode=self.PostalCode(postalCode)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if street and not isinstance(street, SubmodelElement):
-                        street=self. Street(street)
+                        street=self.Street(street)
                         
 
 
@@ -1076,40 +1074,37 @@ class Circularity(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if emailAddress and not isinstance(emailAddress, SubmodelElement):
-                        emailAddress=self. EmailAddress(emailAddress)
+                        emailAddress=self.EmailAddress(emailAddress)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if publicKey and not isinstance(publicKey, SubmodelElement):
-                        publicKey=self. PublicKey(publicKey)
+                        publicKey=self.PublicKey(publicKey)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if typeOfEmailAddress and not isinstance(typeOfEmailAddress, SubmodelElement):
-                        typeOfEmailAddress=self. TypeOfEmailAddress(typeOfEmailAddress)
+                        typeOfEmailAddress=self.TypeOfEmailAddress(typeOfEmailAddress)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if typeOfPublicKey and not isinstance(typeOfPublicKey, SubmodelElement):
-                        typeOfPublicKey=self. TypeOfPublicKey(typeOfPublicKey)
+                        typeOfPublicKey=self.TypeOfPublicKey(typeOfPublicKey)
                         
 
 
@@ -1457,22 +1452,21 @@ class Circularity(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if partName and not isinstance(partName, SubmodelElement):
-                            partName=self. PartName(partName)
+                            partName=self.PartName(partName)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if partNumber and not isinstance(partNumber, SubmodelElement):
-                            partNumber=self. PartNumber(partNumber)
+                            partNumber=self.PartNumber(partNumber)
                             
 
 
@@ -1573,6 +1567,7 @@ class Circularity(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -1750,13 +1745,13 @@ class Circularity(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if nameOfSupplier and not isinstance(nameOfSupplier, SubmodelElement):
-                    nameOfSupplier=self. NameOfSupplier(nameOfSupplier)
+                    nameOfSupplier=self.NameOfSupplier(nameOfSupplier)
                     
 
                     
@@ -1770,10 +1765,9 @@ class Circularity(Submodel):
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if supplierWebAddress and not isinstance(supplierWebAddress, SubmodelElement):
-                    supplierWebAddress=self. SupplierWebAddress(supplierWebAddress)
+                    supplierWebAddress=self.SupplierWebAddress(supplierWebAddress)
                     
 
                     
@@ -1878,6 +1872,7 @@ class Circularity(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -2288,31 +2283,29 @@ class Circularity(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if preConsumerShare and not isinstance(preConsumerShare, SubmodelElement):
-                    preConsumerShare=self. PreConsumerShare(preConsumerShare)
+                    preConsumerShare=self.PreConsumerShare(preConsumerShare)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if recycledMaterial and not isinstance(recycledMaterial, SubmodelElement):
-                    recycledMaterial=self. RecycledMaterial(recycledMaterial)
+                    recycledMaterial=self.RecycledMaterial(recycledMaterial)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if postConsumerShare and not isinstance(postConsumerShare, SubmodelElement):
-                    postConsumerShare=self. PostConsumerShare(postConsumerShare)
+                    postConsumerShare=self.PostConsumerShare(postConsumerShare)
                     
 
 
@@ -2413,6 +2406,7 @@ class Circularity(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -2661,13 +2655,13 @@ class Circularity(Submodel):
 
 
 
+
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if safetyinstructions_items and all([isinstance(i, str) for i in safetyinstructions_items]):
-                    safetyinstructions_items=[self. Safetyinstructions_item(i) for i in safetyinstructions_items]
+                # Build submodel elements from raw values passed in the argument
+                if safetyinstructions_items:
+                    safetyinstructions_items=[i if isinstance(i, SubmodelElement) else self.Safetyinstructions_item(i) for i in safetyinstructions_items]
                     
 
 
@@ -2906,13 +2900,13 @@ class Circularity(Submodel):
 
 
 
+
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if extinguishingagents_items and all([isinstance(i, str) for i in extinguishingagents_items]):
-                    extinguishingagents_items=[self. Extinguishingagents_item(i) for i in extinguishingagents_items]
+                # Build submodel elements from raw values passed in the argument
+                if extinguishingagents_items:
+                    extinguishingagents_items=[i if isinstance(i, SubmodelElement) else self.Extinguishingagents_item(i) for i in extinguishingagents_items]
                     
 
 
@@ -3066,22 +3060,21 @@ class Circularity(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if safetyInstructions and not isinstance(safetyInstructions, SubmodelElement):
-                safetyInstructions=self. SafetyInstructions(safetyInstructions)
+                safetyInstructions=self.SafetyInstructions(safetyInstructions)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if extinguishingAgents and not isinstance(extinguishingAgents, SubmodelElement):
-                extinguishingAgents=self. ExtinguishingAgents(extinguishingAgents)
+                extinguishingAgents=self.ExtinguishingAgents(extinguishingAgents)
                 
 
 
@@ -3273,13 +3266,13 @@ class Circularity(Submodel):
 
 
 
+
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if wasteprevention_items and all([isinstance(i, str) for i in wasteprevention_items]):
-                    wasteprevention_items=[self. Wasteprevention_item(i) for i in wasteprevention_items]
+                # Build submodel elements from raw values passed in the argument
+                if wasteprevention_items:
+                    wasteprevention_items=[i if isinstance(i, SubmodelElement) else self.Wasteprevention_item(i) for i in wasteprevention_items]
                     
 
 
@@ -3518,13 +3511,13 @@ class Circularity(Submodel):
 
 
 
+
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if separatecollection_items and all([isinstance(i, str) for i in separatecollection_items]):
-                    separatecollection_items=[self. Separatecollection_item(i) for i in separatecollection_items]
+                # Build submodel elements from raw values passed in the argument
+                if separatecollection_items:
+                    separatecollection_items=[i if isinstance(i, SubmodelElement) else self.Separatecollection_item(i) for i in separatecollection_items]
                     
 
 
@@ -3763,13 +3756,13 @@ class Circularity(Submodel):
 
 
 
+
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if informationoncollection_items and all([isinstance(i, str) for i in informationoncollection_items]):
-                    informationoncollection_items=[self. Informationoncollection_item(i) for i in informationoncollection_items]
+                # Build submodel elements from raw values passed in the argument
+                if informationoncollection_items:
+                    informationoncollection_items=[i if isinstance(i, SubmodelElement) else self.Informationoncollection_item(i) for i in informationoncollection_items]
                     
 
 
@@ -3929,31 +3922,29 @@ class Circularity(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if wastePrevention and not isinstance(wastePrevention, SubmodelElement):
-                wastePrevention=self. WastePrevention(wastePrevention)
+                wastePrevention=self.WastePrevention(wastePrevention)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if separateCollection and not isinstance(separateCollection, SubmodelElement):
-                separateCollection=self. SeparateCollection(separateCollection)
+                separateCollection=self.SeparateCollection(separateCollection)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if informationOnCollection and not isinstance(informationOnCollection, SubmodelElement):
-                informationOnCollection=self. InformationOnCollection(informationOnCollection)
+                informationOnCollection=self.InformationOnCollection(informationOnCollection)
                 
 
 
@@ -4167,13 +4158,13 @@ class Circularity(Submodel):
 
 
 
+
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if dismantlingAndRemovalInformation and not isinstance(dismantlingAndRemovalInformation, SubmodelElement):
-            dismantlingAndRemovalInformation=self. DismantlingAndRemovalInformation(dismantlingAndRemovalInformation)
+            dismantlingAndRemovalInformation=self.DismantlingAndRemovalInformation(dismantlingAndRemovalInformation)
             
 
             
@@ -4195,10 +4186,9 @@ class Circularity(Submodel):
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if renewableContent and not isinstance(renewableContent, SubmodelElement):
-            renewableContent=self. RenewableContent(renewableContent)
+            renewableContent=self.RenewableContent(renewableContent)
             
 
 

@@ -158,13 +158,13 @@ class CarbonFootprint(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if pcfcalculationmethods_items and not isinstance(pcfcalculationmethods_items, SubmodelElement):
-                        pcfcalculationmethods_items=self. Pcfcalculationmethods_item(pcfcalculationmethods_items)
+                        pcfcalculationmethods_items=self.Pcfcalculationmethods_item(pcfcalculationmethods_items)
                         
 
 
@@ -647,13 +647,13 @@ class CarbonFootprint(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if lifecyclephases_items and not isinstance(lifecyclephases_items, SubmodelElement):
-                        lifecyclephases_items=self. Lifecyclephases_item(lifecyclephases_items)
+                        lifecyclephases_items=self.Lifecyclephases_item(lifecyclephases_items)
                         
 
 
@@ -973,13 +973,13 @@ class CarbonFootprint(Submodel):
 
 
 
+
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if weblinktopubliccarbonfootprintstudy_items and all([isinstance(i, str) for i in weblinktopubliccarbonfootprintstudy_items]):
-                        weblinktopubliccarbonfootprintstudy_items=[self. Weblinktopubliccarbonfootprintstudy_item(i) for i in weblinktopubliccarbonfootprintstudy_items]
+                    # Build submodel elements from raw values passed in the argument
+                    if weblinktopubliccarbonfootprintstudy_items:
+                        weblinktopubliccarbonfootprintstudy_items=[i if isinstance(i, SubmodelElement) else self.Weblinktopubliccarbonfootprintstudy_item(i) for i in weblinktopubliccarbonfootprintstudy_items]
                         
 
 
@@ -1163,67 +1163,61 @@ class CarbonFootprint(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if pcfCalculationMethods and not isinstance(pcfCalculationMethods, SubmodelElement):
-                    pcfCalculationMethods=self. PcfCalculationMethods(pcfCalculationMethods)
+                    pcfCalculationMethods=self.PcfCalculationMethods(pcfCalculationMethods)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if pcfCO2eq and not isinstance(pcfCO2eq, SubmodelElement):
-                    pcfCO2eq=self. PcfCO2eq(pcfCO2eq)
+                    pcfCO2eq=self.PcfCO2eq(pcfCO2eq)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if referenceImpactUnitForCalculation and not isinstance(referenceImpactUnitForCalculation, SubmodelElement):
-                    referenceImpactUnitForCalculation=self. ReferenceImpactUnitForCalculation(referenceImpactUnitForCalculation)
+                    referenceImpactUnitForCalculation=self.ReferenceImpactUnitForCalculation(referenceImpactUnitForCalculation)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if quantityOfMeasureForCalculation and not isinstance(quantityOfMeasureForCalculation, SubmodelElement):
-                    quantityOfMeasureForCalculation=self. QuantityOfMeasureForCalculation(quantityOfMeasureForCalculation)
+                    quantityOfMeasureForCalculation=self.QuantityOfMeasureForCalculation(quantityOfMeasureForCalculation)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if lifeCyclePhases and not isinstance(lifeCyclePhases, SubmodelElement):
-                    lifeCyclePhases=self. LifeCyclePhases(lifeCyclePhases)
+                    lifeCyclePhases=self.LifeCyclePhases(lifeCyclePhases)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if performanceClass and not isinstance(performanceClass, SubmodelElement):
-                    performanceClass=self. PerformanceClass(performanceClass)
+                    performanceClass=self.PerformanceClass(performanceClass)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if webLinkToPublicCarbonFootprintStudy and not isinstance(webLinkToPublicCarbonFootprintStudy, SubmodelElement):
-                    webLinkToPublicCarbonFootprintStudy=self. WebLinkToPublicCarbonFootprintStudy(webLinkToPublicCarbonFootprintStudy)
+                    webLinkToPublicCarbonFootprintStudy=self.WebLinkToPublicCarbonFootprintStudy(webLinkToPublicCarbonFootprintStudy)
                     
 
 
@@ -1324,6 +1318,7 @@ class CarbonFootprint(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -1479,6 +1474,7 @@ class CarbonFootprint(Submodel):
             embedded_data_specifications = []
         
         
+
 
 
 

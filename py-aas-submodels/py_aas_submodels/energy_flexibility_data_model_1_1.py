@@ -4405,11 +4405,13 @@ class EnergyFlexibilityDataModel(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if power and not isinstance(power, SubmodelElement):
-                                power = self.Power(power)
+                                power = self.Power(min=power[0], max=power[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if duration and not isinstance(duration, SubmodelElement):
-                                duration = self.Duration(duration)
+                                duration = self.Duration(
+                                    min=duration[0], max=duration[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if referencePoint and not isinstance(
@@ -5077,7 +5079,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             activationGradient, SubmodelElement
                         ):
                             activationGradient = self.ActivationGradient(
-                                activationGradient
+                                min=activationGradient[0], max=activationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -5085,7 +5087,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             modulationGradient, SubmodelElement
                         ):
                             modulationGradient = self.ModulationGradient(
-                                modulationGradient
+                                min=modulationGradient[0], max=modulationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -5093,7 +5095,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             deactivationGradient, SubmodelElement
                         ):
                             deactivationGradient = self.DeactivationGradient(
-                                deactivationGradient
+                                min=deactivationGradient[0], max=deactivationGradient[1]
                             )
 
                         # Add all passed/initialized submodel elements to a single list
@@ -6533,17 +6535,23 @@ class EnergyFlexibilityDataModel(Submodel):
                     if reactionDuration and not isinstance(
                         reactionDuration, SubmodelElement
                     ):
-                        reactionDuration = self.ReactionDuration(reactionDuration)
+                        reactionDuration = self.ReactionDuration(
+                            min=reactionDuration[0], max=reactionDuration[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if usageNumber and not isinstance(usageNumber, SubmodelElement):
-                        usageNumber = self.UsageNumber(usageNumber)
+                        usageNumber = self.UsageNumber(
+                            min=usageNumber[0], max=usageNumber[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if modulationNumber and not isinstance(
                         modulationNumber, SubmodelElement
                     ):
-                        modulationNumber = self.ModulationNumber(modulationNumber)
+                        modulationNumber = self.ModulationNumber(
+                            min=modulationNumber[0], max=modulationNumber[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if regenerationDuration and not isinstance(
@@ -8394,14 +8402,16 @@ class EnergyFlexibilityDataModel(Submodel):
                     if usableCapacity and not isinstance(
                         usableCapacity, SubmodelElement
                     ):
-                        usableCapacity = self.UsableCapacity(usableCapacity)
+                        usableCapacity = self.UsableCapacity(
+                            min=usableCapacity[0], max=usableCapacity[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if initialEnergyContent and not isinstance(
                         initialEnergyContent, SubmodelElement
                     ):
                         initialEnergyContent = self.InitialEnergyContent(
-                            initialEnergyContent
+                            min=initialEnergyContent[0], max=initialEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -8409,7 +8419,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         targetEnergyContent, SubmodelElement
                     ):
                         targetEnergyContent = self.TargetEnergyContent(
-                            targetEnergyContent
+                            min=targetEnergyContent[0], max=targetEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -9930,7 +9940,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         applicabilityDuration, SubmodelElement
                     ):
                         applicabilityDuration = self.ApplicabilityDuration(
-                            applicabilityDuration
+                            min=applicabilityDuration[0], max=applicabilityDuration[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -12561,11 +12571,13 @@ class EnergyFlexibilityDataModel(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if power and not isinstance(power, SubmodelElement):
-                                power = self.Power(power)
+                                power = self.Power(min=power[0], max=power[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if duration and not isinstance(duration, SubmodelElement):
-                                duration = self.Duration(duration)
+                                duration = self.Duration(
+                                    min=duration[0], max=duration[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if durationType and not isinstance(
@@ -13233,7 +13245,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             activationGradient, SubmodelElement
                         ):
                             activationGradient = self.ActivationGradient(
-                                activationGradient
+                                min=activationGradient[0], max=activationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -13241,7 +13253,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             modulationGradient, SubmodelElement
                         ):
                             modulationGradient = self.ModulationGradient(
-                                modulationGradient
+                                min=modulationGradient[0], max=modulationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -13249,7 +13261,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             deactivationGradient, SubmodelElement
                         ):
                             deactivationGradient = self.DeactivationGradient(
-                                deactivationGradient
+                                min=deactivationGradient[0], max=deactivationGradient[1]
                             )
 
                         # Add all passed/initialized submodel elements to a single list
@@ -14689,17 +14701,23 @@ class EnergyFlexibilityDataModel(Submodel):
                     if reactionDuration and not isinstance(
                         reactionDuration, SubmodelElement
                     ):
-                        reactionDuration = self.ReactionDuration(reactionDuration)
+                        reactionDuration = self.ReactionDuration(
+                            min=reactionDuration[0], max=reactionDuration[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if usageNumber and not isinstance(usageNumber, SubmodelElement):
-                        usageNumber = self.UsageNumber(usageNumber)
+                        usageNumber = self.UsageNumber(
+                            min=usageNumber[0], max=usageNumber[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if modulationNumber and not isinstance(
                         modulationNumber, SubmodelElement
                     ):
-                        modulationNumber = self.ModulationNumber(modulationNumber)
+                        modulationNumber = self.ModulationNumber(
+                            min=modulationNumber[0], max=modulationNumber[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if regenerationDuration and not isinstance(
@@ -16550,14 +16568,16 @@ class EnergyFlexibilityDataModel(Submodel):
                     if usableCapacity and not isinstance(
                         usableCapacity, SubmodelElement
                     ):
-                        usableCapacity = self.UsableCapacity(usableCapacity)
+                        usableCapacity = self.UsableCapacity(
+                            min=usableCapacity[0], max=usableCapacity[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if initialEnergyContent and not isinstance(
                         initialEnergyContent, SubmodelElement
                     ):
                         initialEnergyContent = self.InitialEnergyContent(
-                            initialEnergyContent
+                            min=initialEnergyContent[0], max=initialEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -16565,7 +16585,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         targetEnergyContent, SubmodelElement
                     ):
                         targetEnergyContent = self.TargetEnergyContent(
-                            targetEnergyContent
+                            min=targetEnergyContent[0], max=targetEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -18086,7 +18106,7 @@ class EnergyFlexibilityDataModel(Submodel):
                         applicabilityDuration, SubmodelElement
                     ):
                         applicabilityDuration = self.ApplicabilityDuration(
-                            applicabilityDuration
+                            min=applicabilityDuration[0], max=applicabilityDuration[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -20160,7 +20180,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             activationGradient, SubmodelElement
                         ):
                             activationGradient = self.ActivationGradient(
-                                activationGradient
+                                min=activationGradient[0], max=activationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -20168,7 +20188,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             modulationGradient, SubmodelElement
                         ):
                             modulationGradient = self.ModulationGradient(
-                                modulationGradient
+                                min=modulationGradient[0], max=modulationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -20176,7 +20196,7 @@ class EnergyFlexibilityDataModel(Submodel):
                             deactivationGradient, SubmodelElement
                         ):
                             deactivationGradient = self.DeactivationGradient(
-                                deactivationGradient
+                                min=deactivationGradient[0], max=deactivationGradient[1]
                             )
 
                         # Add all passed/initialized submodel elements to a single list
@@ -20425,7 +20445,7 @@ class EnergyFlexibilityDataModel(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if power and not isinstance(power, SubmodelElement):
-                                power = self.Power(power)
+                                power = self.Power(min=power[0], max=power[1])
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -20698,7 +20718,9 @@ class EnergyFlexibilityDataModel(Submodel):
                     if reactionDuration and not isinstance(
                         reactionDuration, SubmodelElement
                     ):
-                        reactionDuration = self.ReactionDuration(reactionDuration)
+                        reactionDuration = self.ReactionDuration(
+                            min=reactionDuration[0], max=reactionDuration[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if regenerationDuration and not isinstance(
@@ -20712,7 +20734,9 @@ class EnergyFlexibilityDataModel(Submodel):
                     if modulationNumber and not isinstance(
                         modulationNumber, SubmodelElement
                     ):
-                        modulationNumber = self.ModulationNumber(modulationNumber)
+                        modulationNumber = self.ModulationNumber(
+                            min=modulationNumber[0], max=modulationNumber[1]
+                        )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -21724,14 +21748,16 @@ class EnergyFlexibilityDataModel(Submodel):
                     if usableCapacity and not isinstance(
                         usableCapacity, SubmodelElement
                     ):
-                        usableCapacity = self.UsableCapacity(usableCapacity)
+                        usableCapacity = self.UsableCapacity(
+                            min=usableCapacity[0], max=usableCapacity[1]
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
                     if initialEnergyContent and not isinstance(
                         initialEnergyContent, SubmodelElement
                     ):
                         initialEnergyContent = self.InitialEnergyContent(
-                            initialEnergyContent
+                            min=initialEnergyContent[0], max=initialEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument

@@ -726,12 +726,15 @@ class CompanyData(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if mainproductgroups_items and all(
-                    [isinstance(i, LangStringSet) for i in mainproductgroups_items]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if mainproductgroups_items:
                     mainproductgroups_items = [
-                        self.Mainproductgroups_item(i) for i in mainproductgroups_items
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.Mainproductgroups_item(i)
+                        )
+                        for i in mainproductgroups_items
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -955,12 +958,11 @@ class CompanyData(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if industries_items and all(
-                    [isinstance(i, LangStringSet) for i in industries_items]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if industries_items:
                     industries_items = [
-                        self.Industries_item(i) for i in industries_items
+                        i if isinstance(i, SubmodelElement) else self.Industries_item(i)
+                        for i in industries_items
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2503,11 +2505,16 @@ class CompanyData(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if cadtools_items and all(
-                        [isinstance(i, str) for i in cadtools_items]
-                    ):
-                        cadtools_items = [self.Cadtools_item(i) for i in cadtools_items]
+                    # Build submodel elements from raw values passed in the argument
+                    if cadtools_items:
+                        cadtools_items = [
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.Cadtools_item(i)
+                            )
+                            for i in cadtools_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3085,12 +3092,15 @@ class CompanyData(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if cadformats_items and all(
-                        [isinstance(i, str) for i in cadformats_items]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if cadformats_items:
                         cadformats_items = [
-                            self.Cadformats_item(i) for i in cadformats_items
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.Cadformats_item(i)
+                            )
+                            for i in cadformats_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5087,12 +5097,15 @@ class CompanyData(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if memberships_items and all(
-                        [isinstance(i, str) for i in memberships_items]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if memberships_items:
                         memberships_items = [
-                            self.Memberships_item(i) for i in memberships_items
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.Memberships_item(i)
+                            )
+                            for i in memberships_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5758,12 +5771,14 @@ class CompanyData(Submodel):
                         if expiryDate and not isinstance(expiryDate, SubmodelElement):
                             expiryDate = self.ExpiryDate(expiryDate)
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if certificationDocument and all(
-                            [isinstance(i, Reference) for i in certificationDocument]
-                        ):
+                        # Build submodel elements from raw values passed in the argument
+                        if certificationDocument:
                             certificationDocument = [
-                                self.CertificationDocument(i)
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.CertificationDocument(i)
+                                )
                                 for i in certificationDocument
                             ]
 
@@ -8521,20 +8536,25 @@ class CompanyData(Submodel):
                             complianceStatement
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if documentationURI and all(
-                        [isinstance(i, AnyURI) for i in documentationURI]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if documentationURI:
                         documentationURI = [
-                            self.DocumentationURI(i) for i in documentationURI
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.DocumentationURI(i)
+                            )
+                            for i in documentationURI
                         ]
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if documentationReference and all(
-                        [isinstance(i, Reference) for i in documentationReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if documentationReference:
                         documentationReference = [
-                            self.DocumentationReference(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.DocumentationReference(i)
+                            )
                             for i in documentationReference
                         ]
 

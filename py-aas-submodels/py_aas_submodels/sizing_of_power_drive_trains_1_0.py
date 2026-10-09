@@ -4206,7 +4206,8 @@ class PowerDriveTrainSizing(Submodel):
                     ambientTemperatureController, SubmodelElement
                 ):
                     ambientTemperatureController = self.AmbientTemperatureController(
-                        ambientTemperatureController
+                        min=ambientTemperatureController[0],
+                        max=ambientTemperatureController[1],
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4214,7 +4215,7 @@ class PowerDriveTrainSizing(Submodel):
                     ambientTemperatureMotor, SubmodelElement
                 ):
                     ambientTemperatureMotor = self.AmbientTemperatureMotor(
-                        ambientTemperatureMotor
+                        min=ambientTemperatureMotor[0], max=ambientTemperatureMotor[1]
                     )
 
                 # Add all passed/initialized submodel elements to a single list

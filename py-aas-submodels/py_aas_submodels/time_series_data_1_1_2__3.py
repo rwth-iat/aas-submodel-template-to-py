@@ -428,9 +428,12 @@ class TimeSeries(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if time and all([isinstance(i, Long) for i in time]):
-                    time = [self.Time(i) for i in time]
+                # Build submodel elements from raw values passed in the argument
+                if time:
+                    time = [
+                        i if isinstance(i, SubmodelElement) else self.Time(i)
+                        for i in time
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if sampleAccelerationX and not isinstance(
@@ -3151,9 +3154,12 @@ class TimeSeries(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if time and all([isinstance(i, Long) for i in time]):
-                            time = [self.Time(i) for i in time]
+                        # Build submodel elements from raw values passed in the argument
+                        if time:
+                            time = [
+                                i if isinstance(i, SubmodelElement) else self.Time(i)
+                                for i in time
+                            ]
 
                         # Build a submodel element if a raw value was passed in the argument
                         if sampleAccelerationX and not isinstance(

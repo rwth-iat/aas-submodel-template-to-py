@@ -592,12 +592,14 @@ class UAServerDataSheet(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if supportsecuritypolicyuris_items and all(
-                    [isinstance(i, str) for i in supportsecuritypolicyuris_items]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if supportsecuritypolicyuris_items:
                     supportsecuritypolicyuris_items = [
-                        self.Supportsecuritypolicyuris_item(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.Supportsecuritypolicyuris_item(i)
+                        )
                         for i in supportsecuritypolicyuris_items
                     ]
 
@@ -1962,12 +1964,15 @@ class UAServerDataSheet(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if discoveryurls_items and all(
-                            [isinstance(i, str) for i in discoveryurls_items]
-                        ):
+                        # Build submodel elements from raw values passed in the argument
+                        if discoveryurls_items:
                             discoveryurls_items = [
-                                self.Discoveryurls_item(i) for i in discoveryurls_items
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.Discoveryurls_item(i)
+                                )
+                                for i in discoveryurls_items
                             ]
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3505,12 +3510,11 @@ class UAServerDataSheet(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if discoveryurls_items and all(
-                [isinstance(i, str) for i in discoveryurls_items]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if discoveryurls_items:
                 discoveryurls_items = [
-                    self.Discoveryurls_item(i) for i in discoveryurls_items
+                    i if isinstance(i, SubmodelElement) else self.Discoveryurls_item(i)
+                    for i in discoveryurls_items
                 ]
 
             # Add all passed/initialized submodel elements to a single list

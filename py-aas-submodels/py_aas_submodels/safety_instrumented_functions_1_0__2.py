@@ -907,20 +907,25 @@ class SafetyInstrumentedSystem(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if survivabilityRequirement and all(
-                [isinstance(i, str) for i in survivabilityRequirement]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if survivabilityRequirement:
                 survivabilityRequirement = [
-                    self.SurvivabilityRequirement(i) for i in survivabilityRequirement
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.SurvivabilityRequirement(i)
+                    )
+                    for i in survivabilityRequirement
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if requirementForStartingUpAndRestartingSIS and all(
-                [isinstance(i, str) for i in requirementForStartingUpAndRestartingSIS]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if requirementForStartingUpAndRestartingSIS:
                 requirementForStartingUpAndRestartingSIS = [
-                    self.RequirementForStartingUpAndRestartingSIS(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.RequirementForStartingUpAndRestartingSIS(i)
+                    )
                     for i in requirementForStartingUpAndRestartingSIS
                 ]
 

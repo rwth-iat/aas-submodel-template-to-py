@@ -546,9 +546,12 @@ class AIDeployment(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if exampleInput and all([isinstance(i, str) for i in exampleInput]):
-                exampleInput = [self.ExampleInput(i) for i in exampleInput]
+            # Build submodel elements from raw values passed in the argument
+            if exampleInput:
+                exampleInput = [
+                    i if isinstance(i, SubmodelElement) else self.ExampleInput(i)
+                    for i in exampleInput
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -684,9 +687,12 @@ class AIDeployment(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if exampleOutput and all([isinstance(i, str) for i in exampleOutput]):
-                exampleOutput = [self.ExampleOutput(i) for i in exampleOutput]
+            # Build submodel elements from raw values passed in the argument
+            if exampleOutput:
+                exampleOutput = [
+                    i if isinstance(i, SubmodelElement) else self.ExampleOutput(i)
+                    for i in exampleOutput
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2450,7 +2456,9 @@ class AIDeployment(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if timeIntervall and not isinstance(timeIntervall, SubmodelElement):
-                timeIntervall = self.TimeIntervall(timeIntervall)
+                timeIntervall = self.TimeIntervall(
+                    min=timeIntervall[0], max=timeIntervall[1]
+                )
 
             # Build a submodel element if a raw value was passed in the argument
             if averageConfidenceOverTime and not isinstance(

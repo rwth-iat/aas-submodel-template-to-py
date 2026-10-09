@@ -378,13 +378,19 @@ class SimulationModels(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if posSimPurpose and all([isinstance(i, str) for i in posSimPurpose]):
-                    posSimPurpose = [self.PosSimPurpose(i) for i in posSimPurpose]
+                # Build submodel elements from raw values passed in the argument
+                if posSimPurpose:
+                    posSimPurpose = [
+                        i if isinstance(i, SubmodelElement) else self.PosSimPurpose(i)
+                        for i in posSimPurpose
+                    ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if negSimPurpose and all([isinstance(i, str) for i in negSimPurpose]):
-                    negSimPurpose = [self.NegSimPurpose(i) for i in negSimPurpose]
+                # Build submodel elements from raw values passed in the argument
+                if negSimPurpose:
+                    negSimPurpose = [
+                        i if isinstance(i, SubmodelElement) else self.NegSimPurpose(i)
+                        for i in negSimPurpose
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2549,17 +2555,23 @@ class SimulationModels(Submodel):
                     if simToolName and not isinstance(simToolName, SubmodelElement):
                         simToolName = self.SimToolName(simToolName)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if dependencySimTool and all(
-                        [isinstance(i, str) for i in dependencySimTool]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if dependencySimTool:
                         dependencySimTool = [
-                            self.DependencySimTool(i) for i in dependencySimTool
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.DependencySimTool(i)
+                            )
+                            for i in dependencySimTool
                         ]
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if compiler and all([isinstance(i, str) for i in compiler]):
-                        compiler = [self.Compiler(i) for i in compiler]
+                    # Build submodel elements from raw values passed in the argument
+                    if compiler:
+                        compiler = [
+                            i if isinstance(i, SubmodelElement) else self.Compiler(i)
+                            for i in compiler
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2680,11 +2692,12 @@ class SimulationModels(Submodel):
                 if operatingSystem and not isinstance(operatingSystem, SubmodelElement):
                     operatingSystem = self.OperatingSystem(operatingSystem)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if toolEnvironment and all(
-                    [isinstance(i, str) for i in toolEnvironment]
-                ):
-                    toolEnvironment = [self.ToolEnvironment(i) for i in toolEnvironment]
+                # Build submodel elements from raw values passed in the argument
+                if toolEnvironment:
+                    toolEnvironment = [
+                        i if isinstance(i, SubmodelElement) else self.ToolEnvironment(i)
+                        for i in toolEnvironment
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if dependencyEnvironment and not isinstance(
@@ -5272,9 +5285,12 @@ class SimulationModels(Submodel):
                 if company and not isinstance(company, SubmodelElement):
                     company = self.Company(company)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if language and all([isinstance(i, str) for i in language]):
-                    language = [self.Language(i) for i in language]
+                # Build submodel elements from raw values passed in the argument
+                if language:
+                    language = [
+                        i if isinstance(i, SubmodelElement) else self.Language(i)
+                        for i in language
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -7674,24 +7690,29 @@ class SimulationModels(Submodel):
             if summary and not isinstance(summary, SubmodelElement):
                 summary = self.Summary(summary)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if typeOfModel and all([isinstance(i, str) for i in typeOfModel]):
-                typeOfModel = [self.TypeOfModel(i) for i in typeOfModel]
+            # Build submodel elements from raw values passed in the argument
+            if typeOfModel:
+                typeOfModel = [
+                    i if isinstance(i, SubmodelElement) else self.TypeOfModel(i)
+                    for i in typeOfModel
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if scopeOfModel and all([isinstance(i, str) for i in scopeOfModel]):
-                scopeOfModel = [self.ScopeOfModel(i) for i in scopeOfModel]
+            # Build submodel elements from raw values passed in the argument
+            if scopeOfModel:
+                scopeOfModel = [
+                    i if isinstance(i, SubmodelElement) else self.ScopeOfModel(i)
+                    for i in scopeOfModel
+                ]
 
             # Build a submodel element if a raw value was passed in the argument
             if licenseModel and not isinstance(licenseModel, SubmodelElement):
                 licenseModel = self.LicenseModel(licenseModel)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if engineeringDomain and all(
-                [isinstance(i, str) for i in engineeringDomain]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if engineeringDomain:
                 engineeringDomain = [
-                    self.EngineeringDomain(i) for i in engineeringDomain
+                    i if isinstance(i, SubmodelElement) else self.EngineeringDomain(i)
+                    for i in engineeringDomain
                 ]
 
             # Build a submodel element if a raw value was passed in the argument

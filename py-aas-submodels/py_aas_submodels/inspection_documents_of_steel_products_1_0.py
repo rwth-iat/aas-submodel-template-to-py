@@ -495,9 +495,12 @@ class InspectionDocumentsOfSteelProducts(Submodel):
             if nationalCode and not isinstance(nationalCode, SubmodelElement):
                 nationalCode = self.NationalCode(nationalCode)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if mailAddress and all([isinstance(i, str) for i in mailAddress]):
-                mailAddress = [self.MailAddress(i) for i in mailAddress]
+            # Build submodel elements from raw values passed in the argument
+            if mailAddress:
+                mailAddress = [
+                    i if isinstance(i, SubmodelElement) else self.MailAddress(i)
+                    for i in mailAddress
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1153,13 +1156,19 @@ class InspectionDocumentsOfSteelProducts(Submodel):
             if companyName and not isinstance(companyName, SubmodelElement):
                 companyName = self.CompanyName(companyName)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if customerRole and all([isinstance(i, str) for i in customerRole]):
-                customerRole = [self.CustomerRole(i) for i in customerRole]
+            # Build submodel elements from raw values passed in the argument
+            if customerRole:
+                customerRole = [
+                    i if isinstance(i, SubmodelElement) else self.CustomerRole(i)
+                    for i in customerRole
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if street and all([isinstance(i, str) for i in street]):
-                street = [self.Street(i) for i in street]
+            # Build submodel elements from raw values passed in the argument
+            if street:
+                street = [
+                    i if isinstance(i, SubmodelElement) else self.Street(i)
+                    for i in street
+                ]
 
             # Build a submodel element if a raw value was passed in the argument
             if zIPCode and not isinstance(zIPCode, SubmodelElement):
@@ -1173,9 +1182,12 @@ class InspectionDocumentsOfSteelProducts(Submodel):
             if nationalCode and not isinstance(nationalCode, SubmodelElement):
                 nationalCode = self.NationalCode(nationalCode)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if mailAddress and all([isinstance(i, str) for i in mailAddress]):
-                mailAddress = [self.MailAddress(i) for i in mailAddress]
+            # Build submodel elements from raw values passed in the argument
+            if mailAddress:
+                mailAddress = [
+                    i if isinstance(i, SubmodelElement) else self.MailAddress(i)
+                    for i in mailAddress
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2843,12 +2855,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     if length and not isinstance(length, SubmodelElement):
                         length = self.Length(length)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if standardReference and all(
-                        [isinstance(i, str) for i in standardReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if standardReference:
                         standardReference = [
-                            self.StandardReference(i) for i in standardReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.StandardReference(i)
+                            )
+                            for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3333,12 +3348,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     if length and not isinstance(length, SubmodelElement):
                         length = self.Length(length)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if standardReference and all(
-                        [isinstance(i, str) for i in standardReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if standardReference:
                         standardReference = [
-                            self.StandardReference(i) for i in standardReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.StandardReference(i)
+                            )
+                            for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3672,12 +3690,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     if length and not isinstance(length, SubmodelElement):
                         length = self.Length(length)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if standardReference and all(
-                        [isinstance(i, str) for i in standardReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if standardReference:
                         standardReference = [
-                            self.StandardReference(i) for i in standardReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.StandardReference(i)
+                            )
+                            for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4010,12 +4031,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     if length and not isinstance(length, SubmodelElement):
                         length = self.Length(length)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if standardReference and all(
-                        [isinstance(i, str) for i in standardReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if standardReference:
                         standardReference = [
-                            self.StandardReference(i) for i in standardReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.StandardReference(i)
+                            )
+                            for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4419,12 +4443,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     if length and not isinstance(length, SubmodelElement):
                         length = self.Length(length)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if standardReference and all(
-                        [isinstance(i, str) for i in standardReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if standardReference:
                         standardReference = [
-                            self.StandardReference(i) for i in standardReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.StandardReference(i)
+                            )
+                            for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4828,12 +4855,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     if length and not isinstance(length, SubmodelElement):
                         length = self.Length(length)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if standardReference and all(
-                        [isinstance(i, str) for i in standardReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if standardReference:
                         standardReference = [
-                            self.StandardReference(i) for i in standardReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.StandardReference(i)
+                            )
+                            for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5320,12 +5350,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                     if length and not isinstance(length, SubmodelElement):
                         length = self.Length(length)
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if standardReference and all(
-                        [isinstance(i, str) for i in standardReference]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if standardReference:
                         standardReference = [
-                            self.StandardReference(i) for i in standardReference
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.StandardReference(i)
+                            )
+                            for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6856,20 +6889,26 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                 if sampleShape and not isinstance(sampleShape, SubmodelElement):
                     sampleShape = self.SampleShape(sampleShape)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if locationOfSample and all(
-                    [isinstance(i, LangStringSet) for i in locationOfSample]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if locationOfSample:
                     locationOfSample = [
-                        self.LocationOfSample(i) for i in locationOfSample
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.LocationOfSample(i)
+                        )
+                        for i in locationOfSample
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if directionOfSample and all(
-                    [isinstance(i, LangStringSet) for i in directionOfSample]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if directionOfSample:
                     directionOfSample = [
-                        self.DirectionOfSample(i) for i in directionOfSample
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.DirectionOfSample(i)
+                        )
+                        for i in directionOfSample
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7531,20 +7570,26 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                 if testTemperature and not isinstance(testTemperature, SubmodelElement):
                     testTemperature = self.TestTemperature(testTemperature)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if locationOfSample and all(
-                    [isinstance(i, LangStringSet) for i in locationOfSample]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if locationOfSample:
                     locationOfSample = [
-                        self.LocationOfSample(i) for i in locationOfSample
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.LocationOfSample(i)
+                        )
+                        for i in locationOfSample
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if directionOfSample and all(
-                    [isinstance(i, LangStringSet) for i in directionOfSample]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if directionOfSample:
                     directionOfSample = [
-                        self.DirectionOfSample(i) for i in directionOfSample
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.DirectionOfSample(i)
+                        )
+                        for i in directionOfSample
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -8551,20 +8596,26 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                 if testTemperature and not isinstance(testTemperature, SubmodelElement):
                     testTemperature = self.TestTemperature(testTemperature)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if locationOfSample and all(
-                    [isinstance(i, str) for i in locationOfSample]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if locationOfSample:
                     locationOfSample = [
-                        self.LocationOfSample(i) for i in locationOfSample
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.LocationOfSample(i)
+                        )
+                        for i in locationOfSample
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if directionOfSample and all(
-                    [isinstance(i, str) for i in directionOfSample]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if directionOfSample:
                     directionOfSample = [
-                        self.DirectionOfSample(i) for i in directionOfSample
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.DirectionOfSample(i)
+                        )
+                        for i in directionOfSample
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -10850,12 +10901,15 @@ class InspectionDocumentsOfSteelProducts(Submodel):
                 if issueDate and not isinstance(issueDate, SubmodelElement):
                     issueDate = self.IssueDate(issueDate)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if markingAdditionalText and all(
-                    [isinstance(i, str) for i in markingAdditionalText]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if markingAdditionalText:
                     markingAdditionalText = [
-                        self.MarkingAdditionalText(i) for i in markingAdditionalText
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.MarkingAdditionalText(i)
+                        )
+                        for i in markingAdditionalText
                     ]
 
                 # Add all passed/initialized submodel elements to a single list

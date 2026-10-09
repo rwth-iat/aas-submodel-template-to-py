@@ -2357,17 +2357,23 @@ class IntelligentInformationforUse(Submodel):
                         dateOfLastModification
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if language and all([isinstance(i, str) for i in language]):
-                    language = [self.Language(i) for i in language]
+                # Build submodel elements from raw values passed in the argument
+                if language:
+                    language = [
+                        i if isinstance(i, SubmodelElement) else self.Language(i)
+                        for i in language
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if revision and not isinstance(revision, SubmodelElement):
                     revision = self.Revision(revision)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if rights and all([isinstance(i, LangStringSet) for i in rights]):
-                    rights = [self.Rights(i) for i in rights]
+                # Build submodel elements from raw values passed in the argument
+                if rights:
+                    rights = [
+                        i if isinstance(i, SubmodelElement) else self.Rights(i)
+                        for i in rights
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if isReplacementOf and not isinstance(isReplacementOf, SubmodelElement):
@@ -4680,17 +4686,23 @@ class IntelligentInformationforUse(Submodel):
                         dateOfLastModification
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if language and all([isinstance(i, str) for i in language]):
-                    language = [self.Language(i) for i in language]
+                # Build submodel elements from raw values passed in the argument
+                if language:
+                    language = [
+                        i if isinstance(i, SubmodelElement) else self.Language(i)
+                        for i in language
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if revision and not isinstance(revision, SubmodelElement):
                     revision = self.Revision(revision)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if rights and all([isinstance(i, LangStringSet) for i in rights]):
-                    rights = [self.Rights(i) for i in rights]
+                # Build submodel elements from raw values passed in the argument
+                if rights:
+                    rights = [
+                        i if isinstance(i, SubmodelElement) else self.Rights(i)
+                        for i in rights
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if isReplacementOf and not isinstance(isReplacementOf, SubmodelElement):
@@ -6733,17 +6745,23 @@ class IntelligentInformationforUse(Submodel):
                         dateOfLastModification
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if language and all([isinstance(i, str) for i in language]):
-                    language = [self.Language(i) for i in language]
+                # Build submodel elements from raw values passed in the argument
+                if language:
+                    language = [
+                        i if isinstance(i, SubmodelElement) else self.Language(i)
+                        for i in language
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if revision and not isinstance(revision, SubmodelElement):
                     revision = self.Revision(revision)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if rights and all([isinstance(i, LangStringSet) for i in rights]):
-                    rights = [self.Rights(i) for i in rights]
+                # Build submodel elements from raw values passed in the argument
+                if rights:
+                    rights = [
+                        i if isinstance(i, SubmodelElement) else self.Rights(i)
+                        for i in rights
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if isReplacementOf and not isinstance(isReplacementOf, SubmodelElement):
@@ -9436,9 +9454,12 @@ class IntelligentInformationforUse(Submodel):
                 if dateOfStatus and not isinstance(dateOfStatus, SubmodelElement):
                     dateOfStatus = self.DateOfStatus(dateOfStatus)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if statusComment and all([isinstance(i, str) for i in statusComment]):
-                    statusComment = [self.StatusComment(i) for i in statusComment]
+                # Build submodel elements from raw values passed in the argument
+                if statusComment:
+                    statusComment = [
+                        i if isinstance(i, SubmodelElement) else self.StatusComment(i)
+                        for i in statusComment
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if purpose and not isinstance(purpose, SubmodelElement):
@@ -10576,9 +10597,12 @@ class IntelligentInformationforUse(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if identityType and all([isinstance(i, str) for i in identityType]):
-                identityType = [self.IdentityType(i) for i in identityType]
+            # Build submodel elements from raw values passed in the argument
+            if identityType:
+                identityType = [
+                    i if isinstance(i, SubmodelElement) else self.IdentityType(i)
+                    for i in identityType
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

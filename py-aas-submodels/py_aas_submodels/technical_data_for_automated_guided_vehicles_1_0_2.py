@@ -7974,12 +7974,14 @@ class TechnicalDataAGV(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if currentattachments_items and all(
-                            [isinstance(i, str) for i in currentattachments_items]
-                        ):
+                        # Build submodel elements from raw values passed in the argument
+                        if currentattachments_items:
                             currentattachments_items = [
-                                self.Currentattachments_item(i)
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.Currentattachments_item(i)
+                                )
                                 for i in currentattachments_items
                             ]
 

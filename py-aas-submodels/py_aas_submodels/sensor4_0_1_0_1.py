@@ -1181,7 +1181,7 @@ class MeasurementValue(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if range and not isinstance(range, SubmodelElement):
-                range = self.Range(range)
+                range = self.Range(min=range[0], max=range[1])
 
             # Build a submodel element if a raw value was passed in the argument
             if scale and not isinstance(scale, SubmodelElement):

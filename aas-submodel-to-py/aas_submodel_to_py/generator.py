@@ -1,6 +1,6 @@
 import os.path
 import pathlib
-from typing import Union, Iterable, Any
+from typing import Union, Iterable, Any, Optional
 
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
@@ -65,29 +65,56 @@ class SubmodelCodegen:
         imports = template.render()
         return imports
 
+    def get_raw_value_typehint(self, se: SubmodelElement) -> Optional[str]:
+        """Return the typehint of a raw value the specific class of `se` can be built from,
+        or None if it can only be passed as a submodel element"""
+        if isinstance(se, Property):
+            return StringHandler.reprify(se.value_type)
+        elif isinstance(se, Range):
+            return f"Tuple[{StringHandler.reprify(se.value_type)}, {StringHandler.reprify(se.value_type)}]"
+        elif isinstance(se, MultiLanguageProperty):
+            return "LangStringSet"
+        elif isinstance(se, ReferenceElement):
+            return "Reference"
+        elif isinstance(se, SubmodelElementList) \
+                and se.type_value_list_element is Property \
+                and se.value_type_list_element is not None:
+            return f"Iterable[{StringHandler.reprify(se.value_type_list_element)}]"
+        return None
+
+    def get_raw_value_builder(self, se: SubmodelElement, raw_value: str) -> Optional[str]:
+        """Return code building the specific class of `se` from the raw value in the
+        variable `raw_value`, or None if it can not be built from a raw value"""
+        if self.get_raw_value_typehint(se) is None:
+            return None
+        cls_name = NamingGenerator.create_specific_referable_cls_name(se)
+        if isinstance(se, Range):
+            # A raw range is a (min, max) pair
+            return f"self.{cls_name}(min={raw_value}[0], max={raw_value}[1])"
+        return f"self.{cls_name}({raw_value})"
+
     def get_se_typehint(self, se, add_raw_val_type=True):
         typehint = NamingGenerator.create_specific_referable_cls_name(se)
 
-        if add_raw_val_type:
-            if isinstance(se, Property):
-                typehint = f"Union[{StringHandler.reprify(se.value_type)}, {typehint}]"
-            elif isinstance(se, Range):
-                typehint = f"Union[Tuple[{StringHandler.reprify(se.value_type)}, " \
-                           f"{StringHandler.reprify(se.value_type)}], {typehint}]"
-            elif isinstance(se, MultiLanguageProperty):
-                typehint = f"Union[LangStringSet, {typehint}]"
-            elif isinstance(se, ReferenceElement):
-                typehint = f"Union[Reference, {typehint}]"
-            elif isinstance(se, SubmodelElementList) \
-                    and se.type_value_list_element is Property \
-                    and se.value_type_list_element is not None:
-                typehint = f"Union[Iterable[{StringHandler.reprify(se.value_type_list_element)}], {typehint}]"
+        raw_value_typehint = self.get_raw_value_typehint(se)
+        if add_raw_val_type and raw_value_typehint is not None:
+            typehint = f"Union[{raw_value_typehint}, {typehint}]"
 
         if ReferableHandler.is_iterable(se):
             typehint = f"Iterable[{typehint}]"
         if ReferableHandler.is_optional(se):
             typehint = f"Optional[{typehint}]"
         return typehint
+
+    def add_se_arg_render_kwargs(self, render_kwargs: dict, se: SubmodelElement, arg: str):
+        """Add typehint and raw value builder of the init argument `arg` taking `se`"""
+        render_kwargs["typehints"][arg] = self.get_se_typehint(se)
+
+        iterable = bool(ReferableHandler.is_iterable(se))
+        builder = self.get_raw_value_builder(se, raw_value="i" if iterable else arg)
+        if builder is not None:
+            render_kwargs.setdefault("raw_value_builders", {})[arg] = {
+                "iterable": iterable, "code": builder}
 
     def gen_cls_for_submodel(self, submodel: Submodel,
                              template: str = 'submodel_class.pyi') -> str:
@@ -97,7 +124,7 @@ class SubmodelCodegen:
 
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
-            render_kwargs["typehints"][arg] = self.get_se_typehint(se)
+            self.add_se_arg_render_kwargs(render_kwargs, se, arg)
         render_kwargs["kwargs"].pop("id_")
         render_kwargs["args"].append("id_")
 
@@ -190,7 +217,7 @@ class SubmodelCodegen:
             replacement = "id_short: Optional[str]=None,"
             embedded_se_classes = embedded_se_classes.replace(pattern, replacement)
 
-            render_kwargs["typehints"][list_items_arg] = f"{self.get_se_typehint(list_item)}"
+            self.add_se_arg_render_kwargs(render_kwargs, list_item, list_items_arg)
             render_kwargs.update(before_init_content=embedded_se_classes,
                                  args_for_submodel_elements=[list_items_arg])
         return self.render_cls_with_template(template, **render_kwargs)
@@ -205,7 +232,7 @@ class SubmodelCodegen:
         collection_items = [NamingGenerator.create_arg_name_for_referable(i) for i in se_collection]
         # provide args of included items with typehints
         for se, arg in zip(se_collection, collection_items):
-            render_kwargs["typehints"][arg] = self.get_se_typehint(se)
+            self.add_se_arg_render_kwargs(render_kwargs, se, arg)
 
         embedded_se_classes = "\n\n".join([self.gen_cls_for_se(se) for se in se_collection])
 

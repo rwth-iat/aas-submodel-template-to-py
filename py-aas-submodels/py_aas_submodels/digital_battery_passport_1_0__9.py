@@ -224,22 +224,21 @@ class MaterialComposition(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if shortName and not isinstance(shortName, SubmodelElement):
-                shortName=self. ShortName(shortName)
+                shortName=self.ShortName(shortName)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if clearName and not isinstance(clearName, SubmodelElement):
-                clearName=self. ClearName(clearName)
+                clearName=self.ClearName(clearName)
                 
 
 
@@ -512,22 +511,21 @@ class MaterialComposition(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if componentName and not isinstance(componentName, SubmodelElement):
-                        componentName=self. ComponentName(componentName)
+                        componentName=self.ComponentName(componentName)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if componentId and not isinstance(componentId, SubmodelElement):
-                        componentId=self. ComponentId(componentId)
+                        componentId=self.ComponentId(componentId)
                         
 
 
@@ -964,44 +962,41 @@ class MaterialComposition(Submodel):
 
 
 
-                    
 
                     
 
                     
 
                     
-                        
+
+                    
                 # Build a submodel element if a raw value was passed in the argument
                 if batteryMaterialIdentifier and not isinstance(batteryMaterialIdentifier, SubmodelElement):
-                    batteryMaterialIdentifier=self. BatteryMaterialIdentifier(batteryMaterialIdentifier)
+                    batteryMaterialIdentifier=self.BatteryMaterialIdentifier(batteryMaterialIdentifier)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if batteryMaterialName and not isinstance(batteryMaterialName, SubmodelElement):
-                    batteryMaterialName=self. BatteryMaterialName(batteryMaterialName)
+                    batteryMaterialName=self.BatteryMaterialName(batteryMaterialName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if batteryMaterialMass and not isinstance(batteryMaterialMass, SubmodelElement):
-                    batteryMaterialMass=self. BatteryMaterialMass(batteryMaterialMass)
+                    batteryMaterialMass=self.BatteryMaterialMass(batteryMaterialMass)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if isCriticalRawMaterial and not isinstance(isCriticalRawMaterial, SubmodelElement):
-                    isCriticalRawMaterial=self. IsCriticalRawMaterial(isCriticalRawMaterial)
+                    isCriticalRawMaterial=self.IsCriticalRawMaterial(isCriticalRawMaterial)
                     
 
 
@@ -1102,6 +1097,7 @@ class MaterialComposition(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -1591,13 +1587,13 @@ class MaterialComposition(Submodel):
 
 
 
+
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if hazardoussubstanceimpact_items and all([isinstance(i, str) for i in hazardoussubstanceimpact_items]):
-                        hazardoussubstanceimpact_items=[self. Hazardoussubstanceimpact_item(i) for i in hazardoussubstanceimpact_items]
+                    # Build submodel elements from raw values passed in the argument
+                    if hazardoussubstanceimpact_items:
+                        hazardoussubstanceimpact_items=[i if isinstance(i, SubmodelElement) else self.Hazardoussubstanceimpact_item(i) for i in hazardoussubstanceimpact_items]
                         
 
 
@@ -1913,22 +1909,21 @@ class MaterialComposition(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if componentName and not isinstance(componentName, SubmodelElement):
-                        componentName=self. ComponentName(componentName)
+                        componentName=self.ComponentName(componentName)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if componentId and not isinstance(componentId, SubmodelElement):
-                        componentId=self. ComponentId(componentId)
+                        componentId=self.ComponentId(componentId)
                         
 
 
@@ -2134,40 +2129,37 @@ class MaterialComposition(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceClass and not isinstance(hazardousSubstanceClass, SubmodelElement):
-                    hazardousSubstanceClass=self. HazardousSubstanceClass(hazardousSubstanceClass)
+                    hazardousSubstanceClass=self.HazardousSubstanceClass(hazardousSubstanceClass)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceName and not isinstance(hazardousSubstanceName, SubmodelElement):
-                    hazardousSubstanceName=self. HazardousSubstanceName(hazardousSubstanceName)
+                    hazardousSubstanceName=self.HazardousSubstanceName(hazardousSubstanceName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceConcentration and not isinstance(hazardousSubstanceConcentration, SubmodelElement):
-                    hazardousSubstanceConcentration=self. HazardousSubstanceConcentration(hazardousSubstanceConcentration)
+                    hazardousSubstanceConcentration=self.HazardousSubstanceConcentration(hazardousSubstanceConcentration)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceImpact and not isinstance(hazardousSubstanceImpact, SubmodelElement):
-                    hazardousSubstanceImpact=self. HazardousSubstanceImpact(hazardousSubstanceImpact)
+                    hazardousSubstanceImpact=self.HazardousSubstanceImpact(hazardousSubstanceImpact)
                     
 
                     
@@ -2177,10 +2169,9 @@ class MaterialComposition(Submodel):
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if hazardousSubstanceIdentifier and not isinstance(hazardousSubstanceIdentifier, SubmodelElement):
-                    hazardousSubstanceIdentifier=self. HazardousSubstanceIdentifier(hazardousSubstanceIdentifier)
+                    hazardousSubstanceIdentifier=self.HazardousSubstanceIdentifier(hazardousSubstanceIdentifier)
                     
 
 
@@ -2281,6 +2272,7 @@ class MaterialComposition(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -2450,6 +2442,7 @@ class MaterialComposition(Submodel):
             embedded_data_specifications = []
         
         
+
 
 
 

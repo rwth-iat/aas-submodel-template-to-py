@@ -1649,17 +1649,19 @@ class DEXPI(Submodel):
             if dateOfManufacture and not isinstance(dateOfManufacture, SubmodelElement):
                 dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if endProductCASName and all(
-                [isinstance(i, str) for i in endProductCASName]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if endProductCASName:
                 endProductCASName = [
-                    self.EndProductCASName(i) for i in endProductCASName
+                    i if isinstance(i, SubmodelElement) else self.EndProductCASName(i)
+                    for i in endProductCASName
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if endProductName and all([isinstance(i, str) for i in endProductName]):
-                endProductName = [self.EndProductName(i) for i in endProductName]
+            # Build submodel elements from raw values passed in the argument
+            if endProductName:
+                endProductName = [
+                    i if isinstance(i, SubmodelElement) else self.EndProductName(i)
+                    for i in endProductName
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

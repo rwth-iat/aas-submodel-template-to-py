@@ -750,69 +750,87 @@ class Reliability(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if typeOfVoltage and all([isinstance(i, str) for i in typeOfVoltage]):
-                typeOfVoltage = [self.TypeOfVoltage(i) for i in typeOfVoltage]
+            # Build submodel elements from raw values passed in the argument
+            if typeOfVoltage:
+                typeOfVoltage = [
+                    i if isinstance(i, SubmodelElement) else self.TypeOfVoltage(i)
+                    for i in typeOfVoltage
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if ratedVoltage and all([isinstance(i, float) for i in ratedVoltage]):
-                ratedVoltage = [self.RatedVoltage(i) for i in ratedVoltage]
+            # Build submodel elements from raw values passed in the argument
+            if ratedVoltage:
+                ratedVoltage = [
+                    i if isinstance(i, SubmodelElement) else self.RatedVoltage(i)
+                    for i in ratedVoltage
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if minimumRatedVoltage and all(
-                [isinstance(i, float) for i in minimumRatedVoltage]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if minimumRatedVoltage:
                 minimumRatedVoltage = [
-                    self.MinimumRatedVoltage(i) for i in minimumRatedVoltage
+                    i if isinstance(i, SubmodelElement) else self.MinimumRatedVoltage(i)
+                    for i in minimumRatedVoltage
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if maximumRatedVoltage and all(
-                [isinstance(i, float) for i in maximumRatedVoltage]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if maximumRatedVoltage:
                 maximumRatedVoltage = [
-                    self.MaximumRatedVoltage(i) for i in maximumRatedVoltage
+                    i if isinstance(i, SubmodelElement) else self.MaximumRatedVoltage(i)
+                    for i in maximumRatedVoltage
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if ratedOperationalCurrent and all(
-                [isinstance(i, float) for i in ratedOperationalCurrent]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if ratedOperationalCurrent:
                 ratedOperationalCurrent = [
-                    self.RatedOperationalCurrent(i) for i in ratedOperationalCurrent
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.RatedOperationalCurrent(i)
+                    )
+                    for i in ratedOperationalCurrent
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if typeOfInterlockingDevice and all(
-                [isinstance(i, str) for i in typeOfInterlockingDevice]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if typeOfInterlockingDevice:
                 typeOfInterlockingDevice = [
-                    self.TypeOfInterlockingDevice(i) for i in typeOfInterlockingDevice
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.TypeOfInterlockingDevice(i)
+                    )
+                    for i in typeOfInterlockingDevice
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if otherOperatingConditions and all(
-                [isinstance(i, str) for i in otherOperatingConditions]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if otherOperatingConditions:
                 otherOperatingConditions = [
-                    self.OtherOperatingConditions(i) for i in otherOperatingConditions
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.OtherOperatingConditions(i)
+                    )
+                    for i in otherOperatingConditions
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if usefulLifeInNumberOfOperations and all(
-                [isinstance(i, float) for i in usefulLifeInNumberOfOperations]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if usefulLifeInNumberOfOperations:
                 usefulLifeInNumberOfOperations = [
-                    self.UsefulLifeInNumberOfOperations(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.UsefulLifeInNumberOfOperations(i)
+                    )
                     for i in usefulLifeInNumberOfOperations
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if usefulLifeInTimeInterval and all(
-                [isinstance(i, float) for i in usefulLifeInTimeInterval]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if usefulLifeInTimeInterval:
                 usefulLifeInTimeInterval = [
-                    self.UsefulLifeInTimeInterval(i) for i in usefulLifeInTimeInterval
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.UsefulLifeInTimeInterval(i)
+                    )
+                    for i in usefulLifeInTimeInterval
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -1095,17 +1113,21 @@ class Reliability(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if mTTF and all([isinstance(i, Int) for i in mTTF]):
-                mTTF = [self.MTTF(i) for i in mTTF]
+            # Build submodel elements from raw values passed in the argument
+            if mTTF:
+                mTTF = [
+                    i if isinstance(i, SubmodelElement) else self.MTTF(i) for i in mTTF
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if mTBF and all([isinstance(i, Int) for i in mTBF]):
-                mTBF = [self.MTBF(i) for i in mTBF]
+            # Build submodel elements from raw values passed in the argument
+            if mTBF:
+                mTBF = [
+                    i if isinstance(i, SubmodelElement) else self.MTBF(i) for i in mTBF
+                ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if b and all([isinstance(i, Int) for i in b]):
-                b = [self.B(i) for i in b]
+            # Build submodel elements from raw values passed in the argument
+            if b:
+                b = [i if isinstance(i, SubmodelElement) else self.B(i) for i in b]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

@@ -2838,9 +2838,12 @@ class PlasticsAndRubberMouldsIdentification(Submodel):
             if nationalCode and not isinstance(nationalCode, SubmodelElement):
                 nationalCode = self.NationalCode(nationalCode)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if language and all([isinstance(i, str) for i in language]):
-                language = [self.Language(i) for i in language]
+            # Build submodel elements from raw values passed in the argument
+            if language:
+                language = [
+                    i if isinstance(i, SubmodelElement) else self.Language(i)
+                    for i in language
+                ]
 
             # Build a submodel element if a raw value was passed in the argument
             if timeZone and not isinstance(timeZone, SubmodelElement):
@@ -3214,21 +3217,30 @@ class PlasticsAndRubberMouldsIdentification(Submodel):
         if controllerName and not isinstance(controllerName, SubmodelElement):
             controllerName = self.ControllerName(controllerName)
 
-        # Build a list of submodel elements if a raw values were passed in the argument
-        if articleID and all([isinstance(i, str) for i in articleID]):
-            articleID = [self.ArticleID(i) for i in articleID]
+        # Build submodel elements from raw values passed in the argument
+        if articleID:
+            articleID = [
+                i if isinstance(i, SubmodelElement) else self.ArticleID(i)
+                for i in articleID
+            ]
 
-        # Build a list of submodel elements if a raw values were passed in the argument
-        if articleName and all([isinstance(i, str) for i in articleName]):
-            articleName = [self.ArticleName(i) for i in articleName]
+        # Build submodel elements from raw values passed in the argument
+        if articleName:
+            articleName = [
+                i if isinstance(i, SubmodelElement) else self.ArticleName(i)
+                for i in articleName
+            ]
 
         # Build a submodel element if a raw value was passed in the argument
         if componentName and not isinstance(componentName, SubmodelElement):
             componentName = self.ComponentName(componentName)
 
-        # Build a list of submodel elements if a raw values were passed in the argument
-        if comments and all([isinstance(i, LangStringSet) for i in comments]):
-            comments = [self.Comments(i) for i in comments]
+        # Build submodel elements from raw values passed in the argument
+        if comments:
+            comments = [
+                i if isinstance(i, SubmodelElement) else self.Comments(i)
+                for i in comments
+            ]
 
         # Build a submodel element if a raw value was passed in the argument
         if location and not isinstance(location, SubmodelElement):

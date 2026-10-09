@@ -2168,12 +2168,14 @@ class ProductChangeNotifications(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if affectedpartnumbers_items and all(
-                        [isinstance(i, str) for i in affectedpartnumbers_items]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if affectedpartnumbers_items:
                         affectedpartnumbers_items = [
-                            self.Affectedpartnumbers_item(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.Affectedpartnumbers_item(i)
+                            )
                             for i in affectedpartnumbers_items
                         ]
 
@@ -4439,9 +4441,16 @@ class ProductChangeNotifications(Submodel):
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
 
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if arbitrary and all([isinstance(i, str) for i in arbitrary]):
-                            arbitrary = [self.Arbitrary(i) for i in arbitrary]
+                        # Build submodel elements from raw values passed in the argument
+                        if arbitrary:
+                            arbitrary = [
+                                (
+                                    i
+                                    if isinstance(i, SubmodelElement)
+                                    else self.Arbitrary(i)
+                                )
+                                for i in arbitrary
+                            ]
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []

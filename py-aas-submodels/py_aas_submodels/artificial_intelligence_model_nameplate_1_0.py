@@ -2366,7 +2366,7 @@ class AIModelNameplate(Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
             if timeStamp and not isinstance(timeStamp, SubmodelElement):
-                timeStamp = self.TimeStamp(timeStamp)
+                timeStamp = self.TimeStamp(min=timeStamp[0], max=timeStamp[1])
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

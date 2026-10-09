@@ -3006,9 +3006,16 @@ class DigitalQualityDocuments(Submodel):
                                 if iD and not isinstance(iD, SubmodelElement):
                                     iD = self.ID(iD)
 
-                                # Build a list of submodel elements if a raw values were passed in the argument
-                                if refID and all([isinstance(i, str) for i in refID]):
-                                    refID = [self.RefID(i) for i in refID]
+                                # Build submodel elements from raw values passed in the argument
+                                if refID:
+                                    refID = [
+                                        (
+                                            i
+                                            if isinstance(i, SubmodelElement)
+                                            else self.RefID(i)
+                                        )
+                                        for i in refID
+                                    ]
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if refType and not isinstance(refType, SubmodelElement):
@@ -3865,9 +3872,16 @@ class DigitalQualityDocuments(Submodel):
                                 if iD and not isinstance(iD, SubmodelElement):
                                     iD = self.ID(iD)
 
-                                # Build a list of submodel elements if a raw values were passed in the argument
-                                if refID and all([isinstance(i, str) for i in refID]):
-                                    refID = [self.RefID(i) for i in refID]
+                                # Build submodel elements from raw values passed in the argument
+                                if refID:
+                                    refID = [
+                                        (
+                                            i
+                                            if isinstance(i, SubmodelElement)
+                                            else self.RefID(i)
+                                        )
+                                        for i in refID
+                                    ]
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if refType and not isinstance(refType, SubmodelElement):
@@ -4598,11 +4612,16 @@ class DigitalQualityDocuments(Submodel):
                                         if iD and not isinstance(iD, SubmodelElement):
                                             iD = self.ID(iD)
 
-                                        # Build a list of submodel elements if a raw values were passed in the argument
-                                        if refID and all(
-                                            [isinstance(i, str) for i in refID]
-                                        ):
-                                            refID = [self.RefID(i) for i in refID]
+                                        # Build submodel elements from raw values passed in the argument
+                                        if refID:
+                                            refID = [
+                                                (
+                                                    i
+                                                    if isinstance(i, SubmodelElement)
+                                                    else self.RefID(i)
+                                                )
+                                                for i in refID
+                                            ]
 
                                         # Build a submodel element if a raw value was passed in the argument
                                         if refType and not isinstance(

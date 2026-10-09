@@ -1512,12 +1512,15 @@ class HandoverDocumentation(Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if language_items and all(
-                                [isinstance(i, str) for i in language_items]
-                            ):
+                            # Build submodel elements from raw values passed in the argument
+                            if language_items:
                                 language_items = [
-                                    self.Language_item(i) for i in language_items
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.Language_item(i)
+                                    )
+                                    for i in language_items
                                 ]
 
                             # Add all passed/initialized submodel elements to a single list

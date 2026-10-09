@@ -779,13 +779,13 @@ class DppMetadata(Submodel):
 
 
 
+
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if contentspecificationids_items and all([isinstance(i, str) for i in contentspecificationids_items]):
-                contentspecificationids_items=[self. Contentspecificationids_item(i) for i in contentspecificationids_items]
+            # Build submodel elements from raw values passed in the argument
+            if contentspecificationids_items:
+                contentspecificationids_items=[i if isinstance(i, SubmodelElement) else self.Contentspecificationids_item(i) for i in contentspecificationids_items]
                 
 
 
@@ -991,85 +991,77 @@ class DppMetadata(Submodel):
 
 
 
+
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if digitalProductPassportId and not isinstance(digitalProductPassportId, SubmodelElement):
-            digitalProductPassportId=self. DigitalProductPassportId(digitalProductPassportId)
+            digitalProductPassportId=self.DigitalProductPassportId(digitalProductPassportId)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if uniqueProductIdentifier and not isinstance(uniqueProductIdentifier, SubmodelElement):
-            uniqueProductIdentifier=self. UniqueProductIdentifier(uniqueProductIdentifier)
+            uniqueProductIdentifier=self.UniqueProductIdentifier(uniqueProductIdentifier)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if granularity and not isinstance(granularity, SubmodelElement):
-            granularity=self. Granularity(granularity)
+            granularity=self.Granularity(granularity)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if dppSchemaVersion and not isinstance(dppSchemaVersion, SubmodelElement):
-            dppSchemaVersion=self. DppSchemaVersion(dppSchemaVersion)
+            dppSchemaVersion=self.DppSchemaVersion(dppSchemaVersion)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if dppStatus and not isinstance(dppStatus, SubmodelElement):
-            dppStatus=self. DppStatus(dppStatus)
+            dppStatus=self.DppStatus(dppStatus)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if lastUpdate and not isinstance(lastUpdate, SubmodelElement):
-            lastUpdate=self. LastUpdate(lastUpdate)
+            lastUpdate=self.LastUpdate(lastUpdate)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if economicOperatorId and not isinstance(economicOperatorId, SubmodelElement):
-            economicOperatorId=self. EconomicOperatorId(economicOperatorId)
+            economicOperatorId=self.EconomicOperatorId(economicOperatorId)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if facilityId and not isinstance(facilityId, SubmodelElement):
-            facilityId=self. FacilityId(facilityId)
+            facilityId=self.FacilityId(facilityId)
             
 
             
 
             
-                
         # Build a submodel element if a raw value was passed in the argument
         if contentSpecificationIds and not isinstance(contentSpecificationIds, SubmodelElement):
-            contentSpecificationIds=self. ContentSpecificationIds(contentSpecificationIds)
+            contentSpecificationIds=self.ContentSpecificationIds(contentSpecificationIds)
             
 
 

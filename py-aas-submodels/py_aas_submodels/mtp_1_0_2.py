@@ -10113,13 +10113,19 @@ class ProcessEquipmentAssembly(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if discoveryUrl and all([isinstance(i, str) for i in discoveryUrl]):
-                    discoveryUrl = [self.DiscoveryUrl(i) for i in discoveryUrl]
+                # Build submodel elements from raw values passed in the argument
+                if discoveryUrl:
+                    discoveryUrl = [
+                        i if isinstance(i, SubmodelElement) else self.DiscoveryUrl(i)
+                        for i in discoveryUrl
+                    ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if applicationUri and all([isinstance(i, str) for i in applicationUri]):
-                    applicationUri = [self.ApplicationUri(i) for i in applicationUri]
+                # Build submodel elements from raw values passed in the argument
+                if applicationUri:
+                    applicationUri = [
+                        i if isinstance(i, SubmodelElement) else self.ApplicationUri(i)
+                        for i in applicationUri
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []

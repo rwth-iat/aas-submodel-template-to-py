@@ -499,12 +499,15 @@ class MaintenanceInstructions(Submodel):
                         numberOfRequiredTechnicians
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if requiredQualification and all(
-                    [isinstance(i, LangStringSet) for i in requiredQualification]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if requiredQualification:
                     requiredQualification = [
-                        self.RequiredQualification(i) for i in requiredQualification
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.RequiredQualification(i)
+                        )
+                        for i in requiredQualification
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2238,12 +2241,14 @@ class MaintenanceInstructions(Submodel):
                             instructionMaintenanceStep
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if sparePartForMaintenanceStep and all(
-                        [isinstance(i, Reference) for i in sparePartForMaintenanceStep]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if sparePartForMaintenanceStep:
                         sparePartForMaintenanceStep = [
-                            self.SparePartForMaintenanceStep(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.SparePartForMaintenanceStep(i)
+                            )
                             for i in sparePartForMaintenanceStep
                         ]
 
@@ -2257,27 +2262,25 @@ class MaintenanceInstructions(Submodel):
                             )
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if consumablesForMaintenanceStep and all(
-                        [
-                            isinstance(i, Reference)
-                            for i in consumablesForMaintenanceStep
-                        ]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if consumablesForMaintenanceStep:
                         consumablesForMaintenanceStep = [
-                            self.ConsumablesForMaintenanceStep(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ConsumablesForMaintenanceStep(i)
+                            )
                             for i in consumablesForMaintenanceStep
                         ]
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if quantityOfConsumablesForMaintenanceStep and all(
-                        [
-                            isinstance(i, Decimal)
-                            for i in quantityOfConsumablesForMaintenanceStep
-                        ]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if quantityOfConsumablesForMaintenanceStep:
                         quantityOfConsumablesForMaintenanceStep = [
-                            self.QuantityOfConsumablesForMaintenanceStep(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.QuantityOfConsumablesForMaintenanceStep(i)
+                            )
                             for i in quantityOfConsumablesForMaintenanceStep
                         ]
 
@@ -2295,12 +2298,14 @@ class MaintenanceInstructions(Submodel):
                             )
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if toolsForMaintenanceStep and all(
-                        [isinstance(i, Reference) for i in toolsForMaintenanceStep]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if toolsForMaintenanceStep:
                         toolsForMaintenanceStep = [
-                            self.ToolsForMaintenanceStep(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ToolsForMaintenanceStep(i)
+                            )
                             for i in toolsForMaintenanceStep
                         ]
 
@@ -2342,27 +2347,25 @@ class MaintenanceInstructions(Submodel):
                             nextMaintenanceStep
                         )
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if conditionForAlternativeNextStep and all(
-                        [
-                            isinstance(i, LangStringSet)
-                            for i in conditionForAlternativeNextStep
-                        ]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if conditionForAlternativeNextStep:
                         conditionForAlternativeNextStep = [
-                            self.ConditionForAlternativeNextStep(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ConditionForAlternativeNextStep(i)
+                            )
                             for i in conditionForAlternativeNextStep
                         ]
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if alternativeNextMaintenanceStep and all(
-                        [
-                            isinstance(i, Reference)
-                            for i in alternativeNextMaintenanceStep
-                        ]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if alternativeNextMaintenanceStep:
                         alternativeNextMaintenanceStep = [
-                            self.AlternativeNextMaintenanceStep(i)
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.AlternativeNextMaintenanceStep(i)
+                            )
                             for i in alternativeNextMaintenanceStep
                         ]
 
@@ -3448,18 +3451,21 @@ class MaintenanceInstructions(Submodel):
                         orderCodeToolOfManufacturer
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if toolDescription and all(
-                    [isinstance(i, LangStringSet) for i in toolDescription]
-                ):
-                    toolDescription = [self.ToolDescription(i) for i in toolDescription]
+                # Build submodel elements from raw values passed in the argument
+                if toolDescription:
+                    toolDescription = [
+                        i if isinstance(i, SubmodelElement) else self.ToolDescription(i)
+                        for i in toolDescription
+                    ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if addressOfAdditionalLinkTool and all(
-                    [isinstance(i, str) for i in addressOfAdditionalLinkTool]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if addressOfAdditionalLinkTool:
                     addressOfAdditionalLinkTool = [
-                        self.AddressOfAdditionalLinkTool(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.AddressOfAdditionalLinkTool(i)
+                        )
                         for i in addressOfAdditionalLinkTool
                     ]
 
@@ -4669,32 +4675,36 @@ class MaintenanceInstructions(Submodel):
                         )
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if consumableDescription and all(
-                    [isinstance(i, LangStringSet) for i in consumableDescription]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if consumableDescription:
                     consumableDescription = [
-                        self.ConsumableDescription(i) for i in consumableDescription
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ConsumableDescription(i)
+                        )
+                        for i in consumableDescription
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if disposalInstructionsForConsumable and all(
-                    [
-                        isinstance(i, LangStringSet)
-                        for i in disposalInstructionsForConsumable
-                    ]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if disposalInstructionsForConsumable:
                     disposalInstructionsForConsumable = [
-                        self.DisposalInstructionsForConsumable(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.DisposalInstructionsForConsumable(i)
+                        )
                         for i in disposalInstructionsForConsumable
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if addressOfAdditionalLinkConsumable and all(
-                    [isinstance(i, str) for i in addressOfAdditionalLinkConsumable]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if addressOfAdditionalLinkConsumable:
                     addressOfAdditionalLinkConsumable = [
-                        self.AddressOfAdditionalLinkConsumable(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.AddressOfAdditionalLinkConsumable(i)
+                        )
                         for i in addressOfAdditionalLinkConsumable
                     ]
 
@@ -5507,32 +5517,36 @@ class MaintenanceInstructions(Submodel):
                         )
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if sparePartDescription and all(
-                    [isinstance(i, LangStringSet) for i in sparePartDescription]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if sparePartDescription:
                     sparePartDescription = [
-                        self.SparePartDescription(i) for i in sparePartDescription
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.SparePartDescription(i)
+                        )
+                        for i in sparePartDescription
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if disposalInstructionsForSparePart and all(
-                    [
-                        isinstance(i, LangStringSet)
-                        for i in disposalInstructionsForSparePart
-                    ]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if disposalInstructionsForSparePart:
                     disposalInstructionsForSparePart = [
-                        self.DisposalInstructionsForSparePart(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.DisposalInstructionsForSparePart(i)
+                        )
                         for i in disposalInstructionsForSparePart
                     ]
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if addressOfAdditionalLinkSparePart and all(
-                    [isinstance(i, str) for i in addressOfAdditionalLinkSparePart]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if addressOfAdditionalLinkSparePart:
                     addressOfAdditionalLinkSparePart = [
-                        self.AddressOfAdditionalLinkSparePart(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.AddressOfAdditionalLinkSparePart(i)
+                        )
                         for i in addressOfAdditionalLinkSparePart
                     ]
 

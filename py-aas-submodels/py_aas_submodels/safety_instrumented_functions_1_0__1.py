@@ -1642,12 +1642,14 @@ class SafetyInstrumentedFunction(Submodel):
             ):
                 sILAllocationMethod = self.SILAllocationMethod(sILAllocationMethod)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if quantificationMethodOrTool and all(
-                [isinstance(i, str) for i in quantificationMethodOrTool]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if quantificationMethodOrTool:
                 quantificationMethodOrTool = [
-                    self.QuantificationMethodOrTool(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.QuantificationMethodOrTool(i)
+                    )
                     for i in quantificationMethodOrTool
                 ]
 
@@ -1669,28 +1671,29 @@ class SafetyInstrumentedFunction(Submodel):
                     referenceToHazardousEvent
                 )
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if referenceToSISType and all(
-                [isinstance(i, Reference) for i in referenceToSISType]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if referenceToSISType:
                 referenceToSISType = [
-                    self.ReferenceToSISType(i) for i in referenceToSISType
+                    i if isinstance(i, SubmodelElement) else self.ReferenceToSISType(i)
+                    for i in referenceToSISType
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if referenceToIndependentSIF and all(
-                [isinstance(i, Reference) for i in referenceToIndependentSIF]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if referenceToIndependentSIF:
                 referenceToIndependentSIF = [
-                    self.ReferenceToIndependentSIF(i) for i in referenceToIndependentSIF
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.ReferenceToIndependentSIF(i)
+                    )
+                    for i in referenceToIndependentSIF
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if referenceToBarrier and all(
-                [isinstance(i, str) for i in referenceToBarrier]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if referenceToBarrier:
                 referenceToBarrier = [
-                    self.ReferenceToBarrier(i) for i in referenceToBarrier
+                    i if isinstance(i, SubmodelElement) else self.ReferenceToBarrier(i)
+                    for i in referenceToBarrier
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3522,12 +3525,11 @@ class SafetyInstrumentedFunction(Submodel):
                     assetIntegrityLevelRequirement
                 )
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if plantOperatingMode and all(
-                [isinstance(i, str) for i in plantOperatingMode]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if plantOperatingMode:
                 plantOperatingMode = [
-                    self.PlantOperatingMode(i) for i in plantOperatingMode
+                    i if isinstance(i, SubmodelElement) else self.PlantOperatingMode(i)
+                    for i in plantOperatingMode
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3578,12 +3580,14 @@ class SafetyInstrumentedFunction(Submodel):
                     )
                 )
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if measureToAvoidCommonCauseFailure and all(
-                [isinstance(i, str) for i in measureToAvoidCommonCauseFailure]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if measureToAvoidCommonCauseFailure:
                 measureToAvoidCommonCauseFailure = [
-                    self.MeasureToAvoidCommonCauseFailure(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.MeasureToAvoidCommonCauseFailure(i)
+                    )
                     for i in measureToAvoidCommonCauseFailure
                 ]
 
@@ -4551,24 +4555,25 @@ class SafetyInstrumentedFunction(Submodel):
                     )
                 )
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if measureToAvoidHazardFromCombinedSafeProcessStates and all(
-                [
-                    isinstance(i, str)
-                    for i in measureToAvoidHazardFromCombinedSafeProcessStates
-                ]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if measureToAvoidHazardFromCombinedSafeProcessStates:
                 measureToAvoidHazardFromCombinedSafeProcessStates = [
-                    self.MeasureToAvoidHazardFromCombinedSafeProcessStates(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.MeasureToAvoidHazardFromCombinedSafeProcessStates(i)
+                    )
                     for i in measureToAvoidHazardFromCombinedSafeProcessStates
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if independentProtectionLayer and all(
-                [isinstance(i, str) for i in independentProtectionLayer]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if independentProtectionLayer:
                 independentProtectionLayer = [
-                    self.IndependentProtectionLayer(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.IndependentProtectionLayer(i)
+                    )
                     for i in independentProtectionLayer
                 ]
 
@@ -4991,11 +4996,12 @@ class SafetyInstrumentedFunction(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceToTag and all(
-                    [isinstance(i, Reference) for i in referenceToTag]
-                ):
-                    referenceToTag = [self.ReferenceToTag(i) for i in referenceToTag]
+                # Build submodel elements from raw values passed in the argument
+                if referenceToTag:
+                    referenceToTag = [
+                        i if isinstance(i, SubmodelElement) else self.ReferenceToTag(i)
+                        for i in referenceToTag
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5406,11 +5412,12 @@ class SafetyInstrumentedFunction(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceToTag and all(
-                    [isinstance(i, Reference) for i in referenceToTag]
-                ):
-                    referenceToTag = [self.ReferenceToTag(i) for i in referenceToTag]
+                # Build submodel elements from raw values passed in the argument
+                if referenceToTag:
+                    referenceToTag = [
+                        i if isinstance(i, SubmodelElement) else self.ReferenceToTag(i)
+                        for i in referenceToTag
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5821,11 +5828,12 @@ class SafetyInstrumentedFunction(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceToTag and all(
-                    [isinstance(i, Reference) for i in referenceToTag]
-                ):
-                    referenceToTag = [self.ReferenceToTag(i) for i in referenceToTag]
+                # Build submodel elements from raw values passed in the argument
+                if referenceToTag:
+                    referenceToTag = [
+                        i if isinstance(i, SubmodelElement) else self.ReferenceToTag(i)
+                        for i in referenceToTag
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6135,12 +6143,15 @@ class SafetyInstrumentedFunction(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceToGroup and all(
-                    [isinstance(i, Reference) for i in referenceToGroup]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if referenceToGroup:
                     referenceToGroup = [
-                        self.ReferenceToGroup(i) for i in referenceToGroup
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ReferenceToGroup(i)
+                        )
+                        for i in referenceToGroup
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7171,12 +7182,14 @@ class SafetyInstrumentedFunction(Submodel):
                 ):
                     demandDescription = self.DemandDescription(demandDescription)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceToDeviceDemandEvent and all(
-                    [isinstance(i, Reference) for i in referenceToDeviceDemandEvent]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if referenceToDeviceDemandEvent:
                     referenceToDeviceDemandEvent = [
-                        self.ReferenceToDeviceDemandEvent(i)
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ReferenceToDeviceDemandEvent(i)
+                        )
                         for i in referenceToDeviceDemandEvent
                     ]
 
@@ -8114,12 +8127,15 @@ class SafetyInstrumentedFunction(Submodel):
                 ):
                     commentToTestResult = self.CommentToTestResult(commentToTestResult)
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceToFailureEvent and all(
-                    [isinstance(i, Reference) for i in referenceToFailureEvent]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if referenceToFailureEvent:
                     referenceToFailureEvent = [
-                        self.ReferenceToFailureEvent(i) for i in referenceToFailureEvent
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.ReferenceToFailureEvent(i)
+                        )
+                        for i in referenceToFailureEvent
                     ]
 
                 # Add all passed/initialized submodel elements to a single list

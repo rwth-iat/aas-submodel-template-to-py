@@ -1095,12 +1095,15 @@ class CarbonFootprint(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if pcfCalculationMethods and all(
-                    [isinstance(i, Iterable[str]) for i in pcfCalculationMethods]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if pcfCalculationMethods:
                     pcfCalculationMethods = [
-                        self.PcfCalculationMethods(i) for i in pcfCalculationMethods
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.PcfCalculationMethods(i)
+                        )
+                        for i in pcfCalculationMethods
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1127,11 +1130,12 @@ class CarbonFootprint(Submodel):
                         )
                     )
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if lifeCyclePhases and all(
-                    [isinstance(i, Iterable[str]) for i in lifeCyclePhases]
-                ):
-                    lifeCyclePhases = [self.LifeCyclePhases(i) for i in lifeCyclePhases]
+                # Build submodel elements from raw values passed in the argument
+                if lifeCyclePhases:
+                    lifeCyclePhases = [
+                        i if isinstance(i, SubmodelElement) else self.LifeCyclePhases(i)
+                        for i in lifeCyclePhases
+                    ]
 
                 # Build a submodel element if a raw value was passed in the argument
                 if publicationDate and not isinstance(publicationDate, SubmodelElement):
@@ -2344,12 +2348,15 @@ class CarbonFootprint(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if arbitraryContent and all(
-                        [isinstance(i, str) for i in arbitraryContent]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitraryContent:
                         arbitraryContent = [
-                            self.ArbitraryContent(i) for i in arbitraryContent
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ArbitraryContent(i)
+                            )
+                            for i in arbitraryContent
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2422,12 +2429,15 @@ class CarbonFootprint(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if pcfCalculationMethods and all(
-                    [isinstance(i, Iterable[str]) for i in pcfCalculationMethods]
-                ):
+                # Build submodel elements from raw values passed in the argument
+                if pcfCalculationMethods:
                     pcfCalculationMethods = [
-                        self.PcfCalculationMethods(i) for i in pcfCalculationMethods
+                        (
+                            i
+                            if isinstance(i, SubmodelElement)
+                            else self.PcfCalculationMethods(i)
+                        )
+                        for i in pcfCalculationMethods
                     ]
 
                 # Add all passed/initialized submodel elements to a single list

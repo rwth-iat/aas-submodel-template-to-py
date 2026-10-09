@@ -3140,22 +3140,21 @@ class PurchaseOrder(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if codeType and not isinstance(codeType, SubmodelElement):
-                        codeType=self. CodeType(codeType)
+                        codeType=self.CodeType(codeType)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if code and not isinstance(code, SubmodelElement):
-                        code=self. Code(code)
+                        code=self.Code(code)
                         
 
 
@@ -3256,6 +3255,7 @@ class PurchaseOrder(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -4097,76 +4097,69 @@ class PurchaseOrder(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if calculationSequence and not isinstance(calculationSequence, SubmodelElement):
-                        calculationSequence=self. CalculationSequence(calculationSequence)
+                        calculationSequence=self.CalculationSequence(calculationSequence)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if taxCategory and not isinstance(taxCategory, SubmodelElement):
-                        taxCategory=self. TaxCategory(taxCategory)
+                        taxCategory=self.TaxCategory(taxCategory)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if taxType and not isinstance(taxType, SubmodelElement):
-                        taxType=self. TaxType(taxType)
+                        taxType=self.TaxType(taxType)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if taxRate and not isinstance(taxRate, SubmodelElement):
-                        taxRate=self. TaxRate(taxRate)
+                        taxRate=self.TaxRate(taxRate)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if taxAmount and not isinstance(taxAmount, SubmodelElement):
-                        taxAmount=self. TaxAmount(taxAmount)
+                        taxAmount=self.TaxAmount(taxAmount)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if taxBase and not isinstance(taxBase, SubmodelElement):
-                        taxBase=self. TaxBase(taxBase)
+                        taxBase=self.TaxBase(taxBase)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if exemptionReason and not isinstance(exemptionReason, SubmodelElement):
-                        exemptionReason=self. ExemptionReason(exemptionReason)
+                        exemptionReason=self.ExemptionReason(exemptionReason)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if jurisdiction and not isinstance(jurisdiction, SubmodelElement):
-                        jurisdiction=self. Jurisdiction(jurisdiction)
+                        jurisdiction=self.Jurisdiction(jurisdiction)
                         
 
 
@@ -4267,6 +4260,7 @@ class PurchaseOrder(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -5585,67 +5579,61 @@ class PurchaseOrder(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if deliveryStartDate and not isinstance(deliveryStartDate, SubmodelElement):
-                        deliveryStartDate=self. DeliveryStartDate(deliveryStartDate)
+                        deliveryStartDate=self.DeliveryStartDate(deliveryStartDate)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if deliveryEndDate and not isinstance(deliveryEndDate, SubmodelElement):
-                        deliveryEndDate=self. DeliveryEndDate(deliveryEndDate)
+                        deliveryEndDate=self.DeliveryEndDate(deliveryEndDate)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if fixedDeliveryDate and not isinstance(fixedDeliveryDate, SubmodelElement):
-                        fixedDeliveryDate=self. FixedDeliveryDate(fixedDeliveryDate)
+                        fixedDeliveryDate=self.FixedDeliveryDate(fixedDeliveryDate)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if openingHoursStart and not isinstance(openingHoursStart, SubmodelElement):
-                        openingHoursStart=self. OpeningHoursStart(openingHoursStart)
+                        openingHoursStart=self.OpeningHoursStart(openingHoursStart)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if openingHoursEnd and not isinstance(openingHoursEnd, SubmodelElement):
-                        openingHoursEnd=self. OpeningHoursEnd(openingHoursEnd)
+                        openingHoursEnd=self.OpeningHoursEnd(openingHoursEnd)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if plannedDeliveryDurationInDays and not isinstance(plannedDeliveryDurationInDays, SubmodelElement):
-                        plannedDeliveryDurationInDays=self. PlannedDeliveryDurationInDays(plannedDeliveryDurationInDays)
+                        plannedDeliveryDurationInDays=self.PlannedDeliveryDurationInDays(plannedDeliveryDurationInDays)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if scopeOfDelivery and not isinstance(scopeOfDelivery, SubmodelElement):
-                        scopeOfDelivery=self. ScopeOfDelivery(scopeOfDelivery)
+                        scopeOfDelivery=self.ScopeOfDelivery(scopeOfDelivery)
                         
 
 
@@ -5746,6 +5734,7 @@ class PurchaseOrder(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -6181,337 +6170,301 @@ class PurchaseOrder(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if documentType and not isinstance(documentType, SubmodelElement):
-                documentType=self. DocumentType(documentType)
+                documentType=self.DocumentType(documentType)
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if purchaseRequestResponseReference and all([isinstance(i, Reference) for i in purchaseRequestResponseReference]):
-                purchaseRequestResponseReference=[self. PurchaseRequestResponseReference(i) for i in purchaseRequestResponseReference]
+            # Build submodel elements from raw values passed in the argument
+            if purchaseRequestResponseReference:
+                purchaseRequestResponseReference=[i if isinstance(i, SubmodelElement) else self.PurchaseRequestResponseReference(i) for i in purchaseRequestResponseReference]
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if purchaseRequestNotificationReference and all([isinstance(i, Reference) for i in purchaseRequestNotificationReference]):
-                purchaseRequestNotificationReference=[self. PurchaseRequestNotificationReference(i) for i in purchaseRequestNotificationReference]
+            # Build submodel elements from raw values passed in the argument
+            if purchaseRequestNotificationReference:
+                purchaseRequestNotificationReference=[i if isinstance(i, SubmodelElement) else self.PurchaseRequestNotificationReference(i) for i in purchaseRequestNotificationReference]
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if buyerPurchaseRequestNumber and all([isinstance(i, str) for i in buyerPurchaseRequestNumber]):
-                buyerPurchaseRequestNumber=[self. BuyerPurchaseRequestNumber(i) for i in buyerPurchaseRequestNumber]
+            # Build submodel elements from raw values passed in the argument
+            if buyerPurchaseRequestNumber:
+                buyerPurchaseRequestNumber=[i if isinstance(i, SubmodelElement) else self.BuyerPurchaseRequestNumber(i) for i in buyerPurchaseRequestNumber]
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if sellerPurchaseRequestNumber and all([isinstance(i, str) for i in sellerPurchaseRequestNumber]):
-                sellerPurchaseRequestNumber=[self. SellerPurchaseRequestNumber(i) for i in sellerPurchaseRequestNumber]
+            # Build submodel elements from raw values passed in the argument
+            if sellerPurchaseRequestNumber:
+                sellerPurchaseRequestNumber=[i if isinstance(i, SubmodelElement) else self.SellerPurchaseRequestNumber(i) for i in sellerPurchaseRequestNumber]
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if agentPurchaseRequestNumber and all([isinstance(i, str) for i in agentPurchaseRequestNumber]):
-                agentPurchaseRequestNumber=[self. AgentPurchaseRequestNumber(i) for i in agentPurchaseRequestNumber]
+            # Build submodel elements from raw values passed in the argument
+            if agentPurchaseRequestNumber:
+                agentPurchaseRequestNumber=[i if isinstance(i, SubmodelElement) else self.AgentPurchaseRequestNumber(i) for i in agentPurchaseRequestNumber]
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if buyerQuotationNumber and not isinstance(buyerQuotationNumber, SubmodelElement):
-                buyerQuotationNumber=self. BuyerQuotationNumber(buyerQuotationNumber)
+                buyerQuotationNumber=self.BuyerQuotationNumber(buyerQuotationNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if sellerQuotationNumber and not isinstance(sellerQuotationNumber, SubmodelElement):
-                sellerQuotationNumber=self. SellerQuotationNumber(sellerQuotationNumber)
+                sellerQuotationNumber=self.SellerQuotationNumber(sellerQuotationNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if agentQuotationNumber and not isinstance(agentQuotationNumber, SubmodelElement):
-                agentQuotationNumber=self. AgentQuotationNumber(agentQuotationNumber)
+                agentQuotationNumber=self.AgentQuotationNumber(agentQuotationNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if sellerPurchaseOrderNumber and not isinstance(sellerPurchaseOrderNumber, SubmodelElement):
-                sellerPurchaseOrderNumber=self. SellerPurchaseOrderNumber(sellerPurchaseOrderNumber)
+                sellerPurchaseOrderNumber=self.SellerPurchaseOrderNumber(sellerPurchaseOrderNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if buyerPurchaseOrderNumber and not isinstance(buyerPurchaseOrderNumber, SubmodelElement):
-                buyerPurchaseOrderNumber=self. BuyerPurchaseOrderNumber(buyerPurchaseOrderNumber)
+                buyerPurchaseOrderNumber=self.BuyerPurchaseOrderNumber(buyerPurchaseOrderNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if agentPurchaseOrderNumber and not isinstance(agentPurchaseOrderNumber, SubmodelElement):
-                agentPurchaseOrderNumber=self. AgentPurchaseOrderNumber(agentPurchaseOrderNumber)
+                agentPurchaseOrderNumber=self.AgentPurchaseOrderNumber(agentPurchaseOrderNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if version and not isinstance(version, SubmodelElement):
-                version=self. Version(version)
+                version=self.Version(version)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if documentCreationDate and not isinstance(documentCreationDate, SubmodelElement):
-                documentCreationDate=self. DocumentCreationDate(documentCreationDate)
+                documentCreationDate=self.DocumentCreationDate(documentCreationDate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if documentUpdateDateTime and not isinstance(documentUpdateDateTime, SubmodelElement):
-                documentUpdateDateTime=self. DocumentUpdateDateTime(documentUpdateDateTime)
+                documentUpdateDateTime=self.DocumentUpdateDateTime(documentUpdateDateTime)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if validityStartDate and not isinstance(validityStartDate, SubmodelElement):
-                validityStartDate=self. ValidityStartDate(validityStartDate)
+                validityStartDate=self.ValidityStartDate(validityStartDate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if validityEndDate and not isinstance(validityEndDate, SubmodelElement):
-                validityEndDate=self. ValidityEndDate(validityEndDate)
+                validityEndDate=self.ValidityEndDate(validityEndDate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if openDate and not isinstance(openDate, SubmodelElement):
-                openDate=self. OpenDate(openDate)
+                openDate=self.OpenDate(openDate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if closeDate and not isinstance(closeDate, SubmodelElement):
-                closeDate=self. CloseDate(closeDate)
+                closeDate=self.CloseDate(closeDate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if latestRegistrationDate and not isinstance(latestRegistrationDate, SubmodelElement):
-                latestRegistrationDate=self. LatestRegistrationDate(latestRegistrationDate)
+                latestRegistrationDate=self.LatestRegistrationDate(latestRegistrationDate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if bindingPeriodEndDate and not isinstance(bindingPeriodEndDate, SubmodelElement):
-                bindingPeriodEndDate=self. BindingPeriodEndDate(bindingPeriodEndDate)
+                bindingPeriodEndDate=self.BindingPeriodEndDate(bindingPeriodEndDate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if purchaseRequestType and not isinstance(purchaseRequestType, SubmodelElement):
-                purchaseRequestType=self. PurchaseRequestType(purchaseRequestType)
+                purchaseRequestType=self.PurchaseRequestType(purchaseRequestType)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if purchaseOrderType and not isinstance(purchaseOrderType, SubmodelElement):
-                purchaseOrderType=self. PurchaseOrderType(purchaseOrderType)
+                purchaseOrderType=self.PurchaseOrderType(purchaseOrderType)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if documentStatus and not isinstance(documentStatus, SubmodelElement):
-                documentStatus=self. DocumentStatus(documentStatus)
+                documentStatus=self.DocumentStatus(documentStatus)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if language and not isinstance(language, SubmodelElement):
-                language=self. Language(language)
+                language=self.Language(language)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if currency and not isinstance(currency, SubmodelElement):
-                currency=self. Currency(currency)
+                currency=self.Currency(currency)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if totalAmount and not isinstance(totalAmount, SubmodelElement):
-                totalAmount=self. TotalAmount(totalAmount)
+                totalAmount=self.TotalAmount(totalAmount)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if sellerTermsAndConditions and not isinstance(sellerTermsAndConditions, SubmodelElement):
-                sellerTermsAndConditions=self. SellerTermsAndConditions(sellerTermsAndConditions)
+                sellerTermsAndConditions=self.SellerTermsAndConditions(sellerTermsAndConditions)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if buyerTermsAndConditions and not isinstance(buyerTermsAndConditions, SubmodelElement):
-                buyerTermsAndConditions=self. BuyerTermsAndConditions(buyerTermsAndConditions)
+                buyerTermsAndConditions=self.BuyerTermsAndConditions(buyerTermsAndConditions)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if description_ and not isinstance(description_, SubmodelElement):
-                description_=self. Description(description_)
+                description_=self.Description(description_)
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if remark and all([isinstance(i, str) for i in remark]):
-                remark=[self. Remark(i) for i in remark]
+            # Build submodel elements from raw values passed in the argument
+            if remark:
+                remark=[i if isinstance(i, SubmodelElement) else self.Remark(i) for i in remark]
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if tollDocumentsrequired and not isinstance(tollDocumentsrequired, SubmodelElement):
-                tollDocumentsrequired=self. TollDocumentsrequired(tollDocumentsrequired)
+                tollDocumentsrequired=self.TollDocumentsrequired(tollDocumentsrequired)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if customsAmount and not isinstance(customsAmount, SubmodelElement):
-                customsAmount=self. CustomsAmount(customsAmount)
+                customsAmount=self.CustomsAmount(customsAmount)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if orderReference and not isinstance(orderReference, SubmodelElement):
-                orderReference=self. OrderReference(orderReference)
+                orderReference=self.OrderReference(orderReference)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if orderBatchReference and not isinstance(orderBatchReference, SubmodelElement):
-                orderBatchReference=self. OrderBatchReference(orderBatchReference)
+                orderBatchReference=self.OrderBatchReference(orderBatchReference)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if buyerDeliveryNoteReference and not isinstance(buyerDeliveryNoteReference, SubmodelElement):
-                buyerDeliveryNoteReference=self. BuyerDeliveryNoteReference(buyerDeliveryNoteReference)
+                buyerDeliveryNoteReference=self.BuyerDeliveryNoteReference(buyerDeliveryNoteReference)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if buyerDeliveryNoteReferenceIncrement and not isinstance(buyerDeliveryNoteReferenceIncrement, SubmodelElement):
-                buyerDeliveryNoteReferenceIncrement=self. BuyerDeliveryNoteReferenceIncrement(buyerDeliveryNoteReferenceIncrement)
+                buyerDeliveryNoteReferenceIncrement=self.BuyerDeliveryNoteReferenceIncrement(buyerDeliveryNoteReferenceIncrement)
                 
 
                 
@@ -6525,73 +6478,65 @@ class PurchaseOrder(Submodel):
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if referenceSubmodelTollDocuments and all([isinstance(i, Reference) for i in referenceSubmodelTollDocuments]):
-                referenceSubmodelTollDocuments=[self. ReferenceSubmodelTollDocuments(i) for i in referenceSubmodelTollDocuments]
+            # Build submodel elements from raw values passed in the argument
+            if referenceSubmodelTollDocuments:
+                referenceSubmodelTollDocuments=[i if isinstance(i, SubmodelElement) else self.ReferenceSubmodelTollDocuments(i) for i in referenceSubmodelTollDocuments]
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if catalogueRef and not isinstance(catalogueRef, SubmodelElement):
-                catalogueRef=self. CatalogueRef(catalogueRef)
+                catalogueRef=self.CatalogueRef(catalogueRef)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if deliveryDateRef and not isinstance(deliveryDateRef, SubmodelElement):
-                deliveryDateRef=self. DeliveryDateRef(deliveryDateRef)
+                deliveryDateRef=self.DeliveryDateRef(deliveryDateRef)
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if businessPartyRef and all([isinstance(i, Reference) for i in businessPartyRef]):
-                businessPartyRef=[self. BusinessPartyRef(i) for i in businessPartyRef]
+            # Build submodel elements from raw values passed in the argument
+            if businessPartyRef:
+                businessPartyRef=[i if isinstance(i, SubmodelElement) else self.BusinessPartyRef(i) for i in businessPartyRef]
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if incotermsRef and not isinstance(incotermsRef, SubmodelElement):
-                incotermsRef=self. IncotermsRef(incotermsRef)
+                incotermsRef=self.IncotermsRef(incotermsRef)
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if internationalRestrictionsRef and all([isinstance(i, Reference) for i in internationalRestrictionsRef]):
-                internationalRestrictionsRef=[self. InternationalRestrictionsRef(i) for i in internationalRestrictionsRef]
+            # Build submodel elements from raw values passed in the argument
+            if internationalRestrictionsRef:
+                internationalRestrictionsRef=[i if isinstance(i, SubmodelElement) else self.InternationalRestrictionsRef(i) for i in internationalRestrictionsRef]
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if specialTreatmentClassRef and all([isinstance(i, Reference) for i in specialTreatmentClassRef]):
-                specialTreatmentClassRef=[self. SpecialTreatmentClassRef(i) for i in specialTreatmentClassRef]
+            # Build submodel elements from raw values passed in the argument
+            if specialTreatmentClassRef:
+                specialTreatmentClassRef=[i if isinstance(i, SubmodelElement) else self.SpecialTreatmentClassRef(i) for i in specialTreatmentClassRef]
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if mediaRef and all([isinstance(i, Reference) for i in mediaRef]):
-                mediaRef=[self. MediaRef(i) for i in mediaRef]
+            # Build submodel elements from raw values passed in the argument
+            if mediaRef:
+                mediaRef=[i if isinstance(i, SubmodelElement) else self.MediaRef(i) for i in mediaRef]
                 
 
                 
@@ -7038,40 +6983,37 @@ class PurchaseOrder(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if catalogID and not isinstance(catalogID, SubmodelElement):
-                    catalogID=self. CatalogID(catalogID)
+                    catalogID=self.CatalogID(catalogID)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if catalogVersion and not isinstance(catalogVersion, SubmodelElement):
-                    catalogVersion=self. CatalogVersion(catalogVersion)
+                    catalogVersion=self.CatalogVersion(catalogVersion)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if catalogName and not isinstance(catalogName, SubmodelElement):
-                    catalogName=self. CatalogName(catalogName)
+                    catalogName=self.CatalogName(catalogName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if aASCatalogReferenceID and not isinstance(aASCatalogReferenceID, SubmodelElement):
-                    aASCatalogReferenceID=self. AASCatalogReferenceID(aASCatalogReferenceID)
+                    aASCatalogReferenceID=self.AASCatalogReferenceID(aASCatalogReferenceID)
                     
 
 
@@ -7172,6 +7114,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -7501,22 +7444,21 @@ class PurchaseOrder(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if cardType and not isinstance(cardType, SubmodelElement):
-                        cardType=self. CardType(cardType)
+                        cardType=self.CardType(cardType)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if referencePaymentProvider and not isinstance(referencePaymentProvider, SubmodelElement):
-                        referencePaymentProvider=self. ReferencePaymentProvider(referencePaymentProvider)
+                        referencePaymentProvider=self.ReferencePaymentProvider(referencePaymentProvider)
                         
 
 
@@ -8036,49 +7978,45 @@ class PurchaseOrder(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if holder and not isinstance(holder, SubmodelElement):
-                        holder=self. Holder(holder)
+                        holder=self.Holder(holder)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if accountNumber and not isinstance(accountNumber, SubmodelElement):
-                        accountNumber=self. AccountNumber(accountNumber)
+                        accountNumber=self.AccountNumber(accountNumber)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if bankCode and not isinstance(bankCode, SubmodelElement):
-                        bankCode=self. BankCode(bankCode)
+                        bankCode=self.BankCode(bankCode)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if bankName and not isinstance(bankName, SubmodelElement):
-                        bankName=self. BankName(bankName)
+                        bankName=self.BankName(bankName)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if bankCountry and not isinstance(bankCountry, SubmodelElement):
-                        bankCountry=self. BankCountry(bankCountry)
+                        bankCountry=self.BankCountry(bankCountry)
                         
 
 
@@ -8946,7 +8884,6 @@ class PurchaseOrder(Submodel):
 
 
 
-                    
 
                     
 
@@ -8957,82 +8894,75 @@ class PurchaseOrder(Submodel):
                     
 
                     
-                        
+
+                    
                 # Build a submodel element if a raw value was passed in the argument
                 if debit and not isinstance(debit, SubmodelElement):
-                    debit=self. Debit(debit)
+                    debit=self.Debit(debit)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if check and not isinstance(check, SubmodelElement):
-                    check=self. Check(check)
+                    check=self.Check(check)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if cash and not isinstance(cash, SubmodelElement):
-                    cash=self. Cash(cash)
+                    cash=self.Cash(cash)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if centralRegulation and not isinstance(centralRegulation, SubmodelElement):
-                    centralRegulation=self. CentralRegulation(centralRegulation)
+                    centralRegulation=self.CentralRegulation(centralRegulation)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if paymentPrinciple and not isinstance(paymentPrinciple, SubmodelElement):
-                    paymentPrinciple=self. PaymentPrinciple(paymentPrinciple)
+                    paymentPrinciple=self.PaymentPrinciple(paymentPrinciple)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if paymentTerms and not isinstance(paymentTerms, SubmodelElement):
-                    paymentTerms=self. PaymentTerms(paymentTerms)
+                    paymentTerms=self.PaymentTerms(paymentTerms)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if paymentDays and not isinstance(paymentDays, SubmodelElement):
-                    paymentDays=self. PaymentDays(paymentDays)
+                    paymentDays=self.PaymentDays(paymentDays)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if discountPercent and not isinstance(discountPercent, SubmodelElement):
-                    discountPercent=self. DiscountPercent(discountPercent)
+                    discountPercent=self.DiscountPercent(discountPercent)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if discountDays and not isinstance(discountDays, SubmodelElement):
-                    discountDays=self. DiscountDays(discountDays)
+                    discountDays=self.DiscountDays(discountDays)
                     
 
 
@@ -9133,6 +9063,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -9800,58 +9731,53 @@ class PurchaseOrder(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if incoterm and not isinstance(incoterm, SubmodelElement):
-                    incoterm=self. Incoterm(incoterm)
+                    incoterm=self.Incoterm(incoterm)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if location and not isinstance(location, SubmodelElement):
-                    location=self. Location(location)
+                    location=self.Location(location)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if location and not isinstance(location, SubmodelElement):
-                    location=self. Location(location)
+                    location=self.Location(location)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if location and not isinstance(location, SubmodelElement):
-                    location=self. Location(location)
+                    location=self.Location(location)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if transferLocation and not isinstance(transferLocation, SubmodelElement):
-                    transferLocation=self. TransferLocation(transferLocation)
+                    transferLocation=self.TransferLocation(transferLocation)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if transportRemark and not isinstance(transportRemark, SubmodelElement):
-                    transportRemark=self. TransportRemark(transportRemark)
+                    transportRemark=self.TransportRemark(transportRemark)
                     
 
 
@@ -9952,6 +9878,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -10532,49 +10459,45 @@ class PurchaseOrder(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if restrictionType and not isinstance(restrictionType, SubmodelElement):
-                    restrictionType=self. RestrictionType(restrictionType)
+                    restrictionType=self.RestrictionType(restrictionType)
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if countryCodeEmbargoImposing and all([isinstance(i, str) for i in countryCodeEmbargoImposing]):
-                    countryCodeEmbargoImposing=[self. CountryCodeEmbargoImposing(i) for i in countryCodeEmbargoImposing]
+                # Build submodel elements from raw values passed in the argument
+                if countryCodeEmbargoImposing:
+                    countryCodeEmbargoImposing=[i if isinstance(i, SubmodelElement) else self.CountryCodeEmbargoImposing(i) for i in countryCodeEmbargoImposing]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if countryCodeEmbargoTarget and all([isinstance(i, str) for i in countryCodeEmbargoTarget]):
-                    countryCodeEmbargoTarget=[self. CountryCodeEmbargoTarget(i) for i in countryCodeEmbargoTarget]
+                # Build submodel elements from raw values passed in the argument
+                if countryCodeEmbargoTarget:
+                    countryCodeEmbargoTarget=[i if isinstance(i, SubmodelElement) else self.CountryCodeEmbargoTarget(i) for i in countryCodeEmbargoTarget]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if regionCodeEmbargoImposing and all([isinstance(i, str) for i in regionCodeEmbargoImposing]):
-                    regionCodeEmbargoImposing=[self. RegionCodeEmbargoImposing(i) for i in regionCodeEmbargoImposing]
+                # Build submodel elements from raw values passed in the argument
+                if regionCodeEmbargoImposing:
+                    regionCodeEmbargoImposing=[i if isinstance(i, SubmodelElement) else self.RegionCodeEmbargoImposing(i) for i in regionCodeEmbargoImposing]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if regionCodeEmbargoTarget and all([isinstance(i, str) for i in regionCodeEmbargoTarget]):
-                    regionCodeEmbargoTarget=[self. RegionCodeEmbargoTarget(i) for i in regionCodeEmbargoTarget]
+                # Build submodel elements from raw values passed in the argument
+                if regionCodeEmbargoTarget:
+                    regionCodeEmbargoTarget=[i if isinstance(i, SubmodelElement) else self.RegionCodeEmbargoTarget(i) for i in regionCodeEmbargoTarget]
                     
 
 
@@ -10675,6 +10598,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -11000,22 +10924,21 @@ class PurchaseOrder(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if certificationType and not isinstance(certificationType, SubmodelElement):
-                    certificationType=self. CertificationType(certificationType)
+                    certificationType=self.CertificationType(certificationType)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if certificationRegulation and not isinstance(certificationRegulation, SubmodelElement):
-                    certificationRegulation=self. CertificationRegulation(certificationRegulation)
+                    certificationRegulation=self.CertificationRegulation(certificationRegulation)
                     
 
 
@@ -11116,6 +11039,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -11276,6 +11200,7 @@ class PurchaseOrder(Submodel):
 
 
 
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in []:
@@ -11373,6 +11298,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -13215,6 +13141,7 @@ class PurchaseOrder(Submodel):
 
 
 
+
                 
 
                 
@@ -14237,94 +14164,85 @@ class PurchaseOrder(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if costCenterCode and not isinstance(costCenterCode, SubmodelElement):
-                    costCenterCode=self. CostCenterCode(costCenterCode)
+                    costCenterCode=self.CostCenterCode(costCenterCode)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if costCenterName and not isinstance(costCenterName, SubmodelElement):
-                    costCenterName=self. CostCenterName(costCenterName)
+                    costCenterName=self.CostCenterName(costCenterName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if costReasonCode and not isinstance(costReasonCode, SubmodelElement):
-                    costReasonCode=self. CostReasonCode(costReasonCode)
+                    costReasonCode=self.CostReasonCode(costReasonCode)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if costReasonName and not isinstance(costReasonName, SubmodelElement):
-                    costReasonName=self. CostReasonName(costReasonName)
+                    costReasonName=self.CostReasonName(costReasonName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if costCarrierCode and not isinstance(costCarrierCode, SubmodelElement):
-                    costCarrierCode=self. CostCarrierCode(costCarrierCode)
+                    costCarrierCode=self.CostCarrierCode(costCarrierCode)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if costCarrierName and not isinstance(costCarrierName, SubmodelElement):
-                    costCarrierName=self. CostCarrierName(costCarrierName)
+                    costCarrierName=self.CostCarrierName(costCarrierName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if projectNumber and not isinstance(projectNumber, SubmodelElement):
-                    projectNumber=self. ProjectNumber(projectNumber)
+                    projectNumber=self.ProjectNumber(projectNumber)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if projectName and not isinstance(projectName, SubmodelElement):
-                    projectName=self. ProjectName(projectName)
+                    projectName=self.ProjectName(projectName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if billingCenterCode and not isinstance(billingCenterCode, SubmodelElement):
-                    billingCenterCode=self. BillingCenterCode(billingCenterCode)
+                    billingCenterCode=self.BillingCenterCode(billingCenterCode)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if billingCenterName and not isinstance(billingCenterName, SubmodelElement):
-                    billingCenterName=self. BillingCenterName(billingCenterName)
+                    billingCenterName=self.BillingCenterName(billingCenterName)
                     
 
 
@@ -14425,6 +14343,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -14920,40 +14839,37 @@ class PurchaseOrder(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if file and not isinstance(file, SubmodelElement):
-                    file=self. File(file)
+                    file=self.File(file)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if mimeType and not isinstance(mimeType, SubmodelElement):
-                    mimeType=self. MimeType(mimeType)
+                    mimeType=self.MimeType(mimeType)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if mimePurpose and not isinstance(mimePurpose, SubmodelElement):
-                    mimePurpose=self. MimePurpose(mimePurpose)
+                    mimePurpose=self.MimePurpose(mimePurpose)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if comment and not isinstance(comment, SubmodelElement):
-                    comment=self. Comment(comment)
+                    comment=self.Comment(comment)
                     
 
 
@@ -15054,6 +14970,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -20106,76 +20023,69 @@ class PurchaseOrder(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if calculationSequence and not isinstance(calculationSequence, SubmodelElement):
-                            calculationSequence=self. CalculationSequence(calculationSequence)
+                            calculationSequence=self.CalculationSequence(calculationSequence)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if taxCategory and not isinstance(taxCategory, SubmodelElement):
-                            taxCategory=self. TaxCategory(taxCategory)
+                            taxCategory=self.TaxCategory(taxCategory)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if taxType and not isinstance(taxType, SubmodelElement):
-                            taxType=self. TaxType(taxType)
+                            taxType=self.TaxType(taxType)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if taxRate and not isinstance(taxRate, SubmodelElement):
-                            taxRate=self. TaxRate(taxRate)
+                            taxRate=self.TaxRate(taxRate)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if taxAmount and not isinstance(taxAmount, SubmodelElement):
-                            taxAmount=self. TaxAmount(taxAmount)
+                            taxAmount=self.TaxAmount(taxAmount)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if taxBase and not isinstance(taxBase, SubmodelElement):
-                            taxBase=self. TaxBase(taxBase)
+                            taxBase=self.TaxBase(taxBase)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if exemptionReason and not isinstance(exemptionReason, SubmodelElement):
-                            exemptionReason=self. ExemptionReason(exemptionReason)
+                            exemptionReason=self.ExemptionReason(exemptionReason)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if jurisdiction and not isinstance(jurisdiction, SubmodelElement):
-                            jurisdiction=self. Jurisdiction(jurisdiction)
+                            jurisdiction=self.Jurisdiction(jurisdiction)
                             
 
 
@@ -20344,112 +20254,101 @@ class PurchaseOrder(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if minPrice and not isinstance(minPrice, SubmodelElement):
-                        minPrice=self. MinPrice(minPrice)
+                        minPrice=self.MinPrice(minPrice)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if maxPrice and not isinstance(maxPrice, SubmodelElement):
-                        maxPrice=self. MaxPrice(maxPrice)
+                        maxPrice=self.MaxPrice(maxPrice)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if price and not isinstance(price, SubmodelElement):
-                        price=self. Price(price)
+                        price=self.Price(price)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if priceQuantity and not isinstance(priceQuantity, SubmodelElement):
-                        priceQuantity=self. PriceQuantity(priceQuantity)
+                        priceQuantity=self.PriceQuantity(priceQuantity)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if priceQuantityUnit and not isinstance(priceQuantityUnit, SubmodelElement):
-                        priceQuantityUnit=self. PriceQuantityUnit(priceQuantityUnit)
+                        priceQuantityUnit=self.PriceQuantityUnit(priceQuantityUnit)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if priceUnitValue and not isinstance(priceUnitValue, SubmodelElement):
-                        priceUnitValue=self. PriceUnitValue(priceUnitValue)
+                        priceUnitValue=self.PriceUnitValue(priceUnitValue)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if priceUnit and not isinstance(priceUnit, SubmodelElement):
-                        priceUnit=self. PriceUnit(priceUnit)
+                        priceUnit=self.PriceUnit(priceUnit)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if priceUnitFactor and not isinstance(priceUnitFactor, SubmodelElement):
-                        priceUnitFactor=self. PriceUnitFactor(priceUnitFactor)
+                        priceUnitFactor=self.PriceUnitFactor(priceUnitFactor)
                         
 
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if costsIncluded and all([isinstance(i, str) for i in costsIncluded]):
-                        costsIncluded=[self. CostsIncluded(i) for i in costsIncluded]
+                    # Build submodel elements from raw values passed in the argument
+                    if costsIncluded:
+                        costsIncluded=[i if isinstance(i, SubmodelElement) else self.CostsIncluded(i) for i in costsIncluded]
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if allowancesAndCharges and not isinstance(allowancesAndCharges, SubmodelElement):
-                        allowancesAndCharges=self. AllowancesAndCharges(allowancesAndCharges)
+                        allowancesAndCharges=self.AllowancesAndCharges(allowancesAndCharges)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if shipping and not isinstance(shipping, SubmodelElement):
-                        shipping=self. Shipping(shipping)
+                        shipping=self.Shipping(shipping)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if shippingTax and not isinstance(shippingTax, SubmodelElement):
-                        shippingTax=self. ShippingTax(shippingTax)
+                        shippingTax=self.ShippingTax(shippingTax)
                         
 
                         
@@ -20637,13 +20536,13 @@ class PurchaseOrder(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if orderQuantity and not isinstance(orderQuantity, SubmodelElement):
-                            orderQuantity=self. OrderQuantity(orderQuantity)
+                            orderQuantity=self.OrderQuantity(orderQuantity)
                             
 
 
@@ -20744,6 +20643,7 @@ class PurchaseOrder(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -21494,67 +21394,61 @@ class PurchaseOrder(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if deliveryStartDate and not isinstance(deliveryStartDate, SubmodelElement):
-                            deliveryStartDate=self. DeliveryStartDate(deliveryStartDate)
+                            deliveryStartDate=self.DeliveryStartDate(deliveryStartDate)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if deliveryEndDate and not isinstance(deliveryEndDate, SubmodelElement):
-                            deliveryEndDate=self. DeliveryEndDate(deliveryEndDate)
+                            deliveryEndDate=self.DeliveryEndDate(deliveryEndDate)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if fixedDeliveryDate and not isinstance(fixedDeliveryDate, SubmodelElement):
-                            fixedDeliveryDate=self. FixedDeliveryDate(fixedDeliveryDate)
+                            fixedDeliveryDate=self.FixedDeliveryDate(fixedDeliveryDate)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if openingHoursStart and not isinstance(openingHoursStart, SubmodelElement):
-                            openingHoursStart=self. OpeningHoursStart(openingHoursStart)
+                            openingHoursStart=self.OpeningHoursStart(openingHoursStart)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if openingHoursEnd and not isinstance(openingHoursEnd, SubmodelElement):
-                            openingHoursEnd=self. OpeningHoursEnd(openingHoursEnd)
+                            openingHoursEnd=self.OpeningHoursEnd(openingHoursEnd)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if plannedDeliveryDurationInDays and not isinstance(plannedDeliveryDurationInDays, SubmodelElement):
-                            plannedDeliveryDurationInDays=self. PlannedDeliveryDurationInDays(plannedDeliveryDurationInDays)
+                            plannedDeliveryDurationInDays=self.PlannedDeliveryDurationInDays(plannedDeliveryDurationInDays)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if scopeOfDelivery and not isinstance(scopeOfDelivery, SubmodelElement):
-                            scopeOfDelivery=self. ScopeOfDelivery(scopeOfDelivery)
+                            scopeOfDelivery=self.ScopeOfDelivery(scopeOfDelivery)
                             
 
 
@@ -21655,6 +21549,7 @@ class PurchaseOrder(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -21980,22 +21875,21 @@ class PurchaseOrder(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if codeType and not isinstance(codeType, SubmodelElement):
-                            codeType=self. CodeType(codeType)
+                            codeType=self.CodeType(codeType)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if code and not isinstance(code, SubmodelElement):
-                            code=self. Code(code)
+                            code=self.Code(code)
                             
 
 
@@ -22096,6 +21990,7 @@ class PurchaseOrder(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -22336,13 +22231,13 @@ class PurchaseOrder(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if qualityRequirement and all([isinstance(i, str) for i in qualityRequirement]):
-                            qualityRequirement=[self. QualityRequirement(i) for i in qualityRequirement]
+                        # Build submodel elements from raw values passed in the argument
+                        if qualityRequirement:
+                            qualityRequirement=[i if isinstance(i, SubmodelElement) else self.QualityRequirement(i) for i in qualityRequirement]
                             
 
 
@@ -22443,6 +22338,7 @@ class PurchaseOrder(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -22845,31 +22741,29 @@ class PurchaseOrder(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if businessParty and not isinstance(businessParty, SubmodelElement):
-                            businessParty=self. BusinessParty(businessParty)
+                            businessParty=self.BusinessParty(businessParty)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if productIDPartySpecific and not isinstance(productIDPartySpecific, SubmodelElement):
-                            productIDPartySpecific=self. ProductIDPartySpecific(productIDPartySpecific)
+                            productIDPartySpecific=self.ProductIDPartySpecific(productIDPartySpecific)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if productnamePartySpecific and not isinstance(productnamePartySpecific, SubmodelElement):
-                            productnamePartySpecific=self. ProductnamePartySpecific(productnamePartySpecific)
+                            productnamePartySpecific=self.ProductnamePartySpecific(productnamePartySpecific)
                             
 
 
@@ -22970,6 +22864,7 @@ class PurchaseOrder(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -23210,13 +23105,13 @@ class PurchaseOrder(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if excludedIngredient and all([isinstance(i, str) for i in excludedIngredient]):
-                            excludedIngredient=[self. ExcludedIngredient(i) for i in excludedIngredient]
+                        # Build submodel elements from raw values passed in the argument
+                        if excludedIngredient:
+                            excludedIngredient=[i if isinstance(i, SubmodelElement) else self.ExcludedIngredient(i) for i in excludedIngredient]
                             
 
 
@@ -23317,6 +23212,7 @@ class PurchaseOrder(Submodel):
                         embedded_data_specifications = []
                     
                     
+
 
 
 
@@ -23758,382 +23654,341 @@ class PurchaseOrder(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if refPurchaseRequestNotificationItem and not isinstance(refPurchaseRequestNotificationItem, SubmodelElement):
-                    refPurchaseRequestNotificationItem=self. RefPurchaseRequestNotificationItem(refPurchaseRequestNotificationItem)
+                    refPurchaseRequestNotificationItem=self.RefPurchaseRequestNotificationItem(refPurchaseRequestNotificationItem)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if refQuotationItemID and not isinstance(refQuotationItemID, SubmodelElement):
-                    refQuotationItemID=self. RefQuotationItemID(refQuotationItemID)
+                    refQuotationItemID=self.RefQuotationItemID(refQuotationItemID)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if itemID and not isinstance(itemID, SubmodelElement):
-                    itemID=self. ItemID(itemID)
+                    itemID=self.ItemID(itemID)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if parentItemID and not isinstance(parentItemID, SubmodelElement):
-                    parentItemID=self. ParentItemID(parentItemID)
+                    parentItemID=self.ParentItemID(parentItemID)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if itemClassification and not isinstance(itemClassification, SubmodelElement):
-                    itemClassification=self. ItemClassification(itemClassification)
+                    itemClassification=self.ItemClassification(itemClassification)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if itemType and not isinstance(itemType, SubmodelElement):
-                    itemType=self. ItemType(itemType)
+                    itemType=self.ItemType(itemType)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if itemStatus and not isinstance(itemStatus, SubmodelElement):
-                    itemStatus=self. ItemStatus(itemStatus)
+                    itemStatus=self.ItemStatus(itemStatus)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if serviceType and not isinstance(serviceType, SubmodelElement):
-                    serviceType=self. ServiceType(serviceType)
+                    serviceType=self.ServiceType(serviceType)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if deliveryTerms and not isinstance(deliveryTerms, SubmodelElement):
-                    deliveryTerms=self. DeliveryTerms(deliveryTerms)
+                    deliveryTerms=self.DeliveryTerms(deliveryTerms)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if orderQuantity and not isinstance(orderQuantity, SubmodelElement):
-                    orderQuantity=self. OrderQuantity(orderQuantity)
+                    orderQuantity=self.OrderQuantity(orderQuantity)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if orderQuantityUnit and not isinstance(orderQuantityUnit, SubmodelElement):
-                    orderQuantityUnit=self. OrderQuantityUnit(orderQuantityUnit)
+                    orderQuantityUnit=self.OrderQuantityUnit(orderQuantityUnit)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if contentQuantity and not isinstance(contentQuantity, SubmodelElement):
-                    contentQuantity=self. ContentQuantity(contentQuantity)
+                    contentQuantity=self.ContentQuantity(contentQuantity)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if contentQuantityUnit and not isinstance(contentQuantityUnit, SubmodelElement):
-                    contentQuantityUnit=self. ContentQuantityUnit(contentQuantityUnit)
+                    contentQuantityUnit=self.ContentQuantityUnit(contentQuantityUnit)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if capacityQuantity and not isinstance(capacityQuantity, SubmodelElement):
-                    capacityQuantity=self. CapacityQuantity(capacityQuantity)
+                    capacityQuantity=self.CapacityQuantity(capacityQuantity)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if capacityQuantityUnit and not isinstance(capacityQuantityUnit, SubmodelElement):
-                    capacityQuantityUnit=self. CapacityQuantityUnit(capacityQuantityUnit)
+                    capacityQuantityUnit=self.CapacityQuantityUnit(capacityQuantityUnit)
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if packageCapacity and all([isinstance(i, float) for i in packageCapacity]):
-                    packageCapacity=[self. PackageCapacity(i) for i in packageCapacity]
+                # Build submodel elements from raw values passed in the argument
+                if packageCapacity:
+                    packageCapacity=[i if isinstance(i, SubmodelElement) else self.PackageCapacity(i) for i in packageCapacity]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if packageQuantity and all([isinstance(i, float) for i in packageQuantity]):
-                    packageQuantity=[self. PackageQuantity(i) for i in packageQuantity]
+                # Build submodel elements from raw values passed in the argument
+                if packageQuantity:
+                    packageQuantity=[i if isinstance(i, SubmodelElement) else self.PackageQuantity(i) for i in packageQuantity]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if packageQuantityUnit and all([isinstance(i, str) for i in packageQuantityUnit]):
-                    packageQuantityUnit=[self. PackageQuantityUnit(i) for i in packageQuantityUnit]
+                # Build submodel elements from raw values passed in the argument
+                if packageQuantityUnit:
+                    packageQuantityUnit=[i if isinstance(i, SubmodelElement) else self.PackageQuantityUnit(i) for i in packageQuantityUnit]
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if unitOfContentQuantityInContentUnit and not isinstance(unitOfContentQuantityInContentUnit, SubmodelElement):
-                    unitOfContentQuantityInContentUnit=self. UnitOfContentQuantityInContentUnit(unitOfContentQuantityInContentUnit)
+                    unitOfContentQuantityInContentUnit=self.UnitOfContentQuantityInContentUnit(unitOfContentQuantityInContentUnit)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if engineeringDocumentsRequired and not isinstance(engineeringDocumentsRequired, SubmodelElement):
-                    engineeringDocumentsRequired=self. EngineeringDocumentsRequired(engineeringDocumentsRequired)
+                    engineeringDocumentsRequired=self.EngineeringDocumentsRequired(engineeringDocumentsRequired)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if digitalProductPassRequired and not isinstance(digitalProductPassRequired, SubmodelElement):
-                    digitalProductPassRequired=self. DigitalProductPassRequired(digitalProductPassRequired)
+                    digitalProductPassRequired=self.DigitalProductPassRequired(digitalProductPassRequired)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if chainOfCustodyProofRequested and not isinstance(chainOfCustodyProofRequested, SubmodelElement):
-                    chainOfCustodyProofRequested=self. ChainOfCustodyProofRequested(chainOfCustodyProofRequested)
+                    chainOfCustodyProofRequested=self.ChainOfCustodyProofRequested(chainOfCustodyProofRequested)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if tollDocumentsRequired and not isinstance(tollDocumentsRequired, SubmodelElement):
-                    tollDocumentsRequired=self. TollDocumentsRequired(tollDocumentsRequired)
+                    tollDocumentsRequired=self.TollDocumentsRequired(tollDocumentsRequired)
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if referenceSubmodelTollDocuments and all([isinstance(i, Reference) for i in referenceSubmodelTollDocuments]):
-                    referenceSubmodelTollDocuments=[self. ReferenceSubmodelTollDocuments(i) for i in referenceSubmodelTollDocuments]
+                # Build submodel elements from raw values passed in the argument
+                if referenceSubmodelTollDocuments:
+                    referenceSubmodelTollDocuments=[i if isinstance(i, SubmodelElement) else self.ReferenceSubmodelTollDocuments(i) for i in referenceSubmodelTollDocuments]
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if netPrice and not isinstance(netPrice, SubmodelElement):
-                    netPrice=self. NetPrice(netPrice)
+                    netPrice=self.NetPrice(netPrice)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if grossPrice and not isinstance(grossPrice, SubmodelElement):
-                    grossPrice=self. GrossPrice(grossPrice)
+                    grossPrice=self.GrossPrice(grossPrice)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if partialShipmentAllowed and not isinstance(partialShipmentAllowed, SubmodelElement):
-                    partialShipmentAllowed=self. PartialShipmentAllowed(partialShipmentAllowed)
+                    partialShipmentAllowed=self.PartialShipmentAllowed(partialShipmentAllowed)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if isItemCompletelyDelivered and not isinstance(isItemCompletelyDelivered, SubmodelElement):
-                    isItemCompletelyDelivered=self. IsItemCompletelyDelivered(isItemCompletelyDelivered)
+                    isItemCompletelyDelivered=self.IsItemCompletelyDelivered(isItemCompletelyDelivered)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if agreement and not isinstance(agreement, SubmodelElement):
-                    agreement=self. Agreement(agreement)
+                    agreement=self.Agreement(agreement)
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if remarks and all([isinstance(i, str) for i in remarks]):
-                    remarks=[self. Remarks(i) for i in remarks]
+                # Build submodel elements from raw values passed in the argument
+                if remarks:
+                    remarks=[i if isinstance(i, SubmodelElement) else self.Remarks(i) for i in remarks]
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if catalogueRef and not isinstance(catalogueRef, SubmodelElement):
-                    catalogueRef=self. CatalogueRef(catalogueRef)
+                    catalogueRef=self.CatalogueRef(catalogueRef)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if incotermsRef and not isinstance(incotermsRef, SubmodelElement):
-                    incotermsRef=self. IncotermsRef(incotermsRef)
+                    incotermsRef=self.IncotermsRef(incotermsRef)
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if businessPartyRef and all([isinstance(i, Reference) for i in businessPartyRef]):
-                    businessPartyRef=[self. BusinessPartyRef(i) for i in businessPartyRef]
+                # Build submodel elements from raw values passed in the argument
+                if businessPartyRef:
+                    businessPartyRef=[i if isinstance(i, SubmodelElement) else self.BusinessPartyRef(i) for i in businessPartyRef]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if internationalRestrictionsRef and all([isinstance(i, Reference) for i in internationalRestrictionsRef]):
-                    internationalRestrictionsRef=[self. InternationalRestrictionsRef(i) for i in internationalRestrictionsRef]
+                # Build submodel elements from raw values passed in the argument
+                if internationalRestrictionsRef:
+                    internationalRestrictionsRef=[i if isinstance(i, SubmodelElement) else self.InternationalRestrictionsRef(i) for i in internationalRestrictionsRef]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if specialTreatmentClassRef and all([isinstance(i, Reference) for i in specialTreatmentClassRef]):
-                    specialTreatmentClassRef=[self. SpecialTreatmentClassRef(i) for i in specialTreatmentClassRef]
+                # Build submodel elements from raw values passed in the argument
+                if specialTreatmentClassRef:
+                    specialTreatmentClassRef=[i if isinstance(i, SubmodelElement) else self.SpecialTreatmentClassRef(i) for i in specialTreatmentClassRef]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if mediaRef and all([isinstance(i, Reference) for i in mediaRef]):
-                    mediaRef=[self. MediaRef(i) for i in mediaRef]
+                # Build submodel elements from raw values passed in the argument
+                if mediaRef:
+                    mediaRef=[i if isinstance(i, SubmodelElement) else self.MediaRef(i) for i in mediaRef]
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if costCenterRef and all([isinstance(i, Reference) for i in costCenterRef]):
-                    costCenterRef=[self. CostCenterRef(i) for i in costCenterRef]
+                # Build submodel elements from raw values passed in the argument
+                if costCenterRef:
+                    costCenterRef=[i if isinstance(i, SubmodelElement) else self.CostCenterRef(i) for i in costCenterRef]
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if productDesignation and not isinstance(productDesignation, SubmodelElement):
-                    productDesignation=self. ProductDesignation(productDesignation)
+                    productDesignation=self.ProductDesignation(productDesignation)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if productShortDescription and not isinstance(productShortDescription, SubmodelElement):
-                    productShortDescription=self. ProductShortDescription(productShortDescription)
+                    productShortDescription=self.ProductShortDescription(productShortDescription)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if productDescription and not isinstance(productDescription, SubmodelElement):
-                    productDescription=self. ProductDescription(productDescription)
+                    productDescription=self.ProductDescription(productDescription)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if scopeOfDelivery and not isinstance(scopeOfDelivery, SubmodelElement):
-                    scopeOfDelivery=self. ScopeOfDelivery(scopeOfDelivery)
+                    scopeOfDelivery=self.ScopeOfDelivery(scopeOfDelivery)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if aASItemReference and not isinstance(aASItemReference, SubmodelElement):
-                    aASItemReference=self. AASItemReference(aASItemReference)
+                    aASItemReference=self.AASItemReference(aASItemReference)
                     
 
                     
@@ -24262,6 +24117,7 @@ class PurchaseOrder(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -24477,6 +24333,7 @@ class PurchaseOrder(Submodel):
             embedded_data_specifications = []
         
         
+
 
 
 

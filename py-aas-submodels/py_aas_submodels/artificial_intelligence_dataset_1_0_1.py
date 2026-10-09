@@ -853,9 +853,16 @@ class AIDataset(Submodel):
                             ):
                                 numberLabels = self.NumberLabels(numberLabels)
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if label and all([isinstance(i, str) for i in label]):
-                                label = [self.Label(i) for i in label]
+                            # Build submodel elements from raw values passed in the argument
+                            if label:
+                                label = [
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.Label(i)
+                                    )
+                                    for i in label
+                                ]
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -1855,12 +1862,15 @@ class AIDataset(Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if exampleDetails and all(
-                                [isinstance(i, str) for i in exampleDetails]
-                            ):
+                            # Build submodel elements from raw values passed in the argument
+                            if exampleDetails:
                                 exampleDetails = [
-                                    self.ExampleDetails(i) for i in exampleDetails
+                                    (
+                                        i
+                                        if isinstance(i, SubmodelElement)
+                                        else self.ExampleDetails(i)
+                                    )
+                                    for i in exampleDetails
                                 ]
 
                             # Add all passed/initialized submodel elements to a single list
@@ -2774,9 +2784,12 @@ class AIDataset(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if exampleInfo and all([isinstance(i, str) for i in exampleInfo]):
-                    exampleInfo = [self.ExampleInfo(i) for i in exampleInfo]
+                # Build submodel elements from raw values passed in the argument
+                if exampleInfo:
+                    exampleInfo = [
+                        i if isinstance(i, SubmodelElement) else self.ExampleInfo(i)
+                        for i in exampleInfo
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2848,9 +2861,12 @@ class AIDataset(Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if fileType and all([isinstance(i, str) for i in fileType]):
-                fileType = [self.FileType(i) for i in fileType]
+            # Build submodel elements from raw values passed in the argument
+            if fileType:
+                fileType = [
+                    i if isinstance(i, SubmodelElement) else self.FileType(i)
+                    for i in fileType
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3124,9 +3140,12 @@ class AIDataset(Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if collector and all([isinstance(i, Reference) for i in collector]):
-                    collector = [self.Collector(i) for i in collector]
+                # Build submodel elements from raw values passed in the argument
+                if collector:
+                    collector = [
+                        i if isinstance(i, SubmodelElement) else self.Collector(i)
+                        for i in collector
+                    ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []

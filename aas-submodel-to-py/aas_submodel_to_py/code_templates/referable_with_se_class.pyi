@@ -32,25 +32,20 @@
 
 {# Check if raw values were passed in args where SubmodelElements (e.g.Property) are expected #}
 {# Build from raw values SubmodelElements (e.g. from 123 build SpecificProperty(value=123))  #}
-{# Submodel elements will be built if the corresponding SE arg has the following typehint structure: #}
-{# Union[raw_type, SpecificSubmodelElementType] or
-    Optional[Union[raw_type, SpecificSubmodelElementType]] or
-     Optional[Union[Tuple[raw_type, raw_type], SpecificSubmodelElementType]]] or
-      Optional[Iterable[Union[raw_type, SpecificSubmodelElementType]]] or
-    #}
+{# raw_value_builders maps such args to the code building the SubmodelElement from a raw value, #}
+{# see SubmodelCodegen.get_raw_value_builder #}
+{% set builders = raw_value_builders | default({}) %}
 {% for arg_for_se in args_for_submodel_elements %}
-    {% set se_arg_typehint = typehints.get(arg_for_se, '').lstrip("Optional").strip("[]") %}
+    {% set builder = builders.get(arg_for_se) %}
 
-    {% if se_arg_typehint.startswith("Union") %}
-        {% set types = se_arg_typehint.lstrip("Union").strip("[]").split(",") %}
+    {% if builder and builder.iterable %}
+# Build submodel elements from raw values passed in the argument
+if {{ arg_for_se }}:
+    {{ arg_for_se }}=[i if isinstance(i, SubmodelElement) else {{ builder.code }} for i in {{ arg_for_se }}]
+    {% elif builder %}
 # Build a submodel element if a raw value was passed in the argument
 if {{ arg_for_se }} and not isinstance({{ arg_for_se }}, SubmodelElement):
-    {{ arg_for_se }}=self.{{ types[-1] }}({{ arg_for_se }})
-    {% elif se_arg_typehint.lstrip("Iterable[").startswith("Union") %}
-        {% set types = se_arg_typehint.lstrip("Iterable").strip("[]").lstrip("Union").strip("[]").split(",") %}
-# Build a list of submodel elements if a raw values were passed in the argument
-if {{ arg_for_se }} and all([isinstance(i, {{ types[0] }}) for i in {{ arg_for_se }}]):
-    {{ arg_for_se }}=[self.{{ types[1] }}(i) for i in {{ arg_for_se }}]
+    {{ arg_for_se }}={{ builder.code }}
     {% endif %}
 {% endfor %}
 

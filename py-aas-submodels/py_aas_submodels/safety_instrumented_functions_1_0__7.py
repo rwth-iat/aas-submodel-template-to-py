@@ -594,17 +594,23 @@ class EquipmentUnderControl(Submodel):
             if boundary and not isinstance(boundary, SubmodelElement):
                 boundary = self.Boundary(boundary)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if eUCControlSystem and all([isinstance(i, str) for i in eUCControlSystem]):
-                eUCControlSystem = [self.EUCControlSystem(i) for i in eUCControlSystem]
+            # Build submodel elements from raw values passed in the argument
+            if eUCControlSystem:
+                eUCControlSystem = [
+                    i if isinstance(i, SubmodelElement) else self.EUCControlSystem(i)
+                    for i in eUCControlSystem
+                ]
 
             # Build a submodel element if a raw value was passed in the argument
             if processSafetyTime and not isinstance(processSafetyTime, SubmodelElement):
                 processSafetyTime = self.ProcessSafetyTime(processSafetyTime)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if linkedSIF and all([isinstance(i, Reference) for i in linkedSIF]):
-                linkedSIF = [self.LinkedSIF(i) for i in linkedSIF]
+            # Build submodel elements from raw values passed in the argument
+            if linkedSIF:
+                linkedSIF = [
+                    i if isinstance(i, SubmodelElement) else self.LinkedSIF(i)
+                    for i in linkedSIF
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -930,12 +936,14 @@ class EquipmentUnderControl(Submodel):
             if hazardID and not isinstance(hazardID, SubmodelElement):
                 hazardID = self.HazardID(hazardID)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if independentProtectionLayer and all(
-                [isinstance(i, str) for i in independentProtectionLayer]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if independentProtectionLayer:
                 independentProtectionLayer = [
-                    self.IndependentProtectionLayer(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.IndependentProtectionLayer(i)
+                    )
                     for i in independentProtectionLayer
                 ]
 
@@ -1401,32 +1409,36 @@ class EquipmentUnderControl(Submodel):
             if hazardID and not isinstance(hazardID, SubmodelElement):
                 hazardID = self.HazardID(hazardID)
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if measuresToAvoidHazardFromCombinedSafeProcessStates and all(
-                [
-                    isinstance(i, str)
-                    for i in measuresToAvoidHazardFromCombinedSafeProcessStates
-                ]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if measuresToAvoidHazardFromCombinedSafeProcessStates:
                 measuresToAvoidHazardFromCombinedSafeProcessStates = [
-                    self.MeasuresToAvoidHazardFromCombinedSafeProcessStates(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.MeasuresToAvoidHazardFromCombinedSafeProcessStates(i)
+                    )
                     for i in measuresToAvoidHazardFromCombinedSafeProcessStates
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if referenceToHazardousEvent and all(
-                [isinstance(i, Reference) for i in referenceToHazardousEvent]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if referenceToHazardousEvent:
                 referenceToHazardousEvent = [
-                    self.ReferenceToHazardousEvent(i) for i in referenceToHazardousEvent
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.ReferenceToHazardousEvent(i)
+                    )
+                    for i in referenceToHazardousEvent
                 ]
 
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if independentProtectionLayer and all(
-                [isinstance(i, str) for i in independentProtectionLayer]
-            ):
+            # Build submodel elements from raw values passed in the argument
+            if independentProtectionLayer:
                 independentProtectionLayer = [
-                    self.IndependentProtectionLayer(i)
+                    (
+                        i
+                        if isinstance(i, SubmodelElement)
+                        else self.IndependentProtectionLayer(i)
+                    )
                     for i in independentProtectionLayer
                 ]
 

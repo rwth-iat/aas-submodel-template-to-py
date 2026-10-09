@@ -2340,12 +2340,15 @@ class CarbonFootprint(Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if arbitraryContent and all(
-                        [isinstance(i, str) for i in arbitraryContent]
-                    ):
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitraryContent:
                         arbitraryContent = [
-                            self.ArbitraryContent(i) for i in arbitraryContent
+                            (
+                                i
+                                if isinstance(i, SubmodelElement)
+                                else self.ArbitraryContent(i)
+                            )
+                            for i in arbitraryContent
                         ]
 
                     # Add all passed/initialized submodel elements to a single list

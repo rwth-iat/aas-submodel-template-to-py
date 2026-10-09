@@ -941,13 +941,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if geometryreferencelist_items and all([isinstance(i, Reference) for i in geometryreferencelist_items]):
-                            geometryreferencelist_items=[self. Geometryreferencelist_item(i) for i in geometryreferencelist_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if geometryreferencelist_items:
+                            geometryreferencelist_items=[i if isinstance(i, SubmodelElement) else self.Geometryreferencelist_item(i) for i in geometryreferencelist_items]
                             
 
 
@@ -1186,13 +1186,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if idlist3dmodel_items and all([isinstance(i, str) for i in idlist3dmodel_items]):
-                            idlist3dmodel_items=[self. Idlist3dmodel_item(i) for i in idlist3dmodel_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if idlist3dmodel_items:
+                            idlist3dmodel_items=[i if isinstance(i, SubmodelElement) else self.Idlist3dmodel_item(i) for i in idlist3dmodel_items]
                             
 
 
@@ -1512,22 +1512,21 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if page and not isinstance(page, SubmodelElement):
-                                page=self. Page(page)
+                                page=self.Page(page)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if coordinate and not isinstance(coordinate, SubmodelElement):
-                                coordinate=self. Coordinate(coordinate)
+                                coordinate=self.Coordinate(coordinate)
                                 
 
 
@@ -1628,6 +1627,7 @@ class QualityControlForMachining(Submodel):
                             embedded_data_specifications = []
                         
                         
+
 
 
 
@@ -1853,94 +1853,85 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if linearFeatureName and not isinstance(linearFeatureName, SubmodelElement):
-                        linearFeatureName=self. LinearFeatureName(linearFeatureName)
+                        linearFeatureName=self.LinearFeatureName(linearFeatureName)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if dimensionDescription and not isinstance(dimensionDescription, SubmodelElement):
-                        dimensionDescription=self. DimensionDescription(dimensionDescription)
+                        dimensionDescription=self.DimensionDescription(dimensionDescription)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if measurementProcedure and not isinstance(measurementProcedure, SubmodelElement):
-                        measurementProcedure=self. MeasurementProcedure(measurementProcedure)
+                        measurementProcedure=self.MeasurementProcedure(measurementProcedure)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if inspectionRelevant and not isinstance(inspectionRelevant, SubmodelElement):
-                        inspectionRelevant=self. InspectionRelevant(inspectionRelevant)
+                        inspectionRelevant=self.InspectionRelevant(inspectionRelevant)
                         
 
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if toleranceNorm and all([isinstance(i, str) for i in toleranceNorm]):
-                        toleranceNorm=[self. ToleranceNorm(i) for i in toleranceNorm]
+                    # Build submodel elements from raw values passed in the argument
+                    if toleranceNorm:
+                        toleranceNorm=[i if isinstance(i, SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm]
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if nominalValue and not isinstance(nominalValue, SubmodelElement):
-                        nominalValue=self. NominalValue(nominalValue)
+                        nominalValue=self.NominalValue(nominalValue)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if upperTolerance and not isinstance(upperTolerance, SubmodelElement):
-                        upperTolerance=self. UpperTolerance(upperTolerance)
+                        upperTolerance=self.UpperTolerance(upperTolerance)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if lowerTolerance and not isinstance(lowerTolerance, SubmodelElement):
-                        lowerTolerance=self. LowerTolerance(lowerTolerance)
+                        lowerTolerance=self.LowerTolerance(lowerTolerance)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if oneSided and not isinstance(oneSided, SubmodelElement):
-                        oneSided=self. OneSided(oneSided)
+                        oneSided=self.OneSided(oneSided)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if engineeringUnit and not isinstance(engineeringUnit, SubmodelElement):
-                        engineeringUnit=self. EngineeringUnit(engineeringUnit)
+                        engineeringUnit=self.EngineeringUnit(engineeringUnit)
                         
 
                         
@@ -1950,10 +1941,9 @@ class QualityControlForMachining(Submodel):
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if iDList3DModel and not isinstance(iDList3DModel, SubmodelElement):
-                        iDList3DModel=self. IDList3DModel(iDList3DModel)
+                        iDList3DModel=self.IDList3DModel(iDList3DModel)
                         
 
                         
@@ -2058,6 +2048,7 @@ class QualityControlForMachining(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -2697,13 +2688,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if geometryreferencelist_items and all([isinstance(i, Reference) for i in geometryreferencelist_items]):
-                            geometryreferencelist_items=[self. Geometryreferencelist_item(i) for i in geometryreferencelist_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if geometryreferencelist_items:
+                            geometryreferencelist_items=[i if isinstance(i, SubmodelElement) else self.Geometryreferencelist_item(i) for i in geometryreferencelist_items]
                             
 
 
@@ -2942,13 +2933,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if idlist3dmodel_items and all([isinstance(i, str) for i in idlist3dmodel_items]):
-                            idlist3dmodel_items=[self. Idlist3dmodel_item(i) for i in idlist3dmodel_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if idlist3dmodel_items:
+                            idlist3dmodel_items=[i if isinstance(i, SubmodelElement) else self.Idlist3dmodel_item(i) for i in idlist3dmodel_items]
                             
 
 
@@ -3268,22 +3259,21 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if page and not isinstance(page, SubmodelElement):
-                                page=self. Page(page)
+                                page=self.Page(page)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if coordinate and not isinstance(coordinate, SubmodelElement):
-                                coordinate=self. Coordinate(coordinate)
+                                coordinate=self.Coordinate(coordinate)
                                 
 
 
@@ -3384,6 +3374,7 @@ class QualityControlForMachining(Submodel):
                             embedded_data_specifications = []
                         
                         
+
 
 
 
@@ -3628,13 +3619,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if okattributeslist_items and all([isinstance(i, str) for i in okattributeslist_items]):
-                            okattributeslist_items=[self. Okattributeslist_item(i) for i in okattributeslist_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if okattributeslist_items:
+                            okattributeslist_items=[i if isinstance(i, SubmodelElement) else self.Okattributeslist_item(i) for i in okattributeslist_items]
                             
 
 
@@ -3873,13 +3864,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if nokattributeslist_items and all([isinstance(i, str) for i in nokattributeslist_items]):
-                            nokattributeslist_items=[self. Nokattributeslist_item(i) for i in nokattributeslist_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if nokattributeslist_items:
+                            nokattributeslist_items=[i if isinstance(i, SubmodelElement) else self.Nokattributeslist_item(i) for i in nokattributeslist_items]
                             
 
 
@@ -4081,49 +4072,45 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if attributiveFeatureName and not isinstance(attributiveFeatureName, SubmodelElement):
-                        attributiveFeatureName=self. AttributiveFeatureName(attributiveFeatureName)
+                        attributiveFeatureName=self.AttributiveFeatureName(attributiveFeatureName)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if attibutiveFeatureDescription and not isinstance(attibutiveFeatureDescription, SubmodelElement):
-                        attibutiveFeatureDescription=self. AttibutiveFeatureDescription(attibutiveFeatureDescription)
+                        attibutiveFeatureDescription=self.AttibutiveFeatureDescription(attibutiveFeatureDescription)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if measurementProcedure and not isinstance(measurementProcedure, SubmodelElement):
-                        measurementProcedure=self. MeasurementProcedure(measurementProcedure)
+                        measurementProcedure=self.MeasurementProcedure(measurementProcedure)
                         
 
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if toleranceNorm and all([isinstance(i, str) for i in toleranceNorm]):
-                        toleranceNorm=[self. ToleranceNorm(i) for i in toleranceNorm]
+                    # Build submodel elements from raw values passed in the argument
+                    if toleranceNorm:
+                        toleranceNorm=[i if isinstance(i, SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm]
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if inspectionRelevant and not isinstance(inspectionRelevant, SubmodelElement):
-                        inspectionRelevant=self. InspectionRelevant(inspectionRelevant)
+                        inspectionRelevant=self.InspectionRelevant(inspectionRelevant)
                         
 
                         
@@ -4133,10 +4120,9 @@ class QualityControlForMachining(Submodel):
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if iDList3DModel and not isinstance(iDList3DModel, SubmodelElement):
-                        iDList3DModel=self. IDList3DModel(iDList3DModel)
+                        iDList3DModel=self.IDList3DModel(iDList3DModel)
                         
 
                         
@@ -4146,19 +4132,17 @@ class QualityControlForMachining(Submodel):
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if oKAttributesList and not isinstance(oKAttributesList, SubmodelElement):
-                        oKAttributesList=self. OKAttributesList(oKAttributesList)
+                        oKAttributesList=self.OKAttributesList(oKAttributesList)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if nOKAttributesList and not isinstance(nOKAttributesList, SubmodelElement):
-                        nOKAttributesList=self. NOKAttributesList(nOKAttributesList)
+                        nOKAttributesList=self.NOKAttributesList(nOKAttributesList)
                         
 
 
@@ -4259,6 +4243,7 @@ class QualityControlForMachining(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -5736,85 +5721,77 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if shape and not isinstance(shape, SubmodelElement):
-                            shape=self. Shape(shape)
+                            shape=self.Shape(shape)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if toleranceZoneDescription and not isinstance(toleranceZoneDescription, SubmodelElement):
-                            toleranceZoneDescription=self. ToleranceZoneDescription(toleranceZoneDescription)
+                            toleranceZoneDescription=self.ToleranceZoneDescription(toleranceZoneDescription)
                             
 
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if specificationModificator and all([isinstance(i, str) for i in specificationModificator]):
-                            specificationModificator=[self. SpecificationModificator(i) for i in specificationModificator]
+                        # Build submodel elements from raw values passed in the argument
+                        if specificationModificator:
+                            specificationModificator=[i if isinstance(i, SubmodelElement) else self.SpecificationModificator(i) for i in specificationModificator]
                             
 
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if widthExtendValue and all([isinstance(i, float) for i in widthExtendValue]):
-                            widthExtendValue=[self. WidthExtendValue(i) for i in widthExtendValue]
+                        # Build submodel elements from raw values passed in the argument
+                        if widthExtendValue:
+                            widthExtendValue=[i if isinstance(i, SubmodelElement) else self.WidthExtendValue(i) for i in widthExtendValue]
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if widthExtendTolerance and not isinstance(widthExtendTolerance, SubmodelElement):
-                            widthExtendTolerance=self. WidthExtendTolerance(widthExtendTolerance)
+                            widthExtendTolerance=self.WidthExtendTolerance(widthExtendTolerance)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if widthExtendSign and not isinstance(widthExtendSign, SubmodelElement):
-                            widthExtendSign=self. WidthExtendSign(widthExtendSign)
+                            widthExtendSign=self.WidthExtendSign(widthExtendSign)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if widthExtendTolerance and not isinstance(widthExtendTolerance, SubmodelElement):
-                            widthExtendTolerance=self. WidthExtendTolerance(widthExtendTolerance)
+                            widthExtendTolerance=self.WidthExtendTolerance(widthExtendTolerance)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if widthExtendSign and not isinstance(widthExtendSign, SubmodelElement):
-                            widthExtendSign=self. WidthExtendSign(widthExtendSign)
+                            widthExtendSign=self.WidthExtendSign(widthExtendSign)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if engineeringUnit and not isinstance(engineeringUnit, SubmodelElement):
-                            engineeringUnit=self. EngineeringUnit(engineeringUnit)
+                            engineeringUnit=self.EngineeringUnit(engineeringUnit)
                             
 
 
@@ -5994,13 +5971,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if geometryreferencelist_items and all([isinstance(i, Reference) for i in geometryreferencelist_items]):
-                            geometryreferencelist_items=[self. Geometryreferencelist_item(i) for i in geometryreferencelist_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if geometryreferencelist_items:
+                            geometryreferencelist_items=[i if isinstance(i, SubmodelElement) else self.Geometryreferencelist_item(i) for i in geometryreferencelist_items]
                             
 
 
@@ -6239,13 +6216,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if idlist3dmodel_items and all([isinstance(i, str) for i in idlist3dmodel_items]):
-                            idlist3dmodel_items=[self. Idlist3dmodel_item(i) for i in idlist3dmodel_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if idlist3dmodel_items:
+                            idlist3dmodel_items=[i if isinstance(i, SubmodelElement) else self.Idlist3dmodel_item(i) for i in idlist3dmodel_items]
                             
 
 
@@ -6565,22 +6542,21 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if page and not isinstance(page, SubmodelElement):
-                                page=self. Page(page)
+                                page=self.Page(page)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if coordinate and not isinstance(coordinate, SubmodelElement):
-                                coordinate=self. Coordinate(coordinate)
+                                coordinate=self.Coordinate(coordinate)
                                 
 
 
@@ -6681,6 +6657,7 @@ class QualityControlForMachining(Submodel):
                             embedded_data_specifications = []
                         
                         
+
 
 
 
@@ -7243,22 +7220,21 @@ class QualityControlForMachining(Submodel):
 
 
 
-                                
-
-                                
-                                    
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if gPS_Identifier and all([isinstance(i, str) for i in gPS_Identifier]):
-                                gPS_Identifier=[self. GPS_Identifier(i) for i in gPS_Identifier]
-                                
 
                                 
 
                                 
-                                    
-                            # Build a list of submodel elements if a raw values were passed in the argument
-                            if gPS_Value and all([isinstance(i, str) for i in gPS_Value]):
-                                gPS_Value=[self. GPS_Value(i) for i in gPS_Value]
+                            # Build submodel elements from raw values passed in the argument
+                            if gPS_Identifier:
+                                gPS_Identifier=[i if isinstance(i, SubmodelElement) else self.GPS_Identifier(i) for i in gPS_Identifier]
+                                
+
+                                
+
+                                
+                            # Build submodel elements from raw values passed in the argument
+                            if gPS_Value:
+                                gPS_Value=[i if isinstance(i, SubmodelElement) else self.GPS_Value(i) for i in gPS_Value]
                                 
 
 
@@ -7359,6 +7335,7 @@ class QualityControlForMachining(Submodel):
                             embedded_data_specifications = []
                         
                         
+
 
 
 
@@ -7596,67 +7573,61 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if gPS_FeatureName and not isinstance(gPS_FeatureName, SubmodelElement):
-                        gPS_FeatureName=self. GPS_FeatureName(gPS_FeatureName)
+                        gPS_FeatureName=self.GPS_FeatureName(gPS_FeatureName)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if gPS_Description and not isinstance(gPS_Description, SubmodelElement):
-                        gPS_Description=self. GPS_Description(gPS_Description)
+                        gPS_Description=self.GPS_Description(gPS_Description)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if measurementProcedure and not isinstance(measurementProcedure, SubmodelElement):
-                        measurementProcedure=self. MeasurementProcedure(measurementProcedure)
+                        measurementProcedure=self.MeasurementProcedure(measurementProcedure)
                         
 
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if toleranceNorm and all([isinstance(i, str) for i in toleranceNorm]):
-                        toleranceNorm=[self. ToleranceNorm(i) for i in toleranceNorm]
+                    # Build submodel elements from raw values passed in the argument
+                    if toleranceNorm:
+                        toleranceNorm=[i if isinstance(i, SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm]
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if inspectionRelevant and not isinstance(inspectionRelevant, SubmodelElement):
-                        inspectionRelevant=self. InspectionRelevant(inspectionRelevant)
+                        inspectionRelevant=self.InspectionRelevant(inspectionRelevant)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if gPS_Type and not isinstance(gPS_Type, SubmodelElement):
-                        gPS_Type=self. GPS_Type(gPS_Type)
+                        gPS_Type=self.GPS_Type(gPS_Type)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if gPS_ReferenceRequired and not isinstance(gPS_ReferenceRequired, SubmodelElement):
-                        gPS_ReferenceRequired=self. GPS_ReferenceRequired(gPS_ReferenceRequired)
+                        gPS_ReferenceRequired=self.GPS_ReferenceRequired(gPS_ReferenceRequired)
                         
 
                         
@@ -7670,10 +7641,9 @@ class QualityControlForMachining(Submodel):
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if iDList3DModel and not isinstance(iDList3DModel, SubmodelElement):
-                        iDList3DModel=self. IDList3DModel(iDList3DModel)
+                        iDList3DModel=self.IDList3DModel(iDList3DModel)
                         
 
                         
@@ -7683,28 +7653,25 @@ class QualityControlForMachining(Submodel):
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if datumField and not isinstance(datumField, SubmodelElement):
-                        datumField=self. DatumField(datumField)
+                        datumField=self.DatumField(datumField)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if datumField and not isinstance(datumField, SubmodelElement):
-                        datumField=self. DatumField(datumField)
+                        datumField=self.DatumField(datumField)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if datumField and not isinstance(datumField, SubmodelElement):
-                        datumField=self. DatumField(datumField)
+                        datumField=self.DatumField(datumField)
                         
 
                         
@@ -7809,6 +7776,7 @@ class QualityControlForMachining(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -8527,13 +8495,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if geometryreferencelist_items and all([isinstance(i, Reference) for i in geometryreferencelist_items]):
-                            geometryreferencelist_items=[self. Geometryreferencelist_item(i) for i in geometryreferencelist_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if geometryreferencelist_items:
+                            geometryreferencelist_items=[i if isinstance(i, SubmodelElement) else self.Geometryreferencelist_item(i) for i in geometryreferencelist_items]
                             
 
 
@@ -8772,13 +8740,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if idlist3dmodel_items and all([isinstance(i, str) for i in idlist3dmodel_items]):
-                            idlist3dmodel_items=[self. Idlist3dmodel_item(i) for i in idlist3dmodel_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if idlist3dmodel_items:
+                            idlist3dmodel_items=[i if isinstance(i, SubmodelElement) else self.Idlist3dmodel_item(i) for i in idlist3dmodel_items]
                             
 
 
@@ -9098,22 +9066,21 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if page and not isinstance(page, SubmodelElement):
-                                page=self. Page(page)
+                                page=self.Page(page)
                                 
 
                                 
 
                                 
-                                    
                             # Build a submodel element if a raw value was passed in the argument
                             if coordinate and not isinstance(coordinate, SubmodelElement):
-                                coordinate=self. Coordinate(coordinate)
+                                coordinate=self.Coordinate(coordinate)
                                 
 
 
@@ -9214,6 +9181,7 @@ class QualityControlForMachining(Submodel):
                             embedded_data_specifications = []
                         
                         
+
 
 
 
@@ -10215,94 +10183,85 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_Limit and not isinstance(sL_ASP_Limit, SubmodelElement):
-                            sL_ASP_Limit=self. SL_ASP_Limit(sL_ASP_Limit)
+                            sL_ASP_Limit=self.SL_ASP_Limit(sL_ASP_Limit)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_S_FilterType and not isinstance(sL_ASP_S_FilterType, SubmodelElement):
-                            sL_ASP_S_FilterType=self. SL_ASP_S_FilterType(sL_ASP_S_FilterType)
+                            sL_ASP_S_FilterType=self.SL_ASP_S_FilterType(sL_ASP_S_FilterType)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_S_FilterNestingIndex and not isinstance(sL_ASP_S_FilterNestingIndex, SubmodelElement):
-                            sL_ASP_S_FilterNestingIndex=self. SL_ASP_S_FilterNestingIndex(sL_ASP_S_FilterNestingIndex)
+                            sL_ASP_S_FilterNestingIndex=self.SL_ASP_S_FilterNestingIndex(sL_ASP_S_FilterNestingIndex)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_L_FilterType and not isinstance(sL_ASP_L_FilterType, SubmodelElement):
-                            sL_ASP_L_FilterType=self. SL_ASP_L_FilterType(sL_ASP_L_FilterType)
+                            sL_ASP_L_FilterType=self.SL_ASP_L_FilterType(sL_ASP_L_FilterType)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_L_FilterNestingIndex and not isinstance(sL_ASP_L_FilterNestingIndex, SubmodelElement):
-                            sL_ASP_L_FilterNestingIndex=self. SL_ASP_L_FilterNestingIndex(sL_ASP_L_FilterNestingIndex)
+                            sL_ASP_L_FilterNestingIndex=self.SL_ASP_L_FilterNestingIndex(sL_ASP_L_FilterNestingIndex)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_F_Operator and not isinstance(sL_ASP_F_Operator, SubmodelElement):
-                            sL_ASP_F_Operator=self. SL_ASP_F_Operator(sL_ASP_F_Operator)
+                            sL_ASP_F_Operator=self.SL_ASP_F_Operator(sL_ASP_F_Operator)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_Indicator and not isinstance(sL_ASP_Indicator, SubmodelElement):
-                            sL_ASP_Indicator=self. SL_ASP_Indicator(sL_ASP_Indicator)
+                            sL_ASP_Indicator=self.SL_ASP_Indicator(sL_ASP_Indicator)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_Value and not isinstance(sL_ASP_Value, SubmodelElement):
-                            sL_ASP_Value=self. SL_ASP_Value(sL_ASP_Value)
+                            sL_ASP_Value=self.SL_ASP_Value(sL_ASP_Value)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_Unit and not isinstance(sL_ASP_Unit, SubmodelElement):
-                            sL_ASP_Unit=self. SL_ASP_Unit(sL_ASP_Unit)
+                            sL_ASP_Unit=self.SL_ASP_Unit(sL_ASP_Unit)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sL_ASP_Or and not isinstance(sL_ASP_Or, SubmodelElement):
-                            sL_ASP_Or=self. SL_ASP_Or(sL_ASP_Or)
+                            sL_ASP_Or=self.SL_ASP_Or(sL_ASP_Or)
                             
 
 
@@ -11162,85 +11121,77 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_Limit and not isinstance(sF_ASP_Limit, SubmodelElement):
-                            sF_ASP_Limit=self. SF_ASP_Limit(sF_ASP_Limit)
+                            sF_ASP_Limit=self.SF_ASP_Limit(sF_ASP_Limit)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_S_FilterType and not isinstance(sF_ASP_S_FilterType, SubmodelElement):
-                            sF_ASP_S_FilterType=self. SF_ASP_S_FilterType(sF_ASP_S_FilterType)
+                            sF_ASP_S_FilterType=self.SF_ASP_S_FilterType(sF_ASP_S_FilterType)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_S_FilterNestingIndex and not isinstance(sF_ASP_S_FilterNestingIndex, SubmodelElement):
-                            sF_ASP_S_FilterNestingIndex=self. SF_ASP_S_FilterNestingIndex(sF_ASP_S_FilterNestingIndex)
+                            sF_ASP_S_FilterNestingIndex=self.SF_ASP_S_FilterNestingIndex(sF_ASP_S_FilterNestingIndex)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_F_Operator and not isinstance(sF_ASP_F_Operator, SubmodelElement):
-                            sF_ASP_F_Operator=self. SF_ASP_F_Operator(sF_ASP_F_Operator)
+                            sF_ASP_F_Operator=self.SF_ASP_F_Operator(sF_ASP_F_Operator)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_Indicator and not isinstance(sF_ASP_Indicator, SubmodelElement):
-                            sF_ASP_Indicator=self. SF_ASP_Indicator(sF_ASP_Indicator)
+                            sF_ASP_Indicator=self.SF_ASP_Indicator(sF_ASP_Indicator)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_Value and not isinstance(sF_ASP_Value, SubmodelElement):
-                            sF_ASP_Value=self. SF_ASP_Value(sF_ASP_Value)
+                            sF_ASP_Value=self.SF_ASP_Value(sF_ASP_Value)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_Unit and not isinstance(sF_ASP_Unit, SubmodelElement):
-                            sF_ASP_Unit=self. SF_ASP_Unit(sF_ASP_Unit)
+                            sF_ASP_Unit=self.SF_ASP_Unit(sF_ASP_Unit)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_ES and not isinstance(sF_ASP_ES, SubmodelElement):
-                            sF_ASP_ES=self. SF_ASP_ES(sF_ASP_ES)
+                            sF_ASP_ES=self.SF_ASP_ES(sF_ASP_ES)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if sF_ASP_Or and not isinstance(sF_ASP_Or, SubmodelElement):
-                            sF_ASP_Or=self. SF_ASP_Or(sF_ASP_Or)
+                            sF_ASP_Or=self.SF_ASP_Or(sF_ASP_Or)
                             
 
 
@@ -11679,40 +11630,37 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if smr_RefCValue and not isinstance(smr_RefCValue, SubmodelElement):
-                            smr_RefCValue=self. Smr_RefCValue(smr_RefCValue)
+                            smr_RefCValue=self.Smr_RefCValue(smr_RefCValue)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if smr_CValue and not isinstance(smr_CValue, SubmodelElement):
-                            smr_CValue=self. Smr_CValue(smr_CValue)
+                            smr_CValue=self.Smr_CValue(smr_CValue)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if smr_Value and not isinstance(smr_Value, SubmodelElement):
-                            smr_Value=self. Smr_Value(smr_Value)
+                            smr_Value=self.Smr_Value(smr_Value)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if smr_Unit and not isinstance(smr_Unit, SubmodelElement):
-                            smr_Unit=self. Smr_Unit(smr_Unit)
+                            smr_Unit=self.Smr_Unit(smr_Unit)
                             
 
 
@@ -11875,58 +11823,53 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if aSF_FeatureName and not isinstance(aSF_FeatureName, SubmodelElement):
-                        aSF_FeatureName=self. ASF_FeatureName(aSF_FeatureName)
+                        aSF_FeatureName=self.ASF_FeatureName(aSF_FeatureName)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if aSF_Description and not isinstance(aSF_Description, SubmodelElement):
-                        aSF_Description=self. ASF_Description(aSF_Description)
+                        aSF_Description=self.ASF_Description(aSF_Description)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if measurementProcedure and not isinstance(measurementProcedure, SubmodelElement):
-                        measurementProcedure=self. MeasurementProcedure(measurementProcedure)
+                        measurementProcedure=self.MeasurementProcedure(measurementProcedure)
                         
 
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if toleranceNorm and all([isinstance(i, str) for i in toleranceNorm]):
-                        toleranceNorm=[self. ToleranceNorm(i) for i in toleranceNorm]
+                    # Build submodel elements from raw values passed in the argument
+                    if toleranceNorm:
+                        toleranceNorm=[i if isinstance(i, SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm]
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if inspectionRelevant and not isinstance(inspectionRelevant, SubmodelElement):
-                        inspectionRelevant=self. InspectionRelevant(inspectionRelevant)
+                        inspectionRelevant=self.InspectionRelevant(inspectionRelevant)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if arealSurfaceFeatureType and not isinstance(arealSurfaceFeatureType, SubmodelElement):
-                        arealSurfaceFeatureType=self. ArealSurfaceFeatureType(arealSurfaceFeatureType)
+                        arealSurfaceFeatureType=self.ArealSurfaceFeatureType(arealSurfaceFeatureType)
                         
 
                         
@@ -11936,10 +11879,9 @@ class QualityControlForMachining(Submodel):
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if iDList3DModel and not isinstance(iDList3DModel, SubmodelElement):
-                        iDList3DModel=self. IDList3DModel(iDList3DModel)
+                        iDList3DModel=self.IDList3DModel(iDList3DModel)
                         
 
                         
@@ -12056,6 +11998,7 @@ class QualityControlForMachining(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -12223,6 +12166,7 @@ class QualityControlForMachining(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -13092,76 +13036,69 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if productionStart and not isinstance(productionStart, SubmodelElement):
-                    productionStart=self. ProductionStart(productionStart)
+                    productionStart=self.ProductionStart(productionStart)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if productionEnd and not isinstance(productionEnd, SubmodelElement):
-                    productionEnd=self. ProductionEnd(productionEnd)
+                    productionEnd=self.ProductionEnd(productionEnd)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if jobName and not isinstance(jobName, SubmodelElement):
-                    jobName=self. JobName(jobName)
+                    jobName=self.JobName(jobName)
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if jobOrderNumber and all([isinstance(i, str) for i in jobOrderNumber]):
-                    jobOrderNumber=[self. JobOrderNumber(i) for i in jobOrderNumber]
+                # Build submodel elements from raw values passed in the argument
+                if jobOrderNumber:
+                    jobOrderNumber=[i if isinstance(i, SubmodelElement) else self.JobOrderNumber(i) for i in jobOrderNumber]
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if plannedPartsPerRun and not isinstance(plannedPartsPerRun, SubmodelElement):
-                    plannedPartsPerRun=self. PlannedPartsPerRun(plannedPartsPerRun)
+                    plannedPartsPerRun=self.PlannedPartsPerRun(plannedPartsPerRun)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if plannedOrderQuantity and not isinstance(plannedOrderQuantity, SubmodelElement):
-                    plannedOrderQuantity=self. PlannedOrderQuantity(plannedOrderQuantity)
+                    plannedOrderQuantity=self.PlannedOrderQuantity(plannedOrderQuantity)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if actualPartsInRun and not isinstance(actualPartsInRun, SubmodelElement):
-                    actualPartsInRun=self. ActualPartsInRun(actualPartsInRun)
+                    actualPartsInRun=self.ActualPartsInRun(actualPartsInRun)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if jobFinished and not isinstance(jobFinished, SubmodelElement):
-                    jobFinished=self. JobFinished(jobFinished)
+                    jobFinished=self.JobFinished(jobFinished)
                     
 
 
@@ -13264,13 +13201,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if technicalData and not isinstance(technicalData, SubmodelElement):
-                technicalData=self. TechnicalData(technicalData)
+                technicalData=self.TechnicalData(technicalData)
                 
 
                 
@@ -14033,76 +13970,69 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if digitalNameplate and not isinstance(digitalNameplate, SubmodelElement):
-                digitalNameplate=self. DigitalNameplate(digitalNameplate)
+                digitalNameplate=self.DigitalNameplate(digitalNameplate)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if partIdentifier and not isinstance(partIdentifier, SubmodelElement):
-                partIdentifier=self. PartIdentifier(partIdentifier)
+                partIdentifier=self.PartIdentifier(partIdentifier)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if partNumber and not isinstance(partNumber, SubmodelElement):
-                partNumber=self. PartNumber(partNumber)
+                partNumber=self.PartNumber(partNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if orderNumber and not isinstance(orderNumber, SubmodelElement):
-                orderNumber=self. OrderNumber(orderNumber)
+                orderNumber=self.OrderNumber(orderNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if lotNumber and not isinstance(lotNumber, SubmodelElement):
-                lotNumber=self. LotNumber(lotNumber)
+                lotNumber=self.LotNumber(lotNumber)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if submodelReference3D and not isinstance(submodelReference3D, SubmodelElement):
-                submodelReference3D=self. SubmodelReference3D(submodelReference3D)
+                submodelReference3D=self.SubmodelReference3D(submodelReference3D)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if drawingReference2D and not isinstance(drawingReference2D, SubmodelElement):
-                drawingReference2D=self. DrawingReference2D(drawingReference2D)
+                drawingReference2D=self.DrawingReference2D(drawingReference2D)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if cADFileReference3D and not isinstance(cADFileReference3D, SubmodelElement):
-                cADFileReference3D=self. CADFileReference3D(cADFileReference3D)
+                cADFileReference3D=self.CADFileReference3D(cADFileReference3D)
                 
 
 
@@ -14448,31 +14378,29 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if departmentName and not isinstance(departmentName, SubmodelElement):
-                    departmentName=self. DepartmentName(departmentName)
+                    departmentName=self.DepartmentName(departmentName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if role and not isinstance(role, SubmodelElement):
-                    role=self. Role(role)
+                    role=self.Role(role)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if contactInformation and not isinstance(contactInformation, SubmodelElement):
-                    contactInformation=self. ContactInformation(contactInformation)
+                    contactInformation=self.ContactInformation(contactInformation)
                     
 
 
@@ -14573,6 +14501,7 @@ class QualityControlForMachining(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -15554,94 +15483,85 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if responsibility and not isinstance(responsibility, SubmodelElement):
-                    responsibility=self. Responsibility(responsibility)
+                    responsibility=self.Responsibility(responsibility)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if digitalNameplateTestingDevice and not isinstance(digitalNameplateTestingDevice, SubmodelElement):
-                    digitalNameplateTestingDevice=self. DigitalNameplateTestingDevice(digitalNameplateTestingDevice)
+                    digitalNameplateTestingDevice=self.DigitalNameplateTestingDevice(digitalNameplateTestingDevice)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if deviceName and not isinstance(deviceName, SubmodelElement):
-                    deviceName=self. DeviceName(deviceName)
+                    deviceName=self.DeviceName(deviceName)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if measuringType and not isinstance(measuringType, SubmodelElement):
-                    measuringType=self. MeasuringType(measuringType)
+                    measuringType=self.MeasuringType(measuringType)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if measuringUnit and not isinstance(measuringUnit, SubmodelElement):
-                    measuringUnit=self. MeasuringUnit(measuringUnit)
+                    measuringUnit=self.MeasuringUnit(measuringUnit)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if measuringRange and not isinstance(measuringRange, SubmodelElement):
-                    measuringRange=self. MeasuringRange(measuringRange)
+                    measuringRange=self.MeasuringRange(min=measuringRange[0], max=measuringRange[1])
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if resolution and not isinstance(resolution, SubmodelElement):
-                    resolution=self. Resolution(resolution)
+                    resolution=self.Resolution(resolution)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if accuracy and not isinstance(accuracy, SubmodelElement):
-                    accuracy=self. Accuracy(accuracy)
+                    accuracy=self.Accuracy(accuracy)
                     
 
                     
 
                     
-                        
                 # Build a submodel element if a raw value was passed in the argument
                 if norm and not isinstance(norm, SubmodelElement):
-                    norm=self. Norm(norm)
+                    norm=self.Norm(norm)
                     
 
                     
 
                     
-                        
-                # Build a list of submodel elements if a raw values were passed in the argument
-                if calibrationCertificate and all([isinstance(i, Reference) for i in calibrationCertificate]):
-                    calibrationCertificate=[self. CalibrationCertificate(i) for i in calibrationCertificate]
+                # Build submodel elements from raw values passed in the argument
+                if calibrationCertificate:
+                    calibrationCertificate=[i if isinstance(i, SubmodelElement) else self.CalibrationCertificate(i) for i in calibrationCertificate]
                     
 
 
@@ -15742,6 +15662,7 @@ class QualityControlForMachining(Submodel):
                 embedded_data_specifications = []
             
             
+
 
 
 
@@ -17712,13 +17633,13 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
-                        # Build a list of submodel elements if a raw values were passed in the argument
-                        if measuredvalueslist_items and all([isinstance(i, float) for i in measuredvalueslist_items]):
-                            measuredvalueslist_items=[self. Measuredvalueslist_item(i) for i in measuredvalueslist_items]
+                        # Build submodel elements from raw values passed in the argument
+                        if measuredvalueslist_items:
+                            measuredvalueslist_items=[i if isinstance(i, SubmodelElement) else self.Measuredvalueslist_item(i) for i in measuredvalueslist_items]
                             
 
 
@@ -18034,22 +17955,21 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if fileLink and not isinstance(fileLink, SubmodelElement):
-                            fileLink=self. FileLink(fileLink)
+                            fileLink=self.FileLink(fileLink)
                             
 
                             
 
                             
-                                
                         # Build a submodel element if a raw value was passed in the argument
                         if mimeType and not isinstance(mimeType, SubmodelElement):
-                            mimeType=self. MimeType(mimeType)
+                            mimeType=self.MimeType(mimeType)
                             
 
 
@@ -18242,148 +18162,133 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if qualityFeatureReference and not isinstance(qualityFeatureReference, SubmodelElement):
-                        qualityFeatureReference=self. QualityFeatureReference(qualityFeatureReference)
+                        qualityFeatureReference=self.QualityFeatureReference(qualityFeatureReference)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if testingDeviceReference and not isinstance(testingDeviceReference, SubmodelElement):
-                        testingDeviceReference=self. TestingDeviceReference(testingDeviceReference)
+                        testingDeviceReference=self.TestingDeviceReference(testingDeviceReference)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if partReference and not isinstance(partReference, SubmodelElement):
-                        partReference=self. PartReference(partReference)
+                        partReference=self.PartReference(partReference)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if iD and not isinstance(iD, SubmodelElement):
-                        iD=self. ID(iD)
+                        iD=self.ID(iD)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if description_ and not isinstance(description_, SubmodelElement):
-                        description_=self. Description(description_)
+                        description_=self.Description(description_)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if engineeringUnit and not isinstance(engineeringUnit, SubmodelElement):
-                        engineeringUnit=self. EngineeringUnit(engineeringUnit)
+                        engineeringUnit=self.EngineeringUnit(engineeringUnit)
                         
 
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if qualityActualValue and all([isinstance(i, float) for i in qualityActualValue]):
-                        qualityActualValue=[self. QualityActualValue(i) for i in qualityActualValue]
+                    # Build submodel elements from raw values passed in the argument
+                    if qualityActualValue:
+                        qualityActualValue=[i if isinstance(i, SubmodelElement) else self.QualityActualValue(i) for i in qualityActualValue]
                         
 
                         
 
                         
-                            
-                    # Build a list of submodel elements if a raw values were passed in the argument
-                    if qualityActualAttribute and all([isinstance(i, str) for i in qualityActualAttribute]):
-                        qualityActualAttribute=[self. QualityActualAttribute(i) for i in qualityActualAttribute]
+                    # Build submodel elements from raw values passed in the argument
+                    if qualityActualAttribute:
+                        qualityActualAttribute=[i if isinstance(i, SubmodelElement) else self.QualityActualAttribute(i) for i in qualityActualAttribute]
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if qualityInSpec and not isinstance(qualityInSpec, SubmodelElement):
-                        qualityInSpec=self. QualityInSpec(qualityInSpec)
+                        qualityInSpec=self.QualityInSpec(qualityInSpec)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if deviation and not isinstance(deviation, SubmodelElement):
-                        deviation=self. Deviation(deviation)
+                        deviation=self.Deviation(deviation)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if averageValue and not isinstance(averageValue, SubmodelElement):
-                        averageValue=self. AverageValue(averageValue)
+                        averageValue=self.AverageValue(averageValue)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if minValue and not isinstance(minValue, SubmodelElement):
-                        minValue=self. MinValue(minValue)
+                        minValue=self.MinValue(minValue)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if maxValue and not isinstance(maxValue, SubmodelElement):
-                        maxValue=self. MaxValue(maxValue)
+                        maxValue=self.MaxValue(maxValue)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if standarddeviation and not isinstance(standarddeviation, SubmodelElement):
-                        standarddeviation=self. Standarddeviation(standarddeviation)
+                        standarddeviation=self.Standarddeviation(standarddeviation)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if dataAggregatedFromSeries and not isinstance(dataAggregatedFromSeries, SubmodelElement):
-                        dataAggregatedFromSeries=self. DataAggregatedFromSeries(dataAggregatedFromSeries)
+                        dataAggregatedFromSeries=self.DataAggregatedFromSeries(dataAggregatedFromSeries)
                         
 
                         
 
                         
-                            
                     # Build a submodel element if a raw value was passed in the argument
                     if measuredValuesList and not isinstance(measuredValuesList, SubmodelElement):
-                        measuredValuesList=self. MeasuredValuesList(measuredValuesList)
+                        measuredValuesList=self.MeasuredValuesList(measuredValuesList)
                         
 
                         
@@ -18488,6 +18393,7 @@ class QualityControlForMachining(Submodel):
                     embedded_data_specifications = []
                 
                 
+
 
 
 
@@ -18683,67 +18589,61 @@ class QualityControlForMachining(Submodel):
 
 
 
+
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if jobStart and not isinstance(jobStart, SubmodelElement):
-                jobStart=self. JobStart(jobStart)
+                jobStart=self.JobStart(jobStart)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if jobEnd and not isinstance(jobEnd, SubmodelElement):
-                jobEnd=self. JobEnd(jobEnd)
+                jobEnd=self.JobEnd(jobEnd)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if jobName and not isinstance(jobName, SubmodelElement):
-                jobName=self. JobName(jobName)
+                jobName=self.JobName(jobName)
                 
 
                 
 
                 
-                    
-            # Build a list of submodel elements if a raw values were passed in the argument
-            if jobOrderNumber and all([isinstance(i, str) for i in jobOrderNumber]):
-                jobOrderNumber=[self. JobOrderNumber(i) for i in jobOrderNumber]
+            # Build submodel elements from raw values passed in the argument
+            if jobOrderNumber:
+                jobOrderNumber=[i if isinstance(i, SubmodelElement) else self.JobOrderNumber(i) for i in jobOrderNumber]
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if plannedPartsPerRun and not isinstance(plannedPartsPerRun, SubmodelElement):
-                plannedPartsPerRun=self. PlannedPartsPerRun(plannedPartsPerRun)
+                plannedPartsPerRun=self.PlannedPartsPerRun(plannedPartsPerRun)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if actualPartsInRun and not isinstance(actualPartsInRun, SubmodelElement):
-                actualPartsInRun=self. ActualPartsInRun(actualPartsInRun)
+                actualPartsInRun=self.ActualPartsInRun(actualPartsInRun)
                 
 
                 
 
                 
-                    
             # Build a submodel element if a raw value was passed in the argument
             if jobFinished and not isinstance(jobFinished, SubmodelElement):
-                jobFinished=self. JobFinished(jobFinished)
+                jobFinished=self.JobFinished(jobFinished)
                 
 
                 
@@ -18876,6 +18776,7 @@ class QualityControlForMachining(Submodel):
             embedded_data_specifications = []
         
         
+
 
 
 

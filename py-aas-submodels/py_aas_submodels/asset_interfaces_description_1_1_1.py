@@ -5939,13 +5939,15 @@ class AssetInterfacesDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if min_max and not isinstance(min_max, SubmodelElement):
-                                min_max = self.Min_max(min_max)
+                                min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if lengthRange and not isinstance(
                                 lengthRange, SubmodelElement
                             ):
-                                lengthRange = self.LengthRange(lengthRange)
+                                lengthRange = self.LengthRange(
+                                    min=lengthRange[0], max=lengthRange[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if valueSemantics and not isinstance(
@@ -7649,13 +7651,17 @@ class AssetInterfacesDescription(Submodel):
                                     if min_max and not isinstance(
                                         min_max, SubmodelElement
                                     ):
-                                        min_max = self.Min_max(min_max)
+                                        min_max = self.Min_max(
+                                            min=min_max[0], max=min_max[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if lengthRange and not isinstance(
                                         lengthRange, SubmodelElement
                                     ):
-                                        lengthRange = self.LengthRange(lengthRange)
+                                        lengthRange = self.LengthRange(
+                                            min=lengthRange[0], max=lengthRange[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if valueSemantics and not isinstance(
@@ -8089,19 +8095,25 @@ class AssetInterfacesDescription(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if min_max and not isinstance(min_max, SubmodelElement):
-                                    min_max = self.Min_max(min_max)
+                                    min_max = self.Min_max(
+                                        min=min_max[0], max=min_max[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if lengthRange and not isinstance(
                                     lengthRange, SubmodelElement
                                 ):
-                                    lengthRange = self.LengthRange(lengthRange)
+                                    lengthRange = self.LengthRange(
+                                        min=lengthRange[0], max=lengthRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if itemsRange and not isinstance(
                                     itemsRange, SubmodelElement
                                 ):
-                                    itemsRange = self.ItemsRange(itemsRange)
+                                    itemsRange = self.ItemsRange(
+                                        min=itemsRange[0], max=itemsRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if valueSemantics and not isinstance(
@@ -9465,15 +9477,19 @@ class AssetInterfacesDescription(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if min_max and not isinstance(min_max, SubmodelElement):
-                            min_max = self.Min_max(min_max)
+                            min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
                         if lengthRange and not isinstance(lengthRange, SubmodelElement):
-                            lengthRange = self.LengthRange(lengthRange)
+                            lengthRange = self.LengthRange(
+                                min=lengthRange[0], max=lengthRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemsRange and not isinstance(itemsRange, SubmodelElement):
-                            itemsRange = self.ItemsRange(itemsRange)
+                            itemsRange = self.ItemsRange(
+                                min=itemsRange[0], max=itemsRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if valueSemantics and not isinstance(
@@ -12685,13 +12701,15 @@ class AssetInterfacesDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if min_max and not isinstance(min_max, SubmodelElement):
-                                min_max = self.Min_max(min_max)
+                                min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if lengthRange and not isinstance(
                                 lengthRange, SubmodelElement
                             ):
-                                lengthRange = self.LengthRange(lengthRange)
+                                lengthRange = self.LengthRange(
+                                    min=lengthRange[0], max=lengthRange[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if valueSemantics and not isinstance(
@@ -14395,13 +14413,17 @@ class AssetInterfacesDescription(Submodel):
                                     if min_max and not isinstance(
                                         min_max, SubmodelElement
                                     ):
-                                        min_max = self.Min_max(min_max)
+                                        min_max = self.Min_max(
+                                            min=min_max[0], max=min_max[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if lengthRange and not isinstance(
                                         lengthRange, SubmodelElement
                                     ):
-                                        lengthRange = self.LengthRange(lengthRange)
+                                        lengthRange = self.LengthRange(
+                                            min=lengthRange[0], max=lengthRange[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if valueSemantics and not isinstance(
@@ -14835,19 +14857,25 @@ class AssetInterfacesDescription(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if min_max and not isinstance(min_max, SubmodelElement):
-                                    min_max = self.Min_max(min_max)
+                                    min_max = self.Min_max(
+                                        min=min_max[0], max=min_max[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if lengthRange and not isinstance(
                                     lengthRange, SubmodelElement
                                 ):
-                                    lengthRange = self.LengthRange(lengthRange)
+                                    lengthRange = self.LengthRange(
+                                        min=lengthRange[0], max=lengthRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if itemsRange and not isinstance(
                                     itemsRange, SubmodelElement
                                 ):
-                                    itemsRange = self.ItemsRange(itemsRange)
+                                    itemsRange = self.ItemsRange(
+                                        min=itemsRange[0], max=itemsRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if valueSemantics and not isinstance(
@@ -16391,15 +16419,19 @@ class AssetInterfacesDescription(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if min_max and not isinstance(min_max, SubmodelElement):
-                            min_max = self.Min_max(min_max)
+                            min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
                         if lengthRange and not isinstance(lengthRange, SubmodelElement):
-                            lengthRange = self.LengthRange(lengthRange)
+                            lengthRange = self.LengthRange(
+                                min=lengthRange[0], max=lengthRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemsRange and not isinstance(itemsRange, SubmodelElement):
-                            itemsRange = self.ItemsRange(itemsRange)
+                            itemsRange = self.ItemsRange(
+                                min=itemsRange[0], max=itemsRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if valueSemantics and not isinstance(
@@ -22954,13 +22986,15 @@ class AssetInterfacesDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if min_max and not isinstance(min_max, SubmodelElement):
-                                min_max = self.Min_max(min_max)
+                                min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if lengthRange and not isinstance(
                                 lengthRange, SubmodelElement
                             ):
-                                lengthRange = self.LengthRange(lengthRange)
+                                lengthRange = self.LengthRange(
+                                    min=lengthRange[0], max=lengthRange[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if valueSemantics and not isinstance(
@@ -24664,13 +24698,17 @@ class AssetInterfacesDescription(Submodel):
                                     if min_max and not isinstance(
                                         min_max, SubmodelElement
                                     ):
-                                        min_max = self.Min_max(min_max)
+                                        min_max = self.Min_max(
+                                            min=min_max[0], max=min_max[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if lengthRange and not isinstance(
                                         lengthRange, SubmodelElement
                                     ):
-                                        lengthRange = self.LengthRange(lengthRange)
+                                        lengthRange = self.LengthRange(
+                                            min=lengthRange[0], max=lengthRange[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if valueSemantics and not isinstance(
@@ -25104,19 +25142,25 @@ class AssetInterfacesDescription(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if min_max and not isinstance(min_max, SubmodelElement):
-                                    min_max = self.Min_max(min_max)
+                                    min_max = self.Min_max(
+                                        min=min_max[0], max=min_max[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if lengthRange and not isinstance(
                                     lengthRange, SubmodelElement
                                 ):
-                                    lengthRange = self.LengthRange(lengthRange)
+                                    lengthRange = self.LengthRange(
+                                        min=lengthRange[0], max=lengthRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if itemsRange and not isinstance(
                                     itemsRange, SubmodelElement
                                 ):
-                                    itemsRange = self.ItemsRange(itemsRange)
+                                    itemsRange = self.ItemsRange(
+                                        min=itemsRange[0], max=itemsRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if valueSemantics and not isinstance(
@@ -26210,15 +26254,19 @@ class AssetInterfacesDescription(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if min_max and not isinstance(min_max, SubmodelElement):
-                            min_max = self.Min_max(min_max)
+                            min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
                         if lengthRange and not isinstance(lengthRange, SubmodelElement):
-                            lengthRange = self.LengthRange(lengthRange)
+                            lengthRange = self.LengthRange(
+                                min=lengthRange[0], max=lengthRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemsRange and not isinstance(itemsRange, SubmodelElement):
-                            itemsRange = self.ItemsRange(itemsRange)
+                            itemsRange = self.ItemsRange(
+                                min=itemsRange[0], max=itemsRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if valueSemantics and not isinstance(
@@ -33539,13 +33587,15 @@ class AssetInterfacesDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if min_max and not isinstance(min_max, SubmodelElement):
-                                min_max = self.Min_max(min_max)
+                                min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if lengthRange and not isinstance(
                                 lengthRange, SubmodelElement
                             ):
-                                lengthRange = self.LengthRange(lengthRange)
+                                lengthRange = self.LengthRange(
+                                    min=lengthRange[0], max=lengthRange[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if valueSemantics and not isinstance(
@@ -35249,13 +35299,17 @@ class AssetInterfacesDescription(Submodel):
                                     if min_max and not isinstance(
                                         min_max, SubmodelElement
                                     ):
-                                        min_max = self.Min_max(min_max)
+                                        min_max = self.Min_max(
+                                            min=min_max[0], max=min_max[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if lengthRange and not isinstance(
                                         lengthRange, SubmodelElement
                                     ):
-                                        lengthRange = self.LengthRange(lengthRange)
+                                        lengthRange = self.LengthRange(
+                                            min=lengthRange[0], max=lengthRange[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if valueSemantics and not isinstance(
@@ -35689,19 +35743,25 @@ class AssetInterfacesDescription(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if min_max and not isinstance(min_max, SubmodelElement):
-                                    min_max = self.Min_max(min_max)
+                                    min_max = self.Min_max(
+                                        min=min_max[0], max=min_max[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if lengthRange and not isinstance(
                                     lengthRange, SubmodelElement
                                 ):
-                                    lengthRange = self.LengthRange(lengthRange)
+                                    lengthRange = self.LengthRange(
+                                        min=lengthRange[0], max=lengthRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if itemsRange and not isinstance(
                                     itemsRange, SubmodelElement
                                 ):
-                                    itemsRange = self.ItemsRange(itemsRange)
+                                    itemsRange = self.ItemsRange(
+                                        min=itemsRange[0], max=itemsRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if valueSemantics and not isinstance(
@@ -36616,15 +36676,19 @@ class AssetInterfacesDescription(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if min_max and not isinstance(min_max, SubmodelElement):
-                            min_max = self.Min_max(min_max)
+                            min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
                         if lengthRange and not isinstance(lengthRange, SubmodelElement):
-                            lengthRange = self.LengthRange(lengthRange)
+                            lengthRange = self.LengthRange(
+                                min=lengthRange[0], max=lengthRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemsRange and not isinstance(itemsRange, SubmodelElement):
-                            itemsRange = self.ItemsRange(itemsRange)
+                            itemsRange = self.ItemsRange(
+                                min=itemsRange[0], max=itemsRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if valueSemantics and not isinstance(
@@ -43179,13 +43243,15 @@ class AssetInterfacesDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if min_max and not isinstance(min_max, SubmodelElement):
-                                min_max = self.Min_max(min_max)
+                                min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if lengthRange and not isinstance(
                                 lengthRange, SubmodelElement
                             ):
-                                lengthRange = self.LengthRange(lengthRange)
+                                lengthRange = self.LengthRange(
+                                    min=lengthRange[0], max=lengthRange[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if valueSemantics and not isinstance(
@@ -44889,13 +44955,17 @@ class AssetInterfacesDescription(Submodel):
                                     if min_max and not isinstance(
                                         min_max, SubmodelElement
                                     ):
-                                        min_max = self.Min_max(min_max)
+                                        min_max = self.Min_max(
+                                            min=min_max[0], max=min_max[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if lengthRange and not isinstance(
                                         lengthRange, SubmodelElement
                                     ):
-                                        lengthRange = self.LengthRange(lengthRange)
+                                        lengthRange = self.LengthRange(
+                                            min=lengthRange[0], max=lengthRange[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if valueSemantics and not isinstance(
@@ -45329,19 +45399,25 @@ class AssetInterfacesDescription(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if min_max and not isinstance(min_max, SubmodelElement):
-                                    min_max = self.Min_max(min_max)
+                                    min_max = self.Min_max(
+                                        min=min_max[0], max=min_max[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if lengthRange and not isinstance(
                                     lengthRange, SubmodelElement
                                 ):
-                                    lengthRange = self.LengthRange(lengthRange)
+                                    lengthRange = self.LengthRange(
+                                        min=lengthRange[0], max=lengthRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if itemsRange and not isinstance(
                                     itemsRange, SubmodelElement
                                 ):
-                                    itemsRange = self.ItemsRange(itemsRange)
+                                    itemsRange = self.ItemsRange(
+                                        min=itemsRange[0], max=itemsRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if valueSemantics and not isinstance(
@@ -47094,13 +47170,17 @@ class AssetInterfacesDescription(Submodel):
                                     if min_max and not isinstance(
                                         min_max, SubmodelElement
                                     ):
-                                        min_max = self.Min_max(min_max)
+                                        min_max = self.Min_max(
+                                            min=min_max[0], max=min_max[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if lengthRange and not isinstance(
                                         lengthRange, SubmodelElement
                                     ):
-                                        lengthRange = self.LengthRange(lengthRange)
+                                        lengthRange = self.LengthRange(
+                                            min=lengthRange[0], max=lengthRange[1]
+                                        )
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -47528,19 +47608,25 @@ class AssetInterfacesDescription(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if min_max and not isinstance(min_max, SubmodelElement):
-                                    min_max = self.Min_max(min_max)
+                                    min_max = self.Min_max(
+                                        min=min_max[0], max=min_max[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if lengthRange and not isinstance(
                                     lengthRange, SubmodelElement
                                 ):
-                                    lengthRange = self.LengthRange(lengthRange)
+                                    lengthRange = self.LengthRange(
+                                        min=lengthRange[0], max=lengthRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if itemsRange and not isinstance(
                                     itemsRange, SubmodelElement
                                 ):
-                                    itemsRange = self.ItemsRange(itemsRange)
+                                    itemsRange = self.ItemsRange(
+                                        min=itemsRange[0], max=itemsRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if valueSemantics and not isinstance(
@@ -52671,15 +52757,19 @@ class AssetInterfacesDescription(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if min_max and not isinstance(min_max, SubmodelElement):
-                            min_max = self.Min_max(min_max)
+                            min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
                         if lengthRange and not isinstance(lengthRange, SubmodelElement):
-                            lengthRange = self.LengthRange(lengthRange)
+                            lengthRange = self.LengthRange(
+                                min=lengthRange[0], max=lengthRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemsRange and not isinstance(itemsRange, SubmodelElement):
-                            itemsRange = self.ItemsRange(itemsRange)
+                            itemsRange = self.ItemsRange(
+                                min=itemsRange[0], max=itemsRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if valueSemantics and not isinstance(
@@ -59235,13 +59325,15 @@ class AssetInterfacesDescription(Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
                             if min_max and not isinstance(min_max, SubmodelElement):
-                                min_max = self.Min_max(min_max)
+                                min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
                             if lengthRange and not isinstance(
                                 lengthRange, SubmodelElement
                             ):
-                                lengthRange = self.LengthRange(lengthRange)
+                                lengthRange = self.LengthRange(
+                                    min=lengthRange[0], max=lengthRange[1]
+                                )
 
                             # Build a submodel element if a raw value was passed in the argument
                             if valueSemantics and not isinstance(
@@ -60945,13 +61037,17 @@ class AssetInterfacesDescription(Submodel):
                                     if min_max and not isinstance(
                                         min_max, SubmodelElement
                                     ):
-                                        min_max = self.Min_max(min_max)
+                                        min_max = self.Min_max(
+                                            min=min_max[0], max=min_max[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if lengthRange and not isinstance(
                                         lengthRange, SubmodelElement
                                     ):
-                                        lengthRange = self.LengthRange(lengthRange)
+                                        lengthRange = self.LengthRange(
+                                            min=lengthRange[0], max=lengthRange[1]
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
                                     if valueSemantics and not isinstance(
@@ -61385,19 +61481,25 @@ class AssetInterfacesDescription(Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if min_max and not isinstance(min_max, SubmodelElement):
-                                    min_max = self.Min_max(min_max)
+                                    min_max = self.Min_max(
+                                        min=min_max[0], max=min_max[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if lengthRange and not isinstance(
                                     lengthRange, SubmodelElement
                                 ):
-                                    lengthRange = self.LengthRange(lengthRange)
+                                    lengthRange = self.LengthRange(
+                                        min=lengthRange[0], max=lengthRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if itemsRange and not isinstance(
                                     itemsRange, SubmodelElement
                                 ):
-                                    itemsRange = self.ItemsRange(itemsRange)
+                                    itemsRange = self.ItemsRange(
+                                        min=itemsRange[0], max=itemsRange[1]
+                                    )
 
                                 # Build a submodel element if a raw value was passed in the argument
                                 if valueSemantics and not isinstance(
@@ -64460,15 +64562,19 @@ class AssetInterfacesDescription(Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
                         if min_max and not isinstance(min_max, SubmodelElement):
-                            min_max = self.Min_max(min_max)
+                            min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
                         if lengthRange and not isinstance(lengthRange, SubmodelElement):
-                            lengthRange = self.LengthRange(lengthRange)
+                            lengthRange = self.LengthRange(
+                                min=lengthRange[0], max=lengthRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if itemsRange and not isinstance(itemsRange, SubmodelElement):
-                            itemsRange = self.ItemsRange(itemsRange)
+                            itemsRange = self.ItemsRange(
+                                min=itemsRange[0], max=itemsRange[1]
+                            )
 
                         # Build a submodel element if a raw value was passed in the argument
                         if valueSemantics and not isinstance(
