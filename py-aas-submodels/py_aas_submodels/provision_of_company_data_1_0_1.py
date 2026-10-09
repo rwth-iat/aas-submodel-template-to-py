@@ -611,7 +611,7 @@ class CompanyData(aas.Submodel):
                 def __init__(
                     self,
                     value: aas.LangStringSet,
-                    id_short: Optional[str] = r"mainproductgroups_item",
+                    id_short: Optional[str] = None,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -744,9 +744,7 @@ class CompanyData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -845,7 +843,7 @@ class CompanyData(aas.Submodel):
                 def __init__(
                     self,
                     value: aas.LangStringSet,
-                    id_short: Optional[str] = r"industries_item",
+                    id_short: Optional[str] = None,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -976,9 +974,7 @@ class CompanyData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1150,8 +1146,22 @@ class CompanyData(aas.Submodel):
             ] = None,
             foundingYear: Optional[Union[xsd.GYear, FoundingYear]] = None,
             orderCurrency: Optional[Union[aas.LangStringSet, OrderCurrency]] = None,
-            mainProductGroups: Optional[MainProductGroups] = None,
-            industries: Optional[Industries] = None,
+            mainProductGroups: Optional[
+                Union[
+                    Iterable[
+                        Union[
+                            aas.LangStringSet, MainProductGroups.Mainproductgroups_item
+                        ]
+                    ],
+                    MainProductGroups,
+                ]
+            ] = None,
+            industries: Optional[
+                Union[
+                    Iterable[Union[aas.LangStringSet, Industries.Industries_item]],
+                    Industries,
+                ]
+            ] = None,
             companyLogo: Optional[CompanyLogo] = None,
             id_short: Optional[str] = r"CompanyIdentification",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1257,6 +1267,20 @@ class CompanyData(aas.Submodel):
                 orderCurrency, aas.SubmodelElement
             ):
                 orderCurrency = self.OrderCurrency(orderCurrency)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if mainProductGroups is not None and not isinstance(
+                mainProductGroups, aas.SubmodelElement
+            ):
+                mainProductGroups = self.MainProductGroups(mainProductGroups)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if industries is not None and not isinstance(
+                industries, aas.SubmodelElement
+            ):
+                industries = self.Industries(industries)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1641,7 +1665,7 @@ class CompanyData(aas.Submodel):
                 iBAN: Union[str, IBAN],
                 bIC: Union[str, BIC],
                 bankAccountType: Optional[Union[str, BankAccountType]] = None,
-                id_short: Optional[str] = r"bankaccounts_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
@@ -1807,9 +1831,7 @@ class CompanyData(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2436,7 +2458,7 @@ class CompanyData(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"cadtools_item",
+                        id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2569,9 +2591,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2667,7 +2687,9 @@ class CompanyData(aas.Submodel):
                 self,
                 eRPSystem: Optional[ERPSystem] = None,
                 emailSystem: Optional[EmailSystem] = None,
-                cADTools: Optional[Union[Iterable[str], CADTools]] = None,
+                cADTools: Optional[
+                    Union[Iterable[Union[str, CADTools.Cadtools_item]], CADTools]
+                ] = None,
                 id_short: Optional[str] = r"CompanySystems",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -3026,7 +3048,7 @@ class CompanyData(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"cadformats_item",
+                        id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3159,9 +3181,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3263,7 +3283,9 @@ class CompanyData(aas.Submodel):
                 ] = None,
                 eDI: Optional[Union[bool, EDI]] = None,
                 webEDI: Optional[Union[bool, WebEDI]] = None,
-                cADFormats: Optional[Union[Iterable[str], CADFormats]] = None,
+                cADFormats: Optional[
+                    Union[Iterable[Union[str, CADFormats.Cadformats_item]], CADFormats]
+                ] = None,
                 id_short: Optional[str] = r"DataExchange",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -5075,7 +5097,7 @@ class CompanyData(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"memberships_item",
+                        id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5208,9 +5230,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5802,7 +5822,7 @@ class CompanyData(aas.Submodel):
                         certificationURL: Optional[
                             Union[xsd.AnyURI, CertificationURL]
                         ] = None,
-                        id_short: Optional[str] = r"certifications_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -6001,9 +6021,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6097,8 +6115,14 @@ class CompanyData(aas.Submodel):
 
             def __init__(
                 self,
-                memberships: Optional[Union[Iterable[str], Memberships]] = None,
-                certifications: Optional[Certifications] = None,
+                memberships: Optional[
+                    Union[
+                        Iterable[Union[str, Memberships.Memberships_item]], Memberships
+                    ]
+                ] = None,
+                certifications: Optional[
+                    Union[Iterable[Certifications.Certifications_item], Certifications]
+                ] = None,
                 id_short: Optional[str] = r"IndustryStandards",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -6150,6 +6174,13 @@ class CompanyData(aas.Submodel):
                     memberships, aas.SubmodelElement
                 ):
                     memberships = self.Memberships(memberships)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if certifications is not None and not isinstance(
+                    certifications, aas.SubmodelElement
+                ):
+                    certifications = self.Certifications(certifications)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6393,7 +6424,7 @@ class CompanyData(aas.Submodel):
                         trainingDocumentation: Optional[
                             Union[aas.Reference, TrainingDocumentation]
                         ] = None,
-                        id_short: Optional[str] = r"employeetrainings_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -6543,9 +6574,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7946,7 +7975,7 @@ class CompanyData(aas.Submodel):
                         insuranceSum: Optional[
                             Union[xsd.PositiveInteger, InsuranceSum]
                         ] = None,
-                        id_short: Optional[str] = r"insurances_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -8101,9 +8130,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8200,9 +8227,16 @@ class CompanyData(aas.Submodel):
                 businessContinuityPlan: Optional[
                     Union[bool, BusinessContinuityPlan]
                 ] = None,
-                employeeTrainings: Optional[EmployeeTrainings] = None,
+                employeeTrainings: Optional[
+                    Union[
+                        Iterable[EmployeeTrainings.Employeetrainings_item],
+                        EmployeeTrainings,
+                    ]
+                ] = None,
                 securityPolicies: Optional[SecurityPolicies] = None,
-                insurances: Optional[Insurances] = None,
+                insurances: Optional[
+                    Union[Iterable[Insurances.Insurances_item], Insurances]
+                ] = None,
                 id_short: Optional[str] = r"RiskManagement",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -8256,6 +8290,20 @@ class CompanyData(aas.Submodel):
                     businessContinuityPlan = self.BusinessContinuityPlan(
                         businessContinuityPlan
                     )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if employeeTrainings is not None and not isinstance(
+                    employeeTrainings, aas.SubmodelElement
+                ):
+                    employeeTrainings = self.EmployeeTrainings(employeeTrainings)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if insurances is not None and not isinstance(
+                    insurances, aas.SubmodelElement
+                ):
+                    insurances = self.Insurances(insurances)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -8635,7 +8683,7 @@ class CompanyData(aas.Submodel):
                     documentationReference: Optional[
                         Iterable[Union[aas.Reference, DocumentationReference]]
                     ] = None,
-                    id_short: Optional[str] = r"legalcompliance_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -8820,9 +8868,7 @@ class CompanyData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8919,7 +8965,9 @@ class CompanyData(aas.Submodel):
             corporatePolicies: Optional[CorporatePolicies] = None,
             industryStandards: Optional[IndustryStandards] = None,
             riskManagement: Optional[RiskManagement] = None,
-            legalCompliance: Optional[LegalCompliance] = None,
+            legalCompliance: Optional[
+                Union[Iterable[LegalCompliance.Legalcompliance_item], LegalCompliance]
+            ] = None,
             id_short: Optional[str] = r"CompanyGovernance",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -8965,6 +9013,13 @@ class CompanyData(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
+            # Build a submodel element if a raw value was passed in the argument
+
+            if legalCompliance is not None and not isinstance(
+                legalCompliance, aas.SubmodelElement
+            ):
+                legalCompliance = self.LegalCompliance(legalCompliance)
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [
@@ -9004,7 +9059,9 @@ class CompanyData(aas.Submodel):
         id_: str,
         companyIdentification: CompanyIdentification,
         mainAccount: Union[aas.Reference, MainAccount],
-        bankAccounts: Optional[BankAccounts] = None,
+        bankAccounts: Optional[
+            Union[Iterable[BankAccounts.Bankaccounts_item], BankAccounts]
+        ] = None,
         digitalInterfaces: Optional[DigitalInterfaces] = None,
         businessReportFigures: Optional[BusinessReportFigures] = None,
         companyGovernance: Optional[CompanyGovernance] = None,
@@ -9049,6 +9106,13 @@ class CompanyData(aas.Submodel):
 
         if mainAccount is not None and not isinstance(mainAccount, aas.SubmodelElement):
             mainAccount = self.MainAccount(mainAccount)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if bankAccounts is not None and not isinstance(
+            bankAccounts, aas.SubmodelElement
+        ):
+            bankAccounts = self.BankAccounts(bankAccounts)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

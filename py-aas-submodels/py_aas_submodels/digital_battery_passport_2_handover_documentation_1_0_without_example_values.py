@@ -349,7 +349,7 @@ class HandoverDocumentation(aas.Submodel):
                         className: Union[aas.LangStringSet, ClassName],
                         classId: Union[str, ClassId],
                         classificationSystem: Union[str, ClassificationSystem],
-                        id_short: Optional[str] = r"documentclassifications_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(
@@ -580,9 +580,7 @@ class HandoverDocumentation(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1021,7 +1019,7 @@ class HandoverDocumentation(aas.Submodel):
                         documentIsPrimary: Optional[
                             Union[bool, DocumentIsPrimary]
                         ] = None,
-                        id_short: Optional[str] = r"documentids_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(
@@ -1256,9 +1254,7 @@ class HandoverDocumentation(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1361,7 +1357,7 @@ class HandoverDocumentation(aas.Submodel):
                             def __init__(
                                 self,
                                 value: str,
-                                id_short: Optional[str] = r"language_item",
+                                id_short: Optional[str] = None,
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[
                                     aas.Reference
@@ -1562,9 +1558,7 @@ class HandoverDocumentation(aas.Submodel):
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2098,7 +2092,7 @@ class HandoverDocumentation(aas.Submodel):
                             def __init__(
                                 self,
                                 value: str,
-                                id_short: Optional[str] = r"digitalfiles_item",
+                                id_short: Optional[str] = None,
                                 content_type: Optional[str] = r"application/pdf",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
@@ -2301,9 +2295,7 @@ class HandoverDocumentation(aas.Submodel):
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2399,15 +2391,19 @@ class HandoverDocumentation(aas.Submodel):
 
                     def __init__(
                         self,
-                        language: Union[Iterable[str], Language],
+                        language: Union[
+                            Iterable[Union[str, Language.Language_item]], Language
+                        ],
                         title: Union[aas.LangStringSet, Title],
-                        digitalFiles: DigitalFiles,
+                        digitalFiles: Union[
+                            Iterable[DigitalFiles.Digitalfiles_item], DigitalFiles
+                        ],
                         version: Optional[Union[str, Version]] = None,
                         subtitle: Optional[Union[aas.LangStringSet, Subtitle]] = None,
                         description_: Optional[
                             Union[aas.LangStringSet, Description]
                         ] = None,
-                        id_short: Optional[str] = r"documentversions_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(
@@ -2516,6 +2512,13 @@ class HandoverDocumentation(aas.Submodel):
                             description_, aas.SubmodelElement
                         ):
                             description_ = self.Description(description_)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if digitalFiles is not None and not isinstance(
+                            digitalFiles, aas.SubmodelElement
+                        ):
+                            digitalFiles = self.DigitalFiles(digitalFiles)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -2649,9 +2652,7 @@ class HandoverDocumentation(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2745,10 +2746,15 @@ class HandoverDocumentation(aas.Submodel):
 
             def __init__(
                 self,
-                documentClassifications: DocumentClassifications,
-                documentIds: DocumentIds,
-                documentVersions: DocumentVersions,
-                id_short: Optional[str] = r"documents_item",
+                documentClassifications: Union[
+                    Iterable[DocumentClassifications.Documentclassifications_item],
+                    DocumentClassifications,
+                ],
+                documentIds: Union[Iterable[DocumentIds.Documentids_item], DocumentIds],
+                documentVersions: Union[
+                    Iterable[DocumentVersions.Documentversions_item], DocumentVersions
+                ],
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"document"}),
@@ -2823,6 +2829,29 @@ class HandoverDocumentation(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if documentClassifications is not None and not isinstance(
+                    documentClassifications, aas.SubmodelElement
+                ):
+                    documentClassifications = self.DocumentClassifications(
+                        documentClassifications
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if documentIds is not None and not isinstance(
+                    documentIds, aas.SubmodelElement
+                ):
+                    documentIds = self.DocumentIds(documentIds)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if documentVersions is not None and not isinstance(
+                    documentVersions, aas.SubmodelElement
+                ):
+                    documentVersions = self.DocumentVersions(documentVersions)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2944,9 +2973,7 @@ class HandoverDocumentation(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3038,7 +3065,7 @@ class HandoverDocumentation(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        documents: Documents,
+        documents: Union[Iterable[Documents.Documents_item], Documents],
         id_short: Optional[str] = r"HandoverDocumentation",
         display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"handover documentation"}
@@ -3094,6 +3121,11 @@ class HandoverDocumentation(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if documents is not None and not isinstance(documents, aas.SubmodelElement):
+            documents = self.Documents(documents)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

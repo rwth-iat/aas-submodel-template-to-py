@@ -1767,7 +1767,7 @@ class ProductCondition(aas.Submodel):
                 self,
                 negativeEventValue: Union[str, NegativeEventValue],
                 lastUpdate: Union[xsd.DateTime, LastUpdate],
-                id_short: Optional[str] = r"negativeevents_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"negative event"}),
@@ -1925,9 +1925,7 @@ class ProductCondition(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2023,7 +2021,7 @@ class ProductCondition(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"informationonaccidents_item",
+                id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[
@@ -2181,9 +2179,7 @@ class ProductCondition(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4362,7 +4358,10 @@ class ProductCondition(aas.Submodel):
         self,
         id_: str,
         numberOfFullCycles: NumberOfFullCycles,
-        informationOnAccidents: Union[Iterable[str], InformationOnAccidents],
+        informationOnAccidents: Union[
+            Iterable[Union[str, InformationOnAccidents.Informationonaccidents_item]],
+            InformationOnAccidents,
+        ],
         temperatureInformation: TemperatureInformation,
         stateOfCharge: StateOfCharge,
         energyThroughput: Optional[EnergyThroughput] = None,
@@ -4370,7 +4369,9 @@ class ProductCondition(aas.Submodel):
         stateOfCertifiedEnergy: Optional[StateOfCertifiedEnergy] = None,
         remainingEnergy: Optional[RemainingEnergy] = None,
         remainingCapacity: Optional[RemainingCapacity] = None,
-        negativeEvents: Optional[NegativeEvents] = None,
+        negativeEvents: Optional[
+            Union[Iterable[NegativeEvents.Negativeevents_item], NegativeEvents]
+        ] = None,
         remainingPowerCapability: Optional[RemainingPowerCapability] = None,
         evolutionOfSelfDischarge: Optional[EvolutionOfSelfDischarge] = None,
         currentSelfDischargingRate: Optional[CurrentSelfDischargingRate] = None,
@@ -4415,6 +4416,13 @@ class ProductCondition(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if negativeEvents is not None and not isinstance(
+            negativeEvents, aas.SubmodelElement
+        ):
+            negativeEvents = self.NegativeEvents(negativeEvents)
 
         # Build a submodel element if a raw value was passed in the argument
 

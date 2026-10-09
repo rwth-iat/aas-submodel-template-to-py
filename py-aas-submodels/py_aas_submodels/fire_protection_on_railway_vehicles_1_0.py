@@ -616,7 +616,7 @@ class RailwayFireProtection(aas.Submodel):
                         def __init__(
                             self,
                             value: aas.Reference,
-                            id_short: Optional[str] = r"reportreferences_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -786,9 +786,7 @@ class RailwayFireProtection(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -977,9 +975,14 @@ class RailwayFireProtection(aas.Submodel):
                 def __init__(
                     self,
                     hazardLevel: Union[str, HazardLevel],
-                    reportReferences: ReportReferences,
+                    reportReferences: Union[
+                        Iterable[
+                            Union[aas.Reference, ReportReferences.Reportreferences_item]
+                        ],
+                        ReportReferences,
+                    ],
                     requirement: Union[str, Requirement],
-                    id_short: Optional[str] = r"requirementssets_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Requirement set"}),
@@ -1038,6 +1041,13 @@ class RailwayFireProtection(aas.Submodel):
                         hazardLevel, aas.SubmodelElement
                     ):
                         hazardLevel = self.HazardLevel(hazardLevel)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if reportReferences is not None and not isinstance(
+                        reportReferences, aas.SubmodelElement
+                    ):
+                        reportReferences = self.ReportReferences(reportReferences)
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1143,9 +1153,7 @@ class RailwayFireProtection(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1822,7 +1830,7 @@ class RailwayFireProtection(aas.Submodel):
                             testDate: Union[xsd.Date, TestDate],
                             testReportNumber: Union[str, TestReportNumber],
                             testComment: Optional[Union[str, TestComment]] = None,
-                            id_short: Optional[str] = r"tests_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(dict_={r"en": r"Test"}),
@@ -2015,9 +2023,7 @@ class RailwayFireProtection(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2710,10 +2716,10 @@ class RailwayFireProtection(aas.Submodel):
                 def __init__(
                     self,
                     reportFile: ReportFile,
-                    tests: Tests,
+                    tests: Union[Iterable[Tests.Tests_item], Tests],
                     labInformation: LabInformation,
                     reportComment: Optional[Union[str, ReportComment]] = None,
-                    id_short: Optional[str] = r"reports_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Report"}),
@@ -2765,6 +2771,11 @@ class RailwayFireProtection(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if tests is not None and not isinstance(tests, aas.SubmodelElement):
+                        tests = self.Tests(tests)
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2870,9 +2881,7 @@ class RailwayFireProtection(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2966,8 +2975,10 @@ class RailwayFireProtection(aas.Submodel):
 
         def __init__(
             self,
-            requirementsSets: RequirementsSets,
-            reports: Reports,
+            requirementsSets: Union[
+                Iterable[RequirementsSets.Requirementssets_item], RequirementsSets
+            ],
+            reports: Union[Iterable[Reports.Reports_item], Reports],
             id_short: Optional[str] = r"FireProtectionCertificates",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -3022,6 +3033,18 @@ class RailwayFireProtection(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if requirementsSets is not None and not isinstance(
+                requirementsSets, aas.SubmodelElement
+            ):
+                requirementsSets = self.RequirementsSets(requirementsSets)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if reports is not None and not isinstance(reports, aas.SubmodelElement):
+                reports = self.Reports(reports)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

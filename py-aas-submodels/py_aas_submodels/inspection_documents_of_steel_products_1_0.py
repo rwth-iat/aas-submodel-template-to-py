@@ -6133,6 +6133,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
+                    yieldorproofstrengthindividualvalues_items: Optional[
+                        Iterable[Union[xsd.Float, aas.Property]]
+                    ] = None,
                     id_short: Optional[str] = r"YieldOrProofStrengthIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
                     semantic_id_list_element: Optional[
@@ -6199,17 +6202,26 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # Build submodel elements from raw values passed in the argument
+                    if yieldorproofstrengthindividualvalues_items:
+                        yieldorproofstrengthindividualvalues_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else aas.Property(None, value_type_list_element, i)
+                            )
+                            for i in yieldorproofstrengthindividualvalues_items
+                        ]
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [yieldorproofstrengthindividualvalues_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6305,6 +6317,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
+                    tensilestrengthindividualvalues_items: Optional[
+                        Iterable[Union[xsd.Float, aas.Property]]
+                    ] = None,
                     id_short: Optional[str] = r"TensileStrengthIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
                     semantic_id_list_element: Optional[
@@ -6371,17 +6386,26 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # Build submodel elements from raw values passed in the argument
+                    if tensilestrengthindividualvalues_items:
+                        tensilestrengthindividualvalues_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else aas.Property(None, value_type_list_element, i)
+                            )
+                            for i in tensilestrengthindividualvalues_items
+                        ]
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [tensilestrengthindividualvalues_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6477,6 +6501,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
+                    elongationafterfractureindividualvalues_items: Optional[
+                        Iterable[Union[xsd.Float, aas.Property]]
+                    ] = None,
                     id_short: Optional[
                         str
                     ] = r"ElongationAfterFractureIndividualValues",
@@ -6545,17 +6572,26 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # Build submodel elements from raw values passed in the argument
+                    if elongationafterfractureindividualvalues_items:
+                        elongationafterfractureindividualvalues_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else aas.Property(None, value_type_list_element, i)
+                            )
+                            for i in elongationafterfractureindividualvalues_items
+                        ]
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [elongationafterfractureindividualvalues_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6943,13 +6979,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Union[xsd.Float, ElongationAfterFractureMean]
                 ] = None,
                 yieldOrProofStrengthIndividualValues: Optional[
-                    Union[Iterable[xsd.Float], YieldOrProofStrengthIndividualValues]
+                    Union[
+                        Iterable[Union[xsd.Float, aas.Property]],
+                        YieldOrProofStrengthIndividualValues,
+                    ]
                 ] = None,
                 tensileStrengthIndividualValues: Optional[
-                    Union[Iterable[xsd.Float], TensileStrengthIndividualValues]
+                    Union[
+                        Iterable[Union[xsd.Float, aas.Property]],
+                        TensileStrengthIndividualValues,
+                    ]
                 ] = None,
                 elongationAfterFractureIndividualValues: Optional[
-                    Union[Iterable[xsd.Float], ElongationAfterFractureIndividualValues]
+                    Union[
+                        Iterable[Union[xsd.Float, aas.Property]],
+                        ElongationAfterFractureIndividualValues,
+                    ]
                 ] = None,
                 testTemperature: Optional[Union[xsd.Float, TestTemperature]] = None,
                 sampleShape: Optional[Union[aas.LangStringSet, SampleShape]] = None,
@@ -7296,6 +7341,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
+                    hardnessindividualvalues_items: Optional[
+                        Iterable[Union[str, aas.Property]]
+                    ] = None,
                     id_short: Optional[str] = r"HardnessIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
                     semantic_id_list_element: Optional[
@@ -7362,17 +7410,26 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # Build submodel elements from raw values passed in the argument
+                    if hardnessindividualvalues_items:
+                        hardnessindividualvalues_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else aas.Property(None, value_type_list_element, i)
+                            )
+                            for i in hardnessindividualvalues_items
+                        ]
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [hardnessindividualvalues_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7686,7 +7743,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 ] = None,
                 hardnessMean: Optional[Union[str, HardnessMean]] = None,
                 hardnessIndividualValues: Optional[
-                    Union[Iterable[str], HardnessIndividualValues]
+                    Union[Iterable[Union[str, aas.Property]], HardnessIndividualValues]
                 ] = None,
                 testTemperature: Optional[Union[xsd.Float, TestTemperature]] = None,
                 locationOfSample: Optional[
@@ -7914,6 +7971,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
+                    notchimpactstrengthindividualvalues_items: Optional[
+                        Iterable[Union[xsd.Float, aas.Property]]
+                    ] = None,
                     id_short: Optional[str] = r"NotchImpactStrengthIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
                     semantic_id_list_element: Optional[
@@ -7980,17 +8040,26 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # Build submodel elements from raw values passed in the argument
+                    if notchimpactstrengthindividualvalues_items:
+                        notchimpactstrengthindividualvalues_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else aas.Property(None, value_type_list_element, i)
+                            )
+                            for i in notchimpactstrengthindividualvalues_items
+                        ]
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [notchimpactstrengthindividualvalues_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8160,6 +8229,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
+                    notchimpactworkindividualvalues_items: Optional[
+                        Iterable[Union[xsd.Float, aas.Property]]
+                    ] = None,
                     id_short: Optional[str] = r"NotchImpactWorkIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
                     semantic_id_list_element: Optional[
@@ -8226,17 +8298,26 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    # Build submodel elements from raw values passed in the argument
+                    if notchimpactworkindividualvalues_items:
+                        notchimpactworkindividualvalues_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else aas.Property(None, value_type_list_element, i)
+                            )
+                            for i in notchimpactworkindividualvalues_items
+                        ]
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [notchimpactworkindividualvalues_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8695,11 +8776,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Union[xsd.Float, NotchImpactStrengthMean]
                 ] = None,
                 notchImpactStrengthIndividualValues: Optional[
-                    Union[Iterable[xsd.Float], NotchImpactStrengthIndividualValues]
+                    Union[
+                        Iterable[Union[xsd.Float, aas.Property]],
+                        NotchImpactStrengthIndividualValues,
+                    ]
                 ] = None,
                 notchImpactWorkMean: Optional[Union[str, NotchImpactWorkMean]] = None,
                 notchImpactWorkIndividualValues: Optional[
-                    Union[Iterable[xsd.Float], NotchImpactWorkIndividualValues]
+                    Union[
+                        Iterable[Union[xsd.Float, aas.Property]],
+                        NotchImpactWorkIndividualValues,
+                    ]
                 ] = None,
                 sampleType: Optional[Union[str, SampleType]] = None,
                 sampleWidth: Optional[Union[xsd.Float, SampleWidth]] = None,

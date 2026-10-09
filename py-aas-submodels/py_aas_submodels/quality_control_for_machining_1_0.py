@@ -778,7 +778,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: aas.Reference,
-                            id_short: Optional[str] = r"geometryreferencelist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -925,9 +925,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1028,7 +1026,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"idlist3dmodel_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1179,9 +1177,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1439,7 +1435,7 @@ class QualityControlForMachining(aas.Submodel):
                             self,
                             page: Optional[Union[str, Page]] = None,
                             coordinate: Optional[Union[str, Coordinate]] = None,
-                            id_short: Optional[str] = r"reference2dlist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -1605,9 +1601,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1715,10 +1709,30 @@ class QualityControlForMachining(aas.Submodel):
                     upperTolerance: Optional[Union[float, UpperTolerance]] = None,
                     lowerTolerance: Optional[Union[float, LowerTolerance]] = None,
                     oneSided: Optional[Union[bool, OneSided]] = None,
-                    geometryReferenceList: Optional[GeometryReferenceList] = None,
-                    iDList3DModel: Optional[Union[Iterable[str], IDList3DModel]] = None,
-                    reference2DList: Optional[Reference2DList] = None,
-                    id_short: Optional[str] = r"linearfeatureslist_item",
+                    geometryReferenceList: Optional[
+                        Union[
+                            Iterable[
+                                Union[
+                                    aas.Reference,
+                                    GeometryReferenceList.Geometryreferencelist_item,
+                                ]
+                            ],
+                            GeometryReferenceList,
+                        ]
+                    ] = None,
+                    iDList3DModel: Optional[
+                        Union[
+                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
+                            IDList3DModel,
+                        ]
+                    ] = None,
+                    reference2DList: Optional[
+                        Union[
+                            Iterable[Reference2DList.Reference2dlist_item],
+                            Reference2DList,
+                        ]
+                    ] = None,
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -1850,10 +1864,26 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
+                    if geometryReferenceList is not None and not isinstance(
+                        geometryReferenceList, aas.SubmodelElement
+                    ):
+                        geometryReferenceList = self.GeometryReferenceList(
+                            geometryReferenceList
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
                     if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if reference2DList is not None and not isinstance(
+                        reference2DList, aas.SubmodelElement
+                    ):
+                        reference2DList = self.Reference2DList(reference2DList)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1967,9 +1997,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2452,7 +2480,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: aas.Reference,
-                            id_short: Optional[str] = r"geometryreferencelist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -2599,9 +2627,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2702,7 +2728,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"idlist3dmodel_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2853,9 +2879,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3113,7 +3137,7 @@ class QualityControlForMachining(aas.Submodel):
                             self,
                             page: Optional[Union[str, Page]] = None,
                             coordinate: Optional[Union[str, Coordinate]] = None,
-                            id_short: Optional[str] = r"reference2dlist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -3279,9 +3303,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3382,7 +3404,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"okattributeslist_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3533,9 +3555,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3636,7 +3656,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"nokattributeslist_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3787,9 +3807,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3891,13 +3909,39 @@ class QualityControlForMachining(aas.Submodel):
                     ],
                     measurementProcedure: Union[str, MeasurementProcedure],
                     inspectionRelevant: Union[bool, InspectionRelevant],
-                    oKAttributesList: Union[Iterable[str], OKAttributesList],
-                    nOKAttributesList: Union[Iterable[str], NOKAttributesList],
+                    oKAttributesList: Union[
+                        Iterable[Union[str, OKAttributesList.Okattributeslist_item]],
+                        OKAttributesList,
+                    ],
+                    nOKAttributesList: Union[
+                        Iterable[Union[str, NOKAttributesList.Nokattributeslist_item]],
+                        NOKAttributesList,
+                    ],
                     toleranceNorm: Optional[Iterable[Union[str, ToleranceNorm]]] = None,
-                    geometryReferenceList: Optional[GeometryReferenceList] = None,
-                    iDList3DModel: Optional[Union[Iterable[str], IDList3DModel]] = None,
-                    reference2DList: Optional[Reference2DList] = None,
-                    id_short: Optional[str] = r"attributivefeatureslist_item",
+                    geometryReferenceList: Optional[
+                        Union[
+                            Iterable[
+                                Union[
+                                    aas.Reference,
+                                    GeometryReferenceList.Geometryreferencelist_item,
+                                ]
+                            ],
+                            GeometryReferenceList,
+                        ]
+                    ] = None,
+                    iDList3DModel: Optional[
+                        Union[
+                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
+                            IDList3DModel,
+                        ]
+                    ] = None,
+                    reference2DList: Optional[
+                        Union[
+                            Iterable[Reference2DList.Reference2dlist_item],
+                            Reference2DList,
+                        ]
+                    ] = None,
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -3998,10 +4042,26 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
+                    if geometryReferenceList is not None and not isinstance(
+                        geometryReferenceList, aas.SubmodelElement
+                    ):
+                        geometryReferenceList = self.GeometryReferenceList(
+                            geometryReferenceList
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
                     if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if reference2DList is not None and not isinstance(
+                        reference2DList, aas.SubmodelElement
+                    ):
+                        reference2DList = self.Reference2DList(reference2DList)
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4126,9 +4186,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5642,7 +5700,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: aas.Reference,
-                            id_short: Optional[str] = r"geometryreferencelist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -5789,9 +5847,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5892,7 +5948,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"idlist3dmodel_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6043,9 +6099,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6303,7 +6357,7 @@ class QualityControlForMachining(aas.Submodel):
                             self,
                             page: Optional[Union[str, Page]] = None,
                             coordinate: Optional[Union[str, Coordinate]] = None,
-                            id_short: Optional[str] = r"reference2dlist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -6469,9 +6523,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6953,7 +7005,7 @@ class QualityControlForMachining(aas.Submodel):
                                 Iterable[Union[str, GPS_Identifier]]
                             ] = None,
                             gPS_Value: Optional[Iterable[Union[str, GPS_Value]]] = None,
-                            id_short: Optional[str] = r"additionalinformationlist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -7127,9 +7179,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7233,16 +7283,43 @@ class QualityControlForMachining(aas.Submodel):
                     gPS_Description: Optional[Union[str, GPS_Description]] = None,
                     toleranceNorm: Optional[Iterable[Union[str, ToleranceNorm]]] = None,
                     gPS_ToleranceZone: Optional[Iterable[GPS_ToleranceZone]] = None,
-                    geometryReferenceList: Optional[GeometryReferenceList] = None,
-                    iDList3DModel: Optional[Union[Iterable[str], IDList3DModel]] = None,
-                    reference2DList: Optional[Reference2DList] = None,
+                    geometryReferenceList: Optional[
+                        Union[
+                            Iterable[
+                                Union[
+                                    aas.Reference,
+                                    GeometryReferenceList.Geometryreferencelist_item,
+                                ]
+                            ],
+                            GeometryReferenceList,
+                        ]
+                    ] = None,
+                    iDList3DModel: Optional[
+                        Union[
+                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
+                            IDList3DModel,
+                        ]
+                    ] = None,
+                    reference2DList: Optional[
+                        Union[
+                            Iterable[Reference2DList.Reference2dlist_item],
+                            Reference2DList,
+                        ]
+                    ] = None,
                     datumField1: Optional[Union[str, DatumField1]] = None,
                     datumField2: Optional[Union[str, DatumField2]] = None,
                     datumField3: Optional[Union[str, DatumField3]] = None,
                     additionalInformationList: Optional[
-                        Iterable[AdditionalInformationList]
+                        Iterable[
+                            Union[
+                                Iterable[
+                                    AdditionalInformationList.Additionalinformationlist_item
+                                ],
+                                AdditionalInformationList,
+                            ]
+                        ]
                     ] = None,
-                    id_short: Optional[str] = r"geometricfeatureslist_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -7353,10 +7430,26 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
+                    if geometryReferenceList is not None and not isinstance(
+                        geometryReferenceList, aas.SubmodelElement
+                    ):
+                        geometryReferenceList = self.GeometryReferenceList(
+                            geometryReferenceList
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
                     if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if reference2DList is not None and not isinstance(
+                        reference2DList, aas.SubmodelElement
+                    ):
+                        reference2DList = self.Reference2DList(reference2DList)
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7378,6 +7471,17 @@ class QualityControlForMachining(aas.Submodel):
                         datumField3, aas.SubmodelElement
                     ):
                         datumField3 = self.DatumField3(datumField3)
+
+                    # Build submodel elements from raw values passed in the argument
+                    if additionalInformationList:
+                        additionalInformationList = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.AdditionalInformationList(i)
+                            )
+                            for i in additionalInformationList
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -7493,9 +7597,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8052,7 +8154,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: aas.Reference,
-                            id_short: Optional[str] = r"geometryreferencelist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -8199,9 +8301,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8302,7 +8402,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"idlist3dmodel_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8453,9 +8553,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8713,7 +8811,7 @@ class QualityControlForMachining(aas.Submodel):
                             self,
                             page: Optional[Union[str, Page]] = None,
                             coordinate: Optional[Union[str, Coordinate]] = None,
-                            id_short: Optional[str] = r"reference2dlist_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -8879,9 +8977,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -11219,13 +11315,33 @@ class QualityControlForMachining(aas.Submodel):
                     aSF_FeatureName: Optional[Union[str, ASF_FeatureName]] = None,
                     aSF_Description: Optional[Union[str, ASF_Description]] = None,
                     toleranceNorm: Optional[Iterable[Union[str, ToleranceNorm]]] = None,
-                    geometryReferenceList: Optional[GeometryReferenceList] = None,
-                    iDList3DModel: Optional[Union[Iterable[str], IDList3DModel]] = None,
-                    reference2DList: Optional[Reference2DList] = None,
+                    geometryReferenceList: Optional[
+                        Union[
+                            Iterable[
+                                Union[
+                                    aas.Reference,
+                                    GeometryReferenceList.Geometryreferencelist_item,
+                                ]
+                            ],
+                            GeometryReferenceList,
+                        ]
+                    ] = None,
+                    iDList3DModel: Optional[
+                        Union[
+                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
+                            IDList3DModel,
+                        ]
+                    ] = None,
+                    reference2DList: Optional[
+                        Union[
+                            Iterable[Reference2DList.Reference2dlist_item],
+                            Reference2DList,
+                        ]
+                    ] = None,
                     sL_Parameters: Optional[Iterable[SL_Parameters]] = None,
                     sF_Parameters: Optional[Iterable[SF_Parameters]] = None,
                     smr_Parameters: Optional[Smr_Parameters] = None,
-                    id_short: Optional[str] = r"arealsurfacefeatureslist_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -11329,10 +11445,26 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
+                    if geometryReferenceList is not None and not isinstance(
+                        geometryReferenceList, aas.SubmodelElement
+                    ):
+                        geometryReferenceList = self.GeometryReferenceList(
+                            geometryReferenceList
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
                     if iDList3DModel is not None and not isinstance(
                         iDList3DModel, aas.SubmodelElement
                     ):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if reference2DList is not None and not isinstance(
+                        reference2DList, aas.SubmodelElement
+                    ):
+                        reference2DList = self.Reference2DList(reference2DList)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -11445,9 +11577,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -11541,10 +11671,30 @@ class QualityControlForMachining(aas.Submodel):
 
         def __init__(
             self,
-            linearFeaturesList: Optional[LinearFeaturesList] = None,
-            attributiveFeaturesList: Optional[AttributiveFeaturesList] = None,
-            geometricFeaturesList: Optional[GeometricFeaturesList] = None,
-            arealSurfaceFeaturesList: Optional[ArealSurfaceFeaturesList] = None,
+            linearFeaturesList: Optional[
+                Union[
+                    Iterable[LinearFeaturesList.Linearfeatureslist_item],
+                    LinearFeaturesList,
+                ]
+            ] = None,
+            attributiveFeaturesList: Optional[
+                Union[
+                    Iterable[AttributiveFeaturesList.Attributivefeatureslist_item],
+                    AttributiveFeaturesList,
+                ]
+            ] = None,
+            geometricFeaturesList: Optional[
+                Union[
+                    Iterable[GeometricFeaturesList.Geometricfeatureslist_item],
+                    GeometricFeaturesList,
+                ]
+            ] = None,
+            arealSurfaceFeaturesList: Optional[
+                Union[
+                    Iterable[ArealSurfaceFeaturesList.Arealsurfacefeatureslist_item],
+                    ArealSurfaceFeaturesList,
+                ]
+            ] = None,
             id_short: Optional[str] = r"QualityFeatures",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -11596,6 +11746,40 @@ class QualityControlForMachining(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if linearFeaturesList is not None and not isinstance(
+                linearFeaturesList, aas.SubmodelElement
+            ):
+                linearFeaturesList = self.LinearFeaturesList(linearFeaturesList)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if attributiveFeaturesList is not None and not isinstance(
+                attributiveFeaturesList, aas.SubmodelElement
+            ):
+                attributiveFeaturesList = self.AttributiveFeaturesList(
+                    attributiveFeaturesList
+                )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if geometricFeaturesList is not None and not isinstance(
+                geometricFeaturesList, aas.SubmodelElement
+            ):
+                geometricFeaturesList = self.GeometricFeaturesList(
+                    geometricFeaturesList
+                )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if arealSurfaceFeaturesList is not None and not isinstance(
+                arealSurfaceFeaturesList, aas.SubmodelElement
+            ):
+                arealSurfaceFeaturesList = self.ArealSurfaceFeaturesList(
+                    arealSurfaceFeaturesList
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -13550,7 +13734,7 @@ class QualityControlForMachining(aas.Submodel):
                 contactInformation: Optional[
                     Union[aas.Reference, ContactInformation]
                 ] = None,
-                id_short: Optional[str] = r"qualityresponsibilitylist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -13719,9 +13903,7 @@ class QualityControlForMachining(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -14578,7 +14760,7 @@ class QualityControlForMachining(aas.Submodel):
                 calibrationCertificate: Optional[
                     Iterable[Union[aas.Reference, CalibrationCertificate]]
                 ] = None,
-                id_short: Optional[str] = r"testingdeviceslist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -14813,9 +14995,7 @@ class QualityControlForMachining(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -16533,7 +16713,7 @@ class QualityControlForMachining(aas.Submodel):
                         def __init__(
                             self,
                             value: float,
-                            id_short: Optional[str] = r"measuredvalueslist_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = float,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -16684,9 +16864,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -17079,10 +17257,15 @@ class QualityControlForMachining(aas.Submodel):
                     maxValue: Optional[Union[float, MaxValue]] = None,
                     standarddeviation: Optional[Union[float, Standarddeviation]] = None,
                     measuredValuesList: Optional[
-                        Union[Iterable[float], MeasuredValuesList]
+                        Union[
+                            Iterable[
+                                Union[float, MeasuredValuesList.Measuredvalueslist_item]
+                            ],
+                            MeasuredValuesList,
+                        ]
                     ] = None,
                     metrologyDataFile: Optional[MetrologyDataFile] = None,
-                    id_short: Optional[str] = r"metrologyresultslist_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -17372,9 +17555,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -17470,7 +17651,10 @@ class QualityControlForMachining(aas.Submodel):
             self,
             jobStart: Union[xsd.DateTime, JobStart],
             jobOrderNumber: Iterable[Union[str, JobOrderNumber]],
-            metrologyResultsList: MetrologyResultsList,
+            metrologyResultsList: Union[
+                Iterable[MetrologyResultsList.Metrologyresultslist_item],
+                MetrologyResultsList,
+            ],
             jobEnd: Optional[Union[xsd.DateTime, JobEnd]] = None,
             jobName: Optional[Union[str, JobName]] = None,
             plannedPartsPerRun: Optional[Union[int, PlannedPartsPerRun]] = None,
@@ -17571,6 +17755,13 @@ class QualityControlForMachining(aas.Submodel):
             ):
                 jobFinished = self.JobFinished(jobFinished)
 
+            # Build a submodel element if a raw value was passed in the argument
+
+            if metrologyResultsList is not None and not isinstance(
+                metrologyResultsList, aas.SubmodelElement
+            ):
+                metrologyResultsList = self.MetrologyResultsList(metrologyResultsList)
+
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
             for se_arg in [
@@ -17614,10 +17805,17 @@ class QualityControlForMachining(aas.Submodel):
         id_: str,
         qualityFeatures: QualityFeatures,
         partInformation: PartInformation,
-        testingDevicesList: TestingDevicesList,
+        testingDevicesList: Union[
+            Iterable[TestingDevicesList.Testingdeviceslist_item], TestingDevicesList
+        ],
         metrologyJobResults: Iterable[MetrologyJobResults],
         productionCriteria: Optional[ProductionCriteria] = None,
-        qualityResponsibilityList: Optional[QualityResponsibilityList] = None,
+        qualityResponsibilityList: Optional[
+            Union[
+                Iterable[QualityResponsibilityList.Qualityresponsibilitylist_item],
+                QualityResponsibilityList,
+            ]
+        ] = None,
         id_short: Optional[str] = r"QualityControlForMachining",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -17649,6 +17847,22 @@ class QualityControlForMachining(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if qualityResponsibilityList is not None and not isinstance(
+            qualityResponsibilityList, aas.SubmodelElement
+        ):
+            qualityResponsibilityList = self.QualityResponsibilityList(
+                qualityResponsibilityList
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if testingDevicesList is not None and not isinstance(
+            testingDevicesList, aas.SubmodelElement
+        ):
+            testingDevicesList = self.TestingDevicesList(testingDevicesList)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

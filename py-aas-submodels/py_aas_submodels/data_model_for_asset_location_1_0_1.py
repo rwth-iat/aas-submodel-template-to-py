@@ -785,7 +785,7 @@ class AssetLocation(aas.Submodel):
                 citytown: Optional[Union[str, Citytown]] = None,
                 street: Optional[Union[str, Street]] = None,
                 zipCode: Optional[Union[str, ZipCode]] = None,
-                id_short: Optional[str] = r"addresses_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -929,7 +929,7 @@ class AssetLocation(aas.Submodel):
 
         def __init__(
             self,
-            addresses_items: Addresses_item,
+            addresses_items: Iterable[Addresses_item],
             id_short: Optional[str] = r"Addresses",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -1006,9 +1006,7 @@ class AssetLocation(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1986,7 +1984,7 @@ class AssetLocation(aas.Submodel):
                         self,
                         geographicCoordinates: GeographicCoordinates,
                         relativeCoordinates: RelativeCoordinates,
-                        id_short: Optional[str] = r"groundcontrolpoints_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -2050,7 +2048,7 @@ class AssetLocation(aas.Submodel):
 
                 def __init__(
                     self,
-                    groundcontrolpoints_items: Groundcontrolpoints_item,
+                    groundcontrolpoints_items: Iterable[Groundcontrolpoints_item],
                     id_short: Optional[str] = r"GroundControlPoints",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[
@@ -2132,9 +2130,7 @@ class AssetLocation(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2231,12 +2227,15 @@ class AssetLocation(aas.Submodel):
                 coordinateSystemId: Union[str, CoordinateSystemId],
                 coordinateSystemType: Union[str, CoordinateSystemType],
                 elevationReference: Union[str, ElevationReference],
-                groundControlPoints: GroundControlPoints,
+                groundControlPoints: Union[
+                    Iterable[GroundControlPoints.Groundcontrolpoints_item],
+                    GroundControlPoints,
+                ],
                 coordinateSystemName: Optional[Union[str, CoordinateSystemName]] = None,
                 seaLevelOfBaseHeight: Optional[
                     Union[xsd.Float, SeaLevelOfBaseHeight]
                 ] = None,
-                id_short: Optional[str] = r"coordinatesystems_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -2311,6 +2310,13 @@ class AssetLocation(aas.Submodel):
                         seaLevelOfBaseHeight
                     )
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if groundControlPoints is not None and not isinstance(
+                    groundControlPoints, aas.SubmodelElement
+                ):
+                    groundControlPoints = self.GroundControlPoints(groundControlPoints)
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -2349,7 +2355,7 @@ class AssetLocation(aas.Submodel):
 
         def __init__(
             self,
-            coordinatesystems_items: Coordinatesystems_item,
+            coordinatesystems_items: Iterable[Coordinatesystems_item],
             id_short: Optional[str] = r"CoordinateSystems",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -2426,9 +2432,7 @@ class AssetLocation(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2598,7 +2602,7 @@ class AssetLocation(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"addressreferences_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -2639,8 +2643,8 @@ class AssetLocation(aas.Submodel):
 
                 def __init__(
                     self,
-                    addressreferences_items: Union[
-                        aas.Reference, Addressreferences_item
+                    addressreferences_items: Iterable[
+                        Union[aas.Reference, Addressreferences_item]
                     ],
                     id_short: Optional[str] = r"AddressReferences",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
@@ -2708,14 +2712,16 @@ class AssetLocation(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if addressreferences_items is not None and not isinstance(
-                        addressreferences_items, aas.SubmodelElement
-                    ):
-                        addressreferences_items = self.Addressreferences_item(
-                            addressreferences_items
-                        )
+                    # Build submodel elements from raw values passed in the argument
+                    if addressreferences_items:
+                        addressreferences_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Addressreferences_item(i)
+                            )
+                            for i in addressreferences_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2725,9 +2731,7 @@ class AssetLocation(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2973,7 +2977,7 @@ class AssetLocation(aas.Submodel):
                         self,
                         x: Union[xsd.Float, X],
                         y: Union[xsd.Float, Y],
-                        id_short: Optional[str] = r"arearegioncoordinates_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -3047,7 +3051,7 @@ class AssetLocation(aas.Submodel):
 
                 def __init__(
                     self,
-                    arearegioncoordinates_items: Arearegioncoordinates_item,
+                    arearegioncoordinates_items: Iterable[Arearegioncoordinates_item],
                     id_short: Optional[str] = r"AreaRegionCoordinates",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[
@@ -3129,9 +3133,7 @@ class AssetLocation(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3707,8 +3709,22 @@ class AssetLocation(aas.Submodel):
                 coordinateSystemOfArea: Optional[
                     Union[aas.Reference, CoordinateSystemOfArea]
                 ] = None,
-                addressReferences: Optional[AddressReferences] = None,
-                areaRegionCoordinates: Optional[AreaRegionCoordinates] = None,
+                addressReferences: Optional[
+                    Union[
+                        Iterable[
+                            Union[
+                                aas.Reference, AddressReferences.Addressreferences_item
+                            ]
+                        ],
+                        AddressReferences,
+                    ]
+                ] = None,
+                areaRegionCoordinates: Optional[
+                    Union[
+                        Iterable[AreaRegionCoordinates.Arearegioncoordinates_item],
+                        AreaRegionCoordinates,
+                    ]
+                ] = None,
                 kindOfArea: Optional[Union[str, KindOfArea]] = None,
                 areaName: Optional[Union[str, AreaName]] = None,
                 areaDesciption: Optional[
@@ -3716,7 +3732,7 @@ class AssetLocation(aas.Submodel):
                 ] = None,
                 areaLayout: Optional[AreaLayout] = None,
                 buildingLevel: Optional[Union[str, BuildingLevel]] = None,
-                id_short: Optional[str] = r"visitedareas_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -3756,6 +3772,22 @@ class AssetLocation(aas.Submodel):
                 ):
                     coordinateSystemOfArea = self.CoordinateSystemOfArea(
                         coordinateSystemOfArea
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if addressReferences is not None and not isinstance(
+                    addressReferences, aas.SubmodelElement
+                ):
+                    addressReferences = self.AddressReferences(addressReferences)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if areaRegionCoordinates is not None and not isinstance(
+                    areaRegionCoordinates, aas.SubmodelElement
+                ):
+                    areaRegionCoordinates = self.AreaRegionCoordinates(
+                        areaRegionCoordinates
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -3832,7 +3864,7 @@ class AssetLocation(aas.Submodel):
 
         def __init__(
             self,
-            visitedareas_items: Visitedareas_item,
+            visitedareas_items: Iterable[Visitedareas_item],
             id_short: Optional[str] = r"VisitedAreas",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -3909,9 +3941,7 @@ class AssetLocation(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4528,7 +4558,7 @@ class AssetLocation(aas.Submodel):
                     eventType: Union[str, EventType],
                     eventId: Optional[Union[str, EventId]] = None,
                     providerId: Optional[Union[str, ProviderId]] = None,
-                    id_short: Optional[str] = r"arearecords_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -4623,7 +4653,7 @@ class AssetLocation(aas.Submodel):
 
             def __init__(
                 self,
-                arearecords_items: Arearecords_item,
+                arearecords_items: Iterable[Arearecords_item],
                 id_short: Optional[str] = r"AreaRecords",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[
@@ -4698,9 +4728,7 @@ class AssetLocation(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6127,7 +6155,7 @@ class AssetLocation(aas.Submodel):
                     speed: Optional[Union[xsd.Float, Speed]] = None,
                     course: Optional[Union[int, Course]] = None,
                     referencePointId: Optional[Union[str, ReferencePointId]] = None,
-                    id_short: Optional[str] = r"locationrecords_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -6297,7 +6325,7 @@ class AssetLocation(aas.Submodel):
 
             def __init__(
                 self,
-                locationrecords_items: Locationrecords_item,
+                locationrecords_items: Iterable[Locationrecords_item],
                 id_short: Optional[str] = r"LocationRecords",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[
@@ -6372,9 +6400,7 @@ class AssetLocation(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6474,8 +6500,12 @@ class AssetLocation(aas.Submodel):
             locationEventTimeSeriesData: Optional[
                 Union[aas.Reference, LocationEventTimeSeriesData]
             ] = None,
-            areaRecords: Optional[AreaRecords] = None,
-            locationRecords: Optional[LocationRecords] = None,
+            areaRecords: Optional[
+                Union[Iterable[AreaRecords.Arearecords_item], AreaRecords]
+            ] = None,
+            locationRecords: Optional[
+                Union[Iterable[LocationRecords.Locationrecords_item], LocationRecords]
+            ] = None,
             id_short: Optional[str] = r"AssetTraces",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -6549,6 +6579,20 @@ class AssetLocation(aas.Submodel):
                 locationEventTimeSeriesData = self.LocationEventTimeSeriesData(
                     locationEventTimeSeriesData
                 )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if areaRecords is not None and not isinstance(
+                areaRecords, aas.SubmodelElement
+            ):
+                areaRecords = self.AreaRecords(areaRecords)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if locationRecords is not None and not isinstance(
+                locationRecords, aas.SubmodelElement
+            ):
+                locationRecords = self.LocationRecords(locationRecords)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7075,9 +7119,15 @@ class AssetLocation(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        addresses: Optional[Addresses] = None,
-        coordinateSystems: Optional[CoordinateSystems] = None,
-        visitedAreas: Optional[VisitedAreas] = None,
+        addresses: Optional[
+            Union[Iterable[Addresses.Addresses_item], Addresses]
+        ] = None,
+        coordinateSystems: Optional[
+            Union[Iterable[CoordinateSystems.Coordinatesystems_item], CoordinateSystems]
+        ] = None,
+        visitedAreas: Optional[
+            Union[Iterable[VisitedAreas.Visitedareas_item], VisitedAreas]
+        ] = None,
         assetTraces: Optional[AssetTraces] = None,
         assetLocatingInformation: Optional[AssetLocatingInformation] = None,
         id_short: Optional[str] = r"AssetLocation",
@@ -7134,6 +7184,25 @@ class AssetLocation(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if addresses is not None and not isinstance(addresses, aas.SubmodelElement):
+            addresses = self.Addresses(addresses)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if coordinateSystems is not None and not isinstance(
+            coordinateSystems, aas.SubmodelElement
+        ):
+            coordinateSystems = self.CoordinateSystems(coordinateSystems)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if visitedAreas is not None and not isinstance(
+            visitedAreas, aas.SubmodelElement
+        ):
+            visitedAreas = self.VisitedAreas(visitedAreas)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

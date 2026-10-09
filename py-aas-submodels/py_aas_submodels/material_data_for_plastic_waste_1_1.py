@@ -181,7 +181,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"applicationspecificstandards_item",
+                id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[
@@ -252,7 +252,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
         def __init__(
             self,
             applicationspecificstandards_items: Optional[
-                Union[str, Applicationspecificstandards_item]
+                Iterable[Union[str, Applicationspecificstandards_item]]
             ] = None,
             id_short: Optional[str] = r"ApplicationSpecificStandards",
             type_value_list_element: aas.SubmodelElement = aas.Property,
@@ -321,16 +321,16 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
 
-            # Build a submodel element if a raw value was passed in the argument
-
-            if applicationspecificstandards_items is not None and not isinstance(
-                applicationspecificstandards_items, aas.SubmodelElement
-            ):
-                applicationspecificstandards_items = (
-                    self.Applicationspecificstandards_item(
-                        applicationspecificstandards_items
+            # Build submodel elements from raw values passed in the argument
+            if applicationspecificstandards_items:
+                applicationspecificstandards_items = [
+                    (
+                        i
+                        if isinstance(i, aas.SubmodelElement)
+                        else self.Applicationspecificstandards_item(i)
                     )
-                )
+                    for i in applicationspecificstandards_items
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -340,9 +340,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1628,7 +1626,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     self,
                     filler: Union[str, Filler],
                     fillerMassPercentage: Union[xsd.Decimal, FillerMassPercentage],
-                    id_short: Optional[str] = r"typesoffillers_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Type of filler"}),
@@ -1815,9 +1813,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2758,7 +2754,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     self,
                     modifyingAdditiveName: Union[str, ModifyingAdditiveName],
                     modifyingAdditiveCASNumber: Union[str, ModifyingAdditiveCASNumber],
-                    id_short: Optional[str] = r"presenceofmodifyingadditives_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Modifying additive"}),
@@ -2951,9 +2947,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3246,7 +3240,9 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             chainOfCustody: Optional[ChainOfCustody] = None,
             recyclingMethod: Optional[Union[str, RecyclingMethod]] = None,
             source: Optional[Union[str, Source]] = None,
-            typesOfFillers: Optional[TypesOfFillers] = None,
+            typesOfFillers: Optional[
+                Union[Iterable[TypesOfFillers.Typesoffillers_item], TypesOfFillers]
+            ] = None,
             lotNumber: Optional[Union[str, LotNumber]] = None,
             certificateOfAnalysis: Optional[CertificateOfAnalysis] = None,
             contentOfTheMainPlasticType: Optional[
@@ -3258,7 +3254,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             coefficientOfVariationWRTCertificateOfAnalysis: Optional[
                 Union[xsd.Decimal, CoefficientOfVariationWRTCertificateOfAnalysis]
             ] = None,
-            presenceOfModifyingAdditives: Optional[PresenceOfModifyingAdditives] = None,
+            presenceOfModifyingAdditives: Optional[
+                Union[
+                    Iterable[
+                        PresenceOfModifyingAdditives.Presenceofmodifyingadditives_item
+                    ],
+                    PresenceOfModifyingAdditives,
+                ]
+            ] = None,
             originalUseOfMaterial: Optional[Union[str, OriginalUseOfMaterial]] = None,
             recyclingFeedstockConversionTechnology: Optional[
                 Union[str, RecyclingFeedstockConversionTechnology]
@@ -3366,6 +3369,13 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
+            if typesOfFillers is not None and not isinstance(
+                typesOfFillers, aas.SubmodelElement
+            ):
+                typesOfFillers = self.TypesOfFillers(typesOfFillers)
+
+            # Build a submodel element if a raw value was passed in the argument
+
             if lotNumber is not None and not isinstance(lotNumber, aas.SubmodelElement):
                 lotNumber = self.LotNumber(lotNumber)
 
@@ -3401,6 +3411,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     self.CoefficientOfVariationWRTCertificateOfAnalysis(
                         coefficientOfVariationWRTCertificateOfAnalysis
                     )
+                )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if presenceOfModifyingAdditives is not None and not isinstance(
+                presenceOfModifyingAdditives, aas.SubmodelElement
+            ):
+                presenceOfModifyingAdditives = self.PresenceOfModifyingAdditives(
+                    presenceOfModifyingAdditives
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -6801,7 +6820,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         value_: Union[xsd.Float, Value],
                         unit: Union[str, Unit],
                         kind: Union[str, Kind],
-                        id_short: Optional[str] = r"measuredvalues_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"}),
@@ -6898,7 +6917,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 def __init__(
                     self,
-                    measuredvalues_items: Measuredvalues_item,
+                    measuredvalues_items: Iterable[Measuredvalues_item],
                     id_short: Optional[str] = r"MeasuredValues",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[
@@ -6974,9 +6993,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7143,7 +7160,9 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             def __init__(
                 self,
-                measuredValues: MeasuredValues,
+                measuredValues: Union[
+                    Iterable[MeasuredValues.Measuredvalues_item], MeasuredValues
+                ],
                 standardOrNorm: Optional[Union[str, StandardOrNorm]] = None,
                 id_short: Optional[str] = r"TensileProperties",
                 display_name: Optional[
@@ -7216,6 +7235,13 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if measuredValues is not None and not isinstance(
+                    measuredValues, aas.SubmodelElement
+                ):
+                    measuredValues = self.MeasuredValues(measuredValues)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7768,7 +7794,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
         id_: str,
         dataQuality: Optional[DataQuality] = None,
         applicationSpecificStandards: Optional[
-            Union[Iterable[str], ApplicationSpecificStandards]
+            Union[
+                Iterable[
+                    Union[
+                        str,
+                        ApplicationSpecificStandards.Applicationspecificstandards_item,
+                    ]
+                ],
+                ApplicationSpecificStandards,
+            ]
         ] = None,
         informationCharacteristics: Optional[InformationCharacteristics] = None,
         propertyCharacteristics: Optional[PropertyCharacteristics] = None,

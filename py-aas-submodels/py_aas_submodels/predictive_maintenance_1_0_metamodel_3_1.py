@@ -1191,7 +1191,7 @@ class PredictiveMaintenance(aas.Submodel):
                     boundaryDescription: Optional[
                         Union[str, BoundaryDescription]
                     ] = None,
-                    id_short: Optional[str] = r"listrulboundaryconditions_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -1424,9 +1424,7 @@ class PredictiveMaintenance(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2003,7 +2001,7 @@ class PredictiveMaintenance(aas.Submodel):
                     self,
                     preAlertValue: Union[float, PreAlertValue],
                     preAlertMessage: Optional[Union[str, PreAlertMessage]] = None,
-                    id_short: Optional[str] = r"listprealerts_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -2165,9 +2163,7 @@ class PredictiveMaintenance(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2512,12 +2508,17 @@ class PredictiveMaintenance(aas.Submodel):
             self,
             remainingUsefulLifetime: RemainingUsefulLifetime,
             confidenceInterval: Union[Tuple[float, float], ConfidenceInterval],
-            listRULBoundaryConditions: ListRULBoundaryConditions,
+            listRULBoundaryConditions: Union[
+                Iterable[ListRULBoundaryConditions.Listrulboundaryconditions_item],
+                ListRULBoundaryConditions,
+            ],
             predictionModelInformation: PredictionModelInformation,
             remainingUsfulLifeDateTime: Optional[
                 Union[xsd.DateTime, RemainingUsfulLifeDateTime]
             ] = None,
-            listPreAlerts: Optional[ListPreAlerts] = None,
+            listPreAlerts: Optional[
+                Union[Iterable[ListPreAlerts.Listprealerts_item], ListPreAlerts]
+            ] = None,
             alertAfterExceedingRemainingUsableLife: Optional[
                 AlertAfterExceedingRemainingUsableLife
             ] = None,
@@ -2590,6 +2591,22 @@ class PredictiveMaintenance(aas.Submodel):
                 confidenceInterval = self.ConfidenceInterval(
                     min=confidenceInterval[0], max=confidenceInterval[1]
                 )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if listRULBoundaryConditions is not None and not isinstance(
+                listRULBoundaryConditions, aas.SubmodelElement
+            ):
+                listRULBoundaryConditions = self.ListRULBoundaryConditions(
+                    listRULBoundaryConditions
+                )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if listPreAlerts is not None and not isinstance(
+                listPreAlerts, aas.SubmodelElement
+            ):
+                listPreAlerts = self.ListPreAlerts(listPreAlerts)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

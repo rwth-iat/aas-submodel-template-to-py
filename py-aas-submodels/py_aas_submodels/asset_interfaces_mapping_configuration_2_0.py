@@ -397,7 +397,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         source: Union[aas.Reference, Source],
                         sourceId: Union[str, SourceId],
                         pollingInterval: Optional[Union[float, PollingInterval]] = None,
-                        id_short: Optional[str] = r"sources_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(dict_={r"en": r"Source"}),
@@ -578,9 +578,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -830,7 +828,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         self,
                         sink: Union[aas.Reference, Sink],
                         sinkId: Union[str, SinkId],
-                        id_short: Optional[str] = r"sinks_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(dict_={r"en": r"Sink"}),
@@ -1004,9 +1002,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1100,13 +1096,13 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
             def __init__(
                 self,
-                sources: Sources,
-                sinks: Sinks,
+                sources: Union[Iterable[Sources.Sources_item], Sources],
+                sinks: Union[Iterable[Sinks.Sinks_item], Sinks],
                 defaultPollingInterval: Optional[
                     Union[float, DefaultPollingInterval]
                 ] = None,
                 transformation: Optional[Transformation] = None,
-                id_short: Optional[str] = r"mappingconfigurations_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"Mapping configuration"}),
@@ -1167,6 +1163,16 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     defaultPollingInterval = self.DefaultPollingInterval(
                         defaultPollingInterval
                     )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if sources is not None and not isinstance(sources, aas.SubmodelElement):
+                    sources = self.Sources(sources)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if sinks is not None and not isinstance(sinks, aas.SubmodelElement):
+                    sinks = self.Sinks(sinks)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1275,9 +1281,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1369,7 +1373,10 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        mappingConfigurations: MappingConfigurations,
+        mappingConfigurations: Union[
+            Iterable[MappingConfigurations.Mappingconfigurations_item],
+            MappingConfigurations,
+        ],
         id_short: Optional[str] = r"AssetInterfacesMappingConfiguration",
         display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"Asset interfaces mapping configuration"}
@@ -1410,6 +1417,13 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if mappingConfigurations is not None and not isinstance(
+            mappingConfigurations, aas.SubmodelElement
+        ):
+            mappingConfigurations = self.MappingConfigurations(mappingConfigurations)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

@@ -297,7 +297,7 @@ class ProductionCalendar(aas.Submodel):
                 self,
                 variableName: Union[str, VariableName],
                 variableSpecification: VariableSpecification,
-                id_short: Optional[str] = r"specificationextensionvariables_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -452,9 +452,7 @@ class ProductionCalendar(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -546,7 +544,12 @@ class ProductionCalendar(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        specificationExtensionVariables: SpecificationExtensionVariables,
+        specificationExtensionVariables: Union[
+            Iterable[
+                SpecificationExtensionVariables.Specificationextensionvariables_item
+            ],
+            SpecificationExtensionVariables,
+        ],
         calendar: Optional[Calendar] = None,
         inheritedFrom: Optional[Union[aas.Reference, InheritedFrom]] = None,
         id_short: Optional[str] = r"ProductionCalendar",
@@ -595,6 +598,15 @@ class ProductionCalendar(aas.Submodel):
             inheritedFrom, aas.SubmodelElement
         ):
             inheritedFrom = self.InheritedFrom(inheritedFrom)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if specificationExtensionVariables is not None and not isinstance(
+            specificationExtensionVariables, aas.SubmodelElement
+        ):
+            specificationExtensionVariables = self.SpecificationExtensionVariables(
+                specificationExtensionVariables
+            )
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

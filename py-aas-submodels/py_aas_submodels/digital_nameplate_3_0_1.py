@@ -1914,7 +1914,7 @@ class Nameplate(aas.Submodel):
                 markingAdditionalText: Optional[
                     Iterable[Union[str, MarkingAdditionalText]]
                 ] = None,
-                id_short: Optional[str] = r"markings_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -2130,9 +2130,7 @@ class Nameplate(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2730,7 +2728,7 @@ class Nameplate(aas.Submodel):
                     arbitraryMLP: Optional[
                         Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
                     ] = None,
-                    id_short: Optional[str] = r"guidelinespecificproperties_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -2907,9 +2905,7 @@ class Nameplate(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3008,7 +3004,14 @@ class Nameplate(aas.Submodel):
                 Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
             ] = None,
             arbitraryFile: Optional[Iterable[ArbitraryFile]] = None,
-            guidelineSpecificProperties: Optional[GuidelineSpecificProperties] = None,
+            guidelineSpecificProperties: Optional[
+                Union[
+                    Iterable[
+                        GuidelineSpecificProperties.Guidelinespecificproperties_item
+                    ],
+                    GuidelineSpecificProperties,
+                ]
+            ] = None,
             id_short: Optional[str] = r"AssetSpecificProperties",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -3071,6 +3074,15 @@ class Nameplate(aas.Submodel):
                     i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i)
                     for i in arbitraryMLP
                 ]
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if guidelineSpecificProperties is not None and not isinstance(
+                guidelineSpecificProperties, aas.SubmodelElement
+            ):
+                guidelineSpecificProperties = self.GuidelineSpecificProperties(
+                    guidelineSpecificProperties
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3135,7 +3147,7 @@ class Nameplate(aas.Submodel):
         countryOfOrigin: Optional[Union[str, CountryOfOrigin]] = None,
         uniqueFacilityIdentifier: Optional[Union[str, UniqueFacilityIdentifier]] = None,
         companyLogo: Optional[CompanyLogo] = None,
-        markings: Optional[Markings] = None,
+        markings: Optional[Union[Iterable[Markings.Markings_item], Markings]] = None,
         assetSpecificProperties: Optional[AssetSpecificProperties] = None,
         id_short: Optional[str] = r"Nameplate",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3301,6 +3313,11 @@ class Nameplate(aas.Submodel):
             uniqueFacilityIdentifier = self.UniqueFacilityIdentifier(
                 uniqueFacilityIdentifier
             )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if markings is not None and not isinstance(markings, aas.SubmodelElement):
+            markings = self.Markings(markings)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

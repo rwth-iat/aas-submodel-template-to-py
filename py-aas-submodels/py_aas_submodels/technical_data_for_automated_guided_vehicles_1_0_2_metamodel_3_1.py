@@ -564,7 +564,7 @@ class TechnicalDataAGV(aas.Submodel):
                     self,
                     imageFile: ImageFile,
                     imageNote: Optional[Union[aas.LangStringSet, ImageNote]] = None,
-                    id_short: Optional[str] = r"productimages_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(
@@ -647,7 +647,7 @@ class TechnicalDataAGV(aas.Submodel):
 
             def __init__(
                 self,
-                productimages_items: Productimages_item,
+                productimages_items: Iterable[Productimages_item],
                 id_short: Optional[str] = r"ProductImages",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[
@@ -735,9 +735,7 @@ class TechnicalDataAGV(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -840,7 +838,11 @@ class TechnicalDataAGV(aas.Submodel):
             ],
             manufacturerOrderCode: Union[str, ManufacturerOrderCode],
             companyLogo: Optional[CompanyLogo] = None,
-            productImages: Optional[Iterable[ProductImages]] = None,
+            productImages: Optional[
+                Iterable[
+                    Union[Iterable[ProductImages.Productimages_item], ProductImages]
+                ]
+            ] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -944,6 +946,13 @@ class TechnicalDataAGV(aas.Submodel):
                 manufacturerOrderCode = self.ManufacturerOrderCode(
                     manufacturerOrderCode
                 )
+
+            # Build submodel elements from raw values passed in the argument
+            if productImages:
+                productImages = [
+                    i if isinstance(i, aas.SubmodelElement) else self.ProductImages(i)
+                    for i in productImages
+                ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7948,7 +7957,7 @@ class TechnicalDataAGV(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"currentattachments_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[
@@ -8117,9 +8126,7 @@ class TechnicalDataAGV(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8382,9 +8389,7 @@ class TechnicalDataAGV(aas.Submodel):
                             self,
                             optionName: Union[str, OptionName],
                             optionValue: Union[str, OptionValue],
-                            id_short: Optional[
-                                str
-                            ] = r"proprietaryconfigurationoptions_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -8573,9 +8578,7 @@ class TechnicalDataAGV(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8680,10 +8683,20 @@ class TechnicalDataAGV(aas.Submodel):
                         Union[aas.LangStringSet, LoadingRequirements]
                     ] = None,
                     currentAttachments: Optional[
-                        Union[Iterable[str], CurrentAttachments]
+                        Union[
+                            Iterable[
+                                Union[str, CurrentAttachments.Currentattachments_item]
+                            ],
+                            CurrentAttachments,
+                        ]
                     ] = None,
                     proprietaryConfigurationOptions: Optional[
-                        ProprietaryConfigurationOptions
+                        Union[
+                            Iterable[
+                                ProprietaryConfigurationOptions.Proprietaryconfigurationoptions_item
+                            ],
+                            ProprietaryConfigurationOptions,
+                        ]
                     ] = None,
                     id_short: Optional[str] = r"TemporaryTechnicalData",
                     display_name: Optional[
@@ -8775,6 +8788,17 @@ class TechnicalDataAGV(aas.Submodel):
                     ):
                         currentAttachments = self.CurrentAttachments(currentAttachments)
 
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if proprietaryConfigurationOptions is not None and not isinstance(
+                        proprietaryConfigurationOptions, aas.SubmodelElement
+                    ):
+                        proprietaryConfigurationOptions = (
+                            self.ProprietaryConfigurationOptions(
+                                proprietaryConfigurationOptions
+                            )
+                        )
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [
@@ -8823,7 +8847,7 @@ class TechnicalDataAGV(aas.Submodel):
                 communicationAndControl: Optional[CommunicationAndControl] = None,
                 safety: Optional[Safety] = None,
                 temporaryTechnicalData: Optional[TemporaryTechnicalData] = None,
-                id_short: Optional[str] = r"specificdescriptions_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(
@@ -8929,7 +8953,7 @@ class TechnicalDataAGV(aas.Submodel):
 
         def __init__(
             self,
-            specificdescriptions_items: Specificdescriptions_item,
+            specificdescriptions_items: Iterable[Specificdescriptions_item],
             id_short: Optional[str] = r"SpecificDescriptions",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -9011,9 +9035,7 @@ class TechnicalDataAGV(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -9106,7 +9128,14 @@ class TechnicalDataAGV(aas.Submodel):
         self,
         id_: str,
         generalInformation: GeneralInformation,
-        specificDescriptions: Optional[Iterable[SpecificDescriptions]] = None,
+        specificDescriptions: Optional[
+            Iterable[
+                Union[
+                    Iterable[SpecificDescriptions.Specificdescriptions_item],
+                    SpecificDescriptions,
+                ]
+            ]
+        ] = None,
         id_short: Optional[str] = r"TechnicalDataAGV",
         display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={
@@ -9152,6 +9181,17 @@ class TechnicalDataAGV(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build submodel elements from raw values passed in the argument
+        if specificDescriptions:
+            specificDescriptions = [
+                (
+                    i
+                    if isinstance(i, aas.SubmodelElement)
+                    else self.SpecificDescriptions(i)
+                )
+                for i in specificDescriptions
+            ]
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

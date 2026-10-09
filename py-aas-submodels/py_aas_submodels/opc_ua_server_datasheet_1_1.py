@@ -14,7 +14,7 @@ class UAServerDataSheet(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"nodesets_item",
+                    id_short: Optional[str] = None,
                     content_type: Optional[str] = r"text/xml",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -130,9 +130,7 @@ class UAServerDataSheet(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -491,7 +489,7 @@ class UAServerDataSheet(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"supportsecuritypolicyuris_item",
+                    id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -622,9 +620,7 @@ class UAServerDataSheet(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -783,7 +779,9 @@ class UAServerDataSheet(aas.Submodel):
 
         def __init__(
             self,
-            nodeSets: Optional[NodeSets] = None,
+            nodeSets: Optional[
+                Union[Iterable[NodeSets.Nodesets_item], NodeSets]
+            ] = None,
             allowAnonymousUser: Optional[Union[bool, AllowAnonymousUser]] = None,
             supportSecurityModeNone: Optional[
                 Union[int, SupportSecurityModeNone]
@@ -795,7 +793,15 @@ class UAServerDataSheet(aas.Submodel):
                 Union[int, SupportSecurityModeSignEncrypt]
             ] = None,
             supportSecurityPolicyUris: Optional[
-                Union[Iterable[str], SupportSecurityPolicyUris]
+                Union[
+                    Iterable[
+                        Union[
+                            str,
+                            SupportSecurityPolicyUris.Supportsecuritypolicyuris_item,
+                        ]
+                    ],
+                    SupportSecurityPolicyUris,
+                ]
             ] = None,
             supportRedundancy: Optional[Union[bool, SupportRedundancy]] = None,
             id_short: Optional[str] = r"Configuration",
@@ -840,6 +846,11 @@ class UAServerDataSheet(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if nodeSets is not None and not isinstance(nodeSets, aas.SubmodelElement):
+                nodeSets = self.NodeSets(nodeSets)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1909,7 +1920,7 @@ class UAServerDataSheet(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"discoveryurls_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2042,9 +2053,7 @@ class UAServerDataSheet(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2150,7 +2159,12 @@ class UAServerDataSheet(aas.Submodel):
                     discoveryProfileUri: Optional[
                         Union[str, DiscoveryProfileUri]
                     ] = None,
-                    discoveryUrls: Optional[Union[Iterable[str], DiscoveryUrls]] = None,
+                    discoveryUrls: Optional[
+                        Union[
+                            Iterable[Union[str, DiscoveryUrls.Discoveryurls_item]],
+                            DiscoveryUrls,
+                        ]
+                    ] = None,
                     id_short: Optional[str] = r"Server",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -2825,7 +2839,7 @@ class UAServerDataSheet(aas.Submodel):
                         securityPolicyUri: Optional[
                             Union[str, SecurityPolicyUri]
                         ] = None,
-                        id_short: Optional[str] = r"useridentitytokens_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -3002,9 +3016,7 @@ class UAServerDataSheet(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3233,10 +3245,15 @@ class UAServerDataSheet(aas.Submodel):
                 serverCertificate: Optional[ServerCertificate] = None,
                 securityMode: Optional[Union[str, SecurityMode]] = None,
                 securityPolicyUri: Optional[Union[str, SecurityPolicyUri]] = None,
-                userIdentityTokens: Optional[UserIdentityTokens] = None,
+                userIdentityTokens: Optional[
+                    Union[
+                        Iterable[UserIdentityTokens.Useridentitytokens_item],
+                        UserIdentityTokens,
+                    ]
+                ] = None,
                 transportProfileUri: Optional[Union[str, TransportProfileUri]] = None,
                 securityLevel: Optional[Union[int, SecurityLevel]] = None,
-                id_short: Optional[str] = r"endpointdescriptions_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -3299,6 +3316,13 @@ class UAServerDataSheet(aas.Submodel):
                     securityPolicyUri, aas.SubmodelElement
                 ):
                     securityPolicyUri = self.SecurityPolicyUri(securityPolicyUri)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if userIdentityTokens is not None and not isinstance(
+                    userIdentityTokens, aas.SubmodelElement
+                ):
+                    userIdentityTokens = self.UserIdentityTokens(userIdentityTokens)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3412,9 +3436,7 @@ class UAServerDataSheet(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3510,7 +3532,7 @@ class UAServerDataSheet(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"discoveryurls_item",
+                id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3641,9 +3663,7 @@ class UAServerDataSheet(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3737,8 +3757,15 @@ class UAServerDataSheet(aas.Submodel):
         id_: str,
         configuration: Configuration,
         identification: Identification,
-        endpointDescriptions: Optional[EndpointDescriptions] = None,
-        discoveryUrls: Optional[Union[Iterable[str], DiscoveryUrls]] = None,
+        endpointDescriptions: Optional[
+            Union[
+                Iterable[EndpointDescriptions.Endpointdescriptions_item],
+                EndpointDescriptions,
+            ]
+        ] = None,
+        discoveryUrls: Optional[
+            Union[Iterable[Union[str, DiscoveryUrls.Discoveryurls_item]], DiscoveryUrls]
+        ] = None,
         id_short: Optional[str] = r"UAServerDataSheet",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -3778,6 +3805,13 @@ class UAServerDataSheet(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if endpointDescriptions is not None and not isinstance(
+            endpointDescriptions, aas.SubmodelElement
+        ):
+            endpointDescriptions = self.EndpointDescriptions(endpointDescriptions)
 
         # Build a submodel element if a raw value was passed in the argument
 

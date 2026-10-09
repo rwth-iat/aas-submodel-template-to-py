@@ -3053,7 +3053,7 @@ class PurchaseOrder(aas.Submodel):
                     self,
                     codeType: Union[str, CodeType],
                     code: Union[str, Code],
-                    id_short: Optional[str] = r"buyertrackingcodelist_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -3215,9 +3215,7 @@ class PurchaseOrder(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3927,7 +3925,7 @@ class PurchaseOrder(aas.Submodel):
                     taxBase: Optional[Union[float, TaxBase]] = None,
                     exemptionReason: Optional[Union[str, ExemptionReason]] = None,
                     jurisdiction: Optional[Union[str, Jurisdiction]] = None,
-                    id_short: Optional[str] = r"taxdetailstotallist_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -4144,9 +4142,7 @@ class PurchaseOrder(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5365,7 +5361,7 @@ class PurchaseOrder(aas.Submodel):
                         Union[int, PlannedDeliveryDurationInDays]
                     ] = None,
                     scopeOfDelivery: Optional[Union[str, ScopeOfDelivery]] = None,
-                    id_short: Optional[str] = r"deliverydatelist_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -5574,9 +5570,7 @@ class PurchaseOrder(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5731,8 +5725,18 @@ class PurchaseOrder(aas.Submodel):
             buyerDeliveryNoteReferenceIncrement: Optional[
                 Union[str, BuyerDeliveryNoteReferenceIncrement]
             ] = None,
-            buyerTrackingCodeList: Optional[BuyerTrackingCodeList] = None,
-            taxDetailsTotalList: Optional[TaxDetailsTotalList] = None,
+            buyerTrackingCodeList: Optional[
+                Union[
+                    Iterable[BuyerTrackingCodeList.Buyertrackingcodelist_item],
+                    BuyerTrackingCodeList,
+                ]
+            ] = None,
+            taxDetailsTotalList: Optional[
+                Union[
+                    Iterable[TaxDetailsTotalList.Taxdetailstotallist_item],
+                    TaxDetailsTotalList,
+                ]
+            ] = None,
             referenceSubmodelTollDocuments: Optional[
                 Iterable[Union[aas.Reference, ReferenceSubmodelTollDocuments]]
             ] = None,
@@ -5749,7 +5753,11 @@ class PurchaseOrder(aas.Submodel):
                 Iterable[Union[aas.Reference, SpecialTreatmentClassRef]]
             ] = None,
             mediaRef: Optional[Iterable[Union[aas.Reference, MediaRef]]] = None,
-            deliveryDateList: Optional[DeliveryDateList] = None,
+            deliveryDateList: Optional[
+                Union[
+                    Iterable[DeliveryDateList.Deliverydatelist_item], DeliveryDateList
+                ]
+            ] = None,
             id_short: Optional[str] = r"PurchaseOrderInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -6095,6 +6103,22 @@ class PurchaseOrder(aas.Submodel):
                     )
                 )
 
+            # Build a submodel element if a raw value was passed in the argument
+
+            if buyerTrackingCodeList is not None and not isinstance(
+                buyerTrackingCodeList, aas.SubmodelElement
+            ):
+                buyerTrackingCodeList = self.BuyerTrackingCodeList(
+                    buyerTrackingCodeList
+                )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if taxDetailsTotalList is not None and not isinstance(
+                taxDetailsTotalList, aas.SubmodelElement
+            ):
+                taxDetailsTotalList = self.TaxDetailsTotalList(taxDetailsTotalList)
+
             # Build submodel elements from raw values passed in the argument
             if referenceSubmodelTollDocuments:
                 referenceSubmodelTollDocuments = [
@@ -6166,6 +6190,13 @@ class PurchaseOrder(aas.Submodel):
                     i if isinstance(i, aas.SubmodelElement) else self.MediaRef(i)
                     for i in mediaRef
                 ]
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if deliveryDateList is not None and not isinstance(
+                deliveryDateList, aas.SubmodelElement
+            ):
+                deliveryDateList = self.DeliveryDateList(deliveryDateList)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6553,7 +6584,7 @@ class PurchaseOrder(aas.Submodel):
                 aASCatalogReferenceID: Optional[
                     Union[xsd.AnyURI, AASCatalogReferenceID]
                 ] = None,
-                id_short: Optional[str] = r"cataloguereferencelist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -6738,9 +6769,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8264,7 +8293,7 @@ class PurchaseOrder(aas.Submodel):
                 paymentDays: Optional[Union[int, PaymentDays]] = None,
                 discountPercent: Optional[Union[float, DiscountPercent]] = None,
                 discountDays: Optional[Union[int, DiscountDays]] = None,
-                id_short: Optional[str] = r"modeofpaymentlist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -8481,9 +8510,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -9038,7 +9065,7 @@ class PurchaseOrder(aas.Submodel):
                 location3: Optional[Union[str, Location3]] = None,
                 transferLocation: Optional[Union[str, TransferLocation]] = None,
                 transportRemark: Optional[Union[str, TransportRemark]] = None,
-                id_short: Optional[str] = r"incotermslist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -9235,9 +9262,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -9725,7 +9750,7 @@ class PurchaseOrder(aas.Submodel):
                 regionCodeEmbargoTarget: Optional[
                     Iterable[Union[str, RegionCodeEmbargoTarget]]
                 ] = None,
-                id_short: Optional[str] = r"internationalrestrictionlist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -9876,7 +9901,7 @@ class PurchaseOrder(aas.Submodel):
         def __init__(
             self,
             internationalrestrictionlist_items: Optional[
-                Internationalrestrictionlist_item
+                Iterable[Internationalrestrictionlist_item]
             ] = None,
             id_short: Optional[str] = r"InternationalRestrictionList",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
@@ -9942,9 +9967,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -10203,7 +10226,7 @@ class PurchaseOrder(aas.Submodel):
                 self,
                 certificationType: Union[str, CertificationType],
                 certificationRegulation: Union[str, CertificationRegulation],
-                id_short: Optional[str] = r"requestedcertificationslist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -10369,9 +10392,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -10466,7 +10487,7 @@ class PurchaseOrder(aas.Submodel):
 
             def __init__(
                 self,
-                id_short: Optional[str] = r"specialtreatmentclasslist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -10636,9 +10657,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -43965,7 +43984,7 @@ class PurchaseOrder(aas.Submodel):
                 projectName: Optional[Union[str, ProjectName]] = None,
                 billingCenterCode: Optional[Union[str, BillingCenterCode]] = None,
                 billingCenterName: Optional[Union[str, BillingCenterName]] = None,
-                id_short: Optional[str] = r"costcenterslist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -44194,9 +44213,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -44621,7 +44638,7 @@ class PurchaseOrder(aas.Submodel):
                 mimeType: Optional[Union[str, MimeType]] = None,
                 mimePurpose: Optional[Union[str, MimePurpose]] = None,
                 comment: Optional[Union[str, Comment]] = None,
-                id_short: Optional[str] = r"attachedmedialist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -44803,9 +44820,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -50112,7 +50127,7 @@ class PurchaseOrder(aas.Submodel):
                     def __init__(
                         self,
                         orderQuantity: Optional[Union[float, OrderQuantity]] = None,
-                        id_short: Optional[str] = r"partialdeliverylist_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -50269,9 +50284,7 @@ class PurchaseOrder(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -50948,7 +50961,7 @@ class PurchaseOrder(aas.Submodel):
                             Union[int, PlannedDeliveryDurationInDays]
                         ] = None,
                         scopeOfDelivery: Optional[Union[str, ScopeOfDelivery]] = None,
-                        id_short: Optional[str] = r"deliverydatelist_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -51166,9 +51179,7 @@ class PurchaseOrder(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -51420,7 +51431,7 @@ class PurchaseOrder(aas.Submodel):
                         self,
                         codeType: Union[str, CodeType],
                         code: Union[str, Code],
-                        id_short: Optional[str] = r"scancodeslist_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -51582,9 +51593,7 @@ class PurchaseOrder(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -51761,7 +51770,7 @@ class PurchaseOrder(aas.Submodel):
                         qualityRequirement: Optional[
                             Iterable[Union[str, QualityRequirement]]
                         ] = None,
-                        id_short: Optional[str] = r"qualityrequirements_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -51907,9 +51916,7 @@ class PurchaseOrder(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -52242,9 +52249,7 @@ class PurchaseOrder(aas.Submodel):
                         productnamePartySpecific: Optional[
                             Union[str, ProductnamePartySpecific]
                         ] = None,
-                        id_short: Optional[
-                            str
-                        ] = r"listproductidsbusinesspartners_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -52423,9 +52428,7 @@ class PurchaseOrder(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -52602,7 +52605,7 @@ class PurchaseOrder(aas.Submodel):
                         excludedIngredient: Optional[
                             Iterable[Union[str, ExcludedIngredient]]
                         ] = None,
-                        id_short: Optional[str] = r"excludedingredientslist_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -52748,9 +52751,7 @@ class PurchaseOrder(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -52852,7 +52853,9 @@ class PurchaseOrder(aas.Submodel):
                 productDescription: Union[str, ProductDescription],
                 scopeOfDelivery: Union[str, ScopeOfDelivery],
                 productPrice: ProductPrice,
-                deliveryDateList: DeliveryDateList,
+                deliveryDateList: Union[
+                    Iterable[DeliveryDateList.Deliverydatelist_item], DeliveryDateList
+                ],
                 refPurchaseRequestNotificationItem: Optional[
                     Union[str, RefPurchaseRequestNotificationItem]
                 ] = None,
@@ -52924,14 +52927,36 @@ class PurchaseOrder(aas.Submodel):
                 aASItemReference: Optional[
                     Union[aas.Reference, AASItemReference]
                 ] = None,
-                partialDeliveryList: Optional[PartialDeliveryList] = None,
-                scanCodesList: Optional[ScanCodesList] = None,
-                qualityRequirements: Optional[QualityRequirements] = None,
-                listProductIDsBusinessPartners: Optional[
-                    ListProductIDsBusinessPartners
+                partialDeliveryList: Optional[
+                    Union[
+                        Iterable[PartialDeliveryList.Partialdeliverylist_item],
+                        PartialDeliveryList,
+                    ]
                 ] = None,
-                excludedIngredientsList: Optional[ExcludedIngredientsList] = None,
-                id_short: Optional[str] = r"itemlist_item",
+                scanCodesList: Optional[
+                    Union[Iterable[ScanCodesList.Scancodeslist_item], ScanCodesList]
+                ] = None,
+                qualityRequirements: Optional[
+                    Union[
+                        Iterable[QualityRequirements.Qualityrequirements_item],
+                        QualityRequirements,
+                    ]
+                ] = None,
+                listProductIDsBusinessPartners: Optional[
+                    Union[
+                        Iterable[
+                            ListProductIDsBusinessPartners.Listproductidsbusinesspartners_item
+                        ],
+                        ListProductIDsBusinessPartners,
+                    ]
+                ] = None,
+                excludedIngredientsList: Optional[
+                    Union[
+                        Iterable[ExcludedIngredientsList.Excludedingredientslist_item],
+                        ExcludedIngredientsList,
+                    ]
+                ] = None,
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -53331,6 +53356,54 @@ class PurchaseOrder(aas.Submodel):
                 ):
                     aASItemReference = self.AASItemReference(aASItemReference)
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if partialDeliveryList is not None and not isinstance(
+                    partialDeliveryList, aas.SubmodelElement
+                ):
+                    partialDeliveryList = self.PartialDeliveryList(partialDeliveryList)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if deliveryDateList is not None and not isinstance(
+                    deliveryDateList, aas.SubmodelElement
+                ):
+                    deliveryDateList = self.DeliveryDateList(deliveryDateList)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if scanCodesList is not None and not isinstance(
+                    scanCodesList, aas.SubmodelElement
+                ):
+                    scanCodesList = self.ScanCodesList(scanCodesList)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if qualityRequirements is not None and not isinstance(
+                    qualityRequirements, aas.SubmodelElement
+                ):
+                    qualityRequirements = self.QualityRequirements(qualityRequirements)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if listProductIDsBusinessPartners is not None and not isinstance(
+                    listProductIDsBusinessPartners, aas.SubmodelElement
+                ):
+                    listProductIDsBusinessPartners = (
+                        self.ListProductIDsBusinessPartners(
+                            listProductIDsBusinessPartners
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if excludedIngredientsList is not None and not isinstance(
+                    excludedIngredientsList, aas.SubmodelElement
+                ):
+                    excludedIngredientsList = self.ExcludedIngredientsList(
+                        excludedIngredientsList
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -53477,9 +53550,7 @@ class PurchaseOrder(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -53573,17 +53644,47 @@ class PurchaseOrder(aas.Submodel):
         id_: str,
         purchaseOrderInformation: PurchaseOrderInformation,
         involvedParties: InvolvedParties,
-        itemList: ItemList,
-        catalogueReferenceList: Optional[CatalogueReferenceList] = None,
-        modeOfPaymentList: Optional[ModeOfPaymentList] = None,
-        incotermsList: Optional[IncotermsList] = None,
-        internationalRestrictionList: Optional[
-            Iterable[InternationalRestrictionList]
+        itemList: Union[Iterable[ItemList.Itemlist_item], ItemList],
+        catalogueReferenceList: Optional[
+            Union[
+                Iterable[CatalogueReferenceList.Cataloguereferencelist_item],
+                CatalogueReferenceList,
+            ]
         ] = None,
-        requestedCertificationsList: Optional[RequestedCertificationsList] = None,
-        specialTreatmentClassList: Optional[SpecialTreatmentClassList] = None,
-        costCentersList: Optional[CostCentersList] = None,
-        attachedMediaList: Optional[AttachedMediaList] = None,
+        modeOfPaymentList: Optional[
+            Union[Iterable[ModeOfPaymentList.Modeofpaymentlist_item], ModeOfPaymentList]
+        ] = None,
+        incotermsList: Optional[
+            Union[Iterable[IncotermsList.Incotermslist_item], IncotermsList]
+        ] = None,
+        internationalRestrictionList: Optional[
+            Iterable[
+                Union[
+                    Iterable[
+                        InternationalRestrictionList.Internationalrestrictionlist_item
+                    ],
+                    InternationalRestrictionList,
+                ]
+            ]
+        ] = None,
+        requestedCertificationsList: Optional[
+            Union[
+                Iterable[RequestedCertificationsList.Requestedcertificationslist_item],
+                RequestedCertificationsList,
+            ]
+        ] = None,
+        specialTreatmentClassList: Optional[
+            Union[
+                Iterable[SpecialTreatmentClassList.Specialtreatmentclasslist_item],
+                SpecialTreatmentClassList,
+            ]
+        ] = None,
+        costCentersList: Optional[
+            Union[Iterable[CostCentersList.Costcenterslist_item], CostCentersList]
+        ] = None,
+        attachedMediaList: Optional[
+            Union[Iterable[AttachedMediaList.Attachedmedialist_item], AttachedMediaList]
+        ] = None,
         id_short: Optional[str] = r"PurchaseOrder",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -53615,6 +53716,75 @@ class PurchaseOrder(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if catalogueReferenceList is not None and not isinstance(
+            catalogueReferenceList, aas.SubmodelElement
+        ):
+            catalogueReferenceList = self.CatalogueReferenceList(catalogueReferenceList)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if modeOfPaymentList is not None and not isinstance(
+            modeOfPaymentList, aas.SubmodelElement
+        ):
+            modeOfPaymentList = self.ModeOfPaymentList(modeOfPaymentList)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if incotermsList is not None and not isinstance(
+            incotermsList, aas.SubmodelElement
+        ):
+            incotermsList = self.IncotermsList(incotermsList)
+
+        # Build submodel elements from raw values passed in the argument
+        if internationalRestrictionList:
+            internationalRestrictionList = [
+                (
+                    i
+                    if isinstance(i, aas.SubmodelElement)
+                    else self.InternationalRestrictionList(i)
+                )
+                for i in internationalRestrictionList
+            ]
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if requestedCertificationsList is not None and not isinstance(
+            requestedCertificationsList, aas.SubmodelElement
+        ):
+            requestedCertificationsList = self.RequestedCertificationsList(
+                requestedCertificationsList
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if specialTreatmentClassList is not None and not isinstance(
+            specialTreatmentClassList, aas.SubmodelElement
+        ):
+            specialTreatmentClassList = self.SpecialTreatmentClassList(
+                specialTreatmentClassList
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if costCentersList is not None and not isinstance(
+            costCentersList, aas.SubmodelElement
+        ):
+            costCentersList = self.CostCentersList(costCentersList)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if attachedMediaList is not None and not isinstance(
+            attachedMediaList, aas.SubmodelElement
+        ):
+            attachedMediaList = self.AttachedMediaList(attachedMediaList)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if itemList is not None and not isinstance(itemList, aas.SubmodelElement):
+            itemList = self.ItemList(itemList)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

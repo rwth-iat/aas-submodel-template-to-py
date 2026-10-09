@@ -441,7 +441,7 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"productimages_item",
+                    id_short: Optional[str] = None,
                     content_type: Optional[str] = r"image/png",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -612,9 +612,7 @@ class TechnicalData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -873,7 +871,9 @@ class TechnicalData(aas.Submodel):
             batteryMass: Union[xsd.Float, BatteryMass],
             warrantyInformation: WarrantyInformation,
             companyLogo: Optional[CompanyLogo] = None,
-            productImages: Optional[ProductImages] = None,
+            productImages: Optional[
+                Union[Iterable[ProductImages.Productimages_item], ProductImages]
+            ] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -958,6 +958,13 @@ class TechnicalData(aas.Submodel):
                 batteryMass, aas.SubmodelElement
             ):
                 batteryMass = self.BatteryMass(batteryMass)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if productImages is not None and not isinstance(
+                productImages, aas.SubmodelElement
+            ):
+                productImages = self.ProductImages(productImages)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3268,7 +3275,7 @@ class TechnicalData(aas.Submodel):
                         self,
                         atSoc: Union[xsd.UnsignedInt, AtSoc],
                         powerCapabilityAt: Union[xsd.Float, PowerCapabilityAt],
-                        id_short: Optional[str] = r"originalpowercapability_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -3446,9 +3453,7 @@ class TechnicalData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3546,7 +3551,10 @@ class TechnicalData(aas.Submodel):
                     xsd.Float, MaximumPermittedBatteryPower
                 ],
                 powerFade: Union[xsd.Float, PowerFade],
-                originalPowerCapability: OriginalPowerCapability,
+                originalPowerCapability: Union[
+                    Iterable[OriginalPowerCapability.Originalpowercapability_item],
+                    OriginalPowerCapability,
+                ],
                 ratioNominalBatteryPowerAndBatteryEnergy: Optional[
                     Union[xsd.Float, RatioNominalBatteryPowerAndBatteryEnergy]
                 ] = None,
@@ -3639,6 +3647,15 @@ class TechnicalData(aas.Submodel):
                         self.RatioNominalBatteryPowerAndBatteryEnergy(
                             ratioNominalBatteryPowerAndBatteryEnergy
                         )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if originalPowerCapability is not None and not isinstance(
+                    originalPowerCapability, aas.SubmodelElement
+                ):
+                    originalPowerCapability = self.OriginalPowerCapability(
+                        originalPowerCapability
                     )
 
                 # Add all passed/initialized submodel elements to a single list

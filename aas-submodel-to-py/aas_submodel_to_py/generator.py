@@ -91,10 +91,38 @@ class SubmodelCodegen:
             return f"{MODEL_ALIAS}.LangStringSet"
         elif isinstance(se, ReferenceElement):
             return f"{MODEL_ALIAS}.Reference"
-        elif isinstance(se, SubmodelElementList) \
-                and se.type_value_list_element is Property \
-                and se.value_type_list_element is not None:
-            return f"Iterable[{StringHandler.reprify(se.value_type_list_element)}]"
+        elif isinstance(se, SubmodelElementList):
+            # Lists can be built from their items, which can be raw values as well
+            return f"Iterable[{self.get_list_item_typehint(se, qualified=True)}]"
+        return None
+
+    def get_list_item_typehint(self, se_list: SubmodelElementList, qualified: bool = False) -> str:
+        """Return the typehint of an item of `se_list`, qualified with the name of the
+        list class (as needed outside of it), if `qualified`"""
+        list_item = next(iter(se_list), None)
+        if list_item is None:
+            # Without an item in the template, items are only typed by type_value_list_element
+            typehint = util.qualified_name(se_list.type_value_list_element)
+            if se_list.type_value_list_element is Property and se_list.value_type_list_element is not None:
+                typehint = f"Union[{StringHandler.reprify(se_list.value_type_list_element)}, {typehint}]"
+            return typehint
+
+        typehint = NamingGenerator.create_specific_referable_cls_name(list_item)
+        if qualified:
+            typehint = f"{NamingGenerator.create_specific_referable_cls_name(se_list)}.{typehint}"
+        raw_value_typehint = self.get_raw_value_typehint(list_item)
+        if raw_value_typehint is not None:
+            typehint = f"Union[{raw_value_typehint}, {typehint}]"
+        return typehint
+
+    def get_list_item_raw_value_builder(self, se_list: SubmodelElementList, raw_value: str) -> Optional[str]:
+        """Return code building an item of `se_list` in its list class from the raw value in the
+        variable `raw_value`, or None if items can not be built from raw values"""
+        list_item = next(iter(se_list), None)
+        if list_item is not None:
+            return self.get_raw_value_builder(list_item, raw_value)
+        if se_list.type_value_list_element is Property and se_list.value_type_list_element is not None:
+            return f"{MODEL_ALIAS}.Property(None, value_type_list_element, {raw_value})"
         return None
 
     def get_raw_value_builder(self, se: SubmodelElement, raw_value: str) -> Optional[str]:
@@ -187,6 +215,10 @@ class SubmodelCodegen:
 
         if remove_numeric_ending_from_id_short and hasattr(referable, "id_short"):
             referable_kwargs["id_short"] = NamingGenerator.create_id_short_stem(referable)
+        if isinstance(referable.parent, SubmodelElementList):
+            # IdShorts of list items are optional since metamodel V3.1 (AASd-120 was removed),
+            # but must be unique: a default idShort would be the same for all items
+            referable_kwargs["id_short"] = None
 
         # Find and save args with mutable defaults to kwargs_with_mutable_defaults
         # Set defaults of these args to None
@@ -218,23 +250,22 @@ class SubmodelCodegen:
         render_kwargs = self.default_referable_render_kwargs(se_list, exclude_from_args=["value"])
 
         list_item = next(iter(se_list), None)
-        se_list_cls_name = render_kwargs["cls_name"]
-        list_item_cls_name = f"{se_list_cls_name}_item"
-        list_items_arg = f"{se_list_cls_name}_items".lower()
+        list_items_arg = f"{render_kwargs['cls_name']}_items".lower()
 
-        if list_item:
-            list_item._id_short = list_item_cls_name.lower()
-            embedded_se_classes = self.gen_cls_for_se(list_item)
+        # The items argument always takes several items, whose cardinality qualifier
+        # (if any) tells if the list may be empty
+        typehint = f"Iterable[{self.get_list_item_typehint(se_list)}]"
+        if list_item is None or ReferableHandler.is_optional(list_item):
+            typehint = f"Optional[{typehint}]"
+        render_kwargs["typehints"][list_items_arg] = typehint
+        builder = self.get_list_item_raw_value_builder(se_list, raw_value="i")
+        if builder is not None:
+            render_kwargs["raw_value_builders"] = {list_items_arg: {"iterable": True, "code": builder}}
 
-            # Adjust default id_short value in embedded_se_classes, so that
-            # complies with the spec, that id_short is None for list items
-            pattern = f"id_short: Optional[str]='{list_item_cls_name.lower()}',"
-            replacement = "id_short: Optional[str]=None,"
-            embedded_se_classes = embedded_se_classes.replace(pattern, replacement)
-
-            self.add_se_arg_render_kwargs(render_kwargs, list_item, list_items_arg)
-            render_kwargs.update(before_init_content=embedded_se_classes,
-                                 args_for_submodel_elements=[list_items_arg])
+        if list_item is not None:
+            render_kwargs["before_init_content"] = self.gen_cls_for_se(list_item)
+        # Don't append an index to idShorts of items: they are None by default, explicit ones are kept
+        render_kwargs.update(args_for_submodel_elements=[list_items_arg], index_id_shorts=False)
         return self.render_cls_with_template(template, **render_kwargs)
 
     def gen_cls_for_se_collection(self,

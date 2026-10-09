@@ -766,7 +766,7 @@ class DppMetadata(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"contentspecificationids_item",
+                id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[
@@ -930,9 +930,7 @@ class DppMetadata(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1033,7 +1031,12 @@ class DppMetadata(aas.Submodel):
         economicOperatorId: Union[str, EconomicOperatorId],
         facilityId: Optional[Union[str, FacilityId]] = None,
         contentSpecificationIds: Optional[
-            Union[Iterable[str], ContentSpecificationIds]
+            Union[
+                Iterable[
+                    Union[str, ContentSpecificationIds.Contentspecificationids_item]
+                ],
+                ContentSpecificationIds,
+            ]
         ] = None,
         id_short: Optional[str] = r"DppMetadata",
         display_name: Optional[aas.MultiLanguageNameType] = None,

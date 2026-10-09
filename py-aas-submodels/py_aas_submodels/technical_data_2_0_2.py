@@ -576,7 +576,7 @@ class TechnicalData(aas.Submodel):
                     self,
                     imageFile: ImageFile,
                     imageNote: Optional[Union[aas.LangStringSet, ImageNote]] = None,
-                    id_short: Optional[str] = r"productimages_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(
@@ -659,7 +659,7 @@ class TechnicalData(aas.Submodel):
 
             def __init__(
                 self,
-                productimages_items: Productimages_item,
+                productimages_items: Iterable[Productimages_item],
                 id_short: Optional[str] = r"ProductImages",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[
@@ -741,9 +741,7 @@ class TechnicalData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -844,7 +842,9 @@ class TechnicalData(aas.Submodel):
             manufacturerArticleNumber: Union[str, ManufacturerArticleNumber],
             manufacturerOrderCode: Union[str, ManufacturerOrderCode],
             companyLogo: Optional[CompanyLogo] = None,
-            productImages: Optional[ProductImages] = None,
+            productImages: Optional[
+                Union[Iterable[ProductImages.Productimages_item], ProductImages]
+            ] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -940,6 +940,13 @@ class TechnicalData(aas.Submodel):
                 manufacturerOrderCode = self.ManufacturerOrderCode(
                     manufacturerOrderCode
                 )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if productImages is not None and not isinstance(
+                productImages, aas.SubmodelElement
+            ):
+                productImages = self.ProductImages(productImages)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1683,7 +1690,7 @@ class TechnicalData(aas.Submodel):
                 referenceToTechnicalPropertyArea: Optional[
                     Union[aas.Reference, ReferenceToTechnicalPropertyArea]
                 ] = None,
-                id_short: Optional[str] = r"productclassifications_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(
@@ -1831,7 +1838,7 @@ class TechnicalData(aas.Submodel):
 
         def __init__(
             self,
-            productclassifications_items: Productclassifications_item,
+            productclassifications_items: Iterable[Productclassifications_item],
             id_short: Optional[str] = r"ProductClassifications",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -1914,9 +1921,7 @@ class TechnicalData(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2177,6 +2182,9 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
+                        arbitrarysml_items: Optional[
+                            Iterable[aas.SubmodelElement]
+                        ] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2234,15 +2242,13 @@ class TechnicalData(aas.Submodel):
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in []:
+                        for se_arg in [arbitrarysml_items]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2539,7 +2545,9 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[Iterable[ArbitrarySML]] = None,
+                    arbitrarySML: Optional[
+                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                    ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
                     ] = None,
@@ -2599,6 +2607,17 @@ class TechnicalData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitrarySML:
+                        arbitrarySML = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.ArbitrarySML(i)
+                            )
+                            for i in arbitrarySML
+                        ]
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -2837,6 +2856,9 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
+                        arbitrarysml_items: Optional[
+                            Iterable[aas.SubmodelElement]
+                        ] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2894,15 +2916,13 @@ class TechnicalData(aas.Submodel):
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in []:
+                        for se_arg in [arbitrarysml_items]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3199,7 +3219,9 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[Iterable[ArbitrarySML]] = None,
+                    arbitrarySML: Optional[
+                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                    ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
                     ] = None,
@@ -3259,6 +3281,17 @@ class TechnicalData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitrarySML:
+                        arbitrarySML = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.ArbitrarySML(i)
+                            )
+                            for i in arbitrarySML
+                        ]
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -3333,6 +3366,7 @@ class TechnicalData(aas.Submodel):
 
                 def __init__(
                     self,
+                    arbitrarysml_items: Optional[Iterable[aas.SubmodelElement]] = None,
                     id_short: Optional[str] = r"ArbitrarySML",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3390,15 +3424,13 @@ class TechnicalData(aas.Submodel):
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [arbitrarysml_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3711,7 +3743,9 @@ class TechnicalData(aas.Submodel):
                 self,
                 section: Optional[Iterable[Section]] = None,
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                arbitrarySML: Optional[Iterable[ArbitrarySML]] = None,
+                arbitrarySML: Optional[
+                    Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                ] = None,
                 arbitraryProperty: Optional[
                     Iterable[Union[str, ArbitraryProperty]]
                 ] = None,
@@ -3721,7 +3755,7 @@ class TechnicalData(aas.Submodel):
                 arbitraryRange: Optional[
                     Iterable[Union[Tuple[str, str], ArbitraryRange]]
                 ] = None,
-                id_short: Optional[str] = r"technicalpropertyareas_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(
@@ -3768,6 +3802,17 @@ class TechnicalData(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # Build submodel elements from raw values passed in the argument
+                if arbitrarySML:
+                    arbitrarySML = [
+                        (
+                            i
+                            if isinstance(i, aas.SubmodelElement)
+                            else self.ArbitrarySML(i)
+                        )
+                        for i in arbitrarySML
+                    ]
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryProperty:
@@ -3840,7 +3885,7 @@ class TechnicalData(aas.Submodel):
 
         def __init__(
             self,
-            technicalpropertyareas_items: Technicalpropertyareas_item,
+            technicalpropertyareas_items: Iterable[Technicalpropertyareas_item],
             id_short: Optional[str] = r"TechnicalPropertyAreas",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -3923,9 +3968,7 @@ class TechnicalData(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4460,6 +4503,9 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
+                        arbitrarysml_items: Optional[
+                            Iterable[aas.SubmodelElement]
+                        ] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -4517,15 +4563,13 @@ class TechnicalData(aas.Submodel):
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in []:
+                        for se_arg in [arbitrarysml_items]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4840,7 +4884,9 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[Iterable[ArbitrarySML]] = None,
+                    arbitrarySML: Optional[
+                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                    ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
                     ] = None,
@@ -4900,6 +4946,17 @@ class TechnicalData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitrarySML:
+                        arbitrarySML = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.ArbitrarySML(i)
+                            )
+                            for i in arbitrarySML
+                        ]
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -5144,6 +5201,9 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
+                        arbitrarysml_items: Optional[
+                            Iterable[aas.SubmodelElement]
+                        ] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -5201,15 +5261,13 @@ class TechnicalData(aas.Submodel):
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in []:
+                        for se_arg in [arbitrarysml_items]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5524,7 +5582,9 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[Iterable[ArbitrarySML]] = None,
+                    arbitrarySML: Optional[
+                        Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                    ] = None,
                     arbitraryProperty: Optional[
                         Iterable[Union[str, ArbitraryProperty]]
                     ] = None,
@@ -5584,6 +5644,17 @@ class TechnicalData(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # Build submodel elements from raw values passed in the argument
+                    if arbitrarySML:
+                        arbitrarySML = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.ArbitrarySML(i)
+                            )
+                            for i in arbitrarySML
+                        ]
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
@@ -5658,6 +5729,7 @@ class TechnicalData(aas.Submodel):
 
                 def __init__(
                     self,
+                    arbitrarysml_items: Optional[Iterable[aas.SubmodelElement]] = None,
                     id_short: Optional[str] = r"ArbitrarySML",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -5715,15 +5787,13 @@ class TechnicalData(aas.Submodel):
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in []:
+                    for se_arg in [arbitrarysml_items]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6036,7 +6106,9 @@ class TechnicalData(aas.Submodel):
                 self,
                 section: Optional[Iterable[Section]] = None,
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                arbitrarySML: Optional[Iterable[ArbitrarySML]] = None,
+                arbitrarySML: Optional[
+                    Iterable[Union[Iterable[aas.SubmodelElement], ArbitrarySML]]
+                ] = None,
                 arbitraryProperty: Optional[
                     Iterable[Union[str, ArbitraryProperty]]
                 ] = None,
@@ -6046,7 +6118,7 @@ class TechnicalData(aas.Submodel):
                 arbitraryRange: Optional[
                     Iterable[Union[Tuple[str, str], ArbitraryRange]]
                 ] = None,
-                id_short: Optional[str] = r"specificdescriptions_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(
@@ -6111,6 +6183,17 @@ class TechnicalData(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                # Build submodel elements from raw values passed in the argument
+                if arbitrarySML:
+                    arbitrarySML = [
+                        (
+                            i
+                            if isinstance(i, aas.SubmodelElement)
+                            else self.ArbitrarySML(i)
+                        )
+                        for i in arbitrarySML
+                    ]
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryProperty:
@@ -6183,7 +6266,7 @@ class TechnicalData(aas.Submodel):
 
         def __init__(
             self,
-            specificdescriptions_items: Specificdescriptions_item,
+            specificdescriptions_items: Iterable[Specificdescriptions_item],
             id_short: Optional[str] = r"SpecificDescriptions",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -6266,9 +6349,7 @@ class TechnicalData(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6361,10 +6442,25 @@ class TechnicalData(aas.Submodel):
         self,
         id_: str,
         generalInformation: GeneralInformation,
-        productClassifications: Optional[ProductClassifications] = None,
-        technicalPropertyAreas: Optional[TechnicalPropertyAreas] = None,
+        productClassifications: Optional[
+            Union[
+                Iterable[ProductClassifications.Productclassifications_item],
+                ProductClassifications,
+            ]
+        ] = None,
+        technicalPropertyAreas: Optional[
+            Union[
+                Iterable[TechnicalPropertyAreas.Technicalpropertyareas_item],
+                TechnicalPropertyAreas,
+            ]
+        ] = None,
         furtherInformation: Optional[FurtherInformation] = None,
-        specificDescriptions: Optional[SpecificDescriptions] = None,
+        specificDescriptions: Optional[
+            Union[
+                Iterable[SpecificDescriptions.Specificdescriptions_item],
+                SpecificDescriptions,
+            ]
+        ] = None,
         id_short: Optional[str] = r"TechnicalData",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -6410,6 +6506,27 @@ class TechnicalData(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if productClassifications is not None and not isinstance(
+            productClassifications, aas.SubmodelElement
+        ):
+            productClassifications = self.ProductClassifications(productClassifications)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if technicalPropertyAreas is not None and not isinstance(
+            technicalPropertyAreas, aas.SubmodelElement
+        ):
+            technicalPropertyAreas = self.TechnicalPropertyAreas(technicalPropertyAreas)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if specificDescriptions is not None and not isinstance(
+            specificDescriptions, aas.SubmodelElement
+        ):
+            specificDescriptions = self.SpecificDescriptions(specificDescriptions)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

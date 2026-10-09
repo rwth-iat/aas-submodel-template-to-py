@@ -1458,7 +1458,7 @@ class BatteryNameplate(aas.Submodel):
                 markingAdditionalText: Optional[
                     Iterable[Union[str, MarkingAdditionalText]]
                 ] = None,
-                id_short: Optional[str] = r"markings_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"markings 00"}),
@@ -1696,9 +1696,7 @@ class BatteryNameplate(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1794,7 +1792,7 @@ class BatteryNameplate(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"eudeclarationofconformity_item",
+                id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[
@@ -1957,9 +1955,7 @@ class BatteryNameplate(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2055,7 +2051,7 @@ class BatteryNameplate(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"resultsoftestreportsprovingcompliance_item",
+                id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[
@@ -2218,9 +2214,7 @@ class BatteryNameplate(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2320,10 +2314,21 @@ class BatteryNameplate(aas.Submodel):
         uniqueFacilityIdentifier: Union[str, UniqueFacilityIdentifier],
         lifeCycleStage: Union[str, LifeCycleStage],
         manufacturerIdentifier: Union[str, ManufacturerIdentifier],
-        markings: Markings,
-        eUDeclarationOfConformity: Union[Iterable[str], EUDeclarationOfConformity],
+        markings: Union[Iterable[Markings.Markings_item], Markings],
+        eUDeclarationOfConformity: Union[
+            Iterable[
+                Union[str, EUDeclarationOfConformity.Eudeclarationofconformity_item]
+            ],
+            EUDeclarationOfConformity,
+        ],
         resultsOfTestReportsProvingCompliance: Union[
-            Iterable[str], ResultsOfTestReportsProvingCompliance
+            Iterable[
+                Union[
+                    str,
+                    ResultsOfTestReportsProvingCompliance.Resultsoftestreportsprovingcompliance_item,
+                ]
+            ],
+            ResultsOfTestReportsProvingCompliance,
         ],
         dateOfPuttingIntoService: Optional[
             Union[xsd.Date, DateOfPuttingIntoService]
@@ -2464,6 +2469,11 @@ class BatteryNameplate(aas.Submodel):
             manufacturerIdentifier, aas.SubmodelElement
         ):
             manufacturerIdentifier = self.ManufacturerIdentifier(manufacturerIdentifier)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if markings is not None and not isinstance(markings, aas.SubmodelElement):
+            markings = self.Markings(markings)
 
         # Build a submodel element if a raw value was passed in the argument
 

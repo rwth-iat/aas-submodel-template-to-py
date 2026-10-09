@@ -848,7 +848,7 @@ class MaterialComposition(aas.Submodel):
                 batteryMaterialMass: Optional[
                     Union[xsd.Float, BatteryMaterialMass]
                 ] = None,
-                id_short: Optional[str] = r"batterymaterials_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"battery material"}),
@@ -1024,9 +1024,7 @@ class MaterialComposition(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1373,7 +1371,7 @@ class MaterialComposition(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"hazardoussubstanceimpact_item",
+                        id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
@@ -1531,9 +1529,7 @@ class MaterialComposition(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1987,10 +1983,18 @@ class MaterialComposition(aas.Submodel):
                     Union[float, HazardousSubstanceConcentration]
                 ] = None,
                 hazardousSubstanceImpact: Optional[
-                    Union[Iterable[str], HazardousSubstanceImpact]
+                    Union[
+                        Iterable[
+                            Union[
+                                str,
+                                HazardousSubstanceImpact.Hazardoussubstanceimpact_item,
+                            ]
+                        ],
+                        HazardousSubstanceImpact,
+                    ]
                 ] = None,
                 hazardousSubstanceLocation: Optional[HazardousSubstanceLocation] = None,
-                id_short: Optional[str] = r"hazardoussubstances_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance"}),
@@ -2184,9 +2188,7 @@ class MaterialComposition(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2279,8 +2281,12 @@ class MaterialComposition(aas.Submodel):
         self,
         id_: str,
         batteryChemistry: BatteryChemistry,
-        batteryMaterials: BatteryMaterials,
-        hazardousSubstances: HazardousSubstances,
+        batteryMaterials: Union[
+            Iterable[BatteryMaterials.Batterymaterials_item], BatteryMaterials
+        ],
+        hazardousSubstances: Union[
+            Iterable[HazardousSubstances.Hazardoussubstances_item], HazardousSubstances
+        ],
         id_short: Optional[str] = r"MaterialComposition",
         display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"material composition"}
@@ -2321,6 +2327,20 @@ class MaterialComposition(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if batteryMaterials is not None and not isinstance(
+            batteryMaterials, aas.SubmodelElement
+        ):
+            batteryMaterials = self.BatteryMaterials(batteryMaterials)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if hazardousSubstances is not None and not isinstance(
+            hazardousSubstances, aas.SubmodelElement
+        ):
+            hazardousSubstances = self.HazardousSubstances(hazardousSubstances)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

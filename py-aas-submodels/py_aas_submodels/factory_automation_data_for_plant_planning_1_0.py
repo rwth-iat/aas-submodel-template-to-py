@@ -416,7 +416,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 self,
                 onOff: Union[bool, OnOff],
                 relationBetweenPropertyAndAttribute: RelationBetweenPropertyAndAttribute,
-                id_short: Optional[str] = r"automationmlattributeandinterfacelist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"On/Off"}),
@@ -515,7 +515,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
 
         def __init__(
             self,
-            automationmlattributeandinterfacelist_items: Automationmlattributeandinterfacelist_item,
+            automationmlattributeandinterfacelist_items: Iterable[
+                Automationmlattributeandinterfacelist_item
+            ],
             id_short: Optional[str] = r"AutomationMLAttributeAndInterfaceList",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -589,9 +591,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -688,7 +688,12 @@ class FactoryAutomationDataForPlant(aas.Submodel):
         automationMLElementReference: Union[
             aas.Reference, AutomationMLElementReference
         ],
-        automationMLAttributeAndInterfaceList: AutomationMLAttributeAndInterfaceList,
+        automationMLAttributeAndInterfaceList: Union[
+            Iterable[
+                AutomationMLAttributeAndInterfaceList.Automationmlattributeandinterfacelist_item
+            ],
+            AutomationMLAttributeAndInterfaceList,
+        ],
         id_short: Optional[str] = r"FactoryAutomationDataForPlant",
         display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"Factory Automation Data For Plant"}
@@ -741,6 +746,17 @@ class FactoryAutomationDataForPlant(aas.Submodel):
         ):
             automationMLElementReference = self.AutomationMLElementReference(
                 automationMLElementReference
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if automationMLAttributeAndInterfaceList is not None and not isinstance(
+            automationMLAttributeAndInterfaceList, aas.SubmodelElement
+        ):
+            automationMLAttributeAndInterfaceList = (
+                self.AutomationMLAttributeAndInterfaceList(
+                    automationMLAttributeAndInterfaceList
+                )
             )
 
         # Add all passed/initialized submodel elements to a single list

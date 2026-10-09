@@ -406,7 +406,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -454,7 +454,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -512,12 +512,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -527,9 +531,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1441,6 +1443,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -1504,15 +1509,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1610,6 +1613,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -1673,15 +1679,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1845,8 +1849,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1895,6 +1899,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -3923,6 +3941,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3972,17 +3993,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4219,7 +4251,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -4506,7 +4540,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -4565,6 +4601,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8659,7 +8702,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -8808,9 +8851,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -9136,7 +9177,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self,
                                     htv_fieldName: Union[str, Htv_fieldName],
                                     htv_fieldValue: Union[str, Htv_fieldValue],
-                                    id_short: Optional[str] = r"htv_headers_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -9319,9 +9360,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -9425,8 +9464,19 @@ class AssetInterfacesDescription(aas.Submodel):
                             htv_methodName: Union[str, Htv_methodName],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
-                            htv_headers: Optional[Htv_headers] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
+                            htv_headers: Optional[
+                                Union[
+                                    Iterable[Htv_headers.Htv_headers_item], Htv_headers
+                                ]
+                            ] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -9495,10 +9545,24 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
                             if htv_methodName is not None and not isinstance(
                                 htv_methodName, aas.SubmodelElement
                             ):
                                 htv_methodName = self.Htv_methodName(htv_methodName)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if htv_headers is not None and not isinstance(
+                                htv_headers, aas.SubmodelElement
+                            ):
+                                htv_headers = self.Htv_headers(htv_headers)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -10701,7 +10765,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -10743,7 +10807,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -10795,12 +10859,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -10810,9 +10878,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -11724,6 +11790,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -11787,15 +11856,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -11893,6 +11960,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -11956,15 +12026,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -12128,8 +12196,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -12178,6 +12246,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -14206,6 +14288,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -14255,17 +14340,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -14502,7 +14598,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -14933,7 +15031,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -14998,6 +15098,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -19112,7 +19219,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -19261,9 +19368,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -19990,7 +20095,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             href: Union[str, Href],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
                             modv_function: Optional[Union[str, Modv_function]] = None,
                             modv_entity: Optional[Union[str, Modv_entity]] = None,
                             modv_zeroBasedAddressing: Optional[
@@ -20072,6 +20184,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -21344,7 +21463,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -21386,7 +21505,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -21438,12 +21557,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -21453,9 +21576,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -22367,6 +22488,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -22430,15 +22554,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -22536,6 +22658,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -22599,15 +22724,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -22771,8 +22894,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -22821,6 +22944,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -24849,6 +24986,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -24898,17 +25038,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -25145,7 +25296,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -25428,7 +25581,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -25487,6 +25642,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -29581,7 +29743,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -29730,9 +29892,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -30069,7 +30229,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             href: Union[str, Href],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
                             mqv_retain: Optional[Union[bool, Mqv_retain]] = None,
                             mqv_controlPacket: Optional[
                                 Union[str, Mqv_controlPacket]
@@ -30134,6 +30301,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -31356,7 +31530,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -31398,7 +31572,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -31450,12 +31624,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -31465,9 +31643,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -33083,6 +33259,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -33146,15 +33325,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -33252,6 +33429,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -33315,15 +33495,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -33487,8 +33665,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -33537,6 +33715,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -35565,6 +35757,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -35614,17 +35809,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -35861,7 +36067,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -36148,7 +36356,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -36207,6 +36417,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -40301,7 +40518,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -40450,9 +40667,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -40624,7 +40839,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             href: Union[str, Href],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
                             uav_browsePath: Optional[Union[str, Uav_browsePath]] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -40685,6 +40907,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -41881,7 +42110,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -41923,7 +42152,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -41975,12 +42204,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -41990,9 +42223,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -42904,6 +43135,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -42967,15 +43201,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -43073,6 +43305,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -43136,15 +43371,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -43308,8 +43541,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -43358,6 +43591,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -45386,6 +45633,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -45435,17 +45685,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -45682,7 +45943,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -45965,7 +46228,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -46024,6 +46289,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -52305,7 +52577,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -52454,9 +52726,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -53283,9 +53553,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             bacv_hasDataType: Optional[
                                                 Bacv_hasDataType
                                             ] = None,
-                                            id_short: Optional[
-                                                str
-                                            ] = r"bacv_hasnamedmember_item",
+                                            id_short: Optional[str] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
                                             ] = None,
@@ -53485,13 +53753,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     se_arg
                                                 )
                                             elif isinstance(se_arg, Iterable):
-                                                for n, element in enumerate(se_arg):
-                                                    element.id_short = (
-                                                        f"{element.id_short}{n}"
-                                                    )
-                                                    embedded_submodel_elements.append(
-                                                        element
-                                                    )
+                                                embedded_submodel_elements.extend(
+                                                    se_arg
+                                                )
                                             else:
                                                 raise TypeError(
                                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -53772,9 +54036,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             bacv_hasProtocolVal: Union[
                                                 int, Bacv_hasProtocolVal
                                             ],
-                                            id_short: Optional[
-                                                str
-                                            ] = r"bacv_hasvaluemap_item",
+                                            id_short: Optional[str] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
                                             ] = None,
@@ -53895,7 +54157,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     def __init__(
                                         self,
-                                        bacv_hasvaluemap_items: Bacv_hasvaluemap_item,
+                                        bacv_hasvaluemap_items: Iterable[
+                                            Bacv_hasvaluemap_item
+                                        ],
                                         id_short: Optional[str] = r"bacv_hasValueMap",
                                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                         semantic_id_list_element: Optional[
@@ -53973,13 +54237,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     se_arg
                                                 )
                                             elif isinstance(se_arg, Iterable):
-                                                for n, element in enumerate(se_arg):
-                                                    element.id_short = (
-                                                        f"{element.id_short}{n}"
-                                                    )
-                                                    embedded_submodel_elements.append(
-                                                        element
-                                                    )
+                                                embedded_submodel_elements.extend(
+                                                    se_arg
+                                                )
                                             else:
                                                 raise TypeError(
                                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -54085,7 +54345,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    bacv_hasValueMap: Bacv_hasValueMap,
+                                    bacv_hasValueMap: Union[
+                                        Iterable[
+                                            Bacv_hasValueMap.Bacv_hasvaluemap_item
+                                        ],
+                                        Bacv_hasValueMap,
+                                    ],
                                     bacv_isISO: Optional[
                                         Union[bool, Bacv_isISO]
                                     ] = None,
@@ -54094,7 +54359,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ] = None,
                                     bacv_hasMember: Optional[Bacv_hasMember] = None,
                                     bacv_hasNamedMember: Optional[
-                                        Bacv_hasNamedMember
+                                        Union[
+                                            Iterable[
+                                                Bacv_hasNamedMember.Bacv_hasnamedmember_item
+                                            ],
+                                            Bacv_hasNamedMember,
+                                        ]
                                     ] = None,
                                     id_short: Optional[str] = r"bacv_hasMember",
                                     display_name: Optional[
@@ -54165,6 +54435,27 @@ class AssetInterfacesDescription(aas.Submodel):
                                             self.Bacv_hasBinaryRepresentation(
                                                 bacv_hasBinaryRepresentation
                                             )
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+
+                                    if (
+                                        bacv_hasNamedMember is not None
+                                        and not isinstance(
+                                            bacv_hasNamedMember, aas.SubmodelElement
+                                        )
+                                    ):
+                                        bacv_hasNamedMember = self.Bacv_hasNamedMember(
+                                            bacv_hasNamedMember
+                                        )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+
+                                    if bacv_hasValueMap is not None and not isinstance(
+                                        bacv_hasValueMap, aas.SubmodelElement
+                                    ):
+                                        bacv_hasValueMap = self.Bacv_hasValueMap(
+                                            bacv_hasValueMap
                                         )
 
                                     # Add all passed/initialized submodel elements to a single list
@@ -54463,9 +54754,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         bacv_hasDataType: Optional[
                                             Bacv_hasDataType
                                         ] = None,
-                                        id_short: Optional[
-                                            str
-                                        ] = r"bacv_hasnamedmember_item",
+                                        id_short: Optional[str] = None,
                                         display_name: Optional[
                                             aas.MultiLanguageNameType
                                         ] = None,
@@ -54659,13 +54948,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
-                                            for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                            embedded_submodel_elements.extend(se_arg)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -54935,9 +55218,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         bacv_hasProtocolVal: Union[
                                             int, Bacv_hasProtocolVal
                                         ],
-                                        id_short: Optional[
-                                            str
-                                        ] = r"bacv_hasvaluemap_item",
+                                        id_short: Optional[str] = None,
                                         display_name: Optional[
                                             aas.MultiLanguageNameType
                                         ] = None,
@@ -55056,7 +55337,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    bacv_hasvaluemap_items: Bacv_hasvaluemap_item,
+                                    bacv_hasvaluemap_items: Iterable[
+                                        Bacv_hasvaluemap_item
+                                    ],
                                     id_short: Optional[str] = r"bacv_hasValueMap",
                                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
@@ -55130,13 +55413,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
-                                            for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                            embedded_submodel_elements.extend(se_arg)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -55239,14 +55516,22 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                bacv_hasValueMap: Bacv_hasValueMap,
+                                bacv_hasValueMap: Union[
+                                    Iterable[Bacv_hasValueMap.Bacv_hasvaluemap_item],
+                                    Bacv_hasValueMap,
+                                ],
                                 bacv_isISO: Optional[Union[bool, Bacv_isISO]] = None,
                                 bacv_hasBinaryRepresentation: Optional[
                                     Union[str, Bacv_hasBinaryRepresentation]
                                 ] = None,
                                 bacv_hasMember: Optional[Bacv_hasMember] = None,
                                 bacv_hasNamedMember: Optional[
-                                    Bacv_hasNamedMember
+                                    Union[
+                                        Iterable[
+                                            Bacv_hasNamedMember.Bacv_hasnamedmember_item
+                                        ],
+                                        Bacv_hasNamedMember,
+                                    ]
                                 ] = None,
                                 id_short: Optional[str] = r"bacv_hasDataType",
                                 display_name: Optional[
@@ -55489,6 +55774,24 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
                                     )
 
+                                # Build a submodel element if a raw value was passed in the argument
+
+                                if bacv_hasNamedMember is not None and not isinstance(
+                                    bacv_hasNamedMember, aas.SubmodelElement
+                                ):
+                                    bacv_hasNamedMember = self.Bacv_hasNamedMember(
+                                        bacv_hasNamedMember
+                                    )
+
+                                # Build a submodel element if a raw value was passed in the argument
+
+                                if bacv_hasValueMap is not None and not isinstance(
+                                    bacv_hasValueMap, aas.SubmodelElement
+                                ):
+                                    bacv_hasValueMap = self.Bacv_hasValueMap(
+                                        bacv_hasValueMap
+                                    )
+
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
                                 for se_arg in [
@@ -55529,7 +55832,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             href: Union[str, Href],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
                             bacv_useService: Optional[
                                 Union[str, Bacv_useService]
                             ] = None,
@@ -55593,6 +55903,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -56798,7 +57115,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -56840,7 +57157,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -56892,12 +57209,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -56907,9 +57228,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -57821,6 +58140,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -57884,15 +58206,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -57990,6 +58310,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -58053,15 +58376,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -58225,8 +58546,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -58275,6 +58596,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -60303,6 +60638,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -60352,17 +60690,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -60599,7 +60948,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -60882,7 +61233,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -60941,6 +61294,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -65035,7 +65395,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -65184,9 +65544,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -65992,9 +66350,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     iolv_decodedPayload: Union[
                                         int, Iolv_decodedPayload
                                     ],
-                                    id_short: Optional[
-                                        str
-                                    ] = r"iolv_enumeratedvalues_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -66179,9 +66535,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -66877,9 +67231,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             iolv_decodedPayload: Union[
                                                 int, Iolv_decodedPayload
                                             ],
-                                            id_short: Optional[
-                                                str
-                                            ] = r"iolv_enumeratedvalues_item",
+                                            id_short: Optional[str] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
                                             ] = None,
@@ -67082,13 +67434,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     se_arg
                                                 )
                                             elif isinstance(se_arg, Iterable):
-                                                for n, element in enumerate(se_arg):
-                                                    element.id_short = (
-                                                        f"{element.id_short}{n}"
-                                                    )
-                                                    embedded_submodel_elements.append(
-                                                        element
-                                                    )
+                                                embedded_submodel_elements.extend(
+                                                    se_arg
+                                                )
                                             else:
                                                 raise TypeError(
                                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -67211,11 +67559,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         Union[xsd.NonNegativeInteger, Iolv_bitLength]
                                     ] = None,
                                     iolv_enumeratedValues: Optional[
-                                        Iolv_enumeratedValues
+                                        Union[
+                                            Iterable[
+                                                Iolv_enumeratedValues.Iolv_enumeratedvalues_item
+                                            ],
+                                            Iolv_enumeratedValues,
+                                        ]
                                     ] = None,
-                                    id_short: Optional[
-                                        str
-                                    ] = r"iolv_payloadmapping_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -67312,6 +67663,20 @@ class AssetInterfacesDescription(aas.Submodel):
                                             iolv_bitLength
                                         )
 
+                                    # Build a submodel element if a raw value was passed in the argument
+
+                                    if (
+                                        iolv_enumeratedValues is not None
+                                        and not isinstance(
+                                            iolv_enumeratedValues, aas.SubmodelElement
+                                        )
+                                    ):
+                                        iolv_enumeratedValues = (
+                                            self.Iolv_enumeratedValues(
+                                                iolv_enumeratedValues
+                                            )
+                                        )
+
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
                                     for se_arg in [
@@ -67355,7 +67720,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                iolv_payloadmapping_items: Iolv_payloadmapping_item,
+                                iolv_payloadmapping_items: Iterable[
+                                    Iolv_payloadmapping_item
+                                ],
                                 id_short: Optional[str] = r"iolv_payloadMapping",
                                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                 semantic_id_list_element: Optional[
@@ -67427,9 +67794,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -67532,7 +67897,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             href: Union[str, Href],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
                             iolv_method: Optional[Union[str, Iolv_method]] = None,
                             iolv_accessRights: Optional[
                                 Union[str, Iolv_accessRights]
@@ -67554,9 +67926,21 @@ class AssetInterfacesDescription(aas.Submodel):
                                 Union[aas.Reference, Iolv_referenceToCondition]
                             ] = None,
                             iolv_enumeratedValues: Optional[
-                                Iolv_enumeratedValues
+                                Union[
+                                    Iterable[
+                                        Iolv_enumeratedValues.Iolv_enumeratedvalues_item
+                                    ],
+                                    Iolv_enumeratedValues,
+                                ]
                             ] = None,
-                            iolv_payloadMapping: Optional[Iolv_payloadMapping] = None,
+                            iolv_payloadMapping: Optional[
+                                Union[
+                                    Iterable[
+                                        Iolv_payloadMapping.Iolv_payloadmapping_item
+                                    ],
+                                    Iolv_payloadMapping,
+                                ]
+                            ] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -67616,6 +68000,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -67680,6 +68071,24 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self.Iolv_referenceToCondition(
                                         iolv_referenceToCondition
                                     )
+                                )
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if iolv_enumeratedValues is not None and not isinstance(
+                                iolv_enumeratedValues, aas.SubmodelElement
+                            ):
+                                iolv_enumeratedValues = self.Iolv_enumeratedValues(
+                                    iolv_enumeratedValues
+                                )
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if iolv_payloadMapping is not None and not isinstance(
+                                iolv_payloadMapping, aas.SubmodelElement
+                            ):
+                                iolv_payloadMapping = self.Iolv_payloadMapping(
+                                    iolv_payloadMapping
                                 )
 
                             # Add all passed/initialized submodel elements to a single list
@@ -68885,7 +69294,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -68927,7 +69336,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -68979,12 +69388,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -68994,9 +69407,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -69908,6 +70319,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -69971,15 +70385,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -70077,6 +70489,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -70140,15 +70555,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -70312,8 +70725,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -70362,6 +70775,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -72390,6 +72817,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -72439,17 +72869,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -72686,7 +73127,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -72969,7 +73412,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -73028,6 +73473,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -77122,7 +77574,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -77271,9 +77723,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -77376,7 +77826,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             href: Union[str, Href],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -77436,6 +77893,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 subprotocol, aas.SubmodelElement
                             ):
                                 subprotocol = self.Subprotocol(subprotocol)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -78625,7 +79089,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"security_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -78667,7 +79131,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    security_items: Union[aas.Reference, Security_item],
+                    security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[
@@ -78719,12 +79183,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if security_items is not None and not isinstance(
-                        security_items, aas.SubmodelElement
-                    ):
-                        security_items = self.Security_item(security_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if security_items:
+                        security_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Security_item(i)
+                            )
+                            for i in security_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -78734,9 +79202,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -79648,6 +80114,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            oneof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -79711,15 +80180,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [oneof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -79817,6 +80284,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            allof_items: Optional[
+                                Iterable[aas.ReferenceElement]
+                            ] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                             semantic_id_list_element: Optional[
@@ -79880,15 +80350,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [allof_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -80052,8 +80520,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     def __init__(
                         self,
                         scheme: Union[str, Scheme],
-                        oneOf: OneOf,
-                        allOf: AllOf,
+                        oneOf: Union[Iterable[aas.ReferenceElement], OneOf],
+                        allOf: Union[Iterable[aas.ReferenceElement], AllOf],
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"combo_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -80102,6 +80570,20 @@ class AssetInterfacesDescription(aas.Submodel):
                             scheme, aas.SubmodelElement
                         ):
                             scheme = self.Scheme(scheme)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if oneOf is not None and not isinstance(
+                            oneOf, aas.SubmodelElement
+                        ):
+                            oneOf = self.OneOf(oneOf)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if allOf is not None and not isinstance(
+                            allOf, aas.SubmodelElement
+                        ):
+                            allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -82130,6 +82612,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         def __init__(
                             self,
+                            scopes_items: Optional[
+                                Iterable[Union[str, aas.Property]]
+                            ] = None,
                             id_short: Optional[str] = r"scopes",
                             type_value_list_element: aas.SubmodelElement = aas.Property,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -82179,17 +82664,28 @@ class AssetInterfacesDescription(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            # Build submodel elements from raw values passed in the argument
+                            if scopes_items:
+                                scopes_items = [
+                                    (
+                                        i
+                                        if isinstance(i, aas.SubmodelElement)
+                                        else aas.Property(
+                                            None, value_type_list_element, i
+                                        )
+                                    )
+                                    for i in scopes_items
+                                ]
+
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in []:
+                            for se_arg in [scopes_items]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -82426,7 +82922,9 @@ class AssetInterfacesDescription(aas.Submodel):
                         authorization: Optional[
                             Union[xsd.AnyURI, Authorization]
                         ] = None,
-                        scopes: Optional[Union[Iterable[str], Scopes]] = None,
+                        scopes: Optional[
+                            Union[Iterable[Union[str, aas.Property]], Scopes]
+                        ] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
                         id_short: Optional[str] = r"oauth2_sc",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -82709,7 +83207,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
             def __init__(
                 self,
-                security: Security,
+                security: Union[
+                    Iterable[Union[aas.Reference, Security.Security_item]], Security
+                ],
                 securityDefinitions: SecurityDefinitions,
                 base: Optional[Union[str, Base]] = None,
                 contentType: Optional[Union[str, ContentType]] = None,
@@ -82768,6 +83268,13 @@ class AssetInterfacesDescription(aas.Submodel):
                     contentType, aas.SubmodelElement
                 ):
                     contentType = self.ContentType(contentType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if security is not None and not isinstance(
+                    security, aas.SubmodelElement
+                ):
+                    security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -86880,7 +87387,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"security_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -87029,9 +87536,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -87523,9 +88028,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     canv_decodedPayload: Union[
                                         int, Canv_decodedPayload
                                     ],
-                                    id_short: Optional[
-                                        str
-                                    ] = r"canv_enumeratedvalues_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -87710,9 +88213,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -88293,9 +88794,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             canv_decodedPayload: Union[
                                                 int, Canv_decodedPayload
                                             ],
-                                            id_short: Optional[
-                                                str
-                                            ] = r"canv_enumeratedvalues_item",
+                                            id_short: Optional[str] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
                                             ] = None,
@@ -88498,13 +88997,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     se_arg
                                                 )
                                             elif isinstance(se_arg, Iterable):
-                                                for n, element in enumerate(se_arg):
-                                                    element.id_short = (
-                                                        f"{element.id_short}{n}"
-                                                    )
-                                                    embedded_submodel_elements.append(
-                                                        element
-                                                    )
+                                                embedded_submodel_elements.extend(
+                                                    se_arg
+                                                )
                                             else:
                                                 raise TypeError(
                                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -88623,11 +89118,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         Union[float, Canv_valueOffset]
                                     ] = None,
                                     canv_enumeratedValues: Optional[
-                                        Canv_enumeratedValues
+                                        Union[
+                                            Iterable[
+                                                Canv_enumeratedValues.Canv_enumeratedvalues_item
+                                            ],
+                                            Canv_enumeratedValues,
+                                        ]
                                     ] = None,
-                                    id_short: Optional[
-                                        str
-                                    ] = r"canv_payloadmapping_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -88704,6 +89202,20 @@ class AssetInterfacesDescription(aas.Submodel):
                                             canv_valueOffset
                                         )
 
+                                    # Build a submodel element if a raw value was passed in the argument
+
+                                    if (
+                                        canv_enumeratedValues is not None
+                                        and not isinstance(
+                                            canv_enumeratedValues, aas.SubmodelElement
+                                        )
+                                    ):
+                                        canv_enumeratedValues = (
+                                            self.Canv_enumeratedValues(
+                                                canv_enumeratedValues
+                                            )
+                                        )
+
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
                                     for se_arg in [
@@ -88745,7 +89257,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                canv_payloadmapping_items: Canv_payloadmapping_item,
+                                canv_payloadmapping_items: Iterable[
+                                    Canv_payloadmapping_item
+                                ],
                                 id_short: Optional[str] = r"canv_payloadMapping",
                                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                 semantic_id_list_element: Optional[
@@ -88817,9 +89331,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -88922,7 +89434,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             href: Union[str, Href],
                             contentType: Optional[Union[str, ContentType]] = None,
                             subprotocol: Optional[Union[str, Subprotocol]] = None,
-                            security: Optional[Security] = None,
+                            security: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, Security.Security_item]
+                                    ],
+                                    Security,
+                                ]
+                            ] = None,
                             canv_offset: Optional[
                                 Union[xsd.NonNegativeInteger, Canv_offset]
                             ] = None,
@@ -88933,9 +89452,21 @@ class AssetInterfacesDescription(aas.Submodel):
                                 Union[float, Canv_valueOffset]
                             ] = None,
                             canv_enumeratedValues: Optional[
-                                Canv_enumeratedValues
+                                Union[
+                                    Iterable[
+                                        Canv_enumeratedValues.Canv_enumeratedvalues_item
+                                    ],
+                                    Canv_enumeratedValues,
+                                ]
                             ] = None,
-                            canv_payloadMapping: Optional[Canv_payloadMapping] = None,
+                            canv_payloadMapping: Optional[
+                                Union[
+                                    Iterable[
+                                        Canv_payloadMapping.Canv_payloadmapping_item
+                                    ],
+                                    Canv_payloadMapping,
+                                ]
+                            ] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -88998,6 +89529,13 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
+                            if security is not None and not isinstance(
+                                security, aas.SubmodelElement
+                            ):
+                                security = self.Security(security)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
                             if canv_offset is not None and not isinstance(
                                 canv_offset, aas.SubmodelElement
                             ):
@@ -89017,6 +89555,24 @@ class AssetInterfacesDescription(aas.Submodel):
                             ):
                                 canv_valueOffset = self.Canv_valueOffset(
                                     canv_valueOffset
+                                )
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if canv_enumeratedValues is not None and not isinstance(
+                                canv_enumeratedValues, aas.SubmodelElement
+                            ):
+                                canv_enumeratedValues = self.Canv_enumeratedValues(
+                                    canv_enumeratedValues
+                                )
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if canv_payloadMapping is not None and not isinstance(
+                                canv_payloadMapping, aas.SubmodelElement
+                            ):
+                                canv_payloadMapping = self.Canv_payloadMapping(
+                                    canv_payloadMapping
                                 )
 
                             # Add all passed/initialized submodel elements to a single list

@@ -249,7 +249,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 documentDomainId: Union[str, DocumentDomainId],
                 documentIdentifier: Union[str, DocumentIdentifier],
                 documentIsPrimary: Optional[Union[bool, DocumentIsPrimary]] = None,
-                id_short: Optional[str] = r"documentids_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Id"}),
@@ -344,7 +344,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
         def __init__(
             self,
-            documentids_items: Documentids_item,
+            documentids_items: Iterable[Documentids_item],
             id_short: Optional[str] = r"DocumentIds",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -412,9 +412,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -739,7 +737,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 classId: Union[str, ClassId],
                 className: Union[aas.LangStringSet, ClassName],
                 classificationSystem: Union[str, ClassificationSystem],
-                id_short: Optional[str] = r"documentclassifications_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(
@@ -828,7 +826,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
         def __init__(
             self,
-            documentclassifications_items: Documentclassifications_item,
+            documentclassifications_items: Iterable[Documentclassifications_item],
             id_short: Optional[str] = r"DocumentClassifications",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -896,9 +894,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -998,7 +994,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"language_item",
+                        id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[
@@ -1050,7 +1046,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 def __init__(
                     self,
-                    language_items: Union[str, Language_item],
+                    language_items: Iterable[Union[str, Language_item]],
                     id_short: Optional[str] = r"Language",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1088,12 +1084,16 @@ class DigitalQualityDocuments(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if language_items is not None and not isinstance(
-                        language_items, aas.SubmodelElement
-                    ):
-                        language_items = self.Language_item(language_items)
+                    # Build submodel elements from raw values passed in the argument
+                    if language_items:
+                        language_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Language_item(i)
+                            )
+                            for i in language_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1103,9 +1103,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1729,7 +1727,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"referstoentities_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(
@@ -1781,7 +1779,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 def __init__(
                     self,
-                    referstoentities_items: Union[aas.Reference, Referstoentities_item],
+                    referstoentities_items: Iterable[
+                        Union[aas.Reference, Referstoentities_item]
+                    ],
                     id_short: Optional[str] = r"RefersToEntities",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1841,14 +1841,16 @@ class DigitalQualityDocuments(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if referstoentities_items is not None and not isinstance(
-                        referstoentities_items, aas.SubmodelElement
-                    ):
-                        referstoentities_items = self.Referstoentities_item(
-                            referstoentities_items
-                        )
+                    # Build submodel elements from raw values passed in the argument
+                    if referstoentities_items:
+                        referstoentities_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Referstoentities_item(i)
+                            )
+                            for i in referstoentities_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1858,9 +1860,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1959,7 +1959,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"basedonreferences_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(
@@ -2001,8 +2001,8 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 def __init__(
                     self,
-                    basedonreferences_items: Union[
-                        aas.Reference, Basedonreferences_item
+                    basedonreferences_items: Iterable[
+                        Union[aas.Reference, Basedonreferences_item]
                     ],
                     id_short: Optional[str] = r"BasedOnReferences",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
@@ -2065,14 +2065,16 @@ class DigitalQualityDocuments(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
-                    # Build a submodel element if a raw value was passed in the argument
-
-                    if basedonreferences_items is not None and not isinstance(
-                        basedonreferences_items, aas.SubmodelElement
-                    ):
-                        basedonreferences_items = self.Basedonreferences_item(
-                            basedonreferences_items
-                        )
+                    # Build submodel elements from raw values passed in the argument
+                    if basedonreferences_items:
+                        basedonreferences_items = [
+                            (
+                                i
+                                if isinstance(i, aas.SubmodelElement)
+                                else self.Basedonreferences_item(i)
+                            )
+                            for i in basedonreferences_items
+                        ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2082,9 +2084,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2183,7 +2183,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"digitalfiles_item",
+                        id_short: Optional[str] = None,
                         content_type: Optional[str] = r"text/xml",
                         display_name: Optional[
                             aas.MultiLanguageNameType
@@ -2313,9 +2313,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3007,7 +3005,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 iD: Optional[Union[str, ID]] = None,
                                 refID: Optional[Iterable[Union[str, RefID]]] = None,
                                 refType: Optional[Union[str, RefType]] = None,
-                                id_short: Optional[str] = r"identifications_item",
+                                id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
                                 ] = aas.MultiLanguageNameType(
@@ -3134,7 +3132,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         def __init__(
                             self,
-                            identifications_items: Identifications_item,
+                            identifications_items: Iterable[Identifications_item],
                             id_short: Optional[str] = r"Identifications",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3198,9 +3196,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3366,7 +3362,12 @@ class DigitalQualityDocuments(aas.Submodel):
                     def __init__(
                         self,
                         uniqueIdentifier: Union[str, UniqueIdentifier],
-                        identifications: Optional[Identifications] = None,
+                        identifications: Optional[
+                            Union[
+                                Iterable[Identifications.Identifications_item],
+                                Identifications,
+                            ]
+                        ] = None,
                         issueDate: Optional[Union[xsd.DateTime, IssueDate]] = None,
                         id_short: Optional[str] = r"CoreData",
                         display_name: Optional[
@@ -3419,6 +3420,13 @@ class DigitalQualityDocuments(aas.Submodel):
                             uniqueIdentifier, aas.SubmodelElement
                         ):
                             uniqueIdentifier = self.UniqueIdentifier(uniqueIdentifier)
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if identifications is not None and not isinstance(
+                            identifications, aas.SubmodelElement
+                        ):
+                            identifications = self.Identifications(identifications)
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -3908,7 +3916,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 iD: Optional[Union[str, ID]] = None,
                                 refID: Optional[Iterable[Union[str, RefID]]] = None,
                                 refType: Optional[Union[str, RefType]] = None,
-                                id_short: Optional[str] = r"identifications_item",
+                                id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
                                 ] = aas.MultiLanguageNameType(
@@ -4035,7 +4043,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         def __init__(
                             self,
-                            identifications_items: Identifications_item,
+                            identifications_items: Iterable[Identifications_item],
                             id_short: Optional[str] = r"Identifications",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -4087,9 +4095,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4651,9 +4657,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                             Iterable[Union[str, RefID]]
                                         ] = None,
                                         refType: Optional[Union[str, RefType]] = None,
-                                        id_short: Optional[
-                                            str
-                                        ] = r"identifications_item",
+                                        id_short: Optional[str] = None,
                                         display_name: Optional[
                                             aas.MultiLanguageNameType
                                         ] = aas.MultiLanguageNameType(
@@ -4808,7 +4812,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    identifications_items: Identifications_item,
+                                    identifications_items: Iterable[
+                                        Identifications_item
+                                    ],
                                     id_short: Optional[str] = r"Identifications",
                                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
@@ -4866,13 +4872,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                         elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
-                                            for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                            embedded_submodel_elements.extend(se_arg)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4975,8 +4975,11 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             def __init__(
                                 self,
-                                identifications: Identifications,
-                                id_short: Optional[str] = r"item_item",
+                                identifications: Union[
+                                    Iterable[Identifications.Identifications_item],
+                                    Identifications,
+                                ],
+                                id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
                                 ] = aas.MultiLanguageNameType(dict_={r"en": r"Item"}),
@@ -5009,6 +5012,15 @@ class DigitalQualityDocuments(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                # Build a submodel element if a raw value was passed in the argument
+
+                                if identifications is not None and not isinstance(
+                                    identifications, aas.SubmodelElement
+                                ):
+                                    identifications = self.Identifications(
+                                        identifications
+                                    )
+
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
                                 for se_arg in [identifications]:
@@ -5040,7 +5052,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         def __init__(
                             self,
-                            item_items: Item_item,
+                            item_items: Iterable[Item_item],
                             id_short: Optional[str] = r"Item",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -5102,9 +5114,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5200,8 +5210,11 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     def __init__(
                         self,
-                        identifications: Identifications,
-                        item: Iterable[Item],
+                        identifications: Union[
+                            Iterable[Identifications.Identifications_item],
+                            Identifications,
+                        ],
+                        item: Iterable[Union[Iterable[Item.Item_item], Item]],
                         id_short: Optional[str] = r"Items",
                         display_name: Optional[
                             aas.MultiLanguageNameType
@@ -5246,6 +5259,24 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if identifications is not None and not isinstance(
+                            identifications, aas.SubmodelElement
+                        ):
+                            identifications = self.Identifications(identifications)
+
+                        # Build submodel elements from raw values passed in the argument
+                        if item:
+                            item = [
+                                (
+                                    i
+                                    if isinstance(i, aas.SubmodelElement)
+                                    else self.Item(i)
+                                )
+                                for i in item
+                            ]
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -5500,7 +5531,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             declaration: Optional[
                                 Union[aas.LangStringSet, Declaration]
                             ] = None,
-                            id_short: Optional[str] = r"statements_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(dict_={r"en": r"Statement"}),
@@ -5585,7 +5616,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     def __init__(
                         self,
-                        statements_items: Statements_item,
+                        statements_items: Iterable[Statements_item],
                         id_short: Optional[str] = r"Statements",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -5643,9 +5674,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5743,7 +5772,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     self,
                     coreData: CoreData,
                     items: Optional[Items] = None,
-                    statements: Optional[Statements] = None,
+                    statements: Optional[
+                        Union[Iterable[Statements.Statements_item], Statements]
+                    ] = None,
                     id_short: Optional[str] = r"AdministrativeData",
                     display_name: Optional[
                         aas.MultiLanguageNameType
@@ -5790,6 +5821,13 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if statements is not None and not isinstance(
+                        statements, aas.SubmodelElement
+                    ):
+                        statements = self.Statements(statements)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6625,7 +6663,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
             def __init__(
                 self,
-                language: Union[Iterable[str], Language],
+                language: Union[Iterable[Union[str, Language.Language_item]], Language],
                 version: Union[str, Version],
                 title: Union[aas.LangStringSet, Title],
                 description_: Union[aas.LangStringSet, Description],
@@ -6633,13 +6671,31 @@ class DigitalQualityDocuments(aas.Submodel):
                 statusValue: Union[str, StatusValue],
                 organizationShortName: Union[str, OrganizationShortName],
                 organizationOfficialName: Union[str, OrganizationOfficialName],
-                digitalFiles: DigitalFiles,
+                digitalFiles: Union[
+                    Iterable[DigitalFiles.Digitalfiles_item], DigitalFiles
+                ],
                 administrativeData: AdministrativeData,
-                refersToEntities: Optional[RefersToEntities] = None,
-                basedOnReferences: Optional[BasedOnReferences] = None,
+                refersToEntities: Optional[
+                    Union[
+                        Iterable[
+                            Union[aas.Reference, RefersToEntities.Referstoentities_item]
+                        ],
+                        RefersToEntities,
+                    ]
+                ] = None,
+                basedOnReferences: Optional[
+                    Union[
+                        Iterable[
+                            Union[
+                                aas.Reference, BasedOnReferences.Basedonreferences_item
+                            ]
+                        ],
+                        BasedOnReferences,
+                    ]
+                ] = None,
                 previewFile: Optional[PreviewFile] = None,
                 documentSignature: Optional[Iterable[DocumentSignature]] = None,
-                id_short: Optional[str] = r"documentinstances_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Instance"}),
@@ -6730,6 +6786,27 @@ class DigitalQualityDocuments(aas.Submodel):
                         organizationOfficialName
                     )
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if refersToEntities is not None and not isinstance(
+                    refersToEntities, aas.SubmodelElement
+                ):
+                    refersToEntities = self.RefersToEntities(refersToEntities)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if basedOnReferences is not None and not isinstance(
+                    basedOnReferences, aas.SubmodelElement
+                ):
+                    basedOnReferences = self.BasedOnReferences(basedOnReferences)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if digitalFiles is not None and not isinstance(
+                    digitalFiles, aas.SubmodelElement
+                ):
+                    digitalFiles = self.DigitalFiles(digitalFiles)
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -6776,7 +6853,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
         def __init__(
             self,
-            documentinstances_items: Documentinstances_item,
+            documentinstances_items: Iterable[Documentinstances_item],
             id_short: Optional[str] = r"DocumentInstances",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -6844,9 +6921,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6938,9 +7013,14 @@ class DigitalQualityDocuments(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        documentIds: DocumentIds,
-        documentClassifications: DocumentClassifications,
-        documentInstances: DocumentInstances,
+        documentIds: Union[Iterable[DocumentIds.Documentids_item], DocumentIds],
+        documentClassifications: Union[
+            Iterable[DocumentClassifications.Documentclassifications_item],
+            DocumentClassifications,
+        ],
+        documentInstances: Union[
+            Iterable[DocumentInstances.Documentinstances_item], DocumentInstances
+        ],
         id_short: Optional[str] = r"DigitalQualityDocuments",
         display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={r"en": r"Digital Quality Documents"}
@@ -6971,6 +7051,27 @@ class DigitalQualityDocuments(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if documentIds is not None and not isinstance(documentIds, aas.SubmodelElement):
+            documentIds = self.DocumentIds(documentIds)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if documentClassifications is not None and not isinstance(
+            documentClassifications, aas.SubmodelElement
+        ):
+            documentClassifications = self.DocumentClassifications(
+                documentClassifications
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if documentInstances is not None and not isinstance(
+            documentInstances, aas.SubmodelElement
+        ):
+            documentInstances = self.DocumentInstances(documentInstances)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

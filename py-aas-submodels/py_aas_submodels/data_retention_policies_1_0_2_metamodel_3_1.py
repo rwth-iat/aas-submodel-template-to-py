@@ -158,7 +158,7 @@ class DataRetentionPolicies(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[str] = r"semanticids_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -309,9 +309,7 @@ class DataRetentionPolicies(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1697,7 +1695,7 @@ class DataRetentionPolicies(aas.Submodel):
                         operation: Union[aas.LangStringSet, Operation],
                         reason: Union[aas.LangStringSet, Reason],
                         signature: Union[str, Signature],
-                        id_short: Optional[str] = r"auditlog_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -1890,9 +1888,7 @@ class DataRetentionPolicies(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1987,14 +1983,17 @@ class DataRetentionPolicies(aas.Submodel):
             def __init__(
                 self,
                 retentionTime: Union[xsd.Duration, RetentionTime],
-                semanticIds: SemanticIds,
+                semanticIds: Union[
+                    Iterable[Union[aas.Reference, SemanticIds.Semanticids_item]],
+                    SemanticIds,
+                ],
                 immutable: Union[bool, Immutable],
                 createdBy: Union[str, CreatedBy],
                 creationTime: Union[xsd.DateTime, CreationTime],
                 issuer: Union[str, Issuer],
                 source: Source,
                 effectiveFrom: Union[xsd.DateTime, EffectiveFrom],
-                auditLog: AuditLog,
+                auditLog: Union[Iterable[AuditLog.Auditlog_item], AuditLog],
                 overrides: Optional[Overrides] = None,
                 effectiveUntil: Optional[Union[xsd.DateTime, EffectiveUntil]] = None,
                 id_short: Optional[str] = r"Policy",
@@ -2072,6 +2071,13 @@ class DataRetentionPolicies(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
+                if semanticIds is not None and not isinstance(
+                    semanticIds, aas.SubmodelElement
+                ):
+                    semanticIds = self.SemanticIds(semanticIds)
+
+                # Build a submodel element if a raw value was passed in the argument
+
                 if immutable is not None and not isinstance(
                     immutable, aas.SubmodelElement
                 ):
@@ -2109,6 +2115,13 @@ class DataRetentionPolicies(aas.Submodel):
                     effectiveUntil, aas.SubmodelElement
                 ):
                     effectiveUntil = self.EffectiveUntil(effectiveUntil)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if auditLog is not None and not isinstance(
+                    auditLog, aas.SubmodelElement
+                ):
+                    auditLog = self.AuditLog(auditLog)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []

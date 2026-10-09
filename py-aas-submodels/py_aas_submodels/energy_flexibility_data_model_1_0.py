@@ -1485,7 +1485,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             self,
                             power: Union[xsd.Float, Power],
                             timestamp: Union[xsd.DateTime, Timestamp],
-                            id_short: Optional[str] = r"loadchangeprofiles_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -1655,9 +1655,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1756,9 +1754,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     flexibleLoadMeasureId: Union[str, FlexibleLoadMeasureId],
                     status: Union[str, Status],
                     flexibleLoadId: Union[str, FlexibleLoadId],
-                    loadChangeProfiles: LoadChangeProfiles,
+                    loadChangeProfiles: Union[
+                        Iterable[LoadChangeProfiles.Loadchangeprofiles_item],
+                        LoadChangeProfiles,
+                    ],
                     reward: Optional[Union[str, Reward]] = None,
-                    id_short: Optional[str] = r"flexibleloadmeasures_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(
@@ -1842,6 +1843,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         reward, aas.SubmodelElement
                     ):
                         reward = self.Reward(reward)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if loadChangeProfiles is not None and not isinstance(
+                        loadChangeProfiles, aas.SubmodelElement
+                    ):
+                        loadChangeProfiles = self.LoadChangeProfiles(loadChangeProfiles)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1946,9 +1954,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2043,7 +2049,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
         def __init__(
             self,
             metadata: Metadata,
-            flexibleLoadMeasures: FlexibleLoadMeasures,
+            flexibleLoadMeasures: Union[
+                Iterable[FlexibleLoadMeasures.Flexibleloadmeasures_item],
+                FlexibleLoadMeasures,
+            ],
             id_short: Optional[str] = r"flexibleLoadMeasuresPackage",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -2098,6 +2107,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if flexibleLoadMeasures is not None and not isinstance(
+                flexibleLoadMeasures, aas.SubmodelElement
+            ):
+                flexibleLoadMeasures = self.FlexibleLoadMeasures(flexibleLoadMeasures)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4469,7 +4485,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 Union[xsd.Float, ReferencePoint]
                             ] = None,
                             durationType: Optional[Union[str, DurationType]] = None,
-                            id_short: Optional[str] = r"powerstates_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -4658,9 +4674,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6634,7 +6648,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 def __init__(
                     self,
                     flexibleLoadId: Union[str, FlexibleLoadId],
-                    powerStates: PowerStates,
+                    powerStates: Union[
+                        Iterable[PowerStates.Powerstates_item], PowerStates
+                    ],
                     reactionDuration: Optional[
                         Union[Tuple[xsd.Float, xsd.Float], ReactionDuration]
                     ] = None,
@@ -6660,7 +6676,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ] = None,
                     prices: Optional[Prices] = None,
                     location: Optional[Location] = None,
-                    id_short: Optional[str] = r"flexibleloads_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"}),
@@ -6729,6 +6745,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         reactionDuration = self.ReactionDuration(
                             min=reactionDuration[0], max=reactionDuration[1]
                         )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if powerStates is not None and not isinstance(
+                        powerStates, aas.SubmodelElement
+                    ):
+                        powerStates = self.PowerStates(powerStates)
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6865,9 +6888,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7871,7 +7892,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             conversionEfficiency: Optional[
                                 Union[xsd.Float, ConversionEfficiency]
                             ] = None,
-                            id_short: Optional[str] = r"suppliers_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"}),
@@ -8037,9 +8058,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8295,7 +8314,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             self,
                             power: Optional[Union[str, Power]] = None,
                             timestamp: Optional[Union[xsd.DateTime, Timestamp]] = None,
-                            id_short: Optional[str] = r"drains_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(dict_={r"en": r"Drain"}),
@@ -8461,9 +8480,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8569,9 +8586,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         Union[Tuple[xsd.Float, xsd.Float], TargetEnergyContent]
                     ] = None,
                     energyLoss: Optional[Union[xsd.UnsignedShort, EnergyLoss]] = None,
-                    suppliers: Optional[Suppliers] = None,
-                    drains: Optional[Drains] = None,
-                    id_short: Optional[str] = r"storages_item",
+                    suppliers: Optional[
+                        Union[Iterable[Suppliers.Suppliers_item], Suppliers]
+                    ] = None,
+                    drains: Optional[
+                        Union[Iterable[Drains.Drains_item], Drains]
+                    ] = None,
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage"}),
@@ -8665,6 +8686,20 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         energyLoss, aas.SubmodelElement
                     ):
                         energyLoss = self.EnergyLoss(energyLoss)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if suppliers is not None and not isinstance(
+                        suppliers, aas.SubmodelElement
+                    ):
+                        suppliers = self.Suppliers(suppliers)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if drains is not None and not isinstance(
+                        drains, aas.SubmodelElement
+                    ):
+                        drains = self.Drains(drains)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -8773,9 +8808,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -9269,7 +9302,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             comparator: Optional[Union[str, Comparator]] = None,
                             formulaRight: Optional[Union[str, FormulaRight]] = None,
                             formulaLeft: Optional[Union[str, FormulaLeft]] = None,
-                            id_short: Optional[str] = r"applicabilityconditions_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -9446,9 +9479,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -10141,8 +10172,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     applicabilityDuration: Optional[
                         Union[Tuple[xsd.Float, xsd.Float], ApplicabilityDuration]
                     ] = None,
-                    applicabilityConditions: Optional[ApplicabilityConditions] = None,
-                    id_short: Optional[str] = r"dependencies_item",
+                    applicabilityConditions: Optional[
+                        Union[
+                            Iterable[
+                                ApplicabilityConditions.Applicabilityconditions_item
+                            ],
+                            ApplicabilityConditions,
+                        ]
+                    ] = None,
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependency"}),
@@ -10210,6 +10248,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         applicabilityDuration = self.ApplicabilityDuration(
                             min=applicabilityDuration[0], max=applicabilityDuration[1]
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if applicabilityConditions is not None and not isinstance(
+                        applicabilityConditions, aas.SubmodelElement
+                    ):
+                        applicabilityConditions = self.ApplicabilityConditions(
+                            applicabilityConditions
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -10324,9 +10371,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -10422,9 +10467,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             self,
             metadata: Metadata,
             utilizationContext: UtilizationContext,
-            flexibleLoads: FlexibleLoads,
-            storages: Optional[Storages] = None,
-            dependencies: Optional[Dependencies] = None,
+            flexibleLoads: Union[
+                Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads
+            ],
+            storages: Optional[
+                Union[Iterable[Storages.Storages_item], Storages]
+            ] = None,
+            dependencies: Optional[
+                Union[Iterable[Dependencies.Dependencies_item], Dependencies]
+            ] = None,
             id_short: Optional[str] = r"flexibilitySpace_operationalPotential",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -10479,6 +10530,25 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if flexibleLoads is not None and not isinstance(
+                flexibleLoads, aas.SubmodelElement
+            ):
+                flexibleLoads = self.FlexibleLoads(flexibleLoads)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if storages is not None and not isinstance(storages, aas.SubmodelElement):
+                storages = self.Storages(storages)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if dependencies is not None and not isinstance(
+                dependencies, aas.SubmodelElement
+            ):
+                dependencies = self.Dependencies(dependencies)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -12858,7 +12928,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             referencePoint: Optional[
                                 Union[xsd.Float, ReferencePoint]
                             ] = None,
-                            id_short: Optional[str] = r"powerstates_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -13047,9 +13117,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -15023,7 +15091,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 def __init__(
                     self,
                     flexibleLoadId: Union[str, FlexibleLoadId],
-                    powerStates: PowerStates,
+                    powerStates: Union[
+                        Iterable[PowerStates.Powerstates_item], PowerStates
+                    ],
                     reactionDuration: Optional[
                         Union[Tuple[xsd.Float, xsd.Float], ReactionDuration]
                     ] = None,
@@ -15049,7 +15119,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ] = None,
                     prices: Optional[Prices] = None,
                     location: Optional[Location] = None,
-                    id_short: Optional[str] = r"flexibleloads_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"}),
@@ -15118,6 +15188,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         reactionDuration = self.ReactionDuration(
                             min=reactionDuration[0], max=reactionDuration[1]
                         )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if powerStates is not None and not isinstance(
+                        powerStates, aas.SubmodelElement
+                    ):
+                        powerStates = self.PowerStates(powerStates)
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -15254,9 +15331,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -16260,7 +16335,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             conversionEfficiency: Optional[
                                 Union[xsd.Float, ConversionEfficiency]
                             ] = None,
-                            id_short: Optional[str] = r"suppliers_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"}),
@@ -16426,9 +16501,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -16684,7 +16757,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             self,
                             power: Optional[Union[xsd.Float, Power]] = None,
                             timestamp: Optional[Union[xsd.DateTime, Timestamp]] = None,
-                            id_short: Optional[str] = r"drains_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(dict_={r"en": r"Drain"}),
@@ -16850,9 +16923,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -16958,9 +17029,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         Union[Tuple[xsd.Float, xsd.Float], TargetEnergyContent]
                     ] = None,
                     energyLoss: Optional[Union[xsd.UnsignedShort, EnergyLoss]] = None,
-                    suppliers: Optional[Suppliers] = None,
-                    drains: Optional[Drains] = None,
-                    id_short: Optional[str] = r"storages_item",
+                    suppliers: Optional[
+                        Union[Iterable[Suppliers.Suppliers_item], Suppliers]
+                    ] = None,
+                    drains: Optional[
+                        Union[Iterable[Drains.Drains_item], Drains]
+                    ] = None,
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage"}),
@@ -17054,6 +17129,20 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         energyLoss, aas.SubmodelElement
                     ):
                         energyLoss = self.EnergyLoss(energyLoss)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if suppliers is not None and not isinstance(
+                        suppliers, aas.SubmodelElement
+                    ):
+                        suppliers = self.Suppliers(suppliers)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if drains is not None and not isinstance(
+                        drains, aas.SubmodelElement
+                    ):
+                        drains = self.Drains(drains)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -17162,9 +17251,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -17658,7 +17745,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             comparator: Optional[Union[str, Comparator]] = None,
                             formulaRight: Optional[Union[str, FormulaRight]] = None,
                             formulaLeft: Optional[Union[str, FormulaLeft]] = None,
-                            id_short: Optional[str] = r"applicabilityconditions_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -17835,9 +17922,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -18530,8 +18615,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     applicabilityDuration: Optional[
                         Union[Tuple[xsd.Float, xsd.Float], ApplicabilityDuration]
                     ] = None,
-                    applicabilityConditions: Optional[ApplicabilityConditions] = None,
-                    id_short: Optional[str] = r"dependencies_item",
+                    applicabilityConditions: Optional[
+                        Union[
+                            Iterable[
+                                ApplicabilityConditions.Applicabilityconditions_item
+                            ],
+                            ApplicabilityConditions,
+                        ]
+                    ] = None,
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependency"}),
@@ -18599,6 +18691,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         applicabilityDuration = self.ApplicabilityDuration(
                             min=applicabilityDuration[0], max=applicabilityDuration[1]
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if applicabilityConditions is not None and not isinstance(
+                        applicabilityConditions, aas.SubmodelElement
+                    ):
+                        applicabilityConditions = self.ApplicabilityConditions(
+                            applicabilityConditions
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -18713,9 +18814,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -18811,9 +18910,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             self,
             metadata: Metadata,
             utilizationContext: UtilizationContext,
-            flexibleLoads: FlexibleLoads,
-            storages: Optional[Storages] = None,
-            dependencies: Optional[Dependencies] = None,
+            flexibleLoads: Union[
+                Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads
+            ],
+            storages: Optional[
+                Union[Iterable[Storages.Storages_item], Storages]
+            ] = None,
+            dependencies: Optional[
+                Union[Iterable[Dependencies.Dependencies_item], Dependencies]
+            ] = None,
             id_short: Optional[str] = r"flexibilitySpace_applicationTailoredPotential",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -18868,6 +18973,25 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if flexibleLoads is not None and not isinstance(
+                flexibleLoads, aas.SubmodelElement
+            ):
+                flexibleLoads = self.FlexibleLoads(flexibleLoads)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if storages is not None and not isinstance(storages, aas.SubmodelElement):
+                storages = self.Storages(storages)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if dependencies is not None and not isinstance(
+                dependencies, aas.SubmodelElement
+            ):
+                dependencies = self.Dependencies(dependencies)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -20935,7 +21059,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             power: Union[Tuple[xsd.Float, xsd.Float], Power],
-                            id_short: Optional[str] = r"powerstates_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -21096,9 +21220,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -21199,7 +21321,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         Tuple[xsd.Float, xsd.Float], ReactionDuration
                     ],
                     regenerationDuration: Union[xsd.Float, RegenerationDuration],
-                    powerStates: PowerStates,
+                    powerStates: Union[
+                        Iterable[PowerStates.Powerstates_item], PowerStates
+                    ],
                     powerGradients: Optional[PowerGradients] = None,
                     modulationNumber: Optional[
                         Union[
@@ -21207,7 +21331,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             ModulationNumber,
                         ]
                     ] = None,
-                    id_short: Optional[str] = r"flexibleloads_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"}),
@@ -21294,6 +21418,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         modulationNumber = self.ModulationNumber(
                             min=modulationNumber[0], max=modulationNumber[1]
                         )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if powerStates is not None and not isinstance(
+                        powerStates, aas.SubmodelElement
+                    ):
+                        powerStates = self.PowerStates(powerStates)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -21397,9 +21528,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -21984,7 +22113,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             conversionEfficiency: Optional[
                                 Union[xsd.Float, ConversionEfficiency]
                             ] = None,
-                            id_short: Optional[str] = r"suppliers_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"}),
@@ -22150,9 +22279,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -22254,8 +22381,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         Union[Tuple[xsd.Float, xsd.Float], InitialEnergyContent]
                     ] = None,
                     energyLoss: Optional[Union[xsd.UnsignedShort, EnergyLoss]] = None,
-                    suppliers: Optional[Suppliers] = None,
-                    id_short: Optional[str] = r"storages_item",
+                    suppliers: Optional[
+                        Union[Iterable[Suppliers.Suppliers_item], Suppliers]
+                    ] = None,
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage"}),
@@ -22340,6 +22469,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         energyLoss, aas.SubmodelElement
                     ):
                         energyLoss = self.EnergyLoss(energyLoss)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if suppliers is not None and not isinstance(
+                        suppliers, aas.SubmodelElement
+                    ):
+                        suppliers = self.Suppliers(suppliers)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -22445,9 +22581,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -22543,8 +22677,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             self,
             metadata: Metadata,
             utilizationContext: UtilizationContext,
-            flexibleLoads: FlexibleLoads,
-            storages: Optional[Storages] = None,
+            flexibleLoads: Union[
+                Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads
+            ],
+            storages: Optional[
+                Union[Iterable[Storages.Storages_item], Storages]
+            ] = None,
             id_short: Optional[str] = r"flexibilitySpace_generalTechnicalPotential",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -22599,6 +22737,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if flexibleLoads is not None and not isinstance(
+                flexibleLoads, aas.SubmodelElement
+            ):
+                flexibleLoads = self.FlexibleLoads(flexibleLoads)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if storages is not None and not isinstance(storages, aas.SubmodelElement):
+                storages = self.Storages(storages)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -24105,7 +24255,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             power: Union[xsd.Float, Power],
                             timestamp: Union[xsd.DateTime, Timestamp],
                             referencePoint: Union[aas.Reference, ReferencePoint],
-                            id_short: Optional[str] = r"loadchangeprofiles_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[
                                 aas.MultiLanguageNameType
                             ] = aas.MultiLanguageNameType(
@@ -24282,9 +24432,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -24381,10 +24529,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 def __init__(
                     self,
                     flexibleLoadMeasureId: Union[str, FlexibleLoadMeasureId],
-                    loadChangeProfiles: LoadChangeProfiles,
+                    loadChangeProfiles: Union[
+                        Iterable[LoadChangeProfiles.Loadchangeprofiles_item],
+                        LoadChangeProfiles,
+                    ],
                     reward: Optional[Union[str, Reward]] = None,
                     exceptions: Optional[Union[str, Exceptions]] = None,
-                    id_short: Optional[str] = r"executionlogentries_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(
@@ -24444,6 +24595,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ):
                         exceptions = self.Exceptions(exceptions)
 
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if loadChangeProfiles is not None and not isinstance(
+                        loadChangeProfiles, aas.SubmodelElement
+                    ):
+                        loadChangeProfiles = self.LoadChangeProfiles(loadChangeProfiles)
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [
@@ -24480,7 +24638,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             def __init__(
                 self,
-                executionlogentries_items: Executionlogentries_item,
+                executionlogentries_items: Iterable[Executionlogentries_item],
                 id_short: Optional[str] = r"executionLogEntries",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -24546,9 +24704,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -24643,7 +24799,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
         def __init__(
             self,
             metadata: Metadata,
-            executionLogEntries: ExecutionLogEntries,
+            executionLogEntries: Union[
+                Iterable[ExecutionLogEntries.Executionlogentries_item],
+                ExecutionLogEntries,
+            ],
             id_short: Optional[str] = r"flexibleLoadMeasureExecutionLog",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -24698,6 +24857,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if executionLogEntries is not None and not isinstance(
+                executionLogEntries, aas.SubmodelElement
+            ):
+                executionLogEntries = self.ExecutionLogEntries(executionLogEntries)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []

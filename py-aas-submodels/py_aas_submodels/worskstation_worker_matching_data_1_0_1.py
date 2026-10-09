@@ -1178,7 +1178,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     exceptionRules: Optional[
                         Union[aas.LangStringSet, ExceptionRules]
                     ] = None,
-                    id_short: Optional[str] = r"generalqualificationdemand_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[
                         aas.MultiLanguageNameType
                     ] = aas.MultiLanguageNameType(
@@ -1369,9 +1369,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1847,7 +1845,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     exceptionRules: Optional[
                         Union[aas.LangStringSet, ExceptionRules]
                     ] = None,
-                    id_short: Optional[str] = r"generalskilldemand_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -2048,9 +2046,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2145,8 +2141,20 @@ class WorkstationWorkerMatchingData(aas.Submodel):
         def __init__(
             self,
             workstationInformation: WorkstationInformation,
-            generalQualificationDemand: Optional[GeneralQualificationDemand] = None,
-            generalSkillDemand: Optional[GeneralSkillDemand] = None,
+            generalQualificationDemand: Optional[
+                Union[
+                    Iterable[
+                        GeneralQualificationDemand.Generalqualificationdemand_item
+                    ],
+                    GeneralQualificationDemand,
+                ]
+            ] = None,
+            generalSkillDemand: Optional[
+                Union[
+                    Iterable[GeneralSkillDemand.Generalskilldemand_item],
+                    GeneralSkillDemand,
+                ]
+            ] = None,
             id_short: Optional[str] = r"GeneralWorkstationData",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -2198,6 +2206,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if generalQualificationDemand is not None and not isinstance(
+                generalQualificationDemand, aas.SubmodelElement
+            ):
+                generalQualificationDemand = self.GeneralQualificationDemand(
+                    generalQualificationDemand
+                )
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if generalSkillDemand is not None and not isinstance(
+                generalSkillDemand, aas.SubmodelElement
+            ):
+                generalSkillDemand = self.GeneralSkillDemand(generalSkillDemand)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2538,7 +2562,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     self,
                     limitationClassificationId: Union[str, LimitationClassificationId],
                     personalLimitationId: Union[str, PersonalLimitationId],
-                    id_short: Optional[str] = r"allowedpersonallimitations_item",
+                    id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[
@@ -2620,7 +2644,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                allowedpersonallimitations_items: Allowedpersonallimitations_item,
+                allowedpersonallimitations_items: Iterable[
+                    Allowedpersonallimitations_item
+                ],
                 id_short: Optional[str] = r"AllowedPersonalLimitations",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2692,9 +2718,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2790,7 +2814,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             self,
             maxLiftingWeight: Optional[Union[int, MaxLiftingWeight]] = None,
             minWorkerHeight: Optional[Union[int, MinWorkerHeight]] = None,
-            allowedPersonalLimitations: Optional[AllowedPersonalLimitations] = None,
+            allowedPersonalLimitations: Optional[
+                Union[
+                    Iterable[
+                        AllowedPersonalLimitations.Allowedpersonallimitations_item
+                    ],
+                    AllowedPersonalLimitations,
+                ]
+            ] = None,
             id_short: Optional[str] = r"ErgonomicWorkstationProfile",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -2863,6 +2894,15 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 minWorkerHeight, aas.SubmodelElement
             ):
                 minWorkerHeight = self.MinWorkerHeight(minWorkerHeight)
+
+            # Build a submodel element if a raw value was passed in the argument
+
+            if allowedPersonalLimitations is not None and not isinstance(
+                allowedPersonalLimitations, aas.SubmodelElement
+            ):
+                allowedPersonalLimitations = self.AllowedPersonalLimitations(
+                    allowedPersonalLimitations
+                )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3345,7 +3385,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         self,
                         configurationName: Union[str, ConfigurationName],
                         configurationValue: Union[str, ConfigurationValue],
-                        id_short: Optional[str] = r"proprietaryconfigurations_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -3425,7 +3465,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 def __init__(
                     self,
-                    proprietaryconfigurations_items: Proprietaryconfigurations_item,
+                    proprietaryconfigurations_items: Iterable[
+                        Proprietaryconfigurations_item
+                    ],
                     id_short: Optional[str] = r"ProprietaryConfigurations",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3497,9 +3539,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3597,8 +3637,15 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 accessStart: Optional[Union[xsd.DateTime, AccessStart]] = None,
                 accessEnd: Optional[Union[xsd.DateTime, AccessEnd]] = None,
                 preferredHeight: Optional[Union[int, PreferredHeight]] = None,
-                proprietaryConfigurations: Optional[ProprietaryConfigurations] = None,
-                id_short: Optional[str] = r"workstationconfigurationrecords_item",
+                proprietaryConfigurations: Optional[
+                    Union[
+                        Iterable[
+                            ProprietaryConfigurations.Proprietaryconfigurations_item
+                        ],
+                        ProprietaryConfigurations,
+                    ]
+                ] = None,
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -3659,6 +3706,15 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 ):
                     preferredHeight = self.PreferredHeight(preferredHeight)
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if proprietaryConfigurations is not None and not isinstance(
+                    proprietaryConfigurations, aas.SubmodelElement
+                ):
+                    proprietaryConfigurations = self.ProprietaryConfigurations(
+                        proprietaryConfigurations
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [
@@ -3696,7 +3752,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         def __init__(
             self,
-            workstationconfigurationrecords_items: Workstationconfigurationrecords_item,
+            workstationconfigurationrecords_items: Iterable[
+                Workstationconfigurationrecords_item
+            ],
             id_short: Optional[str] = r"WorkstationConfigurationRecords",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3768,9 +3826,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4628,7 +4684,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             Union[aas.LangStringSet, ExceptionRules]
                         ] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
-                        id_short: Optional[str] = r"qualificationdemandrecords_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -4756,7 +4812,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 def __init__(
                     self,
-                    qualificationdemandrecords_items: Qualificationdemandrecords_item,
+                    qualificationdemandrecords_items: Iterable[
+                        Qualificationdemandrecords_item
+                    ],
                     id_short: Optional[str] = r"QualificationDemandRecords",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -4821,9 +4879,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4922,8 +4978,15 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 ] = None,
                 intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
                 intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
-                qualificationDemandRecords: Optional[QualificationDemandRecords] = None,
-                id_short: Optional[str] = r"plannedqualificationdemand_item",
+                qualificationDemandRecords: Optional[
+                    Union[
+                        Iterable[
+                            QualificationDemandRecords.Qualificationdemandrecords_item
+                        ],
+                        QualificationDemandRecords,
+                    ]
+                ] = None,
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -4994,6 +5057,15 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     intervalEnd, aas.SubmodelElement
                 ):
                     intervalEnd = self.IntervalEnd(intervalEnd)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if qualificationDemandRecords is not None and not isinstance(
+                    qualificationDemandRecords, aas.SubmodelElement
+                ):
+                    qualificationDemandRecords = self.QualificationDemandRecords(
+                        qualificationDemandRecords
+                    )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5105,9 +5177,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6116,7 +6186,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             Union[aas.LangStringSet, ExceptionRules]
                         ] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
-                        id_short: Optional[str] = r"skilldemandrecords_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[
@@ -6259,7 +6329,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 def __init__(
                     self,
-                    skilldemandrecords_items: Skilldemandrecords_item,
+                    skilldemandrecords_items: Iterable[Skilldemandrecords_item],
                     id_short: Optional[str] = r"SkillDemandRecords",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -6306,9 +6376,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6402,13 +6470,16 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                skillDemandRecords: SkillDemandRecords,
+                skillDemandRecords: Union[
+                    Iterable[SkillDemandRecords.Skilldemandrecords_item],
+                    SkillDemandRecords,
+                ],
                 intervalDescription: Optional[
                     Union[aas.LangStringSet, IntervalDescription]
                 ] = None,
                 intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
                 intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
-                id_short: Optional[str] = r"plannedskilldemand_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[
@@ -6479,6 +6550,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     intervalEnd, aas.SubmodelElement
                 ):
                     intervalEnd = self.IntervalEnd(intervalEnd)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if skillDemandRecords is not None and not isinstance(
+                    skillDemandRecords, aas.SubmodelElement
+                ):
+                    skillDemandRecords = self.SkillDemandRecords(skillDemandRecords)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6590,9 +6668,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6685,10 +6761,24 @@ class WorkstationWorkerMatchingData(aas.Submodel):
         self,
         id_: str,
         generalWorkstationData: GeneralWorkstationData,
-        workstationConfigurationRecords: WorkstationConfigurationRecords,
+        workstationConfigurationRecords: Union[
+            Iterable[
+                WorkstationConfigurationRecords.Workstationconfigurationrecords_item
+            ],
+            WorkstationConfigurationRecords,
+        ],
         ergonomicWorkstationProfile: Optional[ErgonomicWorkstationProfile] = None,
-        plannedQualificationDemand: Optional[PlannedQualificationDemand] = None,
-        plannedSkillDemand: Optional[PlannedSkillDemand] = None,
+        plannedQualificationDemand: Optional[
+            Union[
+                Iterable[PlannedQualificationDemand.Plannedqualificationdemand_item],
+                PlannedQualificationDemand,
+            ]
+        ] = None,
+        plannedSkillDemand: Optional[
+            Union[
+                Iterable[PlannedSkillDemand.Plannedskilldemand_item], PlannedSkillDemand
+            ]
+        ] = None,
         id_short: Optional[str] = r"WorkstationWorkerMatchingData",
         display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
             dict_={
@@ -6734,6 +6824,31 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if workstationConfigurationRecords is not None and not isinstance(
+            workstationConfigurationRecords, aas.SubmodelElement
+        ):
+            workstationConfigurationRecords = self.WorkstationConfigurationRecords(
+                workstationConfigurationRecords
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if plannedQualificationDemand is not None and not isinstance(
+            plannedQualificationDemand, aas.SubmodelElement
+        ):
+            plannedQualificationDemand = self.PlannedQualificationDemand(
+                plannedQualificationDemand
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if plannedSkillDemand is not None and not isinstance(
+            plannedSkillDemand, aas.SubmodelElement
+        ):
+            plannedSkillDemand = self.PlannedSkillDemand(plannedSkillDemand)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

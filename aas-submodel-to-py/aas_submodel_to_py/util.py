@@ -77,6 +77,9 @@ class NamingGenerator:
 
     @classmethod
     def create_specific_referable_cls_name(cls, obj: Referable) -> str:
+        if isinstance(obj.parent, SubmodelElementList):
+            # Items of lists are named after their list (e.g. "Phases_item"), as their idShort is optional
+            return StringHandler.upper_first(f"{cls.create_specific_referable_cls_name(obj.parent)}_item".lower())
         cls_name = StringHandler.upper_first(cls.create_id_short_stem(obj))
         if cls_name in RESERVED_CLS_NAMES:
             return f"{cls_name}_"

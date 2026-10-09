@@ -211,7 +211,7 @@ class Models3D(aas.Submodel):
                             isPrimary: Optional[
                                 Iterable[Union[bool, IsPrimary]]
                             ] = None,
-                            id_short: Optional[str] = r"fileid_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
@@ -356,9 +356,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -776,7 +774,7 @@ class Models3D(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"basedon_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -907,9 +905,7 @@ class Models3D(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1014,7 +1010,7 @@ class Models3D(aas.Submodel):
                                 def __init__(
                                     self,
                                     value: aas.Reference,
-                                    id_short: Optional[str] = r"refersto_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -1145,9 +1141,7 @@ class Models3D(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1993,7 +1987,7 @@ class Models3D(aas.Submodel):
                                             apiSpecificationUrl: Optional[
                                                 Union[str, ApiSpecificationUrl]
                                             ] = None,
-                                            id_short: Optional[str] = r"api_item",
+                                            id_short: Optional[str] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
                                             ] = None,
@@ -2187,13 +2181,9 @@ class Models3D(aas.Submodel):
                                                     se_arg
                                                 )
                                             elif isinstance(se_arg, Iterable):
-                                                for n, element in enumerate(se_arg):
-                                                    element.id_short = (
-                                                        f"{element.id_short}{n}"
-                                                    )
-                                                    embedded_submodel_elements.append(
-                                                        element
-                                                    )
+                                                embedded_submodel_elements.extend(
+                                                    se_arg
+                                                )
                                             else:
                                                 raise TypeError(
                                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2302,8 +2292,10 @@ class Models3D(aas.Submodel):
                                     externalUrl: Union[str, ExternalUrl],
                                     fileIdentifier: Union[str, FileIdentifier],
                                     hostOrganization: HostOrganization,
-                                    api: Optional[Api] = None,
-                                    id_short: Optional[str] = r"externalfile_item",
+                                    api: Optional[
+                                        Union[Iterable[Api.Api_item], Api]
+                                    ] = None,
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -2363,6 +2355,13 @@ class Models3D(aas.Submodel):
                                         fileIdentifier = self.FileIdentifier(
                                             fileIdentifier
                                         )
+
+                                    # Build a submodel element if a raw value was passed in the argument
+
+                                    if api is not None and not isinstance(
+                                        api, aas.SubmodelElement
+                                    ):
+                                        api = self.Api(api)
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -2464,9 +2463,7 @@ class Models3D(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3290,7 +3287,7 @@ class Models3D(aas.Submodel):
                                         apiSpecificationUrl: Optional[
                                             Union[str, ApiSpecificationUrl]
                                         ] = None,
-                                        id_short: Optional[str] = r"api_item",
+                                        id_short: Optional[str] = None,
                                         display_name: Optional[
                                             aas.MultiLanguageNameType
                                         ] = None,
@@ -3475,13 +3472,7 @@ class Models3D(aas.Submodel):
                                         elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
-                                            for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                            embedded_submodel_elements.extend(se_arg)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3837,7 +3828,9 @@ class Models3D(aas.Submodel):
                                 applicationVersion: Union[str, ApplicationVersion],
                                 applicationQualifier: Union[str, ApplicationQualifier],
                                 vendorOrganization: VendorOrganization,
-                                api: Optional[Api] = None,
+                                api: Optional[
+                                    Union[Iterable[Api.Api_item], Api]
+                                ] = None,
                                 id_short: Optional[str] = r"SourceApplication",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
@@ -3905,6 +3898,13 @@ class Models3D(aas.Submodel):
                                     applicationQualifier = self.ApplicationQualifier(
                                         applicationQualifier
                                     )
+
+                                # Build a submodel element if a raw value was passed in the argument
+
+                                if api is not None and not isinstance(
+                                    api, aas.SubmodelElement
+                                ):
+                                    api = self.Api(api)
 
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
@@ -4191,12 +4191,31 @@ class Models3D(aas.Submodel):
                             previewFile: PreviewFile,
                             fileFormat: FileFormat,
                             providingOrganization: ProvidingOrganization,
-                            basedOn: Optional[BasedOn] = None,
-                            refersTo: Optional[RefersTo] = None,
+                            basedOn: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, BasedOn.Basedon_item]
+                                    ],
+                                    BasedOn,
+                                ]
+                            ] = None,
+                            refersTo: Optional[
+                                Union[
+                                    Iterable[
+                                        Union[aas.Reference, RefersTo.Refersto_item]
+                                    ],
+                                    RefersTo,
+                                ]
+                            ] = None,
                             digitalFile: Optional[DigitalFile] = None,
-                            externalFile: Optional[ExternalFile] = None,
+                            externalFile: Optional[
+                                Union[
+                                    Iterable[ExternalFile.Externalfile_item],
+                                    ExternalFile,
+                                ]
+                            ] = None,
                             sourceApplication: Optional[SourceApplication] = None,
-                            id_short: Optional[str] = r"fileversion_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
@@ -4269,6 +4288,27 @@ class Models3D(aas.Submodel):
                                 setDate, aas.SubmodelElement
                             ):
                                 setDate = self.SetDate(setDate)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if basedOn is not None and not isinstance(
+                                basedOn, aas.SubmodelElement
+                            ):
+                                basedOn = self.BasedOn(basedOn)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if refersTo is not None and not isinstance(
+                                refersTo, aas.SubmodelElement
+                            ):
+                                refersTo = self.RefersTo(refersTo)
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if externalFile is not None and not isinstance(
+                                externalFile, aas.SubmodelElement
+                            ):
+                                externalFile = self.ExternalFile(externalFile)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -4365,9 +4405,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5112,7 +5150,7 @@ class Models3D(aas.Submodel):
                                     apiSpecificationUrl: Optional[
                                         Union[str, ApiSpecificationUrl]
                                     ] = None,
-                                    id_short: Optional[str] = r"api_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -5285,9 +5323,7 @@ class Models3D(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5391,8 +5427,8 @@ class Models3D(aas.Submodel):
                             applicationVersion: Union[str, ApplicationVersion],
                             applicationQualifier: Union[str, ApplicationQualifier],
                             vendorOrganization: VendorOrganization,
-                            api: Optional[Api] = None,
-                            id_short: Optional[str] = r"consumingapplication_item",
+                            api: Optional[Union[Iterable[Api.Api_item], Api]] = None,
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
@@ -5455,6 +5491,13 @@ class Models3D(aas.Submodel):
                                 applicationQualifier = self.ApplicationQualifier(
                                     applicationQualifier
                                 )
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if api is not None and not isinstance(
+                                api, aas.SubmodelElement
+                            ):
+                                api = self.Api(api)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -5545,9 +5588,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5837,7 +5878,7 @@ class Models3D(aas.Submodel):
                             classId: Union[str, ClassId],
                             className: Union[aas.LangStringSet, ClassName],
                             classificationSystem: Union[str, ClassificationSystem],
-                            id_short: Optional[str] = r"fileclassification_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
@@ -5980,9 +6021,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6078,10 +6117,20 @@ class Models3D(aas.Submodel):
 
                 def __init__(
                     self,
-                    fileId: FileId,
-                    fileClassification: FileClassification,
-                    fileVersion: Optional[FileVersion] = None,
-                    consumingApplication: Optional[ConsumingApplication] = None,
+                    fileId: Union[Iterable[FileId.Fileid_item], FileId],
+                    fileClassification: Union[
+                        Iterable[FileClassification.Fileclassification_item],
+                        FileClassification,
+                    ],
+                    fileVersion: Optional[
+                        Union[Iterable[FileVersion.Fileversion_item], FileVersion]
+                    ] = None,
+                    consumingApplication: Optional[
+                        Union[
+                            Iterable[ConsumingApplication.Consumingapplication_item],
+                            ConsumingApplication,
+                        ]
+                    ] = None,
                     id_short: Optional[str] = r"File",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -6118,6 +6167,36 @@ class Models3D(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if fileId is not None and not isinstance(
+                        fileId, aas.SubmodelElement
+                    ):
+                        fileId = self.FileId(fileId)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if fileVersion is not None and not isinstance(
+                        fileVersion, aas.SubmodelElement
+                    ):
+                        fileVersion = self.FileVersion(fileVersion)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if consumingApplication is not None and not isinstance(
+                        consumingApplication, aas.SubmodelElement
+                    ):
+                        consumingApplication = self.ConsumingApplication(
+                            consumingApplication
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if fileClassification is not None and not isinstance(
+                        fileClassification, aas.SubmodelElement
+                    ):
+                        fileClassification = self.FileClassification(fileClassification)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6162,7 +6241,7 @@ class Models3D(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"posmodelpurpose_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6283,9 +6362,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6386,7 +6463,7 @@ class Models3D(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"negmodelpurpose_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6507,9 +6584,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6610,7 +6685,7 @@ class Models3D(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"embeddedinfo_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6731,9 +6806,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6834,7 +6907,7 @@ class Models3D(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"state_item",
+                            id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6953,9 +7026,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7237,7 +7308,7 @@ class Models3D(aas.Submodel):
                             def __init__(
                                 self,
                                 value: str,
-                                id_short: Optional[str] = r"reducedelements_item",
+                                id_short: Optional[str] = None,
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
@@ -7362,9 +7433,7 @@ class Models3D(aas.Submodel):
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7519,7 +7588,12 @@ class Models3D(aas.Submodel):
                         self,
                         description_: Optional[Union[str, Description]] = None,
                         reducedElements: Optional[
-                            Union[Iterable[str], ReducedElements]
+                            Union[
+                                Iterable[
+                                    Union[str, ReducedElements.Reducedelements_item]
+                                ],
+                                ReducedElements,
+                            ]
                         ] = None,
                         derivedFrom: Optional[Union[aas.Reference, DerivedFrom]] = None,
                         id_short: Optional[str] = r"Simplification",
@@ -7611,13 +7685,26 @@ class Models3D(aas.Submodel):
 
                 def __init__(
                     self,
-                    posModelPurpose: Union[Iterable[str], PosModelPurpose],
+                    posModelPurpose: Union[
+                        Iterable[Union[str, PosModelPurpose.Posmodelpurpose_item]],
+                        PosModelPurpose,
+                    ],
                     origin: Union[str, Origin],
                     negModelPurpose: Optional[
-                        Union[Iterable[str], NegModelPurpose]
+                        Union[
+                            Iterable[Union[str, NegModelPurpose.Negmodelpurpose_item]],
+                            NegModelPurpose,
+                        ]
                     ] = None,
-                    embeddedInfo: Optional[Union[Iterable[str], EmbeddedInfo]] = None,
-                    state: Optional[Union[Iterable[str], State]] = None,
+                    embeddedInfo: Optional[
+                        Union[
+                            Iterable[Union[str, EmbeddedInfo.Embeddedinfo_item]],
+                            EmbeddedInfo,
+                        ]
+                    ] = None,
+                    state: Optional[
+                        Union[Iterable[Union[str, State.State_item]], State]
+                    ] = None,
                     objectType: Optional[Union[str, ObjectType]] = None,
                     simplification: Optional[Simplification] = None,
                     id_short: Optional[str] = r"Capability",
@@ -8442,9 +8529,7 @@ class Models3D(aas.Submodel):
                                         x: Union[str, X],
                                         y: Union[str, Y],
                                         z: Union[str, Z],
-                                        id_short: Optional[
-                                            str
-                                        ] = r"normorientationvector_item",
+                                        id_short: Optional[str] = None,
                                         display_name: Optional[
                                             aas.MultiLanguageNameType
                                         ] = None,
@@ -8549,7 +8634,9 @@ class Models3D(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    normorientationvector_items: Normorientationvector_item,
+                                    normorientationvector_items: Iterable[
+                                        Normorientationvector_item
+                                    ],
                                     id_short: Optional[str] = r"NormOrientationVector",
                                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                     semantic_id_list_element: Optional[
@@ -8611,13 +8698,7 @@ class Models3D(aas.Submodel):
                                         elif isinstance(se_arg, aas.SubmodelElement):
                                             embedded_submodel_elements.append(se_arg)
                                         elif isinstance(se_arg, Iterable):
-                                            for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                            embedded_submodel_elements.extend(se_arg)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -8722,7 +8803,12 @@ class Models3D(aas.Submodel):
                                 self,
                                 cartOffsetVector: Optional[CartOffsetVector] = None,
                                 normOrientationVector: Optional[
-                                    NormOrientationVector
+                                    Union[
+                                        Iterable[
+                                            NormOrientationVector.Normorientationvector_item
+                                        ],
+                                        NormOrientationVector,
+                                    ]
                                 ] = None,
                                 id_short: Optional[str] = r"CartRefSystem",
                                 display_name: Optional[
@@ -8764,6 +8850,18 @@ class Models3D(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                # Build a submodel element if a raw value was passed in the argument
+
+                                if (
+                                    normOrientationVector is not None
+                                    and not isinstance(
+                                        normOrientationVector, aas.SubmodelElement
+                                    )
+                                ):
+                                    normOrientationVector = self.NormOrientationVector(
+                                        normOrientationVector
+                                    )
 
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
@@ -9098,7 +9196,7 @@ class Models3D(aas.Submodel):
                             boundingBoxKind: Union[str, BoundingBoxKind],
                             cartBoundingVector: CartBoundingVector,
                             cartRefSystem: Optional[CartRefSystem] = None,
-                            id_short: Optional[str] = r"cartboundingbox_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
@@ -9231,9 +9329,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -9842,9 +9938,7 @@ class Models3D(aas.Submodel):
                                     x: Union[str, X],
                                     y: Union[str, Y],
                                     z: Union[str, Z],
-                                    id_short: Optional[
-                                        str
-                                    ] = r"normorientationvector_item",
+                                    id_short: Optional[str] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
                                     ] = None,
@@ -9945,7 +10039,9 @@ class Models3D(aas.Submodel):
 
                             def __init__(
                                 self,
-                                normorientationvector_items: Normorientationvector_item,
+                                normorientationvector_items: Iterable[
+                                    Normorientationvector_item
+                                ],
                                 id_short: Optional[str] = r"NormOrientationVector",
                                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                                 semantic_id_list_element: Optional[
@@ -10003,9 +10099,7 @@ class Models3D(aas.Submodel):
                                     elif isinstance(se_arg, aas.SubmodelElement):
                                         embedded_submodel_elements.append(se_arg)
                                     elif isinstance(se_arg, Iterable):
-                                        for n, element in enumerate(se_arg):
-                                            element.id_short = f"{element.id_short}{n}"
-                                            embedded_submodel_elements.append(element)
+                                        embedded_submodel_elements.extend(se_arg)
                                     else:
                                         raise TypeError(
                                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -10107,9 +10201,14 @@ class Models3D(aas.Submodel):
                             self,
                             cartOffsetVector: Optional[CartOffsetVector] = None,
                             normOrientationVector: Optional[
-                                NormOrientationVector
+                                Union[
+                                    Iterable[
+                                        NormOrientationVector.Normorientationvector_item
+                                    ],
+                                    NormOrientationVector,
+                                ]
                             ] = None,
-                            id_short: Optional[str] = r"cartrefsystem_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
@@ -10147,6 +10246,15 @@ class Models3D(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            # Build a submodel element if a raw value was passed in the argument
+
+                            if normOrientationVector is not None and not isinstance(
+                                normOrientationVector, aas.SubmodelElement
+                            ):
+                                normOrientationVector = self.NormOrientationVector(
+                                    normOrientationVector
+                                )
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -10231,9 +10339,7 @@ class Models3D(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -10331,8 +10437,15 @@ class Models3D(aas.Submodel):
                     self,
                     representation: Union[str, Representation],
                     lengthUnit: Union[str, LengthUnit],
-                    cartBoundingBox: Optional[CartBoundingBox] = None,
-                    cartRefSystem: Optional[CartRefSystem] = None,
+                    cartBoundingBox: Optional[
+                        Union[
+                            Iterable[CartBoundingBox.Cartboundingbox_item],
+                            CartBoundingBox,
+                        ]
+                    ] = None,
+                    cartRefSystem: Optional[
+                        Union[Iterable[CartRefSystem.Cartrefsystem_item], CartRefSystem]
+                    ] = None,
                     id_short: Optional[str] = r"Geometry",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -10384,6 +10497,20 @@ class Models3D(aas.Submodel):
                     ):
                         lengthUnit = self.LengthUnit(lengthUnit)
 
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if cartBoundingBox is not None and not isinstance(
+                        cartBoundingBox, aas.SubmodelElement
+                    ):
+                        cartBoundingBox = self.CartBoundingBox(cartBoundingBox)
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if cartRefSystem is not None and not isinstance(
+                        cartRefSystem, aas.SubmodelElement
+                    ):
+                        cartRefSystem = self.CartRefSystem(cartRefSystem)
+
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
                     for se_arg in [
@@ -10423,7 +10550,7 @@ class Models3D(aas.Submodel):
                 file: File,
                 capability: Optional[Capability] = None,
                 geometry: Optional[Geometry] = None,
-                id_short: Optional[str] = r"model3d_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
@@ -10541,9 +10668,7 @@ class Models3D(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -10635,7 +10760,7 @@ class Models3D(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        model3D: Model3D,
+        model3D: Union[Iterable[Model3D.Model3d_item], Model3D],
         id_short: Optional[str] = r"Models3D",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -10671,6 +10796,11 @@ class Models3D(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if model3D is not None and not isinstance(model3D, aas.SubmodelElement):
+            model3D = self.Model3D(model3D)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

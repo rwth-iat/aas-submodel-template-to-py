@@ -12,7 +12,7 @@ class Circularity(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"dismantlingandremovalinformation_item",
+                id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[
@@ -153,9 +153,7 @@ class Circularity(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1380,7 +1378,7 @@ class Circularity(aas.Submodel):
                         self,
                         partName: Union[str, PartName],
                         partNumber: Union[str, PartNumber],
-                        id_short: Optional[str] = r"components_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[
                             aas.MultiLanguageNameType
                         ] = aas.MultiLanguageNameType(dict_={r"en": r"Component"}),
@@ -1536,9 +1534,7 @@ class Circularity(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1636,8 +1632,8 @@ class Circularity(aas.Submodel):
                 addressOfSupplier: AddressOfSupplier,
                 emailAddressOfSupplier: EmailAddressOfSupplier,
                 supplierWebAddress: Union[str, SupplierWebAddress],
-                components: Components,
-                id_short: Optional[str] = r"sparepartsources_item",
+                components: Union[Iterable[Components.Components_item], Components],
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"spare part supplier"}),
@@ -1697,6 +1693,13 @@ class Circularity(aas.Submodel):
                     supplierWebAddress, aas.SubmodelElement
                 ):
                     supplierWebAddress = self.SupplierWebAddress(supplierWebAddress)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if components is not None and not isinstance(
+                    components, aas.SubmodelElement
+                ):
+                    components = self.Components(components)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1795,9 +1798,7 @@ class Circularity(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2104,7 +2105,7 @@ class Circularity(aas.Submodel):
                 recycledMaterial: Union[str, RecycledMaterial],
                 preConsumerShare: Optional[Union[xsd.Float, PreConsumerShare]] = None,
                 postConsumerShare: Optional[Union[xsd.Float, PostConsumerShare]] = None,
-                id_short: Optional[str] = r"recycledcontentinformation_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[
                     aas.MultiLanguageNameType
                 ] = aas.MultiLanguageNameType(dict_={r"en": r"recycled content"}),
@@ -2265,9 +2266,7 @@ class Circularity(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2365,7 +2364,7 @@ class Circularity(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"safetyinstructions_item",
+                    id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -2504,9 +2503,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2605,7 +2602,7 @@ class Circularity(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"extinguishingagents_item",
+                    id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -2746,9 +2743,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2842,8 +2837,14 @@ class Circularity(aas.Submodel):
 
         def __init__(
             self,
-            safetyInstructions: Union[Iterable[str], SafetyInstructions],
-            extinguishingAgents: Union[Iterable[str], ExtinguishingAgents],
+            safetyInstructions: Union[
+                Iterable[Union[str, SafetyInstructions.Safetyinstructions_item]],
+                SafetyInstructions,
+            ],
+            extinguishingAgents: Union[
+                Iterable[Union[str, ExtinguishingAgents.Extinguishingagents_item]],
+                ExtinguishingAgents,
+            ],
             id_short: Optional[str] = r"SafetyMeasures",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -2943,7 +2944,7 @@ class Circularity(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"wasteprevention_item",
+                    id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -3092,9 +3093,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3193,7 +3192,7 @@ class Circularity(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"separatecollection_item",
+                    id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -3342,9 +3341,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3443,7 +3440,7 @@ class Circularity(aas.Submodel):
                 def __init__(
                     self,
                     value: str,
-                    id_short: Optional[str] = r"informationoncollection_item",
+                    id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[
@@ -3596,9 +3593,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
-                            embedded_submodel_elements.append(element)
+                        embedded_submodel_elements.extend(se_arg)
                     else:
                         raise TypeError(
                             f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3692,9 +3687,20 @@ class Circularity(aas.Submodel):
 
         def __init__(
             self,
-            wastePrevention: Union[Iterable[str], WastePrevention],
-            separateCollection: Union[Iterable[str], SeparateCollection],
-            informationOnCollection: Union[Iterable[str], InformationOnCollection],
+            wastePrevention: Union[
+                Iterable[Union[str, WastePrevention.Wasteprevention_item]],
+                WastePrevention,
+            ],
+            separateCollection: Union[
+                Iterable[Union[str, SeparateCollection.Separatecollection_item]],
+                SeparateCollection,
+            ],
+            informationOnCollection: Union[
+                Iterable[
+                    Union[str, InformationOnCollection.Informationoncollection_item]
+                ],
+                InformationOnCollection,
+            ],
             id_short: Optional[str] = r"EndOfLifeInformation",
             display_name: Optional[
                 aas.MultiLanguageNameType
@@ -3881,10 +3887,21 @@ class Circularity(aas.Submodel):
         self,
         id_: str,
         dismantlingAndRemovalInformation: Union[
-            Iterable[str], DismantlingAndRemovalInformation
+            Iterable[
+                Union[
+                    str,
+                    DismantlingAndRemovalInformation.Dismantlingandremovalinformation_item,
+                ]
+            ],
+            DismantlingAndRemovalInformation,
         ],
-        sparePartSources: SparePartSources,
-        recycledContentInformation: RecycledContentInformation,
+        sparePartSources: Union[
+            Iterable[SparePartSources.Sparepartsources_item], SparePartSources
+        ],
+        recycledContentInformation: Union[
+            Iterable[RecycledContentInformation.Recycledcontentinformation_item],
+            RecycledContentInformation,
+        ],
         safetyMeasures: SafetyMeasures,
         endOfLifeInformation: EndOfLifeInformation,
         renewableContent: Union[xsd.Float, RenewableContent],
@@ -3936,6 +3953,22 @@ class Circularity(aas.Submodel):
         ):
             dismantlingAndRemovalInformation = self.DismantlingAndRemovalInformation(
                 dismantlingAndRemovalInformation
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if sparePartSources is not None and not isinstance(
+            sparePartSources, aas.SubmodelElement
+        ):
+            sparePartSources = self.SparePartSources(sparePartSources)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if recycledContentInformation is not None and not isinstance(
+            recycledContentInformation, aas.SubmodelElement
+        ):
+            recycledContentInformation = self.RecycledContentInformation(
+                recycledContentInformation
             )
 
         # Build a submodel element if a raw value was passed in the argument

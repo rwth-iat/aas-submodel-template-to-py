@@ -795,7 +795,7 @@ class ProductChangeNotifications(aas.Submodel):
                         self,
                         milestoneClassification: Union[str, MilestoneClassification],
                         dateOfValidity: Union[xsd.DateTime, DateOfValidity],
-                        id_short: Optional[str] = r"lifecycledata_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -955,9 +955,7 @@ class ProductChangeNotifications(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1288,7 +1286,7 @@ class ProductChangeNotifications(aas.Submodel):
                         versionOfClassificationSystem: Optional[
                             Union[str, VersionOfClassificationSystem]
                         ] = None,
-                        id_short: Optional[str] = r"reasonsofchange_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -1474,9 +1472,7 @@ class ProductChangeNotifications(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -1805,7 +1801,7 @@ class ProductChangeNotifications(aas.Submodel):
                         versionOfClassificationSystem: Optional[
                             Union[str, VersionOfClassificationSystem]
                         ] = None,
-                        id_short: Optional[str] = r"itemcategories_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -1989,9 +1985,7 @@ class ProductChangeNotifications(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2090,7 +2084,7 @@ class ProductChangeNotifications(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"affectedpartnumbers_item",
+                        id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2247,9 +2241,7 @@ class ProductChangeNotifications(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -2643,7 +2635,7 @@ class ProductChangeNotifications(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"additionalinformation_item",
+                        id_short: Optional[str] = None,
                         content_type: Optional[str] = r"application/octet-stream",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -2787,9 +2779,7 @@ class ProductChangeNotifications(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -3476,7 +3466,7 @@ class ProductChangeNotifications(aas.Submodel):
                             versionOfClassificationSystem: Optional[
                                 Union[str, VersionOfClassificationSystem]
                             ] = None,
-                            id_short: Optional[str] = r"productclassifications_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
@@ -3664,9 +3654,7 @@ class ProductChangeNotifications(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4149,7 +4137,7 @@ class ProductChangeNotifications(aas.Submodel):
                                 Union[aas.Reference, OriginOfChange]
                             ] = None,
                             reasonId: Optional[Union[str, ReasonId]] = None,
-                            id_short: Optional[str] = r"technicaldata_changes_item",
+                            id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[
@@ -4324,9 +4312,7 @@ class ProductChangeNotifications(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
-                                    embedded_submodel_elements.append(element)
+                                embedded_submodel_elements.extend(se_arg)
                             else:
                                 raise TypeError(
                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4606,12 +4592,24 @@ class ProductChangeNotifications(aas.Submodel):
                     manufacturerAssetID: Optional[
                         Union[aas.Reference, ManufacturerAssetID]
                     ] = None,
-                    productClassifications: Optional[ProductClassifications] = None,
+                    productClassifications: Optional[
+                        Union[
+                            Iterable[
+                                ProductClassifications.Productclassifications_item
+                            ],
+                            ProductClassifications,
+                        ]
+                    ] = None,
                     hardwareVersion: Optional[Union[str, HardwareVersion]] = None,
                     remainingAmountAvailable: Optional[
                         Union[xsd.PositiveInteger, RemainingAmountAvailable]
                     ] = None,
-                    technicalData_Changes: Optional[TechnicalData_Changes] = None,
+                    technicalData_Changes: Optional[
+                        Union[
+                            Iterable[TechnicalData_Changes.Technicaldata_changes_item],
+                            TechnicalData_Changes,
+                        ]
+                    ] = None,
                     technicalData_CurrentState: Optional[
                         TechnicalData_CurrentState
                     ] = None,
@@ -4700,6 +4698,15 @@ class ProductChangeNotifications(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
+                    if productClassifications is not None and not isinstance(
+                        productClassifications, aas.SubmodelElement
+                    ):
+                        productClassifications = self.ProductClassifications(
+                            productClassifications
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
                     if hardwareVersion is not None and not isinstance(
                         hardwareVersion, aas.SubmodelElement
                     ):
@@ -4712,6 +4719,15 @@ class ProductChangeNotifications(aas.Submodel):
                     ):
                         remainingAmountAvailable = self.RemainingAmountAvailable(
                             remainingAmountAvailable
+                        )
+
+                    # Build a submodel element if a raw value was passed in the argument
+
+                    if technicalData_Changes is not None and not isinstance(
+                        technicalData_Changes, aas.SubmodelElement
+                    ):
+                        technicalData_Changes = self.TechnicalData_Changes(
+                            technicalData_Changes
                         )
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5168,9 +5184,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     str, VersionOfClassificationSystem
                                 ],
                                 productClassId: Union[str, ProductClassId],
-                                id_short: Optional[
-                                    str
-                                ] = r"productclassifications_item",
+                                id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
                                 ] = None,
@@ -5359,9 +5373,7 @@ class ProductChangeNotifications(aas.Submodel):
                                 elif isinstance(se_arg, aas.SubmodelElement):
                                     embedded_submodel_elements.append(se_arg)
                                 elif isinstance(se_arg, Iterable):
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n}"
-                                        embedded_submodel_elements.append(element)
+                                    embedded_submodel_elements.extend(se_arg)
                                 else:
                                     raise TypeError(
                                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6786,7 +6798,14 @@ class ProductChangeNotifications(aas.Submodel):
                         orderCodeOfManufacturer: Union[
                             aas.LangStringSet, OrderCodeOfManufacturer
                         ],
-                        productClassifications: Optional[ProductClassifications] = None,
+                        productClassifications: Optional[
+                            Union[
+                                Iterable[
+                                    ProductClassifications.Productclassifications_item
+                                ],
+                                ProductClassifications,
+                            ]
+                        ] = None,
                         technicalData_Fit: Optional[TechnicalData_Fit] = None,
                         technicalData_Form: Optional[TechnicalData_Form] = None,
                         technicalData_Function: Optional[TechnicalData_Function] = None,
@@ -6799,7 +6818,7 @@ class ProductChangeNotifications(aas.Submodel):
                             Union[xsd.Int, DeliveryTimeClassSameRegion]
                         ] = None,
                         conformityDeclarations: Optional[ConformityDeclarations] = None,
-                        id_short: Optional[str] = r"recommendeditems_item",
+                        id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -6874,6 +6893,15 @@ class ProductChangeNotifications(aas.Submodel):
                         ):
                             orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
                                 orderCodeOfManufacturer
+                            )
+
+                        # Build a submodel element if a raw value was passed in the argument
+
+                        if productClassifications is not None and not isinstance(
+                            productClassifications, aas.SubmodelElement
+                        ):
+                            productClassifications = self.ProductClassifications(
+                                productClassifications
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -7025,9 +7053,7 @@ class ProductChangeNotifications(aas.Submodel):
                         elif isinstance(se_arg, aas.SubmodelElement):
                             embedded_submodel_elements.append(se_arg)
                         elif isinstance(se_arg, Iterable):
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n}"
-                                embedded_submodel_elements.append(element)
+                            embedded_submodel_elements.extend(se_arg)
                         else:
                             raise TypeError(
                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7123,22 +7149,43 @@ class ProductChangeNotifications(aas.Submodel):
                 self,
                 manufacturer: Manufacturer,
                 pcnType: Union[str, PcnType],
-                reasonsOfChange: ReasonsOfChange,
-                itemCategories: ItemCategories,
+                reasonsOfChange: Union[
+                    Iterable[ReasonsOfChange.Reasonsofchange_item], ReasonsOfChange
+                ],
+                itemCategories: Union[
+                    Iterable[ItemCategories.Itemcategories_item], ItemCategories
+                ],
                 pcnChangeInformation: PcnChangeInformation,
                 dateOfRecord: Union[xsd.DateTime, DateOfRecord],
                 itemOfChange: ItemOfChange,
                 manufacturerChangeID: Optional[Union[str, ManufacturerChangeID]] = None,
-                lifeCycleData: Optional[LifeCycleData] = None,
+                lifeCycleData: Optional[
+                    Union[Iterable[LifeCycleData.Lifecycledata_item], LifeCycleData]
+                ] = None,
                 affectedPartNumbers: Optional[
-                    Union[Iterable[str], AffectedPartNumbers]
+                    Union[
+                        Iterable[
+                            Union[str, AffectedPartNumbers.Affectedpartnumbers_item]
+                        ],
+                        AffectedPartNumbers,
+                    ]
                 ] = None,
                 pcnReasonComment: Optional[
                     Union[aas.LangStringSet, PcnReasonComment]
                 ] = None,
-                additionalInformation: Optional[AdditionalInformation] = None,
-                recommendedItems: Optional[RecommendedItems] = None,
-                id_short: Optional[str] = r"records_item",
+                additionalInformation: Optional[
+                    Union[
+                        Iterable[AdditionalInformation.Additionalinformation_item],
+                        AdditionalInformation,
+                    ]
+                ] = None,
+                recommendedItems: Optional[
+                    Union[
+                        Iterable[RecommendedItems.Recommendeditems_item],
+                        RecommendedItems,
+                    ]
+                ] = None,
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
@@ -7199,6 +7246,27 @@ class ProductChangeNotifications(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
+                if lifeCycleData is not None and not isinstance(
+                    lifeCycleData, aas.SubmodelElement
+                ):
+                    lifeCycleData = self.LifeCycleData(lifeCycleData)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if reasonsOfChange is not None and not isinstance(
+                    reasonsOfChange, aas.SubmodelElement
+                ):
+                    reasonsOfChange = self.ReasonsOfChange(reasonsOfChange)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if itemCategories is not None and not isinstance(
+                    itemCategories, aas.SubmodelElement
+                ):
+                    itemCategories = self.ItemCategories(itemCategories)
+
+                # Build a submodel element if a raw value was passed in the argument
+
                 if affectedPartNumbers is not None and not isinstance(
                     affectedPartNumbers, aas.SubmodelElement
                 ):
@@ -7213,10 +7281,26 @@ class ProductChangeNotifications(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
+                if additionalInformation is not None and not isinstance(
+                    additionalInformation, aas.SubmodelElement
+                ):
+                    additionalInformation = self.AdditionalInformation(
+                        additionalInformation
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
                 if dateOfRecord is not None and not isinstance(
                     dateOfRecord, aas.SubmodelElement
                 ):
                     dateOfRecord = self.DateOfRecord(dateOfRecord)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if recommendedItems is not None and not isinstance(
+                    recommendedItems, aas.SubmodelElement
+                ):
+                    recommendedItems = self.RecommendedItems(recommendedItems)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -7335,9 +7419,7 @@ class ProductChangeNotifications(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7430,7 +7512,7 @@ class ProductChangeNotifications(aas.Submodel):
         self,
         id_: str,
         pcnEventsOutgoing: Optional[PcnEventsOutgoing] = None,
-        records: Optional[Records] = None,
+        records: Optional[Union[Iterable[Records.Records_item], Records]] = None,
         id_short: Optional[str] = r"ProductChangeNotifications",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -7464,6 +7546,11 @@ class ProductChangeNotifications(aas.Submodel):
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if records is not None and not isinstance(records, aas.SubmodelElement):
+            records = self.Records(records)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []

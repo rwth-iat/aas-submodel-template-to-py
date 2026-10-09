@@ -80,6 +80,9 @@ nameplate = Nameplate(
 ```
 
 All required submodel elements are positional arguments; optional elements default to `None`.
+Instead of submodel elements, raw values can be passed, e.g. `yearOfConstruction="2022"`.
+Lists (`SubmodelElementList`) take an iterable of their items or raw values, e.g. `phases=["A1", "B2"]`.
+List items have no idShort by default, as it is optional since AAS metamodel 3.1.
 The output is auto-formatted with Black.
 
 ## Installation

@@ -58,9 +58,13 @@ for se_arg in [{% for se in args_for_submodel_elements -%} {{ se }}{% if not loo
     elif isinstance(se_arg, aas.SubmodelElement):
         embedded_submodel_elements.append(se_arg)
     elif isinstance(se_arg, Iterable):
+{%- if index_id_shorts | default(true) %}
         for n, element in enumerate(se_arg):
             element.id_short = f"{element.id_short}{n}"
             embedded_submodel_elements.append(element)
+{%- else %}
+        embedded_submodel_elements.extend(se_arg)
+{%- endif %}
     else:
         raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 {% endblock %}

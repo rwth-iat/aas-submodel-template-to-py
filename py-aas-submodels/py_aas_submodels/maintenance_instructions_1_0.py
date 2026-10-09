@@ -3449,7 +3449,7 @@ class MaintenanceInstructions(aas.Submodel):
                 addressOfAdditionalLinkTool: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkTool]]
                 ] = None,
-                id_short: Optional[str] = r"maintenancetoollist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[
@@ -3643,9 +3643,7 @@ class MaintenanceInstructions(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4692,7 +4690,7 @@ class MaintenanceInstructions(aas.Submodel):
                 addressOfAdditionalLinkConsumable: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkConsumable]]
                 ] = None,
-                id_short: Optional[str] = r"maintenanceconsumableslist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[
@@ -4912,9 +4910,7 @@ class MaintenanceInstructions(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5557,7 +5553,7 @@ class MaintenanceInstructions(aas.Submodel):
                 addressOfAdditionalLinkSparePart: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkSparePart]]
                 ] = None,
-                id_short: Optional[str] = r"maintenancesparepartlist_item",
+                id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[
@@ -5767,9 +5763,7 @@ class MaintenanceInstructions(aas.Submodel):
                 elif isinstance(se_arg, aas.SubmodelElement):
                     embedded_submodel_elements.append(se_arg)
                 elif isinstance(se_arg, Iterable):
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n}"
-                        embedded_submodel_elements.append(element)
+                    embedded_submodel_elements.extend(se_arg)
                 else:
                     raise TypeError(
                         f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -5865,9 +5859,24 @@ class MaintenanceInstructions(aas.Submodel):
         maintenanceInstructionsForSpecificInterval: Optional[
             Iterable[MaintenanceInstructionsForSpecificInterval]
         ] = None,
-        maintenanceToolList: Optional[MaintenanceToolList] = None,
-        maintenanceConsumablesList: Optional[MaintenanceConsumablesList] = None,
-        maintenanceSparePartList: Optional[MaintenanceSparePartList] = None,
+        maintenanceToolList: Optional[
+            Union[
+                Iterable[MaintenanceToolList.Maintenancetoollist_item],
+                MaintenanceToolList,
+            ]
+        ] = None,
+        maintenanceConsumablesList: Optional[
+            Union[
+                Iterable[MaintenanceConsumablesList.Maintenanceconsumableslist_item],
+                MaintenanceConsumablesList,
+            ]
+        ] = None,
+        maintenanceSparePartList: Optional[
+            Union[
+                Iterable[MaintenanceSparePartList.Maintenancesparepartlist_item],
+                MaintenanceSparePartList,
+            ]
+        ] = None,
         id_short: Optional[str] = r"MaintenanceInstructions",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -5915,6 +5924,31 @@ class MaintenanceInstructions(aas.Submodel):
             maintenanceFreeAsset, aas.SubmodelElement
         ):
             maintenanceFreeAsset = self.MaintenanceFreeAsset(maintenanceFreeAsset)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if maintenanceToolList is not None and not isinstance(
+            maintenanceToolList, aas.SubmodelElement
+        ):
+            maintenanceToolList = self.MaintenanceToolList(maintenanceToolList)
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if maintenanceConsumablesList is not None and not isinstance(
+            maintenanceConsumablesList, aas.SubmodelElement
+        ):
+            maintenanceConsumablesList = self.MaintenanceConsumablesList(
+                maintenanceConsumablesList
+            )
+
+        # Build a submodel element if a raw value was passed in the argument
+
+        if maintenanceSparePartList is not None and not isinstance(
+            maintenanceSparePartList, aas.SubmodelElement
+        ):
+            maintenanceSparePartList = self.MaintenanceSparePartList(
+                maintenanceSparePartList
+            )
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
